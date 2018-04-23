@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9824262e6f1955a4a95abb1d82e835ee, type: 3}
+  m_Name: Pirate
+  m_EditorClassIdentifier: 
+  Words:
+  - Name: "\u06A9\u0634\u062A\u06CC"
+    Direction: 0
+    LocationList:
+    - {x: -1.478261, y: 0.347826}
+    - {x: -2.478261, y: 0.347826}
+    - {x: 1.521739, y: 0.34782553}
+    - {x: 0.521739, y: 0.34782553}
+  - Name: "\u06AF\u0646\u062C"
+    Direction: 0
+    LocationList:
+    - {x: 3.521739, y: 2.347826}
+    - {x: 2.521739, y: 2.347826}
+    - {x: 2.521739, y: -4.652174}
+  - Name: "\u067E\u0631\u0686\u0645"
+    Direction: 0
+    LocationList:
+    - {x: 0.521739, y: -4.652174}
+    - {x: -0.478261, y: -4.652174}
+    - {x: -1.478261, y: 3.347826}
+    - {x: -2.478261, y: 3.347826}
+  - Name: "\u0627\u0633\u06A9\u0644\u062A"
+    Direction: 1
+    LocationList:
+    - {x: -2.478261, y: -3.652174}
+    - {x: -2.478261, y: -4.652174}
+    - {x: -1.478261, y: 0.347826}
+    - {x: -1.478261, y: -0.652174}
+    - {x: -1.478261, y: -1.652174}
+  - Name: "\u063A\u0646\u06CC\u0645\u062A"
+    Direction: 1
+    LocationList:
+    - {x: 2.521739, y: 3.347826}
+    - {x: 2.521739, y: 2.347826}
+    - {x: -2.478261, y: 4.347826}
+    - {x: -2.478261, y: 3.347826}
+    - {x: -2.478261, y: 2.3478255}
+  - Name: "\u06A9\u0627\u067E\u06CC\u062A\u0627\u0646"
+    Direction: 1
+    LocationList:
+    - {x: 0.521739, y: 3.347826}
+    - {x: 0.521739, y: 2.3478255}
+    - {x: 0.521739, y: -4.652174}
+    - {x: 3.521739, y: -1.652174}
+    - {x: 1.521739, y: 0.34782553}
+    - {x: 1.521739, y: -0.6521745}
+    - {x: 1.521739, y: -1.6521745}
+  Clue: "\u062F\u0632\u062F \u062F\u0631\u064A\u0627\u064A\u064A"
+  NonuniqWords: []

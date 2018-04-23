@@ -5,8 +5,9 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+    {
+	    Debug.Log("test");	
 	}
 	
 	// Update is called once per frame

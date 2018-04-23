@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9824262e6f1955a4a95abb1d82e835ee, type: 3}
+  m_Name: Hospital
+  m_EditorClassIdentifier: 
+  Words:
+  - Name: "\u0645\u0631\u06CC\u0636"
+    Direction: 1
+    LocationList:
+    - {x: 0.96000004, y: -2.7599998}
+    - {x: 0.96000004, y: -3.7599998}
+    - {x: -1.04, y: -2.7599998}
+    - {x: -1.04, y: -3.7599998}
+  - Name: "\u067E\u0631\u0633\u062A\u0627\u0631"
+    Direction: 0
+    LocationList:
+    - {x: 1.96, y: -3.7599998}
+    - {x: 0.96000004, y: -3.7599998}
+    - {x: 2.96, y: 3.2400002}
+    - {x: 1.96, y: 3.2400002}
+    - {x: 1.96, y: -0.75999975}
+    - {x: 0.96000004, y: -0.75999975}
+  - Name: "\u062F\u06A9\u062A\u0631"
+    Direction: 1
+    LocationList:
+    - {x: 3.96, y: 0.24000025}
+    - {x: 3.96, y: -0.75999975}
+    - {x: 0.96000004, y: 0.24000025}
+    - {x: 0.96000004, y: -0.75999975}
+  - Name: "\u0622\u0645\u067E\u0648\u0644"
+    Direction: 0
+    LocationList:
+    - {x: -0.03999996, y: 3.2400002}
+    - {x: -1.04, y: 3.2400002}
+    - {x: -1.04, y: -0.75999975}
+    - {x: -2.04, y: -0.75999975}
+    - {x: -3.04, y: -0.75999975}
+  - Name: "\u0633\u0648\u0632\u0646"
+    Direction: 1
+    LocationList:
+    - {x: -2.04, y: 0.24000025}
+    - {x: -2.04, y: -0.75999975}
+    - {x: -3.04, y: -2.7599998}
+    - {x: -3.04, y: -3.7599998}
+  - Name: "\u0627\u062A\u0627\u0642\u0639\u0645\u0644"
+    Direction: 1
+    LocationList:
+    - {x: 1.96, y: 4.2400002}
+    - {x: 1.96, y: 3.2400002}
+    - {x: 1.96, y: 2.2400002}
+    - {x: -3.04, y: 3.2400002}
+    - {x: -3.04, y: 2.2400002}
+    - {x: -1.04, y: 3.2400002}
+    - {x: -1.04, y: 2.2400002}
+  Clue: "\u0628\u064A\u0645\u0627\u0631\u0633\u062A\u0627\u0646"
+  NonuniqWords: []

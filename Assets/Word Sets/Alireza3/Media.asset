@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9824262e6f1955a4a95abb1d82e835ee, type: 3}
+  m_Name: Media
+  m_EditorClassIdentifier: 
+  Words:
+  - Name: "\u062A\u0644\u06AF\u0631\u0627\u0645"
+    Direction: 0
+    LocationList:
+    - {x: -1, y: -6}
+    - {x: -2, y: -6}
+    - {x: -3, y: -6}
+    - {x: -1, y: -2}
+    - {x: -2, y: -2}
+    - {x: -3, y: -2}
+  - Name: "\u0627\u062E\u0628\u0627\u0631"
+    Direction: 1
+    LocationList:
+    - {x: -2, y: -2}
+    - {x: -2, y: -3}
+    - {x: -1, y: 3}
+    - {x: 5, y: -5}
+    - {x: 5, y: -6}
+  - Name: "\u0631\u0648\u0632\u0646\u0627\u0645\u0647"
+    Direction: 1
+    LocationList:
+    - {x: 1, y: 1}
+    - {x: 1, y: 0}
+    - {x: 1, y: -1}
+    - {x: 4, y: 0}
+    - {x: 4, y: -1}
+    - {x: -1, y: 1}
+    - {x: -1, y: 0}
+  - Name: "\u062E\u0628\u0631\u0646\u06AF\u0627\u0631"
+    Direction: 0
+    LocationList:
+    - {x: 0, y: 3}
+    - {x: -1, y: 3}
+    - {x: 4, y: 3}
+    - {x: 3, y: 3}
+    - {x: 2, y: 3}
+    - {x: 4, y: -1}
+    - {x: 3, y: -1}
+  - Name: "\u062A\u0644\u0648\u06CC\u0632\u06CC\u0648\u0646"
+    Direction: 1
+    LocationList:
+    - {x: -2, y: -5}
+    - {x: -2, y: -6}
+    - {x: -3, y: 2}
+    - {x: -3, y: 1}
+    - {x: -3, y: 0}
+    - {x: 1, y: -3}
+    - {x: 1, y: -4}
+    - {x: 1, y: -5}
+  - Name: "\u0627\u06CC\u0646\u062A\u0631\u0646\u062A"
+    Direction: 0
+    LocationList:
+    - {x: 2, y: -3}
+    - {x: 1, y: -3}
+    - {x: -4, y: -4}
+    - {x: -5, y: -4}
+    - {x: 5, y: -6}
+    - {x: 4, y: -6}
+    - {x: 3, y: -6}
+  Clue: "\u0631\u0633\u0627\u0646\u0647"
+  NonuniqWords: []
