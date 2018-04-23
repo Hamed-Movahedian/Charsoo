@@ -94,8 +94,7 @@ public class DialogueWindow : MonoBehaviour
     public IEnumerator ShowWindowAndWaitForClose()
     {
         transform
-            .GetChilds()
-            .ForEach(c=>c.gameObject.SetActive(false));
+            .SetActiveChilds(false);
 
 
         foreach (Transform childs in transform)
