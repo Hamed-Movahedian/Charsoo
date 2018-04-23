@@ -15,6 +15,8 @@ public class DialogueWindow : MonoBehaviour
     private Dictionary<string, Action> _actionDic=
         new Dictionary<string, Action>();
 
+    private bool _isDone = false;
+
     public void RunAction(string name)
     {
         if (_actionDic.ContainsKey(name))
@@ -96,11 +98,13 @@ public class DialogueWindow : MonoBehaviour
         transform
             .SetActiveChilds(false);
 
+        _isDone = false;
 
-        foreach (Transform childs in transform)
-        {
-            
-        }
+        while (!_isDone)
+            yield return null;
+
+        transform.SetActiveChilds(true);
+
         yield return null;
     }
 }
