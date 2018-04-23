@@ -9,13 +9,12 @@ using MgsCommonLib.Utilities;
 
 public class DialogueWindow : MonoBehaviour
 {
+    private bool _isDone = false;
 
     #region Actions
 
     private Dictionary<string, Action> _actionDic=
         new Dictionary<string, Action>();
-
-    private bool _isDone = false;
 
     public void RunAction(string name)
     {
