@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MgsCommonLib.Utilities;
 using UnityEngine;
 
 public class PlayerController : BaseObject
@@ -64,15 +65,15 @@ public class PlayerController : BaseObject
             PlayerInfo,
             r => { PlayerInfo = r; });
     }
-
-    private IEnumerator FirstTimeLogin()
+    
+    public IEnumerator FirstTimeLogin()
     {
         PlayerInfo = new PlayerInfo();
 
         var loginWindow = DialogueWindow.GetWindow("LoginWindow");
 
         loginWindow["Name"] = "New Player";
-        loginWindow["Avatar"] = "";
+        //loginWindow["Avatar"] = "";
 
         loginWindow.SetAction("HasAccount", () =>
         {
@@ -82,8 +83,10 @@ public class PlayerController : BaseObject
         yield return loginWindow.ShowWindowAndWaitForClose();
 
         PlayerInfo.Name = loginWindow["Name"];
-        PlayerInfo.Avatar = loginWindow["Avatar"];
-        
+        //PlayerInfo.Avatar = loginWindow["Avatar"];
+
+        yield break;
+
         if (PlayerInfo.PlayerID == null)
             // Create new one
             yield return Server.Post<PlayerInfo>(

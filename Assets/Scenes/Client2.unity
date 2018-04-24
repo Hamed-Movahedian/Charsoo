@@ -1704,7 +1704,7 @@ Transform:
   - {fileID: 456128769}
   - {fileID: 152688461}
   - {fileID: 1823260339}
-  - {fileID: 193548676}
+  - {fileID: 235031702}
   m_Father: {fileID: 1197339373}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2859,51 +2859,6 @@ MonoBehaviour:
         width: 100
         height: 20
       Color: {r: 1, g: 0, b: 0, a: 1}
---- !u!1 &193548675
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 193548676}
-  - component: {fileID: 193548677}
-  m_Layer: 0
-  m_Name: Edge (96)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &193548676
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 193548675}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 105204854}
-  m_RootOrder: 95
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &193548677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 193548675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4551c9a2ce1ca9448ce3e06553a5ea7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _edge:
-    _inputNodeId: 122
-    _inputSocketIndex: 0
-    _outputNodeId: 1
-    _outputSocketIndex: 0
 --- !u!1 &204285583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,6 +3401,51 @@ MonoBehaviour:
     _inputSocketIndex: 0
     _outputNodeId: 12
     _outputSocketIndex: 2
+--- !u!1 &235031701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 235031702}
+  - component: {fileID: 235031703}
+  m_Layer: 0
+  m_Name: Edge (96)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &235031702
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235031701}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 105204854}
+  m_RootOrder: 95
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &235031703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235031701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4551c9a2ce1ca9448ce3e06553a5ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edge:
+    _inputNodeId: 122
+    _inputSocketIndex: 0
+    _outputNodeId: 1
+    _outputSocketIndex: 0
 --- !u!1 &246226755
 GameObject:
   m_ObjectHideFlags: 0
@@ -12639,6 +12639,94 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 782400967}
+--- !u!1 &786534010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 786534011}
+  - component: {fileID: 786534012}
+  m_Layer: 0
+  m_Name: 88 - (ActionNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &786534011
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 786534010}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 791467285}
+  m_RootOrder: 87
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &786534012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 786534010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4741aca33a294b48a1c92623dd17925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionNode:
+    Id: 122
+    Name: Test login
+    WindowRect:
+      serializedVersion: 2
+      x: 49248
+      y: 50054
+      width: 320
+      height: 167.9
+    Collapsed: 0
+    Height: 150
+    Container: {fileID: 786534012}
+    Sockets:
+    - IsInput: 1
+      _boxRect:
+        serializedVersion: 2
+        x: 49263.9
+        y: 50074.08
+        width: 18
+        height: 18
+      _labelRect:
+        serializedVersion: 2
+        x: 49281.9
+        y: 50073.08
+        width: 100
+        height: 20
+      Color: {r: 0, g: 0, b: 0, a: 1}
+    - IsInput: 0
+      _boxRect:
+        serializedVersion: 2
+        x: 49534.1
+        y: 50074
+        width: 18
+        height: 18
+      _labelRect:
+        serializedVersion: 2
+        x: 49434.1
+        y: 50073
+        width: 100
+        height: 20
+      Color: {r: 1, g: 1, b: 1, a: 1}
+    Delay: 0
+    TargetGameObject: {fileID: 1415881646}
+    ComponentTypeName: PlayerController
+    MethodName: IEnumerator FirstTimeLogin()
+    ParameterValueStrings:
+    - 
+    - 
 --- !u!1 &789941839
 GameObject:
   m_ObjectHideFlags: 0
@@ -12796,7 +12884,7 @@ Transform:
   - {fileID: 349010776}
   - {fileID: 926519053}
   - {fileID: 1387420843}
-  - {fileID: 1743686121}
+  - {fileID: 786534011}
   m_Father: {fileID: 1197339373}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16149,8 +16237,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1891861547}
-        m_MethodName: RunAction
-        m_Mode: 5
+        m_MethodName: Complete
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19275,7 +19363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40aa9d3825357c84d991c629e6fe3dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProgressBar: {fileID: 647893933}
 --- !u!4 &1222244982
 Transform:
   m_ObjectHideFlags: 0
@@ -19613,8 +19700,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 501.59998, y: 781.2001}
+  m_AnchoredPosition: {x: 0.000022888, y: -0.000015259}
+  m_SizeDelta: {x: 0, y: -0.00012207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1257267302
 MonoBehaviour:
@@ -26007,94 +26094,6 @@ MonoBehaviour:
     _inputSocketIndex: 0
     _outputNodeId: 12
     _outputSocketIndex: 1
---- !u!1 &1743686120
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1743686121}
-  - component: {fileID: 1743686122}
-  m_Layer: 0
-  m_Name: 88 - (ActionNode)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1743686121
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1743686120}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 791467285}
-  m_RootOrder: 87
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1743686122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1743686120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4741aca33a294b48a1c92623dd17925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActionNode:
-    Id: 122
-    Name: ActionNode
-    WindowRect:
-      serializedVersion: 2
-      x: 49259.79
-      y: 50097.777
-      width: 320
-      height: 167.9
-    Collapsed: 0
-    Height: 150
-    Container: {fileID: 1743686122}
-    Sockets:
-    - IsInput: 1
-      _boxRect:
-        serializedVersion: 2
-        x: 49275.688
-        y: 50117.855
-        width: 18
-        height: 18
-      _labelRect:
-        serializedVersion: 2
-        x: 49293.688
-        y: 50116.855
-        width: 100
-        height: 20
-      Color: {r: 0, g: 0, b: 0, a: 1}
-    - IsInput: 0
-      _boxRect:
-        serializedVersion: 2
-        x: 49545.89
-        y: 50117.777
-        width: 18
-        height: 18
-      _labelRect:
-        serializedVersion: 2
-        x: 49445.89
-        y: 50116.777
-        width: 100
-        height: 20
-      Color: {r: 1, g: 1, b: 1, a: 1}
-    Delay: 0
-    TargetGameObject: {fileID: 1383502453}
-    ComponentTypeName: CommandController
-    MethodName: IEnumerator GetRecentCommands()
-    ParameterValueStrings:
-    - 
-    - 
 --- !u!1 &1744318430
 GameObject:
   m_ObjectHideFlags: 0
@@ -28973,7 +28972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4, y: 56}
   m_SizeDelta: {x: 295.30005, y: 41.100098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1891861547
@@ -28984,7 +28983,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1891861544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d1ebd3f1c11d9c43918c2fcebc89579, type: 3}
+  m_Script: {fileID: -1308115236, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1896216877
@@ -32631,8 +32630,8 @@ MonoBehaviour:
     Name: Start
     WindowRect:
       serializedVersion: 2
-      x: 49012.24
-      y: 50066.156
+      x: 48997.24
+      y: 50097.156
       width: 125.93
       height: 68.9
     Collapsed: 1
@@ -32642,14 +32641,14 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49099.066
-        y: 50089.555
+        x: 49084.066
+        y: 50120.555
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49099.066
-        y: 50098.555
+        x: 49084.066
+        y: 50129.555
         width: 0
         height: 0
       Color: {r: 1, g: 0.88199997, b: 0, a: 1}
