@@ -42,11 +42,4 @@ public class Table : MonoBehaviour
             transform.position = new Vector3(0.5f, 0.5f, 0);
 
     }
-
-
-    // UpdateData is called once per frame
-    void Update()
-    {
-
-    }
 }
