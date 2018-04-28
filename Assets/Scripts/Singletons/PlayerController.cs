@@ -16,7 +16,10 @@ public class PlayerController : BaseObject
 
     public IEnumerator LogIn()
     {
-        PlayerInfo = LocalDatabase.Table<PlayerInfo>().FirstOrDefault();
+        PlayerInfo = 
+            LocalDatabase
+            .Table<PlayerInfo>()
+            .FirstOrDefault();
 
         // This is first time login
         if (PlayerInfo == null)
@@ -27,7 +30,8 @@ public class PlayerController : BaseObject
             yield return GetPlayerID();
 
             if (PlayerInfo.PlayerID != null)
-                LocalDatabase.FillMissingPlayerIDs(PlayerInfo.PlayerID.Value);
+                LocalDatabase.FillMissingPlayerIDs(
+                    PlayerInfo.PlayerID.Value);
         }
 
         StartCoroutine(LoginToDB());
@@ -50,12 +54,17 @@ public class PlayerController : BaseObject
 
     private IEnumerator FlashOutLocalLogins()
     {
-        List<LogIn> logIns = LocalDatabase.Table<LogIn>().ToList();
+        List<LogIn> logIns = 
+            LocalDatabase.Table<LogIn>().ToList();
 
         yield return Server.Post<int>(
             @"/api/Login/AddRange",
             logIns,
-            r => { if (logIns.Count == r) LocalDatabase.DeleteAll<LogIn>(); });
+            r =>
+            {
+                if (logIns.Count == r)
+                    LocalDatabase.DeleteAll<LogIn>();
+            });
     }
 
     private IEnumerator GetPlayerID()
@@ -70,7 +79,8 @@ public class PlayerController : BaseObject
     {
         PlayerInfo = new PlayerInfo();
 
-        var loginWindow = DialogueWindow.GetWindow("LoginWindow");
+        var loginWindow = 
+            DialogueWindow.GetWindow("LoginWindow");
 
         loginWindow["Name"] = "New Player";
         //loginWindow["Avatar"] = "";
@@ -101,7 +111,8 @@ public class PlayerController : BaseObject
     private IEnumerator GetPlayerInfoByDeviceID()
     {
         yield return Server.Get<PlayerInfo>(
-            @"Login/RestorePlayerInfo?deviceId=" + SystemInfo.deviceUniqueIdentifier,
+            @"Login/RestorePlayerInfo?deviceId=" 
+                + SystemInfo.deviceUniqueIdentifier,
             o => { PlayerInfo = (PlayerInfo)o; });
 
     }
