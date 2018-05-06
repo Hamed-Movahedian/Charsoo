@@ -12,6 +12,33 @@ public class PlayerController : BaseObject
 
     #endregion
 
+    #region New PlayerID Event
+
+    public delegate void NewPlayerIDEventHandler(int newPlayerID);
+    public event NewPlayerIDEventHandler NewPlayerID;
+    protected virtual void OnNewPlayerID(int newplayerid)
+    {
+        var handler = NewPlayerID;
+        if (handler != null) handler(newplayerid);
+    }
+
+    #endregion
+
+    #region Awake
+
+    private void Awake()
+    {
+        NewPlayerID += SetPlayerIDInLocalDB;
+    }
+
+    private void SetPlayerIDInLocalDB(int newPlayerID)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    #endregion
+
+
     #region LogIn
 
     public IEnumerator LogIn()
@@ -27,11 +54,16 @@ public class PlayerController : BaseObject
 
         if (PlayerInfo.PlayerID == null)
         {
-            yield return GetPlayerID();
+            // Register player to server and get PlayerID
+            yield return Server.Post<PlayerInfo>(
+                @"PlayerInfo/Create",
+                PlayerInfo,
+                r => { PlayerInfo = r; }); ;
 
+            // If player successfully registered to server
+            // run OnSetplayerID event
             if (PlayerInfo.PlayerID != null)
-                LocalDatabase.FillMissingPlayerIDs(
-                    PlayerInfo.PlayerID.Value);
+                OnNewPlayerID(PlayerInfo.PlayerID.Value);
         }
 
         StartCoroutine(LoginToDB());
@@ -119,5 +151,6 @@ public class PlayerController : BaseObject
 
 
     #endregion
+
 
 }
