@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using MgsCommonLib.Utilities;
+using MgsCommonLib.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : BaseObject
 {
@@ -23,26 +24,12 @@ public class PlayerController : BaseObject
     }
 
     #endregion
-
-    #region Awake
-
-    private void Awake()
-    {
-        NewPlayerID += SetPlayerIDInLocalDB;
-    }
-
-    private void SetPlayerIDInLocalDB(int newPlayerID)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    #endregion
-
-
+    
     #region LogIn
 
     public IEnumerator LogIn()
     {
+        // Get player info from localDB
         PlayerInfo = 
             LocalDatabase
             .Table<PlayerInfo>()
@@ -50,7 +37,10 @@ public class PlayerController : BaseObject
 
         // This is first time login
         if (PlayerInfo == null)
-            yield return FirstTimeLogin();
+            yield return GetPlayerInfoFromUser();
+
+        // Save PlayerInfo to localDB
+        LocalDatabase.InsertOrReplace(PlayerInfo);
 
         if (PlayerInfo.PlayerID == null)
         {
@@ -61,9 +51,11 @@ public class PlayerController : BaseObject
                 r => { PlayerInfo = r; }); ;
 
             // If player successfully registered to server
-            // run OnSetplayerID event
             if (PlayerInfo.PlayerID != null)
+            {
+                // run OnSetplayerID event
                 OnNewPlayerID(PlayerInfo.PlayerID.Value);
+            }
         }
 
         StartCoroutine(LoginToDB());
@@ -99,56 +91,61 @@ public class PlayerController : BaseObject
             });
     }
 
-    private IEnumerator GetPlayerID()
+    #endregion
+
+   #region GetPlayerInfoFromUser
+
+    public IEnumerator GetPlayerInfoFromUser()
     {
-        yield return Server.Post<PlayerInfo>(
-            @"PlayerInfo/Create",
-            PlayerInfo,
-            r => { PlayerInfo = r; });
+
+        #region Initialize window
+
+        // Get window
+        var loginWindow = UIWindow.GetWindow("LoginWindow");
+
+        // Set components values
+        loginWindow.GetComponentByName<InputField>("Name").text = "New player";
+        
+
+        #endregion
+
+        #region Set actions
+
+        // Enter Game button
+        loginWindow.SetAction("EnterGame", EnterGameButton);
+        
+        // Has account button
+        loginWindow.SetAction("HasAccount", HasAccountButton);
+        
+        #endregion
+        
+        // Wait for window to close
+        yield return loginWindow.ShowAndWaitForClose();
+
     }
-    
-    public IEnumerator FirstTimeLogin()
+
+    private IEnumerator EnterGameButton(UIWindow window)
     {
-        PlayerInfo = new PlayerInfo();
-
-        var loginWindow = 
-            DialogueWindow.GetWindow("LoginWindow");
-
-        loginWindow["Name"] = "New Player";
-        //loginWindow["Avatar"] = "";
-
-        loginWindow.SetAction("HasAccount", () =>
+        // Initialize player info with user data
+        PlayerInfo = new PlayerInfo
         {
-            
-        });
+            Name = window.GetComponentByName<InputField>("Name").text
+        };
 
-        yield return loginWindow.ShowWindowAndWaitForClose();
+        // Save playerInfo to localDB
+        LocalDatabase.InsertOrReplace(PlayerInfo);
 
-        PlayerInfo.Name = loginWindow["Name"];
-        //PlayerInfo.Avatar = loginWindow["Avatar"];
+        // Close window
+        window.Close();
 
-        yield break;
-
-        if (PlayerInfo.PlayerID == null)
-            // Create new one
-            yield return Server.Post<PlayerInfo>(
-                    @"PlayerInfo/Create",
-                    PlayerInfo,
-                    r => { PlayerInfo = r; });
-
-
-        LocalDatabase.Insert(PlayerInfo);
+        yield return null;
     }
 
-    private IEnumerator GetPlayerInfoByDeviceID()
+    private IEnumerator HasAccountButton(UIWindow window)
     {
-        yield return Server.Get<PlayerInfo>(
-            @"Login/RestorePlayerInfo?deviceId=" 
-                + SystemInfo.deviceUniqueIdentifier,
-            o => { PlayerInfo = (PlayerInfo)o; });
 
+        yield return AccountManager.Instance.ConnectToAccount();
     }
-
 
     #endregion
 
