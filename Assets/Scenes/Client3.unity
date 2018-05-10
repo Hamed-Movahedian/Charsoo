@@ -1984,6 +1984,7 @@ MonoBehaviour:
   m_Script: {fileID: 655861191, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastActionName: 
 --- !u!222 &101146314
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4585,6 +4586,7 @@ MonoBehaviour:
   m_Script: {fileID: 655861191, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastActionName: 
 --- !u!222 &244290505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13721,7 +13723,7 @@ GameObject:
   - component: {fileID: 689227953}
   - component: {fileID: 689227952}
   m_Layer: 5
-  m_Name: PhoneNumber
+  m_Name: InputCode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20383,6 +20385,7 @@ MonoBehaviour:
   m_Script: {fileID: 655861191, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastActionName: 
 --- !u!222 &1072873264
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27865,6 +27868,7 @@ MonoBehaviour:
   m_Script: {fileID: 655861191, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastActionName: 
 --- !u!222 &1521639587
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28984,6 +28988,7 @@ MonoBehaviour:
   m_Script: {fileID: 655861191, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastActionName: 
 --- !u!222 &1619370188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32932,6 +32937,7 @@ MonoBehaviour:
   m_Script: {fileID: 655861191, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastActionName: 
 --- !u!222 &1824417342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34247,6 +34253,7 @@ MonoBehaviour:
   m_Script: {fileID: 655861191, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastActionName: 
 --- !u!222 &1890892588
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34282,7 +34289,7 @@ GameObject:
   - component: {fileID: 1891861546}
   - component: {fileID: 1891861548}
   m_Layer: 5
-  m_Name: LoginWindow
+  m_Name: UserInfoWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34335,6 +34342,7 @@ MonoBehaviour:
   m_Script: {fileID: 655861191, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LastActionName: 
 --- !u!222 &1891861548
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38818,7 +38826,7 @@ GameObject:
   - component: {fileID: 2101801983}
   - component: {fileID: 2101801982}
   m_Layer: 5
-  m_Name: RestoreAcc
+  m_Name: ConnectToAccount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38890,7 +38898,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: HasAccount
+          m_StringArgument: ConnectToAccount
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

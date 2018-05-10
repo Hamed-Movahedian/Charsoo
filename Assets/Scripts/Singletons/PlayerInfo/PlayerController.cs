@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using ArabicSupport;
 using MgsCommonLib.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,7 +38,13 @@ public class PlayerController : BaseObject
 
         // This is first time login
         if (PlayerInfo == null)
-            yield return GetPlayerInfoFromUser();
+        {
+            PlayerInfo = new PlayerInfo()
+            {
+                Name = ArabicFixer.Fix("بدون نام")
+            };
+            yield return EditPlayerInfoByUser();
+        }
 
         // Save PlayerInfo to localDB
         LocalDatabase.InsertOrReplace(PlayerInfo);
@@ -93,58 +100,63 @@ public class PlayerController : BaseObject
 
     #endregion
 
-   #region GetPlayerInfoFromUser
+   #region EditPlayerInfoByUser
 
-    public IEnumerator GetPlayerInfoFromUser()
+    public IEnumerator EditPlayerInfoByUser()
     {
-
         #region Initialize window
 
         // Get window
-        var loginWindow = UIWindow.GetWindow("LoginWindow");
+        var userInfoWindow = UIWindow.GetWindow("UserInfoWindow");
 
-        // Set components values
-        loginWindow.GetComponentByName<InputField>("Name").text = "New player";
-        
+        // Set components 
+        userInfoWindow.GetComponentByName<InputField>("Name").text = PlayerInfo.Name;
 
         #endregion
-
-        #region Set actions
-
-        // Enter Game button
-        loginWindow.SetAction("EnterGame", EnterGameButton);
         
-        // Has account button
-        loginWindow.SetAction("HasAccount", HasAccountButton);
-        
-        #endregion
-        
-        // Wait for window to close
-        yield return loginWindow.ShowAndWaitForClose();
 
-    }
-
-    private IEnumerator EnterGameButton(UIWindow window)
-    {
-        // Initialize player info with user data
-        PlayerInfo = new PlayerInfo
+        while (true)
         {
-            Name = window.GetComponentByName<InputField>("Name").text
-        };
+            // Show window
+            yield return userInfoWindow.Show();
 
-        // Save playerInfo to localDB
-        LocalDatabase.InsertOrReplace(PlayerInfo);
+            // Wait for action
+            yield return userInfoWindow.WaitForAction();
 
-        // Close window
-        window.Close();
+            switch (userInfoWindow.LastActionName)
+            {
+                case "EnterGame":
+                    // Hide userInfo window
+                    yield return userInfoWindow.Hide();
 
-        yield return null;
-    }
+                    // Initialize player info with user data
+                    PlayerInfo = new PlayerInfo
+                    {
+                        Name = userInfoWindow.GetComponentByName<InputField>("Name").text
+                    };
 
-    private IEnumerator HasAccountButton(UIWindow window)
-    {
+                    // Save playerInfo to localDB
+                    LocalDatabase.InsertOrReplace(PlayerInfo);
 
-        yield return AccountManager.Instance.ConnectToAccount();
+                    yield break;
+
+                case "ConnectToAccount":
+                    // Hide userInfo window
+                    yield return userInfoWindow.Hide();
+
+                    // Try to connect to account by phone number
+                    yield return AccountManager.Instance.ConnectToAccount();
+
+                    // Successfully connected - return
+                    if (AccountManager.Instance.IsConnected)
+                        yield break;
+                    
+                    // Fail to connect => show window and wait for user action
+                    yield return userInfoWindow.Show();
+
+                    break;
+            }
+        }
     }
 
     #endregion
