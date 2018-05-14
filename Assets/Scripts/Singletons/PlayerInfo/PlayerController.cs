@@ -14,10 +14,22 @@ public class PlayerController : BaseObject
 
     #endregion
 
+    #region Properties
+
+    public string Name
+    {
+        get { return PlayerInfo.Name; }
+        set { PlayerInfo.Name = value; }
+    }
+
+
+    #endregion
+
     #region New PlayerID Event
 
     public delegate void NewPlayerIDEventHandler(int newPlayerID);
     public event NewPlayerIDEventHandler NewPlayerID;
+
     protected virtual void OnNewPlayerID(int newplayerid)
     {
         var handler = NewPlayerID;
@@ -104,7 +116,7 @@ public class PlayerController : BaseObject
 
     public IEnumerator EditPlayerInfoByUser()
     {
-        #region Initialize window
+        #region Initialize userInfoWindow
 
         // Get window
         var userInfoWindow = UIWindow.GetWindow("UserInfoWindow");
@@ -113,48 +125,40 @@ public class PlayerController : BaseObject
         userInfoWindow.GetComponentByName<InputField>("Name").text = PlayerInfo.Name;
 
         #endregion
-        
 
         while (true)
         {
-            // Show window
-            yield return userInfoWindow.Show();
+            // Show - Wait for action - Hide
+            yield return userInfoWindow.ShowWaitForActionHide();
 
-            // Wait for action
-            yield return userInfoWindow.WaitForAction();
-
-            switch (userInfoWindow.LastActionName)
+            // Enter Game
+            if (userInfoWindow.CheckLastAction("EnterGame"))
             {
-                case "EnterGame":
-                    // Hide userInfo window
-                    yield return userInfoWindow.Hide();
+                // Initialize player info with user data
+                PlayerInfo = new PlayerInfo
+                {
+                    Name = userInfoWindow.GetComponentByName<InputField>("Name").text
+                };
 
-                    // Initialize player info with user data
-                    PlayerInfo = new PlayerInfo
-                    {
-                        Name = userInfoWindow.GetComponentByName<InputField>("Name").text
-                    };
+                // Save playerInfo to localDB
+                LocalDatabase.InsertOrReplace(PlayerInfo);
 
-                    // Save playerInfo to localDB
-                    LocalDatabase.InsertOrReplace(PlayerInfo);
+                yield break;
 
+            }
+
+            // ConnectToAccount
+            if (userInfoWindow.CheckLastAction("ConnectToAccount"))
+            {
+                // Try to connect to account by phone number
+                yield return AccountManager.Instance.ConnectToAccount();
+
+                // Successfully connected - return
+                if (AccountManager.Instance.IsConnected)
                     yield break;
 
-                case "ConnectToAccount":
-                    // Hide userInfo window
-                    yield return userInfoWindow.Hide();
-
-                    // Try to connect to account by phone number
-                    yield return AccountManager.Instance.ConnectToAccount();
-
-                    // Successfully connected - return
-                    if (AccountManager.Instance.IsConnected)
-                        yield break;
-                    
-                    // Fail to connect => show window and wait for user action
-                    yield return userInfoWindow.Show();
-
-                    break;
+                // Fail to connect => show window and wait for user action
+                yield return userInfoWindow.Show();
             }
         }
     }
@@ -162,4 +166,8 @@ public class PlayerController : BaseObject
     #endregion
 
 
+    public void SaveToLocalDB()
+    {
+        LocalDatabase.InsertOrReplace(PlayerInfo);
+    }
 }

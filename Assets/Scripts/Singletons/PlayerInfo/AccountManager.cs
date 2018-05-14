@@ -12,38 +12,30 @@ public class AccountManager : MgsSingleton<AccountManager>
 
     public IEnumerator ConnectToAccount()
     {
-        #region Initialize window
+        // Get window
+        UIWindow getPhoneWindow = UIWindow.GetWindow("GetPhoneNumber");
 
-        UIWindow window = UIWindow.GetWindow("GetPhoneNumber");
-
-        #endregion
-     
         while (true)
         {
-            // Show window
-            yield return window.Show();
+            // Show - Wait for action - Hide
+            yield return getPhoneWindow.ShowWaitForActionHide();
 
-            // Wait for action
-            yield return window.WaitForAction();
+            // Back to previous window
+            if(getPhoneWindow.CheckLastAction("Back"))
+                yield break;
 
-            switch (window.LastActionName)
+            // Send code
+            if (getPhoneWindow.CheckLastAction("SendCode"))
             {
-                case "Back":
-                    // Hide window
-                    yield return window.Hide();
+                // Get phone number
+                var phoneNumber = getPhoneWindow.GetComponentByName<InputField>("PhoneNumber").text;
 
-                    // return
+                // Try to send code
+                yield return SendCode(phoneNumber);
+
+                // if connect to server return to previous window
+                if (IsConnected)
                     yield break;
-
-                case "SendCode":
-                    // Hide window
-                    yield return window.Hide();
-
-                    // Get phone number
-                    var phoneNumber = window.GetComponentByName<InputField>("PhoneNumber").text;
-                    // Try to send code
-                    yield return SendCode(phoneNumber);
-
 
             }
         }
@@ -51,28 +43,19 @@ public class AccountManager : MgsSingleton<AccountManager>
 
     private IEnumerator SendCode(string phoneNumber)
     {
-
         #region Send code
 
         // Generate random number
         _generatedCode = Random.Range(1000, 9999).ToString();
 
-        // Get Inprogress window
-        var inProgressWindow = UIWindow.GetWindow("InProgress");
-
-        // Initialize window
-        inProgressWindow.GetComponentByName<Text>("Message").text =
-            ArabicFixer.Fix("در حال ارسال کد...");
-
         // Show inprogress window
-        yield return inProgressWindow.Show();
+        yield return UIWindow.ShowDialogue("InProgress", "در حال ارسال کد...");
 
         // Wait for 3 sec
         yield return new WaitForSeconds(3);
 
         // Hide inprogress window
-        yield return inProgressWindow.Hide();
-        
+        yield return UIWindow.Dialogue.Hide();
 
         #endregion
 
@@ -85,74 +68,65 @@ public class AccountManager : MgsSingleton<AccountManager>
 
         while (true)
         {
-            // Show window
-            yield return getCodeWindow.Show();
+            // Show and Wait for action
+            yield return getCodeWindow.ShowWaitForActionHide();
 
-            // Wait for action
-            yield return getCodeWindow.WaitForAction();
+            if (getCodeWindow.CheckLastAction("Back"))
+                yield break;
 
-            // Switch action
-            switch (getCodeWindow.LastActionName)
+            if (getCodeWindow.CheckLastAction("ValidateCode"))
             {
-                case "ValidateCode":
+                // get input code
+                var inputCode = getCodeWindow
+                    .GetComponentByName<InputField>("InputCode").text;
 
-                    // get input code
-                    var inputCode = getCodeWindow
-                        .GetComponentByName<InputField>("InputCode").text;
+                // Check input code is correct?
+                if (inputCode == _generatedCode)
+                {
+                    // ----------------------------- correct code
+                    #region Try to restore account
 
-                    // Check input code is correct?
-                    if (inputCode == _generatedCode)
+                    // show inprogress window
+                    yield return UIWindow.ShowDialogue("InProgress", "در حال بازیابی حساب کاربری...");
+
+                    // restore account from server
+                    yield return RestoreAccountFromServer(phoneNumber);
+
+                    // hide inprogress window
+                    yield return UIWindow.Dialogue.Hide();
+
+                    #endregion
+
+                    // Restore successfully => Back to previous window
+                    if (IsConnected)
+                        yield break;
+
+                    // Fail to Restore
+                    if (!IsConnected)
                     {
-                        // ----------------------------- correct code
+                        // Inform user
+                        yield return UIWindow.ShowDialogueWaitHide(
+                             "GeneralDialogue",
+                             "امکان بازیابی حساب وجود ندارد",
+                             "بازگشت", null, null);
 
-                        #region Try to restore account
-
-                        // get inprogress window
-                        var inprogressWindow = UIWindow.GetWindow("InProgress");
-
-                        // initialize inprogress window
-                        inprogressWindow.GetComponentByName<Text>("Message").text =
-                            ArabicFixer.Fix("در حال بازیابی حساب کاربری...");
-
-                        // show inprogress window
-                        yield return inprogressWindow.Show();
-
-                        // restore account from server
-                        yield return RestoreAccountFromServer(phoneNumber);
-
-                        // hide inprogress window
-                        yield return inprogressWindow.Hide();
-
-                        #endregion
-
-                        #region Fail to restore account
-
-                        UIWindow.GetWindow("")
-
-                        #endregion
-
-                        // Connect and restore successfully
-                        if(IsConnected)
-                            yield break;
-                    }
-                    else
-                    {
-                        // -------------------------- incorrect code
-
-                        // get InvalidCode window
-                        var invalidCodeWindow = UIWindow.GetWindow("UnvalidCode");
-
-                        // Set Actions
-                        invalidCodeWindow.SetAction("Back", Back);
-
-                        // show invalid code and wait for close
-                        yield return invalidCodeWindow.ShowAndWaitForClose();
+                        // Stay in this window
                     }
 
-                    break;
+                }
+                else
+                {
+                    // Incorrect code 
+                    // Inform user
+                    yield return UIWindow.ShowDialogueWaitHide(
+                        "GeneralDialogue",
+                        "کد وارد شده صحیح نمیباشد",
+                        "بازگشت", null, null);
+
+                    // Stay in this window
+                }
             }
         }
-        // Wait to close window
 
     }
 
