@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc606bfa410cef64b8f3887d60cfbd69, type: 3}
+  m_Name: PersianPack
+  m_EditorClassIdentifier: 
+  SuccesfullAccountRecovery: ".\uFEAA\uFEB7 \uFEF2\uFE91\uFE8E\uFEF3\u0632\uFE8E\uFE91
+    \uFE96\uFEF4\uFED8\uFED3\uFEEE\uFEE3 \uFE8E\uFE91 \u064A\uFEAE\uFE91\u0631\uFE8E\uFB90
+    \u0628\uFE8E\uFEB4\uFEA3"
+  Inprogress_AccountRecovery: "... \u064A\uFEAE\uFE91\u0631\uFE8E\uFB90 \u0628\uFE8E\uFEB4\uFEA3
+    \uFEEA\uFE91 \u0644\uFE8E\uFEBC\uFE97\u0627 \u0644\uFE8E\uFEA3 \u0631\u062F\r"
+  Inprogress_AccountConnection: "... \u06CC\uFEAE\uFE91\u0631\uFE8E\uFB90 \u0628\uFE8E\uFEB4\uFEA3
+    \uFEEA\uFE91 \u0644\uFE8E\uFEBC\uFE97\u0627 \u0644\uFE8E\uFEA3 \u0631\u062F"
+  Error_InternetAccess: "!\uFE96\uFEE7\uFEAE\uFE98\uFEE8\uFEF3\u0627 \uFEEA\uFE91
+    \u0644\uFE8E\uFEBC\uFE97\u0627 \u0631\u062F \uFE8E\uFEC4\uFEA7\r"
+  Error_SmsService: "!\uFE96\uFEB4\uFEF4\uFEE7 \u0633\uFEAE\uFE98\uFEB3\u062F \u0631\u062F
+    \u0647\uFE8E\uFE97\uFEEE\uFB90 \u0645\uFE8E\uFEF4\uFB58 \uFEB2\uFEF3\u0648\uFEAE\uFEB3\r"
+  Error_UnknownPhoneNumber: "\uFE96\uFEB3\u0627 \u0647\uFEAA\uFEB8\uFEE7 \uFE96\uFE92\uFE9B
+    \uFEE6\uFED4\uFEE0\uFE97 \u0647\u0631\uFE8E\uFEE4\uFEB7 \uFEE6\uFEF3\u0627"
+  Error_AccountRecovery: "\u062F\u0631\u0627\uFEAA\uFEE7 \u062F\uFEEE\uFE9F\u0648
+    \u064A\uFEAE\uFE91\u0631\uFE8E\uFB90 \u0628\uFE8E\uFEB4\uFEA3 \uFEEA\uFE91 \u0644\uFE8E\uFEBC\uFE97\u0627
+    \u0646\uFE8E\uFB91\uFEE3\u0627"
+  Error_InvalidCode: "!\uFE96\uFEB4\uFEF4\uFEE7 \uFEA2\uFEF4\uFEA4\uFEBB \uFEAA\uFB90"

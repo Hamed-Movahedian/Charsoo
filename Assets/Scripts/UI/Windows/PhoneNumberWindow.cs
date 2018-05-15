@@ -6,16 +6,19 @@ public class PhoneNumberWindow : UIWindow
 {
     public InputField PhoneNumberInputField;
 
+    private LanguagePack LanguagePack
+    {
+        get { return LanguageManager.Instance.LanguagePack; }
+    }
+    private UIController UIController { get { return UIController.Instance; } }
+
     public IEnumerator SendCodeButton()
     {
         // Hide phone number window
         yield return Hide();
 
-        UIController _uiController = UIController
-                    .Instance;
-
         // Show in-progress window
-        yield return _uiController.ShowInprogressWindow("در حال ارسال کد...");
+        yield return UIController.ShowInprogressWindow(LanguagePack.Inprogress_AccountRecovery);
 
         // Send Random code to phone number
         yield return AccountManager
@@ -23,25 +26,25 @@ public class PhoneNumberWindow : UIWindow
             .SendRandomCodeToPhonenumber(PhoneNumberInputField.text);
 
         // Hide in-progress window
-        yield return _uiController.HideInprogressWindow();
+        yield return UIController.HideInprogressWindow();
 
         // Switch Send code result
         switch (AccountManager.Instance.SendCodeResault)
         {
             case AccountManager.SendCodeResaultEnum.NotRegister:
-                _uiController.DisplayError("شماره واره شده قبلا ثبت نشده است!");
+                yield return UIController.DisplayError(LanguagePack.Error_UnknownPhoneNumber);
                 break;
 
             case AccountManager.SendCodeResaultEnum.NetworkError:
-                _uiController.DisplayError("خطا در دسترسی به اینترنت!");
+                yield return UIController.DisplayError(LanguagePack.Error_InternetAccess);
                 break;
 
             case AccountManager.SendCodeResaultEnum.SmsServiceError:
-                _uiController.DisplayError("سرویس پیام کوتاه در حال حاظر در دسترس نیست!");
+                yield return UIController.DisplayError(LanguagePack.Error_SmsService);
                 break;
 
             case AccountManager.SendCodeResaultEnum.Success:
-                _uiController.inputCodeWindow.ShowWaitForCloseHide();
+                yield return UIController.InputCodeWindow.ShowWaitForCloseHide();
 
                 if (AccountManager.Instance.IsConnected)
                 {
@@ -54,4 +57,5 @@ public class PhoneNumberWindow : UIWindow
         // Show phone number window in case of error
         yield return Show();
     }
+
 }
