@@ -1,11 +1,34 @@
 ﻿using System;
 using System.Collections;
 using MgsCommonLib;
+using MgsCommonLib.UI;
+using UnityEngine;
 
 public class UIController : MgsSingleton<UIController>
 {
-    internal IEnumerator DisplayInprogress(string message)
+    [Header("Specific windows")]
+    public PhoneNumberWindow PhoneNumberWindow;
+    public InputCodeWindow inputCodeWindow;
+
+    [Header("General windows")]
+    public UIWindow InprogressWindow;
+    public UIWindow ErrorWindow;
+
+
+    internal IEnumerator ShowInprogressWindow(string message)
     {
-        yield return null;
+        InprogressWindow.SetTextMessage(message);
+
+        yield return InprogressWindow.Show();
+    }
+
+    internal IEnumerator HideInprogressWindow()
+    {
+        yield return InprogressWindow.Hide();
+    }
+
+    internal void DisplayError(string v)
+    {
+        throw new NotImplementedException();
     }
 }
