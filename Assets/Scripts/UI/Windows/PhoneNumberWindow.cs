@@ -2,16 +2,10 @@
 using MgsCommonLib.UI;
 using UnityEngine.UI;
 
-public class PhoneNumberWindow : UIWindow
+public class PhoneNumberWindow : UIWindowBase
 {
     public InputField PhoneNumberInputField;
-
-    private LanguagePack LanguagePack
-    {
-        get { return LanguageManager.Instance.LanguagePack; }
-    }
-    private UIController UIController { get { return UIController.Instance; } }
-
+    
     public IEnumerator SendCodeButton()
     {
         // Hide phone number window
@@ -32,15 +26,21 @@ public class PhoneNumberWindow : UIWindow
         switch (AccountManager.Instance.SendCodeResault)
         {
             case AccountManager.SendCodeResaultEnum.NotRegister:
-                yield return UIController.DisplayError(LanguagePack.Error_UnknownPhoneNumber);
+                yield return UIController.DisplayError(
+                    LanguagePack.Error_UnknownPhoneNumber,
+                    IconPack.UnkownPhone);
                 break;
 
             case AccountManager.SendCodeResaultEnum.NetworkError:
-                yield return UIController.DisplayError(LanguagePack.Error_InternetAccess);
+                yield return UIController.DisplayError(
+                    LanguagePack.Error_InternetAccess,
+                    IconPack.NetworkError);
                 break;
 
             case AccountManager.SendCodeResaultEnum.SmsServiceError:
-                yield return UIController.DisplayError(LanguagePack.Error_SmsService);
+                yield return UIController.DisplayError(
+                    LanguagePack.Error_SmsService,
+                    IconPack.ServiceError);
                 break;
 
             case AccountManager.SendCodeResaultEnum.Success:

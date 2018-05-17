@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "Language", menuName = "CharsooAssets/LanguagePack", order = 1)]
+[CreateAssetMenu(fileName = "LanguagePack", menuName = "CharsooAssets/LanguagePack", order = 1)]
 public class LanguagePack : ScriptableObject
 {
     [Header("Messages")]

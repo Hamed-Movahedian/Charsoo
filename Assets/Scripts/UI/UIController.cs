@@ -30,10 +30,13 @@ public class UIController : MgsSingleton<UIController>
         yield return InprogressWindow.Hide();
     }
 
-    internal IEnumerator DisplayError(string message)
+    internal IEnumerator DisplayError(string message, Sprite icon)
     {
         // Set text of lable in "Message" game object
         ErrorWindow.SetTextMessage(message);
+
+        // Set sprite of Image in "Icon" game object
+        ErrorWindow.SetIcon(icon);
 
         // Show in-progress window => wait for close => hide
         yield return ErrorWindow.ShowWaitForCloseHide();

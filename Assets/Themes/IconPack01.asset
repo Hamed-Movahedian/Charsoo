@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449178a2964340447bece3c281dbe5d3, type: 3}
+  m_Name: IconPack01
+  m_EditorClassIdentifier: 
+  GeneralError: {fileID: 21300000, guid: 8cf0206026a160545a2e27d84a6b5bf3, type: 3}
+  NetworkError: {fileID: 21300000, guid: 04b8907564521e9428348e6fd0a3022b, type: 3}
+  ServiceError: {fileID: 21300000, guid: 04b8907564521e9428348e6fd0a3022b, type: 3}
+  UnkownPhone: {fileID: 21300000, guid: 4a8301c52fc83fd45a51aad21c06a5c8, type: 3}
+  InvalidCode: {fileID: 21300000, guid: d88922ff10bd0374fbaf1b58dcfbdae4, type: 3}

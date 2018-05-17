@@ -3,15 +3,9 @@ using System.Collections;
 using MgsCommonLib.UI;
 using UnityEngine.UI;
 
-public class InputCodeWindow : UIWindow
+public class InputCodeWindow : UIWindowBase
 {
     public InputField CodeInputField;
-
-    private LanguagePack LanguagePack
-    {
-        get { return LanguageManager.Instance.LanguagePack; }
-    }
-    public UIController UIController { get { return UIController.Instance; } }
 
 
     public IEnumerator ValidateCode()
@@ -35,14 +29,17 @@ public class InputCodeWindow : UIWindow
             switch (AccountManager.Instance.AccountConnectionResult)
             {
                 case AccountManager.AccountConnectionResultEnum.NetworkError:
-                    yield return UIController.DisplayError(LanguagePack.Error_InternetAccess);
+                    yield return UIController
+                        .DisplayError(LanguagePack.Error_InternetAccess,IconPack.NetworkError);
                     break;
                 case AccountManager.AccountConnectionResultEnum.AccountError:
-                    yield return UIController.DisplayError(LanguagePack.Error_AccountRecovery);
+                    yield return UIController
+                        .DisplayError(LanguagePack.Error_AccountRecovery,IconPack.GeneralError);
                     break;
                 case AccountManager.AccountConnectionResultEnum.Success:
                     // Display proper message
-                    yield return UIController.DisplayMessage(LanguagePack.SuccesfullAccountRecovery);
+                    yield return UIController
+                        .DisplayMessage(LanguagePack.SuccesfullAccountRecovery);
 
                     // Close window
                     Close();
@@ -57,7 +54,9 @@ public class InputCodeWindow : UIWindow
             // *************** Code isn't valid
 
             // Invalid code Error
-            yield return UIController.DisplayError(LanguagePack.Error_InvalidCode);
+            yield return UIController.DisplayError(
+                LanguagePack.Error_InvalidCode,
+                IconPack.InvalidCode);
         }
 
         // Show Input code window again

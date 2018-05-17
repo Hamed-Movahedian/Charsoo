@@ -3,11 +3,9 @@ using System.Collections;
 using MgsCommonLib.UI;
 using UnityEngine.UI;
 
-public class PlayerInfoEditor : UIWindow
+public class PlayerInfoEditor : UIWindowBase
 {
     #region pubic
-
-    public PhoneNumberWindow PhoneNumberWindow;
 
     public InputField NameInputField;
     public Button AccountButton;
