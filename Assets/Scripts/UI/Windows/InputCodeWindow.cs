@@ -18,12 +18,16 @@ public class InputCodeWindow : UIWindowBase
         {
             // ************** Code is valid => Restore account
 
-            // Display inprogress window
+            // Display in progress window
             yield return UIController.ShowInprogressWindow(LanguagePack.Inprogress_AccountConnection);
 
             // Try to connect to account
             yield return AccountManager
                 .Instance.ConnectToAccount();
+
+            // Hide in-progress window
+            yield return UIController
+                .HideInprogressWindow();
 
             // Switch connection result
             switch (AccountManager.Instance.AccountConnectionResult)

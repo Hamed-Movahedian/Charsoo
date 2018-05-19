@@ -26,25 +26,29 @@ public class PhoneNumberWindow : UIWindowBase
         switch (AccountManager.Instance.SendCodeResault)
         {
             case AccountManager.SendCodeResaultEnum.NotRegister:
-                yield return UIController.DisplayError(
-                    LanguagePack.Error_UnknownPhoneNumber,
-                    IconPack.UnkownPhone);
+                yield return UIController
+                    .DisplayError(
+                        LanguagePack.Error_UnknownPhoneNumber,
+                        IconPack.UnkownPhone);
                 break;
 
             case AccountManager.SendCodeResaultEnum.NetworkError:
-                yield return UIController.DisplayError(
-                    LanguagePack.Error_InternetAccess,
-                    IconPack.NetworkError);
+                yield return UIController
+                    .DisplayError(
+                        LanguagePack.Error_InternetAccess,
+                        IconPack.NetworkError);
                 break;
 
             case AccountManager.SendCodeResaultEnum.SmsServiceError:
-                yield return UIController.DisplayError(
-                    LanguagePack.Error_SmsService,
-                    IconPack.ServiceError);
+                yield return UIController
+                    .DisplayError(
+                        LanguagePack.Error_SmsService,
+                        IconPack.ServiceError);
                 break;
 
             case AccountManager.SendCodeResaultEnum.Success:
-                yield return UIController.InputCodeWindow.ShowWaitForCloseHide();
+                yield return UIController
+                    .InputCodeWindow.ShowWaitForCloseHide();
 
                 if (AccountManager.Instance.IsConnected)
                 {

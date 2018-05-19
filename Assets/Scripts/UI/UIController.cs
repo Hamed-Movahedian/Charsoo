@@ -9,6 +9,8 @@ public class UIController : MgsSingleton<UIController>
     [Header("Specific windows")]
     public PhoneNumberWindow PhoneNumberWindow;
     public InputCodeWindow InputCodeWindow;
+    public PlayerInfoEditor PlayerInfoEditor;
+
 
     [Header("General windows")]
     public UIWindow InprogressWindow;
@@ -44,11 +46,11 @@ public class UIController : MgsSingleton<UIController>
 
     public IEnumerator DisplayMessage(string message)
     {
-        // Set text of lable in "Message" game object
-        ErrorWindow.SetTextMessage(message);
+        // Set text of label in "Message" game object
+        MessageWindow.SetTextMessage(message);
 
         // Show in-progress window => wait for close => hide
-        yield return ErrorWindow.ShowWaitForCloseHide();
+        yield return MessageWindow.ShowWaitForCloseHide();
 
     }
 }

@@ -19,7 +19,6 @@ public class PlayerInfoEditor : UIWindowBase
 
         // Show phone number window => wait for close => Hide
         yield return UIController
-            .Instance
             .PhoneNumberWindow.ShowWaitForCloseHide();
 
         // if connected refresh window

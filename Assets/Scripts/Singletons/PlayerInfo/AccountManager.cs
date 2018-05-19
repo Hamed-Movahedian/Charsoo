@@ -34,12 +34,7 @@ public class AccountManager : MgsSingleton<AccountManager>
     private string _generatedCode;
     private string _phoneNumber;
 
-    private IEnumerator RestoreAccountFromServer(string phoneNumber)
-    {
-        yield return new WaitForSeconds(4);
-        IsConnected = true;
-    }
-
+ 
     public IEnumerator SendRandomCodeToPhonenumber(string phoneNumber)
     {
         // Save phone number for later use
@@ -63,10 +58,8 @@ public class AccountManager : MgsSingleton<AccountManager>
             case '2':
                 SendCodeResault = SendCodeResaultEnum.SmsServiceError;
                 break;
-            case '3':
-                SendCodeResault = SendCodeResaultEnum.Success;
-                break;
             default:
+                SendCodeResault = SendCodeResaultEnum.Success;
                 break;
         }
     }
@@ -86,12 +79,16 @@ public class AccountManager : MgsSingleton<AccountManager>
         {
             case '0':
                 AccountConnectionResult=AccountConnectionResultEnum.AccountError;
+                IsConnected = false;
                 break;
             case '1':
                 AccountConnectionResult=AccountConnectionResultEnum.NetworkError;
+                IsConnected = false;
                 break;
-            case '2':
+            default:
                 AccountConnectionResult=AccountConnectionResultEnum.Success;
+                Singleton.Instance.PlayerController.Name = "نام بازیابی شده";
+                IsConnected = true;
                 break;
         }
     }

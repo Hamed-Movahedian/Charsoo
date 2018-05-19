@@ -55,11 +55,10 @@ public class PlayerController : BaseObject
             {
                 Name = ArabicFixer.Fix("بدون نام")
             };
-            yield return EditPlayerInfoByUser();
+            yield return UIController.Instance
+                .PlayerInfoEditor
+                .EditPlayerInfo();
         }
-
-        // Save PlayerInfo to localDB
-        LocalDatabase.InsertOrReplace(PlayerInfo);
 
         if (PlayerInfo.PlayerID == null)
         {
@@ -112,60 +111,7 @@ public class PlayerController : BaseObject
 
     #endregion
 
-   #region EditPlayerInfoByUser
-
-    public IEnumerator EditPlayerInfoByUser()
-    {
-        #region Initialize userInfoWindow
-
-        // Get window
-        var userInfoWindow = UIWindow.GetWindow("UserInfoWindow");
-
-        // Set components 
-        userInfoWindow.GetComponentByName<InputField>("Name").text = PlayerInfo.Name;
-
-        #endregion
-
-        while (true)
-        {
-            // Show - Wait for action - Hide
-            yield return userInfoWindow.ShowWaitForActionHide();
-
-            // Enter Game
-            if (userInfoWindow.CheckLastAction("EnterGame"))
-            {
-                // Initialize player info with user data
-                PlayerInfo = new PlayerInfo
-                {
-                    Name = userInfoWindow.GetComponentByName<InputField>("Name").text
-                };
-
-                // Save playerInfo to localDB
-                LocalDatabase.InsertOrReplace(PlayerInfo);
-
-                yield break;
-
-            }
-
-            // ConnectToAccount
-            if (userInfoWindow.CheckLastAction("ConnectToAccount"))
-            {
-                // Try to connect to account by phone number
-                yield return AccountManager.Instance.ConnectToAccount();
-
-                // Successfully connected - return
-                if (AccountManager.Instance.IsConnected)
-                    yield break;
-
-                // Fail to connect => show window and wait for user action
-                yield return userInfoWindow.Show();
-            }
-        }
-    }
-
-    #endregion
-
-
+ 
     public void SaveToLocalDB()
     {
         LocalDatabase.InsertOrReplace(PlayerInfo);
