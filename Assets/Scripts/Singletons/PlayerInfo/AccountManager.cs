@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
 using ArabicSupport;
 using MgsCommonLib;
 using MgsCommonLib.UI;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class AccountManager : MgsSingleton<AccountManager>
 {
@@ -34,8 +35,9 @@ public class AccountManager : MgsSingleton<AccountManager>
     private string _generatedCode;
     private string _phoneNumber;
 
- 
-    public IEnumerator SendRandomCodeToPhonenumber(string phoneNumber)
+    #region Send code
+
+    public IEnumerator SendRandomCodeToPhoneNumber(string phoneNumber)
     {
         // Save phone number for later use
         _phoneNumber = phoneNumber;
@@ -43,26 +45,34 @@ public class AccountManager : MgsSingleton<AccountManager>
         // Generate random number
         _generatedCode = Random.Range(1000, 9999).ToString();
 
-        // Wait for 3 sec (for test!!)
-        yield return new WaitForSeconds(3);
+        // Set default error code to network error
+        SendCodeResault = SendCodeResaultEnum.NetworkError;
 
-        // Set error code base on phone number (for test!!)
-        switch (phoneNumber[0])
-        {
-            case '0':
-                SendCodeResault = SendCodeResaultEnum.NetworkError;
-                break;
-            case '1':
-                SendCodeResault = SendCodeResaultEnum.NotRegister;
-                break;
-            case '2':
-                SendCodeResault = SendCodeResaultEnum.SmsServiceError;
-                break;
-            default:
-                SendCodeResault = SendCodeResaultEnum.Success;
-                break;
-        }
+        // Ask server to send sms
+        yield return Server.Post<string>(
+            string.Format(@"Account/SendSms?phoneNumber={0}&code={1}",
+                phoneNumber, _generatedCode),
+            null,
+            respond =>
+            {
+                // Set error code base on respond
+                switch (respond.ToLower())
+                {
+                    case "notregister":
+                        SendCodeResault = SendCodeResaultEnum.NotRegister;
+                        break;
+                    case "nosmsservice":
+                        SendCodeResault = SendCodeResaultEnum.SmsServiceError;
+                        break;
+                    case "ok":
+                        SendCodeResault = SendCodeResaultEnum.Success;
+                        break;
+                }
+            });
+
     }
+
+    #endregion
 
     public bool IsCodeValid(string inputCode)
     {
@@ -71,22 +81,38 @@ public class AccountManager : MgsSingleton<AccountManager>
 
     public IEnumerator ConnectToAccount()
     {
-        // Wait for 4 sec... (for test!!!)
-        yield return new WaitForSeconds(4);
+        // Set default result to network error
+        AccountConnectionResult = AccountConnectionResultEnum.NetworkError;
 
+        // Ask command center to connect to account
+        yield return Server.Post<string>(
+             string.Format(@"Commands/ConnectToAccount?phoneNumber={0}&lastCommandTime={1:s}",
+                 _phoneNumber,
+                 DateTime.Now),
+             null,
+             respond =>
+             {
+                 if (respond.ToLower() == "fail")
+                     AccountConnectionResult = AccountConnectionResultEnum.AccountError;
+                 else
+                 {
+                     Singleton.Instance.CommandController
+                        .
+                 }
+             });
         // Set error code base on phone number (for test!!)
         switch (_phoneNumber[1])
         {
             case '0':
-                AccountConnectionResult=AccountConnectionResultEnum.AccountError;
+                AccountConnectionResult = AccountConnectionResultEnum.AccountError;
                 IsConnected = false;
                 break;
             case '1':
-                AccountConnectionResult=AccountConnectionResultEnum.NetworkError;
+                AccountConnectionResult = AccountConnectionResultEnum.NetworkError;
                 IsConnected = false;
                 break;
             default:
-                AccountConnectionResult=AccountConnectionResultEnum.Success;
+                AccountConnectionResult = AccountConnectionResultEnum.Success;
                 Singleton.Instance.PlayerController.Name = "نام بازیابی شده";
                 IsConnected = true;
                 break;

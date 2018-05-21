@@ -13,14 +13,14 @@ public class UIController : MgsSingleton<UIController>
 
 
     [Header("General windows")]
-    public UIWindow InprogressWindow;
-    public UIWindow ErrorWindow;
-    public UIWindow MessageWindow;
+    public MgsUIWindow InprogressWindow;
+    public MgsUIWindow ErrorWindow;
+    public MgsUIWindow MessageWindow;
 
 
     internal IEnumerator ShowInprogressWindow(string message)
     {
-        // Set text of lable in "Message" game object
+        // Set text of label in "Message" game object
         InprogressWindow.SetTextMessage(message);
 
         // Show in-progress window
@@ -34,7 +34,7 @@ public class UIController : MgsSingleton<UIController>
 
     internal IEnumerator DisplayError(string message, Sprite icon)
     {
-        // Set text of lable in "Message" game object
+        // Set text of label in "Message" game object
         ErrorWindow.SetTextMessage(message);
 
         // Set sprite of Image in "Icon" game object

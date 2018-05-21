@@ -17,7 +17,7 @@ public class PhoneNumberWindow : UIWindowBase
         // Send Random code to phone number
         yield return AccountManager
             .Instance
-            .SendRandomCodeToPhonenumber(PhoneNumberInputField.text);
+            .SendRandomCodeToPhoneNumber(PhoneNumberInputField.text);
 
         // Hide in-progress window
         yield return UIController.HideInprogressWindow();

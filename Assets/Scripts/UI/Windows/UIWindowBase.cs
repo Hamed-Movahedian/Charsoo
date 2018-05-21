@@ -1,6 +1,6 @@
 ﻿using MgsCommonLib.UI;
 
-public class UIWindowBase : UIWindow
+public class UIWindowBase : MgsUIWindow
 {
     protected LanguagePack LanguagePack
     {
