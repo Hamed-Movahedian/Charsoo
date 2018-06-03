@@ -23,30 +23,42 @@ public class PhoneNumberWindow : UIWindowBase
         yield return UIController.HideInprogressWindow();
 
         // Switch Send code result
-        switch (AccountManager.Instance.SendCodeResault)
+        switch (AccountManager.Instance.SendCodeResult)
         {
-            case AccountManager.SendCodeResaultEnum.NotRegister:
+            // شماره ثبت نشده است
+            case AccountManager.SendCodeResultEnum.NotRegister:
                 yield return UIController
                     .DisplayError(
                         LanguagePack.Error_UnknownPhoneNumber,
                         IconPack.UnkownPhone);
                 break;
 
-            case AccountManager.SendCodeResaultEnum.NetworkError:
+            // شماره تلفن معتبر نیست
+            case AccountManager.SendCodeResultEnum.InvalidPhoneNumber:
+                yield return UIController
+                    .DisplayError(
+                        LanguagePack.Error_InvalidPhoneNumber,
+                        IconPack.UnkownPhone);
+                break;
+
+            // خطا در اتصال به سرور
+            case AccountManager.SendCodeResultEnum.NetworkError:
                 yield return UIController
                     .DisplayError(
                         LanguagePack.Error_InternetAccess,
                         IconPack.NetworkError);
                 break;
 
-            case AccountManager.SendCodeResaultEnum.SmsServiceError:
+            // سرویس پیام کوتاه در دسترس نیست
+            case AccountManager.SendCodeResultEnum.SmsServiceError:
                 yield return UIController
                     .DisplayError(
                         LanguagePack.Error_SmsService,
                         IconPack.ServiceError);
                 break;
 
-            case AccountManager.SendCodeResaultEnum.Success:
+            // ارسال موفقیت آمیر کد به صورت پیام کوتاه
+            case AccountManager.SendCodeResultEnum.Success:
                 yield return UIController
                     .InputCodeWindow.ShowWaitForCloseHide();
 

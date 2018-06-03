@@ -116,4 +116,15 @@ public class PlayerController : BaseObject
     {
         LocalDatabase.InsertOrReplace(PlayerInfo);
     }
+
+    public void SetPlayerInfo(PlayerInfo playerInfo)
+    {
+        PlayerInfo = playerInfo;
+    }
+
+    public void SetPlayerInfoAndSaveTolocalDB(PlayerInfo playerInfo)
+    {
+        SetPlayerInfo(playerInfo);
+        SaveToLocalDB();
+    }
 }

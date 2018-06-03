@@ -9,12 +9,13 @@ using Random = UnityEngine.Random;
 public class AccountManager : MgsSingleton<AccountManager>
 {
     #region Enums
-    public enum SendCodeResaultEnum
+    public enum SendCodeResultEnum
     {
         NotRegister,
         NetworkError,
         SmsServiceError,
-        Success
+        Success,
+        InvalidPhoneNumber
     }
 
     public enum AccountConnectionResultEnum
@@ -26,16 +27,25 @@ public class AccountManager : MgsSingleton<AccountManager>
 
     #endregion
 
+    #region Fields
+
+    // Is successfully connect to an account
     public bool IsConnected = false;
 
-    public SendCodeResaultEnum SendCodeResault;
+    // Send code via sms result
+    public SendCodeResultEnum SendCodeResult;
 
+    // connect to account result
     public AccountConnectionResultEnum AccountConnectionResult;
 
+    // cache random code and phone number
     private string _generatedCode;
     private string _phoneNumber;
 
-    #region Send code
+
+    #endregion
+
+    #region Send code via SMS
 
     public IEnumerator SendRandomCodeToPhoneNumber(string phoneNumber)
     {
@@ -45,77 +55,83 @@ public class AccountManager : MgsSingleton<AccountManager>
         // Generate random number
         _generatedCode = Random.Range(1000, 9999).ToString();
 
-        // Set default error code to network error
-        SendCodeResault = SendCodeResaultEnum.NetworkError;
-
         // Ask server to send sms
         yield return Server.Post<string>(
             string.Format(@"Account/SendSms?phoneNumber={0}&code={1}",
                 phoneNumber, _generatedCode),
             null,
+            // On success
             respond =>
             {
                 // Set error code base on respond
                 switch (respond.ToLower())
                 {
                     case "notregister":
-                        SendCodeResault = SendCodeResaultEnum.NotRegister;
+                        SendCodeResult = SendCodeResultEnum.NotRegister;
                         break;
                     case "nosmsservice":
-                        SendCodeResault = SendCodeResaultEnum.SmsServiceError;
+                        SendCodeResult = SendCodeResultEnum.SmsServiceError;
+                        break;
+                    case "invalidphonenumber":
+                        SendCodeResult = SendCodeResultEnum.InvalidPhoneNumber;
                         break;
                     case "ok":
-                        SendCodeResault = SendCodeResaultEnum.Success;
+                        SendCodeResult = SendCodeResultEnum.Success;
                         break;
                 }
+            },
+            // On ERROR !!!
+            request =>
+            {
+                // Set default error code to network error
+                SendCodeResult = SendCodeResultEnum.NetworkError;
             });
 
     }
 
     #endregion
 
+    #region Check code validation
+
     public bool IsCodeValid(string inputCode)
     {
         return inputCode == _generatedCode;
     }
 
+    #endregion
+
+    #region Connect to account via phone number
+
     public IEnumerator ConnectToAccount()
     {
-        // Set default result to network error
-        AccountConnectionResult = AccountConnectionResultEnum.NetworkError;
-
         // Ask command center to connect to account
-        yield return Server.Post<string>(
-             string.Format(@"Commands/ConnectToAccount?phoneNumber={0}&lastCommandTime={1:s}",
-                 _phoneNumber,
-                 DateTime.Now),
-             null,
-             respond =>
-             {
-                 if (respond.ToLower() == "fail")
-                     AccountConnectionResult = AccountConnectionResultEnum.AccountError;
-                 else
-                 {
-                     Singleton.Instance.CommandController
-                        .
-                 }
-             });
-        // Set error code base on phone number (for test!!)
-        switch (_phoneNumber[1])
-        {
-            case '0':
-                AccountConnectionResult = AccountConnectionResultEnum.AccountError;
-                IsConnected = false;
-                break;
-            case '1':
-                AccountConnectionResult = AccountConnectionResultEnum.NetworkError;
-                IsConnected = false;
-                break;
-            default:
-                AccountConnectionResult = AccountConnectionResultEnum.Success;
-                Singleton.Instance.PlayerController.Name = "نام بازیابی شده";
+        yield return Server.Post<PlayerInfo>(
+            string.Format(@"Account/ConnectToAccount?phoneNumber={0}", _phoneNumber),
+            null,
+            // On Successfully connect to the account
+            playerInfo =>
+            {
+                // Set player info and save to local DB
+                Singleton.Instance.PlayerController
+                    .SetPlayerInfoAndSaveTolocalDB(playerInfo);
+
+                // Account is connected
                 IsConnected = true;
-                break;
-        }
+
+                // Set connection result to success
+                AccountConnectionResult = AccountConnectionResultEnum.Success;
+            },
+            // On Error
+            request =>
+            {
+                // Network Error !!!!!
+                if (request.isNetworkError)
+                    AccountConnectionResult = AccountConnectionResultEnum.NetworkError;
+                // Account recovery Error !!!!
+                else if (request.isHttpError)
+                    AccountConnectionResult = AccountConnectionResultEnum.AccountError;
+            });
     }
+
+    #endregion
 }

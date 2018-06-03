@@ -19,6 +19,6 @@ public class LanguagePack : ScriptableObject
     [Multiline] public string Error_UnknownPhoneNumber;
     [Multiline] public string Error_AccountRecovery;
     [Multiline] public string Error_InvalidCode;
-
+    [Multiline] public string Error_InvalidPhoneNumber;
 }
 

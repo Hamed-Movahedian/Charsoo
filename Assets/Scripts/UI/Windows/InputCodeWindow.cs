@@ -32,14 +32,17 @@ public class InputCodeWindow : UIWindowBase
             // Switch connection result
             switch (AccountManager.Instance.AccountConnectionResult)
             {
+                // Network Error !!!!!
                 case AccountManager.AccountConnectionResultEnum.NetworkError:
                     yield return UIController
                         .DisplayError(LanguagePack.Error_InternetAccess,IconPack.NetworkError);
                     break;
+                // Account can't recover error !!!!!
                 case AccountManager.AccountConnectionResultEnum.AccountError:
                     yield return UIController
                         .DisplayError(LanguagePack.Error_AccountRecovery,IconPack.GeneralError);
                     break;
+                // Successfully connect to account !!!!!
                 case AccountManager.AccountConnectionResultEnum.Success:
                     // Display proper message
                     yield return UIController

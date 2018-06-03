@@ -58,7 +58,9 @@ public static class Server
     #region Post
 
  
-    public static IEnumerator Post<TReturnType>(string url, object bodyData, Action<TReturnType> onSuccess)
+    public static IEnumerator Post<TReturnType>(string url, object bodyData, 
+        Action<TReturnType> onSuccess, 
+        Action<UnityWebRequest> onError=null )
     {
         UnityWebRequest request = PostRequest(url, bodyData);
 
@@ -68,8 +70,15 @@ public static class Server
             yield return null;
 
         if (!request.isHttpError && !request.isNetworkError)
+        {
             if (onSuccess != null)
                 onSuccess(JsonConvert.DeserializeObject<TReturnType>(request.downloadHandler.text));
+        }
+        else
+        {
+            if (onError != null)
+                onError(request);
+        }
     }
 
     #endregion

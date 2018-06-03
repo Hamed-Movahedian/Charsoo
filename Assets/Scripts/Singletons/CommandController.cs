@@ -30,7 +30,7 @@ public class CommandController : BaseObject
 
     }
 
-    private void RunCommands(string content)
+    public void RunCommands(string content)
     {
         JArray jobject = JArray.Parse(content);
 
