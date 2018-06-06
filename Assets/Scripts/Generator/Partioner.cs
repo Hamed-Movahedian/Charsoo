@@ -19,11 +19,12 @@ public class Partioner : BaseObject
 
     public Func<string, float, bool> ShowProgressBar;
     public Func<double> GetTime;
+
     private double _lastTime;
     private int _invalidResults;
     public bool Validate = true;
 
-    public void PartionLetters()
+    public void PortionLetters()
     {
         // initialize
         _cancel = false;
@@ -37,7 +38,7 @@ public class Partioner : BaseObject
 
         for (int i = 0; i < 30000; i++)
         {
-            if (TryPartion())
+            if (TryPartition())
             {
                 solver.ProgressTitle = "Result number " + (_invalidResults + 1);
                 if (Validate)
@@ -80,13 +81,13 @@ public class Partioner : BaseObject
         {
             Debug.Log(ErrorCount+1);
             ErrorCount++;
-            PartionLetters();
+            PortionLetters();
         }
         Debug.LogError(string.Format("Portion failed with {0} Invalid results !!!", _invalidResults));
     }
 
 
-    private bool TryPartion()
+    private bool TryPartition()
     {
         LetterController.ConnectAdjacentLetters();
 
@@ -95,7 +96,7 @@ public class Partioner : BaseObject
             Paritions = new List<List<Letter>>();
         Paritions.Clear();
 
-        // Add first partion with all letters
+        // Add first partition with all letters
         Paritions.Add(
             WordManager
             .GetComponentsInChildren<Word>()
@@ -106,20 +107,20 @@ public class Partioner : BaseObject
 
         while (Paritions.Max(p => p.Count) > MaxSize)
         {
-            // Get random letter from biggest partion
-            List<Letter> biggestPartion = Paritions.OrderByDescending(p => p.Count).First();
-            Letter letter = GetRandomMember(biggestPartion);
+            // Get random letter from biggest partition
+            List<Letter> biggestPartition = Paritions.OrderByDescending(p => p.Count).First();
+            Letter letter = GetRandomMember(biggestPartition);
 
             // Get connected letters
-            List<Letter> newPartion = new List<Letter>();
-            GetConnectedLetters(letter, newPartion, Random.Range(MinZise+1, MaxSize + 1));
+            List<Letter> newPartition = new List<Letter>();
+            GetConnectedLetters(letter, newPartition, Random.Range(MinZise+1, MaxSize + 1));
 
-            // Disconnect newPartion and add to list
-            Disconnect(biggestPartion, newPartion);
-            Paritions.Add(newPartion);
+            // Disconnect newPartition and add to list
+            Disconnect(biggestPartition, newPartition);
+            Paritions.Add(newPartition);
 
-            // Separate Biggest partion in two -- if possible
-            Separate(biggestPartion);
+            // Separate Biggest partition in two -- if possible
+            Separate(biggestPartition);
 
             if (Paritions.Min(p => p.Count) < MinZise)
                 return false;
@@ -144,27 +145,27 @@ public class Partioner : BaseObject
         }
     }
 
-    private void Separate(List<Letter> partion)
+    private void Separate(List<Letter> partition)
     {
         List<Letter> tp = new List<Letter>();
 
-        GetConnectedLetters(partion[0], tp, partion.Count);
+        GetConnectedLetters(partition[0], tp, partition.Count);
 
-        if (tp.Count < partion.Count)
+        if (tp.Count < partition.Count)
         {
-            tp.ForEach(l => partion.Remove(l));
+            tp.ForEach(l => partition.Remove(l));
             Paritions.Add(tp);
-            Separate(partion);
+            Separate(partition);
         }
     }
 
-    private void Disconnect(List<Letter> biggestPartion, List<Letter> newPartion)
+    private void Disconnect(List<Letter> biggestPartition, List<Letter> newPartition)
     {
-        foreach (Letter letter in newPartion)
-            biggestPartion.Remove(letter);
+        foreach (Letter letter in newPartition)
+            biggestPartition.Remove(letter);
 
-        foreach (Letter l1 in biggestPartion)
-            foreach (Letter l2 in newPartion)
+        foreach (Letter l1 in biggestPartition)
+            foreach (Letter l2 in newPartition)
                 l1.DisConnect(l2);
     }
 
@@ -187,7 +188,7 @@ public class Partioner : BaseObject
         return list[Random.Range(0, list.Count)];
     }
 
-    public void Shafle()
+    public void Shuffle()
     {
         _compressCount = 1;
         #region Shuffle partions
@@ -244,7 +245,7 @@ public class Partioner : BaseObject
 
                 x += bounds.extents.x;
 
-                MovePartion(index, new Vector3(x, y + bounds.extents.y) - bounds.center);
+                MovePartition(index, new Vector3(x, y + bounds.extents.y) - bounds.center);
 
                 x += bounds.extents.x;
 
@@ -291,29 +292,29 @@ public class Partioner : BaseObject
         LetterController.AllLetters.ForEach(l => l.Snap());
     }
 
-    private bool TryMoveToCenter(List<Letter> parition)
+    private bool TryMoveToCenter(List<Letter> partition)
     {
         bool result = false;
         // partition center
-        Vector3 center = parition
+        Vector3 center = partition
                           .Select(l => l.transform.position)
-                          .Aggregate((a, p) => a + p) * (1f / parition.Count);
+                          .Aggregate((a, p) => a + p) * (1f / partition.Count);
         // delta move
         Vector2 delta = new Vector2(center.x == 0 ? 0 : -Mathf.Sign(center.x), 0);
 
         if (delta != Vector2.zero)
-            if (IsValidMove(parition, delta))
+            if (IsValidMove(partition, delta))
             {
-                parition.ForEach(l => l.transform.position += (Vector3)delta);
+                partition.ForEach(l => l.transform.position += (Vector3)delta);
                 result = true;
             }
 
         delta = new Vector2(0, center.y == 0 ? 0 : -Mathf.Sign(center.y));
 
         if (delta != Vector2.zero)
-            if (IsValidMove(parition, delta))
+            if (IsValidMove(partition, delta))
             {
-                parition.ForEach(l =>
+                partition.ForEach(l =>
                 {
                     //if (!result)
                     Undo(l.transform, "Compress " + _compressCount);
@@ -325,17 +326,17 @@ public class Partioner : BaseObject
         return result;
     }
 
-    private bool IsValidMove(List<Letter> parition, Vector2 delta)
+    private bool IsValidMove(List<Letter> partition, Vector2 delta)
     {
-        foreach (Letter targetLetter in parition)
-            foreach (Letter otherLetter in _allLetters.Where(l => !parition.Contains(l)))
+        foreach (Letter targetLetter in partition)
+            foreach (Letter otherLetter in _allLetters.Where(l => !partition.Contains(l)))
                 if (Vector2.Distance((Vector2)targetLetter.transform.position + delta, otherLetter.transform.position) < 1.5f)
                     return false;
 
         return true;
     }
 
-    private void MovePartion(int index, Vector3 delta)
+    private void MovePartition(int index, Vector3 delta)
     {
         Paritions[index].ForEach(l =>
         {

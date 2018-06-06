@@ -11,7 +11,7 @@ public class WordSetGenerator : BaseObject
 
     public int UsedWordCount = 4;
     public bool BruteForce = false;
-    public int MaxResaults = 15000;
+    public int MaxResults = 15000;
 
     [TextArea]
     public string AllWords;
@@ -19,6 +19,8 @@ public class WordSetGenerator : BaseObject
     public List<string> WordStrings;
 
     public int NextResultIndex = 0;
+    public List<List<SWord>> EndResults;
+
 
     private HashSet<string> _results;
 
@@ -26,10 +28,9 @@ public class WordSetGenerator : BaseObject
     private List<SWord> _usedWords = new List<SWord>();
     private WordSet _wordSet;
     private bool _cancel;
-    public List<List<SWord>> EndResults;
     private Dictionary<string, int> _nameToId;
     private CommonLettersDictionary _clDictionary;
-    public Func<Letter, Letter> EditorInstatiate;
+    public Func<Letter, Letter> EditorInstantiate;
     public Action<string, float> ShowProgressBar;
     public Func<double> GetTime;
     private double _lastTime;
@@ -41,9 +42,9 @@ public class WordSetGenerator : BaseObject
     [ContextMenu("MakeWordSet")]
     public void MakeWordSet()
     {
-        // Clear last partions
-        Partioner partioner = GetComponent<Partioner>();
-        partioner.Clear();
+        // Clear last partitions
+        Partioner partitioner = GetComponent<Partioner>();
+        partitioner.Clear();
 
         // record time
         _lastTime = GetTime();
@@ -61,6 +62,7 @@ public class WordSetGenerator : BaseObject
         // Clear results
         if (_results == null)
             _results = new HashSet<string>();
+
         _results.Clear();
 
         // Initialize 
@@ -91,7 +93,7 @@ public class WordSetGenerator : BaseObject
         SWord word = null;
         int index = 0;
 
-        while (!_cancel && _results.Count < MaxResaults)
+        while (!_cancel && _results.Count < MaxResults)
         {
             if (BruteForce)
             {
@@ -105,9 +107,8 @@ public class WordSetGenerator : BaseObject
 
             word.X = 0;
             word.Y = 0;
-
-            //word.Direction = UnityEngine.Random.value < 0.5f ? Direction.Horizontal : Direction.Vertical;
             word.Direction = Direction.Horizontal;
+
             TryOtherWords(word);
 
         }
@@ -131,12 +132,12 @@ public class WordSetGenerator : BaseObject
         if (ShowProgressBar != null)
             if (GetTime() - _lastTime > .1)
             {
-                ShowProgressBar(_results.Count.ToString("N0") + " WordSet Found", _results.Count / (float)MaxResaults);
+                ShowProgressBar(_results.Count.ToString("N0") + " WordSet Found", _results.Count / (float)MaxResults);
                 _lastTime = GetTime();
             }
 
-        // Safe Gaurd
-        if (_results.Count > MaxResaults)
+        // Safe Guard
+        if (_results.Count > MaxResults)
             return;
 
         if (_cancel)
@@ -146,7 +147,7 @@ public class WordSetGenerator : BaseObject
         _usedWords.Add(lastWord);
 
         if (_usedWords.Count >= UsedWordCount)
-            // FIND A CORRECT PUZZEL !!!
+            // FIND A CORRECT PUZZLE !!!
             ResultFound();
         else
         {
@@ -178,18 +179,12 @@ public class WordSetGenerator : BaseObject
                     List<SWord> placements = GetWordPlacements(word);
                     placements
                         .ForEach(w => TryOtherWords(w));
-                    /*
-                                        if (placements.Count > 0)
-                                        {
-                                            TryOtherWords(placements[UnityEngine.Random.Range(0, placements.Count)]);
-                                            break;
-                                        }
-                    */
+
                 }
             }
         }
 
-        // Unuse last word
+        // Unused last word
         _usedWords.Remove(lastWord);
     }
 
@@ -272,24 +267,24 @@ public class WordSetGenerator : BaseObject
 
     private int Fitness2(List<SWord> result)
     {
-        Bounds b = new Bounds(result[0].Min, Vector3.zero);
+        Bounds b = new Bounds(result[0].Max, Vector3.zero);
 
         result.ForEach(w =>
         {
-            b.Encapsulate(w.Min);
             b.Encapsulate(w.Max);
+            b.Encapsulate(w.Min);
         });
 
         return (int)(1000 - Mathf.Abs(b.size.x - b.size.y) + (500 - b.size.x - b.size.y));
     }
     private float Fitness3(List<SWord> result)
     {
-        Bounds b = new Bounds(result[0].Min, Vector3.zero);
+        Bounds b = new Bounds(result[0].Max, Vector3.zero);
 
         result.ForEach(w =>
         {
-            b.Encapsulate(w.Min);
             b.Encapsulate(w.Max);
+            b.Encapsulate(w.Min);
         });
         int hCount = result.Count(w => w.Direction == Direction.Horizontal);
         int vCount = result.Count - hCount;
@@ -306,12 +301,12 @@ public class WordSetGenerator : BaseObject
 
     private void ResultFound()
     {
-        string sResualt = ConvertToString(_usedWords);
+        string sResult = ConvertToString(_usedWords);
 
-        if (_results.Contains(sResualt))
+        if (_results.Contains(sResult))
             return;
         else
-            _results.Add(sResualt);
+            _results.Add(sResult);
 
 
     }
@@ -417,9 +412,7 @@ public class WordSetGenerator : BaseObject
 
         return true;
     }
-
-
-
+    
     #endregion
 
     #region SpawnWordSet
@@ -442,7 +435,7 @@ public class WordSetGenerator : BaseObject
         _wordSet.Words = EndResults[NextResultIndex];
 
         WordSpawner.WordSet = _wordSet;
-        WordSpawner.EditorInstatiate = EditorInstatiate;
+        WordSpawner.EditorInstatiate = EditorInstantiate;
         WordSpawner.SpawnWords();
     }
 

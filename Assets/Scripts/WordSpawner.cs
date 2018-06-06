@@ -63,7 +63,7 @@ public class WordSpawner : BaseObject
         foreach (SWord sWord in WordSet.Words)
             SpawnWord(sWord);
 
-        // Postprocess
+        // PostProcess
         WordManager.GetWordsFormChilds();
         LetterController.ConnectAdjacentLetters();
     }
@@ -116,7 +116,7 @@ public class WordSpawner : BaseObject
             }
 
             wordComponent.Letters.Add(letter);
-            letter.gameObject.SetActive(false);
+            //letter.gameObject.SetActive(false);
         }
         if (Application.isPlaying)
         {

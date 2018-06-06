@@ -19,14 +19,14 @@ public class PartionerEditor : Editor
 
         if (GUILayout.Button("Partition"))
         {
-            _partioner.PartionLetters();
+            _partioner.PortionLetters();
             EditorUtility.ClearProgressBar();
         }
 
         if (GUILayout.Button("Shuffle"))
         {
             _partioner.Undo= Undo.RecordObject;
-            _partioner.Shafle();
+            _partioner.Shuffle();
         }
 
         if (GUILayout.Button("Compress"))

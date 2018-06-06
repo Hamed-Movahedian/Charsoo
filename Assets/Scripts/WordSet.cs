@@ -21,8 +21,8 @@ public class WordSet : ScriptableObject
                 w.LocationList.ForEach(l => bound.Encapsulate(l));
             else
             {
-                bound.Encapsulate(w.Min);
                 bound.Encapsulate(w.Max);
+                bound.Encapsulate(w.Min);
             }
         });
         return bound;
@@ -111,8 +111,8 @@ public class SWord
         }
     }
 
-    public Vector3 Min { get { return new Vector3(X, Y, 0); } }
-    public Vector3 Max { get { return new Vector3(XMin, YMin, 0); } }
+    public Vector3 Max { get { return new Vector3(X, Y, 0); } }
+    public Vector3 Min { get { return new Vector3(XMin, YMin, 0); } }
 
     public static SWord Create(SWord inWord)
     {
@@ -133,11 +133,5 @@ public class SWord
             return new Vector2(X, Y - i);
     }
 
-
-}
-
-[Serializable]
-public class Vector2I
-{
 
 }
