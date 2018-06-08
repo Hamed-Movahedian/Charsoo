@@ -33,6 +33,7 @@ public class Letter : BaseObject
     private Renderer[] _renderers;
     public bool Active=true;
     public GameObject Frame;
+    public char Char;
 
     #endregion
 

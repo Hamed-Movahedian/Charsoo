@@ -10,6 +10,7 @@ public class Word : BaseObject
     public Direction Direction;
     public bool IsComplete = false;
     private WordHighlightEffect _compeleteEffect;
+    public string Name;
 
 
     void Start()

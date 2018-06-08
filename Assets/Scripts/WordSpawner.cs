@@ -76,6 +76,7 @@ public class WordSpawner : BaseObject
         Word wordComponent = wordGameObject.AddComponent<Word>();
         wordComponent.Letters = new List<Letter>();
         wordComponent.Direction = sWord.Direction;
+        wordComponent.Name = sWord.Name;
         wordGameObject.transform.parent = WordManager.transform;
 
         for (int i = 0; i < sWord.Name.Length; i++)
@@ -103,7 +104,7 @@ public class WordSpawner : BaseObject
 
                 // Name
                 letter.name = "Letter " + sWord.Name[i];
-
+                letter.Char = sWord.Name[i];
                 // TextMesh
                 letter.SetCharacter(sWord.Name[i]);
 
