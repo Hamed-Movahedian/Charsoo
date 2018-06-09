@@ -137,11 +137,20 @@ public class Partioner : BaseObject
 
         Gizmos.color = ParitionColor;
 
-        foreach (List<Letter> parition in Paritions)
+        for (int i = 0; i < Paritions.Count; i++)
         {
+            List<Letter> parition = Paritions[i];
+
             Bounds bounds = new Bounds(parition[0].transform.position, Vector3.zero);
             parition.ForEach(l => bounds.Encapsulate(l.transform.position));
             Gizmos.DrawCube(bounds.center, bounds.size + new Vector3(.7f, .7f, 0));
+
+            var style= new GUIStyle();
+            style.fontSize = 30;
+            style.fontStyle = FontStyle.Bold;
+            style.normal.textColor = Color.yellow;
+            UnityEditor.Handles.color = Color.yellow;
+            UnityEditor.Handles.Label(bounds.center+Vector3.back*3, i.ToString(),style);
         }
     }
 

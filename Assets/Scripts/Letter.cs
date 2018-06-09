@@ -17,6 +17,17 @@ public class Letter : BaseObject
     public List<Letter> ConnectedLetters;
 
     public bool IsSelected = false;
+
+    public bool Active = true;
+    public GameObject Frame;
+    public char Char;
+
+    // Up/Down/left/right letter
+    public Letter UpLetter;
+    public Letter DownLetter;
+    public Letter RightLetter;
+    public Letter LeftLetter;
+
     #endregion
 
     #region Events
@@ -31,9 +42,6 @@ public class Letter : BaseObject
 
     private Vector3 _lastDragPos;
     private Renderer[] _renderers;
-    public bool Active=true;
-    public GameObject Frame;
-    public char Char;
 
     #endregion
 
@@ -51,22 +59,28 @@ public class Letter : BaseObject
 
     public void SetupBridges()
     {
-        bool ub = false, rb = false;
+        UpLetter = DownLetter = LeftLetter = RightLetter = null;
 
         foreach (Letter letter in ConnectedLetters)
         {
-            if ((letter.transform.position - transform.position - Vector3.up).magnitude<0.2f)
-                ub = true;
+            if ((letter.transform.position - transform.position - Vector3.up).magnitude < 0.2f)
+                UpLetter = letter;
 
-            if ((letter.transform.position - transform.position - Vector3.right).magnitude<0.2f)
-                rb = true;
+            if ((letter.transform.position - transform.position - Vector3.down).magnitude < 0.2f)
+                DownLetter = letter;
+
+            if ((letter.transform.position - transform.position - Vector3.right).magnitude < 0.2f)
+                RightLetter = letter;
+
+            if ((letter.transform.position - transform.position - Vector3.left).magnitude < 0.2f)
+                LeftLetter = letter;
         }
 
         foreach (GameObject rbGameObject in RightBridge)
-            rbGameObject.SetActive(rb);
+            rbGameObject.SetActive(RightLetter!=null);
 
         foreach (GameObject ubGameObject in UpBridge)
-            ubGameObject.SetActive(ub);
+            ubGameObject.SetActive(UpLetter!=null);
 
     }
     #endregion
