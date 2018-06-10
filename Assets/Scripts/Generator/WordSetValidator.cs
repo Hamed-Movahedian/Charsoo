@@ -17,6 +17,9 @@ public class WordSetValidator : BaseObject
     // Allow next partition up/down/left/right
     private bool _allowUp, _allowDown, _allowRight, _allowLeft;
 
+    // for test only
+    private List<string> _logList;
+
     #region ValidateWordSet - Validate current partitioned word set
 
     [ContextMenu("Validate")]
@@ -58,6 +61,9 @@ public class WordSetValidator : BaseObject
         
         _usedPartitions = new List<List<Letter>>();
 
+        // Setup log string list for TEST
+        _logList = new List<string>();
+
         #endregion
 
         #region check whole word in one partition
@@ -82,6 +88,9 @@ public class WordSetValidator : BaseObject
         {
             _word = word;
 
+            // for test only
+            _logList.Clear();
+
             _foundSequence = 0;
             _direction = Direction.Horizontal;
             FindSequence(0);
@@ -91,6 +100,9 @@ public class WordSetValidator : BaseObject
             _direction = Direction.Vertical;
             FindSequence(0);
 
+            // for test only
+            if(_logList.Count>0)
+                _logList.ForEach(Debug.Log);
         }
 
         #endregion
@@ -106,6 +118,26 @@ public class WordSetValidator : BaseObject
     {
         foreach (Letter letter in _charToLetter[_word[i]])
         {
+            #region Setup direction permission for first partition direction
+
+            // Setup direction permission for next partition direction
+            if (_direction == Direction.Horizontal)
+            {
+                _allowUp = true;
+                _allowDown = true;
+                _allowRight = false;
+                _allowLeft = true;
+            }
+            else
+            {
+                _allowRight = true;
+                _allowLeft = true;
+                _allowUp = false;
+                _allowDown = true;
+            }
+
+            #endregion
+
             int j = ProcessLetter(letter, i);
 
             if (j >= 0)
@@ -132,9 +164,21 @@ public class WordSetValidator : BaseObject
         if (_usedPartitions.Contains(partition))
             return -1;
 
-        // Before first letter must be empty
-        if (PreLetter(letter) != null)
+        #region Check direction permission for this partition
+
+        if (!_allowUp && letter.UpLetter != null)
             return -1;
+
+        if (!_allowDown && letter.DownLetter != null)
+            return -1;
+
+        if (!_allowLeft && letter.LeftLetter != null)
+            return -1;
+
+        if (!_allowRight && letter.RightLetter != null)
+            return -1;
+        
+        #endregion
 
         while (true)
         {
@@ -161,17 +205,25 @@ public class WordSetValidator : BaseObject
         // add partition to used partitions
         _usedPartitions.Add(partition);
 
-        // allow next partition direction
-        if(_direction==Direction.Horizontal)
+        #region Setup direction permission for next partition direction
+
+        // Setup direction permission for next partition direction
+        if (_direction==Direction.Horizontal)
         {
             _allowUp = (letter.UpLetter == null);
             _allowDown = (letter.DownLetter == null);
+            _allowRight = false;
+            _allowLeft = true;
         }
         else
         {
             _allowRight = (letter.RightLetter == null);
             _allowLeft = (letter.LeftLetter == null);
+            _allowUp = false;
+            _allowDown = true;
         }
+        
+        #endregion
 
         // return new index
         return i;
@@ -207,7 +259,7 @@ public class WordSetValidator : BaseObject
 
         _usedPartitions.ForEach(p => s += PartitionIndex(p) + ", ");
 
-        Debug.Log(s);
+        _logList.Add(s);
     }
 
     private string PartitionIndex(List<Letter> p)
