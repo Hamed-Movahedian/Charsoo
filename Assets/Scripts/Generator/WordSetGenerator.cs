@@ -107,7 +107,7 @@ public class WordSetGenerator : BaseObject
 
             word.X = 0;
             word.Y = 0;
-            word.Direction = Direction.Horizontal;
+            word.WordDirection = WordDirection.Horizontal;
 
             TryOtherWords(word);
 
@@ -195,15 +195,15 @@ public class WordSetGenerator : BaseObject
         foreach (SWord usedWord in _usedWords)
             foreach (Vector2 location in _clDictionary[usedWord.Name][newWord.Name])
             {
-                if (usedWord.Direction == Direction.Horizontal)
+                if (usedWord.WordDirection == WordDirection.Horizontal)
                 {
-                    newWord.Direction = Direction.Vertical;
+                    newWord.WordDirection = WordDirection.Vertical;
                     newWord.X = (int)(usedWord.X - location.x);
                     newWord.Y = (int)(usedWord.Y + location.y);
                 }
                 else
                 {
-                    newWord.Direction = Direction.Horizontal;
+                    newWord.WordDirection = WordDirection.Horizontal;
                     newWord.X = (int)(usedWord.X + location.y);
                     newWord.Y = (int)(usedWord.Y - location.x);
                 }
@@ -286,7 +286,7 @@ public class WordSetGenerator : BaseObject
             b.Encapsulate(w.Max);
             b.Encapsulate(w.Min);
         });
-        int hCount = result.Count(w => w.Direction == Direction.Horizontal);
+        int hCount = result.Count(w => w.WordDirection == WordDirection.Horizontal);
         int vCount = result.Count - hCount;
 
         return
@@ -321,7 +321,7 @@ public class WordSetGenerator : BaseObject
         var idWords = words.Select(w => new
         {
             ID = _nameToId[w.Name],
-            Dir = w.Direction == Direction.Horizontal ? "H" : "V",
+            Dir = w.WordDirection == WordDirection.Horizontal ? "H" : "V",
             w.X,
             w.Y,
             w.MatchCount
@@ -347,7 +347,7 @@ public class WordSetGenerator : BaseObject
             .Select(sl => new SWord
             {
                 Name = WordStrings[int.Parse(sl[0])],
-                Direction = sl[1] == "H" ? Direction.Horizontal : Direction.Vertical,
+                WordDirection = sl[1] == "H" ? WordDirection.Horizontal : WordDirection.Vertical,
                 X = int.Parse(sl[2]),
                 Y = int.Parse(sl[3]),
                 MatchCount = int.Parse(sl[4])
@@ -376,12 +376,12 @@ public class WordSetGenerator : BaseObject
 
     private bool IsCorrectOverlap(SWord w1, SWord w2)
     {
-        if (w1.Direction == w2.Direction)
+        if (w1.WordDirection == w2.WordDirection)
             return false;
 
         int i1, i2;
 
-        if (w1.Direction == Direction.Horizontal)
+        if (w1.WordDirection == WordDirection.Horizontal)
         {
             i1 = w1.X - w2.X;
             i2 = w2.Y - w1.Y;

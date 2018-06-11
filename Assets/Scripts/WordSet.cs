@@ -39,7 +39,7 @@ public class WordSet : ScriptableObject
 public class SWord
 {
     public string Name;
-    public Direction Direction;
+    public WordDirection WordDirection;
     public List<Vector2> LocationList;
 
     [NonSerialized]
@@ -55,7 +55,7 @@ public class SWord
     public SWord()
     {
         Name = "";
-        Direction = Direction.Horizontal;
+        WordDirection = WordDirection.Horizontal;
         X = 0;
         Y = 0;
         MatchCount = 0;
@@ -65,7 +65,7 @@ public class SWord
     public SWord(SWord word, int matchCount)
     {
         Name = word.Name;
-        Direction = word.Direction;
+        WordDirection = word.WordDirection;
         X = word.X;
         Y = word.Y;
         MatchCount = matchCount;
@@ -75,7 +75,7 @@ public class SWord
     public SWord(Word word)
     {
         Name = word.name;
-        Direction = word.Direction;
+        WordDirection = word.Direction;
         X = (int)word.Letters[0].transform.position.x;
         Y = (int)word.Letters[0].transform.position.y;
         MatchCount = 0;
@@ -93,7 +93,7 @@ public class SWord
     {
         get
         {
-            if (Direction == Direction.Horizontal)
+            if (WordDirection == WordDirection.Horizontal)
                 return X - Length;
             else
                 return X - 1;
@@ -104,7 +104,7 @@ public class SWord
     {
         get
         {
-            if (Direction == Direction.Horizontal)
+            if (WordDirection == WordDirection.Horizontal)
                 return Y - 1;
             else
                 return Y - Length;
@@ -127,7 +127,7 @@ public class SWord
             if (LocationList.Count > 0)
                 return LocationList[i];
 
-        if (Direction == Direction.Horizontal)
+        if (WordDirection == WordDirection.Horizontal)
             return new Vector2(X - i, Y);
         else
             return new Vector2(X, Y - i);

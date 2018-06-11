@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class WordSetValidator
+public class WordSetValidator1 : BaseObject
 {
     private Dictionary<char, List<Letter>> _charToLetter;
     private List<List<Letter>> _partitions;
@@ -20,26 +20,29 @@ public class WordSetValidator
     // Allow next partition up/down/left/right
     private bool _allowUp, _allowDown, _allowRight, _allowLeft;
 
-    private Word[] _wordComponents;
-    private List<string> _words;
-
+    // for test only
+    private List<string> _logList;
 
     #region ValidateWordSet - Validate current partitioned word set
 
-    public bool ValidateWordSet(List<List<Letter>> partitions)
+    [ContextMenu("Validate")]
+    public void ValidateWordSet()
     {
 
         #region initialize
 
-        _partitions = partitions;
+        var wordComponents = WordManager.GetComponentsInChildren<Word>();
+
+        var words = wordComponents
+            .Select(wc => wc.Name)
+            .ToList();
+
+        _partitions = GetComponent<Partioner>().Paritions;
 
         #region LetterToPartition dic
 
         // **************** initialize LetterToPartition dic
-        if (_letterToPartition == null)
-            _letterToPartition = new Dictionary<Letter, List<Letter>>();
-        else
-            _letterToPartition.Clear();
+        _letterToPartition = new Dictionary<Letter, List<Letter>>();
 
         foreach (var partition in _partitions)
             foreach (Letter letter in partition)
@@ -47,45 +50,68 @@ public class WordSetValidator
 
         #endregion
 
-        _usedPartitions.Clear();
+        #region CharToLetter Dic
+
+        _charToLetter = new Dictionary<char, List<Letter>>();
+        LetterController.AllLetters.ForEach(l =>
+        {
+            if (!_charToLetter.ContainsKey(l.Char))
+                _charToLetter.Add(l.Char, new List<Letter>());
+            _charToLetter[l.Char].Add(l);
+        });
+
+        #endregion
+
+        
+        _usedPartitions = new List<List<Letter>>();
+
+        // Setup log string list for TEST
+        _logList = new List<string>();
 
         #endregion
 
         #region check whole word in one partition
 
         // check whole word in one partition
-        foreach (Word word in _wordComponents)
+        foreach (Word word in wordComponents)
         {
             var partition = _letterToPartition[word.Letters[0]];
 
             if (partition.Intersect(word.Letters).ToList().Count == word.Letters.Count)
-                return false;
+            {
+                Debug.LogError("word "+word.Name+" is in one partition !!!!");
+                return ;
+            }
         }
 
         #endregion
 
-        #region Check for word with more than one sequence
+        #region Find sequences for words
 
-        foreach (var word in _words)
+        foreach (var word in words)
         {
             _word = word;
 
-            _foundSequence = 0;
+            // for test only
+            _logList.Clear();
 
+            _foundSequence = 0;
             _wordDirection = WordDirection.Horizontal;
             FindSequence(0);
 
 
+            _foundSequence = 0;
             _wordDirection = WordDirection.Vertical;
             FindSequence(0);
 
-            if (_foundSequence != 1)
-                return false;
+            // for test only
+            if(_logList.Count>1)
+                _logList.ForEach(Debug.Log);
         }
 
         #endregion
 
-        return true;
+
     }
 
     #endregion
@@ -103,7 +129,7 @@ public class WordSetValidator
             if (j >= 0)
             {
                 if (j == _word.Length)
-                    _foundSequence++;
+                    SequenceFound();
                 else
                     FindSequence(j);
 
@@ -140,21 +166,21 @@ public class WordSetValidator
 
         if (!_allowRight && firstLetter.RightLetter != null)
             return -1;
-
+        
         #endregion
 
         while (true)
         {
             // Go to Next letter & next character
             i++;
-            _wordLetters[i] = NextLetter(_wordLetters[i - 1]);
+            _wordLetters[i] = NextLetter(_wordLetters[i-1]);
 
             // Sequence successfully end
             if (_wordLetters[i] == null)
                 break;
 
             // Letter sequence continues but word ends!
-            if (i == _word.Length)
+            if (i== _word.Length)
                 return -1;
 
             // next letter dost match with next char
@@ -168,7 +194,7 @@ public class WordSetValidator
 
         // return new index
         return i;
-
+        
     }
 
     private void SetDirectionPermissions(int i)
@@ -228,6 +254,16 @@ public class WordSetValidator
     #endregion
 
     #region SequenceFound
+    private void SequenceFound()
+    {
+        _foundSequence++;
+
+        string s = ArabicSupport.ArabicFixer.Fix(_word) + " " + (_wordDirection == WordDirection.Horizontal ? "H" : "V") + " ";
+
+        _usedPartitions.ForEach(p => s += PartitionIndex(p) + ", ");
+
+        _logList.Add(s);
+    }
 
     private string PartitionIndex(List<Letter> p)
     {
@@ -239,42 +275,5 @@ public class WordSetValidator
         return "-1";
     }
     #endregion
-
-    #region LetterDirection enum
-
-    public class LetterDirection
-    {
-        public bool Up, Down, Left, Right;
-    }
-
-    #endregion
-
-    #region Initialize
-
-    public void Initialize(Partioner partitioner)
-    {
-        _wordComponents = partitioner.WordManager.GetComponentsInChildren<Word>();
-
-        _words = _wordComponents
-            .Select(wc => wc.Name)
-            .ToList();
-
-        #region CharToLetter Dic
-
-        _charToLetter = new Dictionary<char, List<Letter>>();
-
-        partitioner.LetterController.AllLetters.ForEach(l =>
-        {
-            if (!_charToLetter.ContainsKey(l.Char))
-                _charToLetter.Add(l.Char, new List<Letter>());
-            _charToLetter[l.Char].Add(l);
-        });
-
-        #endregion
-
-        _usedPartitions = new List<List<Letter>>();
-    }
     
-
-    #endregion
 }

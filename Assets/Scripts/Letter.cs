@@ -142,9 +142,9 @@ public class Letter : BaseObject
             bound.Encapsulate(renderer1.bounds);
     }
 
-    public bool IsNextTo(Letter letter, Direction direction)
+    public bool IsNextTo(Letter letter, WordDirection wordDirection)
     {
-        if (direction == Direction.Horizontal)
+        if (wordDirection == WordDirection.Horizontal)
             return 
                 Math.Abs(transform.position.x - (letter.transform.position.x + 1)) < 0.1f &&
                 Math.Abs(transform.position.y - letter.transform.position.y) < 0.1f;

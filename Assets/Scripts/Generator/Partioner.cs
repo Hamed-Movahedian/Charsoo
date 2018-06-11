@@ -12,17 +12,20 @@ public class Partioner : BaseObject
     public int ErrorCount = 1;
     public List<List<Letter>> Paritions;
     public Color ParitionColor;
-    private List<Letter> _allLetters;
     public Action<UnityEngine.Object, string> Undo;
-    private int _compressCount;
-    private bool _cancel;
-
     public Func<string, float, bool> ShowProgressBar;
     public Func<double> GetTime;
+    public bool Validate = true;
 
+
+    private List<Letter> _allLetters;
+    private int _compressCount;
+    private bool _cancel;
     private double _lastTime;
     private int _invalidResults;
-    public bool Validate = true;
+    private WordSetValidator _validator;
+    private double _startTime;
+
 
     public void PortionLetters()
     {
@@ -30,32 +33,36 @@ public class Partioner : BaseObject
         _cancel = false;
         _compressCount = 1;
         _invalidResults = 0;
+
         // record time
         _lastTime = GetTime();
-        Solver solver = GetComponent<Solver>();
-        solver.GetTime = GetTime;
+        _startTime = GetTime();
+
+        // Validator
+        if(_validator==null)
+            _validator=new WordSetValidator();
+
+        _validator.Initialize(this);
 
 
         for (int i = 0; i < 30000; i++)
         {
             if (TryPartition())
             {
-                solver.ProgressTitle = "Result number " + (_invalidResults + 1);
-                if (Validate)
-                    if (!solver.Validate(ErrorCount, ShowProgressBar, ref _cancel))
-                    {
-                        if (_cancel)
-                            break;
-                        _invalidResults++;
-                        continue;
-                    }
-
                 // SetupBridges for all letters
                 Paritions.SelectMany(p => p)
                     .ToList()
                     .ForEach(l => l.SetupBridges());
 
-                Debug.Log("Connect in " + i + " try.");
+                if (Validate)
+                    if (!_validator.ValidateWordSet(Paritions))
+                    {
+                        _invalidResults++;
+                        continue;
+                    }
+
+
+                Debug.Log("Connect in " + i + " try. ("+_invalidResults+" invalid results)"+" in "+(GetTime()-_startTime)+" sec.");
 
                 return;
             }
@@ -369,8 +376,8 @@ public class Partioner : BaseObject
             {
                 Undo(w, "Rotate");
                 w.Direction =
-                    (w.Direction == Direction.Horizontal) ?
-                    Direction.Vertical : Direction.Horizontal;
+                    (w.Direction == WordDirection.Horizontal) ?
+                    WordDirection.Vertical : WordDirection.Horizontal;
             });
 
         LetterController

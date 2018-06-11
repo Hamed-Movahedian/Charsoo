@@ -75,7 +75,7 @@ public class WordSpawner : BaseObject
         // Word component
         Word wordComponent = wordGameObject.AddComponent<Word>();
         wordComponent.Letters = new List<Letter>();
-        wordComponent.Direction = sWord.Direction;
+        wordComponent.Direction = sWord.WordDirection;
         wordComponent.Name = sWord.Name;
         wordGameObject.transform.parent = WordManager.transform;
 

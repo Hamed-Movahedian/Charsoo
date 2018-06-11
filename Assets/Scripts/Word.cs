@@ -7,7 +7,7 @@ public class Word : BaseObject
 {
     public List<Letter> Letters;
 
-    public Direction Direction;
+    public WordDirection Direction;
     public bool IsComplete = false;
     private WordHighlightEffect _compeleteEffect;
     public string Name;
@@ -70,7 +70,7 @@ public class Word : BaseObject
     }
 }
 
-public enum Direction
+public enum WordDirection
 {
     Horizontal,Vertical
 }
