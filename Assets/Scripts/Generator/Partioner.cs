@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Partioner : BaseObject
 {
-    public int MinZise = 2;
+    public int MinSize = 2;
     public int MaxSize = 3;
     public int ErrorCount = 1;
     public List<List<Letter>> Paritions;
@@ -120,7 +120,7 @@ public class Partioner : BaseObject
 
             // Get connected letters
             List<Letter> newPartition = new List<Letter>();
-            GetConnectedLetters(letter, newPartition, Random.Range(MinZise+1, MaxSize + 1));
+            GetConnectedLetters(letter, newPartition, Random.Range(MinSize+1, MaxSize + 1));
 
             // Disconnect newPartition and add to list
             Disconnect(biggestPartition, newPartition);
@@ -129,7 +129,7 @@ public class Partioner : BaseObject
             // Separate Biggest partition in two -- if possible
             Separate(biggestPartition);
 
-            if (Paritions.Min(p => p.Count) < MinZise)
+            if (Paritions.Min(p => p.Count) < MinSize)
                 return false;
         }
 

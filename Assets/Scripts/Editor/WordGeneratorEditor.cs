@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ArabicSupport;
 using UnityEditor;
 using UnityEngine;
+using MgsCommonLib.Utilities;
 
 [CustomEditor(typeof(WordSetGenerator))]
 public class WordGeneratorEditor : Editor
@@ -16,13 +17,15 @@ public class WordGeneratorEditor : Editor
 
         if (GUILayout.Button("Generate"))
         {
-            _wg.GetTime = GetTime;
+            MgsEditorCoroutine.Start(
+                _wg.MakeWordSet(), 
+                () => EditorUtility.DisplayCancelableProgressBar("Generate", _wg.CurrentActionTitle,_wg.ProgressPercentage),
+                0.1);
 
-            _wg.ShowProgressBar = ShowProgressBar;
-            _wg.MakeWordSet();
             EditorUtility.ClearProgressBar();
-            _wg.ShowProgressBar = null;
+
             _wg.EditorInstantiate = EditorInstantiate;
+
             _wg.SpawnWordSet();
         }
 
@@ -42,19 +45,12 @@ public class WordGeneratorEditor : Editor
         DrawDefaultInspector();
     }
 
+
     private static double GetTime()
     {
         return EditorApplication.timeSinceStartup;
     }
-
-    public void ShowProgressBar(string info, float v)
-    {
-        if (EditorUtility.DisplayCancelableProgressBar("Generate", info, v))
-            _wg.Cancel();
-
-
-    }
-
+    
     private Letter EditorInstantiate(Letter LetterPrefab)
     {
         return (Letter) PrefabUtility.InstantiatePrefab(LetterPrefab);

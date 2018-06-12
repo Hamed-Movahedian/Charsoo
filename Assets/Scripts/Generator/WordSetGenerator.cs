@@ -27,27 +27,22 @@ public class WordSetGenerator : BaseObject
     private List<SWord> _words = new List<SWord>();
     private List<SWord> _usedWords = new List<SWord>();
     private WordSet _wordSet;
-    private bool _cancel;
     private Dictionary<string, int> _nameToId;
     private CommonLettersDictionary _clDictionary;
     public Func<Letter, Letter> EditorInstantiate;
-    public Action<string, float> ShowProgressBar;
-    public Func<double> GetTime;
-    private double _lastTime;
+    public string CurrentActionTitle;
+    public float ProgressPercentage;
 
     #endregion
 
     #region MakeWordSet
 
     [ContextMenu("MakeWordSet")]
-    public void MakeWordSet()
+    public IEnumerator MakeWordSet()
     {
         // Clear last partitions
         Partioner partitioner = GetComponent<Partioner>();
         partitioner.Clear();
-
-        // record time
-        _lastTime = GetTime();
 
         WordStrings = AllWords
             .Replace(" ", "")
@@ -56,7 +51,6 @@ public class WordSetGenerator : BaseObject
             .Select(s => s.Trim())
             .Where(s => s.Length > 0 && s[0] != '/')
             .Distinct()
-            //.OrderByDescending(s => s.Length)
             .ToList();
 
         // Clear results
@@ -68,7 +62,6 @@ public class WordSetGenerator : BaseObject
         // Initialize 
         _clDictionary = new CommonLettersDictionary(WordStrings);
         NextResultIndex = 0;
-        _cancel = false;
 
         // Set word name to id dictionary
         _nameToId = new Dictionary<string, int>();
@@ -89,11 +82,13 @@ public class WordSetGenerator : BaseObject
         foreach (string wordString in WordStrings)
             _words.Add(new SWord { Name = wordString });
 
+        CurrentActionTitle = "Finding word Sets...";
+
 
         SWord word = null;
         int index = 0;
 
-        while (!_cancel && _results.Count < MaxResults)
+        while (_results.Count < MaxResults)
         {
             if (BruteForce)
             {
@@ -103,18 +98,16 @@ public class WordSetGenerator : BaseObject
                     break;
             }
             else
-                word = _words[UnityEngine.Random.Range(0, _words.Count)];
+                word = _words[Random.Range(0, _words.Count)];
 
             word.X = 0;
             word.Y = 0;
             word.WordDirection = WordDirection.Horizontal;
 
-            TryOtherWords(word);
-
+            yield return TryOtherWords(word);
         }
 
-        if (ShowProgressBar != null)
-            ShowProgressBar("Sorting...", 1);
+        CurrentActionTitle="Sorting...";
 
         EndResults = _results
             .Select(ConvertToList)
@@ -126,22 +119,17 @@ public class WordSetGenerator : BaseObject
 
     }
 
-    private void TryOtherWords(SWord lastWord)
+    private IEnumerator TryOtherWords(SWord lastWord)
     {
         // Show Progress Bar
-        if (ShowProgressBar != null)
-            if (GetTime() - _lastTime > .1)
-            {
-                ShowProgressBar(_results.Count.ToString("N0") + " WordSet Found", _results.Count / (float)MaxResults);
-                _lastTime = GetTime();
-            }
+        CurrentActionTitle = _results.Count.ToString("N0") + " WordSet Found";
+        ProgressPercentage = _results.Count/(float) MaxResults;
+        yield return null;
 
         // Safe Guard
         if (_results.Count > MaxResults)
-            return;
+            yield break;
 
-        if (_cancel)
-            return;
 
         // Use last word
         _usedWords.Add(lastWord);
@@ -177,9 +165,9 @@ public class WordSetGenerator : BaseObject
                 if (_usedWords.Find(w => w.Name == word.Name) == null)
                 {
                     List<SWord> placements = GetWordPlacements(word);
-                    placements
-                        .ForEach(w => TryOtherWords(w));
 
+                    foreach (var w in placements)
+                        yield return TryOtherWords(w);
                 }
             }
         }
@@ -441,14 +429,5 @@ public class WordSetGenerator : BaseObject
 
 
     #endregion
-
-    #region Cancel
-
-    public void Cancel()
-    {
-        _cancel = true;
-    }
-
-
-    #endregion
+    
 }

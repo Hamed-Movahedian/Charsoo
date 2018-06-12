@@ -249,6 +249,7 @@ public class WordSetValidator
 
     #endregion
 
+
     #region Initialize
 
     public void Initialize(Partioner partitioner)
