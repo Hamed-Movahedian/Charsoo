@@ -17,9 +17,9 @@ public class WordGeneratorEditor : Editor
 
         if (GUILayout.Button("Generate"))
         {
-            MgsEditorCoroutine.Start(
+            MgsCoroutine.Start(
                 _wg.MakeWordSet(), 
-                () => EditorUtility.DisplayCancelableProgressBar("Generate", _wg.CurrentActionTitle,_wg.ProgressPercentage),
+                () => EditorUtility.DisplayCancelableProgressBar(MgsCoroutine.Title, MgsCoroutine.Info,MgsCoroutine.Percentage),
                 0.1);
 
             EditorUtility.ClearProgressBar();

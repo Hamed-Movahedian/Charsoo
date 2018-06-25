@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MgsCommonLib.Utilities;
 using UnityEngine;
 
 public class WordSetValidator
@@ -22,14 +23,17 @@ public class WordSetValidator
 
     private Word[] _wordComponents;
     private List<string> _words;
-
+    public bool IsValid;
 
     #region ValidateWordSet - Validate current partitioned word set
 
-    public bool ValidateWordSet(List<List<Letter>> partitions)
+    public IEnumerator ValidateWordSet(List<List<Letter>> partitions)
     {
+        MgsCoroutine.Info += "\n Validating...";
 
         #region initialize
+
+        IsValid = false;
 
         _partitions = partitions;
 
@@ -59,7 +63,7 @@ public class WordSetValidator
             var partition = _letterToPartition[word.Letters[0]];
 
             if (partition.Intersect(word.Letters).ToList().Count == word.Letters.Count)
-                return false;
+                yield break;
         }
 
         #endregion
@@ -73,26 +77,27 @@ public class WordSetValidator
             _foundSequence = 0;
 
             _wordDirection = WordDirection.Horizontal;
-            FindSequence(0);
+            yield return FindSequence(0);
 
 
             _wordDirection = WordDirection.Vertical;
-            FindSequence(0);
+            yield return FindSequence(0);
 
             if (_foundSequence != 1)
-                return false;
+                yield break;
+
         }
 
         #endregion
 
-        return true;
+        IsValid = true;
     }
 
     #endregion
 
     #region FindSequence
 
-    private void FindSequence(int i)
+    private IEnumerator FindSequence(int i)
     {
         foreach (Letter letter in _charToLetter[_word[i]])
         {
@@ -105,10 +110,12 @@ public class WordSetValidator
                 if (j == _word.Length)
                     _foundSequence++;
                 else
-                    FindSequence(j);
+                    yield return FindSequence(j);
 
                 _usedPartitions.Remove(_letterToPartition[letter]);
             }
+            else
+                yield return null;
         }
     }
 
@@ -226,30 +233,7 @@ public class WordSetValidator
             return letter.UpLetter;
     }
     #endregion
-
-    #region SequenceFound
-
-    private string PartitionIndex(List<Letter> p)
-    {
-        for (int i = 0; i < _partitions.Count; i++)
-        {
-            if (_partitions[i] == p)
-                return i.ToString();
-        }
-        return "-1";
-    }
-    #endregion
-
-    #region LetterDirection enum
-
-    public class LetterDirection
-    {
-        public bool Up, Down, Left, Right;
-    }
-
-    #endregion
-
-
+    
     #region Initialize
 
     public void Initialize(Partioner partitioner)

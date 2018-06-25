@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MgsCommonLib.Utilities;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -30,8 +31,6 @@ public class WordSetGenerator : BaseObject
     private Dictionary<string, int> _nameToId;
     private CommonLettersDictionary _clDictionary;
     public Func<Letter, Letter> EditorInstantiate;
-    public string CurrentActionTitle;
-    public float ProgressPercentage;
 
     #endregion
 
@@ -82,7 +81,8 @@ public class WordSetGenerator : BaseObject
         foreach (string wordString in WordStrings)
             _words.Add(new SWord { Name = wordString });
 
-        CurrentActionTitle = "Finding word Sets...";
+        MgsCoroutine.Title = "Generate Word set";
+       
 
 
         SWord word = null;
@@ -90,6 +90,7 @@ public class WordSetGenerator : BaseObject
 
         while (_results.Count < MaxResults)
         {
+            MgsCoroutine.Info = _results.Count+" word set found.";
             if (BruteForce)
             {
                 if (index < _words.Count)
@@ -107,7 +108,9 @@ public class WordSetGenerator : BaseObject
             yield return TryOtherWords(word);
         }
 
-        CurrentActionTitle="Sorting...";
+        MgsCoroutine.Info = "Sorting...";
+        MgsCoroutine.ForceUpdate();
+        yield return null;
 
         EndResults = _results
             .Select(ConvertToList)
@@ -122,8 +125,9 @@ public class WordSetGenerator : BaseObject
     private IEnumerator TryOtherWords(SWord lastWord)
     {
         // Show Progress Bar
-        CurrentActionTitle = _results.Count.ToString("N0") + " WordSet Found";
-        ProgressPercentage = _results.Count/(float) MaxResults;
+        MgsCoroutine.Info = _results.Count.ToString("N0") + " WordSet Found";
+        MgsCoroutine.Percentage = _results.Count/(float) MaxResults;
+
         yield return null;
 
         // Safe Guard

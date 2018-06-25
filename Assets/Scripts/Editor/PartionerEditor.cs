@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MgsCommonLib.Utilities;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,20 +8,33 @@ using UnityEngine;
 public class PartionerEditor : Editor
 {
     private Partioner _partioner;
+    private double _startTime;
 
     public override void OnInspectorGUI()
     {
         _partioner = target as Partioner;
 
-        _partioner.GetTime = GetTime;
-        
-
-        _partioner.ShowProgressBar = ShowProgresBar;
-
         if (GUILayout.Button("Partition"))
         {
-            _partioner.PortionLetters();
+            // Record start time
+            _startTime = EditorApplication.timeSinceStartup;
+
+            MgsCoroutine.Start(
+                _partioner.PortionLetters(),
+                () => EditorUtility.DisplayCancelableProgressBar(MgsCoroutine.Title, MgsCoroutine.Info, MgsCoroutine.Percentage),
+                0.1);
+
             EditorUtility.ClearProgressBar();
+
+            if(_partioner.PartitionSuccessfully)
+                Debug.Log(
+                    string.Format("Connect in {0} try. ({1} invalid results)" + " in {2} sec.", 
+                    _partioner.TryCount, 
+                    _partioner.InvalidResults, 
+                    EditorApplication.timeSinceStartup - _startTime));
+            else
+                Debug.LogError(string.Format("Portion failed with {0} Invalid results !!!", _partioner.InvalidResults));
+
         }
 
         if (GUILayout.Button("Shuffle"))
@@ -42,21 +56,4 @@ public class PartionerEditor : Editor
         }
         DrawDefaultInspector();
     }
-
-    private static double GetTime()
-    {
-        return EditorApplication.timeSinceStartup;
-    }
-
-    public bool ShowProgresBar(string info, float v)
-    {
-        if (EditorUtility.DisplayCancelableProgressBar("Partitioning..", info, v))
-        {
-            _partioner.Cancel();
-            return false;
-        }
-        return true;
-
-    }
-
 }

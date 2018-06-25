@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MgsCommonLib.Utilities;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,40 +14,40 @@ public class Partioner : BaseObject
     public List<List<Letter>> Paritions;
     public Color ParitionColor;
     public Action<UnityEngine.Object, string> Undo;
-    public Func<string, float, bool> ShowProgressBar;
-    public Func<double> GetTime;
     public bool Validate = true;
 
 
     private List<Letter> _allLetters;
     private int _compressCount;
-    private bool _cancel;
-    private double _lastTime;
-    private int _invalidResults;
+    public int InvalidResults;
     private WordSetValidator _validator;
     private double _startTime;
+    public int TryCount;
+    public bool PartitionSuccessfully;
 
 
-    public void PortionLetters()
+    public IEnumerator PortionLetters()
     {
-        // initialize
-        _cancel = false;
-        _compressCount = 1;
-        _invalidResults = 0;
 
-        // record time
-        _lastTime = GetTime();
-        _startTime = GetTime();
+        // initialize
+        _compressCount = 1;
+        InvalidResults = 0;
+        PartitionSuccessfully = false;
+        MgsCoroutine.Percentage = 0;
+        MgsCoroutine.Title = "Partitioning";
 
         // Validator
-        if(_validator==null)
-            _validator=new WordSetValidator();
+        if (_validator == null)
+            _validator = new WordSetValidator();
+
 
         _validator.Initialize(this);
 
 
-        for (int i = 0; i < 30000; i++)
+        for (TryCount = 0; TryCount < 30000; TryCount++)
         {
+            MgsCoroutine.Info = " Try "+TryCount+"\n\r Invalid Results "+ InvalidResults;
+
             if (TryPartition())
             {
                 // SetupBridges for all letters
@@ -55,47 +56,34 @@ public class Partioner : BaseObject
                     .ForEach(l => l.SetupBridges());
 
                 if (Validate)
-                    if (!_validator.ValidateWordSet(Paritions))
+                {
+                    yield return _validator.ValidateWordSet(Paritions);
+
+                    if (!_validator.IsValid)
                     {
-                        _invalidResults++;
+                        InvalidResults++;
                         continue;
                     }
-
-
-                Debug.Log("Connect in " + i + " try. ("+_invalidResults+" invalid results)"+" in "+(GetTime()-_startTime)+" sec.");
-
-                return;
-            }
-
-
-            if (_cancel)
-                break;
-            // Show Progress Bar
-            if (ShowProgressBar != null)
-                if (GetTime() - _lastTime > .1)
-                {
-                    ShowProgressBar("Invalid results : " + _invalidResults + " Searching...", i / 30000f);
-
-                    _lastTime = GetTime();
                 }
 
+                PartitionSuccessfully = true;
 
+                yield break;
+            }
+
+            MgsCoroutine.Percentage = TryCount / 30000f;
+
+            yield return null;
         }
 
         Paritions.Clear();
 
-        if (!_cancel)
-        {
-            Debug.Log(ErrorCount+1);
-            ErrorCount++;
-            PortionLetters();
-        }
-        Debug.LogError(string.Format("Portion failed with {0} Invalid results !!!", _invalidResults));
     }
 
 
     private bool TryPartition()
     {
+
         LetterController.ConnectAdjacentLetters();
 
         // Clear partitions
@@ -120,7 +108,7 @@ public class Partioner : BaseObject
 
             // Get connected letters
             List<Letter> newPartition = new List<Letter>();
-            GetConnectedLetters(letter, newPartition, Random.Range(MinSize+1, MaxSize + 1));
+            GetConnectedLetters(letter, newPartition, Random.Range(MinSize + 1, MaxSize + 1));
 
             // Disconnect newPartition and add to list
             Disconnect(biggestPartition, newPartition);
@@ -152,12 +140,12 @@ public class Partioner : BaseObject
             parition.ForEach(l => bounds.Encapsulate(l.transform.position));
             Gizmos.DrawCube(bounds.center, bounds.size + new Vector3(.7f, .7f, 0));
 
-            var style= new GUIStyle();
+            var style = new GUIStyle();
             style.fontSize = 30;
             style.fontStyle = FontStyle.Bold;
             style.normal.textColor = Color.yellow;
             UnityEditor.Handles.color = Color.yellow;
-            UnityEditor.Handles.Label(bounds.center+Vector3.back*3, i.ToString(),style);
+            UnityEditor.Handles.Label(bounds.center + Vector3.back * 3, i.ToString(), style);
         }
     }
 
@@ -180,9 +168,17 @@ public class Partioner : BaseObject
         foreach (Letter letter in newPartition)
             biggestPartition.Remove(letter);
 
-        foreach (Letter l1 in biggestPartition)
-            foreach (Letter l2 in newPartition)
-                l1.DisConnect(l2);
+        foreach (Letter letter in newPartition)
+        {
+            for (int i = 0; i < letter.ConnectedLetters.Count; i++)
+            {
+                if (biggestPartition.Contains(letter.ConnectedLetters[i]))
+                {
+                    letter.DisConnect(letter.ConnectedLetters[i]);
+                    i--;
+                }
+            }
+        }
     }
 
     private void GetConnectedLetters(Letter letter, List<Letter> list, int count)
@@ -194,13 +190,23 @@ public class Partioner : BaseObject
         {
             list.Add(letter);
 
-            foreach (Letter connectedLetter in letter.ConnectedLetters)
+/*
+                        foreach (Letter connectedLetter in letter.ConnectedLetters)
+                            GetConnectedLetters(connectedLetter, list, count);
+            */
+
+            var connectedLetters = letter.ConnectedLetters.OrderBy(l => l.ConnectedLetters.Count);
+
+            foreach (Letter connectedLetter in connectedLetters)
                 GetConnectedLetters(connectedLetter, list, count);
         }
     }
 
     private Letter GetRandomMember(List<Letter> list)
     {
+        var letters = list
+            .Where(l => l.ConnectedLetters.Count == 1)
+            .ToList();
         return list[Random.Range(0, list.Count)];
     }
 
@@ -395,8 +401,4 @@ public class Partioner : BaseObject
         LetterController.ConnectAdjacentLetters();
     }
 
-    public void Cancel()
-    {
-        _cancel = true;
-    }
 }

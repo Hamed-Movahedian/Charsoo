@@ -174,7 +174,8 @@ public class Letter : BaseObject
         if (ConnectedLetters.Contains(l2))
         {
             ConnectedLetters.Remove(l2);
-            l2.DisConnect(this);
+            if (l2.ConnectedLetters.Contains(this))
+                l2.ConnectedLetters.Remove(this);
         }
     }
 
