@@ -12,6 +12,7 @@ public class LanguagePack : ScriptableObject
     [Header("In-Progress Messages")]
     [Multiline] public string Inprogress_AccountRecovery;
     [Multiline] public string Inprogress_AccountConnection;
+    [Multiline] public string Inprogress_GenerateWordSet;
 
     [Header("Errors")]
     [Multiline] public string Error_InternetAccess;
