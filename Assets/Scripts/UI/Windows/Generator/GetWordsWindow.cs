@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MgsCommonLib.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GetWordsWindow : UIWindowBase
 {
     public InputField WordsInputField;
+    public GetWordCountWindow WordCountWindow;
     public WordSetGenerator WordSetGenerator;
 
     public IEnumerator GenerateWordSets()
@@ -14,19 +16,14 @@ public class GetWordsWindow : UIWindowBase
         // Set words in generator
         WordSetGenerator.AllWords=WordsInputField.text
             .Replace(' ', '\n');
+        WordSetGenerator.Initialize();
 
         // Hide this window
         yield return Hide();
 
-        // Show inProgress window
-        yield return UIController.ShowInprogressWindow(LanguagePack.Inprogress_GenerateWordSet);
 
-        // Generate words
-        yield return WordSetGenerator.MakeWordSet();
-
-        // Hide in-progress window
-        yield return UIController.HideInprogressWindow();
-
-        // Spawn words
+        // Show get word count window
+        yield return WordCountWindow.ShowWaitForCloseHide();
+ 
     }
 }

@@ -14,6 +14,7 @@ public class UIController : MgsSingleton<UIController>
 
     [Header("General windows")]
     public MgsUIWindow InprogressWindow;
+    public MgsUIWindow ProgressbarWindow;
     public MgsUIWindow ErrorWindow;
     public MgsUIWindow MessageWindow;
 
@@ -52,5 +53,24 @@ public class UIController : MgsSingleton<UIController>
         // Show in-progress window => wait for close => hide
         yield return MessageWindow.ShowWaitForCloseHide();
 
+    }
+
+    public IEnumerator ShowProgressbarWindow(string message)
+    {
+        // Set text of label in "Message" game object
+        ProgressbarWindow.SetTextMessage(message);
+
+        // Show in-progress window
+        yield return ProgressbarWindow.Show();
+    }
+    internal IEnumerator HideProgressbarWindow()
+    {
+        yield return ProgressbarWindow.Hide();
+    }
+
+    public bool SetProgressbar(float percentage)
+    {
+        ProgressbarWindow.SetFillAmount(percentage);
+        return true;
     }
 }

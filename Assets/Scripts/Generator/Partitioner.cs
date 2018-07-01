@@ -6,7 +6,7 @@ using MgsCommonLib.Utilities;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Partioner : BaseObject
+public class Partitioner : BaseObject
 {
     public int MinSize = 2;
     public int MaxSize = 3;

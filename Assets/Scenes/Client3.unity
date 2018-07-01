@@ -2177,6 +2177,7 @@ MonoBehaviour:
   InputCodeWindow: {fileID: 1072873263}
   PlayerInfoEditor: {fileID: 1891861547}
   InprogressWindow: {fileID: 1521639586}
+  ProgressbarWindow: {fileID: 1826105435}
   ErrorWindow: {fileID: 101146313}
   MessageWindow: {fileID: 372747542}
 --- !u!1 &123915854
@@ -3299,6 +3300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b95959a80b3de94f97fe41767821a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordSetGenerator: {fileID: 1611429978}
+  RegenerateWindow: {fileID: 1776474046}
 --- !u!224 &173701438 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224503918441083256, guid: 863a93e3d52bc4e439fc97ec05341025,
@@ -3665,7 +3668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -687.6}
+  m_AnchoredPosition: {x: 0, y: 194.90015}
   m_SizeDelta: {x: 875, y: 389.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216117498
@@ -8524,7 +8527,18 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1815925124}
+        m_MethodName: set_SetText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &452224757
@@ -10351,7 +10365,7 @@ GameObject:
   - component: {fileID: 535299907}
   - component: {fileID: 535299906}
   m_Layer: 5
-  m_Name: InputField
+  m_Name: Min
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10394,7 +10408,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -10415,13 +10429,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 535299907}
   m_TextComponent: {fileID: 1322968080}
   m_Placeholder: {fileID: 612621436}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -11255,7 +11269,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -11277,7 +11291,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1776474046}
         m_MethodName: StartCorotineMethod
         m_Mode: 5
         m_Arguments:
@@ -11285,7 +11299,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ValidateCode
+          m_StringArgument: Regenerate
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -12765,7 +12779,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -12787,7 +12801,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 173510517}
         m_MethodName: StartCorotineMethod
         m_Mode: 5
         m_Arguments:
@@ -12795,7 +12809,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ValidateCode
+          m_StringArgument: Continue
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -19015,7 +19029,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -19037,7 +19051,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1776474046}
         m_MethodName: StartCorotineMethod
         m_Mode: 5
         m_Arguments:
@@ -19045,7 +19059,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ValidateCode
+          m_StringArgument: Continue
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -21508,7 +21522,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -21530,7 +21544,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1965840651}
         m_MethodName: StartCorotineMethod
         m_Mode: 5
         m_Arguments:
@@ -21538,7 +21552,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ValidateCode
+          m_StringArgument: Partition
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -25226,7 +25240,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -26067,6 +26081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WordsInputField: {fileID: 1644408703}
+  WordCountWindow: {fileID: 173510517}
   WordSetGenerator: {fileID: 1611429978}
 --- !u!222 &1290197330
 CanvasRenderer:
@@ -30330,7 +30345,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -30882,7 +30897,7 @@ GameObject:
   - component: {fileID: 1558185004}
   - component: {fileID: 1558185003}
   m_Layer: 5
-  m_Name: InputField (1)
+  m_Name: Max
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30925,7 +30940,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -30946,13 +30961,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1558185004}
   m_TextComponent: {fileID: 1575418559}
   m_Placeholder: {fileID: 1927886647}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -31623,7 +31638,7 @@ MonoBehaviour:
   MinSize: 2
   MaxSize: 3
   ErrorCount: 1
-  ParitionColor: {r: 0, g: 0, b: 0, a: 0}
+  ParitionColor: {r: 0.495321, g: 0.678, b: 0.29899797, a: 0.559}
   Validate: 1
   InvalidResults: 0
   TryCount: 0
@@ -31867,7 +31882,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u064A\u0632\uFE8E\uFEB3\u0632\uFE8E\uFE91"
+  m_Text: "\uFEE2\uFEF4\uFEB4\uFED8\uFE97"
 --- !u!222 &1624021003
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32766,7 +32781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1660443630
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33839,7 +33854,7 @@ GameObject:
   - component: {fileID: 1721014419}
   - component: {fileID: 1721014418}
   m_Layer: 5
-  m_Name: ProgressContent
+  m_Name: ProgressFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33869,7 +33884,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1721014419
@@ -35015,6 +35030,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884be814931022141a7273f663df9ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordSetGenerator: {fileID: 1611429978}
+  PartitionererWindow: {fileID: 1965840651}
 --- !u!1 &1779712373
 GameObject:
   m_ObjectHideFlags: 0
@@ -36232,6 +36249,7 @@ GameObject:
   - component: {fileID: 1815925121}
   - component: {fileID: 1815925123}
   - component: {fileID: 1815925122}
+  - component: {fileID: 1815925124}
   m_Layer: 5
   m_Name: Count
   m_TagString: Untagged
@@ -36296,6 +36314,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1815925120}
+--- !u!114 &1815925124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1815925120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f42e411474dab43a615810ca19af88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1820721227
 GameObject:
   m_ObjectHideFlags: 0
@@ -39436,6 +39465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0dd6437f3514448b9256c2a7c2d10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Partitioner: {fileID: 1611429977}
 --- !u!1 &1970580985
 GameObject:
   m_ObjectHideFlags: 0

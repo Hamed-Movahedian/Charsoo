@@ -39,14 +39,56 @@ public class WordSetGenerator : BaseObject
     [ContextMenu("MakeWordSet")]
     public IEnumerator MakeWordSet()
     {
+        Initialize();
+
+        SWord word = null;
+        int index = 0;
+
+        while (_results.Count < MaxResults)
+        {
+            MgsCoroutine.Info = _results.Count + " word set found.";
+            if (BruteForce)
+            {
+                if (index < _words.Count)
+                    word = _words[index++];
+                else
+                    break;
+            }
+            else
+                word = _words[Random.Range(0, _words.Count)];
+
+            word.X = 0;
+            word.Y = 0;
+            word.WordDirection = WordDirection.Horizontal;
+
+            yield return TryOtherWords(word);
+        }
+
+        MgsCoroutine.Info = "Sorting...";
+        MgsCoroutine.ForceUpdate();
+
+        yield return null;
+
+        EndResults = _results
+            .Select(ConvertToList)
+            .OrderByDescending(Fitness4)
+            .Take(1000)
+            .ToList();
+
+        print(_results.Count + " WordSet Found");
+
+    }
+
+    public void Initialize()
+    {
         // Clear last partitions
-        Partioner partitioner = GetComponent<Partioner>();
+        Partitioner partitioner = GetComponent<Partitioner>();
         partitioner.Clear();
 
         WordStrings = AllWords
             .Replace(" ", "")
             .Replace("‌", "")
-            .Split(' ', '\n', '\t','-', '–')
+            .Split(' ', '\n', '\t', '-', '–')
             .Select(s => s.Trim())
             .Where(s => s.Length > 0 && s[0] != '/')
             .Distinct()
@@ -82,44 +124,6 @@ public class WordSetGenerator : BaseObject
             _words.Add(new SWord { Name = wordString });
 
         MgsCoroutine.Title = "Generate Word set";
-       
-
-
-        SWord word = null;
-        int index = 0;
-
-        while (_results.Count < MaxResults)
-        {
-            MgsCoroutine.Info = _results.Count+" word set found.";
-            if (BruteForce)
-            {
-                if (index < _words.Count)
-                    word = _words[index++];
-                else
-                    break;
-            }
-            else
-                word = _words[Random.Range(0, _words.Count)];
-
-            word.X = 0;
-            word.Y = 0;
-            word.WordDirection = WordDirection.Horizontal;
-
-            yield return TryOtherWords(word);
-        }
-
-        MgsCoroutine.Info = "Sorting...";
-        MgsCoroutine.ForceUpdate();
-        yield return null;
-
-        EndResults = _results
-            .Select(ConvertToList)
-            .OrderByDescending(Fitness4)
-            .Take(1000)
-            .ToList();
-
-        print(_results.Count + " WordSet Found");
-
     }
 
     private IEnumerator TryOtherWords(SWord lastWord)

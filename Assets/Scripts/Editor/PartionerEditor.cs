@@ -4,15 +4,15 @@ using MgsCommonLib.Utilities;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(Partioner))]
+[CustomEditor(typeof(Partitioner))]
 public class PartionerEditor : Editor
 {
-    private Partioner _partioner;
+    private Partitioner _partitioner;
     private double _startTime;
 
     public override void OnInspectorGUI()
     {
-        _partioner = target as Partioner;
+        _partitioner = target as Partitioner;
 
         if (GUILayout.Button("Partition"))
         {
@@ -20,39 +20,39 @@ public class PartionerEditor : Editor
             _startTime = EditorApplication.timeSinceStartup;
 
             MgsCoroutine.Start(
-                _partioner.PortionLetters(),
+                _partitioner.PortionLetters(),
                 () => EditorUtility.DisplayCancelableProgressBar(MgsCoroutine.Title, MgsCoroutine.Info, MgsCoroutine.Percentage),
                 0.1);
 
             EditorUtility.ClearProgressBar();
 
-            if(_partioner.PartitionSuccessfully)
+            if(_partitioner.PartitionSuccessfully)
                 Debug.Log(
                     string.Format("Connect in {0} try. ({1} invalid results)" + " in {2} sec.", 
-                    _partioner.TryCount, 
-                    _partioner.InvalidResults, 
+                    _partitioner.TryCount, 
+                    _partitioner.InvalidResults, 
                     EditorApplication.timeSinceStartup - _startTime));
             else
-                Debug.LogError(string.Format("Portion failed with {0} Invalid results !!!", _partioner.InvalidResults));
+                Debug.LogError(string.Format("Portion failed with {0} Invalid results !!!", _partitioner.InvalidResults));
 
         }
 
         if (GUILayout.Button("Shuffle"))
         {
-            _partioner.Undo= Undo.RecordObject;
-            _partioner.Shuffle();
+            _partitioner.Undo= Undo.RecordObject;
+            _partitioner.Shuffle();
         }
 
         if (GUILayout.Button("Compress"))
         {
-            _partioner.Undo = Undo.RecordObject;
-            _partioner.Compress();
+            _partitioner.Undo = Undo.RecordObject;
+            _partitioner.Compress();
         }
 
         if (GUILayout.Button("Rotate"))
         {
-            _partioner.Undo = Undo.RecordObject;
-            _partioner.Rotate();
+            _partitioner.Undo = Undo.RecordObject;
+            _partitioner.Rotate();
         }
         DrawDefaultInspector();
     }

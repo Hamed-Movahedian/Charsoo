@@ -236,7 +236,7 @@ public class WordSetValidator
     
     #region Initialize
 
-    public void Initialize(Partioner partitioner)
+    public void Initialize(Partitioner partitioner)
     {
         _wordComponents = partitioner.WordManager.GetComponentsInChildren<Word>();
 

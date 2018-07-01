@@ -125,7 +125,9 @@ public class WordSpawner : BaseObject
         }
         else
         {
-            foreach (List<Letter> part in CreatParts())
+            List<List<Letter>> parts = CreateParts();
+
+            foreach (List<Letter> part in parts)
                 foreach (Letter l in part)
                     l.gameObject.SetActive(true);
         }
@@ -133,13 +135,28 @@ public class WordSpawner : BaseObject
 
     #region enable letters PART BY PART
 
-    private List<List<Letter>> CreatParts()
+    private List<List<Letter>> CreateParts()
     {
         List<List<Letter>> parts=new List<List<Letter>>();
         parts.Clear();
-        List<Letter> letters = new List<Letter>();
 
-        WordManager.Words.ForEach(w =>
+        List<Letter> letters = LetterController.AllLetters;
+
+
+        while (letters.Count>0)
+        {
+            List<Letter> connectedLetters = new List<Letter>();
+
+            letters[0].GetConnectedLetters(connectedLetters);
+
+            parts.Add(connectedLetters);
+
+            connectedLetters.ForEach(l=>letters.Remove(l));
+
+        }
+
+
+ /*       WordManager.Words.ForEach(w =>
         {
             foreach (Letter l in w.Letters)
                 if (!letters.Contains(l))
@@ -171,14 +188,16 @@ public class WordSpawner : BaseObject
                 letters.Remove(letter);
                 parts.Add(newPart);
             }
-        }
+        }*/
         return parts;
     }
 
     public IEnumerator EnlableParts()
     {
         yield return new WaitForSeconds(0.1f);
-        List<List<Letter>> parts = CreatParts();
+
+        List<List<Letter>> parts = CreateParts();
+
         foreach (List<Letter> part in parts)
         {
             part.ForEach(l=>l.gameObject.SetActive(true));
