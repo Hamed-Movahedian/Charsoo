@@ -119,9 +119,12 @@ public class WordSpawner : BaseObject
             wordComponent.Letters.Add(letter);
             //letter.gameObject.SetActive(false);
         }
+        LetterController.ConnectAdjacentLetters();
+
         if (Application.isPlaying)
         {
-            StartCoroutine(EnlableParts());
+            StartCoroutine(CameraController.FocusAllLetters());
+            StartCoroutine(EnableParts());
         }
         else
         {
@@ -140,7 +143,7 @@ public class WordSpawner : BaseObject
         List<List<Letter>> parts=new List<List<Letter>>();
         parts.Clear();
 
-        List<Letter> letters = LetterController.AllLetters;
+        List<Letter> letters = new List<Letter>(LetterController.AllLetters);
 
 
         while (letters.Count>0)
@@ -154,45 +157,11 @@ public class WordSpawner : BaseObject
             connectedLetters.ForEach(l=>letters.Remove(l));
 
         }
-
-
- /*       WordManager.Words.ForEach(w =>
-        {
-            foreach (Letter l in w.Letters)
-                if (!letters.Contains(l))
-                    letters.Add(l);
-        });
-
-        while (letters.Count > 0)
-        {
-            Letter letter = letters[0];
-            bool added = false;
-
-            foreach (Letter connectedLetter in letter.ConnectedLetters)
-            {
-                for (int i = 0; i < parts.Count; i++)
-                {
-                    List<Letter> part = parts[i];
-                    if (part.Contains(connectedLetter))
-                    {
-                        part.Add(letters[0]);
-                        letters.Remove(letter);
-                        added = true;
-                    }
-                }
-            }
-
-            if (!added)
-            {
-                List<Letter> newPart = new List<Letter> { letter };
-                letters.Remove(letter);
-                parts.Add(newPart);
-            }
-        }*/
+ 
         return parts;
     }
 
-    public IEnumerator EnlableParts()
+    public IEnumerator EnableParts()
     {
         yield return new WaitForSeconds(0.1f);
 

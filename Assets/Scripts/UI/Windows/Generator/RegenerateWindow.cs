@@ -13,6 +13,10 @@ public class RegenerateWindow : UIWindowBase
 
     public IEnumerator Regenerate()
     {
+        // Delete all letters and words
+        Singleton.Instance.LetterController.DeleteAllLetters();
+        Singleton.Instance.WordManager.DeleteAllWords();
+
         // Hide this window
         yield return Hide();
 
@@ -22,7 +26,7 @@ public class RegenerateWindow : UIWindowBase
         // Generate words
         yield return MgsCoroutine.StartCoroutineRuntime(
             WordSetGenerator.MakeWordSet(),
-            () => UIController.SetProgressbar(MgsCoroutine.Percentage),
+            () => UIController.SetProgressbar(MgsCoroutine.Percentage,MgsCoroutine.Info),
             0.1);
 
         // Hide in-progress window

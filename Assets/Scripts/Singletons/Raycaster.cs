@@ -16,6 +16,7 @@ public class Raycaster : BaseObject
     private bool _letterDrag=false;
     private Vector3 _lastDragPos;
     private bool _cameraDrag = false;
+    private bool _enablePan = true;
 
     #endregion
 
@@ -38,17 +39,8 @@ public class Raycaster : BaseObject
 
     void Update()
     {
-        // Camera 
-
-        #region Pan
-
-
-        #endregion
-
-        // Letter Drag
-        if (!_isPlaying)
+        if (!_enablePan)
             return;
-
 
         #region Start Drag letter or Pan
 
@@ -60,6 +52,9 @@ public class Raycaster : BaseObject
 
             if (collider != null)
             {
+                if (!_isPlaying)
+                    return;
+
                 Letter letter = collider.GetComponent<Letter>();
 
                 if (letter != null)
@@ -122,5 +117,8 @@ public class Raycaster : BaseObject
 
     #endregion
 
-
+    public void EnablePan(bool value)
+    {
+        _enablePan = value;
+    }
 }

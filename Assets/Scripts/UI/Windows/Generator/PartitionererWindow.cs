@@ -23,7 +23,7 @@ public class PartitionererWindow : UIWindowBase
         // Generate words
         yield return MgsCoroutine.StartCoroutineRuntime(
             Partitioner.PortionLetters(),
-            () => UIController.SetProgressbar(MgsCoroutine.Percentage),
+            () => UIController.SetProgressbar(MgsCoroutine.Percentage,MgsCoroutine.Info),
             .1);
 
         // Hide in-progress window
@@ -34,4 +34,11 @@ public class PartitionererWindow : UIWindowBase
     }
 
     #endregion
+
+    protected override void OnShow()
+    {
+        base.OnShow();
+        GetComponentByName<InputField>("Min").text = "1";
+        GetComponentByName<InputField>("Max").text = "5";
+    }
 }

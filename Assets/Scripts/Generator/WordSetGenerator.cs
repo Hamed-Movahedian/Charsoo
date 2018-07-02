@@ -86,7 +86,6 @@ public class WordSetGenerator : BaseObject
         partitioner.Clear();
 
         WordStrings = AllWords
-            .Replace(" ", "")
             .Replace("‌", "")
             .Split(' ', '\n', '\t', '-', '–')
             .Select(s => s.Trim())

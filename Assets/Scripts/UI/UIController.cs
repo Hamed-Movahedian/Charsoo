@@ -68,9 +68,10 @@ public class UIController : MgsSingleton<UIController>
         yield return ProgressbarWindow.Hide();
     }
 
-    public bool SetProgressbar(float percentage)
+    public bool SetProgressbar(float percentage, string info)
     {
         ProgressbarWindow.SetFillAmount(percentage);
+        ProgressbarWindow.SetTextMessage(info);
         return true;
     }
 }

@@ -197,6 +197,7 @@ public class LetterController : BaseObject
 
     public void DeleteAllLetters()
     {
+        
         while (AllLetters.Count > 0)
         {
             Letter letter = AllLetters[0];

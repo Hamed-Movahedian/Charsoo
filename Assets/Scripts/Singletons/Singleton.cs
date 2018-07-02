@@ -44,4 +44,6 @@ public class Singleton : MonoBehaviour
     public CommandController CommandController;
 
     public PlayerController PlayerController;
+
+    public Raycaster RayCaster;
 }
