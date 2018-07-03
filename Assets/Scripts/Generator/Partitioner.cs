@@ -238,13 +238,7 @@ public class Partitioner : BaseObject
         }
 
         #endregion
-
-        #region Sort partitions
-
-        //Paritions = Paritions.OrderBy(p => GetPartitionHeight(p)).ToList();
-
-        #endregion
-
+        
         #region Get bounds
 
         List<LetterBound> letterBounds = new List<LetterBound>();
@@ -289,7 +283,8 @@ public class Partitioner : BaseObject
 
                 var bounds = letterBounds[index];
 
-                MovePartition(index, new Vector3(x, y+(height-bounds.Height)/2) - bounds.Min);
+                bounds.SetTarget(x, y + (height - bounds.Height)/2);
+                //MovePartition(index, new Vector3(x, y+(height-bounds.Height)/2) - bounds.Min);
 
                 x += bounds.Width;
 
@@ -299,28 +294,19 @@ public class Partitioner : BaseObject
         }
 
         #endregion
-
-
+        
         #region Move to center
 
-        // Compute center
-        Vector3 delta = new Vector3(0, -y / 2-2);
-
-        _allLetters = Paritions
-            .SelectMany(p => p)
-            .ToList();
-
-        _allLetters
-            .ForEach(l => l.transform.position += delta);
-
+        foreach (var letterBound in letterBounds)
+            letterBound.TargetY += -y/2 - 2;
 
         #endregion
+
+        foreach (var letterBound in letterBounds)
+            letterBound.MoveTowardTarget(1f);
     }
 
-    private int GetPartitionHeight(List<Letter> letters)
-    {
-        return (int)(letters.Max(l => l.transform.position.y) - letters.Min(l => l.transform.position.y));
-    }
+    #region Compress
 
     public void Compress()
     {
@@ -338,8 +324,8 @@ public class Partitioner : BaseObject
         bool result = false;
         // partition center
         Vector3 center = partition
-                          .Select(l => l.transform.position)
-                          .Aggregate((a, p) => a + p) * (1f / partition.Count);
+                             .Select(l => l.transform.position)
+                             .Aggregate((a, p) => a + p) * (1f / partition.Count);
         // delta move
         Vector2 delta = new Vector2(center.x == 0 ? 0 : -Mathf.Sign(center.x), 0);
 
@@ -376,15 +362,9 @@ public class Partitioner : BaseObject
 
         return true;
     }
+    
 
-    private void MovePartition(int index, Vector3 delta)
-    {
-        Paritions[index].ForEach(l =>
-        {
-            //Undo(l.transform, "Shuffle");
-            l.transform.position += delta;
-        });
-    }
+    #endregion
 
     public void Clear()
     {
@@ -426,8 +406,16 @@ public class LetterBound
 {
     public int X, Y, Width, Height;
 
+    public int TargetY;
+    public int TargetX;
+    public Vector3 Min;
+    private Vector3 _lastDelta=Vector3.zero;
+
+    private List<Letter> _letters;
+
     public LetterBound(List<Letter> letters)
     {
+        _letters = letters;
         X = Mathf.RoundToInt(letters.Min(l => l.transform.position.x)) - 1;
         Y = Mathf.RoundToInt(letters.Min(l => l.transform.position.y)) - 1;
 
@@ -437,6 +425,20 @@ public class LetterBound
         Min = new Vector3(X, Y, 0);
     }
 
-    public Vector3 Min;
+
+    public void SetTarget(int x, int y)
+    {
+        TargetX = x;
+        TargetY = y;
+    }
+
+    public void MoveTowardTarget(float value)
+    {
+        Vector3 delta = Vector3.Lerp(Min, new Vector3(TargetX, TargetY), value) -Min ;
+
+        _letters.ForEach(l=>l.transform.position+=delta-_lastDelta);
+
+        _lastDelta = delta;
+    }
 }
 
