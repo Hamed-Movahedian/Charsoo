@@ -25,6 +25,7 @@ public class Partitioner : BaseObject
     public int TryCount;
     public bool PartitionSuccessfully;
 
+    #region Partitionerer
 
     public IEnumerator PortionLetters()
     {
@@ -46,7 +47,7 @@ public class Partitioner : BaseObject
 
         for (TryCount = 0; TryCount < 30000; TryCount++)
         {
-            MgsCoroutine.Info = " Try "+TryCount+"\n\r Invalid Results "+ InvalidResults;
+            MgsCoroutine.Info = " Try " + TryCount + "\n\r Invalid Results " + InvalidResults;
 
             if (TryPartition())
             {
@@ -94,10 +95,10 @@ public class Partitioner : BaseObject
         // Add first partition with all letters
         Paritions.Add(
             WordManager
-            .GetComponentsInChildren<Word>()
-            .SelectMany(w => w.Letters)
-            .Distinct()
-            .ToList());
+                .GetComponentsInChildren<Word>()
+                .SelectMany(w => w.Letters)
+                .Distinct()
+                .ToList());
 
 
         while (Paritions.Max(p => p.Count) > MaxSize)
@@ -122,31 +123,6 @@ public class Partitioner : BaseObject
         }
 
         return true;
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (Paritions == null)
-            return;
-
-
-        Gizmos.color = ParitionColor;
-
-        for (int i = 0; i < Paritions.Count; i++)
-        {
-            List<Letter> parition = Paritions[i];
-
-            Bounds bounds = new Bounds(parition[0].transform.position, Vector3.zero);
-            parition.ForEach(l => bounds.Encapsulate(l.transform.position));
-            Gizmos.DrawCube(bounds.center, bounds.size + new Vector3(.7f, .7f, 0));
-
-            var style = new GUIStyle();
-            style.fontSize = 30;
-            style.fontStyle = FontStyle.Bold;
-            style.normal.textColor = Color.yellow;
-            UnityEditor.Handles.color = Color.yellow;
-            UnityEditor.Handles.Label(bounds.center + Vector3.back * 3, i.ToString(), style);
-        }
     }
 
     private void Separate(List<Letter> partition)
@@ -190,10 +166,10 @@ public class Partitioner : BaseObject
         {
             list.Add(letter);
 
-/*
-                        foreach (Letter connectedLetter in letter.ConnectedLetters)
-                            GetConnectedLetters(connectedLetter, list, count);
-            */
+            /*
+                                    foreach (Letter connectedLetter in letter.ConnectedLetters)
+                                        GetConnectedLetters(connectedLetter, list, count);
+                        */
 
             var connectedLetters = letter.ConnectedLetters.OrderBy(l => l.ConnectedLetters.Count);
 
@@ -210,9 +186,45 @@ public class Partitioner : BaseObject
         return list[Random.Range(0, list.Count)];
     }
 
+
+    #endregion
+
+    #region Gizmo
+
+    private void OnDrawGizmos()
+    {
+        if (Paritions == null)
+            return;
+
+
+        Gizmos.color = ParitionColor;
+
+        for (int i = 0; i < Paritions.Count; i++)
+        {
+            List<Letter> parition = Paritions[i];
+
+            Bounds bounds = new Bounds(parition[0].transform.position, Vector3.zero);
+            parition.ForEach(l => bounds.Encapsulate(l.transform.position));
+            Gizmos.DrawCube(bounds.center, bounds.size + new Vector3(.7f, .7f, 0));
+
+            var style = new GUIStyle();
+            style.fontSize = 30;
+            style.fontStyle = FontStyle.Bold;
+            style.normal.textColor = Color.yellow;
+#if UNITY_EDITOR
+            UnityEditor.Handles.color = Color.yellow;
+            UnityEditor.Handles.Label(bounds.center + Vector3.back * 3, i.ToString(), style);
+#endif
+        }
+    }
+
+
+    #endregion
+
     public void Shuffle()
     {
         _compressCount = 1;
+
         #region Shuffle partions
 
         for (int i = 0; i < Paritions.Count * 2; i++)
@@ -227,80 +239,87 @@ public class Partitioner : BaseObject
 
         #endregion
 
+        #region Sort partitions
+
+        //Paritions = Paritions.OrderBy(p => GetPartitionHeight(p)).ToList();
+
+        #endregion
+
         #region Get bounds
 
-        List<Bounds> boundses = new List<Bounds>();
+        List<LetterBound> letterBounds = new List<LetterBound>();
 
-
-        foreach (List<Letter> parition in Paritions)
-        {
-            Bounds bounds = new Bounds(parition[0].transform.position, Vector3.zero);
-
-            parition.ForEach(l => bounds.Encapsulate(l.transform.position));
-
-            bounds.size += new Vector3(2, 2, 0);
-
-            boundses.Add(bounds);
-        }
+        foreach (List<Letter> letters in Paritions)
+            letterBounds.Add(new LetterBound(letters));
 
         #endregion
 
         #region Place as a grid
 
-        float colums = Mathf.Sqrt(boundses.Count);
+        int columns = Mathf.RoundToInt(Mathf.Sqrt(letterBounds.Count));
 
-        float x = 0, y = 0;
-        float maxX = 0;
+        int x = 0, y = 0;
 
-        for (int i = 0; i < colums; i++)
+        for (int i = 0; i <= columns; i++)
         {
-            x = 0;
-            float maxY = 0;
-            for (int j = 0; j < colums; j++)
+            int width = 0;
+            int height = 0;
+
+            for (int j = 0; j < columns; j++)
             {
-                int index = (int)(i * colums + j);
+                int index = i * columns + j;
 
                 if (index >= Paritions.Count)
                     break;
 
-                var bounds = boundses[index];
+                width += letterBounds[index].Width;
 
-                x += bounds.extents.x;
+                if (height < letterBounds[index].Height)
+                    height = letterBounds[index].Height;
+            }
 
-                MovePartition(index, new Vector3(x, y + bounds.extents.y) - bounds.center);
+            x = -width / 2;
 
-                x += bounds.extents.x;
+            for (int j = 0; j < columns; j++)
+            {
+                int index = i * columns + j;
 
-                if (bounds.size.y > maxY)
-                    maxY = bounds.size.y;
+                if (index >= Paritions.Count)
+                    break;
+
+                var bounds = letterBounds[index];
+
+                MovePartition(index, new Vector3(x, y+(height-bounds.Height)/2) - bounds.Min);
+
+                x += bounds.Width;
 
             }
 
-            if (x > maxX)
-                maxX = x;
-
-            y += maxY;
+            y += height;
         }
 
         #endregion
 
+
         #region Move to center
 
         // Compute center
+        Vector3 delta = new Vector3(0, -y / 2-2);
+
         _allLetters = Paritions
             .SelectMany(p => p)
             .ToList();
 
-        Vector3 center = _allLetters
-            .Select(l => l.transform.position)
-            .Aggregate(((a, l) => a + l)) * (1f / _allLetters.Count);
-
-        // Move center to (0,0)
         _allLetters
-            .ForEach(l => l.transform.position -= center);
+            .ForEach(l => l.transform.position += delta);
 
 
         #endregion
+    }
+
+    private int GetPartitionHeight(List<Letter> letters)
+    {
+        return (int)(letters.Max(l => l.transform.position.y) - letters.Min(l => l.transform.position.y));
     }
 
     public void Compress()
@@ -362,7 +381,7 @@ public class Partitioner : BaseObject
     {
         Paritions[index].ForEach(l =>
         {
-            Undo(l.transform, "Shuffle");
+            //Undo(l.transform, "Shuffle");
             l.transform.position += delta;
         });
     }
@@ -402,3 +421,22 @@ public class Partitioner : BaseObject
     }
 
 }
+
+public class LetterBound
+{
+    public int X, Y, Width, Height;
+
+    public LetterBound(List<Letter> letters)
+    {
+        X = Mathf.RoundToInt(letters.Min(l => l.transform.position.x)) - 1;
+        Y = Mathf.RoundToInt(letters.Min(l => l.transform.position.y)) - 1;
+
+        Width = Mathf.RoundToInt(letters.Max(l => l.transform.position.x)) - X + 1;
+        Height = Mathf.RoundToInt(letters.Max(l => l.transform.position.y)) - Y + 1;
+
+        Min = new Vector3(X, Y, 0);
+    }
+
+    public Vector3 Min;
+}
+

@@ -17,6 +17,7 @@ public class WordGeneratorEditor : Editor
 
         if (GUILayout.Button("Generate"))
         {
+            MgsCoroutine.GetTime = GetTime;
             MgsCoroutine.Start(
                 _wg.MakeWordSet(), 
                 () => EditorUtility.DisplayCancelableProgressBar(MgsCoroutine.Title, MgsCoroutine.Info,MgsCoroutine.Percentage),

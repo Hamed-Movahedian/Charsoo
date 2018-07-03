@@ -18,7 +18,7 @@ public class PartionerEditor : Editor
         {
             // Record start time
             _startTime = EditorApplication.timeSinceStartup;
-
+            MgsCoroutine.GetTime = GetTime;
             MgsCoroutine.Start(
                 _partitioner.PortionLetters(),
                 () => EditorUtility.DisplayCancelableProgressBar(MgsCoroutine.Title, MgsCoroutine.Info, MgsCoroutine.Percentage),
@@ -55,5 +55,10 @@ public class PartionerEditor : Editor
             _partitioner.Rotate();
         }
         DrawDefaultInspector();
+    }
+
+    private static double GetTime()
+    {
+        return EditorApplication.timeSinceStartup;
     }
 }
