@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using MgsCommonLib.Utilities;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PartitionererWindow : UIWindowBase
 {
     public Partitioner Partitioner;
+
+    public UnityEvent OnShuffle;
 
     #region Partition 
 
@@ -35,10 +38,29 @@ public class PartitionererWindow : UIWindowBase
 
     #endregion
 
+    #region Continue desciption
+
+    public IEnumerator Continue()
+    {
+        // Hide this window
+        StartCoroutine(Hide());
+        
+        OnShuffle.Invoke();
+
+        // shuffle parts
+        yield return Partitioner.Shuffle();
+        
+    }
+
+    #endregion
+
+    #region OnShow
+
     protected override void OnShow()
     {
         base.OnShow();
         GetComponentByName<InputField>("Min").text = "1";
         GetComponentByName<InputField>("Max").text = "5";
     }
+    #endregion
 }

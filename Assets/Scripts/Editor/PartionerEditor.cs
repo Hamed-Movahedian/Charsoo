@@ -26,11 +26,11 @@ public class PartionerEditor : Editor
 
             EditorUtility.ClearProgressBar();
 
-            if(_partitioner.PartitionSuccessfully)
+            if (_partitioner.PartitionSuccessfully)
                 Debug.Log(
-                    string.Format("Connect in {0} try. ({1} invalid results)" + " in {2} sec.", 
-                    _partitioner.TryCount, 
-                    _partitioner.InvalidResults, 
+                    string.Format("Connect in {0} try. ({1} invalid results)" + " in {2} sec.",
+                    _partitioner.TryCount,
+                    _partitioner.InvalidResults,
                     EditorApplication.timeSinceStartup - _startTime));
             else
                 Debug.LogError(string.Format("Portion failed with {0} Invalid results !!!", _partitioner.InvalidResults));
@@ -39,8 +39,10 @@ public class PartionerEditor : Editor
 
         if (GUILayout.Button("Shuffle"))
         {
-            _partitioner.Undo= Undo.RecordObject;
-            _partitioner.Shuffle();
+            MgsCoroutine.Start(
+                _partitioner.Shuffle(),
+                () => true,
+                0.1);
         }
 
         if (GUILayout.Button("Compress"))

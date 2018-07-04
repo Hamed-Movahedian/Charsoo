@@ -17,11 +17,13 @@ public class GetWordCountWindow : UIWindowBase
         WordSetGenerator.UsedWordCount = (int) _slider.value;
 
         // Hide this window
-        yield return Hide();
+        StartCoroutine(Hide());
 
         // Show inProgress window
         yield return UIController.ShowProgressbarWindow(LanguagePack.Inprogress_GenerateWordSet);
 
+        Application.targetFrameRate = 0;
+        QualitySettings.vSyncCount = 0;
         // Generate words
         yield return MgsCoroutine.StartCoroutineRuntime(
             WordSetGenerator.MakeWordSet(),
@@ -29,7 +31,7 @@ public class GetWordCountWindow : UIWindowBase
             0.1);
 
         // Hide in-progress window
-        yield return UIController.HideProgressbarWindow();
+        StartCoroutine(UIController.HideProgressbarWindow());
 
         // Spawn words
         WordSetGenerator.SpawnWordSet();

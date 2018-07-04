@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MgsCommonLib.Animation;
 using MgsCommonLib.Utilities;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -221,7 +222,7 @@ public class Partitioner : BaseObject
 
     #endregion
 
-    public void Shuffle()
+    public IEnumerator Shuffle()
     {
         _compressCount = 1;
 
@@ -238,7 +239,7 @@ public class Partitioner : BaseObject
         }
 
         #endregion
-        
+
         #region Get bounds
 
         List<LetterBound> letterBounds = new List<LetterBound>();
@@ -283,8 +284,7 @@ public class Partitioner : BaseObject
 
                 var bounds = letterBounds[index];
 
-                bounds.SetTarget(x, y + (height - bounds.Height)/2);
-                //MovePartition(index, new Vector3(x, y+(height-bounds.Height)/2) - bounds.Min);
+                bounds.SetTarget(x, y + (height - bounds.Height) / 2);
 
                 x += bounds.Width;
 
@@ -294,16 +294,35 @@ public class Partitioner : BaseObject
         }
 
         #endregion
-        
+
         #region Move to center
 
         foreach (var letterBound in letterBounds)
-            letterBound.TargetY += -y/2 - 2;
+            letterBound.TargetY += -y / 2 - 2;
 
         #endregion
 
-        foreach (var letterBound in letterBounds)
-            letterBound.MoveTowardTarget(1f);
+        if (Application.isPlaying)
+        {
+            // Get target bound
+            Bounds targetBounds = letterBounds[0].GetBounds();
+
+            for (int i = 1; i < letterBounds.Count; i++)
+                letterBounds[i].AddBounds(ref targetBounds);
+
+            StartCoroutine(Singleton.Instance.CameraController.FocusToBound(targetBounds));
+
+            yield return MsgAnimation.RunAnimation(
+                1f,
+                (v) =>
+                {
+                    foreach (var letterBound in letterBounds)
+                        letterBound.MoveTowardTarget(v);
+                });
+        }
+        else
+            foreach (var letterBound in letterBounds)
+                letterBound.MoveTowardTarget(1f);
     }
 
     #region Compress
@@ -362,7 +381,7 @@ public class Partitioner : BaseObject
 
         return true;
     }
-    
+
 
     #endregion
 
@@ -409,7 +428,7 @@ public class LetterBound
     public int TargetY;
     public int TargetX;
     public Vector3 Min;
-    private Vector3 _lastDelta=Vector3.zero;
+    private Vector3 _lastDelta = Vector3.zero;
 
     private List<Letter> _letters;
 
@@ -434,11 +453,31 @@ public class LetterBound
 
     public void MoveTowardTarget(float value)
     {
-        Vector3 delta = Vector3.Lerp(Min, new Vector3(TargetX, TargetY), value) -Min ;
+        Vector3 delta = Vector3.Lerp(Min, new Vector3(TargetX, TargetY), value) - Min;
 
-        _letters.ForEach(l=>l.transform.position+=delta-_lastDelta);
+        _letters.ForEach(l => l.transform.position += delta - _lastDelta);
 
         _lastDelta = delta;
+    }
+
+    public Bounds GetBounds()
+    {
+        var delta = new Vector3(TargetX, TargetY) - Min;
+
+        var bounds = new Bounds(_letters[0].transform.position+delta, Vector3.zero);
+
+        for (int i = 1; i < _letters.Count; i++)
+            bounds.Encapsulate(_letters[i].transform.position + delta);
+
+        return bounds;
+    }
+
+    public void AddBounds(ref Bounds bounds)
+    {
+        var delta = new Vector3(TargetX, TargetY) - Min;
+
+        foreach (Letter letter in _letters)
+            bounds.Encapsulate(letter.transform.position + delta);
     }
 }
 

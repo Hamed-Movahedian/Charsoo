@@ -19,7 +19,7 @@ public class GetWordsWindow : UIWindowBase
         WordSetGenerator.Initialize();
 
         // Hide this window
-        yield return Hide();
+        StartCoroutine(Hide());
 
 
         // Show get word count window
