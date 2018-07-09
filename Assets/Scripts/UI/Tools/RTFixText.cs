@@ -33,7 +33,7 @@ public class RTFixText : MonoBehaviour
     {
         while (true)
         {
-           _text.text = ArabicFixer.Fix(TargetText.text);
+           _text.text = ArabicFixer.Fix(TargetText.text.Replace("ی", "ي"));
             yield return new WaitForSeconds(0.1f);
         }
     }
