@@ -25,6 +25,7 @@ public class Partitioner : BaseObject
     private double _startTime;
     public int TryCount;
     public bool PartitionSuccessfully;
+    public int MaxTry;
 
     #region Partitionerer
 
@@ -46,7 +47,7 @@ public class Partitioner : BaseObject
         _validator.Initialize(this);
 
 
-        for (TryCount = 0; TryCount < 30000; TryCount++)
+        for (TryCount = 0; TryCount < MaxTry; TryCount++)
         {
             MgsCoroutine.Info = " Try " + TryCount + "\n\r Invalid Results " + InvalidResults;
 
@@ -73,7 +74,7 @@ public class Partitioner : BaseObject
                 yield break;
             }
 
-            MgsCoroutine.Percentage = TryCount / 30000f;
+            MgsCoroutine.Percentage = TryCount / (float)MaxTry;
 
             yield return null;
         }

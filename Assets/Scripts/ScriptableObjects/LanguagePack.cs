@@ -13,6 +13,7 @@ public class LanguagePack : ScriptableObject
     [Multiline] public string Inprogress_AccountRecovery;
     [Multiline] public string Inprogress_AccountConnection;
     [Multiline] public string Inprogress_GenerateWordSet;
+    [Multiline] public string Inprogress_PartitionWordSet;
 
     [Header("Errors")]
     [Multiline] public string Error_InternetAccess;
@@ -21,5 +22,6 @@ public class LanguagePack : ScriptableObject
     [Multiline] public string Error_AccountRecovery;
     [Multiline] public string Error_InvalidCode;
     [Multiline] public string Error_InvalidPhoneNumber;
+    [Multiline] public string Error_GenerateWordSet;
 }
 
