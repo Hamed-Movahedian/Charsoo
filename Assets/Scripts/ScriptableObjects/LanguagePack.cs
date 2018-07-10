@@ -23,5 +23,6 @@ public class LanguagePack : ScriptableObject
     [Multiline] public string Error_InvalidCode;
     [Multiline] public string Error_InvalidPhoneNumber;
     [Multiline] public string Error_GenerateWordSet;
+    [Multiline] public string Error_NoCategoryIsSelected;
 }
 

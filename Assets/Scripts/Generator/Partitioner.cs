@@ -50,6 +50,8 @@ public class Partitioner : BaseObject
         for (TryCount = 0; TryCount < MaxTry; TryCount++)
         {
             MgsCoroutine.Info = " Try " + TryCount + "\n\r Invalid Results " + InvalidResults;
+            MgsCoroutine.Percentage = ((float)TryCount) / MaxTry;
+            yield return null;
 
             if (TryPartition())
             {
@@ -73,11 +75,9 @@ public class Partitioner : BaseObject
 
                 yield break;
             }
-
-            MgsCoroutine.Percentage = TryCount / (float)MaxTry;
-
-            yield return null;
+            
         }
+        PartitionSuccessfully = false;
 
         Paritions.Clear();
 
@@ -167,11 +167,6 @@ public class Partitioner : BaseObject
         if (list.Count < count)
         {
             list.Add(letter);
-
-            /*
-                                    foreach (Letter connectedLetter in letter.ConnectedLetters)
-                                        GetConnectedLetters(connectedLetter, list, count);
-                        */
 
             var connectedLetters = letter.ConnectedLetters.OrderBy(l => l.ConnectedLetters.Count);
 
