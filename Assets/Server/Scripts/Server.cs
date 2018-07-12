@@ -15,8 +15,8 @@ public static class Server
         get
         {
 #if UNITY_EDITOR
-            return "http://charsoogame.ir";
-            //return "http://localhost:52391";
+            //return "http://charsoogame.ir";
+            return "http://localhost:52391";
 #else
             return "http://charsoogame.ir";
 #endif
