@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MgsCommonLib.UI;
 using MgsCommonLib.Utilities;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class RuntimeWordSetGenerator : MonoBehaviour
@@ -14,10 +15,14 @@ public class RuntimeWordSetGenerator : MonoBehaviour
     public MgsUIWindow WordsetApproval;
     public MgsUIWindow PartiotionFaildWindow;
     public MgsUIWindow CategorySelectionWindow;
+    public MgsUIWindow FinalizeWindow;
 
     [Header("Components")]
     public WordSetGenerator Generator;
     public Partitioner Partitioner;
+
+    [Header("Events")]
+    public UnityEvent OnExit;
 
     public IEnumerator StartProcess()
     {
@@ -48,7 +53,10 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         #endregion
 
         if (GetClueWindow.Result == "Back")
+        {
+            OnExit.Invoke();
             yield break;
+        }
 
         #region CategorySelectionWindow
 
@@ -220,6 +228,25 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
         // Shuffle letters
         yield return Partitioner.Shuffle();
+
+        #region WordsetApproval
+
+        SaveWordSet:
+        // Show puzzle selection window - Back,Select,Regenerate
+        yield return FinalizeWindow.ShowWaitForCloseHide();
+
+        #endregion
+
+        switch (FinalizeWindow.Result)
+        {
+            case "Exit":
+                OnExit.Invoke();
+                yield break;
+            case "Save":
+                Debug.Log("Puzzle Saved");
+                OnExit.Invoke();
+                yield break;
+        }
 
 
 

@@ -55,7 +55,7 @@ public class SWord
     public SWord()
     {
         Name = "";
-        WordDirection = WordDirection.Horizontal;
+        WordDirection = WordDirection.Vertical;
         X = 0;
         Y = 0;
         MatchCount = 0;

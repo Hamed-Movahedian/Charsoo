@@ -16,7 +16,10 @@ public class Puzzle : BaseTable
     public WordSet GetWordSet()
     {
         WordSet wordSet = new WordSet();
-        JsonUtility.FromJsonOverwrite(StringCompressor.DecompressString(Content), wordSet);
+        string decompressString = StringCompressor.DecompressString(Content);
+/*        string replace = decompressString.Replace("\"Direction\":1", "\"Direction\":V");
+        decompressString= replace.Replace("\"Direction\":0", "\"Direction\":H");*/
+        JsonUtility.FromJsonOverwrite(decompressString, wordSet);
         return wordSet;
     }
 }

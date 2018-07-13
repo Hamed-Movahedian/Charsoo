@@ -72,5 +72,5 @@ public class Word : BaseObject
 
 public enum WordDirection
 {
-    Horizontal,Vertical
+    Horizontal=0,Vertical=1
 }
