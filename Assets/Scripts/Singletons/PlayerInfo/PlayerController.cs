@@ -44,7 +44,7 @@ public class PlayerController : BaseObject
     {
         // Get player info from localDB
         PlayerInfo = 
-            LocalDatabase
+            LocalDBController
             .Table<PlayerInfo>()
             .FirstOrDefault();
 
@@ -83,7 +83,7 @@ public class PlayerController : BaseObject
     private IEnumerator LoginToDB()
     {
 
-        yield return LocalDatabase.AddLogin(PlayerInfo.PlayerID);
+        yield return LocalDBController.AddLogin(PlayerInfo.PlayerID);
 
         if (PlayerInfo.PlayerID != null)
             yield return FlashOutLocalLogins();
@@ -97,7 +97,7 @@ public class PlayerController : BaseObject
     private IEnumerator FlashOutLocalLogins()
     {
         List<LogIn> logIns = 
-            LocalDatabase.Table<LogIn>().ToList();
+            LocalDBController.Table<LogIn>().ToList();
 
         yield return Server.Post<int>(
             @"/api/Login/AddRange",
@@ -105,7 +105,7 @@ public class PlayerController : BaseObject
             r =>
             {
                 if (logIns.Count == r)
-                    LocalDatabase.DeleteAll<LogIn>();
+                    LocalDBController.DeleteAll<LogIn>();
             });
     }
 
@@ -114,7 +114,7 @@ public class PlayerController : BaseObject
  
     public void SaveToLocalDB()
     {
-        LocalDatabase.InsertOrReplace(PlayerInfo);
+        LocalDBController.InsertOrReplace(PlayerInfo);
     }
 
     public void SetPlayerInfo(PlayerInfo playerInfo)

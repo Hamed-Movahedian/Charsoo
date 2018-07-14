@@ -79,14 +79,14 @@ public class DatabaseEditor : Editor
             if (puzzles == null)
                 return;
 
-            LocalDatabase.DeleteAll<Category>();
-            LocalDatabase.DeleteAll<Puzzle>();
+            LocalDBController.DeleteAll<Category>();
+            LocalDBController.DeleteAll<Puzzle>();
 
             foreach (Category category in categories)
-                LocalDatabase.InsertOrReplace(category);
+                LocalDBController.InsertOrReplace(category);
 
             foreach (Puzzle puzzle in puzzles)
-                LocalDatabase.InsertOrReplace(puzzle);
+                LocalDBController.InsertOrReplace(puzzle);
 
 
         }

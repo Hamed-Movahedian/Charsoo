@@ -72,7 +72,7 @@ public class PuzzleMenuItem : BaseObject
         {
             var row = _data.Row - 1;
 
-            Puzzle prePuzzle = LocalDatabase
+            Puzzle prePuzzle = LocalDBController
                 .Table<Puzzle>()
                 .SqlWhere(p => p.CategoryID == _data.CategoryID && p.Row == row)
                 .FirstOrDefault();
@@ -130,7 +130,7 @@ public class PuzzleMenuItem : BaseObject
     {
         _data.Solved = true;
 
-        LocalDatabase.Update(_data);
+        LocalDBController.Update(_data);
 
         SetVisuals();
     }

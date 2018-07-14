@@ -68,7 +68,7 @@ public class ContentManager : BaseObject
 
         int? id = parentCateroy != null ? (int?) parentCateroy.ID : null;
 
-        var subCategories = LocalDatabase
+        var subCategories = LocalDBController
             .Table<Category>()
             .SqlWhere(c => c.ParentID == id);
 
@@ -100,7 +100,7 @@ public class ContentManager : BaseObject
 
         #region Get Puzzles
         
-        var puzzles = LocalDatabase
+        var puzzles = LocalDBController
             .Table<Puzzle>()
             .SqlWhere(puzzle => puzzle.CategoryID == parentCateroy.ID)
             .OrderBy(p=>p.Row);
@@ -144,7 +144,7 @@ public class ContentManager : BaseObject
             ShowContent(null);
         else
         {
-            var parentCategory = LocalDatabase
+            var parentCategory = LocalDBController
                 .Table<Category>()
                 .FirstOrDefault(c => c.ID == _parentCategory.ParentID.Value);
 

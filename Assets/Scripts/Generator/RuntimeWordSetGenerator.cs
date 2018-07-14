@@ -8,14 +8,6 @@ using UnityEngine.UI;
 
 public class RuntimeWordSetGenerator : MonoBehaviour
 {
-    [Header("Windows")]
-    public MgsUIWindow GetClueWindow;
-    public MgsUIWindow GetWordsWindow;
-    public MgsUIWindow WordCountWindow;
-    public MgsUIWindow WordsetApproval;
-    public MgsUIWindow PartiotionFaildWindow;
-    public MgsUIWindow CategorySelectionWindow;
-    public MgsUIWindow FinalizeWindow;
 
     [Header("Components")]
     public WordSetGenerator Generator;
@@ -27,6 +19,9 @@ public class RuntimeWordSetGenerator : MonoBehaviour
     public IEnumerator StartProcess()
     {
         #region Prepare Wordset generation process
+
+        // Cache 
+        GeneratorUI gui = UIController.Instance.Generator;
 
         // Delete all letters and words
         Singleton.Instance.LetterController.DeleteAllLetters();
@@ -40,51 +35,57 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         Application.targetFrameRate = 0;
         QualitySettings.vSyncCount = 0;
 
+        // Set words for test
+        gui.SetWords("فسنجان سمبوسه سوپ کشک خورشقيمه قرمهسبزي قیمه بادمجان شیربرنج کلهپاچه باقالی‌پلو شیشلیک رشته‌پلو");
         #endregion
 
-        // ************************ Start process
-
-        #region GetClueWindow 
-
-        GetClueWindow:
-
-        yield return GetClueWindow.ShowWaitForCloseHide();
-
-        #endregion
-
-        if (GetClueWindow.Result == "Back")
-        {
-            OnExit.Invoke();
+        // ***************************** Clue
+        clue:
+        yield return gui.ShowClue();
+        if (gui.Back)
             yield break;
+
+
+        // ***************************** Words
+        words:
+        yield return gui.ShowWords();
+        if (gui.Back)
+            goto clue;
+
+
+        // ***************************** Count
+        count:
+        yield return gui.ShowWordCount();
+        if (gui.Back)
+            goto words;
+
+        //****************************** Generate
+        generate:
+        yield return Generate();
+        if (GenerationFaild)
+        {
+            yield return gui.ShowGenerationFailed();
+            if (gui.Back)
+                goto count;
+            else
+                goto generate;
         }
 
-        #region CategorySelectionWindow
+        // ***************************** Selection
+        selection:
+        yield return gui.ShowSelection();
+        if (gui.Back)
+            goto count;
+        if(gui.Result== "Regenerate")
 
-        CategorySelectionWindow:
+        // ***************************** GetCategories
+        getCategories:
+        categories = LocalDBController.Instance.GetUserCategories();
 
-        // Show category selection
-        yield return CategorySelectionWindow.ShowWaitForCloseHide();
 
-        #endregion
-
-        if (CategorySelectionWindow.Result == "Back")
-            goto GetClueWindow;
-
-        #region Get Selected category
-
-        // Get Selected category
-        var selectedToggle = CategorySelectionWindow
-            .GetComponentInChildren<MgsUIToggle>(true)
-            .GetActiveToggle();
-
-        #endregion
 
         #region GetWordsWindow 
 
-        // set test words
-        GetWordsWindow
-                .GetComponentByName<InputField>("InputWords").text =
-            "فسنجان سمبوسه سوپ کشک خورشقيمه قرمهسبزي قیمه بادمجان شیربرنج کلهپاچه باقالی‌پلو شیشلیک رشته‌پلو";
 
         GetWordsWindow:
 
@@ -97,13 +98,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
             goto CategorySelectionWindow;
 
         #region WordCountWindow 
-
-        // setup window
-        Slider slider = WordCountWindow.GetComponentByName<Slider>("Slider");
-        slider.minValue = 2;
-        slider.maxValue = Generator.WordStrings.Count;
-        slider.value = Generator.WordStrings.Count;
-
+        
         WordCountWindow:
 
         // Show get word count window
@@ -249,6 +244,14 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         }
 
 
+        #region Get Selected category
+
+        // Get Selected category
+        var selectedToggle = CategorySelectionWindow
+            .GetComponentInChildren<MgsUIToggle>(true)
+            .GetActiveToggle();
+
+        #endregion
 
         // Save wordset to selected category
 

@@ -22,7 +22,7 @@ public class PuzzleDataManager : BaseObject
         {
             //puzzle.Visit = false;
 
-            LocalDatabase.InsertOrReplace(puzzle);
+            LocalDBController.InsertOrReplace(puzzle);
         }
 
         CommandController.LastCmdTime = newPuzzles.Max(c => c.LastUpdate);

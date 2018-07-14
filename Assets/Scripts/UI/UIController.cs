@@ -1,19 +1,22 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using MgsCommonLib;
 using MgsCommonLib.UI;
 using UnityEngine;
 
 public class UIController : MgsSingleton<UIController>
 {
+    public GeneratorUI Generator;
+
     [Header("Specific windows")]
     public PhoneNumberWindow PhoneNumberWindow;
+
     public InputCodeWindow InputCodeWindow;
     public PlayerInfoEditor PlayerInfoEditor;
 
 
     [Header("General windows")]
     public MgsUIWindow InprogressWindow;
+
     public MgsUIWindow ProgressbarWindow;
     public MgsUIWindow ErrorWindow;
     public MgsUIWindow MessageWindow;

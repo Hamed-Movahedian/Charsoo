@@ -22,7 +22,7 @@ public class CategoryDataManager : BaseObject
         {
             newcategory.Visit = false;
 
-            LocalDatabase.InsertOrReplace(newcategory);
+            LocalDBController.InsertOrReplace(newcategory);
         }
 
         CommandController.LastCmdTime = newcategories.Max(c => c.LastUpdate);

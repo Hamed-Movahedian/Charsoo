@@ -49,7 +49,7 @@ public class CategoryMenuItem : BaseObject
         Name.text = ArabicFixer.Fix(_data.Name);
         NewIconGameObject.SetActive(!_data.Visit);
         // if has subcategory
-        if (LocalDatabase.Table<Category>()
+        if (LocalDBController.Table<Category>()
             .SqlWhere(c => c.ParentID == _data.ID)
             .Any())
         {
@@ -62,7 +62,7 @@ public class CategoryMenuItem : BaseObject
 
         
         // if has puzzles
-        var puzzles = LocalDatabase.Table<Puzzle>()
+        var puzzles = LocalDBController.Table<Puzzle>()
             .SqlWhere(p => p.CategoryID == _data.ID)
             .ToList();
 
@@ -102,7 +102,7 @@ public class CategoryMenuItem : BaseObject
         if (!_data.Visit)
         {
             _data.Visit = true;
-            LocalDatabase.Update(_data);
+            LocalDBController.Update(_data);
             SetVisuals();
         }
     }

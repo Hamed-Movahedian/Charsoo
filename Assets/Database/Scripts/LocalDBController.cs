@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MgsCommonLib;
 using SQLite4Unity3d;
 using UnityEngine;
 
-public class LocalDatabase
+public class LocalDBController: MgsSingleton<LocalDBController>
 {
     #region DataService
 
@@ -44,11 +45,6 @@ public class LocalDatabase
 
     #endregion
 
-    public static void Insert(object obj)
-    {
-        DataService.Connection.Insert(obj);
-    }
-
     #region Logins
     public static IEnumerator AddLogin(int? playerID)
     {
@@ -80,5 +76,10 @@ public class LocalDatabase
     }
 
     #endregion
-    
+
+    public List<Category> GetUserCategories()
+    {
+        DataService.Connection.Table<Category>()
+            .SqlWhere(cat=>ca)
+    }
 }
