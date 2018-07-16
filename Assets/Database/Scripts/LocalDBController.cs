@@ -76,10 +76,5 @@ public class LocalDBController: MgsSingleton<LocalDBController>
     }
 
     #endregion
-
-    public List<Category> GetUserCategories()
-    {
-        DataService.Connection.Table<Category>()
-            .SqlWhere(cat=>ca)
-    }
+    
 }

@@ -31,6 +31,7 @@ public class WordSetGenerator : BaseObject
     private Dictionary<string, int> _nameToId;
     private CommonLettersDictionary _clDictionary;
     public Func<Letter, Letter> EditorInstantiate;
+    public string Clue;
 
     #endregion
 
@@ -428,6 +429,7 @@ public class WordSetGenerator : BaseObject
             _wordSet = new WordSet();
 
         _wordSet.Words = EndResults[NextResultIndex];
+        _wordSet.Clue = Clue;
 
         WordSpawner.WordSet = _wordSet;
         WordSpawner.EditorInstatiate = EditorInstantiate;

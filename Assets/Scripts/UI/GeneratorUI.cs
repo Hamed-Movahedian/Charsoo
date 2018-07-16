@@ -13,8 +13,6 @@ public class GeneratorUI : MonoBehaviour
     public MgsUIWindow WordCountWindow;
     public MgsUIWindow WordsetApproval;
     public MgsUIWindow PartiotionFaildWindow;
-    public MgsUIWindow CategorySelectionWindow;
-    public MgsUIWindow FinalizeWindow;
     public bool Back
     {
         get { return _lastWindow.Result == "Back"; }
@@ -78,5 +76,21 @@ public class GeneratorUI : MonoBehaviour
         _lastWindow = WordsetApproval;
         yield return WordsetApproval.ShowWaitForCloseHide();
 
+    }
+
+    public string GetClue()
+    {
+        return GetClueWindow.GetComponentByName<InputField>("Clue").text;
+    }
+
+    public string GetWords()
+    {
+        return GetWordsWindow
+            .GetComponentByName<InputField>("InputWords").text;
+    }
+
+    public int GetWordCount()
+    {
+        return (int) WordCountWindow.GetComponentByName<Slider>("Slider").value;
     }
 }

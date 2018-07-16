@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using MgsCommonLib.UI;
 using MgsCommonLib.Utilities;
 using UnityEngine;
@@ -15,6 +17,8 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent OnExit;
+
+    public bool GenerationFaild=true;
 
     public IEnumerator StartProcess()
     {
@@ -76,56 +80,37 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         yield return gui.ShowSelection();
         if (gui.Back)
             goto count;
-        if(gui.Result== "Regenerate")
-
-        // ***************************** GetCategories
-        getCategories:
-        categories = LocalDBController.Instance.GetUserCategories();
+        if (gui.Result == "Regenerate")
+            goto generate;
 
 
+        //***************************** Shuffle
+        Partitioner.Shuffle();
 
-        #region GetWordsWindow 
 
+        //***************************** Local save
+        UserPuzzlesController.Instance.Save();
 
-        GetWordsWindow:
+    }
 
-        // show get words window and wait to close
-        yield return GetWordsWindow.ShowWaitForCloseHide();
+    private static void SavePuzzle()
+    {
+        //return;
+ 
+    }
 
-        #endregion
-
-        if (GetWordsWindow.Result == "Back")
-            goto CategorySelectionWindow;
-
-        #region WordCountWindow 
-        
-        WordCountWindow:
-
-        // Show get word count window
-        yield return WordCountWindow.ShowWaitForCloseHide();
-
-        #endregion
-
-        if (WordCountWindow.Result == "Back")
-            goto GetWordsWindow;
-
-        #region Generate word sets and partition ...
-
-        GenerateWordSet:
-
-        // Show inProgress window
+    private IEnumerator Generate()
+    {
         yield return UIController.Instance
             .ShowProgressbarWindow(ThemeManager.Instance.LanguagePack.Inprogress_GenerateWordSet);
 
         #region Setup word generator
 
         // Setup generator
-        Generator.AllWords = GetWordsWindow
-            .GetComponentByName<InputField>("InputWords").text
-            .Replace(' ', '\n');
-
+        Generator.AllWords = UIController.Instance.Generator.GetWords().Replace(' ', '\n');
+        Generator.Clue = UIController.Instance.Generator.GetClue();
         Generator.Initialize();
-        Generator.UsedWordCount = (int) slider.value;
+        Generator.UsedWordCount = UIController.Instance.Generator.GetWordCount();
         Generator.MaxResults = 500;
 
         #endregion
@@ -176,84 +161,6 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
         // Hide in-progress window
         StartCoroutine(UIController.Instance.HideProgressbarWindow());
-
-        #endregion
-
-
-        // ************************************** Partition fails
-        if (!Partitioner.PartitionSuccessfully)
-        {
-            #region PartiotionFaildWindow
-
-            PartiotionFaildWindow.SetTextMessage(ThemeManager.Instance.LanguagePack.Error_GenerateWordSet);
-            PartiotionFaildWindow.SetIcon(ThemeManager.Instance.IconPack.GeneralError);
-
-            yield return PartiotionFaildWindow.ShowWaitForCloseHide();
-
-            #endregion
-
-            switch (PartiotionFaildWindow.Result)
-            {
-                case "Regenerate":
-                    goto GenerateWordSet;
-                case "Back":
-                    goto WordCountWindow;
-            }
-        }
-
-        // ************************************* Partition successfully
-
-        #region WordsetApproval
-
-        WordsetApproval:
-        // Show puzzle selection window - Back,Select,Regenerate
-        yield return WordsetApproval.ShowWaitForCloseHide();
-
-        #endregion
-
-        switch (WordsetApproval.Result)
-        {
-            case "Back":
-                goto WordCountWindow;
-            case "Regenerate":
-                goto GenerateWordSet;
-        }
-
-        // ******************** Select Button
-
-        // Shuffle letters
-        yield return Partitioner.Shuffle();
-
-        #region WordsetApproval
-
-        SaveWordSet:
-        // Show puzzle selection window - Back,Select,Regenerate
-        yield return FinalizeWindow.ShowWaitForCloseHide();
-
-        #endregion
-
-        switch (FinalizeWindow.Result)
-        {
-            case "Exit":
-                OnExit.Invoke();
-                yield break;
-            case "Save":
-                Debug.Log("Puzzle Saved");
-                OnExit.Invoke();
-                yield break;
-        }
-
-
-        #region Get Selected category
-
-        // Get Selected category
-        var selectedToggle = CategorySelectionWindow
-            .GetComponentInChildren<MgsUIToggle>(true)
-            .GetActiveToggle();
-
-        #endregion
-
-        // Save wordset to selected category
 
     }
 }
