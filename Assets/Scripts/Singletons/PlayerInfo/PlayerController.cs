@@ -127,4 +127,9 @@ public class PlayerController : BaseObject
         SetPlayerInfo(playerInfo);
         SaveToLocalDB();
     }
+
+    public int? GetPlayerID()
+    {
+        return PlayerInfo.PlayerID;
+    }
 }

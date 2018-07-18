@@ -10,6 +10,7 @@ public class LocalDBController: MgsSingleton<LocalDBController>
     #region DataService
 
     private static DataService _dataService;
+    public UserPuzzleLocal UserPuzzles;
 
     private static DataService DataService
     {

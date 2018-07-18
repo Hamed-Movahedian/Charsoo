@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using MgsCommonLib;
 using Newtonsoft.Json;
 using UnityEngine.Networking;
 
-public static class Server
+public class ServerController : MgsSingleton<ServerController>
 {
+    public UserPuzzlesServer UserPuzzles;
 
     #region URL
 
@@ -83,6 +85,8 @@ public static class Server
 
     #endregion
 
+    #region Get
+
     public static IEnumerator Get<TReturnType>(string url, Action<object> onSuccess)
     {
         UnityWebRequest request = GetRequest(url);
@@ -96,4 +100,7 @@ public static class Server
             if(onSuccess!=null)
                 onSuccess(JsonConvert.DeserializeObject<TReturnType>(request.downloadHandler.text));
     }
+    
+
+    #endregion
 }
