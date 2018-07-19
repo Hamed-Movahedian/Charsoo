@@ -6,17 +6,16 @@ using UnityEngine;
 public class UIController : MgsSingleton<UIController>
 {
     public GeneratorUI Generator;
+    public UserPuzzleUI UserPuzzles;
 
     [Header("Specific windows")]
     public PhoneNumberWindow PhoneNumberWindow;
-
     public InputCodeWindow InputCodeWindow;
     public PlayerInfoEditor PlayerInfoEditor;
 
 
     [Header("General windows")]
     public MgsUIWindow InprogressWindow;
-
     public MgsUIWindow ProgressbarWindow;
     public MgsUIWindow ErrorWindow;
     public MgsUIWindow MessageWindow;

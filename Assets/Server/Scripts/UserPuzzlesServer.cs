@@ -37,7 +37,7 @@ public class UserPuzzlesServer
         public List<NewPuzzle> NewPuzzles { get; set; }
         public List<PuzzleUpdate> UpdatedPuzzles { get; set; }
 
-        public class PuzzleUpdate
+        public class PuzzleUpdate : IUpdatedUserPuzzle
         {
             public int ServerID { get; set; }
             public string CategoryName { get; set; }
@@ -70,4 +70,15 @@ public class UserPuzzlesServer
     {
         return _result.NewPuzzles.Cast<IRegisterPuzzleInfo>();
     }
+
+    public IEnumerable<IUpdatedUserPuzzle> GetUpdatedPuzzles()
+    {
+        return _result.UpdatedPuzzles.Cast<IUpdatedUserPuzzle>();
+    }
+
+    public DateTime GetLastUpdate()
+    {
+        return _result.LastUpdate;
+    }
 }
+

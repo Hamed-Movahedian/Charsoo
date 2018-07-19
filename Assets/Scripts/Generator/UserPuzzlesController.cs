@@ -6,6 +6,8 @@ using UnityEngine;
 
 internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
 {
+    private readonly UserPuzzleSynchronizer _sync = new UserPuzzleSynchronizer();
+
     public void Save()
     {
         WordSet wordSet = new WordSet();
@@ -32,29 +34,81 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
         //LocalDBController.Table<Pu>()
     }
 
-    public IEnumerator Sync()
+    public IEnumerator ShowUserPuzzles()
     {
-        // Cache ...
+        // Cache
         var upLocalDB = LocalDBController.Instance.UserPuzzles;
-        var upServer = ServerController.Instance.UserPuzzles;
+        var upUI = UIController.Instance.UserPuzzles;
 
-        // If playerID==null exit!!
-        int? playerID = Singleton.Instance.PlayerController.GetPlayerID();
-        if (playerID == null)
+        // Sync with server - if possible
+        yield return _sync.Sync();
+
+        // Get user puzzles from local 
+        var userPuzzles = upLocalDB.GetUserPuzzles();
+
+        // Initialize user puzzle selection window
+        upUI.InitializeUserPuzzleSelectinWindow(userPuzzles);
+
+        ShowUserPuzzles:
+        // Show user puzzle selection window 
+        yield return upUI.ShowPuzzleSelectionWindow();
+
+        // if user select back return
+        if (upUI.Back)
             yield break;
 
-        // Get Unregisterd puzzles and lastUpdate from localDB
-        var unregisteredPuzzles = upLocalDB.GetUnregisteredPuzzles();
-        var lastUpdate = upLocalDB.GetLastUpdate();
+        // Get selected puzzle 
+        var selectedPuzzle = upUI.GetSelectedPuzzle();
 
-        // Sync with server 
-        yield return upServer.Sync(playerID.Value, unregisteredPuzzles, lastUpdate);
-        if(upServer.UnsuccessfullSync)
-            yield break;
+        // Show selected puzzle info
+        yield return upUI.ShowPuzzleInfo(selectedPuzzle);
 
-        // Register new puzzles
-        upLocalDB.RegisterPuzzles(upServer.GetServerRegisterPuzzles());
+        // if back => goto last window
+        if (upUI.Back) goto ShowUserPuzzles;
 
+        // switch all other results
+        switch (upUI.Result)
+        {
+            case UserPuzzleUI.ResultEnum.Play:
+                yield return GameController.Instance.PlayPuzzle(selectedPuzzle);
+                break;
+
+            case UserPuzzleUI.ResultEnum.Share:
+                yield return ShareController.Instance.ShareUserPuzzle(selectedPuzzle);
+                break;
+
+            case UserPuzzleUI.ResultEnum.Register:
+                // Sync
+                yield return _sync.Sync();
+
+                // Show sync result
+                yield return upUI.ShowSyncResult(_sync.Successfull);
+                break;
+
+            case UserPuzzleUI.ResultEnum.Add:
+
+                break;
+        }
+
+        goto ShowUserPuzzles;
 
     }
+
 }
+
+#region Interfaces
+
+public interface IUpdatedUserPuzzle
+{
+    int ServerID { get; set; }
+    string CategoryName { get; set; }
+    int? Rate { get; set; }
+    int? PlayCount { get; set; }
+}
+public interface IRegisterPuzzleInfo
+{
+    int ServerID { get; set; }
+    int ID { get; set; }
+}
+
+#endregion
