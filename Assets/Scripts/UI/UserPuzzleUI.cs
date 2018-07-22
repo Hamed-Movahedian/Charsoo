@@ -1,48 +1,86 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using MgsCommonLib.UI;
+using UnityEngine;
 
-public class UserPuzzleUI
+public class UserPuzzleUI : MonoBehaviour
 {
+    public UIMenuItemList UserPuzzlesListWindow;
+    public MgsUIWindow PuzzleInfoWindow;
+
+    private MgsUIWindow _currentWindow;
+
     public IEnumerator ShowPuzzleSelectionWindow()
     {
-        throw new System.NotImplementedException();
+        _currentWindow = UserPuzzlesListWindow;
+        yield return UserPuzzlesListWindow.ShowWaitForCloseHide();
     }
 
-    public bool Back { get; set; }
-    public ResultEnum Result { get; set; }
+    public bool Back
+    {
+        get { return _currentWindow != null && _currentWindow.Result == "Back"; }
+    }
+
+    public ResultEnum Result
+    {
+        get
+        {
+            switch (_currentWindow.Result)
+            {
+                case "Play":
+                    return ResultEnum.Play;
+                case "Share":
+                    return ResultEnum.Share;
+                case "Register":
+                    return ResultEnum.Register;
+                case "Add":
+                    return ResultEnum.Add;
+                default:
+                    return ResultEnum.None;
+            }
+        }
+    }
 
     public enum ResultEnum
     {
-        Play,Share,Register,Add
+        Play,Share,Register,Add,None
     }
 
     public UserPuzzle GetSelectedPuzzle()
     {
-        throw new System.NotImplementedException();
+        return (UserPuzzle) UserPuzzlesListWindow.GetSelectedItem();
     }
 
     public IEnumerator ShowPuzzleInfo(UserPuzzle puzzle)
     {
-        throw new System.NotImplementedException();
+        yield return PuzzleInfoWindow.ShowWaitForCloseHide();
     }
 
     public void InitializeUserPuzzleSelectinWindow(List<UserPuzzle> userPuzzles)
     {
-        throw new System.NotImplementedException();
+        UserPuzzlesListWindow.UpdateItems(userPuzzles.Cast<object>());
     }
 
     public void ShowSyncInProgress()
     {
-        throw new System.NotImplementedException();
+        StartCoroutine(UIController.Instance.ShowInprogressWindow(ThemeManager.Instance.LanguagePack.Inprogress_AccountConnection));
     }
 
-    public void HideSyncInProgress()
+    public IEnumerator HideSyncInProgress()
     {
-        throw new System.NotImplementedException();
+        yield return UIController.Instance.HideInprogressWindow();
     }
 
     public IEnumerator ShowSyncResult(bool result)
     {
-        throw new System.NotImplementedException();
+        if (result)
+            yield return UIController.Instance.DisplayMessage(
+                ThemeManager.Instance.LanguagePack.SuccesfullOperation);
+        else
+            yield return UIController.Instance.DisplayError(
+                ThemeManager.Instance.LanguagePack.Error_InternetAccess,
+                ThemeManager.Instance.IconPack.NetworkError);
     }
 }

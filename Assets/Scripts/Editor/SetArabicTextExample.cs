@@ -6,6 +6,15 @@ using UnityEngine.UI;
 public class SetArabicTextExample : ScriptableWizard
 {
 
+
+    [MenuItem("Word Game/ArabicFix #f")]
+    static void ArabicFix()
+    {
+        EditorGUIUtility.systemCopyBuffer=ArabicFixer.Fix(EditorGUIUtility.systemCopyBuffer);
+        
+
+    }
+
     [MenuItem("Word Game/Fix Persian Text")]
     static void CreateWizard()
     {
@@ -22,13 +31,14 @@ public class SetArabicTextExample : ScriptableWizard
                 textO.text = ArabicFixer.Fix(txt, false, true);
             }
         }
-
+        
+        Debug.Log(EditorGUIUtility.keyboardControl);
 
 
         foreach (TextMesh textO in Selection.activeGameObject.GetComponentsInChildren<TextMesh>())
         {
             string txt = textO.text;
-            textO.text = ArabicFixer.Fix(txt, false, false);
+            textO.text = ArabicFixer.Fix(txt, false, true);
         }
     }
 

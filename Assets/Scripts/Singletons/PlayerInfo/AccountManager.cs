@@ -56,7 +56,7 @@ public class AccountManager : MgsSingleton<AccountManager>
         _generatedCode = Random.Range(1000, 9999).ToString();
 
         // Ask server to send sms
-        yield return Server.Post<string>(
+        yield return ServerController.Post<string>(
             string.Format(@"Account/SendSms?phoneNumber={0}&code={1}",
                 phoneNumber, _generatedCode),
             null,
@@ -105,7 +105,7 @@ public class AccountManager : MgsSingleton<AccountManager>
     public IEnumerator ConnectToAccount()
     {
         // Ask command center to connect to account
-        yield return Server.Post<PlayerInfo>(
+        yield return ServerController.Post<PlayerInfo>(
             string.Format(@"Account/ConnectToAccount?phoneNumber={0}", _phoneNumber),
             null,
             // On Successfully connect to the account

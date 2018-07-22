@@ -1,5 +1,6 @@
 ﻿using System.Collections;
-using MgsCommonLib;internal class ShareController : MgsSingleton<ShareController>
+using MgsCommonLib;
+internal class ShareController : MgsSingleton<ShareController>
 {
     public IEnumerator ShareUserPuzzle(UserPuzzle userPuzzle)
     {

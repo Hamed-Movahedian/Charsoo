@@ -21,7 +21,7 @@ public class CommandController : BaseObject
 
     public IEnumerator GetRecentCommands()
     {
-        yield return Server.Post<string>(
+        yield return ServerController.Post<string>(
             string.Format(@"Commands/GetCommands?playerID={0}&clientLastCmdTime={1:s}",
                 101,
                 LastCmdTime),

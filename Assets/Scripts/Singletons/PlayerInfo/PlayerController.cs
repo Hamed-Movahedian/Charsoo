@@ -63,7 +63,7 @@ public class PlayerController : BaseObject
         if (PlayerInfo.PlayerID == null)
         {
             // Register player to server and get PlayerID
-            yield return Server.Post<PlayerInfo>(
+            yield return ServerController.Post<PlayerInfo>(
                 @"PlayerInfo/Create",
                 PlayerInfo,
                 r => { PlayerInfo = r; }); ;
@@ -99,7 +99,7 @@ public class PlayerController : BaseObject
         List<LogIn> logIns = 
             LocalDBController.Table<LogIn>().ToList();
 
-        yield return Server.Post<int>(
+        yield return ServerController.Post<int>(
             @"/api/Login/AddRange",
             logIns,
             r =>

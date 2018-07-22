@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class LanguagePack : ScriptableObject
 {
     [Header("Messages")]
-    [Multiline] public string SuccesfullAccountRecovery;
+    [Multiline] public string SuccesfullOperation;
 
     [Header("In-Progress Messages")]
     [Multiline] public string Inprogress_AccountRecovery;
@@ -24,5 +24,9 @@ public class LanguagePack : ScriptableObject
     [Multiline] public string Error_InvalidPhoneNumber;
     [Multiline] public string Error_GenerateWordSet;
     [Multiline] public string Error_NoCategoryIsSelected;
+
+    [Header("Texts")]
+    [Multiline] public string NotRegister;
+    [Multiline] public string InReview;
 }
 

@@ -45,7 +45,7 @@ public class ServerEditor
   
     public static TReturnType Get<TReturnType>(string url, string title, string operation)
     {
-        UnityWebRequest request = Server.GetRequest(url);
+        UnityWebRequest request = ServerController.GetRequest(url);
 
         if (!ProcessRequest(request, title, operation)) return default(TReturnType);
 
@@ -54,7 +54,7 @@ public class ServerEditor
 
     public static bool Post(string url, object bodyData, string title, string operation)
     {
-        var request = Server.PostRequest(url, bodyData);
+        var request = ServerController.PostRequest(url, bodyData);
 
         return ProcessRequest(request, title, operation);
     }
@@ -62,7 +62,7 @@ public class ServerEditor
  
     public static TReturnType Post<TReturnType>(string url, object bodyData, string title, string operation) 
     {
-        var request = Server.PostRequest(url, bodyData);
+        var request = ServerController.PostRequest(url, bodyData);
 
         if (!ProcessRequest(request, title, operation))
             return default(TReturnType);

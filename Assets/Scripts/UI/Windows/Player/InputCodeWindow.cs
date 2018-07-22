@@ -46,7 +46,7 @@ public class InputCodeWindow : UIWindowBase
                 case AccountManager.AccountConnectionResultEnum.Success:
                     // Display proper message
                     yield return UIController
-                        .DisplayMessage(LanguagePack.SuccesfullAccountRecovery);
+                        .DisplayMessage(LanguagePack.SuccesfullOperation);
 
                     // Close window
                     Close();
