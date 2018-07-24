@@ -87,4 +87,10 @@ public class UserPuzzleLocalDB
     {
         return LocalDBController.Table<UserPuzzle>().ToList();
     }
+
+    public UserPuzzle Refresh(UserPuzzle puzzle)
+    {
+        return LocalDBController.Table<UserPuzzle>()
+            .FirstOrDefault(p => p.ID == puzzle.ID);
+    }
 }

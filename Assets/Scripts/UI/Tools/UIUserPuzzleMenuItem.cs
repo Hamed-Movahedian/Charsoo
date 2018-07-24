@@ -1,4 +1,5 @@
 ﻿using ArabicSupport;
+using UnityEngine;
 using UnityEngine.UI;
 
 class UIUserPuzzleMenuItem : UIMenuItem
@@ -6,7 +7,7 @@ class UIUserPuzzleMenuItem : UIMenuItem
     public Text ClueText;
     public Image RateImage;
     public Text PlayCount;
-    public Text State; 
+    public Text State;
 
     protected override void Refresh(object data)
     {
@@ -14,36 +15,23 @@ class UIUserPuzzleMenuItem : UIMenuItem
 
         ClueText.text = ArabicFixer.Fix(puzzle.Clue);
 
-        if (puzzle.ServerID == null)
-        {
-            RateImage.gameObject.SetActive(false);
-            PlayCount.gameObject.SetActive(false);
-            State.gameObject.SetActive(true);
-            State.text = ThemeManager.Instance.LanguagePack.NotRegister;
-        }
-        else if(puzzle.CategoryName=="")
-        {
-            RateImage.gameObject.SetActive(false);
-            PlayCount.gameObject.SetActive(false);
-            State.gameObject.SetActive(true);
-            State.text = ThemeManager.Instance.LanguagePack.InReview;
-        }
-        else
-        {
-            State.gameObject.SetActive(false);
+        RateImage.gameObject.SetActive(puzzle.Rate != null);
+        PlayCount.gameObject.SetActive(puzzle.PlayCount.HasValue && puzzle.PlayCount > 0);
 
-            if(puzzle.PlayCount.HasValue && puzzle.PlayCount != 0)
-            {
-                RateImage.gameObject.SetActive(true);
-                PlayCount.gameObject.SetActive(true);
-                PlayCount.text = puzzle.PlayCount.ToString();
-                if (puzzle.Rate != null) RateImage.fillAmount = puzzle.Rate.Value / 5f;
-            }
-            else
-            {
-                RateImage.gameObject.SetActive(false);
-                PlayCount.gameObject.SetActive(false);
-            }
-        }
+        //State.gameObject.SetActive(!string.IsNullOrEmpty(puzzle.CategoryName));
+        State.gameObject.SetActive(true);
+
+        State.text =
+            puzzle.ServerID == null ? ThemeManager.Instance.LanguagePack.NotRegister :
+            puzzle.CategoryName == null ? ThemeManager.Instance.LanguagePack.InReview :
+            puzzle.CategoryName == "" ? ThemeManager.Instance.LanguagePack.NoCategory :
+            ArabicFixer.Fix(puzzle.CategoryName);
+
+
+        if (puzzle.PlayCount != null) PlayCount.text = puzzle.PlayCount.ToString();
+
+        if (puzzle.Rate != null) RateImage.fillAmount = puzzle.Rate.Value / 5f;
+
+        GetComponent<RectTransform>().localScale = Vector3.one;
     }
 }

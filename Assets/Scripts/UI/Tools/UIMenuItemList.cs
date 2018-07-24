@@ -10,11 +10,13 @@ public class UIMenuItemList : MgsUIWindow
     public UIMenuItem Prefab;
     public RectTransform ContentParent;
 
-    private List<UIMenuItem> _menuItems;
+    private readonly List<UIMenuItem> _menuItems=new List<UIMenuItem>();
     private UIMenuItem _selectedItem;
+    private float _lastSelectionTime;
 
     public void UpdateItems(IEnumerable<object> data)
     {
+        _selectedItem = null;
         var dataList = data.ToList();
 
         for (int i = 0; i < dataList.Count; i++)
@@ -41,6 +43,12 @@ public class UIMenuItemList : MgsUIWindow
     public void Select(UIMenuItem uiMenuItem)
     {
         if (_selectedItem == uiMenuItem)
+            if (Time.time - _lastSelectionTime < .5f)
+                Close("ItemSelected");
+
+        _lastSelectionTime = Time.time;
+
+        if (_selectedItem == uiMenuItem)
             return;
 
         if (_selectedItem != null)
@@ -53,6 +61,6 @@ public class UIMenuItemList : MgsUIWindow
 
     public object GetSelectedItem()
     {
-        return _selectedItem.Data;
+        return _selectedItem != null ? _selectedItem.Data : null;
     }
 }

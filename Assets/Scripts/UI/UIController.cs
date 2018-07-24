@@ -6,7 +6,6 @@ using UnityEngine;
 public class UIController : MgsSingleton<UIController>
 {
     public GeneratorUI Generator;
-    public UserPuzzleUI UserPuzzles;
 
     [Header("Specific windows")]
     public PhoneNumberWindow PhoneNumberWindow;
@@ -65,6 +64,7 @@ public class UIController : MgsSingleton<UIController>
         // Show in-progress window
         yield return ProgressbarWindow.Show();
     }
+
     internal IEnumerator HideProgressbarWindow()
     {
         yield return ProgressbarWindow.Hide();

@@ -130,6 +130,12 @@ public class PlayerController : BaseObject
 
     public int? GetPlayerID()
     {
-        return PlayerInfo.PlayerID;
+        // Get player info from localDB
+        PlayerInfo =
+            LocalDBController
+                .Table<PlayerInfo>()
+                .FirstOrDefault();
+
+        return PlayerInfo == null ? null : PlayerInfo.PlayerID;
     }
 }

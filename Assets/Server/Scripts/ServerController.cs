@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 
 public class ServerController : MgsSingleton<ServerController>
 {
-    public UserPuzzlesServer UserPuzzles;
+    public UserPuzzlesServer UserPuzzles=new UserPuzzlesServer();
 
     #region URL
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEngine;
 
 internal class UserPuzzleSynchronizer
 {
@@ -7,13 +8,13 @@ internal class UserPuzzleSynchronizer
     public IEnumerator Sync()
     {
         // Show inprogress window
-        UIController.Instance.UserPuzzles.ShowSyncInProgress();
+        yield return UIController.Instance.ShowInprogressWindow(ThemeManager.Instance.LanguagePack.Inprogress_AccountConnection);
 
         // Syncing ...
         yield return Syncing();
 
         // Hide inprogress window
-        UIController.Instance.UserPuzzles.HideSyncInProgress();
+        yield return UIController.Instance.HideInprogressWindow();
     }
 
     private IEnumerator Syncing()

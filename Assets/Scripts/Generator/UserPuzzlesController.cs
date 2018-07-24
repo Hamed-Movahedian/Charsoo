@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using MgsCommonLib;
+using MgsCommonLib.UI;
 using UnityEngine;
 
 internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
 {
+    public UserPuzzleSelectionWindow UserPuzzlesSelectionWindow;
+    public UserPuzzleInfoWindow PuzzleInfoWindow;
+
     private readonly UserPuzzleSynchronizer _sync = new UserPuzzleSynchronizer();
 
     public void Save()
@@ -36,79 +41,102 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
 
     public IEnumerator ShowUserPuzzles()
     {
-        // Cache
-        var upLocalDB = LocalDBController.Instance.UserPuzzles;
-        var upUI = UIController.Instance.UserPuzzles;
-
         // Sync with server - if possible
         yield return _sync.Sync();
 
-        // Get user puzzles from local 
-        var userPuzzles = upLocalDB.GetUserPuzzles();
-
         // Initialize user puzzle selection window
-        upUI.InitializeUserPuzzleSelectinWindow(userPuzzles);
+        UserPuzzlesSelectionWindow.Refresh();
 
-        ShowUserPuzzles:
         // Show user puzzle selection window 
-        yield return upUI.ShowPuzzleSelectionWindow();
+        yield return UserPuzzlesSelectionWindow.Show();
 
-        // if user select back return
-        if (upUI.Back)
-            yield break;
+        WaitForPuzzleSelectionWindow:
 
-        // Get selected puzzle 
-        var selectedPuzzle = upUI.GetSelectedPuzzle();
+        // wait for puzzle selectin window
+        yield return UserPuzzlesSelectionWindow.WaitForClose();
 
-        // Show selected puzzle info
-        yield return upUI.ShowPuzzleInfo(selectedPuzzle);
-
-        // if back => goto last window
-        if (upUI.Back) goto ShowUserPuzzles;
-
-        // switch all other results
-        switch (upUI.Result)
+        // switch selection window results
+        switch (UserPuzzlesSelectionWindow.Result)
         {
-            case UserPuzzleUI.ResultEnum.Play:
-                yield return GameController.Instance.PlayPuzzle(selectedPuzzle);
-                break;
-
-            case UserPuzzleUI.ResultEnum.Share:
-                yield return ShareController.Instance.ShareUserPuzzle(selectedPuzzle);
-                break;
-
-            case UserPuzzleUI.ResultEnum.Register:
+            case "Back":
+                yield return UserPuzzlesSelectionWindow.Hide();
+                yield break;
+            case "Update":
                 // Sync
                 yield return _sync.Sync();
 
                 // Show sync result
-                yield return upUI.ShowSyncResult(_sync.Successfull);
+                if (_sync.Successfull)
+                {
+                    UserPuzzlesSelectionWindow.Refresh();
+
+                    yield return UIController.Instance.DisplayMessage(
+                        ThemeManager.Instance.LanguagePack.SuccesfullOperation);
+                }
+                else
+                    yield return UIController.Instance.DisplayError(
+                        ThemeManager.Instance.LanguagePack.Error_InternetAccess,
+                        ThemeManager.Instance.IconPack.NetworkError);
+
+                goto WaitForPuzzleSelectionWindow;
+            case "Add":
+                break;
+        }
+        
+        // Get selected puzzle 
+        UserPuzzle selectedPuzzle = (UserPuzzle)UserPuzzlesSelectionWindow.GetSelectedItem();
+
+        // Refresh puzzle info
+        PuzzleInfoWindow.Refresh(selectedPuzzle);
+
+        // Show selected puzzle info
+        yield return PuzzleInfoWindow.Show();
+
+        puzzleInfo:
+
+        yield return PuzzleInfoWindow.WaitForClose();
+
+        // switch all other results
+        switch (PuzzleInfoWindow.Result)
+        {
+            case "Back":
+                yield return PuzzleInfoWindow.Hide();
+                goto WaitForPuzzleSelectionWindow;
+
+            case "Play":
+                yield return GameController.Instance.PlayPuzzle(selectedPuzzle);
                 break;
 
-            case UserPuzzleUI.ResultEnum.Add:
+            case "Share":
+                yield return ShareController.Instance.ShareUserPuzzle(selectedPuzzle);
+                break;
+
+            case "Register":
+                // Sync
+                yield return _sync.Sync();
+
+                // Show sync result
+                if (_sync.Successfull)
+                {
+                    UserPuzzlesSelectionWindow.Refresh();
+
+                    selectedPuzzle=LocalDBController.Instance.UserPuzzles.Refresh(selectedPuzzle);
+
+                    PuzzleInfoWindow.Refresh(selectedPuzzle);
+
+                    yield return UIController.Instance.DisplayMessage(
+                        ThemeManager.Instance.LanguagePack.SuccesfullOperation);
+                }
+                else
+                    yield return UIController.Instance.DisplayError(
+                        ThemeManager.Instance.LanguagePack.Error_InternetAccess,
+                        ThemeManager.Instance.IconPack.NetworkError);
 
                 break;
         }
 
-        goto ShowUserPuzzles;
-
+        goto puzzleInfo;
     }
 
 }
 
-#region Interfaces
-
-public interface IUpdatedUserPuzzle
-{
-    int ServerID { get; set; }
-    string CategoryName { get; set; }
-    int? Rate { get; set; }
-    int? PlayCount { get; set; }
-}
-public interface IRegisterPuzzleInfo
-{
-    int ServerID { get; set; }
-    int ID { get; set; }
-}
-
-#endregion

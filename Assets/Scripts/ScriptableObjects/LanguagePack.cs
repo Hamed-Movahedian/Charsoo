@@ -28,5 +28,11 @@ public class LanguagePack : ScriptableObject
     [Header("Texts")]
     [Multiline] public string NotRegister;
     [Multiline] public string InReview;
+    [Multiline] public string NoCategory;
+
+    [Multiline] public string NotRegisterFull;
+    [Multiline] public string InReviewFull;
+    [Multiline] public string NoCategoryFull;
+    [Multiline] public string UserPuzzleAcceptedFull;
 }
 

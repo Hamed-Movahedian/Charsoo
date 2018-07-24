@@ -270,7 +270,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50803.94
       y: 50228.387
-      width: 250
+      width: 227.04277
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -293,13 +293,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51020.043
+        x: 50997.086
         y: 50248.387
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50920.043
+        x: 50897.086
         y: 50247.387
         width: 100
         height: 20
@@ -1029,6 +1029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9405d90b9758ac842a117764cc694459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UserPuzzlesSelectionWindow: {fileID: 399022899}
+  PuzzleInfoWindow: {fileID: 599558628}
 --- !u!1001 &54828158
 Prefab:
   m_ObjectHideFlags: 0
@@ -1338,7 +1340,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51807.543
       y: 51259.418
-      width: 233
+      width: 210.11763
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -1361,13 +1363,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52006.645
+        x: 51983.76
         y: 51279.418
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51906.645
+        x: 51883.76
         y: 51278.418
         width: 100
         height: 20
@@ -1515,42 +1517,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60172704}
---- !u!1 &60758284
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 60758285}
-  m_Layer: 5
-  m_Name: Specific Windows
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &60758285
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 60758284}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 715420751}
-  - {fileID: 1233634826}
-  - {fileID: 705841302}
-  m_Father: {fileID: 118432967}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &65778793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1750,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51716.375
       y: 52871.246
-      width: 214
+      width: 191.29678
       height: 50
     Collapsed: 1
     Height: 100
@@ -1793,13 +1759,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51894.574
+        x: 51871.87
         y: 52890.355
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51894.574
+        x: 51871.87
         y: 52899.355
         width: 0
         height: 0
@@ -2348,7 +2314,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50322.98
       y: 51570.56
-      width: 210
+      width: 181.90909
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -2371,13 +2337,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50499.082
+        x: 50470.992
         y: 51590.56
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50399.082
+        x: 50370.992
         y: 51589.56
         width: 100
         height: 20
@@ -2632,7 +2598,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50794.906
       y: 50336.973
-      width: 155
+      width: 150.87967
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -2655,13 +2621,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50916.008
+        x: 50911.887
         y: 50356.973
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50816.008
+        x: 50811.887
         y: 50355.973
         width: 100
         height: 20
@@ -2692,10 +2658,8 @@ GameObject:
   m_Component:
   - component: {fileID: 118432967}
   - component: {fileID: 118432969}
-  - component: {fileID: 118432968}
-  - component: {fileID: 118432970}
   m_Layer: 5
-  m_Name: UIController
+  m_Name: Windows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2711,7 +2675,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 60758285}
+  - {fileID: 715420751}
+  - {fileID: 1233634826}
+  - {fileID: 705841302}
   - {fileID: 1262740372}
   m_Father: {fileID: 1869832537}
   m_RootOrder: 6
@@ -2721,59 +2687,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &118432968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 118432966}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!222 &118432969
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 118432966}
---- !u!114 &118432970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 118432966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1230ea79b6f7f942ade340e3fc3b698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Generator: {fileID: 0}
-  UserPuzzles: {fileID: 705841303}
-  PhoneNumberWindow: {fileID: 1619370187}
-  InputCodeWindow: {fileID: 1072873263}
-  PlayerInfoEditor: {fileID: 1891861547}
-  InprogressWindow: {fileID: 1521639586}
-  ProgressbarWindow: {fileID: 1826105435}
-  ErrorWindow: {fileID: 101146313}
-  MessageWindow: {fileID: 372747542}
 --- !u!114 &118999553 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114625418277314342, guid: 3ee94ae3a1f046347b43ad73ec4b7150,
@@ -2832,7 +2751,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52656.387
       y: 51953.312
-      width: 208
+      width: 190.37164
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -2855,13 +2774,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52830.49
+        x: 52812.86
         y: 51973.312
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52730.49
+        x: 52712.86
         y: 51972.312
         width: 100
         height: 20
@@ -2919,7 +2838,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52162
       y: 51947
-      width: 137
+      width: 129.23796
       height: 50
     Collapsed: 1
     Height: 100
@@ -2928,13 +2847,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52263.2
+        x: 52255.438
         y: 51966.11
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52263.2
+        x: 52255.438
         y: 51975.11
         width: 0
         height: 0
@@ -3157,7 +3076,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52920.227
       y: 51772.016
-      width: 201
+      width: 181.90909
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -3180,13 +3099,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 53087.33
+        x: 53068.24
         y: 51792.016
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52987.33
+        x: 52968.24
         y: 51791.016
         width: 100
         height: 20
@@ -3349,7 +3268,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uFEAA\uFEF4\uFEF3\uFE8E\uFE97"
+  m_Text: "\u06A9\u0627\uFEAE\uFE98\uFEB7\u0627"
 --- !u!222 &142997096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3638,7 +3557,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 53278.44
       y: 52746.84
-      width: 201
+      width: 181.90909
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -3661,13 +3580,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 53445.543
+        x: 53426.453
         y: 52766.84
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 53345.543
+        x: 53326.453
         y: 52765.84
         width: 100
         height: 20
@@ -4041,8 +3960,8 @@ MonoBehaviour:
     Name: MainMenu
     WindowRect:
       serializedVersion: 2
-      x: 50028.055
-      y: 50132.723
+      x: 50069.83
+      y: 50118.797
       width: 180
       height: 116.6
     Collapsed: 1
@@ -4052,45 +3971,85 @@ MonoBehaviour:
     - IsInput: 1
       _boxRect:
         serializedVersion: 2
-        x: 50043.656
-        y: 50146.652
+        x: 50085.43
+        y: 50132.727
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50061.656
-        y: 50155.652
+        x: 50103.43
+        y: 50141.727
         width: 0
         height: 0
       Color: {r: 1, g: 0.5955882, b: 0.5955882, a: 0}
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50168.855
-        y: 50183.113
+        x: 50210.63
+        y: 50169.188
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50068.855
-        y: 50182.113
+        x: 50110.63
+        y: 50168.188
         width: 100
         height: 20
       Color: {r: 0, g: 0.21379304, b: 1, a: 1}
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50169.055
-        y: 50209.12
+        x: 50210.83
+        y: 50195.195
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50069.055
-        y: 50208.12
+        x: 50110.83
+        y: 50194.195
         width: 100
         height: 20
       Color: {r: 1, g: 0, b: 0, a: 1}
+--- !u!1 &194044829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 194044830}
+  - component: {fileID: 194044831}
+  m_Layer: 0
+  m_Name: Pool Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &194044830
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194044829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 888204870}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &194044831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194044829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da69a14fde447544db619fb781a6d1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &197438820
 Prefab:
   m_ObjectHideFlags: 0
@@ -4214,7 +4173,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50352.027
       y: 50606.17
-      width: 249
+      width: 227.04277
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -4237,13 +4196,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50567.13
+        x: 50545.17
         y: 50626.17
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50467.13
+        x: 50445.17
         y: 50625.17
         width: 100
         height: 20
@@ -4516,7 +4475,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50544.14
       y: 51542.17
-      width: 181
+      width: 165.90909
       height: 50
     Collapsed: 1
     Height: 100
@@ -4525,13 +4484,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50689.34
+        x: 50674.25
         y: 51561.28
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50689.34
+        x: 50674.25
         y: 51570.28
         width: 0
         height: 0
@@ -5331,7 +5290,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52157
       y: 51838
-      width: 173
+      width: 160.26736
       height: 50
     Collapsed: 1
     Height: 100
@@ -5340,13 +5299,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52294.2
+        x: 52281.465
         y: 51857.11
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52294.2
+        x: 52281.465
         y: 51866.11
         width: 0
         height: 0
@@ -5401,7 +5360,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52526.285
       y: 52189.617
-      width: 216
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -5424,13 +5383,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52708.387
+        x: 52685.58
         y: 52209.617
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52608.387
+        x: 52585.58
         y: 52208.617
         width: 100
         height: 20
@@ -6423,7 +6382,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51703.28
       y: 52300.59
-      width: 274
+      width: 243.9679
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -6446,13 +6405,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51943.383
+        x: 51913.35
         y: 52320.59
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51843.383
+        x: 51813.35
         y: 52319.59
         width: 100
         height: 20
@@ -7047,7 +7006,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49463
       y: 50433
-      width: 181
+      width: 165.90909
       height: 50
     Collapsed: 1
     Height: 100
@@ -7056,13 +7015,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49608.2
+        x: 49593.11
         y: 50452.11
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49608.2
+        x: 49593.11
         y: 50461.11
         width: 0
         height: 0
@@ -7822,7 +7781,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49318.766
       y: 49714.336
-      width: 279
+      width: 249.6096
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -7845,13 +7804,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49563.867
+        x: 49534.477
         y: 49734.336
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49463.867
+        x: 49434.477
         y: 49733.336
         width: 100
         height: 20
@@ -8295,7 +8254,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52054.117
       y: 52650.395
-      width: 210
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -8318,13 +8277,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52230.22
+        x: 52213.41
         y: 52670.395
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52130.22
+        x: 52113.41
         y: 52669.395
         width: 100
         height: 20
@@ -8419,7 +8378,7 @@ GameObject:
   - component: {fileID: 388059162}
   - component: {fileID: 388059161}
   m_Layer: 5
-  m_Name: Button1
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8441,8 +8400,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 408.40002, y: -106.80002}
-  m_SizeDelta: {x: 776.80005, y: 173.60004}
+  m_AnchoredPosition: {x: 223.40002, y: -63.44995}
+  m_SizeDelta: {x: 350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388059161
 MonoBehaviour:
@@ -8461,7 +8420,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -8485,14 +8444,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 599558628}
         m_MethodName: Close
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Enter
-          m_BoolArgument: 1
+          m_StringArgument: Play
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -8657,7 +8616,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52392.727
       y: 51770.996
-      width: 197
+      width: 184.72993
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -8680,13 +8639,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52555.83
+        x: 52543.56
         y: 51790.996
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52455.83
+        x: 52443.56
         y: 51789.996
         width: 100
         height: 20
@@ -8963,7 +8922,7 @@ GameObject:
   - component: {fileID: 399022900}
   - component: {fileID: 399022899}
   m_Layer: 5
-  m_Name: UserPuzzlesList
+  m_Name: UserPuzzlesSelectionWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8985,8 +8944,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0.000061035156}
-  m_SizeDelta: {x: 979.63525, y: 1819.9999}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &399022899
 MonoBehaviour:
@@ -8996,7 +8955,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 399022897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e24e59a4e16906546b427a883c711919, type: 3}
+  m_Script: {fileID: 11500000, guid: 43f367a8172fb564a8226e17cd484f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 
@@ -9379,7 +9338,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51745.363
       y: 52461.92
-      width: 193
+      width: 173.44652
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -9402,13 +9361,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51904.465
+        x: 51884.91
         y: 52481.92
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51804.465
+        x: 51784.91
         y: 52480.92
         width: 100
         height: 20
@@ -9791,7 +9750,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51370.605
       y: 52649.96
-      width: 189
+      width: 171.55078
       height: 50
     Collapsed: 1
     Height: 100
@@ -9800,13 +9759,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51523.805
+        x: 51506.355
         y: 52669.07
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51523.805
+        x: 51506.355
         y: 52678.07
         width: 0
         height: 0
@@ -9861,7 +9820,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50496.402
       y: 49828.453
-      width: 207
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -9884,13 +9843,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50669.504
+        x: 50655.695
         y: 49848.453
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50569.504
+        x: 50555.695
         y: 49847.453
         width: 100
         height: 20
@@ -9948,7 +9907,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50652.586
       y: 50605.773
-      width: 243
+      width: 221.40105
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -9971,13 +9930,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50861.688
+        x: 50840.09
         y: 50625.773
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50761.688
+        x: 50740.09
         y: 50624.773
         width: 100
         height: 20
@@ -10426,7 +10385,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50499.02
       y: 50194.234
-      width: 151
+      width: 140.5214
       height: 50
     Collapsed: 1
     Height: 100
@@ -10435,13 +10394,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50614.22
+        x: 50603.74
         y: 50213.344
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50614.22
+        x: 50603.74
         y: 50222.344
         width: 0
         height: 0
@@ -11083,7 +11042,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49461.8
       y: 50516.805
-      width: 217
+      width: 194.11763
       height: 50
     Collapsed: 1
     Height: 100
@@ -11092,13 +11051,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49643
+        x: 49620.117
         y: 50535.914
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49643
+        x: 49620.117
         y: 50544.914
         width: 0
         height: 0
@@ -11560,7 +11519,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51375.08
       y: 51841.402
-      width: 267
+      width: 236.43047
       height: 50
     Collapsed: 1
     Height: 100
@@ -11569,13 +11528,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51606.277
+        x: 51575.707
         y: 51860.51
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51606.277
+        x: 51575.707
         y: 51869.51
         width: 0
         height: 0
@@ -11944,7 +11903,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50867.42
       y: 51646.043
-      width: 231
+      width: 204.47592
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -11967,13 +11926,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51064.523
+        x: 51038
         y: 51666.043
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50964.523
+        x: 50938
         y: 51665.043
         width: 100
         height: 20
@@ -11984,6 +11943,128 @@ MonoBehaviour:
     MethodName: Void SetActive(Boolean)
     ParameterValueStrings:
     - False
+--- !u!1 &511866965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 511866966}
+  - component: {fileID: 511866969}
+  - component: {fileID: 511866968}
+  - component: {fileID: 511866967}
+  m_Layer: 5
+  m_Name: Add (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &511866966
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511866965}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000122, y: 1.0000122, z: 1.0000122}
+  m_Children:
+  - {fileID: 1329698245}
+  m_Father: {fileID: 697940341}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -14.4, y: 176}
+  m_SizeDelta: {x: 243.1, y: 113.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &511866967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511866965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 511866968}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 399022899}
+        m_MethodName: Close
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Update
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &511866968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511866965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.125, g: 0.125, b: 0.125, a: 0.609}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 2ffa8f149d7a6e44487630054751e57f, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &511866969
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511866965}
 --- !u!1 &513044075
 GameObject:
   m_ObjectHideFlags: 0
@@ -11994,6 +12075,7 @@ GameObject:
   - component: {fileID: 513044076}
   - component: {fileID: 513044078}
   - component: {fileID: 513044077}
+  - component: {fileID: 513044079}
   m_Layer: 5
   m_Name: Info
   m_TagString: Untagged
@@ -12052,6 +12134,102 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 513044075}
+--- !u!114 &513044079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 513044075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 25
+    m_Right: 25
+    m_Top: 25
+    m_Bottom: 25
+  m_ChildAlignment: 0
+  m_Spacing: 25
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+--- !u!1 &515469742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 515469743}
+  - component: {fileID: 515469745}
+  - component: {fileID: 515469744}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &515469743
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 515469742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 823009133}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &515469744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 515469742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 66
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uFE96\uFEB8\uFB94\u0632\uFE8E\uFE91"
+--- !u!222 &515469745
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 515469742}
 --- !u!1 &516653741
 GameObject:
   m_ObjectHideFlags: 0
@@ -12194,7 +12372,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51214.984
       y: 51069.676
-      width: 261
+      width: 232.68448
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -12217,13 +12395,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51442.086
+        x: 51413.77
         y: 51089.676
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51342.086
+        x: 51313.77
         y: 51088.676
         width: 100
         height: 20
@@ -12494,7 +12672,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52023.438
       y: 50978.785
-      width: 201
+      width: 181.90909
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -12517,13 +12695,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52190.54
+        x: 52171.45
         y: 50998.785
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52090.54
+        x: 52071.45
         y: 50997.785
         width: 100
         height: 20
@@ -12969,7 +13147,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52630.82
       y: 52861.75
-      width: 272
+      width: 243.9679
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -12992,13 +13170,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52868.92
+        x: 52840.89
         y: 52881.75
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52768.92
+        x: 52740.89
         y: 52880.75
         width: 100
         height: 20
@@ -13083,6 +13261,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 541125274}
+--- !u!1 &543217085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 543217086}
+  - component: {fileID: 543217088}
+  - component: {fileID: 543217087}
+  m_Layer: 5
+  m_Name: PlayCount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &543217086
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 543217085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2127682343}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 204.20001, y: -363}
+  m_SizeDelta: {x: 408.4, y: 142.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &543217087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 543217085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 85
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uFEAE\uFED4\uFEE7 \u0660"
+--- !u!222 &543217088
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 543217085}
 --- !u!1 &550051140
 GameObject:
   m_ObjectHideFlags: 0
@@ -13130,7 +13382,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50328.734
       y: 50940.516
-      width: 241
+      width: 215.75934
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -13153,13 +13405,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50535.836
+        x: 50510.594
         y: 50960.516
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50435.836
+        x: 50410.594
         y: 50959.516
         width: 100
         height: 20
@@ -13385,7 +13637,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49649.062
       y: 51668.363
-      width: 161
+      width: 146.16309
       height: 50
     Collapsed: 1
     Height: 100
@@ -13394,13 +13646,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49774.26
+        x: 49759.426
         y: 51687.473
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49774.26
+        x: 49759.426
         y: 51696.473
         width: 0
         height: 0
@@ -13937,7 +14189,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uFEAA\uFEF4\uFEF3\uFE8E\uFE97"
+  m_Text: "\uFEDE\uFEA3"
 --- !u!222 &561951080
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14793,7 +15045,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50659.586
       y: 50710.773
-      width: 256
+      width: 232.68448
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -14816,13 +15068,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50881.688
+        x: 50858.37
         y: 50730.773
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50781.688
+        x: 50758.37
         y: 50729.773
         width: 100
         height: 20
@@ -14841,9 +15093,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 599558627}
-  - component: {fileID: 599558628}
   - component: {fileID: 599558630}
   - component: {fileID: 599558629}
+  - component: {fileID: 599558628}
   m_Layer: 5
   m_Name: UserPuzzleInfo
   m_TagString: Untagged
@@ -14878,10 +15130,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 599558626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 883584214, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
+  m_Script: {fileID: 11500000, guid: 410b6ce707c9948469ff38335716aafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 
+  Clue: {fileID: 664545510}
+  Description: {fileID: 43775349}
+  RateImage: {fileID: 609397380}
+  PlayCount: {fileID: 543217087}
+  RegisterButton: {fileID: 1912507636}
+  ShareButton: {fileID: 1675245679}
 --- !u!222 &599558629
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15134,6 +15392,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 601881105}
+--- !u!1 &609397378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 609397379}
+  - component: {fileID: 609397381}
+  - component: {fileID: 609397380}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &609397379
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 609397378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2127682343}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -190.68, y: -363}
+  m_SizeDelta: {x: 381.35, y: 142.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &609397380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 609397378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1c268675637ae8e46aa9162f317a707f, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &609397381
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 609397378}
 --- !u!1 &612596560
 GameObject:
   m_ObjectHideFlags: 0
@@ -15444,7 +15770,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52041.617
       y: 52165.86
-      width: 216
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -15467,13 +15793,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52223.72
+        x: 52200.91
         y: 52185.86
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52123.72
+        x: 52100.91
         y: 52184.86
         width: 100
         height: 20
@@ -15681,7 +16007,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51804.062
       y: 51185.535
-      width: 236
+      width: 204.47592
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -15704,13 +16030,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52006.164
+        x: 51974.64
         y: 51205.535
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51906.164
+        x: 51874.64
         y: 51204.535
         width: 100
         height: 20
@@ -15999,7 +16325,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50331.395
       y: 51288.04
-      width: 265
+      width: 238.32619
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -16022,13 +16348,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50562.496
+        x: 50535.824
         y: 51308.04
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50462.496
+        x: 50435.824
         y: 51307.04
         width: 100
         height: 20
@@ -16696,6 +17022,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 661035985}
+--- !u!1 &664545508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 664545509}
+  - component: {fileID: 664545511}
+  - component: {fileID: 664545510}
+  m_Layer: 5
+  m_Name: Clue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &664545509
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664545508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2127682343}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 644}
+  m_SizeDelta: {x: 423.7, y: 165.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &664545510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664545508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9558824, g: 0.87987715, b: 0.56228375, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 127
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uFEA6\uFEE7\uFEAE\uFEB3"
+--- !u!222 &664545511
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664545508}
 --- !u!1 &668482164
 GameObject:
   m_ObjectHideFlags: 0
@@ -17047,7 +17447,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49725
       y: 50508
-      width: 209
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -17070,13 +17470,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49900.1
+        x: 49884.293
         y: 50528
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49800.1
+        x: 49784.293
         y: 50527
         width: 100
         height: 20
@@ -17217,7 +17617,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52024.375
       y: 52367.02
-      width: 241
+      width: 215.75934
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -17240,13 +17640,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52231.477
+        x: 52206.234
         y: 52387.02
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52131.477
+        x: 52106.234
         y: 52386.02
         width: 100
         height: 20
@@ -17502,6 +17902,7 @@ RectTransform:
   - {fileID: 513044076}
   - {fileID: 1806346415}
   - {fileID: 1550204680}
+  - {fileID: 511866966}
   m_Father: {fileID: 399022898}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17666,7 +18067,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 705841302}
-  - component: {fileID: 705841303}
   m_Layer: 5
   m_Name: UserPuzzles
   m_TagString: Untagged
@@ -17680,33 +18080,20 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 705841301}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 399022898}
   - {fileID: 599558627}
-  m_Father: {fileID: 60758285}
+  m_Father: {fileID: 118432967}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &705841303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 705841301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e7def8b68223f409efbad453514a75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UserPuzzlesListWindow: {fileID: 399022899}
-  PuzzleInfoWindow: {fileID: 599558628}
 --- !u!1 &707072024
 GameObject:
   m_ObjectHideFlags: 0
@@ -17784,7 +18171,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52148.727
       y: 51770.996
-      width: 200
+      width: 182.83421
       height: 50
     Collapsed: 1
     Height: 100
@@ -17793,13 +18180,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52312.926
+        x: 52295.76
         y: 51790.105
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52312.926
+        x: 52295.76
         y: 51799.105
         width: 0
         height: 0
@@ -17828,7 +18215,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 715420750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -17839,7 +18226,7 @@ RectTransform:
   - {fileID: 1965840648}
   - {fileID: 1434130834}
   - {fileID: 866399763}
-  m_Father: {fileID: 60758285}
+  m_Father: {fileID: 118432967}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -17986,7 +18373,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51591.64
       y: 51683.023
-      width: 235
+      width: 215.75934
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -18009,13 +18396,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51792.742
+        x: 51773.5
         y: 51703.023
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51692.742
+        x: 51673.5
         y: 51702.023
         width: 100
         height: 20
@@ -18186,7 +18573,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50928.094
       y: 51022.113
-      width: 172
+      width: 162.16309
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -18209,13 +18596,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51066.195
+        x: 51056.36
         y: 51042.113
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50966.195
+        x: 50956.36
         y: 51041.113
         width: 100
         height: 20
@@ -18441,7 +18828,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49778.88
       y: 51055.203
-      width: 215
+      width: 185.65506
       height: 50
     Collapsed: 1
     Height: 100
@@ -18450,13 +18837,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49958.08
+        x: 49928.734
         y: 51074.312
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49958.08
+        x: 49928.734
         y: 51083.312
         width: 0
         height: 0
@@ -19015,7 +19402,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uFEEA\uFEE3\u0627\u062F\u0627"
+  m_Text: "\uFEAA\uFEF3\uFEAA\uFE9F \u0644\u0648\uFEAA\uFE9F"
 --- !u!222 &748603209
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19074,7 +19461,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50475.684
       y: 49745.152
-      width: 240
+      width: 213.86362
       height: 50
     Collapsed: 1
     Height: 100
@@ -19083,13 +19470,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50679.883
+        x: 50653.746
         y: 49764.26
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50679.883
+        x: 50653.746
         y: 49773.26
         width: 0
         height: 0
@@ -19583,7 +19970,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50915.3
       y: 51199.14
-      width: 205
+      width: 184.72993
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -19606,13 +19993,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51086.402
+        x: 51066.133
         y: 51219.14
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50986.402
+        x: 50966.133
         y: 51218.14
         width: 100
         height: 20
@@ -20268,7 +20655,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50370.758
       y: 51652.22
-      width: 268
+      width: 238.32619
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -20291,13 +20678,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50604.86
+        x: 50575.188
         y: 51672.22
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50504.86
+        x: 50475.188
         y: 51671.22
         width: 100
         height: 20
@@ -20440,7 +20827,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52492.887
       y: 52088.453
-      width: 257
+      width: 238.32619
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -20463,13 +20850,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52715.99
+        x: 52697.316
         y: 52108.453
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52615.99
+        x: 52597.316
         y: 52107.453
         width: 100
         height: 20
@@ -20742,13 +21129,15 @@ RectTransform:
   m_Children:
   - {fileID: 388059160}
   - {fileID: 1675245678}
+  - {fileID: 1912507635}
+  - {fileID: 823009133}
   m_Father: {fileID: 2127682343}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: -237}
-  m_SizeDelta: {x: -57.6, y: -534.3}
+  m_AnchoredPosition: {x: -0.000015258789, y: -582.1}
+  m_SizeDelta: {x: -57.6, y: -1224.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808499786
 MonoBehaviour:
@@ -20758,20 +21147,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 808499784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 20
-    m_Right: 20
-    m_Top: 20
-    m_Bottom: 20
-  m_ChildAlignment: 0
-  m_Spacing: 20
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 350, y: 100}
+  m_Spacing: {x: 20, y: 20}
+  m_Constraint: 1
+  m_ConstraintCount: 2
 --- !u!114 &808499787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20852,7 +21242,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50619.145
       y: 51286.777
-      width: 231
+      width: 204.47592
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -20875,13 +21265,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50816.246
+        x: 50789.723
         y: 51306.777
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50716.246
+        x: 50689.723
         y: 51305.777
         width: 100
         height: 20
@@ -20939,7 +21329,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51366.64
       y: 51677.504
-      width: 139
+      width: 129.23796
       height: 50
     Collapsed: 1
     Height: 100
@@ -20948,13 +21338,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51469.84
+        x: 51460.08
         y: 51696.613
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51469.84
+        x: 51460.08
         y: 51705.613
         width: 0
         height: 0
@@ -21205,6 +21595,128 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ee94ae3a1f046347b43ad73ec4b7150, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &823009132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 823009133}
+  - component: {fileID: 823009136}
+  - component: {fileID: 823009135}
+  - component: {fileID: 823009134}
+  m_Layer: 5
+  m_Name: Back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &823009133
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 823009132}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999949, y: 0.9999949, z: 0.9999949}
+  m_Children:
+  - {fileID: 515469743}
+  m_Father: {fileID: 808499785}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 593.4, y: -183.44995}
+  m_SizeDelta: {x: 350, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &823009134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 823009132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 823009135}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 599558628}
+        m_MethodName: Close
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Back
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &823009135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 823009132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.125, g: 0.125, b: 0.125, a: 0.609}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 2ffa8f149d7a6e44487630054751e57f, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &823009136
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 823009132}
 --- !u!1 &824795557
 GameObject:
   m_ObjectHideFlags: 0
@@ -21252,7 +21764,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 53023.062
       y: 52748.293
-      width: 208
+      width: 190.37164
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -21275,13 +21787,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 53197.164
+        x: 53179.535
         y: 52768.293
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 53097.164
+        x: 53079.535
         y: 52767.293
         width: 100
         height: 20
@@ -21439,7 +21951,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51961.562
       y: 52752.47
-      width: 289
+      width: 255.25131
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -21462,13 +21974,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52216.664
+        x: 52182.914
         y: 52772.47
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52116.664
+        x: 52082.914
         y: 52771.47
         width: 100
         height: 20
@@ -21592,7 +22104,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50802.938
       y: 49991.523
-      width: 219
+      width: 201.65506
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -21615,13 +22127,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50988.04
+        x: 50970.695
         y: 50011.523
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50888.04
+        x: 50870.695
         y: 50010.523
         width: 100
         height: 20
@@ -22594,6 +23106,8 @@ Transform:
   - {fileID: 1611429976}
   - {fileID: 44754173}
   - {fileID: 1721541443}
+  - {fileID: 194044830}
+  - {fileID: 1086926582}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22769,7 +23283,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 897301468}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebb942d1afba6684881cae07233777ef, type: 3}
   m_Name: 
@@ -22987,7 +23501,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50477.363
       y: 50061.1
-      width: 232
+      width: 208.22191
       height: 50
     Collapsed: 1
     Height: 100
@@ -22996,13 +23510,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50673.562
+        x: 50649.785
         y: 50080.21
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50673.562
+        x: 50649.785
         y: 50089.21
         width: 0
         height: 0
@@ -23474,7 +23988,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50816.586
       y: 49644.293
-      width: 211
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -23497,13 +24011,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50993.688
+        x: 50975.88
         y: 49664.293
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50893.688
+        x: 50875.88
         y: 49663.293
         width: 100
         height: 20
@@ -23546,7 +24060,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -16.3, y: 7.6000977}
+  m_AnchoredPosition: {x: -16.3, y: 7.5998535}
   m_SizeDelta: {x: 1855.7, y: 742.19995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927383825
@@ -23917,7 +24431,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51812.227
       y: 51341.93
-      width: 216
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -23940,13 +24454,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51994.33
+        x: 51971.52
         y: 51361.93
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51894.33
+        x: 51871.52
         y: 51360.93
         width: 100
         height: 20
@@ -24153,7 +24667,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50868.305
       y: 51547.51
-      width: 223
+      width: 196.01337
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -24176,13 +24690,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51057.406
+        x: 51030.418
         y: 51567.51
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50957.406
+        x: 50930.418
         y: 51566.51
         width: 100
         height: 20
@@ -24388,7 +24902,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51605.727
       y: 51610.996
-      width: 202
+      width: 187.55078
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -24411,13 +24925,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51773.83
+        x: 51759.38
         y: 51630.996
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51673.83
+        x: 51659.38
         y: 51629.996
         width: 100
         height: 20
@@ -24475,7 +24989,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50326.395
       y: 50782.812
-      width: 235
+      width: 215.75934
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -24498,13 +25012,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50527.496
+        x: 50508.254
         y: 50802.812
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50427.496
+        x: 50408.254
         y: 50801.812
         width: 100
         height: 20
@@ -25035,7 +25549,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50789.54
       y: 49920.547
-      width: 163
+      width: 153.70053
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -25058,13 +25572,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50918.64
+        x: 50909.34
         y: 49940.547
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50818.64
+        x: 50809.34
         y: 49939.547
         width: 100
         height: 20
@@ -26167,7 +26681,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50614.223
       y: 51198.418
-      width: 242
+      width: 224.22191
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -26190,13 +26704,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50822.324
+        x: 50804.547
         y: 51218.418
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50722.324
+        x: 50704.547
         y: 51217.418
         width: 100
         height: 20
@@ -26369,7 +26883,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50152.9
       y: 50784.543
-      width: 108
+      width: 103.850266
       height: 50
     Collapsed: 1
     Height: 100
@@ -26378,13 +26892,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50225.098
+        x: 50220.95
         y: 50803.652
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50225.098
+        x: 50220.95
         y: 50812.652
         width: 0
         height: 0
@@ -27192,7 +27706,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52100.72
       y: 51614.38
-      width: 206
+      width: 187.55078
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -27215,13 +27729,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52272.82
+        x: 52254.37
         y: 51634.38
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52172.82
+        x: 52154.37
         y: 51633.38
         width: 100
         height: 20
@@ -27232,6 +27746,54 @@ MonoBehaviour:
     MethodName: Void TriggerRaycast(Boolean)
     ParameterValueStrings:
     - False
+--- !u!1 &1086926581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1086926582}
+  - component: {fileID: 1086926583}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1086926582
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086926581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 888204870}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1086926583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086926581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1230ea79b6f7f942ade340e3fc3b698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Generator: {fileID: 0}
+  PhoneNumberWindow: {fileID: 1619370187}
+  InputCodeWindow: {fileID: 1072873263}
+  PlayerInfoEditor: {fileID: 1891861547}
+  InprogressWindow: {fileID: 1521639586}
+  ProgressbarWindow: {fileID: 1826105435}
+  ErrorWindow: {fileID: 101146313}
+  MessageWindow: {fileID: 372747542}
 --- !u!1001 &1087173582
 Prefab:
   m_ObjectHideFlags: 0
@@ -28016,7 +28578,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52350
       y: 52320
-      width: 211
+      width: 194.11763
       height: 50
     Collapsed: 1
     Height: 100
@@ -28025,13 +28587,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52525.2
+        x: 52508.316
         y: 52339.11
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52525.2
+        x: 52508.316
         y: 52348.11
         width: 0
         height: 0
@@ -28306,7 +28868,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50090.23
       y: 51843.094
-      width: 181
+      width: 167.80481
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -28329,13 +28891,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50237.332
+        x: 50224.137
         y: 51863.094
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50137.332
+        x: 50124.137
         y: 51862.094
         width: 100
         height: 20
@@ -28393,7 +28955,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50799.938
       y: 50076.523
-      width: 255
+      width: 229.86362
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -28416,13 +28978,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51021.04
+        x: 50995.902
         y: 50096.523
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50921.04
+        x: 50895.902
         y: 50095.523
         width: 100
         height: 20
@@ -29635,7 +30197,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50824.734
       y: 49433.203
-      width: 193
+      width: 173.44652
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -29658,13 +30220,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50983.836
+        x: 50964.28
         y: 49453.203
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50883.836
+        x: 50864.28
         y: 49452.203
         width: 100
         height: 20
@@ -29722,7 +30284,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50363.23
       y: 51836.92
-      width: 249
+      width: 218.5802
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -29745,13 +30307,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50578.332
+        x: 50547.914
         y: 51856.92
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50478.332
+        x: 50447.914
         y: 51855.92
         width: 100
         height: 20
@@ -29953,7 +30515,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50946.027
       y: 50711.17
-      width: 254
+      width: 232.68448
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -29976,13 +30538,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51166.13
+        x: 51144.812
         y: 50731.17
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51066.13
+        x: 51044.812
         y: 50730.17
         width: 100
         height: 20
@@ -30386,7 +30948,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50918.184
       y: 51286.594
-      width: 206
+      width: 187.55078
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -30409,13 +30971,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51090.285
+        x: 51071.836
         y: 51306.594
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50990.285
+        x: 50971.836
         y: 51305.594
         width: 100
         height: 20
@@ -30975,7 +31537,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50471.55
       y: 49651.164
-      width: 268
+      width: 239.25131
       height: 50
     Collapsed: 1
     Height: 100
@@ -30984,13 +31546,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50703.75
+        x: 50675
         y: 49670.273
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50703.75
+        x: 50675
         y: 49679.273
         width: 0
         height: 0
@@ -31112,14 +31674,14 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1233634825}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1891861545}
   - {fileID: 1619370186}
   - {fileID: 1072873262}
-  m_Father: {fileID: 60758285}
+  m_Father: {fileID: 118432967}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -31219,7 +31781,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52897.46
       y: 51952.984
-      width: 201
+      width: 181.90909
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -31242,13 +31804,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 53064.562
+        x: 53045.473
         y: 51972.984
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52964.562
+        x: 52945.473
         y: 51971.984
         width: 100
         height: 20
@@ -31887,7 +32449,7 @@ RectTransform:
   - {fileID: 372747541}
   - {fileID: 1826105432}
   m_Father: {fileID: 118432967}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -32450,7 +33012,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52620.785
       y: 52313.75
-      width: 204
+      width: 190.37164
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -32473,13 +33035,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52790.887
+        x: 52777.258
         y: 52333.75
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52690.887
+        x: 52677.258
         y: 52332.75
         width: 100
         height: 20
@@ -33511,7 +34073,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50350.586
       y: 50711.773
-      width: 238
+      width: 218.5802
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -33534,13 +34096,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50554.688
+        x: 50535.27
         y: 50731.773
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50454.688
+        x: 50435.27
         y: 50730.773
         width: 100
         height: 20
@@ -33551,6 +34113,80 @@ MonoBehaviour:
     MethodName: Void set_alpha(Single)
     ParameterValueStrings:
     - 0
+--- !u!1 &1329698244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1329698245}
+  - component: {fileID: 1329698247}
+  - component: {fileID: 1329698246}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1329698245
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329698244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 511866966}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1329698246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329698244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 66
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Update
+--- !u!222 &1329698247
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1329698244}
 --- !u!1 &1330471806
 GameObject:
   m_ObjectHideFlags: 0
@@ -34212,7 +34848,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49623.734
       y: 50598.69
-      width: 263
+      width: 233.6096
       height: 50
     Collapsed: 1
     Height: 100
@@ -34221,13 +34857,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49850.934
+        x: 49821.543
         y: 50617.8
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49850.934
+        x: 49821.543
         y: 50626.8
         width: 0
         height: 0
@@ -34588,7 +35224,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50343.9
       y: 51938.23
-      width: 232
+      width: 207.29678
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -34611,13 +35247,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50542
+        x: 50517.297
         y: 51958.23
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50442
+        x: 50417.297
         y: 51957.23
         width: 100
         height: 20
@@ -34863,7 +35499,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50818.375
       y: 49836.48
-      width: 188
+      width: 173.44652
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -34886,13 +35522,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50972.477
+        x: 50957.92
         y: 49856.48
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50872.477
+        x: 50857.92
         y: 49855.48
         width: 100
         height: 20
@@ -35071,7 +35707,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50821.586
       y: 49713.598
-      width: 211
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -35094,13 +35730,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50998.688
+        x: 50980.88
         y: 49733.598
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50898.688
+        x: 50880.88
         y: 49732.598
         width: 100
         height: 20
@@ -35448,7 +36084,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51370.184
       y: 52211.145
-      width: 215
+      width: 199.75934
       height: 50
     Collapsed: 1
     Height: 100
@@ -35457,13 +36093,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51549.383
+        x: 51534.14
         y: 52230.254
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51549.383
+        x: 51534.14
         y: 52239.254
         width: 0
         height: 0
@@ -35767,7 +36403,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50616.383
       y: 51104.99
-      width: 171
+      width: 156.5214
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -35790,13 +36426,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50753.484
+        x: 50739.004
         y: 51124.99
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50653.484
+        x: 50639.004
         y: 51123.99
         width: 100
         height: 20
@@ -36317,8 +36953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 101.3}
-  m_SizeDelta: {x: -57.6, y: -358.7}
+  m_AnchoredPosition: {x: 0, y: 144}
+  m_SizeDelta: {x: -57.6, y: -636.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446676958
 MonoBehaviour:
@@ -36400,7 +37036,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51798.04
       y: 50980.23
-      width: 185
+      width: 170.62566
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -36423,13 +37059,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51949.14
+        x: 51934.766
         y: 51000.23
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51849.14
+        x: 51834.766
         y: 50999.23
         width: 100
         height: 20
@@ -36765,7 +37401,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50071.867
       y: 51703.6
-      width: 213
+      width: 187.55078
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -36788,13 +37424,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50250.97
+        x: 50225.52
         y: 51723.6
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50150.97
+        x: 50125.52
         y: 51722.6
         width: 100
         height: 20
@@ -36805,6 +37441,80 @@ MonoBehaviour:
     MethodName: Void set_active(Boolean)
     ParameterValueStrings:
     - True
+--- !u!1 &1461020304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1461020305}
+  - component: {fileID: 1461020307}
+  - component: {fileID: 1461020306}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1461020305
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1461020304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1912507635}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1461020306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1461020304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 66
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uFE96\uFE92\uFE9B"
+--- !u!222 &1461020307
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1461020304}
 --- !u!1 &1461083417
 GameObject:
   m_ObjectHideFlags: 0
@@ -38817,7 +39527,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52299.598
       y: 52862.223
-      width: 270
+      width: 243.9679
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -38840,13 +39550,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52535.7
+        x: 52509.668
         y: 52882.223
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52435.7
+        x: 52409.668
         y: 52881.223
         width: 100
         height: 20
@@ -38891,8 +39601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -174, y: 176.00003}
-  m_SizeDelta: {x: 341.9, y: 113.7}
+  m_AnchoredPosition: {x: -266.3, y: 176.00003}
+  m_SizeDelta: {x: 228.8, y: 113.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1550204681
 MonoBehaviour:
@@ -38933,7 +39643,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 399022899}
         m_MethodName: Close
         m_Mode: 5
         m_Arguments:
@@ -40266,7 +40976,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52644.02
       y: 51773.65
-      width: 208
+      width: 190.37164
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -40289,13 +40999,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52818.12
+        x: 52800.492
         y: 51793.65
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52718.12
+        x: 52700.492
         y: 51792.65
         width: 100
         height: 20
@@ -40421,7 +41131,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51473.96
       y: 51192.25
-      width: 249
+      width: 213.86362
       height: 50
     Collapsed: 1
     Height: 100
@@ -40430,13 +41140,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51687.16
+        x: 51652.023
         y: 51211.36
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51687.16
+        x: 51652.023
         y: 51220.36
         width: 0
         height: 0
@@ -40914,7 +41624,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50933.586
       y: 50604.773
-      width: 237
+      width: 215.75934
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -40937,13 +41647,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51136.688
+        x: 51115.445
         y: 50624.773
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51036.688
+        x: 51015.445
         y: 50623.773
         width: 100
         height: 20
@@ -41072,7 +41782,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49784.406
       y: 50225.273
-      width: 192
+      width: 180.01337
       height: 50
     Collapsed: 1
     Height: 100
@@ -41081,13 +41791,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49940.605
+        x: 49928.617
         y: 50244.383
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49940.605
+        x: 49928.617
         y: 50253.383
         width: 0
         height: 0
@@ -41216,7 +41926,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50811.2
       y: 49772.79
-      width: 255
+      width: 229.86362
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -41239,13 +41949,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51032.3
+        x: 51007.164
         y: 49792.79
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50932.3
+        x: 50907.164
         y: 49791.79
         width: 100
         height: 20
@@ -41578,12 +42288,12 @@ GameObject:
   - component: {fileID: 1675245680}
   - component: {fileID: 1675245679}
   m_Layer: 5
-  m_Name: Button1 (1)
+  m_Name: Share
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1675245678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41600,8 +42310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 607.19116, y: -106.35007}
-  m_SizeDelta: {x: 378.12744, y: 172.70013}
+  m_AnchoredPosition: {x: 593.4, y: -63.44995}
+  m_SizeDelta: {x: 350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675245679
 MonoBehaviour:
@@ -41644,14 +42354,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 599558628}
         m_MethodName: Close
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Enter
-          m_BoolArgument: 1
+          m_StringArgument: Share
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -41735,7 +42445,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51817.97
       y: 51090.055
-      width: 182
+      width: 162.16309
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -41758,13 +42468,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51966.07
+        x: 51946.234
         y: 51110.055
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51866.07
+        x: 51846.234
         y: 51109.055
         width: 100
         height: 20
@@ -41822,7 +42532,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50104.695
       y: 50615.176
-      width: 196
+      width: 180
       height: 116.6
     Collapsed: 1
     Height: 100
@@ -41845,13 +42555,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50261.496
+        x: 50245.496
         y: 50665.566
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50161.496
+        x: 50145.496
         y: 50664.566
         width: 100
         height: 20
@@ -41859,13 +42569,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50261.695
+        x: 50245.695
         y: 50691.574
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50161.695
+        x: 50145.695
         y: 50690.574
         width: 100
         height: 20
@@ -43560,7 +44270,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49692.08
       y: 49953.42
-      width: 126
+      width: 119.850266
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -43583,13 +44293,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49784.18
+        x: 49778.03
         y: 49973.42
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49684.18
+        x: 49678.03
         y: 49972.42
         width: 100
         height: 20
@@ -43648,7 +44358,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51726.05
       y: 51837.457
-      width: 232
+      width: 210.11763
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -43671,13 +44381,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51924.152
+        x: 51902.27
         y: 51857.457
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51824.152
+        x: 51802.27
         y: 51856.457
         width: 100
         height: 20
@@ -43736,7 +44446,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51868.64
       y: 51609.504
-      width: 203
+      width: 187.55078
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -43759,13 +44469,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52037.742
+        x: 52022.293
         y: 51629.504
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51937.742
+        x: 51922.293
         y: 51628.504
         width: 100
         height: 20
@@ -43823,7 +44533,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50077.184
       y: 51571.594
-      width: 206
+      width: 187.55078
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -43846,13 +44556,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50249.285
+        x: 50230.836
         y: 51591.594
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50149.285
+        x: 50130.836
         y: 51590.594
         width: 100
         height: 20
@@ -44311,7 +45021,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50613.777
       y: 51024.703
-      width: 242
+      width: 224.22191
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -44334,13 +45044,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50821.88
+        x: 50804.1
         y: 51044.703
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50721.88
+        x: 50704.1
         y: 51043.703
         width: 100
         height: 20
@@ -44540,7 +45250,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50477.902
       y: 50337.797
-      width: 202
+      width: 190.37164
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -44563,13 +45273,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50646.004
+        x: 50634.375
         y: 50357.797
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50546.004
+        x: 50534.375
         y: 50356.797
         width: 100
         height: 20
@@ -45164,7 +45874,7 @@ GameObject:
   - component: {fileID: 1806346417}
   - component: {fileID: 1806346416}
   m_Layer: 5
-  m_Name: Continiue
+  m_Name: Add
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45186,8 +45896,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 184.3, y: 176}
-  m_SizeDelta: {x: 341.9, y: 113.7}
+  m_AnchoredPosition: {x: 238.7, y: 176}
+  m_SizeDelta: {x: 233.1, y: 113.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806346416
 MonoBehaviour:
@@ -45228,7 +45938,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 399022899}
         m_MethodName: Close
         m_Mode: 5
         m_Arguments:
@@ -45236,7 +45946,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Next
+          m_StringArgument: Add
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -45660,7 +46370,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51369.395
       y: 52299.52
-      width: 265
+      width: 236.43047
       height: 50
     Collapsed: 1
     Height: 100
@@ -45669,13 +46379,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51598.594
+        x: 51570.023
         y: 52318.63
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51598.594
+        x: 51570.023
         y: 52327.63
         width: 0
         height: 0
@@ -45730,7 +46440,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51713.367
       y: 52648.68
-      width: 275
+      width: 246.78876
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -45753,13 +46463,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51954.47
+        x: 51926.258
         y: 52668.68
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51854.47
+        x: 51826.258
         y: 52667.68
         width: 100
         height: 20
@@ -46615,7 +47325,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 49694.492
       y: 50713.266
-      width: 295
+      width: 261.81818
       height: 50
     Collapsed: 1
     Height: 100
@@ -46624,13 +47334,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 49953.69
+        x: 49920.508
         y: 50732.375
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 49953.69
+        x: 49920.508
         y: 50741.375
         width: 0
         height: 0
@@ -47441,7 +48151,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50471.55
       y: 49496.164
-      width: 273
+      width: 242.07217
       height: 50
     Collapsed: 1
     Height: 100
@@ -47450,13 +48160,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50708.75
+        x: 50677.82
         y: 49515.273
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50708.75
+        x: 50677.82
         y: 49524.273
         width: 0
         height: 0
@@ -47763,7 +48473,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50377.508
       y: 51757.344
-      width: 208
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -47786,13 +48496,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50551.61
+        x: 50536.8
         y: 51777.344
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50451.61
+        x: 50436.8
         y: 51776.344
         width: 100
         height: 20
@@ -47803,6 +48513,128 @@ MonoBehaviour:
     MethodName: Void SetTrigger(System.String)
     ParameterValueStrings:
     - Finished
+--- !u!1 &1912507634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1912507635}
+  - component: {fileID: 1912507638}
+  - component: {fileID: 1912507637}
+  - component: {fileID: 1912507636}
+  m_Layer: 5
+  m_Name: Register
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1912507635
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912507634}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999949, y: 0.9999949, z: 0.9999949}
+  m_Children:
+  - {fileID: 1461020305}
+  m_Father: {fileID: 808499785}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 223.40002, y: -183.44995}
+  m_SizeDelta: {x: 350, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1912507636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912507634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1912507637}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 599558628}
+        m_MethodName: Close
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Register
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1912507637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912507634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.125, g: 0.125, b: 0.125, a: 0.609}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 2ffa8f149d7a6e44487630054751e57f, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1912507638
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912507634}
 --- !u!1 &1914021429
 GameObject:
   m_ObjectHideFlags: 0
@@ -48031,7 +48863,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52902.727
       y: 52253.23
-      width: 191
+      width: 176.26736
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -48054,13 +48886,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 53059.83
+        x: 53045.094
         y: 52273.23
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52959.83
+        x: 52945.094
         y: 52272.23
         width: 100
         height: 20
@@ -48118,7 +48950,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50096
       y: 51937
-      width: 196
+      width: 174.37164
       height: 50
     Collapsed: 1
     Height: 100
@@ -48127,13 +48959,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50256.2
+        x: 50234.57
         y: 51956.11
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50256.2
+        x: 50234.57
         y: 51965.11
         width: 0
         height: 0
@@ -48570,7 +49402,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52897.727
       y: 52360.23
-      width: 198
+      width: 184.72993
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -48593,13 +49425,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 53061.83
+        x: 53048.56
         y: 52380.23
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52961.83
+        x: 52948.56
         y: 52379.23
         width: 100
         height: 20
@@ -48903,7 +49735,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52026.363
       y: 52304.92
-      width: 188
+      width: 170.62566
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -48926,13 +49758,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52180.465
+        x: 52163.09
         y: 52324.92
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52080.465
+        x: 52063.09
         y: 52323.92
         width: 100
         height: 20
@@ -49035,7 +49867,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51370.395
       y: 52462.52
-      width: 200
+      width: 180.01337
       height: 50
     Collapsed: 1
     Height: 100
@@ -49044,13 +49876,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51534.594
+        x: 51514.605
         y: 52481.63
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51534.594
+        x: 51514.605
         y: 52490.63
         width: 0
         height: 0
@@ -49362,7 +50194,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50328.375
       y: 51022.684
-      width: 163
+      width: 153.70053
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -49385,13 +50217,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50457.477
+        x: 50448.176
         y: 51042.684
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50357.477
+        x: 50348.176
         y: 51041.684
         width: 100
         height: 20
@@ -49688,7 +50520,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51368.285
       y: 51611.035
-      width: 192
+      width: 174.37164
       height: 50
     Collapsed: 1
     Height: 100
@@ -49697,13 +50529,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51524.484
+        x: 51506.855
         y: 51630.145
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51524.484
+        x: 51506.855
         y: 51639.145
         width: 0
         height: 0
@@ -50166,7 +50998,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52374.836
       y: 51951.098
-      width: 197
+      width: 184.72993
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -50189,13 +51021,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52537.938
+        x: 52525.668
         y: 51971.098
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52437.938
+        x: 52425.668
         y: 51970.098
         width: 100
         height: 20
@@ -50624,7 +51456,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51214.152
       y: 50896.133
-      width: 216
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -50647,13 +51479,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51396.254
+        x: 51373.445
         y: 50916.133
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51296.254
+        x: 51273.445
         y: 50915.133
         width: 100
         height: 20
@@ -50859,7 +51691,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50330.996
       y: 51198.32
-      width: 177
+      width: 167.80481
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -50882,13 +51714,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50474.098
+        x: 50464.902
         y: 51218.32
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50374.098
+        x: 50364.902
         y: 51217.32
         width: 100
         height: 20
@@ -51186,7 +52018,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51700.44
       y: 52202.99
-      width: 250
+      width: 224.22191
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -51209,13 +52041,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51916.543
+        x: 51890.766
         y: 52222.99
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51816.543
+        x: 51790.766
         y: 52221.99
         width: 100
         height: 20
@@ -51274,7 +52106,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50499.54
       y: 49920.547
-      width: 193
+      width: 177.1925
       height: 50
     Collapsed: 1
     Height: 100
@@ -51283,13 +52115,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50656.74
+        x: 50640.93
         y: 49939.656
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50656.74
+        x: 50640.93
         y: 49948.656
         width: 0
         height: 0
@@ -51418,7 +52250,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52323.844
       y: 52649.44
-      width: 175
+      width: 156.5214
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -51441,13 +52273,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 52464.945
+        x: 52446.465
         y: 52669.44
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 52364.945
+        x: 52346.465
         y: 52668.44
         width: 100
         height: 20
@@ -51506,7 +52338,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50802.94
       y: 50154.387
-      width: 224
+      width: 204.47592
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -51529,13 +52361,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50993.043
+        x: 50973.52
         y: 50174.387
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50893.043
+        x: 50873.52
         y: 50173.387
         width: 100
         height: 20
@@ -51593,7 +52425,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51500.64
       y: 50969.57
-      width: 216
+      width: 193.1925
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -51616,13 +52448,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51682.742
+        x: 51659.934
         y: 50989.57
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51582.742
+        x: 51559.934
         y: 50988.57
         width: 100
         height: 20
@@ -51754,7 +52586,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 52953.906
       y: 52861.92
-      width: 197
+      width: 184.72993
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -51777,13 +52609,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 53117.008
+        x: 53104.74
         y: 52881.92
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 53017.008
+        x: 53004.74
         y: 52880.92
         width: 100
         height: 20
@@ -52766,7 +53598,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50473.55
       y: 49439.164
-      width: 242
+      width: 213.86362
       height: 50
     Collapsed: 1
     Height: 100
@@ -52775,13 +53607,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50679.75
+        x: 50651.613
         y: 49458.273
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50679.75
+        x: 50651.613
         y: 49467.273
         width: 0
         height: 0
@@ -53017,7 +53849,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50869.414
       y: 51453.5
-      width: 265
+      width: 238.32619
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -53040,13 +53872,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51100.516
+        x: 51073.844
         y: 51473.5
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51000.516
+        x: 50973.844
         y: 51472.5
         width: 100
         height: 20
@@ -53104,7 +53936,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51717.348
       y: 52754.54
-      width: 155
+      width: 140.5214
       height: 50
     Collapsed: 1
     Height: 100
@@ -53113,13 +53945,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51836.547
+        x: 51822.066
         y: 52773.65
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51836.547
+        x: 51822.066
         y: 52782.65
         width: 0
         height: 0
@@ -53573,7 +54405,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 50327.465
       y: 51104.125
-      width: 231
+      width: 207.29678
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -53596,13 +54428,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 50524.566
+        x: 50500.863
         y: 51124.125
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 50424.566
+        x: 50400.863
         y: 51123.125
         width: 100
         height: 20
@@ -53717,7 +54549,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 51209.406
       y: 50979.742
-      width: 219
+      width: 187.55078
       height: 59.7
     Collapsed: 1
     Height: 150
@@ -53740,13 +54572,13 @@ MonoBehaviour:
     - IsInput: 0
       _boxRect:
         serializedVersion: 2
-        x: 51394.508
+        x: 51363.06
         y: 50999.742
         width: 18
         height: 18
       _labelRect:
         serializedVersion: 2
-        x: 51294.508
+        x: 51263.06
         y: 50998.742
         width: 100
         height: 20
@@ -53865,13 +54697,16 @@ RectTransform:
   - {fileID: 1267129061}
   - {fileID: 1446676957}
   - {fileID: 808499785}
+  - {fileID: 664545509}
+  - {fileID: 609397379}
+  - {fileID: 543217086}
   m_Father: {fileID: 599558627}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 874.4, y: 747.9}
+  m_AnchoredPosition: {x: 0, y: -147.9}
+  m_SizeDelta: {x: 874.4, y: 1471.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2127682344
 MonoBehaviour:

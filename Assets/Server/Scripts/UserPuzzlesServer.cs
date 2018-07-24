@@ -6,6 +6,7 @@ using System.Linq;
 public class UserPuzzlesServer
 {
     private InData _result;
+    private DateTime _test;
     public bool UnsuccessfullSync { get { return _result == null; } }
 
     public IEnumerator Sync(int playerID, List<UserPuzzle> unregisteredPuzzles, DateTime lastUpdate)
@@ -29,6 +30,7 @@ public class UserPuzzlesServer
 
         yield return ServerController.Post<InData>("UserPuzzles/Sync", outData, data => _result = data);
 
+        _test = DateTime.Now;
     }
 
     private class InData
@@ -82,3 +84,19 @@ public class UserPuzzlesServer
     }
 }
 
+#region Interfaces
+
+public interface IUpdatedUserPuzzle
+{
+    int ServerID { get; set; }
+    string CategoryName { get; set; }
+    int? Rate { get; set; }
+    int? PlayCount { get; set; }
+}
+public interface IRegisterPuzzleInfo
+{
+    int ServerID { get; set; }
+    int ID { get; set; }
+}
+
+#endregion
