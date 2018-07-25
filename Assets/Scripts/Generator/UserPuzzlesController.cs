@@ -15,28 +15,15 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
 
     public void Save()
     {
-        WordSet wordSet = new WordSet();
+        WordSet wordSet = GameController.Instance.GetWordSet();
 
-        wordSet.Clue = UIController.Instance.Generator.GetClue();
-        wordSet.Words = new List<SWord>();
-
-        WordManager wordManager = Singleton.Instance.WordManager;
-
-        foreach (var word in wordManager.GetComponentsInChildren<Word>())
-            wordSet.Words.Add(new SWord(word));
-
-        var puzzle = new Puzzle
+        var puzzle = new UserPuzzle
         {
-            ID = 1,
-            CategoryID = null,
             Clue = wordSet.Clue,
-            Row = 1,
-            Content = StringCompressor.CompressString(JsonUtility.ToJson(wordSet)),
-            Solved = false,
-            Paid = false,
-            LastUpdate = DateTime.Now
+            Content = StringCompressor.CompressString(JsonUtility.ToJson(wordSet))
         };
-        //LocalDBController.Table<Pu>()
+
+        LocalDBController.Instance.UserPuzzles.AddPuzzle(puzzle);
     }
 
     public IEnumerator ShowUserPuzzles()
@@ -80,7 +67,23 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
 
                 goto WaitForPuzzleSelectionWindow;
             case "Add":
-                break;
+                // Hide last window
+                yield return UserPuzzlesSelectionWindow.Hide();
+
+                // gnereate new puzzle
+                yield return RuntimeWordSetGenerator.Instance.StartProcess();
+
+                // Sync
+                yield return _sync.Sync();
+
+                // refresh window
+                UserPuzzlesSelectionWindow.Refresh();
+
+                // Show last window
+                yield return UserPuzzlesSelectionWindow.Show();
+
+                // back to waiting
+                goto WaitForPuzzleSelectionWindow;
         }
         
         // Get selected puzzle 

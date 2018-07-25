@@ -193,6 +193,7 @@ public class Partitioner : BaseObject
         if (Paritions == null)
             return;
 
+        return;
 
         Gizmos.color = ParitionColor;
 

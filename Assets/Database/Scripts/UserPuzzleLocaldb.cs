@@ -93,4 +93,9 @@ public class UserPuzzleLocalDB
         return LocalDBController.Table<UserPuzzle>()
             .FirstOrDefault(p => p.ID == puzzle.ID);
     }
+
+    public void AddPuzzle(UserPuzzle puzzle)
+    {
+        LocalDBController.InsertOrReplace(puzzle);
+    }
 }

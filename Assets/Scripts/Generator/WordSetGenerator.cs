@@ -438,5 +438,14 @@ public class WordSetGenerator : BaseObject
 
 
     #endregion
-    
+
+    public WordSet GetBestWordSet()
+    {
+        if (_wordSet == null)
+            _wordSet = new WordSet();
+
+        _wordSet.Words = EndResults[NextResultIndex];
+        _wordSet.Clue = Clue;
+        return _wordSet;
+    }
 }

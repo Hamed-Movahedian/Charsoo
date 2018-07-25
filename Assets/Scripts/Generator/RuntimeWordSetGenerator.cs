@@ -2,14 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MgsCommonLib;
 using MgsCommonLib.UI;
 using MgsCommonLib.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class RuntimeWordSetGenerator : MonoBehaviour
+public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
 {
+    [Header("Windows")]
+    public MgsUIWindow GetClueWindow;
+    public MgsUIWindow GetWordsWindow;
+    public MgsUIWindow WordCountWindow;
+    public MgsUIWindow WordsetApproval;
+    public MgsUIWindow PartiotionFaildWindow;
 
     [Header("Components")]
     public WordSetGenerator Generator;
@@ -27,15 +34,15 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         // Cache 
         GeneratorUI gui = UIController.Instance.Generator;
 
-        // Delete all letters and words
-        Singleton.Instance.LetterController.DeleteAllLetters();
-        Singleton.Instance.WordManager.DeleteAllWords();
+        GameController.Instance.ClearWords();
 
         // Disable letter selection
         Singleton.Instance.RayCaster.TriggerRaycast(false);
         Singleton.Instance.RayCaster.EnablePan(false);
 
         // Set application fast mode
+        var targetFrameRate = Application.targetFrameRate;
+        var vSyncCount = QualitySettings.vSyncCount;
         Application.targetFrameRate = 0;
         QualitySettings.vSyncCount = 0;
 
@@ -69,6 +76,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         if (GenerationFaild)
         {
             yield return gui.ShowGenerationFailed();
+
             if (gui.Back)
                 goto count;
             else
@@ -76,7 +84,6 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         }
 
         // ***************************** Selection
-        selection:
         yield return gui.ShowSelection();
         if (gui.Back)
             goto count;
@@ -85,18 +92,21 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
 
         //***************************** Shuffle
-        Partitioner.Shuffle();
+        yield return Partitioner.Shuffle();
 
-
-        //***************************** Local save
+        //***************************** Save
         UserPuzzlesController.Instance.Save();
 
-    }
+        //***************************** Success message
+        yield return UIController.Instance.DisplayMessage(ThemeManager.Instance.LanguagePack.SuccesfullOperation);
 
-    private static void SavePuzzle()
-    {
-        //return;
- 
+        //**************************** Clear screen
+        GameController.Instance.ClearWords();
+
+        // Set application to normal mode
+         Application.targetFrameRate = targetFrameRate;
+         QualitySettings.vSyncCount = vSyncCount;
+
     }
 
     private IEnumerator Generate()
@@ -111,7 +121,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         Generator.Clue = UIController.Instance.Generator.GetClue();
         Generator.Initialize();
         Generator.UsedWordCount = UIController.Instance.Generator.GetWordCount();
-        Generator.MaxResults = 500;
+        Generator.MaxResults = 100;
 
         #endregion
 
@@ -133,34 +143,34 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         Partitioner.MaxSize = 5;
         Partitioner.MinSize = 1;
         Partitioner.MaxTry = 200;
+        Partitioner.Validate = false;
 
         #endregion
+
+
+        // Spawn words
+        var bestWordSet = Generator.GetBestWordSet();
+
+        GameController.Instance.SpawnWordSet(bestWordSet);
 
         #region Partition word set ...
 
-        for (Generator.NextResultIndex = 0; Generator.NextResultIndex < 21; Generator.NextResultIndex += 10)
-        {
-            // Spawn words
-            Generator.SpawnWordSet();
+        // Run partitioner
+        yield return MgsCoroutine.StartCoroutineRuntime(
+            Partitioner.PortionLetters(),
+            () => UIController.Instance.SetProgressbar(
+                MgsCoroutine.Percentage,
+                //ThemeManager.Instance.LanguagePack.Inprogress_PartitionWordSet),
+                MgsCoroutine.Info),
+            .1);
 
-            // Run partitioner
-            yield return MgsCoroutine.StartCoroutineRuntime(
-                Partitioner.PortionLetters(),
-                () => UIController.Instance.SetProgressbar(
-                    MgsCoroutine.Percentage,
-                    //ThemeManager.Instance.LanguagePack.Inprogress_PartitionWordSet),
-                    MgsCoroutine.Info),
-                .1);
-
-            // if partition successfully break
-            if (Partitioner.PartitionSuccessfully)
-                break;
-        }
+        // if partition successfully break
+        if (Partitioner.PartitionSuccessfully)
 
         #endregion
 
+        GenerationFaild = false;
         // Hide in-progress window
         StartCoroutine(UIController.Instance.HideProgressbarWindow());
-
     }
 }

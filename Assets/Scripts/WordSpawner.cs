@@ -16,13 +16,6 @@ public class WordSpawner : BaseObject
     private Dictionary<Vector2, Letter> _locationDictionary;
     private Bounds _bounds;
 
-    void Start()
-    {
-
-        //SpawnWords();
-    }
-
-
 
     [ContextMenu("Spawn")]
     public void SpawnWords()
@@ -44,14 +37,6 @@ public class WordSpawner : BaseObject
 
         // Find center
         _bounds = WordSet.GetBound();
-/*
-        new Bounds(WordSet.Words[0].Min, Vector3.zero);
-        WordSet.Words.ToList().ForEach(w =>
-        {
-            _bounds.Encapsulate(w.Min);
-            _bounds.Encapsulate(w.Max);
-        });
-*/
 
         Vector3 boundsCenter = _bounds.center;
         boundsCenter.x = Mathf.Round(boundsCenter.x);
@@ -97,7 +82,10 @@ public class WordSpawner : BaseObject
                     }
                 }
                 else
+                {
                     letter = Instantiate(LetterPrefab);
+                    //letter.OnSpawn.Invoke();
+                }
 
                 // Position
                 letter.transform.position = (Vector3) sWord.Locations(i) - _bounds.center;
