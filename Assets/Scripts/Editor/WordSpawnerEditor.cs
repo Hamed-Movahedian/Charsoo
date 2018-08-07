@@ -47,6 +47,16 @@ public class WordSpawnerEditor : EditorWindow
                     Wordspawner.WordSet = _useJason? ToJason(_wordSet):_wordSet;
                     Wordspawner.SpawnWords();
                 }
+            if (GUILayout.Button("To Generatoe"))
+            {
+                string allWords = "";
+                foreach (SWord word in _wordSet.Words)
+                    allWords += word.Name+" ";
+
+                FindObjectOfType<WordSetGenerator>().AllWords = allWords;
+                
+            }
+
             EditorGUILayout.EndHorizontal();
         }
     }
