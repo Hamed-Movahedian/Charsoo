@@ -5,7 +5,6 @@ using UnityEngine;
 public class Puzzle : BaseTable
 {
     public string Clue { get; set; }
-
     public int? CategoryID { get;  set; }
     public string Content { get; set; }
     public int Row { get; set; }
@@ -18,7 +17,7 @@ public class Puzzle : BaseTable
         WordSet wordSet = new WordSet();
         string decompressString = StringCompressor.DecompressString(Content);
         string replace = decompressString.Replace("Direction", "WordDirection");
-        JsonUtility.FromJsonOverwrite(decompressString, wordSet);
+        JsonUtility.FromJsonOverwrite(replace, wordSet);
         return wordSet;
     }
 }

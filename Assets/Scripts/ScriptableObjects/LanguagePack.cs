@@ -34,5 +34,6 @@ public class LanguagePack : ScriptableObject
     [Multiline] public string InReviewFull;
     [Multiline] public string NoCategoryFull;
     [Multiline] public string UserPuzzleAcceptedFull;
+    [Multiline] public string LockPuzzle;
 }
 

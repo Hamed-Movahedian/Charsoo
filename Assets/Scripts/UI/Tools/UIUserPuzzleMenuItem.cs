@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 class UIUserPuzzleMenuItem : UIMenuItem
 {
+
     public Text ClueText;
     public Image RateImage;
     public Text PlayCount;
@@ -34,4 +35,6 @@ class UIUserPuzzleMenuItem : UIMenuItem
 
         GetComponent<RectTransform>().localScale = Vector3.one;
     }
+
+
 }
