@@ -55,6 +55,11 @@ public class UIController : MgsSingleton<UIController>
         yield return MessageWindow.ShowWaitForCloseHide();
 
     }
+    public IEnumerator DisplayMessage(LanguagePackLables lable)
+    {
+        return null;
+
+    }
 
     public IEnumerator ShowProgressbarWindow(string message)
     {

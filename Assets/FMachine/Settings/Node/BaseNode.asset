@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 711436321, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: BaseNode
+  m_EditorClassIdentifier: 
+  Style:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 2800000, guid: a66a900a15023234a8ac67470ed84a63, type: 3}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 2800000, guid: d3010264ae09e4b4ea3e71c28bc294cd, type: 3}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+    m_Active:
+      m_Background: {fileID: 2800000, guid: 506ce0a1d47cb4145b1b6d1879f60bd6, type: 3}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 2800000, guid: 1383cd75d5a13144aaa1ed49e6006b44, type: 3}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0.19999981, g: 0, b: 1, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 2800000, guid: 71518989eff97b14d80d7a2a309bdabb, type: 3}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 18
+      m_Right: 18
+      m_Top: 30
+      m_Bottom: 14
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 29
+      m_Right: -10
+      m_Top: 9
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 12800000, guid: 58d2f05dab2ac494d9cb47d4c5d178fa, type: 3}
+    m_FontSize: 22
+    m_FontStyle: 0
+    m_Alignment: 1
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 7}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  Size: {x: 170, y: 100}
+  DependentSetting:
+  - {fileID: 11400000, guid: 04f5a0ea8ac847b4387512d19ba16cb5, type: 2}
+  - {fileID: 11400000, guid: 110ee0d9f1c4cc14da442dcb70ec0668, type: 2}
+  - {fileID: 11400000, guid: 69cc4bfede4fe2e44b0ad936d5c78e73, type: 2}
+  - {fileID: 11400000, guid: a815d4ef61d085e468d219c1e9c6353e, type: 2}
+  - {fileID: 11400000, guid: 19a9f064154cde74dbfa4ea597f343e5, type: 2}

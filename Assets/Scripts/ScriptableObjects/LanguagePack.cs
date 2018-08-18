@@ -37,3 +37,33 @@ public class LanguagePack : ScriptableObject
     [Multiline] public string LockPuzzle;
 }
 
+public enum LanguagePackLables
+{
+    SuccesfullOperation,
+
+    Inprogress_AccountRecovery,
+    Inprogress_AccountConnection,
+    Inprogress_GenerateWordSet,
+    Inprogress_PartitionWordSet,
+
+    Error_InternetAccess,
+    Error_SmsService,
+    Error_UnknownPhoneNumber,
+    Error_AccountRecovery,
+    Error_InvalidCode,
+    Error_InvalidPhoneNumber,
+    Error_GenerateWordSet,
+    Error_NoCategoryIsSelected,
+
+    NotRegister,
+    InReview,
+    NoCategory,
+
+    NotRegisterFull,
+    InReviewFull,
+    NoCategoryFull,
+    UserPuzzleAcceptedFull,
+}
+
+
+

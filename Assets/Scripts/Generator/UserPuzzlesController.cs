@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMachine;
 using MgsCommonLib;
 using MgsCommonLib.UI;
 using UnityEngine;
@@ -26,6 +27,15 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
         LocalDBController.Instance.UserPuzzles.AddPuzzle(puzzle);
     }
 
+    public IEnumerator Sync()
+    {
+        yield return  _sync.Sync();
+
+        if(_sync.Successfull)
+            FollowMachine.SetOutput("Success");
+        else
+            FollowMachine.SetOutput("Fail");
+    }
     public IEnumerator ShowUserPuzzles()
     {
         // Sync with server - if possible
