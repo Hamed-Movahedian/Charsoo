@@ -8,11 +8,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449178a2964340447bece3c281dbe5d3, type: 3}
+  m_Script: {fileID: 1572040107, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
   m_Name: IconPack01
   m_EditorClassIdentifier: 
-  GeneralError: {fileID: 21300000, guid: 8cf0206026a160545a2e27d84a6b5bf3, type: 3}
-  NetworkError: {fileID: 21300000, guid: 04b8907564521e9428348e6fd0a3022b, type: 3}
-  ServiceError: {fileID: 21300000, guid: 04b8907564521e9428348e6fd0a3022b, type: 3}
-  UnkownPhone: {fileID: 21300000, guid: 4a8301c52fc83fd45a51aad21c06a5c8, type: 3}
-  InvalidCode: {fileID: 21300000, guid: d88922ff10bd0374fbaf1b58dcfbdae4, type: 3}
+  Icons:
+  - Name: 'Error/General '
+    Icon: {fileID: 21300000, guid: 8cf0206026a160545a2e27d84a6b5bf3, type: 3}
+  - Name: Error/InvalidCode
+    Icon: {fileID: 21300000, guid: d88922ff10bd0374fbaf1b58dcfbdae4, type: 3}
+  - Name: Error/NetworkError
+    Icon: {fileID: 21300000, guid: 04b8907564521e9428348e6fd0a3022b, type: 3}
+  - Name: Error/UnkownNumber
+    Icon: {fileID: 21300000, guid: 4a8301c52fc83fd45a51aad21c06a5c8, type: 3}
+  - Name: Info/Info
+    Icon: {fileID: 21300000, guid: d21aa8fc622bad04b8f664c7a53b37f3, type: 3}

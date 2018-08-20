@@ -55,7 +55,7 @@ public class UIController : MgsSingleton<UIController>
         yield return MessageWindow.ShowWaitForCloseHide();
 
     }
-    public IEnumerator DisplayMessage(LanguagePackLables lable)
+    public IEnumerator DisplayMessage()
     {
         return null;
 

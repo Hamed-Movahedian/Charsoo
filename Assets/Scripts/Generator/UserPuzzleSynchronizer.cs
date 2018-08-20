@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using MgsCommonLib.Theme;
 using UnityEngine;
 
 internal class UserPuzzleSynchronizer
@@ -8,7 +9,7 @@ internal class UserPuzzleSynchronizer
     public IEnumerator Sync()
     {
         // Show inprogress window
-        yield return UIController.Instance.ShowInprogressWindow(ThemeManager.Instance.LanguagePack.Inprogress_AccountConnection);
+        yield return UIController.Instance.ShowInprogressWindow(ThemeManager.Instance.LanguagePack.GetLable("Inprogress_AccountConnection"));
 
         // Syncing ...
         yield return Syncing();

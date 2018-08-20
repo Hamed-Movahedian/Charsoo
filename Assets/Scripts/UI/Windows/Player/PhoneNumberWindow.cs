@@ -12,7 +12,7 @@ public class PhoneNumberWindow : UIWindowBase
         yield return Hide();
 
         // Show in-progress window
-        yield return UIController.ShowInprogressWindow(LanguagePack.Inprogress_AccountRecovery);
+        yield return UIController.ShowInprogressWindow(LanguagePack.GetLable("Inprogress_AccountRecovery"));
 
         // Send Random code to phone number
         yield return AccountManager
@@ -29,32 +29,32 @@ public class PhoneNumberWindow : UIWindowBase
             case AccountManager.SendCodeResultEnum.NotRegister:
                 yield return UIController
                     .DisplayError(
-                        LanguagePack.Error_UnknownPhoneNumber,
-                        IconPack.UnkownPhone);
+                        LanguagePack.GetLable("Error_UnknownPhoneNumber"),
+                        IconPack.GetIcon("UnkownPhone"));
                 break;
 
             // شماره تلفن معتبر نیست
             case AccountManager.SendCodeResultEnum.InvalidPhoneNumber:
                 yield return UIController
                     .DisplayError(
-                        LanguagePack.Error_InvalidPhoneNumber,
-                        IconPack.UnkownPhone);
+                        LanguagePack.GetLable("Error_InvalidPhoneNumber"),
+                        IconPack.GetIcon("UnkownPhone"));
                 break;
 
             // خطا در اتصال به سرور
             case AccountManager.SendCodeResultEnum.NetworkError:
                 yield return UIController
                     .DisplayError(
-                        LanguagePack.Error_InternetAccess,
-                        IconPack.NetworkError);
+                        LanguagePack.GetLable("Error_InternetAccess"),
+                        IconPack.GetIcon("NetworkError"));
                 break;
 
             // سرویس پیام کوتاه در دسترس نیست
             case AccountManager.SendCodeResultEnum.SmsServiceError:
                 yield return UIController
                     .DisplayError(
-                        LanguagePack.Error_SmsService,
-                        IconPack.ServiceError);
+                        LanguagePack.GetLable("Error_SmsService"),
+                        IconPack.GetIcon("ServiceError"));
                 break;
 
             // ارسال موفقیت آمیر کد به صورت پیام کوتاه

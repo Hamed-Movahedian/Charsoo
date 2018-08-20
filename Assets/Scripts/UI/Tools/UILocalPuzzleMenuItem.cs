@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using ArabicSupport;
+using MgsCommonLib.Theme;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,7 @@ public class UILocalPuzzleMenuItem : UIMenuItem
         var puzzle = (Puzzle)data;
 
         ClueText.text =
-            !puzzle.Paid? ThemeManager.Instance.LanguagePack.LockPuzzle:
+            !puzzle.Paid? ThemeManager.Instance.LanguagePack.GetLable("LockPuzzle") :
             ArabicFixer.Fix(puzzle.Clue);
 
         GetComponent<Image>().color = puzzle.Paid ? OpenColor : LockColor;

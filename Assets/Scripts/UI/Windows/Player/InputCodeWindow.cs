@@ -19,7 +19,7 @@ public class InputCodeWindow : UIWindowBase
             // ************** Code is valid => Restore account
 
             // Display in progress window
-            yield return UIController.ShowInprogressWindow(LanguagePack.Inprogress_AccountConnection);
+            yield return UIController.ShowInprogressWindow(LanguagePack.GetLable("Inprogress_AccountConnection"));
 
             // Try to connect to account
             yield return AccountManager
@@ -35,18 +35,18 @@ public class InputCodeWindow : UIWindowBase
                 // Network Error !!!!!
                 case AccountManager.AccountConnectionResultEnum.NetworkError:
                     yield return UIController
-                        .DisplayError(LanguagePack.Error_InternetAccess,IconPack.NetworkError);
+                        .DisplayError(LanguagePack.GetLable("Error_InternetAccess"),IconPack.GetIcon("NetworkError"));
                     break;
                 // Account can't recover error !!!!!
                 case AccountManager.AccountConnectionResultEnum.AccountError:
                     yield return UIController
-                        .DisplayError(LanguagePack.Error_AccountRecovery,IconPack.GeneralError);
+                        .DisplayError(LanguagePack.GetLable("Error_AccountRecovery"),IconPack.GetIcon("GeneralError"));
                     break;
                 // Successfully connect to account !!!!!
                 case AccountManager.AccountConnectionResultEnum.Success:
                     // Display proper message
                     yield return UIController
-                        .DisplayMessage(LanguagePack.SuccesfullOperation);
+                        .DisplayMessage(LanguagePack.GetLable("SuccesfullOperation"));
 
                     // Close window
                     Close();
@@ -62,8 +62,8 @@ public class InputCodeWindow : UIWindowBase
 
             // Invalid code Error
             yield return UIController.DisplayError(
-                LanguagePack.Error_InvalidCode,
-                IconPack.InvalidCode);
+                LanguagePack.GetLable("Error_InvalidCode"),
+                IconPack.GetIcon("InvalidCode"));
         }
 
         // Show Input code window again

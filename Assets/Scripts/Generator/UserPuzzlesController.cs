@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FMachine;
 using MgsCommonLib;
+using MgsCommonLib.Theme;
 using MgsCommonLib.UI;
 using UnityEngine;
 
@@ -68,12 +69,12 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
                     UserPuzzlesSelectionWindow.Refresh();
 
                     yield return UIController.Instance.DisplayMessage(
-                        ThemeManager.Instance.LanguagePack.SuccesfullOperation);
+                        ThemeManager.Instance.LanguagePack.GetLable("SuccesfullOperation"));
                 }
                 else
                     yield return UIController.Instance.DisplayError(
-                        ThemeManager.Instance.LanguagePack.Error_InternetAccess,
-                        ThemeManager.Instance.IconPack.NetworkError);
+                        ThemeManager.Instance.LanguagePack.GetLable("Error_InternetAccess"),
+                        ThemeManager.Instance.IconPack.GetIcon("NetworkError"));
 
                 goto WaitForPuzzleSelectionWindow;
             case "Add":
@@ -138,12 +139,12 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
                     PuzzleInfoWindow.Refresh(selectedPuzzle);
 
                     yield return UIController.Instance.DisplayMessage(
-                        ThemeManager.Instance.LanguagePack.SuccesfullOperation);
+                        ThemeManager.Instance.LanguagePack.GetLable("SuccesfullOperation"));
                 }
                 else
                     yield return UIController.Instance.DisplayError(
-                        ThemeManager.Instance.LanguagePack.Error_InternetAccess,
-                        ThemeManager.Instance.IconPack.NetworkError);
+                        ThemeManager.Instance.LanguagePack.GetLable("Error_InternetAccess"),
+                        ThemeManager.Instance.IconPack.GetIcon("NetworkError"));
 
                 break;
         }

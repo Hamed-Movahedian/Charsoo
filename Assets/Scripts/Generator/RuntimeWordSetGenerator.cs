@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using MgsCommonLib;
+using MgsCommonLib.Theme;
 using MgsCommonLib.UI;
 using MgsCommonLib.Utilities;
 using UnityEngine;
@@ -98,7 +99,7 @@ public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
         UserPuzzlesController.Instance.Save();
 
         //***************************** Success message
-        yield return UIController.Instance.DisplayMessage(ThemeManager.Instance.LanguagePack.SuccesfullOperation);
+        yield return UIController.Instance.DisplayMessage(ThemeManager.Instance.LanguagePack.GetLable("SuccesfullOperation"));
 
         //**************************** Clear screen
         GameController.Instance.ClearWords();
@@ -112,7 +113,7 @@ public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
     private IEnumerator Generate()
     {
         yield return UIController.Instance
-            .ShowProgressbarWindow(ThemeManager.Instance.LanguagePack.Inprogress_GenerateWordSet);
+            .ShowProgressbarWindow(ThemeManager.Instance.LanguagePack.GetLable("Inprogress_GenerateWordSet"));
 
         #region Setup word generator
 
@@ -132,7 +133,7 @@ public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
             Generator.MakeWordSet(),
             () => UIController.Instance.SetProgressbar(
                 MgsCoroutine.Percentage,
-                ThemeManager.Instance.LanguagePack.Inprogress_GenerateWordSet),
+                ThemeManager.Instance.LanguagePack.GetLable("Inprogress_GenerateWordSet")),
             0.1);
 
         #endregion

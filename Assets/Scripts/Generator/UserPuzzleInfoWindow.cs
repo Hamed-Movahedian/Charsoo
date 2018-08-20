@@ -1,4 +1,5 @@
 ﻿using ArabicSupport;
+using MgsCommonLib.Theme;
 using MgsCommonLib.UI;
 using UnityEngine.UI;
 
@@ -22,17 +23,17 @@ public class UserPuzzleInfoWindow : MgsUIWindow
         PlayCount.gameObject.SetActive(!string.IsNullOrEmpty(puzzle.CategoryName));
 
         if (puzzle.ServerID == null)
-            Description.text = ThemeManager.Instance.LanguagePack.NotRegisterFull;
+            Description.text = ThemeManager.Instance.LanguagePack.GetLable("NotRegisterFull");
         else if (puzzle.CategoryName == null)
-            Description.text = ThemeManager.Instance.LanguagePack.InReviewFull;
+            Description.text = ThemeManager.Instance.LanguagePack.GetLable("InReviewFull");
         else if (puzzle.CategoryName == "")
-            Description.text = ThemeManager.Instance.LanguagePack.NoCategoryFull;
+            Description.text = ThemeManager.Instance.LanguagePack.GetLable("NoCategoryFull");
         else
         {
             PlayCount.text = ArabicFixer.Fix("نفر") + puzzle.PlayCount;
             if (puzzle.Rate != null) RateImage.fillAmount = puzzle.Rate.Value / 5f;
             Description.text = ThemeManager.Instance.LanguagePack.
-                UserPuzzleAcceptedFull.Replace("***",ArabicFixer.Fix(puzzle.CategoryName));
+                GetLable("UserPuzzleAcceptedFull").Replace(" * **",ArabicFixer.Fix(puzzle.CategoryName));
         }
     }
 }

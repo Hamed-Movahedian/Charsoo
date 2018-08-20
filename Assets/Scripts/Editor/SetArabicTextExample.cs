@@ -3,43 +3,28 @@ using ArabicSupport;
 using UnityEditor;
 using UnityEngine.UI;
 
-public class SetArabicTextExample : ScriptableWizard
+public class PersianTextWindow : EditorWindow
 {
+    public string Text;
+    public string FixedText;
 
-
-    [MenuItem("Word Game/ArabicFix #f")]
-    static void ArabicFix()
-    {
-        EditorGUIUtility.systemCopyBuffer=ArabicFixer.Fix(EditorGUIUtility.systemCopyBuffer);
-        
-
-    }
-
-    [MenuItem("Word Game/Fix Persian Text")]
+    
+    [MenuItem("Window/Persian Text")]
     static void CreateWizard()
     {
-        DisplayWizard<SetArabicTextExample>("Fix Persian Text", "Fix");
+        PersianTextWindow window = (PersianTextWindow)EditorWindow.GetWindow(typeof(PersianTextWindow));
+        window.titleContent=new GUIContent("Persian Text");
+        window.Show();
     }
 
-    void OnWizardCreate()
+    void OnGUI()
     {
-        foreach (GameObject o in Selection.gameObjects)
-        {
-            foreach (Text textO in o.GetComponentsInChildren<Text>())
-            {
-                string txt = textO.text;
-                textO.text = ArabicFixer.Fix(txt, false, true);
-            }
-        }
-        
-        Debug.Log(EditorGUIUtility.keyboardControl);
+        Text = EditorGUILayout.TextField("Text ", Text);
+        if(!string.IsNullOrEmpty(Text))
+        EditorGUILayout.LabelField("Fix text ",ArabicFixer.Fix(Text));
+        if (GUILayout.Button("Copy"))
+            EditorGUIUtility.systemCopyBuffer = ArabicFixer.Fix(Text);
 
-
-        foreach (TextMesh textO in Selection.activeGameObject.GetComponentsInChildren<TextMesh>())
-        {
-            string txt = textO.text;
-            textO.text = ArabicFixer.Fix(txt, false, true);
-        }
     }
 
 }

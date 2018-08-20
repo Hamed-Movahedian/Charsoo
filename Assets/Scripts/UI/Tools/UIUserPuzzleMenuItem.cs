@@ -1,4 +1,5 @@
 ﻿using ArabicSupport;
+using MgsCommonLib.Theme;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,9 +24,9 @@ class UIUserPuzzleMenuItem : UIMenuItem
         State.gameObject.SetActive(true);
 
         State.text =
-            puzzle.ServerID == null ? ThemeManager.Instance.LanguagePack.NotRegister :
-            puzzle.CategoryName == null ? ThemeManager.Instance.LanguagePack.InReview :
-            puzzle.CategoryName == "" ? ThemeManager.Instance.LanguagePack.NoCategory :
+            puzzle.ServerID == null ? ThemeManager.Instance.LanguagePack.GetLable("NotRegister") :
+            puzzle.CategoryName == null ? ThemeManager.Instance.LanguagePack.GetLable("InReview") :
+            puzzle.CategoryName == "" ? ThemeManager.Instance.LanguagePack.GetLable("NoCategory") :
             ArabicFixer.Fix(puzzle.CategoryName);
 
 
