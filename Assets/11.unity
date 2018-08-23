@@ -140,10 +140,11 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -50187.125, y: -49791.043}
-  Zoom: 0.74000025
+  Position: {x: -50234.934, y: -49751.066}
+  Zoom: 1
   NodeList:
   - {fileID: 638254074}
+  - {fileID: 358443309}
   RunningNode: {fileID: 0}
   LastRunningNode: {fileID: 0}
 --- !u!4 &228736851
@@ -158,6 +159,118 @@ Transform:
   m_Children:
   - {fileID: 1274409095}
   m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &358443308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 358443312}
+  - component: {fileID: 358443309}
+  - component: {fileID: 358443311}
+  - component: {fileID: 358443310}
+  m_Layer: 0
+  m_Name: Action (ActionNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &358443309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358443308}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 228736850}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51141.934
+    y: 49875.066
+    width: 170
+    height: 50015.066
+  Name: Action
+  Title: 
+  Info: 
+  InputSocketList:
+  - {fileID: 358443311}
+  OutputSocketList:
+  - {fileID: 358443310}
+  GlowTint: {r: 0, g: 0, b: 0, a: 0}
+  LineTint: {r: 0, g: 0, b: 0, a: 0}
+  Lables:
+  - 
+  TargetGameObject: {fileID: 0}
+  ComponentTypeName: 
+  MethodName: 
+  ParameterValueStrings: []
+--- !u!114 &358443310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358443308}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 228736850}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51319.434
+    y: 49929.906
+    width: 15
+    height: 15
+  Name: 
+  Node: {fileID: 358443309}
+  EdgeList: []
+--- !u!114 &358443311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358443308}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 228736850}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51118.734
+    y: 49927.086
+    width: 20
+    height: 20
+  Name: 
+  Node: {fileID: 358443309}
+  EdgeList: []
+--- !u!4 &358443312
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358443308}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1274409095}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &434769008
@@ -275,19 +388,19 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50645.164
-    y: 49950.984
-    width: 170
-    height: 100
+    x: 50454.164
+    y: 49887.984
+    width: 307.22
+    height: 50054.984
   Name: Action
   Title: Action
-  Info: test text info
+  Info: Test text info for action node
   InputSocketList:
   - {fileID: 638254076}
   OutputSocketList:
   - {fileID: 638254075}
-  GlowTint: {r: 0, g: 0, b: 0, a: 0.26666668}
-  LineTint: {r: 0.357, g: 0.357, b: 0.357, a: 0.5019608}
+  GlowTint: {r: 0.19947898, g: 0.28132868, b: 0.413, a: 0.5019608}
+  LineTint: {r: 0.33271432, g: 0.46971428, b: 0.685, a: 0.5019608}
   Lables:
   - 
   TargetGameObject: {fileID: 0}
@@ -310,8 +423,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50822.664
-    y: 50005.824
+    x: 50768.883
+    y: 49942.824
     width: 15
     height: 15
   Name: 
@@ -333,8 +446,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50621.965
-    y: 50003.004
+    x: 50430.965
+    y: 49940.004
     width: 20
     height: 20
   Name: 
@@ -379,6 +492,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 638254077}
+  - {fileID: 358443312}
   m_Father: {fileID: 228736851}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
