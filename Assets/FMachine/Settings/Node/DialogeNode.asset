@@ -8,15 +8,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2119715023, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Script: {fileID: -361442780, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: DialogeNode
   m_EditorClassIdentifier: 
-  TintColor: {r: 1, g: 1, b: 1, a: 1}
-  Reverse: 0
-  BaseNodeName: BaseNode
-  DefaultDescription: Dialog
-  InputSocketSetting: {fileID: 11400000, guid: c80bb6f094f6ec449a456e8cb0882ece, type: 2}
-  OutputSocketSetting: {fileID: 11400000, guid: 5609f588ab6ac1046bd9176dfbb1c13a,
-    type: 2}
+  HeaderColor: {r: 0.4705882, g: 0.7889591, b: 1, a: 0.827451}
+  Title: Dialogue
   Icon: {fileID: 2800000, guid: 026258ed47725ba4ba4b4e46d4dc7415, type: 3}
-  IconSize: {x: 30, y: 30}
+  IconColor: {r: 0, g: 0, b: 0, a: 1}

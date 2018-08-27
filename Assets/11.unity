@@ -165,8 +165,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50798.2
-    y: 49703.156
+    x: 50606.223
+    y: 49720.477
     width: 0
     height: 0
   Name: d
@@ -188,8 +188,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50798.2
-    y: 49671.65
+    x: 50606.223
+    y: 49688.97
     width: 0
     height: 0
   Name: d
@@ -211,8 +211,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50798.2
-    y: 49640.137
+    x: 50606.223
+    y: 49657.457
     width: 0
     height: 0
   Name: d
@@ -234,8 +234,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50798.2
-    y: 49608.625
+    x: 50606.223
+    y: 49625.945
     width: 0
     height: 0
   Name: d
@@ -257,8 +257,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50798.2
-    y: 49577.117
+    x: 50606.223
+    y: 49594.438
     width: 0
     height: 0
   Name: dgdfg
@@ -280,8 +280,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50798.2
-    y: 49545.605
+    x: 50606.223
+    y: 49562.926
     width: 15
     height: 15
   Name: rtyty
@@ -303,8 +303,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50544
-    y: 49505.85
+    x: 50352.023
+    y: 49523.17
     width: 20
     height: 20
   Name: 
@@ -327,10 +327,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50567.2
-    y: 49447.35
+    x: 50375.223
+    y: 49464.67
     width: 233.5
-    height: 49742.168
+    height: 294.8164
   Name: Action
   Title: Action
   Info: Test Action
@@ -343,8 +343,6 @@ MonoBehaviour:
   - {fileID: 2702107}
   - {fileID: 2702106}
   - {fileID: 2702105}
-  GlowTint: {r: 0, g: 0, b: 0, a: 0}
-  LineTint: {r: 0, g: 0, b: 0, a: 0}
   Lables:
   - rtyty
   - dgdfg
@@ -390,10 +388,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50271.926
-    y: 49840.863
+    x: 50136.926
+    y: 49814.863
     width: 300
-    height: 49958.863
+    height: 118
   Name: 
   Title: 
   Info: 
@@ -401,8 +399,6 @@ MonoBehaviour:
   - {fileID: 102887974}
   OutputSocketList:
   - {fileID: 102887973}
-  GlowTint: {r: 0, g: 0, b: 0, a: 0}
-  LineTint: {r: 0, g: 0, b: 0, a: 0}
   Lables:
   - ghdg
   TargetGameObject: {fileID: 0}
@@ -425,8 +421,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50569.426
-    y: 49905.863
+    x: 50434.426
+    y: 49879.863
     width: 0
     height: 0
   Name: ghdg
@@ -448,8 +444,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50248.727
-    y: 49905.863
+    x: 50113.727
+    y: 49879.863
     width: 0
     height: 0
   Name: 
@@ -466,7 +462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1274409095}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &228736849
 GameObject:
@@ -495,13 +491,13 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -49894.895, y: -49452.55}
+  Position: {x: -49716.504, y: -49413.43}
   Zoom: 1
   NodeList:
   - {fileID: 638254074}
   - {fileID: 2702112}
-  - {fileID: 643190479}
   - {fileID: 102887972}
+  - {fileID: 971931920}
   RunningNode: {fileID: 0}
   LastRunningNode: {fileID: 0}
 --- !u!4 &228736851
@@ -634,10 +630,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 49905.02
-    y: 49637.742
+    x: 49862.02
+    y: 49552.742
     width: 320.22
-    height: 49792.742
+    height: 155
   Name: Action
   Title: Action
   Info: Test text info for action node
@@ -645,8 +641,6 @@ MonoBehaviour:
   - {fileID: 638254076}
   OutputSocketList:
   - {fileID: 638254075}
-  GlowTint: {r: 0.19947898, g: 0.28132868, b: 0.413, a: 0.5019608}
-  LineTint: {r: 0.33271432, g: 0.46971428, b: 0.685, a: 0.5019608}
   Lables:
   - dfgdfg
   TargetGameObject: {fileID: 0}
@@ -669,8 +663,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50222.74
-    y: 49712.242
+    x: 50179.74
+    y: 49627.242
     width: 15
     height: 15
   Name: dfgdfg
@@ -693,8 +687,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 49881.82
-    y: 49709.742
+    x: 49838.82
+    y: 49624.742
     width: 20
     height: 20
   Name: 
@@ -731,209 +725,31 @@ MonoBehaviour:
   OutputSocket: {fileID: 2702111}
   EditPoints: []
   ClickEditpointIndex: 0
---- !u!1 &643190470
+--- !u!1 &971931919
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 643190471}
-  - component: {fileID: 643190479}
-  - component: {fileID: 643190478}
-  - component: {fileID: 643190477}
-  - component: {fileID: 643190476}
-  - component: {fileID: 643190475}
-  - component: {fileID: 643190474}
-  - component: {fileID: 643190473}
-  - component: {fileID: 643190472}
+  - component: {fileID: 971931924}
+  - component: {fileID: 971931920}
+  - component: {fileID: 971931923}
+  - component: {fileID: 971931922}
+  - component: {fileID: 971931921}
   m_Layer: 0
-  m_Name: Action (ActionNode)
+  m_Name: ' (ActionNode)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &643190471
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643190470}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1274409095}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &643190472
+--- !u!114 &971931920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643190470}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 228736850}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51112.074
-    y: 49812.656
-    width: 0
-    height: 0
-  Name: 
-  Node: {fileID: 643190479}
-  EdgeList: []
---- !u!114 &643190473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643190470}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 228736850}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51112.074
-    y: 49781.15
-    width: 0
-    height: 0
-  Name: 
-  Node: {fileID: 643190479}
-  EdgeList: []
---- !u!114 &643190474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643190470}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 228736850}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51112.074
-    y: 49749.637
-    width: 0
-    height: 0
-  Name: 
-  Node: {fileID: 643190479}
-  EdgeList: []
---- !u!114 &643190475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643190470}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 228736850}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51112.074
-    y: 49718.125
-    width: 0
-    height: 0
-  Name: 
-  Node: {fileID: 643190479}
-  EdgeList: []
---- !u!114 &643190476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643190470}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 228736850}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51112.074
-    y: 49686.617
-    width: 0
-    height: 0
-  Name: 
-  Node: {fileID: 643190479}
-  EdgeList: []
---- !u!114 &643190477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643190470}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 228736850}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51112.074
-    y: 49655.105
-    width: 15
-    height: 15
-  Name: 
-  Node: {fileID: 643190479}
-  EdgeList: []
---- !u!114 &643190478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643190470}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 228736850}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50921.375
-    y: 49621.85
-    width: 20
-    height: 20
-  Name: 
-  Node: {fileID: 643190479}
-  EdgeList: []
---- !u!114 &643190479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643190470}
+  m_GameObject: {fileID: 971931919}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
@@ -944,35 +760,107 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50944.574
-    y: 49569.85
-    width: 170
-    height: 49851.668
-  Name: Action
+    x: 50693.17
+    y: 49560.83
+    width: 300
+    height: 168.77344
+  Name: 
   Title: Action
-  Info: 
+  Info: ghsdfgdfg
   InputSocketList:
-  - {fileID: 643190478}
+  - {fileID: 971931923}
   OutputSocketList:
-  - {fileID: 643190477}
-  - {fileID: 643190476}
-  - {fileID: 643190475}
-  - {fileID: 643190474}
-  - {fileID: 643190473}
-  - {fileID: 643190472}
-  GlowTint: {r: 0, g: 0, b: 0, a: 0}
-  LineTint: {r: 0, g: 0, b: 0, a: 0}
+  - {fileID: 971931922}
+  - {fileID: 971931921}
   Lables:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - dsfdf
+  - sdffsd
   TargetGameObject: {fileID: 0}
   ComponentTypeName: 
   MethodName: 
   ParameterValueStrings: []
+--- !u!114 &971931921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971931919}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 228736850}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50990.67
+    y: 49698.094
+    width: 0
+    height: 0
+  Name: sdffsd
+  Node: {fileID: 971931920}
+  EdgeList: []
+--- !u!114 &971931922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971931919}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 228736850}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50990.67
+    y: 49666.582
+    width: 0
+    height: 0
+  Name: dsfdf
+  Node: {fileID: 971931920}
+  EdgeList: []
+--- !u!114 &971931923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971931919}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 228736850}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50669.973
+    y: 49629.33
+    width: 0
+    height: 0
+  Name: 
+  Node: {fileID: 971931920}
+  EdgeList: []
+--- !u!4 &971931924
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971931919}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1274409095}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1274409094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,8 +888,8 @@ Transform:
   m_Children:
   - {fileID: 638254077}
   - {fileID: 2702104}
-  - {fileID: 643190471}
   - {fileID: 102887975}
+  - {fileID: 971931924}
   m_Father: {fileID: 228736851}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
