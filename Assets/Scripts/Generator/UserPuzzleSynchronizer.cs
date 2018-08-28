@@ -1,26 +1,15 @@
 ﻿using System.Collections;
+using FMachine;
+using FollowMachineDll.Attributes;
 using MgsCommonLib.Theme;
 using UnityEngine;
 
-internal class UserPuzzleSynchronizer
+internal class UserPuzzleSynchronizer : MonoBehaviour
 {
-    private bool _syncResult;
-
-    public IEnumerator Sync()
+    [FollowMachine("Sync UserPuzzles","Success,Fail")]
+    public IEnumerator Syncing()
     {
-        // Show inprogress window
-        yield return UIController.Instance.ShowInprogressWindow(ThemeManager.Instance.LanguagePack.GetLable("Inprogress_AccountConnection"));
-
-        // Syncing ...
-        yield return Syncing();
-
-        // Hide inprogress window
-        yield return UIController.Instance.HideInprogressWindow();
-    }
-
-    private IEnumerator Syncing()
-    {
-        _syncResult = false;
+        FollowMachine.SetOutput("Fail");
         // Cache ...
         var upLocalDB = LocalDBController.Instance.UserPuzzles;
         var upServer = ServerController.Instance.UserPuzzles;
@@ -48,8 +37,7 @@ internal class UserPuzzleSynchronizer
         // Set last update in local db
         upLocalDB.SetLastUpdate(upServer.GetLastUpdate());
 
-        _syncResult = true;
+        FollowMachine.SetOutput("Success");
     }
 
-    public bool Successfull { get { return _syncResult; } }
 }

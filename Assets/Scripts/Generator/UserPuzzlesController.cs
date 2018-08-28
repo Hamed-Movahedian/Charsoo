@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using FMachine;
+using FollowMachineDll.Attributes;
 using MgsCommonLib;
 using MgsCommonLib.Theme;
 using MgsCommonLib.UI;
@@ -28,6 +29,7 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
         LocalDBController.Instance.UserPuzzles.AddPuzzle(puzzle);
     }
 
+/*    [FollowMachine("Sync with Server","Success,Fail")]
     public IEnumerator Sync()
     {
         yield return  _sync.Sync();
@@ -150,7 +152,7 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
         }
 
         goto puzzleInfo;
-    }
+    }*/
 
 }
 

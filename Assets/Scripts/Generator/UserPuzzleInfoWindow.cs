@@ -1,10 +1,12 @@
 ﻿using ArabicSupport;
+using FollowMachineDll.Attributes;
 using MgsCommonLib.Theme;
 using MgsCommonLib.UI;
 using UnityEngine.UI;
 
 public class UserPuzzleInfoWindow : MgsUIWindow
 {
+    public UserPuzzleSelectionWindow PuzzleSelectionWindow;
     public Text Clue;
     public Text Description;
     public Image RateImage;
@@ -12,8 +14,10 @@ public class UserPuzzleInfoWindow : MgsUIWindow
     public Button RegisterButton;
     public Button ShareButton;
 
-    public void Refresh(UserPuzzle puzzle)
+    public void Refresh([Refrence]UserPuzzle paz, UserPuzzle p2)
     {
+        var puzzle = PuzzleSelectionWindow.SelectedPuzzle;
+
         Clue.text = ArabicFixer.Fix(puzzle.Clue);
 
         RegisterButton.interactable = puzzle.ServerID == null;

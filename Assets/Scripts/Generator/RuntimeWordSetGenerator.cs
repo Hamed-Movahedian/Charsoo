@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMachine;
+using FollowMachineDll.Attributes;
 using MgsCommonLib;
 using MgsCommonLib.Theme;
 using MgsCommonLib.UI;
@@ -28,6 +30,7 @@ public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
 
     public bool GenerationFaild=true;
 
+    [FollowMachine("Generate")]
     public IEnumerator StartProcess()
     {
         #region Prepare Wordset generation process
@@ -109,11 +112,10 @@ public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
          QualitySettings.vSyncCount = vSyncCount;
 
     }
-
-    private IEnumerator Generate()
+    [FollowMachine("Generate words","Success,Fail")]
+    public IEnumerator Generate()
     {
-        yield return UIController.Instance
-            .ShowProgressbarWindow(ThemeManager.Instance.LanguagePack.GetLable("Inprogress_GenerateWordSet"));
+       FollowMachine.SetOutput("Fail");
 
         #region Setup word generator
 
@@ -148,7 +150,6 @@ public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
 
         #endregion
 
-
         // Spawn words
         var bestWordSet = Generator.GetBestWordSet();
 
@@ -169,9 +170,8 @@ public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
         if (Partitioner.PartitionSuccessfully)
 
         #endregion
+            
+       FollowMachine.SetOutput("Success");
 
-        GenerationFaild = false;
-        // Hide in-progress window
-        StartCoroutine(UIController.Instance.HideProgressbarWindow());
     }
 }

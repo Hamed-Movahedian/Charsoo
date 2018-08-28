@@ -1,7 +1,10 @@
 ﻿using System.Linq;
+using FMachine;
+using FollowMachineDll.Attributes;
 
 public class UserPuzzleSelectionWindow : UIMenuItemList
 {
+    [FollowMachine("Refresh Selection Window")]
     public void Refresh()
     {
 
@@ -10,4 +13,6 @@ public class UserPuzzleSelectionWindow : UIMenuItemList
         UpdateItems(userPuzzles.Cast<object>());
 
     }
+
+    public UserPuzzle SelectedPuzzle => (UserPuzzle) GetSelectedItem();
 }
