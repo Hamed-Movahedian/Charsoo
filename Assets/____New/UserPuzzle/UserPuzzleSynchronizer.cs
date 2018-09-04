@@ -6,10 +6,11 @@ using UnityEngine;
 
 internal class UserPuzzleSynchronizer : MonoBehaviour
 {
-    [FollowMachine("Sync UserPuzzles","Success,Fail")]
+    [FollowMachine("Sync UserPuzzles","Success,Fail,Not Registered")]
     public IEnumerator Syncing()
     {
         FollowMachine.SetOutput("Fail");
+
         // Cache ...
         var upLocalDB = LocalDBController.Instance.UserPuzzles;
         var upServer = ServerController.Instance.UserPuzzles;
@@ -17,7 +18,10 @@ internal class UserPuzzleSynchronizer : MonoBehaviour
         // If playerID==null exit!!
         int? playerID = Singleton.Instance.PlayerController.GetPlayerID();
         if (playerID == null)
+        {
+            FollowMachine.SetOutput("Not Registered");
             yield break;
+        }
 
         // Get Unregisterd puzzles and lastUpdate from localDB
         var unregisteredPuzzles = upLocalDB.GetUnregisteredPuzzles();
@@ -25,11 +29,9 @@ internal class UserPuzzleSynchronizer : MonoBehaviour
 
         // Sync with server 
         yield return upServer.Sync(playerID.Value, unregisteredPuzzles, lastUpdate);
+
         if (upServer.UnsuccessfullSync)
             yield break;
-
-        // Register new puzzles
-        upLocalDB.RegisterPuzzles(upServer.GetServerRegisterPuzzles());
 
         // Update localDB with updated puzzles
         upLocalDB.UpdatePuzzles(upServer.GetUpdatedPuzzles());

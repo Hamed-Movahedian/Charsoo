@@ -1657,111 +1657,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 65778793}
   m_CullTransparentMesh: 0
---- !u!1 &66091286
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 66091289}
-  - component: {fileID: 66091288}
-  - component: {fileID: 66091287}
-  - component: {fileID: 66091290}
-  m_Layer: 0
-  m_Name: ' (OutputNode)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &66091287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 66091286}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51914.96
-    y: 50992
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 66091288}
-  EdgeList:
-  - {fileID: 453531980}
---- !u!114 &66091288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 66091286}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1431799399, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51930
-    y: 50940
-    width: 153
-    height: 100
-  Info: 
-  InputSocketList:
-  - {fileID: 66091287}
-  OutputSocketList: []
-  DefaultOutputSocket: {fileID: 66091290}
-  Enable: 1
---- !u!4 &66091289
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 66091286}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1649388576}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &66091290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 66091286}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51951.2
-    y: 51038.57
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 66091288}
-  EdgeList: []
-  AutoHide: 1
 --- !u!1 &66952757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,7 +2978,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1270985011}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &128002850
 MonoBehaviour:
@@ -3102,13 +2997,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51124.96
-    y: 50469.09
+    y: 50470.656
     width: 20
     height: 20
   Info: 
   Node: {fileID: 128002852}
   EdgeList:
   - {fileID: 321951586}
+  Icon: {fileID: 0}
 --- !u!114 &128002851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3126,13 +3022,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51376.125
-    y: 50469.09
+    y: 50470.656
     width: 20
     height: 20
   Info: 
   Node: {fileID: 128002852}
   EdgeList:
   - {fileID: 128002853}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &128002852
 MonoBehaviour:
@@ -3147,20 +3044,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 933977340}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
     x: 51140
     y: 50410
     width: 239.22656
-    height: 113.24609
+    height: 115.44922
   Info: Puzzle Info
   InputSocketList:
   - {fileID: 128002850}
   OutputSocketList:
   - {fileID: 128002851}
   DefaultOutputSocket: {fileID: 128002854}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 862792463}
 --- !u!114 &128002853
 MonoBehaviour:
@@ -3197,12 +3094,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51161.2
-    y: 50521.816
+    y: 50524.02
     width: 20
     height: 20
   Info: 
   Node: {fileID: 128002852}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &132732212
 GameObject:
@@ -3292,7 +3190,6 @@ GameObject:
   - component: {fileID: 133647775}
   - component: {fileID: 133647774}
   - component: {fileID: 133647778}
-  - component: {fileID: 133647779}
   m_Layer: 0
   m_Name: ' (FollowMachineNode)'
   m_TagString: Untagged
@@ -3311,7 +3208,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1694912034}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &133647774
 MonoBehaviour:
@@ -3348,13 +3245,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52636.59
-    y: 51613.21
+    y: 51614.77
     width: 20
     height: 20
   Info: 
   Node: {fileID: 133647777}
   EdgeList:
   - {fileID: 177968349}
+  Icon: {fileID: 0}
 --- !u!114 &133647776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3372,13 +3270,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52948.527
-    y: 51650.09
+    y: 51652.363
     width: 20
     height: 20
-  Info: Success
+  Info: Success or Fail
   Node: {fileID: 133647777}
   EdgeList:
   - {fileID: 133647774}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &133647777
 MonoBehaviour:
@@ -3399,15 +3298,14 @@ MonoBehaviour:
     x: 52651.63
     y: 51555.023
     width: 300
-    height: 168.08594
+    height: 138.85156
   Info: Sync With Server
   InputSocketList:
   - {fileID: 133647775}
   OutputSocketList:
   - {fileID: 133647776}
-  - {fileID: 133647779}
   DefaultOutputSocket: {fileID: 133647778}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 1595647141}
 --- !u!114 &133647778
 MonoBehaviour:
@@ -3426,37 +3324,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52672.83
-    y: 51721.68
+    y: 51692.445
     width: 20
     height: 20
   Info: 
   Node: {fileID: 133647777}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
---- !u!114 &133647779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 133647772}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 862792463}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 52948.527
-    y: 51681.6
-    width: 20
-    height: 20
-  Info: Fail
-  Node: {fileID: 133647777}
-  EdgeList: []
-  AutoHide: 0
 --- !u!1 &134599113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3936,10 +3811,10 @@ GameObject:
   - component: {fileID: 150974155}
   - component: {fileID: 150974153}
   - component: {fileID: 150974151}
-  - component: {fileID: 150974154}
   - component: {fileID: 150974150}
   - component: {fileID: 150974157}
   - component: {fileID: 150974158}
+  - component: {fileID: 150974154}
   m_Layer: 0
   m_Name: Get Clue (WindowNode)
   m_TagString: Untagged
@@ -3982,13 +3857,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51895.336
-    y: 50828.766
+    y: 50827.074
     width: 20
     height: 20
   Info: Next
   Node: {fileID: 150974152}
   EdgeList:
   - {fileID: 150974150}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &150974152
 MonoBehaviour:
@@ -4009,7 +3885,7 @@ MonoBehaviour:
     x: 51640
     y: 50700
     width: 258.4375
-    height: 170.27344
+    height: 168.58203
   Info: GetClue
   InputSocketList:
   - {fileID: 150974155}
@@ -4018,9 +3894,10 @@ MonoBehaviour:
   - {fileID: 150974153}
   - {fileID: 150974151}
   DefaultOutputSocket: {fileID: 150974157}
-  Enable: 1
+  Active: 1
   Window: {fileID: 106129621}
-  HideWindow: 1
+  Refresh: 1
+  HideList: 0101
 --- !u!114 &150974153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4034,17 +3911,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1209557898}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
     x: 51895.336
-    y: 50797.254
+    y: 50795.562
     width: 20
     height: 20
   Info: Back
   Node: {fileID: 150974152}
   EdgeList:
   - {fileID: 150974154}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &150974154
 MonoBehaviour:
@@ -4052,7 +3930,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 150974149}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
@@ -4061,7 +3939,7 @@ MonoBehaviour:
   IsSelected: 0
   IsHover: 0
   InputSocket: {fileID: 150974153}
-  OutputSocket: {fileID: 461328093}
+  OutputSocket: {fileID: 600026907}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!114 &150974155
@@ -4077,16 +3955,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1209557898}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 51624.96
-    y: 50793.9
+    y: 50792.207
     width: 20
     height: 20
   Info: Wait only
   Node: {fileID: 150974152}
   EdgeList: []
+  Icon: {fileID: 0}
 --- !u!4 &150974156
 Transform:
   m_ObjectHideFlags: 0
@@ -4098,7 +3977,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1123938273}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &150974157
 MonoBehaviour:
@@ -4117,12 +3996,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51661.2
-    y: 50868.844
+    y: 50867.152
     width: 20
     height: 20
   Info: 
   Node: {fileID: 150974152}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &150974158
 MonoBehaviour:
@@ -4141,14 +4021,15 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51624.96
-    y: 50818.7
+    y: 50817.008
     width: 20
     height: 20
   Info: Show and Wait
   Node: {fileID: 150974152}
   EdgeList:
-  - {fileID: 391108456}
   - {fileID: 1823203611}
+  - {fileID: 1860562911}
+  Icon: {fileID: 0}
 --- !u!1 &154409512
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,131 +4257,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 156307583}
   m_CullTransparentMesh: 0
---- !u!1 &162838398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 162838402}
-  - component: {fileID: 162838399}
-  - component: {fileID: 162838400}
-  - component: {fileID: 162838403}
-  - component: {fileID: 162838401}
-  m_Layer: 0
-  m_Name: ' (InputNode)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &162838399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 162838398}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1381462374, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51250
-    y: 50750
-    width: 136
-    height: 100
-  Info: 
-  InputSocketList: []
-  OutputSocketList:
-  - {fileID: 162838400}
-  DefaultOutputSocket: {fileID: 162838403}
-  Enable: 1
---- !u!114 &162838400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 162838398}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 0
-  IsHover: 1
-  Rect:
-    serializedVersion: 2
-    x: 51382.9
-    y: 50802
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 162838399}
-  EdgeList:
-  - {fileID: 162838401}
-  AutoHide: 0
---- !u!114 &162838401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 162838398}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 162838400}
-  OutputSocket: {fileID: 453531982}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!4 &162838402
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 162838398}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1649388576}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &162838403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 162838398}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51271.2
-    y: 50848.57
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 162838399}
-  EdgeList: []
-  AutoHide: 1
 --- !u!1 &167514212
 GameObject:
   m_ObjectHideFlags: 0
@@ -4653,13 +4409,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52379.848
-    y: 51437.78
+    y: 51440.055
     width: 20
     height: 20
   Info: Share
   Node: {fileID: 177968347}
   EdgeList:
   - {fileID: 177968345}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &177968347
 MonoBehaviour:
@@ -4673,14 +4430,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 862792463}
-  IsSelected: 0
+  IsSelected: 1
   IsHover: 0
   Rect:
     serializedVersion: 2
     x: 52082.95
     y: 51279.695
     width: 300
-    height: 231.10938
+    height: 233.38281
   Info: UserPuzzleInfo
   InputSocketList:
   - {fileID: 177968353}
@@ -4691,9 +4448,10 @@ MonoBehaviour:
   - {fileID: 177968346}
   - {fileID: 177968348}
   DefaultOutputSocket: {fileID: 177968356}
-  Enable: 1
+  Active: 1
   Window: {fileID: 599558628}
-  HideWindow: 1
+  Refresh: 1
+  HideList: 01010101
 --- !u!114 &177968348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4711,13 +4469,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52379.848
-    y: 51469.293
+    y: 51471.566
     width: 20
     height: 20
   Info: Register
   Node: {fileID: 177968347}
   EdgeList:
   - {fileID: 177968349}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &177968349
 MonoBehaviour:
@@ -4754,13 +4513,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52379.848
-    y: 51406.273
+    y: 51408.547
     width: 20
     height: 20
   Info: Play
   Node: {fileID: 177968347}
   EdgeList:
   - {fileID: 177968351}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &177968351
 MonoBehaviour:
@@ -4797,13 +4557,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52379.848
-    y: 51374.76
+    y: 51377.035
     width: 20
     height: 20
   Info: Back
   Node: {fileID: 177968347}
   EdgeList:
   - {fileID: 177968354}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &177968353
 MonoBehaviour:
@@ -4822,13 +4583,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52067.91
-    y: 51371.406
+    y: 51373.68
     width: 20
     height: 20
   Info: Wait only
   Node: {fileID: 177968347}
-  EdgeList:
-  - {fileID: 935175199}
+  EdgeList: []
+  Icon: {fileID: 0}
 --- !u!114 &177968354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4848,7 +4609,7 @@ MonoBehaviour:
   EditPoints:
   - {x: 0.35755822, y: -0.3021117}
   - {x: 0.7233172, y: -0.3044759}
-  ClickEditpointIndex: 2
+  ClickEditpointIndex: 0
 --- !u!4 &177968355
 Transform:
   m_ObjectHideFlags: 0
@@ -4879,12 +4640,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52104.15
-    y: 51509.375
+    y: 51511.65
     width: 20
     height: 20
   Info: 
   Node: {fileID: 177968347}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &177968357
 MonoBehaviour:
@@ -4903,12 +4665,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52067.91
-    y: 51396.207
+    y: 51398.48
     width: 20
     height: 20
   Info: Show and Wait
   Node: {fileID: 177968347}
-  EdgeList: []
+  EdgeList:
+  - {fileID: 335191731}
+  Icon: {fileID: 0}
 --- !u!1 &178696196
 GameObject:
   m_ObjectHideFlags: 0
@@ -5008,165 +4772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da69a14fde447544db619fb781a6d1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &194185927
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 194185932}
-  - component: {fileID: 194185930}
-  - component: {fileID: 194185931}
-  - component: {fileID: 194185929}
-  - component: {fileID: 194185928}
-  - component: {fileID: 194185933}
-  m_Layer: 0
-  m_Name: Refresh Selection Window  (ActionNode)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &194185928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 194185927}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 194185929}
-  OutputSocket: {fileID: 1408189146}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!114 &194185929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 194185927}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50638.027
-    y: 50352.16
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 194185930}
-  EdgeList:
-  - {fileID: 194185928}
-  AutoHide: 0
---- !u!114 &194185930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 194185927}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50390
-    y: 50280
-    width: 251.1289
-    height: 139.90625
-  Info: Refresh Selection Window
-  InputSocketList:
-  - {fileID: 194185931}
-  OutputSocketList:
-  - {fileID: 194185929}
-  DefaultOutputSocket: {fileID: 194185933}
-  Enable: 1
-  Lables:
-  - 
-  TargetGameObject: {fileID: 399022897}
-  ComponentTypeName: UserPuzzleSelectionWindow
-  MethodName: Void Refresh()
-  ParameterValueStrings:
-  - 
-  - 
---- !u!114 &194185931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 194185927}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50374.96
-    y: 50352.16
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 194185930}
-  EdgeList:
-  - {fileID: 1703259019}
---- !u!4 &194185932
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 194185927}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1280137952}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &194185933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 194185927}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50411.2
-    y: 50418.477
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 194185930}
-  EdgeList: []
-  AutoHide: 1
 --- !u!1001 &197438820
 Prefab:
   m_ObjectHideFlags: 0
@@ -7204,14 +6809,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53184.96
-    y: 51153.5
+    x: 53114.96
+    y: 51122.574
     width: 20
     height: 20
   Info: 
   Node: {fileID: 283893790}
   EdgeList:
   - {fileID: 1460514590}
+  Icon: {fileID: 0}
 --- !u!114 &283893790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7228,17 +6834,17 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53200
-    y: 51080
+    x: 53130
+    y: 51050
     width: 226
-    height: 142
+    height: 140.51953
   Info: Error Generate WordSet
   InputSocketList:
   - {fileID: 283893789}
   OutputSocketList:
   - {fileID: 283893791}
   DefaultOutputSocket: {fileID: 283893794}
-  Enable: 1
+  Active: 1
   Window: {fileID: 613290836}
   Title: Title/GenerateWordSets
   Message: Error/GenerateWordSet
@@ -7261,14 +6867,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53422.9
-    y: 51153.5
+    x: 53352.9
+    y: 51122.574
     width: 20
     height: 20
   Info: 
   Node: {fileID: 283893790}
   EdgeList:
   - {fileID: 283893792}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &283893792
 MonoBehaviour:
@@ -7299,7 +6906,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1123938273}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &283893794
 MonoBehaviour:
@@ -7317,13 +6924,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53221.2
-    y: 51220.57
+    x: 53151.2
+    y: 51189.09
     width: 20
     height: 20
   Info: 
   Node: {fileID: 283893790}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &283981127
 GameObject:
@@ -7935,12 +7543,12 @@ GameObject:
   - component: {fileID: 321951582}
   - component: {fileID: 321951581}
   - component: {fileID: 321951580}
-  - component: {fileID: 321951587}
   - component: {fileID: 321951578}
   - component: {fileID: 321951586}
   - component: {fileID: 321951588}
   - component: {fileID: 321951589}
   - component: {fileID: 321951579}
+  - component: {fileID: 321951587}
   m_Layer: 0
   m_Name: UserPuzzlesWindow (WindowNode)
   m_TagString: Untagged
@@ -7965,13 +7573,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50532.69
-    y: 50506.402
+    y: 50508.605
     width: 20
     height: 20
   Info: Wait only
   Node: {fileID: 321951584}
   EdgeList:
   - {fileID: 1639219171}
+  Icon: {fileID: 0}
 --- !u!114 &321951578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8025,13 +7634,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50919.63
-    y: 50604.29
+    y: 50606.492
     width: 20
     height: 20
   Info: Back
   Node: {fileID: 321951584}
   EdgeList:
   - {fileID: 321951579}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &321951581
 MonoBehaviour:
@@ -8050,13 +7660,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50919.63
-    y: 50572.777
+    y: 50574.98
     width: 20
     height: 20
   Info: Select
   Node: {fileID: 321951584}
   EdgeList:
   - {fileID: 321951586}
+  Icon: {fileID: 2800000, guid: 79ce6cf29d41bf84bb108ab882e2040f, type: 3}
   AutoHide: 0
 --- !u!114 &321951582
 MonoBehaviour:
@@ -8075,13 +7686,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50919.63
-    y: 50541.27
+    y: 50543.473
     width: 20
     height: 20
   Info: Add
   Node: {fileID: 321951584}
   EdgeList:
   - {fileID: 321951587}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &321951583
 MonoBehaviour:
@@ -8100,13 +7712,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50919.63
-    y: 50509.758
+    y: 50511.96
     width: 20
     height: 20
   Info: Update
   Node: {fileID: 321951584}
   EdgeList:
   - {fileID: 321951578}
+  Icon: {fileID: 2800000, guid: 79ce6cf29d41bf84bb108ab882e2040f, type: 3}
   AutoHide: 0
 --- !u!114 &321951584
 MonoBehaviour:
@@ -8127,7 +7740,7 @@ MonoBehaviour:
     x: 50547.73
     y: 50413.758
     width: 375
-    height: 232.04297
+    height: 234.2461
   Info: UserPuzzlesSelectionWindow
   InputSocketList:
   - {fileID: 321951577}
@@ -8138,9 +7751,10 @@ MonoBehaviour:
   - {fileID: 321951581}
   - {fileID: 321951580}
   DefaultOutputSocket: {fileID: 321951588}
-  Enable: 1
+  Active: 1
   Window: {fileID: 399022899}
-  HideWindow: 0
+  Refresh: 1
+  HideList: 00010001
 --- !u!4 &321951585
 Transform:
   m_ObjectHideFlags: 0
@@ -8178,7 +7792,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 321951576}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
@@ -8187,7 +7801,7 @@ MonoBehaviour:
   IsSelected: 0
   IsHover: 0
   InputSocket: {fileID: 321951582}
-  OutputSocket: {fileID: 451725937}
+  OutputSocket: {fileID: 1069527137}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!114 &321951588
@@ -8207,12 +7821,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50568.93
-    y: 50644.37
+    y: 50646.574
     width: 20
     height: 20
   Info: 
   Node: {fileID: 321951584}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &321951589
 MonoBehaviour:
@@ -8231,7 +7846,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50532.69
-    y: 50531.203
+    y: 50533.406
     width: 20
     height: 20
   Info: Show and Wait
@@ -8239,6 +7854,8 @@ MonoBehaviour:
   EdgeList:
   - {fileID: 1069527144}
   - {fileID: 1520262350}
+  - {fileID: 1104154557}
+  Icon: {fileID: 0}
 --- !u!1 &322283696
 GameObject:
   m_ObjectHideFlags: 0
@@ -8376,7 +7993,7 @@ GameObject:
   - component: {fileID: 323357549}
   - component: {fileID: 323357553}
   m_Layer: 0
-  m_Name: Input (InputNode)
+  m_Name: ' (InputNode)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8417,13 +8034,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50312.9
-    y: 50343.793
+    y: 50337.418
     width: 20
     height: 20
   Info: 
   Node: {fileID: 323357551}
   EdgeList:
   - {fileID: 323357549}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &323357551
 MonoBehaviour:
@@ -8444,13 +8062,13 @@ MonoBehaviour:
     x: 50180
     y: 50285
     width: 136
-    height: 113.16406
-  Info: Input
+    height: 100.41797
+  Info: 
   InputSocketList: []
   OutputSocketList:
   - {fileID: 323357550}
   DefaultOutputSocket: {fileID: 323357553}
-  Enable: 1
+  Active: 1
 --- !u!4 &323357552
 Transform:
   m_ObjectHideFlags: 0
@@ -8481,12 +8099,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50201.2
-    y: 50396.734
+    y: 50383.99
     width: 20
     height: 20
   Info: 
   Node: {fileID: 323357551}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &324804491
 GameObject:
@@ -8768,8 +8387,8 @@ GameObject:
   - component: {fileID: 335191734}
   - component: {fileID: 335191733}
   - component: {fileID: 335191732}
-  - component: {fileID: 335191731}
   - component: {fileID: 335191735}
+  - component: {fileID: 335191731}
   m_Layer: 0
   m_Name: ' (InputNode)'
   m_TagString: Untagged
@@ -8783,7 +8402,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335191730}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
@@ -8792,7 +8411,7 @@ MonoBehaviour:
   IsSelected: 0
   IsHover: 0
   InputSocket: {fileID: 335191732}
-  OutputSocket: {fileID: 935175202}
+  OutputSocket: {fileID: 177968357}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!114 &335191732
@@ -8811,14 +8430,15 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 51456.3
-    y: 51346.297
+    x: 51902.9
+    y: 51392.91
     width: 20
     height: 20
   Info: 
   Node: {fileID: 335191733}
   EdgeList:
   - {fileID: 335191731}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &335191733
 MonoBehaviour:
@@ -8836,16 +8456,16 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51323.402
-    y: 51294.234
+    x: 51770
+    y: 51340
     width: 136
-    height: 100.0625
+    height: 100.91016
   Info: 
   InputSocketList: []
   OutputSocketList:
   - {fileID: 335191732}
   DefaultOutputSocket: {fileID: 335191735}
-  Enable: 1
+  Active: 1
 --- !u!4 &335191734
 Transform:
   m_ObjectHideFlags: 0
@@ -8875,13 +8495,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51344.6
-    y: 51392.867
+    x: 51791.2
+    y: 51439.48
     width: 20
     height: 20
   Info: 
   Node: {fileID: 335191733}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &336025165
 MonoBehaviour:
@@ -9481,6 +9102,327 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 353407341}
   m_CullTransparentMesh: 0
+--- !u!1 &356252862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356252863}
+  - component: {fileID: 356252868}
+  - component: {fileID: 356252867}
+  - component: {fileID: 356252866}
+  - component: {fileID: 356252865}
+  - component: {fileID: 356252864}
+  m_Layer: 0
+  m_Name: Finish (ActionNode)(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &356252863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 356252862}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1123938273}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &356252864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 356252862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 356252865}
+  OutputSocket: {fileID: 771585270}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &356252865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 356252862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 53867.9
+    y: 50668.723
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 356252868}
+  EdgeList:
+  - {fileID: 356252864}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &356252866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 356252862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 53704.96
+    y: 50668.723
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 356252868}
+  EdgeList: []
+  Icon: {fileID: 0}
+--- !u!114 &356252867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 356252862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 53741.2
+    y: 50721.38
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 356252868}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &356252868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 356252862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 53720
+    y: 50610
+    width: 151
+    height: 112.80859
+  Info: Finish
+  InputSocketList:
+  - {fileID: 356252866}
+  OutputSocketList:
+  - {fileID: 356252865}
+  DefaultOutputSocket: {fileID: 356252867}
+  Active: 1
+  Lables:
+  - 
+  TargetGameObject: {fileID: 1611429975}
+  ComponentTypeName: RuntimeWordSetGenerator
+  MethodName: Void Finish()
+  ParameterValueStrings:
+  - 
+  - 
+--- !u!1 &358765379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358765384}
+  - component: {fileID: 358765380}
+  - component: {fileID: 358765385}
+  - component: {fileID: 358765382}
+  - component: {fileID: 358765381}
+  - component: {fileID: 358765383}
+  m_Layer: 0
+  m_Name: Error Internet Access  (DialogeNode)(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &358765380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358765379}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1331309404, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50400
+    y: 50220
+    width: 204.34375
+    height: 164.39062
+  Info: SuccesfullOperation
+  InputSocketList:
+  - {fileID: 358765385}
+  OutputSocketList:
+  - {fileID: 358765382}
+  DefaultOutputSocket: {fileID: 358765381}
+  Active: 1
+  Window: {fileID: 613290836}
+  Title: Title/Update
+  Message: SuccesfullOperation
+  Icon: Info/Info
+  Buttons:
+  - Button/Ok
+--- !u!114 &358765381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358765379}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50421.2
+    y: 50382.96
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 358765380}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &358765382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358765379}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 50601.242
+    y: 50342.88
+    width: 20
+    height: 20
+  Info: Button/Ok
+  Node: {fileID: 358765380}
+  EdgeList:
+  - {fileID: 358765383}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &358765383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358765379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 358765382}
+  OutputSocket: {fileID: 2014554988}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!4 &358765384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358765379}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1280137952}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358765385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358765379}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50384.96
+    y: 50292.562
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 358765380}
+  EdgeList:
+  - {fileID: 1703259019}
+  Icon: {fileID: 0}
 --- !u!1 &360343033
 GameObject:
   m_ObjectHideFlags: 0
@@ -10107,158 +10049,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 388459478}
   m_CullTransparentMesh: 0
---- !u!1 &391108455
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 391108460}
-  - component: {fileID: 391108458}
-  - component: {fileID: 391108457}
-  - component: {fileID: 391108459}
-  - component: {fileID: 391108461}
-  - component: {fileID: 391108456}
-  m_Layer: 0
-  m_Name: ' (FollowMachineNode)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &391108456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 391108455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 391108457}
-  OutputSocket: {fileID: 150974158}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!114 &391108457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 391108455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1209557898}
-  IsSelected: 0
-  IsHover: 1
-  Rect:
-    serializedVersion: 2
-    x: 51521.9
-    y: 50863.5
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 391108458}
-  EdgeList:
-  - {fileID: 391108456}
-  AutoHide: 0
---- !u!114 &391108458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 391108455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1220595171, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1209557898}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51290
-    y: 50790
-    width: 235
-    height: 142
-  Info: Initialize Word Generator
-  InputSocketList:
-  - {fileID: 391108459}
-  OutputSocketList:
-  - {fileID: 391108457}
-  DefaultOutputSocket: {fileID: 391108461}
-  Enable: 1
-  FollowMachine: {fileID: 995392279}
---- !u!114 &391108459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 391108455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1209557898}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51274.96
-    y: 50863.5
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 391108458}
-  EdgeList:
-  - {fileID: 1258713305}
---- !u!4 &391108460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 391108455}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1123938273}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &391108461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 391108455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1209557898}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51311.2
-    y: 50930.57
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 391108458}
-  EdgeList: []
-  AutoHide: 1
 --- !u!114 &391940233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10622,7 +10412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1123938273}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &402076744
 MonoBehaviour:
@@ -10641,7 +10431,7 @@ MonoBehaviour:
   InputSocket: {fileID: 402076745}
   OutputSocket: {fileID: 1823203618}
   EditPoints:
-  - {x: -0.021175219, y: -0.15929031}
+  - {x: 0.0033928698, y: -0.19601896}
   - {x: 0.96767753, y: -0.26016977}
   ClickEditpointIndex: 1
 --- !u!114 &402076745
@@ -10660,14 +10450,15 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 53874.453
-    y: 51123.5
+    x: 53754.453
+    y: 51062.574
     width: 20
     height: 20
   Info: 
   Node: {fileID: 402076747}
   EdgeList:
   - {fileID: 402076744}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &402076746
 MonoBehaviour:
@@ -10685,8 +10476,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53684.96
-    y: 51123.5
+    x: 53564.96
+    y: 51062.574
     width: 20
     height: 20
   Info: 
@@ -10694,6 +10485,7 @@ MonoBehaviour:
   EdgeList:
   - {fileID: 1834305023}
   - {fileID: 283893792}
+  Icon: {fileID: 0}
 --- !u!114 &402076747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10710,17 +10502,17 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53700
-    y: 51050
+    x: 53580
+    y: 50990
     width: 177.55469
-    height: 142
+    height: 140.51953
   Info: Back to Get words
   InputSocketList:
   - {fileID: 402076746}
   OutputSocketList:
   - {fileID: 402076745}
   DefaultOutputSocket: {fileID: 402076748}
-  Enable: 1
+  Active: 1
 --- !u!114 &402076748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10737,13 +10529,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53721.2
-    y: 51190.57
+    x: 53601.2
+    y: 51129.09
     width: 20
     height: 20
   Info: 
   Node: {fileID: 402076747}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &404704185
 GameObject:
@@ -10822,13 +10615,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53834.86
-    y: 51057.016
+    y: 51056.016
     width: 20
     height: 20
   Info: 
   Node: {fileID: 405023462}
   EdgeList:
   - {fileID: 634301674}
+  Icon: {fileID: 0}
 --- !u!114 &405023462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10848,13 +10642,13 @@ MonoBehaviour:
     x: 53849.9
     y: 51004.016
     width: 300
-    height: 101
+    height: 100
   Info: 
   InputSocketList:
   - {fileID: 405023461}
   OutputSocketList: []
   DefaultOutputSocket: {fileID: 405023463}
-  Enable: 1
+  Active: 1
 --- !u!114 &405023463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10872,12 +10666,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53871.098
-    y: 51103.586
+    y: 51102.586
     width: 20
     height: 20
   Info: 
   Node: {fileID: 405023462}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &408709670
 MonoBehaviour:
@@ -11925,13 +11720,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51555.152
-    y: 50186.035
+    y: 50186.105
     width: 20
     height: 20
   Info: Back
   Node: {fileID: 448237900}
   EdgeList:
   - {fileID: 448237897}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &448237899
 MonoBehaviour:
@@ -11950,13 +11746,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51274.96
-    y: 50182.68
+    y: 50182.75
     width: 20
     height: 20
   Info: Wait only
   Node: {fileID: 448237900}
   EdgeList:
   - {fileID: 1604686892}
+  Icon: {fileID: 0}
 --- !u!114 &448237900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11976,7 +11773,7 @@ MonoBehaviour:
     x: 51290
     y: 50090
     width: 268.2539
-    height: 169.05469
+    height: 169.125
   Info: Store
   InputSocketList:
   - {fileID: 448237899}
@@ -11985,9 +11782,10 @@ MonoBehaviour:
   - {fileID: 448237898}
   - {fileID: 448237901}
   DefaultOutputSocket: {fileID: 448237902}
-  Enable: 1
+  Active: 1
   Window: {fileID: 823469606}
-  HideWindow: 1
+  Refresh: 1
+  HideList: 0101
 --- !u!114 &448237901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12005,12 +11803,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51555.152
-    y: 50217.547
+    y: 50217.617
     width: 20
     height: 20
   Info: Buy
   Node: {fileID: 448237900}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &448237902
 MonoBehaviour:
@@ -12029,12 +11828,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51311.2
-    y: 50257.625
+    y: 50257.695
     width: 20
     height: 20
   Info: 
   Node: {fileID: 448237900}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &448237903
 MonoBehaviour:
@@ -12053,12 +11853,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51274.96
-    y: 50207.48
+    y: 50207.55
     width: 20
     height: 20
   Info: Show and Wait
   Node: {fileID: 448237900}
   EdgeList: []
+  Icon: {fileID: 0}
 --- !u!1 &451656602
 GameObject:
   m_ObjectHideFlags: 0
@@ -12089,165 +11890,6 @@ Transform:
   m_Father: {fileID: 947379310}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &451725934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 451725935}
-  - component: {fileID: 451725938}
-  - component: {fileID: 451725937}
-  - component: {fileID: 451725936}
-  - component: {fileID: 451725939}
-  - component: {fileID: 451725940}
-  m_Layer: 0
-  m_Name: ' (ActionNode)(Clone)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &451725935
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 451725934}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1270985011}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &451725936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 451725934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 933977340}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51393.45
-    y: 50635.402
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 451725938}
-  EdgeList:
-  - {fileID: 451725939}
-  AutoHide: 0
---- !u!114 &451725937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 451725934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 933977340}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51134.96
-    y: 50635.402
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 451725938}
-  EdgeList:
-  - {fileID: 321951587}
---- !u!114 &451725938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 451725934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 933977340}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51150
-    y: 50550
-    width: 246.55078
-    height: 165.875
-  Info: UserPuzzleSelectionWindow => Hide
-  InputSocketList:
-  - {fileID: 451725937}
-  OutputSocketList:
-  - {fileID: 451725936}
-  DefaultOutputSocket: {fileID: 451725940}
-  Enable: 1
-  Lables:
-  - 
-  TargetGameObject: {fileID: 399022897}
-  ComponentTypeName: UserPuzzleSelectionWindow
-  MethodName: System.Collections.IEnumerator Hide()
-  ParameterValueStrings:
-  - 
-  - 
---- !u!114 &451725939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 451725934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 451725936}
-  OutputSocket: {fileID: 1069527137}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!114 &451725940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 451725934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 933977340}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51171.2
-    y: 50714.445
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 451725938}
-  EdgeList: []
-  AutoHide: 1
 --- !u!1 &453424851
 GameObject:
   m_ObjectHideFlags: 0
@@ -12325,165 +11967,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 453424851}
   m_CullTransparentMesh: 0
---- !u!1 &453531978
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 453531979}
-  - component: {fileID: 453531983}
-  - component: {fileID: 453531982}
-  - component: {fileID: 453531981}
-  - component: {fileID: 453531980}
-  - component: {fileID: 453531984}
-  m_Layer: 0
-  m_Name: ' (ActionNode)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &453531979
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 453531978}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1649388576}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &453531980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 453531978}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 453531981}
-  OutputSocket: {fileID: 66091287}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!114 &453531981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 453531978}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 0
-  IsHover: 1
-  Rect:
-    serializedVersion: 2
-    x: 51806.9
-    y: 50901
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 453531983}
-  EdgeList:
-  - {fileID: 453531980}
-  AutoHide: 0
---- !u!114 &453531982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 453531978}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51494.96
-    y: 50901
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 453531983}
-  EdgeList:
-  - {fileID: 162838401}
---- !u!114 &453531983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 453531978}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 1
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51510
-    y: 50830
-    width: 300
-    height: 138
-  Info: GameController => ClearWords
-  InputSocketList:
-  - {fileID: 453531982}
-  OutputSocketList:
-  - {fileID: 453531981}
-  DefaultOutputSocket: {fileID: 453531984}
-  Enable: 1
-  Lables:
-  - 
-  TargetGameObject: {fileID: 2127811209}
-  ComponentTypeName: GameController
-  MethodName: Void ClearWords()
-  ParameterValueStrings:
-  - 
-  - 
---- !u!114 &453531984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 453531978}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 995392279}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51531.2
-    y: 50966.57
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 453531983}
-  EdgeList: []
-  AutoHide: 1
 --- !u!1 &457520032
 GameObject:
   m_ObjectHideFlags: 0
@@ -12660,14 +12143,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52074.96
-    y: 50579.75
+    x: 52254.96
+    y: 50508.723
     width: 20
     height: 20
   Info: 
   Node: {fileID: 461328094}
   EdgeList:
-  - {fileID: 150974154}
+  - {fileID: 600026906}
+  Icon: {fileID: 0}
 --- !u!114 &461328094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12684,16 +12168,16 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52090
-    y: 50520
+    x: 52270
+    y: 50450
     width: 156
-    height: 114.5
+    height: 112.80859
   Info: Cancel
   InputSocketList:
   - {fileID: 461328093}
   OutputSocketList: []
   DefaultOutputSocket: {fileID: 461328095}
-  Enable: 1
+  Active: 1
 --- !u!114 &461328095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12710,13 +12194,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52111.2
-    y: 50633.07
+    x: 52291.2
+    y: 50561.38
     width: 20
     height: 20
   Info: 
   Node: {fileID: 461328094}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &461729799
 MonoBehaviour:
@@ -13113,7 +12598,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1280137952}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &474520976
 MonoBehaviour:
@@ -13121,7 +12606,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 474520974}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
@@ -13130,7 +12615,7 @@ MonoBehaviour:
   IsSelected: 0
   IsHover: 0
   InputSocket: {fileID: 474520977}
-  OutputSocket: {fileID: 650521088}
+  OutputSocket: {fileID: 2014554988}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!114 &474520977
@@ -13149,14 +12634,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50611.242
-    y: 50762.66
+    x: 50591.242
+    y: 50582.88
     width: 20
     height: 20
   Info: Button/Ok
   Node: {fileID: 474520979}
   EdgeList:
   - {fileID: 474520976}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &474520978
 MonoBehaviour:
@@ -13174,14 +12660,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50394.96
-    y: 50712.16
+    x: 50374.96
+    y: 50532.562
     width: 20
     height: 20
   Info: 
   Node: {fileID: 474520979}
   EdgeList:
   - {fileID: 1703259018}
+  Icon: {fileID: 0}
 --- !u!114 &474520979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13198,17 +12685,17 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50410
-    y: 50640
+    x: 50390
+    y: 50460
     width: 204.34375
-    height: 164.17188
+    height: 164.39062
   Info: 'Error Internet Access '
   InputSocketList:
   - {fileID: 474520978}
   OutputSocketList:
   - {fileID: 474520977}
   DefaultOutputSocket: {fileID: 474520980}
-  Enable: 1
+  Active: 1
   Window: {fileID: 613290836}
   Title: Title/Update
   Message: Error/InternetAccess
@@ -13231,13 +12718,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50431.2
-    y: 50802.742
+    x: 50411.2
+    y: 50622.96
     width: 20
     height: 20
   Info: 
   Node: {fileID: 474520979}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &476073475
 GameObject:
@@ -14472,6 +13960,7 @@ MonoBehaviour:
   Node: {fileID: 515636983}
   EdgeList:
   - {fileID: 935416533}
+  Icon: {fileID: 0}
 --- !u!114 &515636983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14497,7 +13986,7 @@ MonoBehaviour:
   - {fileID: 515636982}
   OutputSocketList: []
   DefaultOutputSocket: {fileID: 515636984}
-  Enable: 1
+  Active: 1
 --- !u!114 &515636984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14521,6 +14010,7 @@ MonoBehaviour:
   Info: 
   Node: {fileID: 515636983}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &521119345
 GameObject:
@@ -14571,14 +14061,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51774.96
-    y: 50752.68
+    x: 51734.96
+    y: 50872.75
     width: 20
     height: 20
   Info: Show
   Node: {fileID: 521119349}
   EdgeList:
   - {fileID: 1039895947}
+  Icon: {fileID: 0}
 --- !u!114 &521119348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14592,17 +14083,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52021.9
-    y: 50756.035
+    x: 51981.9
+    y: 50876.105
     width: 20
     height: 20
   Info: Back
   Node: {fileID: 521119349}
   EdgeList:
   - {fileID: 521119351}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &521119349
 MonoBehaviour:
@@ -14616,21 +14108,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
-  IsSelected: 0
-  IsHover: 0
+  IsSelected: 1
+  IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 51790
-    y: 50660
+    x: 51750
+    y: 50780
     width: 235
-    height: 137.54688
+    height: 137.61719
   Info: UserPuzzles
   InputSocketList:
   - {fileID: 521119347}
   OutputSocketList:
   - {fileID: 521119348}
   DefaultOutputSocket: {fileID: 521119350}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 933977340}
 --- !u!114 &521119350
 MonoBehaviour:
@@ -14648,13 +14140,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51811.2
-    y: 50796.117
+    x: 51771.2
+    y: 50916.188
     width: 20
     height: 20
   Info: 
   Node: {fileID: 521119349}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &521119351
 MonoBehaviour:
@@ -14675,7 +14168,7 @@ MonoBehaviour:
   EditPoints:
   - {x: -0.012711874, y: -0.29237515}
   - {x: 0.9938564, y: -0.27339414}
-  ClickEditpointIndex: 0
+  ClickEditpointIndex: 1
 --- !u!1 &522666237
 GameObject:
   m_ObjectHideFlags: 0
@@ -16029,8 +15522,8 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -53088.742, y: -50582.086}
-  Zoom: 0.68000025
+  Position: {x: -53073.4, y: -50609.75}
+  Zoom: 1
   NodeList:
   - {fileID: 634301670}
   - {fileID: 405023462}
@@ -16072,13 +15565,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52634.59
-    y: 51361.734
+    y: 51329.77
     width: 20
     height: 20
-  Info: Input
+  Info: 
   Node: {fileID: 574233440}
   EdgeList:
   - {fileID: 177968351}
+  Icon: {fileID: 0}
 --- !u!114 &574233440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16098,14 +15592,14 @@ MonoBehaviour:
     x: 52649.63
     y: 51270.023
     width: 300
-    height: 126.51172
+    height: 114.58594
   Info: Play Puzzle
   InputSocketList:
   - {fileID: 574233439}
   OutputSocketList:
   - {fileID: 574233441}
   DefaultOutputSocket: {fileID: 574233444}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 573905742}
 --- !u!114 &574233441
 MonoBehaviour:
@@ -16124,13 +15618,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52946.527
-    y: 51328.21
+    y: 51329.77
     width: 20
     height: 20
   Info: 
   Node: {fileID: 574233440}
   EdgeList:
   - {fileID: 574233442}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &574233442
 MonoBehaviour:
@@ -16161,7 +15656,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1694912034}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &574233444
 MonoBehaviour:
@@ -16180,12 +15675,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52670.83
-    y: 51395.105
+    y: 51383.18
     width: 20
     height: 20
   Info: 
   Node: {fileID: 574233440}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &574951068
 GameObject:
@@ -16673,6 +16169,168 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &600026902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600026908}
+  - component: {fileID: 600026903}
+  - component: {fileID: 600026904}
+  - component: {fileID: 600026907}
+  - component: {fileID: 600026905}
+  - component: {fileID: 600026906}
+  m_Layer: 0
+  m_Name: Finish (ActionNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &600026903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600026902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 52010
+    y: 50480
+    width: 151
+    height: 112.80859
+  Info: Finish
+  InputSocketList:
+  - {fileID: 600026907}
+  OutputSocketList:
+  - {fileID: 600026905}
+  DefaultOutputSocket: {fileID: 600026904}
+  Active: 1
+  Lables:
+  - 
+  TargetGameObject: {fileID: 1611429975}
+  ComponentTypeName: RuntimeWordSetGenerator
+  MethodName: Void Finish()
+  ParameterValueStrings:
+  - 
+  - 
+--- !u!114 &600026904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600026902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 52031.2
+    y: 50591.38
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 600026903}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &600026905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600026902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 52157.9
+    y: 50538.723
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 600026903}
+  EdgeList:
+  - {fileID: 600026906}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &600026906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600026902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 600026905}
+  OutputSocket: {fileID: 461328093}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &600026907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600026902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51994.96
+    y: 50538.723
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 600026903}
+  EdgeList:
+  - {fileID: 150974154}
+  Icon: {fileID: 0}
+--- !u!4 &600026908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600026902}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1123938273}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601881105
 GameObject:
   m_ObjectHideFlags: 0
@@ -17356,20 +17014,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
-  IsSelected: 0
+  IsSelected: 1
   IsHover: 0
   Rect:
     serializedVersion: 2
     x: 53249.9
     y: 51004.016
     width: 300
-    height: 113.46875
-  Info: Input
+    height: 100
+  Info: 
   InputSocketList: []
   OutputSocketList:
   - {fileID: 634301671}
   DefaultOutputSocket: {fileID: 634301673}
-  Enable: 1
+  Active: 1
 --- !u!114 &634301671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17387,13 +17045,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53546.797
-    y: 51063.25
+    y: 51056.016
     width: 20
     height: 20
   Info: 
   Node: {fileID: 634301670}
   EdgeList:
   - {fileID: 634301674}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!4 &634301672
 Transform:
@@ -17425,12 +17084,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53271.098
-    y: 51116.055
+    y: 51102.586
     width: 20
     height: 20
   Info: 
   Node: {fileID: 634301670}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &634301674
 MonoBehaviour:
@@ -17930,111 +17590,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &650521085
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 650521089}
-  - component: {fileID: 650521086}
-  - component: {fileID: 650521087}
-  - component: {fileID: 650521088}
-  m_Layer: 0
-  m_Name: Fail (OutputNode)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &650521086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 650521085}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1431799399, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50760
-    y: 50720
-    width: 153
-    height: 113.16406
-  Info: Fail
-  InputSocketList:
-  - {fileID: 650521088}
-  OutputSocketList: []
-  DefaultOutputSocket: {fileID: 650521087}
-  Enable: 1
---- !u!114 &650521087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 650521085}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50781.2
-    y: 50831.734
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 650521086}
-  EdgeList: []
-  AutoHide: 1
---- !u!114 &650521088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 650521085}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50744.96
-    y: 50778.793
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 650521086}
-  EdgeList:
-  - {fileID: 474520976}
---- !u!4 &650521089
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 650521085}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1280137952}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &651127527
 GameObject:
   m_ObjectHideFlags: 0
@@ -19390,17 +18945,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 50651.9
-    y: 50286.035
+    y: 50286.105
     width: 20
     height: 20
   Info: Output
   Node: {fileID: 720323809}
   EdgeList:
   - {fileID: 720323807}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &720323809
 MonoBehaviour:
@@ -19421,14 +18977,14 @@ MonoBehaviour:
     x: 50420
     y: 50190
     width: 235
-    height: 137.54688
+    height: 137.61719
   Info: Login Player
   InputSocketList:
   - {fileID: 720323810}
   OutputSocketList:
   - {fileID: 720323808}
   DefaultOutputSocket: {fileID: 720323812}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 946453210}
 --- !u!114 &720323810
 MonoBehaviour:
@@ -19447,12 +19003,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50404.96
-    y: 50282.68
+    y: 50282.75
     width: 20
     height: 20
   Info: Input
   Node: {fileID: 720323809}
-  EdgeList: []
+  EdgeList:
+  - {fileID: 1899846513}
+  Icon: {fileID: 0}
 --- !u!4 &720323811
 Transform:
   m_ObjectHideFlags: 0
@@ -19483,12 +19041,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50441.2
-    y: 50326.117
+    y: 50326.188
     width: 20
     height: 20
   Info: 
   Node: {fileID: 720323809}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1001 &721021636
 Prefab:
@@ -20557,7 +20116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1123938273}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &771585270
 MonoBehaviour:
@@ -20575,13 +20134,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53747.46
-    y: 50742.25
+    x: 53934.96
+    y: 50628.723
     width: 20
     height: 20
   Info: 
   Node: {fileID: 771585271}
-  EdgeList: []
+  EdgeList:
+  - {fileID: 356252864}
+  Icon: {fileID: 0}
 --- !u!114 &771585271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20598,16 +20159,16 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53762.5
-    y: 50682.5
+    x: 53950
+    y: 50570
     width: 174.83594
-    height: 114.5
+    height: 112.80859
   Info: Created
   InputSocketList:
   - {fileID: 771585270}
   OutputSocketList: []
   DefaultOutputSocket: {fileID: 771585272}
-  Enable: 1
+  Active: 1
 --- !u!114 &771585272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20624,13 +20185,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53783.7
-    y: 50795.57
+    x: 53971.2
+    y: 50681.38
     width: 20
     height: 20
   Info: 
   Node: {fileID: 771585271}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1001 &772347479
 Prefab:
@@ -21822,7 +21384,7 @@ GameObject:
   - component: {fileID: 840088176}
   - component: {fileID: 840088178}
   m_Layer: 0
-  m_Name: Output (OutputNode)
+  m_Name: Success (OutputNode)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21857,14 +21419,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50972.96
-    y: 50360.793
+    x: 50874.96
+    y: 50308.793
     width: 20
     height: 20
   Info: 
   Node: {fileID: 840088177}
   EdgeList:
   - {fileID: 323357549}
+  Icon: {fileID: 0}
 --- !u!114 &840088177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21881,16 +21444,16 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50988
-    y: 50302
+    x: 50890
+    y: 50250
     width: 153
     height: 113.16406
-  Info: Output
+  Info: Success
   InputSocketList:
   - {fileID: 840088176}
   OutputSocketList: []
   DefaultOutputSocket: {fileID: 840088178}
-  Enable: 1
+  Active: 1
 --- !u!114 &840088178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21907,13 +21470,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51009.2
-    y: 50413.734
+    x: 50911.2
+    y: 50361.734
     width: 20
     height: 20
   Info: 
   Node: {fileID: 840088177}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &840395953
 GameObject:
@@ -22104,17 +21668,17 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50030
-    y: 50740
+    x: 50010
+    y: 50720
     width: 258.54688
-    height: 139.90625
+    height: 140.125
   Info: 'ServerConnection => Hide '
   InputSocketList:
   - {fileID: 848774509}
   OutputSocketList:
   - {fileID: 848774508}
   DefaultOutputSocket: {fileID: 848774507}
-  Enable: 1
+  Active: 1
   Window: {fileID: 1521639586}
   Message: Inprogress/ServerConnection
   ProgressMode: 1
@@ -22134,13 +21698,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50051.2
-    y: 50878.477
+    x: 50031.2
+    y: 50858.695
     width: 20
     height: 20
   Info: 
   Node: {fileID: 848774506}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &848774508
 MonoBehaviour:
@@ -22158,13 +21723,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50285.445
-    y: 50812.16
+    x: 50265.445
+    y: 50792.562
     width: 20
     height: 20
   Info: 
   Node: {fileID: 848774506}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &848774509
 MonoBehaviour:
@@ -22182,14 +21748,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50014.96
-    y: 50812.16
+    x: 49994.96
+    y: 50792.562
     width: 20
     height: 20
   Info: 
   Node: {fileID: 848774506}
   EdgeList:
   - {fileID: 1703259016}
+  Icon: {fileID: 0}
 --- !u!4 &848774510
 Transform:
   m_ObjectHideFlags: 0
@@ -22201,7 +21768,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1280137952}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &849754804
 GameObject:
@@ -22320,13 +21887,12 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -51962.06, y: -51185.67}
-  Zoom: 0.9142639
+  Position: {x: -51525.066, y: -50787.234}
+  Zoom: 0.7226085
   NodeList:
   - {fileID: 335191733}
   - {fileID: 1061261445}
   - {fileID: 177968347}
-  - {fileID: 935175201}
   - {fileID: 574233440}
   - {fileID: 2013892161}
   - {fileID: 133647777}
@@ -22618,6 +22184,112 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 875121814}
   m_CullTransparentMesh: 0
+--- !u!1 &876060796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 876060800}
+  - component: {fileID: 876060797}
+  - component: {fileID: 876060799}
+  - component: {fileID: 876060798}
+  m_Layer: 0
+  m_Name: Fail (OutputNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &876060797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876060796}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1431799399, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 946453210}
+  IsSelected: 1
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50900
+    y: 50420
+    width: 153
+    height: 113.16406
+  Info: Fail
+  InputSocketList:
+  - {fileID: 876060799}
+  OutputSocketList: []
+  DefaultOutputSocket: {fileID: 876060798}
+  Active: 1
+--- !u!114 &876060798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876060796}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 946453210}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50921.2
+    y: 50531.734
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 876060797}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &876060799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876060796}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 946453210}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50884.96
+    y: 50478.793
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 876060797}
+  EdgeList: []
+  Icon: {fileID: 0}
+--- !u!4 &876060800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876060796}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1439199256}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &878710019
 GameObject:
   m_ObjectHideFlags: 0
@@ -24596,8 +24268,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1270985011}
-  - {fileID: 1504256893}
   - {fileID: 1595647140}
+  - {fileID: 1504256893}
   - {fileID: 862792462}
   m_Father: {fileID: 1839215848}
   m_RootOrder: 2
@@ -24613,179 +24285,19 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -49957.695, y: -50078.26}
-  Zoom: 0.7220016
+  Position: {x: -49571.04, y: -49541.13}
+  Zoom: 0.5800004
   NodeList:
   - {fileID: 1209640112}
   - {fileID: 1926645324}
   - {fileID: 321951584}
   - {fileID: 1639219174}
-  - {fileID: 451725938}
   - {fileID: 1069527138}
   - {fileID: 1520262352}
   - {fileID: 2082499126}
   - {fileID: 128002852}
-  - {fileID: 2086920572}
+  - {fileID: 1104154560}
   LastRunningNode: {fileID: 0}
---- !u!1 &935175198
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 935175203}
-  - component: {fileID: 935175201}
-  - component: {fileID: 935175202}
-  - component: {fileID: 935175200}
-  - component: {fileID: 935175199}
-  - component: {fileID: 935175204}
-  m_Layer: 0
-  m_Name: ' (ActionNode)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &935175199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 935175198}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 935175200}
-  OutputSocket: {fileID: 177968353}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!114 &935175200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 935175198}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 862792463}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51927.527
-    y: 51342.883
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 935175201}
-  EdgeList:
-  - {fileID: 935175199}
-  AutoHide: 0
---- !u!114 &935175201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 935175198}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 862792463}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51630.63
-    y: 51271.023
-    width: 300
-    height: 139.65625
-  Info: UserPuzzleInfoWindow => Refresh
-  InputSocketList:
-  - {fileID: 935175202}
-  OutputSocketList:
-  - {fileID: 935175200}
-  DefaultOutputSocket: {fileID: 935175204}
-  Enable: 1
-  Lables:
-  - 
-  TargetGameObject: {fileID: 599558626}
-  ComponentTypeName: UserPuzzleInfoWindow
-  MethodName: Void Refresh(UserPuzzle, UserPuzzle)
-  ParameterValueStrings:
-  - 
-  - 
---- !u!114 &935175202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 935175198}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 862792463}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51615.59
-    y: 51342.883
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 935175201}
-  EdgeList:
-  - {fileID: 335191731}
---- !u!4 &935175203
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 935175198}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1694912034}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &935175204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 935175198}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 862792463}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51651.83
-    y: 51409.25
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 935175201}
-  EdgeList: []
-  AutoHide: 1
 --- !u!1 &935416528
 GameObject:
   m_ObjectHideFlags: 0
@@ -24830,7 +24342,7 @@ MonoBehaviour:
   OutputSocketList:
   - {fileID: 935416530}
   DefaultOutputSocket: {fileID: 935416532}
-  Enable: 1
+  Active: 1
 --- !u!114 &935416530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24855,6 +24367,7 @@ MonoBehaviour:
   Node: {fileID: 935416529}
   EdgeList:
   - {fileID: 935416533}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!4 &935416531
 Transform:
@@ -24892,6 +24405,7 @@ MonoBehaviour:
   Info: 
   Node: {fileID: 935416529}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &935416533
 MonoBehaviour:
@@ -25186,6 +24700,7 @@ MonoBehaviour:
   NodeList:
   - {fileID: 323357551}
   - {fileID: 840088177}
+  - {fileID: 876060797}
   LastRunningNode: {fileID: 0}
 --- !u!1 &947379308
 GameObject:
@@ -26247,54 +25762,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 991066933}
   m_CullTransparentMesh: 0
---- !u!1 &995392277
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 995392278}
-  - component: {fileID: 995392279}
-  m_Layer: 0
-  m_Name: Initialize Word Generator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &995392278
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 995392277}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1649388576}
-  m_Father: {fileID: 1209557897}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &995392279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 995392277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Position: {x: -50882.98, y: -50083.69}
-  Zoom: 0.50000036
-  NodeList:
-  - {fileID: 162838399}
-  - {fileID: 66091288}
-  - {fileID: 453531983}
-  LastRunningNode: {fileID: 0}
 --- !u!1 &996568952
 GameObject:
   m_ObjectHideFlags: 0
@@ -27038,13 +26505,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51638.68
-    y: 50789.055
+    y: 50789.125
     width: 20
     height: 20
   Info: My Puzzles
   Node: {fileID: 1039895949}
   EdgeList:
   - {fileID: 1039895947}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1039895949
 MonoBehaviour:
@@ -27065,7 +26533,7 @@ MonoBehaviour:
     x: 51290
     y: 50630
     width: 351.78125
-    height: 232.07812
+    height: 232.14844
   Info: Puzzle Collection
   InputSocketList:
   - {fileID: 1039895954}
@@ -27076,9 +26544,10 @@ MonoBehaviour:
   - {fileID: 1039895948}
   - {fileID: 1039895950}
   DefaultOutputSocket: {fileID: 1039895956}
-  Enable: 1
+  Active: 1
   Window: {fileID: 722584298}
-  HideWindow: 1
+  Refresh: 1
+  HideList: 01010101
 --- !u!114 &1039895950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27096,13 +26565,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51638.68
-    y: 50820.566
+    y: 50820.637
     width: 20
     height: 20
   Info: Back
   Node: {fileID: 1039895949}
   EdgeList:
   - {fileID: 1039895951}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1039895951
 MonoBehaviour:
@@ -27139,12 +26609,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51638.68
-    y: 50757.547
+    y: 50757.617
     width: 20
     height: 20
   Info: Online Puzzles
   Node: {fileID: 1039895949}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1039895953
 MonoBehaviour:
@@ -27163,12 +26634,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51638.68
-    y: 50726.035
+    y: 50726.105
     width: 20
     height: 20
   Info: Local Puzzles
   Node: {fileID: 1039895949}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1039895954
 MonoBehaviour:
@@ -27183,16 +26655,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 51274.96
-    y: 50722.68
+    y: 50722.75
     width: 20
     height: 20
   Info: Wait only
   Node: {fileID: 1039895949}
   EdgeList: []
+  Icon: {fileID: 0}
 --- !u!4 &1039895955
 Transform:
   m_ObjectHideFlags: 0
@@ -27223,12 +26696,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51311.2
-    y: 50860.65
+    y: 50860.72
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1039895949}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1039895957
 MonoBehaviour:
@@ -27247,7 +26721,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51274.96
-    y: 50747.48
+    y: 50747.55
     width: 20
     height: 20
   Info: Show and Wait
@@ -27255,6 +26729,7 @@ MonoBehaviour:
   EdgeList:
   - {fileID: 1604686886}
   - {fileID: 521119351}
+  Icon: {fileID: 0}
 --- !u!1 &1045731329
 GameObject:
   m_ObjectHideFlags: 0
@@ -27430,13 +26905,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52864.96
-    y: 51293.5
+    y: 51292.574
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1049670469}
   EdgeList:
   - {fileID: 1460514594}
+  Icon: {fileID: 0}
 --- !u!114 &1049670469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27456,14 +26932,14 @@ MonoBehaviour:
     x: 52880
     y: 51220
     width: 257
-    height: 142
+    height: 140.51953
   Info: GenerateWordSet => Hide
   InputSocketList:
   - {fileID: 1049670468}
   OutputSocketList:
   - {fileID: 1049670470}
   DefaultOutputSocket: {fileID: 1049670473}
-  Enable: 1
+  Active: 1
   Window: {fileID: 1521639586}
   Message: Inprogress/GenerateWordSet
   ProgressMode: 1
@@ -27484,12 +26960,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53133.9
-    y: 51293.5
+    y: 51292.574
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1049670469}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!4 &1049670472
 Transform:
@@ -27502,7 +26979,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1123938273}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1049670473
 MonoBehaviour:
@@ -27521,12 +26998,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52901.2
-    y: 51360.57
+    y: 51359.09
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1049670469}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &1058781691
 GameObject:
@@ -27690,7 +27168,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53159.03
-    y: 51381.617
+    y: 51382.465
     width: 20
     height: 20
   Info: 
@@ -27700,6 +27178,7 @@ MonoBehaviour:
   - {fileID: 574233442}
   - {fileID: 2013892159}
   - {fileID: 133647774}
+  Icon: {fileID: 0}
 --- !u!114 &1061261445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27719,13 +27198,13 @@ MonoBehaviour:
     x: 53174.07
     y: 51329.555
     width: 300
-    height: 100.0625
+    height: 100.91016
   Info: 
   InputSocketList:
   - {fileID: 1061261444}
   OutputSocketList: []
   DefaultOutputSocket: {fileID: 1061261447}
-  Enable: 1
+  Active: 1
 --- !u!4 &1061261446
 Transform:
   m_ObjectHideFlags: 0
@@ -27756,12 +27235,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53195.27
-    y: 51428.188
+    y: 51429.035
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1061261445}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &1069201685
 GameObject:
@@ -27816,14 +27296,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51514.96
-    y: 50639.09
+    x: 51134.96
+    y: 50620.656
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1069527138}
   EdgeList:
-  - {fileID: 451725939}
+  - {fileID: 321951587}
+  Icon: {fileID: 0}
 --- !u!114 &1069527138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27840,10 +27321,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51530
-    y: 50580
+    x: 51150
+    y: 50560
     width: 241.86328
-    height: 169.01953
+    height: 171.22266
   Info: Generate Puzzle
   InputSocketList:
   - {fileID: 1069527137}
@@ -27851,7 +27332,7 @@ MonoBehaviour:
   - {fileID: 1069527139}
   - {fileID: 1069527142}
   DefaultOutputSocket: {fileID: 1069527143}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 1209557898}
 --- !u!114 &1069527139
 MonoBehaviour:
@@ -27869,14 +27350,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51768.76
-    y: 50676
+    x: 51388.76
+    y: 50658.203
     width: 20
     height: 20
   Info: Cancel
   Node: {fileID: 1069527138}
   EdgeList:
   - {fileID: 1069527144}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1069527140
 MonoBehaviour:
@@ -27895,9 +27377,9 @@ MonoBehaviour:
   InputSocket: {fileID: 1069527142}
   OutputSocket: {fileID: 1520262353}
   EditPoints:
-  - {x: -0.019939508, y: -0.17893028}
+  - {x: -0.11275023, y: -0.2140072}
   - {x: 0.9530737, y: -0.2925595}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 0
 --- !u!4 &1069527141
 Transform:
   m_ObjectHideFlags: 0
@@ -27909,7 +27391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1270985011}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1069527142
 MonoBehaviour:
@@ -27927,14 +27409,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51768.76
-    y: 50707.51
+    x: 51388.76
+    y: 50689.715
     width: 20
     height: 20
   Info: Created
   Node: {fileID: 1069527138}
   EdgeList:
   - {fileID: 1069527140}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1069527143
 MonoBehaviour:
@@ -27952,13 +27435,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51551.2
-    y: 50747.59
+    x: 51171.2
+    y: 50729.793
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1069527138}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1069527144
 MonoBehaviour:
@@ -27977,9 +27461,9 @@ MonoBehaviour:
   InputSocket: {fileID: 1069527139}
   OutputSocket: {fileID: 321951589}
   EditPoints:
-  - {x: -0.016495356, y: -0.18355198}
+  - {x: -0.049872942, y: -0.23969749}
   - {x: 0.96356905, y: -0.31646425}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 2
 --- !u!1 &1069633878
 GameObject:
   m_ObjectHideFlags: 0
@@ -29057,7 +28541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1280137952}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1094842713
 MonoBehaviour:
@@ -29094,13 +28578,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 49810.637
-    y: 50462.16
+    y: 50462.562
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1094842717}
   EdgeList:
   - {fileID: 1094842713}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1094842715
 MonoBehaviour:
@@ -29119,14 +28604,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 49544.96
-    y: 50462.16
+    y: 50462.562
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1094842717}
   EdgeList:
   - {fileID: 2078058676}
-  - {fileID: 1966740448}
+  Icon: {fileID: 0}
 --- !u!114 &1094842716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29144,12 +28629,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 49581.2
-    y: 50528.477
+    y: 50528.695
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1094842717}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1094842717
 MonoBehaviour:
@@ -29170,14 +28656,14 @@ MonoBehaviour:
     x: 49560
     y: 50390
     width: 253.73828
-    height: 139.90625
+    height: 140.125
   Info: 'ServerConnection => Show '
   InputSocketList:
   - {fileID: 1094842715}
   OutputSocketList:
   - {fileID: 1094842714}
   DefaultOutputSocket: {fileID: 1094842716}
-  Enable: 1
+  Active: 1
   Window: {fileID: 1521639586}
   Message: Inprogress/ServerConnection
   ProgressMode: 0
@@ -29606,6 +29092,211 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1096871546}
   m_CullTransparentMesh: 0
+--- !u!1 &1097356846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097356853}
+  - component: {fileID: 1097356854}
+  - component: {fileID: 1097356852}
+  - component: {fileID: 1097356851}
+  - component: {fileID: 1097356847}
+  - component: {fileID: 1097356850}
+  - component: {fileID: 1097356849}
+  - component: {fileID: 1097356848}
+  m_Layer: 0
+  m_Name: ' (FollowMachineNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1097356847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097356846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50364.96
+    y: 50699.28
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1097356854}
+  EdgeList:
+  - {fileID: 1703259025}
+  - {fileID: 1715790980}
+  Icon: {fileID: 0}
+--- !u!114 &1097356848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097356846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1097356850}
+  OutputSocket: {fileID: 1715790983}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &1097356849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097356846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1097356851}
+  OutputSocket: {fileID: 1703259022}
+  EditPoints:
+  - {x: -0.025789918, y: -0.34432265}
+  - {x: 0.7620889, y: -0.60424286}
+  ClickEditpointIndex: 1
+--- !u!114 &1097356850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097356846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 50611.9
+    y: 50767.83
+    width: 20
+    height: 20
+  Info: Fail
+  Node: {fileID: 1097356854}
+  EdgeList:
+  - {fileID: 1097356848}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1097356851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097356846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 50611.9
+    y: 50736.316
+    width: 20
+    height: 20
+  Info: Success
+  Node: {fileID: 1097356854}
+  EdgeList:
+  - {fileID: 1097356849}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1097356852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097356846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50401.2
+    y: 50807.906
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1097356854}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!4 &1097356853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097356846}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1280137952}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1097356854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097356846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1220595171, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50380
+    y: 50640
+    width: 235
+    height: 169.33594
+  Info: Login Player
+  InputSocketList:
+  - {fileID: 1097356847}
+  OutputSocketList:
+  - {fileID: 1097356851}
+  - {fileID: 1097356850}
+  DefaultOutputSocket: {fileID: 1097356852}
+  Active: 1
+  FollowMachine: {fileID: 946453210}
 --- !u!1 &1097878461
 GameObject:
   m_ObjectHideFlags: 0
@@ -29821,6 +29512,133 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1104154555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1104154556}
+  - component: {fileID: 1104154560}
+  - component: {fileID: 1104154559}
+  - component: {fileID: 1104154558}
+  - component: {fileID: 1104154557}
+  m_Layer: 0
+  m_Name: ' (EntryPointNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1104154556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104154555}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1270985011}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1104154557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104154555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1104154558}
+  OutputSocket: {fileID: 321951589}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &1104154558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104154555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 933977340}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 50138.53
+    y: 50767.47
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1104154560}
+  EdgeList:
+  - {fileID: 1104154557}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1104154559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104154555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 933977340}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 49976.832
+    y: 50814.04
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1104154560}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1104154560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104154555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1935184719, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 933977340}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 49955.633
+    y: 50713.605
+    width: 186
+    height: 101.86328
+  Info: 
+  InputSocketList: []
+  OutputSocketList:
+  - {fileID: 1104154558}
+  DefaultOutputSocket: {fileID: 1104154559}
+  Active: 0
 --- !u!1001 &1108843120
 Prefab:
   m_ObjectHideFlags: 0
@@ -30102,7 +29920,6 @@ Transform:
   m_Children:
   - {fileID: 1258713304}
   - {fileID: 461328092}
-  - {fileID: 391108460}
   - {fileID: 150974156}
   - {fileID: 1823203616}
   - {fileID: 1457842624}
@@ -30112,6 +29929,10 @@ Transform:
   - {fileID: 1834305025}
   - {fileID: 402076743}
   - {fileID: 771585269}
+  - {fileID: 1597252250}
+  - {fileID: 1860562910}
+  - {fileID: 600026908}
+  - {fileID: 356252863}
   m_Father: {fileID: 1209557897}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31596,7 +31417,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1123938273}
-  - {fileID: 995392278}
   m_Father: {fileID: 1839215848}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31611,12 +31431,11 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -50827.34, y: -50012.016}
-  Zoom: 0.40000042
+  Position: {x: -51383.03, y: -50260.77}
+  Zoom: 0.6495013
   NodeList:
   - {fileID: 1258713302}
   - {fileID: 461328094}
-  - {fileID: 391108458}
   - {fileID: 150974152}
   - {fileID: 1823203613}
   - {fileID: 1457842623}
@@ -31626,6 +31445,10 @@ MonoBehaviour:
   - {fileID: 1834305020}
   - {fileID: 402076747}
   - {fileID: 771585271}
+  - {fileID: 1597252246}
+  - {fileID: 1860562915}
+  - {fileID: 600026903}
+  - {fileID: 356252868}
   LastRunningNode: {fileID: 0}
 --- !u!1 &1209640109
 GameObject:
@@ -31681,13 +31504,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50008.742
-    y: 50519.09
+    y: 50520.656
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1209640112}
   EdgeList:
   - {fileID: 1209640110}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1209640112
 MonoBehaviour:
@@ -31708,13 +31532,13 @@ MonoBehaviour:
     x: 49860
     y: 50460
     width: 151.84375
-    height: 113.24609
+    height: 115.44922
   Info: Show
   InputSocketList: []
   OutputSocketList:
   - {fileID: 1209640111}
   DefaultOutputSocket: {fileID: 1209640114}
-  Enable: 1
+  Active: 1
 --- !u!4 &1209640113
 Transform:
   m_ObjectHideFlags: 0
@@ -31745,12 +31569,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 49881.2
-    y: 50571.816
+    y: 50574.02
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1209640112}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &1211931991
 GameObject:
@@ -32791,8 +32616,8 @@ GameObject:
   - component: {fileID: 1258713304}
   - component: {fileID: 1258713302}
   - component: {fileID: 1258713303}
-  - component: {fileID: 1258713305}
   - component: {fileID: 1258713306}
+  - component: {fileID: 1258713305}
   m_Layer: 0
   m_Name: ' (InputNode)'
   m_TagString: Untagged
@@ -32819,13 +32644,13 @@ MonoBehaviour:
     x: 51020
     y: 50680
     width: 136
-    height: 101
+    height: 100.63281
   Info: 
   InputSocketList: []
   OutputSocketList:
   - {fileID: 1258713303}
   DefaultOutputSocket: {fileID: 1258713306}
-  Enable: 1
+  Active: 1
 --- !u!114 &1258713303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32843,13 +32668,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51152.9
-    y: 50733
+    y: 50732.633
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1258713302}
   EdgeList:
   - {fileID: 1258713305}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!4 &1258713304
 Transform:
@@ -32870,7 +32696,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1258713301}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
@@ -32879,7 +32705,7 @@ MonoBehaviour:
   IsSelected: 0
   IsHover: 0
   InputSocket: {fileID: 1258713303}
-  OutputSocket: {fileID: 391108459}
+  OutputSocket: {fileID: 1860562913}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!114 &1258713306
@@ -32899,12 +32725,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51041.2
-    y: 50779.57
+    y: 50779.203
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1258713302}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &1261590696
 GameObject:
@@ -33240,12 +33067,11 @@ Transform:
   - {fileID: 1926645325}
   - {fileID: 321951585}
   - {fileID: 1639219170}
-  - {fileID: 451725935}
   - {fileID: 1069527141}
   - {fileID: 1520262354}
   - {fileID: 2082499129}
   - {fileID: 128002849}
-  - {fileID: 2086920568}
+  - {fileID: 1104154556}
   m_Father: {fileID: 933977339}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33275,15 +33101,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2078058679}
-  - {fileID: 194185932}
-  - {fileID: 1408189147}
   - {fileID: 474520975}
   - {fileID: 1703259023}
   - {fileID: 1094842712}
   - {fileID: 848774510}
   - {fileID: 2014554989}
-  - {fileID: 650521089}
-  - {fileID: 1966740449}
+  - {fileID: 1097356853}
+  - {fileID: 1715790981}
+  - {fileID: 358765384}
   m_Father: {fileID: 1595647140}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33728,13 +33553,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1290197327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 883584214, guid: dcc3811eee0d4ea46a6222c0609e6dcf, type: 3}
+  m_Script: {fileID: 11500000, guid: e5cb34f58fec5d94980f76bf74daae75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Result: 
   ActionList:
   - Back
   - Next
+  WordsText: {fileID: 1644408703}
 --- !u!222 &1290197330
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34301,7 +34127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GetClueWindow: {fileID: 106129621}
-  GetWordsWindow: {fileID: 1290197329}
+  GetWordsWindow: {fileID: 0}
   WordCountWindow: {fileID: 173510517}
   WordsetApproval: {fileID: 1776474046}
   PartiotionFaildWindow: {fileID: 1434130838}
@@ -34638,6 +34464,7 @@ MonoBehaviour:
   Info: 
   Node: {fileID: 1334536970}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1334536966
 MonoBehaviour:
@@ -34662,6 +34489,7 @@ MonoBehaviour:
   Info: 
   Node: {fileID: 1334536970}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1334536967
 MonoBehaviour:
@@ -34686,6 +34514,7 @@ MonoBehaviour:
   Info: 
   Node: {fileID: 1334536970}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1334536968
 MonoBehaviour:
@@ -34704,13 +34533,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51555.125
-    y: 50546.035
+    y: 50546.105
     width: 20
     height: 20
   Info: Back
   Node: {fileID: 1334536970}
   EdgeList:
   - {fileID: 1334536964}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1334536969
 MonoBehaviour:
@@ -34729,13 +34559,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51274.96
-    y: 50542.68
+    y: 50542.75
     width: 20
     height: 20
   Info: Wait only
   Node: {fileID: 1334536970}
   EdgeList:
   - {fileID: 1604686895}
+  Icon: {fileID: 0}
 --- !u!114 &1334536970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34755,7 +34586,7 @@ MonoBehaviour:
     x: 51290
     y: 50450
     width: 268.22656
-    height: 152.28125
+    height: 152.35156
   Info: About Us
   InputSocketList:
   - {fileID: 1334536969}
@@ -34763,9 +34594,10 @@ MonoBehaviour:
   OutputSocketList:
   - {fileID: 1334536968}
   DefaultOutputSocket: {fileID: 1334536971}
-  Enable: 1
+  Active: 1
   Window: {fileID: 1427889679}
-  HideWindow: 1
+  Refresh: 1
+  HideList: 01
 --- !u!114 &1334536971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34783,12 +34615,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51311.2
-    y: 50600.85
+    y: 50600.92
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1334536970}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1334536972
 MonoBehaviour:
@@ -34807,12 +34640,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51274.96
-    y: 50567.48
+    y: 50567.55
     width: 20
     height: 20
   Info: Show and Wait
   Node: {fileID: 1334536970}
   EdgeList: []
+  Icon: {fileID: 0}
 --- !u!1001 &1338084698
 Prefab:
   m_ObjectHideFlags: 0
@@ -36317,163 +36151,6 @@ Transform:
   m_Father: {fileID: 1001921113}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1408189142
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1408189147}
-  - component: {fileID: 1408189145}
-  - component: {fileID: 1408189146}
-  - component: {fileID: 1408189144}
-  - component: {fileID: 1408189148}
-  - component: {fileID: 1408189143}
-  m_Layer: 0
-  m_Name: Succesfull Operation  (DialogeNode)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1408189143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1408189142}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 1408189144}
-  OutputSocket: {fileID: 2014554988}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!114 &1408189144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1408189142}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50932.734
-    y: 50502.16
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 1408189145}
-  EdgeList:
-  - {fileID: 1408189143}
-  AutoHide: 0
---- !u!114 &1408189145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1408189142}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1331309404, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50740
-    y: 50430
-    width: 195.83594
-    height: 139.90625
-  Info: 'Succesfull Operation '
-  InputSocketList:
-  - {fileID: 1408189146}
-  OutputSocketList:
-  - {fileID: 1408189144}
-  DefaultOutputSocket: {fileID: 1408189148}
-  Enable: 1
-  Window: {fileID: 613290836}
-  Title: Title/Update
-  Message: SuccesfullOperation
-  Icon: Info/Info
-  Buttons:
-  - Button/Ok
---- !u!114 &1408189146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1408189142}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50724.96
-    y: 50502.16
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 1408189145}
-  EdgeList:
-  - {fileID: 194185928}
---- !u!4 &1408189147
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1408189142}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1280137952}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1408189148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1408189142}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50761.2
-    y: 50568.477
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 1408189145}
-  EdgeList: []
-  AutoHide: 1
 --- !u!1 &1415881646
 GameObject:
   m_ObjectHideFlags: 0
@@ -37019,6 +36696,7 @@ Transform:
   m_Children:
   - {fileID: 323357552}
   - {fileID: 840088175}
+  - {fileID: 876060800}
   m_Father: {fileID: 946453209}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37302,7 +36980,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52434.96
-    y: 50953.5
+    y: 50952.574
     width: 20
     height: 20
   Info: 
@@ -37310,6 +36988,7 @@ MonoBehaviour:
   EdgeList:
   - {fileID: 1823203615}
   - {fileID: 1834305018}
+  Icon: {fileID: 0}
 --- !u!114 &1457842621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37345,13 +37024,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52703.9
-    y: 50953.5
+    y: 50952.574
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1457842623}
   EdgeList:
   - {fileID: 1457842621}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1457842623
 MonoBehaviour:
@@ -37372,14 +37052,14 @@ MonoBehaviour:
     x: 52450
     y: 50880
     width: 257
-    height: 142
+    height: 140.51953
   Info: GenerateWordSet => Show
   InputSocketList:
   - {fileID: 1457842620}
   OutputSocketList:
   - {fileID: 1457842622}
   DefaultOutputSocket: {fileID: 1457842625}
-  Enable: 1
+  Active: 1
   Window: {fileID: 1521639586}
   Message: Inprogress/GenerateWordSet
   ProgressMode: 0
@@ -37394,7 +37074,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1123938273}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1457842625
 MonoBehaviour:
@@ -37413,12 +37093,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52471.2
-    y: 51020.57
+    y: 51019.09
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1457842623}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &1459348354
 GameObject:
@@ -37610,17 +37291,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1209557898}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 52965.9
-    y: 51107.254
+    y: 51105.562
     width: 20
     height: 20
   Info: Success
   Node: {fileID: 1460514588}
   EdgeList:
   - {fileID: 1460514586}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1460514588
 MonoBehaviour:
@@ -37634,14 +37316,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 1209557898}
-  IsSelected: 0
+  IsSelected: 1
   IsHover: 0
   Rect:
     serializedVersion: 2
     x: 52730
     y: 51010
     width: 239
-    height: 170.27344
+    height: 168.58203
   Info: Generate words
   InputSocketList:
   - {fileID: 1460514591}
@@ -37649,7 +37331,7 @@ MonoBehaviour:
   - {fileID: 1460514587}
   - {fileID: 1460514589}
   DefaultOutputSocket: {fileID: 1460514593}
-  Enable: 1
+  Active: 1
   Lables:
   - Success
   - Fail
@@ -37672,17 +37354,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1209557898}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 52965.9
-    y: 51138.766
+    y: 51137.074
     width: 20
     height: 20
   Info: Fail
   Node: {fileID: 1460514588}
   EdgeList:
   - {fileID: 1460514590}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1460514590
 MonoBehaviour:
@@ -37719,13 +37402,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52714.96
-    y: 51069.75
+    y: 51068.723
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1460514588}
   EdgeList:
   - {fileID: 1457842621}
+  Icon: {fileID: 0}
 --- !u!4 &1460514592
 Transform:
   m_ObjectHideFlags: 0
@@ -37737,7 +37421,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1123938273}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1460514593
 MonoBehaviour:
@@ -37756,13 +37440,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52751.2
-    y: 51178.844
+    y: 51177.152
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1460514588}
   EdgeList:
   - {fileID: 1460514594}
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1460514594
 MonoBehaviour:
@@ -39077,7 +38762,7 @@ Transform:
   m_Children:
   - {fileID: 2120032888}
   m_Father: {fileID: 933977339}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1504256894
 MonoBehaviour:
@@ -39743,7 +39428,6 @@ GameObject:
   - component: {fileID: 1520262353}
   - component: {fileID: 1520262355}
   - component: {fileID: 1520262350}
-  - component: {fileID: 1520262356}
   m_Layer: 0
   m_Name: ' (FollowMachineNode)'
   m_TagString: Untagged
@@ -39786,13 +39470,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50391.9
-    y: 50556
+    y: 50558.203
     width: 20
     height: 20
-  Info: Success
+  Info: Success or Fail
   Node: {fileID: 1520262352}
   EdgeList:
   - {fileID: 1520262350}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1520262352
 MonoBehaviour:
@@ -39806,22 +39491,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 933977340}
-  IsSelected: 0
-  IsHover: 0
+  IsSelected: 1
+  IsHover: 1
   Rect:
     serializedVersion: 2
     x: 50160
     y: 50460
     width: 235
-    height: 169.01953
+    height: 139.71484
   Info: Sync With Server
   InputSocketList:
   - {fileID: 1520262353}
   OutputSocketList:
   - {fileID: 1520262351}
-  - {fileID: 1520262356}
   DefaultOutputSocket: {fileID: 1520262355}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 1595647141}
 --- !u!114 &1520262353
 MonoBehaviour:
@@ -39836,11 +39520,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 933977340}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
     x: 50144.96
-    y: 50519.09
+    y: 50520.656
     width: 20
     height: 20
   Info: 
@@ -39848,7 +39532,7 @@ MonoBehaviour:
   EdgeList:
   - {fileID: 1209640110}
   - {fileID: 1069527140}
-  - {fileID: 2086920569}
+  Icon: {fileID: 0}
 --- !u!4 &1520262354
 Transform:
   m_ObjectHideFlags: 0
@@ -39860,7 +39544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1270985011}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1520262355
 MonoBehaviour:
@@ -39879,37 +39563,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50181.2
-    y: 50627.59
+    y: 50598.285
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1520262352}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
---- !u!114 &1520262356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1520262349}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 933977340}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50391.9
-    y: 50587.51
-    width: 20
-    height: 20
-  Info: Fail
-  Node: {fileID: 1520262352}
-  EdgeList: []
-  AutoHide: 0
 --- !u!1 &1521639584
 GameObject:
   m_ObjectHideFlags: 0
@@ -41724,7 +41385,7 @@ Transform:
   m_Children:
   - {fileID: 1280137952}
   m_Father: {fileID: 933977339}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1595647141
 MonoBehaviour:
@@ -41737,20 +41398,146 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -48781, y: -50227.277}
-  Zoom: 0.86000013
+  Position: {x: -49264.43, y: -49865.082}
+  Zoom: 0.64000034
   NodeList:
   - {fileID: 2078058678}
-  - {fileID: 194185930}
-  - {fileID: 1408189145}
   - {fileID: 474520979}
   - {fileID: 1703259024}
   - {fileID: 1094842717}
   - {fileID: 848774506}
   - {fileID: 2014554986}
-  - {fileID: 650521086}
-  - {fileID: 1966740445}
+  - {fileID: 1097356854}
+  - {fileID: 1715790976}
+  - {fileID: 358765380}
   LastRunningNode: {fileID: 0}
+--- !u!1 &1597252245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1597252250}
+  - component: {fileID: 1597252246}
+  - component: {fileID: 1597252247}
+  - component: {fileID: 1597252248}
+  - component: {fileID: 1597252249}
+  m_Layer: 0
+  m_Name: ' (EntryPointNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1597252246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597252245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1935184719, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50930
+    y: 50920
+    width: 186
+    height: 100.63281
+  Info: 
+  InputSocketList: []
+  OutputSocketList:
+  - {fileID: 1597252248}
+  DefaultOutputSocket: {fileID: 1597252247}
+  Active: 1
+--- !u!114 &1597252247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597252245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50951.2
+    y: 51019.203
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1597252246}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1597252248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597252245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 51112.9
+    y: 50972.633
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1597252246}
+  EdgeList:
+  - {fileID: 1597252249}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1597252249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597252245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1597252248}
+  OutputSocket: {fileID: 1860562913}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!4 &1597252250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597252245}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1123938273}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1601088794
 GameObject:
   m_ObjectHideFlags: 0
@@ -41970,12 +41757,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50788.96
-    y: 50325.68
+    y: 50325.75
     width: 20
     height: 20
   Info: Wait only
   Node: {fileID: 1604686883}
   EdgeList: []
+  Icon: {fileID: 0}
 --- !u!114 &1604686883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41995,7 +41783,7 @@ MonoBehaviour:
     x: 50804
     y: 50233
     width: 309.52344
-    height: 295.09766
+    height: 295.16797
   Info: MainMenu
   InputSocketList:
   - {fileID: 1604686882}
@@ -42008,9 +41796,10 @@ MonoBehaviour:
   - {fileID: 1604686885}
   - {fileID: 1604686884}
   DefaultOutputSocket: {fileID: 1604686896}
-  Enable: 1
+  Active: 1
   Window: {fileID: 85897228}
-  HideWindow: 1
+  Refresh: 1
+  HideList: 010101010101
 --- !u!114 &1604686884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42028,12 +41817,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51110.42
-    y: 50486.586
+    y: 50486.656
     width: 20
     height: 20
   Info: Shuffle
   Node: {fileID: 1604686883}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1604686885
 MonoBehaviour:
@@ -42052,13 +41842,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51110.42
-    y: 50455.08
+    y: 50455.15
     width: 20
     height: 20
   Info: PuzzleCollection
   Node: {fileID: 1604686883}
   EdgeList:
   - {fileID: 1604686886}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1604686886
 MonoBehaviour:
@@ -42095,13 +41886,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51110.42
-    y: 50423.566
+    y: 50423.637
     width: 20
     height: 20
   Info: About
   Node: {fileID: 1604686883}
   EdgeList:
   - {fileID: 1604686895}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1604686888
 MonoBehaviour:
@@ -42120,13 +41912,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51110.42
-    y: 50392.055
+    y: 50392.125
     width: 20
     height: 20
   Info: CreatePuzzle
   Node: {fileID: 1604686883}
   EdgeList:
   - {fileID: 1604686894}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1604686889
 MonoBehaviour:
@@ -42145,13 +41938,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51110.42
-    y: 50360.547
+    y: 50360.617
     width: 20
     height: 20
   Info: Store
   Node: {fileID: 1604686883}
   EdgeList:
   - {fileID: 1604686892}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1604686890
 MonoBehaviour:
@@ -42170,12 +41964,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51110.42
-    y: 50329.035
+    y: 50329.105
     width: 20
     height: 20
   Info: Continue
   Node: {fileID: 1604686883}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!4 &1604686891
 Transform:
@@ -42231,6 +42026,7 @@ MonoBehaviour:
   Info: 
   Node: {fileID: 1604686883}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1604686894
 MonoBehaviour:
@@ -42285,12 +42081,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50825.2
-    y: 50526.668
+    y: 50526.74
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1604686883}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1604686897
 MonoBehaviour:
@@ -42309,7 +42106,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50788.96
-    y: 50350.48
+    y: 50350.55
     width: 20
     height: 20
   Info: Show and Wait
@@ -42317,6 +42114,7 @@ MonoBehaviour:
   EdgeList:
   - {fileID: 720323807}
   - {fileID: 1720711184}
+  Icon: {fileID: 0}
 --- !u!1001 &1608775009
 Prefab:
   m_ObjectHideFlags: 0
@@ -42450,8 +42248,8 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -49632.027, y: -49930.613}
-  Zoom: 0.7800002
+  Position: {x: -50460.957, y: -49903.742}
+  Zoom: 0.7400002
   NodeList:
   - {fileID: 720323809}
   - {fileID: 1604686883}
@@ -42473,6 +42271,7 @@ GameObject:
   - component: {fileID: 1611429976}
   - component: {fileID: 1611429978}
   - component: {fileID: 1611429977}
+  - component: {fileID: 1611429980}
   - component: {fileID: 1611429979}
   m_Layer: 0
   m_Name: WordSetGenerator
@@ -42562,19 +42361,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff062cb842b21744bcd32ed0fe80c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GetClueWindow: {fileID: 0}
-  GetWordsWindow: {fileID: 0}
-  WordCountWindow: {fileID: 0}
-  WordsetApproval: {fileID: 0}
-  PartiotionFaildWindow: {fileID: 0}
   Generator: {fileID: 1611429978}
   Partitioner: {fileID: 1611429977}
-  OnExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  GenerationFaild: 1
+--- !u!114 &1611429980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611429975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff062cb842b21744bcd32ed0fe80c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Generator: {fileID: 0}
+  Partitioner: {fileID: 0}
 --- !u!1 &1613036722
 GameObject:
   m_ObjectHideFlags: 0
@@ -43000,13 +42801,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51698.52
-    y: 50405.402
+    y: 50408.242
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1639219174}
   EdgeList:
   - {fileID: 1639219171}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1639219173
 MonoBehaviour:
@@ -43025,14 +42827,15 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51524.96
-    y: 50405.402
+    y: 50408.242
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1639219174}
   EdgeList:
   - {fileID: 128002853}
-  - {fileID: 2082499131}
+  - {fileID: 2082499128}
+  Icon: {fileID: 0}
 --- !u!114 &1639219174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43052,14 +42855,14 @@ MonoBehaviour:
     x: 51540
     y: 50320
     width: 161.6211
-    height: 165.875
+    height: 170.6211
   Info: Back to Selection Window
   InputSocketList:
   - {fileID: 1639219173}
   OutputSocketList:
   - {fileID: 1639219172}
   DefaultOutputSocket: {fileID: 1639219175}
-  Enable: 1
+  Active: 1
 --- !u!114 &1639219175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43077,12 +42880,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51561.2
-    y: 50484.445
+    y: 50489.19
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1639219174}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &1642216988
 GameObject:
@@ -43507,37 +43311,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000030517578, y: -0.49993896}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1649388575
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1649388576}
-  m_Layer: 0
-  m_Name: Repository
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1649388576
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1649388575}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 162838402}
-  - {fileID: 66091289}
-  - {fileID: 453531979}
-  m_Father: {fileID: 995392278}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1651016270
 GameObject:
   m_ObjectHideFlags: 0
@@ -44557,7 +44330,6 @@ Transform:
   - {fileID: 335191734}
   - {fileID: 1061261446}
   - {fileID: 177968355}
-  - {fileID: 935175203}
   - {fileID: 574233443}
   - {fileID: 2013892163}
   - {fileID: 133647773}
@@ -44652,9 +44424,11 @@ GameObject:
   - component: {fileID: 1703259022}
   - component: {fileID: 1703259021}
   - component: {fileID: 1703259020}
-  - component: {fileID: 1703259019}
   - component: {fileID: 1703259018}
   - component: {fileID: 1703259016}
+  - component: {fileID: 1703259026}
+  - component: {fileID: 1703259025}
+  - component: {fileID: 1703259019}
   m_Layer: 0
   m_Name: Sync UserPuzzles  (ActionNode)
   m_TagString: Untagged
@@ -44697,13 +44471,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 49981.2
-    y: 50607.508
+    y: 50639.418
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1703259024}
   EdgeList:
   - {fileID: 1703259016}
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1703259018
 MonoBehaviour:
@@ -44729,7 +44504,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1703259015}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
@@ -44738,7 +44513,7 @@ MonoBehaviour:
   IsSelected: 0
   IsHover: 0
   InputSocket: {fileID: 1703259021}
-  OutputSocket: {fileID: 194185931}
+  OutputSocket: {fileID: 358765385}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!114 &1703259020
@@ -44758,13 +44533,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50256.9
-    y: 50567.43
+    y: 50567.83
     width: 20
     height: 20
   Info: Fail
   Node: {fileID: 1703259024}
   EdgeList:
   - {fileID: 1703259018}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1703259021
 MonoBehaviour:
@@ -44779,17 +44555,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1595647141}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
     x: 50256.9
-    y: 50535.918
+    y: 50536.316
     width: 20
     height: 20
   Info: Success
   Node: {fileID: 1703259024}
   EdgeList:
   - {fileID: 1703259019}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1703259022
 MonoBehaviour:
@@ -44808,13 +44585,15 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 49944.96
-    y: 50498.793
+    y: 50499.28
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1703259024}
   EdgeList:
   - {fileID: 1094842713}
+  - {fileID: 1097356849}
+  Icon: {fileID: 0}
 --- !u!4 &1703259023
 Transform:
   m_ObjectHideFlags: 0
@@ -44826,7 +44605,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1280137952}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1703259024
 MonoBehaviour:
@@ -44840,31 +44619,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 1595647141}
-  IsSelected: 0
+  IsSelected: 1
   IsHover: 0
   Rect:
     serializedVersion: 2
     x: 49960
     y: 50440
     width: 300
-    height: 168.9375
+    height: 200.84766
   Info: Sync UserPuzzles
   InputSocketList:
   - {fileID: 1703259022}
   OutputSocketList:
   - {fileID: 1703259021}
   - {fileID: 1703259020}
+  - {fileID: 1703259026}
   DefaultOutputSocket: {fileID: 1703259017}
-  Enable: 1
+  Active: 1
   Lables:
   - Success
   - Fail
+  - Not Registered
   TargetGameObject: {fileID: 1484087059}
   ComponentTypeName: UserPuzzleSynchronizer
   MethodName: System.Collections.IEnumerator Syncing()
   ParameterValueStrings:
   - 
   - 
+--- !u!114 &1703259025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703259015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1703259026}
+  OutputSocket: {fileID: 1097356847}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &1703259026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703259015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50256.9
+    y: 50599.336
+    width: 20
+    height: 20
+  Info: Not Registered
+  Node: {fileID: 1703259024}
+  EdgeList:
+  - {fileID: 1703259025}
+  Icon: {fileID: 0}
+  AutoHide: 0
 --- !u!1001 &1703294641
 Prefab:
   m_ObjectHideFlags: 0
@@ -45137,6 +44962,216 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1715790975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1715790981}
+  - component: {fileID: 1715790976}
+  - component: {fileID: 1715790977}
+  - component: {fileID: 1715790983}
+  - component: {fileID: 1715790982}
+  - component: {fileID: 1715790978}
+  - component: {fileID: 1715790979}
+  - component: {fileID: 1715790980}
+  m_Layer: 0
+  m_Name: Error Internet Access (DialogeNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1715790976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715790975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1331309404, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50760
+    y: 50650
+    width: 201.92188
+    height: 195.89844
+  Info: Error Internet Access
+  InputSocketList:
+  - {fileID: 1715790983}
+  OutputSocketList:
+  - {fileID: 1715790982}
+  - {fileID: 1715790978}
+  DefaultOutputSocket: {fileID: 1715790977}
+  Active: 1
+  Window: {fileID: 613290836}
+  Title: Title/Update
+  Message: Error/InternetAccess
+  Icon: Error/NetworkError
+  Buttons:
+  - Button/Retray
+  - Button/Ok
+--- !u!114 &1715790977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715790975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50781.2
+    y: 50844.47
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1715790976}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1715790978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715790975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50958.82
+    y: 50804.39
+    width: 20
+    height: 20
+  Info: Button/Ok
+  Node: {fileID: 1715790976}
+  EdgeList:
+  - {fileID: 1715790979}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1715790979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715790975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1715790978}
+  OutputSocket: {fileID: 2014554988}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &1715790980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715790975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1715790982}
+  OutputSocket: {fileID: 1097356847}
+  EditPoints:
+  - {x: 0.16274054, y: -0.3257529}
+  - {x: 0.9077115, y: -0.33441755}
+  ClickEditpointIndex: 1
+--- !u!4 &1715790981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715790975}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1280137952}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715790982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715790975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50958.82
+    y: 50772.88
+    width: 20
+    height: 20
+  Info: Button/Retray
+  Node: {fileID: 1715790976}
+  EdgeList:
+  - {fileID: 1715790980}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1715790983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715790975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1595647141}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50744.96
+    y: 50722.562
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1715790976}
+  EdgeList:
+  - {fileID: 1097356848}
+  Icon: {fileID: 0}
 --- !u!1 &1719551886
 GameObject:
   m_ObjectHideFlags: 0
@@ -45272,7 +45307,7 @@ MonoBehaviour:
   EditPoints:
   - {x: 0.004899611, y: 0.36295912}
   - {x: 1.0133404, y: 0.2948076}
-  ClickEditpointIndex: 2
+  ClickEditpointIndex: 1
 --- !u!114 &1720711185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45290,13 +45325,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51952.9
-    y: 50432.36
+    y: 50432.324
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1720711187}
   EdgeList:
   - {fileID: 1720711184}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1720711186
 MonoBehaviour:
@@ -45315,7 +45351,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51804.96
-    y: 50432.36
+    y: 50432.324
     width: 20
     height: 20
   Info: 
@@ -45325,6 +45361,7 @@ MonoBehaviour:
   - {fileID: 448237897}
   - {fileID: 1039895951}
   - {fileID: 1334536964}
+  Icon: {fileID: 0}
 --- !u!114 &1720711187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45344,14 +45381,14 @@ MonoBehaviour:
     x: 51820
     y: 50380
     width: 136
-    height: 100.359375
+    height: 100.32422
   Info: 
   InputSocketList:
   - {fileID: 1720711186}
   OutputSocketList:
   - {fileID: 1720711185}
   DefaultOutputSocket: {fileID: 1720711188}
-  Enable: 1
+  Active: 1
 --- !u!114 &1720711188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45369,12 +45406,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51841.2
-    y: 50478.93
+    y: 50478.895
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1720711187}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &1721014417
 GameObject:
@@ -47392,16 +47430,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1209557898}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 52024.96
-    y: 50913.9
+    y: 50912.207
     width: 20
     height: 20
   Info: Wait only
   Node: {fileID: 1823203613}
   EdgeList: []
+  Icon: {fileID: 0}
 --- !u!114 &1823203611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47419,9 +47458,9 @@ MonoBehaviour:
   InputSocket: {fileID: 1823203612}
   OutputSocket: {fileID: 150974158}
   EditPoints:
-  - {x: 0.07566238, y: 0.2326208}
-  - {x: 0.92682344, y: 0.23294015}
-  ClickEditpointIndex: 1
+  - {x: 0.19209905, y: 0.326065}
+  - {x: 1.0403311, y: 0.22085649}
+  ClickEditpointIndex: 0
 --- !u!114 &1823203612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47439,13 +47478,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52302.48
-    y: 50917.254
+    y: 50915.562
     width: 20
     height: 20
   Info: Back
   Node: {fileID: 1823203613}
   EdgeList:
   - {fileID: 1823203611}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1823203613
 MonoBehaviour:
@@ -47466,7 +47506,7 @@ MonoBehaviour:
     x: 52040
     y: 50820
     width: 265.58203
-    height: 170.27344
+    height: 168.58203
   Info: GetWords
   InputSocketList:
   - {fileID: 1823203610}
@@ -47475,9 +47515,10 @@ MonoBehaviour:
   - {fileID: 1823203612}
   - {fileID: 1823203614}
   DefaultOutputSocket: {fileID: 1823203617}
-  Enable: 1
+  Active: 1
   Window: {fileID: 1290197329}
-  HideWindow: 1
+  Refresh: 1
+  HideList: 0101
 --- !u!114 &1823203614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47495,13 +47536,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52302.48
-    y: 50948.766
+    y: 50947.074
     width: 20
     height: 20
   Info: Next
   Node: {fileID: 1823203613}
   EdgeList:
   - {fileID: 1823203615}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1823203615
 MonoBehaviour:
@@ -47532,7 +47574,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1123938273}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1823203617
 MonoBehaviour:
@@ -47551,12 +47593,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52061.2
-    y: 50988.844
+    y: 50987.152
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1823203613}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1823203618
 MonoBehaviour:
@@ -47575,7 +47618,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52024.96
-    y: 50938.7
+    y: 50937.008
     width: 20
     height: 20
   Info: Show and Wait
@@ -47583,6 +47626,7 @@ MonoBehaviour:
   EdgeList:
   - {fileID: 402076744}
   - {fileID: 150974150}
+  Icon: {fileID: 0}
 --- !u!1 &1826105431
 GameObject:
   m_ObjectHideFlags: 0
@@ -47807,7 +47851,7 @@ MonoBehaviour:
   EditPoints:
   - {x: -0.009801957, y: 0.20738803}
   - {x: 0.96444446, y: 0.20382279}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 2
 --- !u!114 &1834305019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47824,14 +47868,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53479.24
-    y: 50980.273
+    x: 53399.24
+    y: 50988.582
     width: 20
     height: 20
   Info: Regenerate
   Node: {fileID: 1834305020}
   EdgeList:
   - {fileID: 1834305018}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1834305020
 MonoBehaviour:
@@ -47849,10 +47894,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53210
-    y: 50820
+    x: 53130
+    y: 50830
     width: 272.33984
-    height: 201.78516
+    height: 200.09375
   Info: Aproval
   InputSocketList:
   - {fileID: 1834305024}
@@ -47862,9 +47907,10 @@ MonoBehaviour:
   - {fileID: 1834305021}
   - {fileID: 1834305019}
   DefaultOutputSocket: {fileID: 1834305026}
-  Enable: 1
+  Active: 1
   Window: {fileID: 1776474046}
-  HideWindow: 1
+  Refresh: 1
+  HideList: 010101
 --- !u!114 &1834305021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47881,13 +47927,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53479.24
-    y: 50948.766
+    x: 53399.24
+    y: 50957.074
     width: 20
     height: 20
   Info: Next
   Node: {fileID: 1834305020}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1834305022
 MonoBehaviour:
@@ -47902,17 +47949,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1209557898}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53479.24
-    y: 50917.254
+    x: 53399.24
+    y: 50925.562
     width: 20
     height: 20
   Info: Back
   Node: {fileID: 1834305020}
   EdgeList:
   - {fileID: 1834305023}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1834305023
 MonoBehaviour:
@@ -47948,13 +47996,14 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 53194.96
-    y: 50913.9
+    x: 53114.96
+    y: 50922.207
     width: 20
     height: 20
   Info: Wait only
   Node: {fileID: 1834305020}
   EdgeList: []
+  Icon: {fileID: 0}
 --- !u!4 &1834305025
 Transform:
   m_ObjectHideFlags: 0
@@ -47966,7 +48015,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1123938273}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1834305026
 MonoBehaviour:
@@ -47984,13 +48033,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53231.2
-    y: 51020.355
+    x: 53151.2
+    y: 51028.664
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1834305020}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1834305027
 MonoBehaviour:
@@ -48008,14 +48058,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53194.96
-    y: 50938.7
+    x: 53114.96
+    y: 50947.008
     width: 20
     height: 20
   Info: Show and Wait
   Node: {fileID: 1834305020}
   EdgeList:
   - {fileID: 1460514586}
+  Icon: {fileID: 0}
 --- !u!1 &1836408504
 GameObject:
   m_ObjectHideFlags: 0
@@ -48446,6 +48497,169 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1860371849}
   m_CullTransparentMesh: 0
+--- !u!1 &1860562909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860562910}
+  - component: {fileID: 1860562915}
+  - component: {fileID: 1860562914}
+  - component: {fileID: 1860562913}
+  - component: {fileID: 1860562912}
+  - component: {fileID: 1860562911}
+  m_Layer: 0
+  m_Name: Initialize (ActionNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1860562910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860562909}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1123938273}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1860562911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860562909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1860562912}
+  OutputSocket: {fileID: 150974158}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &1860562912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860562909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51501.617
+    y: 50818.723
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1860562915}
+  EdgeList:
+  - {fileID: 1860562911}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1860562913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860562909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51244.96
+    y: 50818.723
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1860562915}
+  EdgeList:
+  - {fileID: 1597252249}
+  - {fileID: 1258713305}
+  Icon: {fileID: 0}
+--- !u!114 &1860562914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860562909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51281.2
+    y: 50871.38
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1860562915}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1860562915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860562909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1209557898}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51260
+    y: 50760
+    width: 244.71875
+    height: 112.80859
+  Info: Initialize
+  InputSocketList:
+  - {fileID: 1860562913}
+  OutputSocketList:
+  - {fileID: 1860562912}
+  DefaultOutputSocket: {fileID: 1860562914}
+  Active: 1
+  Lables:
+  - 
+  TargetGameObject: {fileID: 1611429975}
+  ComponentTypeName: RuntimeWordSetGenerator
+  MethodName: Void Initialize()
+  ParameterValueStrings:
+  - 
+  - 
 --- !u!114 &1861208284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49123,6 +49337,7 @@ GameObject:
   - component: {fileID: 1899846512}
   - component: {fileID: 1899846511}
   - component: {fileID: 1899846510}
+  - component: {fileID: 1899846513}
   m_Layer: 0
   m_Name: Main (EntryPointNode)
   m_TagString: Untagged
@@ -49159,13 +49374,15 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50358.9
-    y: 50398.82
+    x: 50288.9
+    y: 50228.84
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1899846512}
-  EdgeList: []
+  EdgeList:
+  - {fileID: 1899846513}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1899846511
 MonoBehaviour:
@@ -49183,13 +49400,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50191.2
-    y: 50451.85
+    x: 50121.2
+    y: 50281.92
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1899846512}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &1899846512
 MonoBehaviour:
@@ -49197,26 +49415,44 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1899846508}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1935184719, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
-  IsSelected: 1
+  IsSelected: 0
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50170
-    y: 50340
+    x: 50100
+    y: 50170
     width: 192
-    height: 113.28125
+    height: 113.35156
   Info: ' Main Entry'
   InputSocketList: []
   OutputSocketList:
   - {fileID: 1899846510}
   DefaultOutputSocket: {fileID: 1899846511}
-  Enable: 0
+  Active: 0
+--- !u!114 &1899846513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899846508}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1899846510}
+  OutputSocket: {fileID: 720323810}
+  EditPoints: []
+  ClickEditpointIndex: 0
 --- !u!114 &1904645945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49887,13 +50123,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51144.96
-    y: 50789.09
+    y: 50790.656
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1926645324}
   EdgeList:
   - {fileID: 321951579}
+  Icon: {fileID: 0}
 --- !u!114 &1926645324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49913,13 +50150,13 @@ MonoBehaviour:
     x: 51160
     y: 50730
     width: 161.14453
-    height: 113.24609
+    height: 115.44922
   Info: Back
   InputSocketList:
   - {fileID: 1926645323}
   OutputSocketList: []
   DefaultOutputSocket: {fileID: 1926645326}
-  Enable: 1
+  Active: 1
 --- !u!4 &1926645325
 Transform:
   m_ObjectHideFlags: 0
@@ -49950,12 +50187,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51181.2
-    y: 50841.816
+    y: 50844.02
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1926645324}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &1927886645
 GameObject:
@@ -50620,131 +50858,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Result: 
   ActionList: []
---- !u!1 &1966740444
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1966740449}
-  - component: {fileID: 1966740445}
-  - component: {fileID: 1966740446}
-  - component: {fileID: 1966740447}
-  - component: {fileID: 1966740448}
-  m_Layer: 0
-  m_Name: connect to server (EntryPointNode)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1966740445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966740444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1935184719, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 1
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 49260
-    y: 50580
-    width: 192
-    height: 139.90625
-  Info: Sync With Server
-  InputSocketList: []
-  OutputSocketList:
-  - {fileID: 1966740447}
-  DefaultOutputSocket: {fileID: 1966740446}
-  Enable: 1
---- !u!114 &1966740446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966740444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 49281.2
-    y: 50718.477
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 1966740445}
-  EdgeList: []
-  AutoHide: 1
---- !u!114 &1966740447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966740444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1595647141}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 49448.9
-    y: 50652.16
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 1966740445}
-  EdgeList:
-  - {fileID: 1966740448}
-  AutoHide: 0
---- !u!114 &1966740448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966740444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 1966740447}
-  OutputSocket: {fileID: 1094842715}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!4 &1966740449
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966740444}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1280137952}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971962690
 GameObject:
   m_ObjectHideFlags: 0
@@ -52081,13 +52194,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52949.527
-    y: 51470.21
+    y: 51471.77
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2013892161}
   EdgeList:
   - {fileID: 2013892159}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &2013892161
 MonoBehaviour:
@@ -52102,20 +52216,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 862792463}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 52652.63
     y: 51412.023
     width: 300
-    height: 126.51172
+    height: 128.78516
   Info: Share User Puzzle
   InputSocketList:
   - {fileID: 2013892162}
   OutputSocketList:
   - {fileID: 2013892160}
   DefaultOutputSocket: {fileID: 2013892164}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 1504256894}
 --- !u!114 &2013892162
 MonoBehaviour:
@@ -52134,13 +52248,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52637.59
-    y: 51503.734
+    y: 51506.008
     width: 20
     height: 20
   Info: Input
   Node: {fileID: 2013892161}
   EdgeList:
   - {fileID: 177968345}
+  Icon: {fileID: 0}
 --- !u!4 &2013892163
 Transform:
   m_ObjectHideFlags: 0
@@ -52152,7 +52267,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1694912034}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2013892164
 MonoBehaviour:
@@ -52171,12 +52286,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52673.83
-    y: 51537.105
+    y: 51539.38
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2013892161}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &2013986879
 GameObject:
@@ -52265,7 +52381,7 @@ GameObject:
   - component: {fileID: 2014554987}
   - component: {fileID: 2014554988}
   m_Layer: 0
-  m_Name: Success (OutputNode)
+  m_Name: Success or Fail (OutputNode)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52287,16 +52403,16 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51050
-    y: 50590
+    x: 51060
+    y: 50350
     width: 153
-    height: 113.16406
-  Info: Success
+    height: 140.125
+  Info: Success or Fail
   InputSocketList:
   - {fileID: 2014554988}
   OutputSocketList: []
   DefaultOutputSocket: {fileID: 2014554987}
-  Enable: 1
+  Active: 1
 --- !u!114 &2014554987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52313,13 +52429,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51071.2
-    y: 50701.734
+    x: 51081.2
+    y: 50488.695
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2014554986}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &2014554988
 MonoBehaviour:
@@ -52337,14 +52454,17 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51034.96
-    y: 50648.793
+    x: 51044.96
+    y: 50422.562
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2014554986}
   EdgeList:
-  - {fileID: 1408189143}
+  - {fileID: 474520976}
+  - {fileID: 1715790979}
+  - {fileID: 358765383}
+  Icon: {fileID: 0}
 --- !u!4 &2014554989
 Transform:
   m_ObjectHideFlags: 0
@@ -52356,7 +52476,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1280137952}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2019612341
 GameObject:
@@ -53005,13 +53125,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51274.96
-    y: 50328.82
+    y: 50328.84
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2048096395}
   EdgeList:
   - {fileID: 1604686894}
+  Icon: {fileID: 0}
 --- !u!114 &2048096395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53031,7 +53152,7 @@ MonoBehaviour:
     x: 51290
     y: 50270
     width: 268.22656
-    height: 169.05469
+    height: 169.125
   Info: Generate Puzzle
   InputSocketList:
   - {fileID: 2048096394}
@@ -53039,7 +53160,7 @@ MonoBehaviour:
   - {fileID: 2048096397}
   - {fileID: 2048096396}
   DefaultOutputSocket: {fileID: 2048096400}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 1209557898}
 --- !u!114 &2048096396
 MonoBehaviour:
@@ -53054,16 +53175,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 51555.125
-    y: 50397.547
+    y: 50397.617
     width: 20
     height: 20
   Info: Created
   Node: {fileID: 2048096395}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &2048096397
 MonoBehaviour:
@@ -53082,13 +53204,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51555.125
-    y: 50366.035
+    y: 50366.105
     width: 20
     height: 20
   Info: Cancel
   Node: {fileID: 2048096395}
   EdgeList:
   - {fileID: 2048096398}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &2048096398
 MonoBehaviour:
@@ -53138,12 +53261,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51311.2
-    y: 50437.625
+    y: 50437.695
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2048096395}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &2050596754
 GameObject:
@@ -53684,13 +53808,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 49474.777
-    y: 50362.418
+    y: 50363
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2078058678}
   EdgeList:
   - {fileID: 2078058676}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &2078058678
 MonoBehaviour:
@@ -53705,19 +53830,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1595647141}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 49340
     y: 50310
     width: 137.8789
-    height: 100.41797
+    height: 101
   Info: 
   InputSocketList: []
   OutputSocketList:
   - {fileID: 2078058677}
   DefaultOutputSocket: {fileID: 2078058680}
-  Enable: 1
+  Active: 1
 --- !u!4 &2078058679
 Transform:
   m_ObjectHideFlags: 0
@@ -53748,12 +53873,13 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 49361.2
-    y: 50408.99
+    y: 50409.57
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2078058678}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
 --- !u!1 &2078637747
 GameObject:
@@ -53837,7 +53963,6 @@ GameObject:
   - component: {fileID: 2082499127}
   - component: {fileID: 2082499125}
   - component: {fileID: 2082499130}
-  - component: {fileID: 2082499131}
   - component: {fileID: 2082499128}
   m_Layer: 0
   m_Name: ' (FollowMachineNode)(Clone)(Clone)'
@@ -53863,13 +53988,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51124.96
-    y: 50289.09
+    y: 50290.656
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2082499126}
   EdgeList:
   - {fileID: 321951578}
+  Icon: {fileID: 0}
 --- !u!114 &2082499126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53883,21 +54009,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 933977340}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
     x: 51140
     y: 50230
     width: 243.39453
-    height: 169.01953
+    height: 139.71484
   Info: Sync With Server
   InputSocketList:
   - {fileID: 2082499125}
   OutputSocketList:
   - {fileID: 2082499127}
-  - {fileID: 2082499128}
   DefaultOutputSocket: {fileID: 2082499130}
-  Enable: 1
+  Active: 1
   FollowMachine: {fileID: 1595647141}
 --- !u!114 &2082499127
 MonoBehaviour:
@@ -53916,13 +54041,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51380.293
-    y: 50326
+    y: 50328.203
     width: 20
     height: 20
-  Info: Success
+  Info: Success or Fail
   Node: {fileID: 2082499126}
   EdgeList:
-  - {fileID: 2082499131}
+  - {fileID: 2082499128}
+  Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &2082499128
 MonoBehaviour:
@@ -53930,24 +54056,18 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2082499124}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Graph: {fileID: 933977340}
+  Graph: {fileID: 0}
   IsSelected: 0
   IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 51380.293
-    y: 50357.51
-    width: 20
-    height: 20
-  Info: Fail
-  Node: {fileID: 2082499126}
-  EdgeList: []
-  AutoHide: 0
+  InputSocket: {fileID: 2082499127}
+  OutputSocket: {fileID: 1639219173}
+  EditPoints: []
+  ClickEditpointIndex: 0
 --- !u!4 &2082499129
 Transform:
   m_ObjectHideFlags: 0
@@ -53959,7 +54079,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1270985011}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2082499130
 MonoBehaviour:
@@ -53978,156 +54098,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51161.2
-    y: 50397.59
+    y: 50368.285
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2082499126}
   EdgeList: []
+  Icon: {fileID: 0}
   AutoHide: 1
---- !u!114 &2082499131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2082499124}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 2082499127}
-  OutputSocket: {fileID: 1639219173}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!1 &2086920567
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2086920568}
-  - component: {fileID: 2086920572}
-  - component: {fileID: 2086920571}
-  - component: {fileID: 2086920570}
-  - component: {fileID: 2086920569}
-  m_Layer: 0
-  m_Name: Sync with server (EntryPointNode)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2086920568
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2086920567}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1270985011}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2086920569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2086920567}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 2086920570}
-  OutputSocket: {fileID: 1520262353}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!114 &2086920570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2086920567}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 933977340}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 49908.9
-    y: 50719.09
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 2086920572}
-  EdgeList:
-  - {fileID: 2086920569}
-  AutoHide: 0
---- !u!114 &2086920571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2086920567}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 933977340}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 49741.2
-    y: 50771.816
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 2086920572}
-  EdgeList: []
-  AutoHide: 1
---- !u!114 &2086920572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2086920567}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1935184719, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 933977340}
-  IsSelected: 1
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 49720
-    y: 50660
-    width: 192
-    height: 113.24609
-  Info: UserPuzzles
-  InputSocketList: []
-  OutputSocketList:
-  - {fileID: 2086920570}
-  DefaultOutputSocket: {fileID: 2086920571}
-  Enable: 0
 --- !u!1 &2087620295
 GameObject:
   m_ObjectHideFlags: 0

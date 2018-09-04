@@ -36,7 +36,6 @@ public class UserPuzzlesServer
     private class InData
     {
         public DateTime LastUpdate { get; set; }
-        public List<NewPuzzle> NewPuzzles { get; set; }
         public List<PuzzleUpdate> UpdatedPuzzles { get; set; }
 
         public class PuzzleUpdate : IUpdatedUserPuzzle
@@ -45,11 +44,8 @@ public class UserPuzzlesServer
             public string CategoryName { get; set; }
             public int? Rate { get; set; }
             public int? PlayCount { get; set; }
-        }
-
-        public class NewPuzzle : IRegisterPuzzleInfo
-        {
-            public int ServerID { get; set; }
+            public string Content { get; set; }
+            public string Clue { get; set; }
             public int ID { get; set; }
         }
     }
@@ -66,11 +62,6 @@ public class UserPuzzlesServer
             public string Content { get; set; }
             public int ID { get; set; }
         }
-    }
-
-    public IEnumerable<IRegisterPuzzleInfo> GetServerRegisterPuzzles()
-    {
-        return _result.NewPuzzles.Cast<IRegisterPuzzleInfo>();
     }
 
     public IEnumerable<IUpdatedUserPuzzle> GetUpdatedPuzzles()
@@ -92,11 +83,8 @@ public interface IUpdatedUserPuzzle
     string CategoryName { get; set; }
     int? Rate { get; set; }
     int? PlayCount { get; set; }
-}
-public interface IRegisterPuzzleInfo
-{
-    int ServerID { get; set; }
+    string Content { get; set; }
+    string Clue { get; set; }
     int ID { get; set; }
 }
-
 #endregion

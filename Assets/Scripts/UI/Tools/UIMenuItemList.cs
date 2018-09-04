@@ -56,6 +56,7 @@ public class UIMenuItemList : MgsUIWindow
 
         _selectedItem = uiMenuItem;
         _selectedItem.OnSelected.Invoke();
+        Close("Select");
     }
 
 

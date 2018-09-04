@@ -12,47 +12,22 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
+public class RuntimeWordSetGenerator : MonoBehaviour
 {
-    [Header("Windows")]
-    public MgsUIWindow GetClueWindow;
-    public MgsUIWindow GetWordsWindow;
-    public MgsUIWindow WordCountWindow;
-    public MgsUIWindow WordsetApproval;
-    public MgsUIWindow PartiotionFaildWindow;
+    public GetWords WordsWindow;
 
     [Header("Components")]
     public WordSetGenerator Generator;
     public Partitioner Partitioner;
 
-    [Header("Events")]
-    public UnityEvent OnExit;
+    private int _targetFrameRate;
+    private int _vSyncCount;
 
-    public bool GenerationFaild=true;
-
+/*
     [FollowMachine("Generate")]
     public IEnumerator StartProcess()
     {
-        #region Prepare Wordset generation process
 
-        // Cache 
-        GeneratorUI gui = UIController.Instance.Generator;
-
-        GameController.Instance.ClearWords();
-
-        // Disable letter selection
-        Singleton.Instance.RayCaster.TriggerRaycast(false);
-        Singleton.Instance.RayCaster.EnablePan(false);
-
-        // Set application fast mode
-        var targetFrameRate = Application.targetFrameRate;
-        var vSyncCount = QualitySettings.vSyncCount;
-        Application.targetFrameRate = 0;
-        QualitySettings.vSyncCount = 0;
-
-        // Set words for test
-        gui.SetWords("فسنجان سمبوسه سوپ کشک خورشقيمه قرمهسبزي قیمه بادمجان شیربرنج کلهپاچه باقالی‌پلو شیشلیک رشته‌پلو");
-        #endregion
 
         // ***************************** Clue
         clue:
@@ -104,14 +79,39 @@ public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
         //***************************** Success message
         yield return UIController.Instance.DisplayMessage(ThemeManager.Instance.LanguagePack.GetLable("SuccesfullOperation"));
 
+
+
+    }
+*/
+
+    public void Finish()
+    {
         //**************************** Clear screen
         GameController.Instance.ClearWords();
 
         // Set application to normal mode
-         Application.targetFrameRate = targetFrameRate;
-         QualitySettings.vSyncCount = vSyncCount;
+        Application.targetFrameRate = _targetFrameRate;
+        QualitySettings.vSyncCount = _vSyncCount;
 
     }
+
+    public void Initialize()
+    {
+        
+        GameController.Instance.ClearWords();
+
+        // Disable letter selection
+        Singleton.Instance.RayCaster.TriggerRaycast(false);
+        Singleton.Instance.RayCaster.EnablePan(false);
+
+        // Set application fast mode
+        _targetFrameRate = Application.targetFrameRate;
+        _vSyncCount = QualitySettings.vSyncCount;
+        Application.targetFrameRate = 0;
+        QualitySettings.vSyncCount = 0;
+        
+    }
+
     [FollowMachine("Generate words","Success,Fail")]
     public IEnumerator Generate()
     {
@@ -120,7 +120,7 @@ public class RuntimeWordSetGenerator : MgsSingleton<RuntimeWordSetGenerator>
         #region Setup word generator
 
         // Setup generator
-        Generator.AllWords = UIController.Instance.Generator.GetWords().Replace(' ', '\n');
+        Generator.AllWords = WordsWindow.WordsText.text.Replace(' ', '\n');
         Generator.Clue = UIController.Instance.Generator.GetClue();
         Generator.Initialize();
         Generator.UsedWordCount = UIController.Instance.Generator.GetWordCount();

@@ -5,7 +5,7 @@ using FollowMachineDll.Attributes;
 public class UserPuzzleSelectionWindow : UIMenuItemList
 {
     [FollowMachine("Refresh Selection Window")]
-    public void Refresh()
+    public override void Refresh()
     {
 
         var userPuzzles = LocalDBController.Instance.UserPuzzles.GetUserPuzzles();

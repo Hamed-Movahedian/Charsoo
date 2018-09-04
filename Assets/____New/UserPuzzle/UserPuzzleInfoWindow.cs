@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UserPuzzleInfoWindow : MgsUIWindow
 {
     public UserPuzzleSelectionWindow PuzzleSelectionWindow;
+
     public Text Clue;
     public Text Description;
     public Image RateImage;
@@ -14,7 +15,7 @@ public class UserPuzzleInfoWindow : MgsUIWindow
     public Button RegisterButton;
     public Button ShareButton;
 
-    public void Refresh([Refrence]UserPuzzle paz, UserPuzzle p2)
+    public override void Refresh()
     {
         var puzzle = PuzzleSelectionWindow.SelectedPuzzle;
 
@@ -37,7 +38,7 @@ public class UserPuzzleInfoWindow : MgsUIWindow
             PlayCount.text = ArabicFixer.Fix("نفر") + puzzle.PlayCount;
             if (puzzle.Rate != null) RateImage.fillAmount = puzzle.Rate.Value / 5f;
             Description.text = ThemeManager.Instance.LanguagePack.
-                GetLable("UserPuzzleAcceptedFull").Replace(" * **",ArabicFixer.Fix(puzzle.CategoryName));
+                GetLable("UserPuzzleAcceptedFull").Replace("***",ArabicFixer.Fix(puzzle.CategoryName));
         }
     }
 }

@@ -52,32 +52,21 @@ public class UserPuzzleLocalDB
         }
     }
 
-    public void RegisterPuzzles(IEnumerable<IRegisterPuzzleInfo> registerPuzzleInfos)
-    {
-        foreach (var puzzleInfo in registerPuzzleInfos)
-        {
-            var puzzle = LocalDBController.Table<UserPuzzle>().FirstOrDefault(p => p.ID == puzzleInfo.ID);
-
-            if (puzzle == null) continue;
-
-            puzzle.ServerID = puzzleInfo.ServerID;
-            LocalDBController.InsertOrReplace(puzzle);
-        }
-    }
-
     public void UpdatePuzzles(IEnumerable<IUpdatedUserPuzzle> updatedUserPuzzles)
     {
         foreach (var puzzleUpdate in updatedUserPuzzles)
         {
-            var puzzle = LocalDBController
-                .Table<UserPuzzle>()
-                .FirstOrDefault(p => p.ServerID == puzzleUpdate.ServerID);
 
-            if (puzzle == null) continue;
-
-            puzzle.Rate = puzzleUpdate.Rate;
-            puzzle.CategoryName = puzzleUpdate.CategoryName;
-            puzzle.PlayCount = puzzleUpdate.PlayCount;
+            var puzzle = new UserPuzzle
+            {
+                ID = puzzleUpdate.ID,
+                ServerID = puzzleUpdate.ServerID,
+                Clue = puzzleUpdate.Clue,
+                Rate = puzzleUpdate.Rate,
+                Content = puzzleUpdate.Content,
+                PlayCount = puzzleUpdate.PlayCount,
+                CategoryName= puzzleUpdate.CategoryName
+            };
 
             LocalDBController.InsertOrReplace(puzzle);
         }
