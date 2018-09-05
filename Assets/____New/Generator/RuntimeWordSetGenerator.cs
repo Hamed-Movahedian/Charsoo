@@ -14,7 +14,10 @@ using UnityEngine.UI;
 
 public class RuntimeWordSetGenerator : MonoBehaviour
 {
-    public GetWords WordsWindow;
+    [Header("Windows")]
+    public WindowGetWords WordsWindow;
+    public WindowGetClue ClueWindow;
+    public WindowGetWordCount WordCountWindow;
 
     [Header("Components")]
     public WordSetGenerator Generator;
@@ -109,7 +112,8 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         _vSyncCount = QualitySettings.vSyncCount;
         Application.targetFrameRate = 0;
         QualitySettings.vSyncCount = 0;
-        
+        WordsWindow.WordsText.text="فسنجان سمبوسه سوپ کشک خورشقيمه قرمهسبزي قیمه بادمجان شیربرنج کلهپاچه باقالی‌پلو شیشلیک رشته‌پلو";
+
     }
 
     [FollowMachine("Generate words","Success,Fail")]
@@ -121,9 +125,9 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
         // Setup generator
         Generator.AllWords = WordsWindow.WordsText.text.Replace(' ', '\n');
-        Generator.Clue = UIController.Instance.Generator.GetClue();
+        Generator.Clue = ClueWindow.ClueInputField.text;
         Generator.Initialize();
-        Generator.UsedWordCount = UIController.Instance.Generator.GetWordCount();
+        Generator.UsedWordCount = Generator.WordStrings.Count;
         Generator.MaxResults = 100;
 
         #endregion

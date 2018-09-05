@@ -31431,7 +31431,7 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -51383.03, y: -50260.77}
+  Position: {x: -51825.918, y: -50332.133}
   Zoom: 0.6495013
   NodeList:
   - {fileID: 1258713302}
@@ -32355,7 +32355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1254603480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42361,6 +42361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff062cb842b21744bcd32ed0fe80c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordsWindow: {fileID: 0}
+  ClueWindow: {fileID: 0}
+  WordCountWindow: {fileID: 0}
   Generator: {fileID: 1611429978}
   Partitioner: {fileID: 1611429977}
 --- !u!114 &1611429980
@@ -42374,6 +42377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff062cb842b21744bcd32ed0fe80c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WordsWindow: {fileID: 0}
+  ClueWindow: {fileID: 0}
+  WordCountWindow: {fileID: 0}
   Generator: {fileID: 0}
   Partitioner: {fileID: 0}
 --- !u!1 &1613036722
