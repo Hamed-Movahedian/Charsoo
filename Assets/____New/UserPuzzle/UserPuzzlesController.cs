@@ -16,18 +16,7 @@ internal class UserPuzzlesController : MgsSingleton<UserPuzzlesController>
 
     private readonly UserPuzzleSynchronizer _sync = new UserPuzzleSynchronizer();
 
-    public void Save()
-    {
-        WordSet wordSet = GameController.Instance.GetWordSet();
 
-        var puzzle = new UserPuzzle
-        {
-            Clue = wordSet.Clue,
-            Content = StringCompressor.CompressString(JsonUtility.ToJson(wordSet))
-        };
-
-        LocalDBController.Instance.UserPuzzles.AddPuzzle(puzzle);
-    }
 
 /*    [FollowMachine("Sync with Server","Success,Fail")]
     public IEnumerator Sync()

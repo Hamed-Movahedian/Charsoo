@@ -12,7 +12,7 @@ public class LocalDBController: MgsSingleton<LocalDBController>
     private static DataService _dataService;
     public UserPuzzleLocalDB UserPuzzles= new UserPuzzleLocalDB();
 
-    private static DataService DataService
+    public static DataService DataService
     {
         get
         {

@@ -127,7 +127,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         Generator.AllWords = WordsWindow.WordsText.text.Replace(' ', '\n');
         Generator.Clue = ClueWindow.ClueInputField.text;
         Generator.Initialize();
-        Generator.UsedWordCount = Generator.WordStrings.Count;
+        Generator.UsedWordCount = (int) WordCountWindow.WordCountSlider.value;
         Generator.MaxResults = 100;
 
         #endregion
@@ -139,7 +139,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
             Generator.MakeWordSet(),
             () => UIController.Instance.SetProgressbar(
                 MgsCoroutine.Percentage,
-                ThemeManager.Instance.LanguagePack.GetLable("Inprogress_GenerateWordSet")),
+                ThemeManager.Instance.LanguagePack.GetLable("Inprogress/GenerateWordSet")),
             0.1);
 
         #endregion
@@ -172,10 +172,24 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
         // if partition successfully break
         if (Partitioner.PartitionSuccessfully)
+            FollowMachine.SetOutput("Success");
 
         #endregion
-            
-       FollowMachine.SetOutput("Success");
 
+
+    }
+
+    [FollowMachine("Save puzzle")]
+    public void Save()
+    {
+        WordSet wordSet = GameController.Instance.GetWordSet();
+
+        var puzzle = new UserPuzzle
+        {
+            Clue = wordSet.Clue,
+            Content = StringCompressor.CompressString(JsonUtility.ToJson(wordSet))
+        };
+
+        LocalDBController.Instance.UserPuzzles.AddPuzzle(puzzle);
     }
 }

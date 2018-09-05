@@ -85,6 +85,7 @@ public class UserPuzzleLocalDB
 
     public void AddPuzzle(UserPuzzle puzzle)
     {
+        puzzle.ID = LocalDBController.Table<UserPuzzle>().Max(p => p.ID) + 1;
         LocalDBController.InsertOrReplace(puzzle);
     }
 }
