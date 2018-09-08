@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FollowMachineDll.Attributes;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -15,9 +16,11 @@ public class WordSpawner : BaseObject
     //************* private
     private Dictionary<Vector2, Letter> _locationDictionary;
     private Bounds _bounds;
+    public string Clue;
+    public string PuzzleRow;
 
 
-    [ContextMenu("Spawn")]
+    [FollowMachine("Spawn Words")]
     public void SpawnWords()
     {
         if (WordSet == null)
@@ -39,9 +42,11 @@ public class WordSpawner : BaseObject
         _bounds = WordSet.GetBound();
 
         Vector3 boundsCenter = _bounds.center;
+
         boundsCenter.x = Mathf.Round(boundsCenter.x);
         boundsCenter.y = Mathf.Round(boundsCenter.y);
         boundsCenter.z = 0;
+
         _bounds.center = boundsCenter;
 
         // Spawn new words
@@ -51,6 +56,7 @@ public class WordSpawner : BaseObject
         // PostProcess
         WordManager.GetWordsFormChilds();
         LetterController.ConnectAdjacentLetters();
+
     }
 
     private void SpawnWord(SWord sWord)

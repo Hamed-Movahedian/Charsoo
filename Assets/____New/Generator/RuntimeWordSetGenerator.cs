@@ -192,4 +192,5 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
         LocalDBController.Instance.UserPuzzles.AddPuzzle(puzzle);
     }
+
 }

@@ -2,6 +2,7 @@
 using FollowMachineDll.Attributes;
 using MgsCommonLib.Theme;
 using MgsCommonLib.UI;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UserPuzzleInfoWindow : MgsUIWindow
@@ -40,5 +41,23 @@ public class UserPuzzleInfoWindow : MgsUIWindow
             Description.text = ThemeManager.Instance.LanguagePack.
                 GetLable("UserPuzzleAcceptedFull").Replace("***",ArabicFixer.Fix(puzzle.CategoryName));
         }
+    }
+
+    [FollowMachine("Prepare selected puzzle for spawn")]
+    public void SetForSpawn()
+    {
+        var selectedPuzzle = PuzzleSelectionWindow.SelectedPuzzle;
+
+        var json = StringCompressor.DecompressString(selectedPuzzle.Content);
+
+        WordSet wordSet = new WordSet();
+
+        JsonUtility.FromJsonOverwrite(json, wordSet);
+
+        Singleton.Instance.WordSpawner.WordSet = wordSet;
+        Singleton.Instance.WordSpawner.Clue = selectedPuzzle.Clue;
+        Singleton.Instance.WordSpawner.PuzzleRow = "";
+
+        Singleton.Instance.WordSpawner.EditorInstatiate = null;
     }
 }

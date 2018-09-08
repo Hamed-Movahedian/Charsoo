@@ -15,11 +15,13 @@ public class HUD : BaseObject
 
     public void SetupHUD()
     {
-        _clue = ContentManager.SelectedPuzzleItem.Clue.text;
+        _clue = WordSpawner.Clue;
         StartClueText.text = _clue;
         HeaderClueText.text = _clue;
         HintClueText.text = _clue;
-        IndexText.text = ContentManager.SelectedPuzzleItem.Row.text;
+        IndexText.text = WordSpawner.PuzzleRow;
+        gameObject.SetActive(true);
+
     }
 
 }
