@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using FollowMachineDll.Attributes;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -160,7 +161,7 @@ public class HintManager : BaseObject
 
 
 
-    [ContextMenu("Hint One Part")]
+    [FollowMachine("Hint One Part")]
     public void ShowNextPart()
     {
         if (_wordHintActive)
@@ -188,7 +189,7 @@ public class HintManager : BaseObject
         OnHintShow.Invoke();
     }
 
-    [ContextMenu("Hint Full")]
+    [FollowMachine("Hint Full")]
     public void ShowHwoleWord()
     {
         if (_wordHintActive)
@@ -255,4 +256,5 @@ public class HintManager : BaseObject
 
         WordHintPanel.gameObject.SetActive(false);
     }
+
 }
