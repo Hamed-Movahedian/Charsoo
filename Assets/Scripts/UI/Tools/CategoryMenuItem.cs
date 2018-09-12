@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using ArabicSupport;
+using MgsCommonLib.Theme;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CategoryMenuItem : BaseObject
 {
+
+
     #region Public
 
     public Image Icon;
@@ -125,8 +128,8 @@ public class CategoryMenuItem : BaseObject
         {
             OnLowMoney.Invoke();
         }
+#1#
 */
-
     }
 
     #endregion

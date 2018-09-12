@@ -15,10 +15,9 @@ public class UICategoryMenuItem : UIMenuItem
     public GameObject SubCategoryGameObject;
     public GameObject CheckMarckGameObject;
     public GameObject BuyGameObject;
-    public Text CounerText;
+    public Text CounterText;
     public GameObject NewIconGameObject;
-
-
+    
     protected override void Refresh(object data)
     {
         var category = (Category)data;
@@ -33,7 +32,7 @@ public class UICategoryMenuItem : UIMenuItem
             SubCategoryGameObject.SetActive(true);
             CheckMarckGameObject.SetActive(false);
             BuyGameObject.SetActive(false);
-            CounerText.gameObject.SetActive(false);
+            CounterText.gameObject.SetActive(false);
             GetComponent<RectTransform>().localScale = Vector3.one;
             return;
         }
@@ -44,9 +43,9 @@ public class UICategoryMenuItem : UIMenuItem
 
         SubCategoryGameObject.SetActive(false);
         CheckMarckGameObject.SetActive(solveCount == puzzles.Count);
-        CounerText.gameObject.SetActive(solveCount != puzzles.Count);
+        CounterText.gameObject.SetActive(solveCount != puzzles.Count);
 
-        CounerText.text = string.Format("{0}/{1}",
+        CounterText.text = string.Format("{0}/{1}",
             ArabicFixer.Fix(solveCount.ToString(), true, true),
             ArabicFixer.Fix(puzzles.Count.ToString(), true, true));
 
