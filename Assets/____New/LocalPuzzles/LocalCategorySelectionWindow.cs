@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class LocalCategorySelectionWindow : UIMenuItemList
 {
-
     public override void Refresh()
     {
         int? parentID = SelectedCategory?.ID;
@@ -19,15 +18,26 @@ public class LocalCategorySelectionWindow : UIMenuItemList
     [FollowMachine("Refresh List", "Child Category List,Puzzle List")]
     public void ListToShow()
     {
-        int? parentID = SelectedCategory?.ID;
-        var categories = LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == parentID).ToList();
-        if (categories.Count == 0)
+        if (LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == SelectedCategory.ID).ToList().Count == 0)
             FollowMachine.SetOutput("Puzzle List");
         else
             FollowMachine.SetOutput("Child Category List");
-
     }
 
+    [FollowMachine("Back", "ExitLocalPuzzles,CategoryParent")]
+    public void Back()
+    {
+
+        if (SelectedCategory == null)
+            FollowMachine.SetOutput("ExitLocalPuzzles");
+        else
+        {
+            Category pc = LocalDBController.Table<Category>().SqlWhere(c => c.ID == SelectedCategory.ParentID).ToList()[0];
+            Select(pc);
+            FollowMachine.SetOutput("CategoryParent");
+
+        }
+    }
 
     public Category SelectedCategory => (Category)GetSelectedItem();
 

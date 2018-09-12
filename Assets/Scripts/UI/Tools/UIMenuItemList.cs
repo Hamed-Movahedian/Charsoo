@@ -13,6 +13,7 @@ public class UIMenuItemList : MgsUIWindow
     private readonly List<UIMenuItem> _menuItems=new List<UIMenuItem>();
     private UIMenuItem _selectedItem;
     private float _lastSelectionTime;
+    private object _selectedData;
 
     public void UpdateItems(IEnumerable<object> data)
     {
@@ -40,8 +41,18 @@ public class UIMenuItemList : MgsUIWindow
 
     }
 
+    public void Select(object data)
+    {
+        _selectedData = data;
+        Close("Select");
+
+    }
+
+
     public void Select(UIMenuItem uiMenuItem)
     {
+        Select(uiMenuItem.Data);
+        return;
         if (_selectedItem == uiMenuItem)
             if (Time.time - _lastSelectionTime < .5f)
                 Close("ItemSelected");
@@ -62,6 +73,7 @@ public class UIMenuItemList : MgsUIWindow
 
     public object GetSelectedItem()
     {
+        return _selectedData;
         return _selectedItem != null ? _selectedItem.Data : null;
     }
 }
