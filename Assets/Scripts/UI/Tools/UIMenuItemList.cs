@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using JetBrains.Annotations;
 using MgsCommonLib.UI;
 using UnityEngine;
 
@@ -34,14 +35,14 @@ public class UIMenuItemList : MgsUIWindow
         // return extra items to pool manager
         while (dataList.Count<_menuItems.Count)
         {
-            var lastItem = _menuItems[_menuItems.Count];
+            var lastItem = _menuItems[_menuItems.Count-1];
             _menuItems.Remove(lastItem);
             PoolManager.Instance.Return(lastItem);
         }
 
     }
 
-    public void Select(object data)
+    public void Select([CanBeNull] object data)
     {
         _selectedData = data;
         Close("Select");
