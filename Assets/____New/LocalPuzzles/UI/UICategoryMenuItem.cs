@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class UICategoryMenuItem : UIMenuItem
 {
-
+    private bool _avalable;
     public Image Icon;
     public Text Name;
+
 
     [Header("Conditions")]
     public GameObject SubCategoryGameObject;
@@ -17,15 +18,16 @@ public class UICategoryMenuItem : UIMenuItem
     public GameObject BuyGameObject;
     public Text CounterText;
     public GameObject NewIconGameObject;
-    
+
     protected override void Refresh(object data)
     {
         var category = (Category)data;
+        _avalable = IsCategoryAvalable(category);
 
         Name.text = ArabicFixer.Fix(category.Name);
 
         NewIconGameObject.SetActive(!category.Visit);
-        BuyGameObject.SetActive(category.Price > 0);
+
 
         if (LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == category.ID).Any())
         {
@@ -41,6 +43,8 @@ public class UICategoryMenuItem : UIMenuItem
 
         var solveCount = puzzles.Count(p => p.Solved);
 
+        BuyGameObject.SetActive(_avalable);
+
         SubCategoryGameObject.SetActive(false);
         CheckMarckGameObject.SetActive(solveCount == puzzles.Count);
         CounterText.gameObject.SetActive(solveCount != puzzles.Count);
@@ -53,4 +57,20 @@ public class UICategoryMenuItem : UIMenuItem
         GetComponent<RectTransform>().localScale = Vector3.one;
     }
 
+    private static bool IsCategoryAvalable(Category category)
+    {
+        if (category.Price <= 0) return true;
+        List<Purchases> list = LocalDBController.Table<Purchases>().SqlWhere(p => p.PurchaseID == "C-" + category.ID).ToList();
+        Debug.Log(list.Count);
+        if (list.Count>0) return true;
+        return false;
+    }
+
+    public override void Select()
+    {
+        if (_avalable)
+            base.Select();
+        else
+            ((LocalCategorySelectionWindow)_list).LockSelect();
+    }
 }

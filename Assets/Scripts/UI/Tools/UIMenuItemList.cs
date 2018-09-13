@@ -40,6 +40,8 @@ public class UIMenuItemList : MgsUIWindow
             PoolManager.Instance.Return(lastItem);
         }
 
+        ContentParent.GetComponent<ListContentSizeSetter>().SetupSize(dataList.Count,Prefab);
+
     }
 
     public void Select([CanBeNull] object data)
@@ -77,4 +79,5 @@ public class UIMenuItemList : MgsUIWindow
         return _selectedData;
         return _selectedItem != null ? _selectedItem.Data : null;
     }
+
 }

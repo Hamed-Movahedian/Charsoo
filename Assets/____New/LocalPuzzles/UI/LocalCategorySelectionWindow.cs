@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ArabicSupport;
@@ -19,6 +20,12 @@ public class LocalCategorySelectionWindow : UIMenuItemList
         var categories = LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == parentID).ToList();
         categories.Sort((p1, p2) => p1.Row.CompareTo(p2.ID));
         CategoryName.text = SelectedCategory!=null?ArabicFixer.Fix(SelectedCategory.Name):ArabicFixer.Fix("جدول های اصلی");
+        Category tc = SelectedCategory;
+        if (tc != null)
+        {
+            tc.Visit = true;
+            LocalDBController.InsertOrReplace(tc);
+        }
         UpdateItems(categories.Cast<object>());
     }
 
@@ -58,5 +65,20 @@ public class LocalCategorySelectionWindow : UIMenuItemList
     }
 
     public Category SelectedCategory => (Category)GetSelectedItem();
+
+    public void UnlockCategory()
+    {
+        Purchases purchase = new Purchases
+        {
+            LastUpdate = DateTime.Now,
+            PlayerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID,
+            PurchaseID = "C-" + SelectedCategory.ID
+        };
+    }
+
+    public void LockSelect()
+    {
+        Close("SelectedLockItem");
+    }
 
 }

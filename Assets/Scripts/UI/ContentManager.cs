@@ -10,9 +10,6 @@ public class ContentManager : BaseObject
 {
     #region Public
 
-    [Header("Base Parameters")]
-    public UnlockPanel UnlockPanel;
-
 
     [Header("Header")]
     public Text HeaderTitle;

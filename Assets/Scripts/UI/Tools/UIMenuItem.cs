@@ -6,8 +6,8 @@ public abstract class UIMenuItem : MonoBehaviour
     public UnityEvent OnSelected;
     public UnityEvent OnDeselected;
 
-    private object _data;
-    private UIMenuItemList _list;
+    internal object _data;
+    internal UIMenuItemList _list;
 
     public object Data
     {
@@ -25,7 +25,7 @@ public abstract class UIMenuItem : MonoBehaviour
     protected abstract void Refresh(object data);
 
 
-    public void Select()
+    public virtual void Select()
     {
         _list.Select(this);
     }

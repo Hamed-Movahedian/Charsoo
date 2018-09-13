@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ArabicSupport;
@@ -70,6 +71,27 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
             CategoryWindow.Select(
                 LocalDBController.Table<Category>().SqlWhere(c => c.ID == _playingCategory.ParentID).ToList()[0]//.ElementAt(_playingCategory.ParentID.Value)
                 );
+    }
+    
+    public void LockSelect()
+    {
+        Close("SelectedLockItem");
+    }
+
+    public void UnlockCategoryPuzzles()
+    {
+        foreach (Puzzle puzzle in LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == _playingCategory.ID))
+        {
+            puzzle.Paid = true;
+            LocalDBController.InsertOrReplace(puzzle);
+            Purchases purchase=new Purchases
+            {
+                LastUpdate = DateTime.Now,
+                PlayerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID,
+                PurchaseID = "C-P-"+ _playingCategory.ID
+            };
+            LocalDBController.InsertOrReplace(purchase);
+        }
     }
 
 }

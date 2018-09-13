@@ -2,35 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using ArabicSupport;
+using MgsCommonLib.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UnlockPanel : BaseObject
+public class UnlockItem : MonoBehaviour
 {
-    public GameObject AskForBuyPanel;
-    public GameObject BuyCoinPanel;
+    public MgsDialougWindow AskForBuyPanel;
+    public UIMenuItemList BuyCoinPanel;
 
 
     [Header("Default Prices")]
     public int FreePackUnlock = 100;
-    public int PackPuzzles = 100;
 
-    /*
-
-        [Header("Panel MSG")]
-        
-        public string BuyPack;
-
-    */
-    [Multiline]
-    public string UnlockPack;
-    [Multiline]
-    public string UnlockPuzzles;
-
-    //private PanelItem _lItem;
-    //    private WordSetPanelItem _lWord;
     public Text PanelText;
+
     private int _price;
+
+    public void UnlockPuzzles(int price)
+    {
+
+        AskForBuyPanel.Show();
+    }
+
 
    /* public void ShowPackUnlock(PackPanelItem pack)
     {
