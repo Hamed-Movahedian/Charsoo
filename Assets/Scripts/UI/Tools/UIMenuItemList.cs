@@ -5,6 +5,7 @@ using System.Text;
 using JetBrains.Annotations;
 using MgsCommonLib.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIMenuItemList : MgsUIWindow
 {

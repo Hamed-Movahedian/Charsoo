@@ -11,6 +11,8 @@ using UnityEngine.UI;
 public class LocalCategorySelectionWindow : UIMenuItemList
 {
     public Text CategoryName;
+    private Category _clickedCategory;
+
     public override void Refresh()
     {
         int? parentID = null;
@@ -20,12 +22,6 @@ public class LocalCategorySelectionWindow : UIMenuItemList
         var categories = LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == parentID).ToList();
         categories.Sort((p1, p2) => p1.Row.CompareTo(p2.ID));
         CategoryName.text = SelectedCategory!=null?ArabicFixer.Fix(SelectedCategory.Name):ArabicFixer.Fix("جدول های اصلی");
-        Category tc = SelectedCategory;
-        if (tc != null)
-        {
-            tc.Visit = true;
-            LocalDBController.InsertOrReplace(tc);
-        }
         UpdateItems(categories.Cast<object>());
     }
 
@@ -72,12 +68,15 @@ public class LocalCategorySelectionWindow : UIMenuItemList
         {
             LastUpdate = DateTime.Now,
             PlayerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID,
-            PurchaseID = "C-" + SelectedCategory.ID
+            PurchaseID = "C-" + _clickedCategory.ID
         };
+        LocalDBController.InsertOrReplace(purchase);
+
     }
 
-    public void LockSelect()
+    public void LockSelect(Category data)
     {
+        _clickedCategory = data;
         Close("SelectedLockItem");
     }
 

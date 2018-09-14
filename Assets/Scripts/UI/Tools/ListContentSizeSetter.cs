@@ -18,7 +18,6 @@ public class ListContentSizeSetter : MonoBehaviour
 
         Vector2 size = GetComponent<RectTransform>().sizeDelta;
         size.y= contentHeight;
-        Debug.Log(size);
         GetComponent<RectTransform>().sizeDelta=size;
     }
 

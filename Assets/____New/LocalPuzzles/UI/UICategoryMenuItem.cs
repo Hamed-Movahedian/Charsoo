@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using ArabicSupport;
+using SQLite4Unity3d;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UICategoryMenuItem : UIMenuItem
 {
-    private bool _avalable;
+    //private bool _avalable;
     public Image Icon;
     public Text Name;
 
@@ -18,18 +19,20 @@ public class UICategoryMenuItem : UIMenuItem
     public GameObject BuyGameObject;
     public Text CounterText;
     public GameObject NewIconGameObject;
+    private Category _category;
 
     protected override void Refresh(object data)
     {
-        var category = (Category)data;
-        _avalable = IsCategoryAvalable(category);
 
-        Name.text = ArabicFixer.Fix(category.Name);
+        _category = (Category)data;
+        //_avalable = IsCategoryAvalable(category);
 
-        NewIconGameObject.SetActive(!category.Visit);
+        Name.text = ArabicFixer.Fix(_category.Name);
+
+        NewIconGameObject.SetActive(!_category.Visit);
 
 
-        if (LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == category.ID).Any())
+        if (LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == _category.ID).Any())
         {
             SubCategoryGameObject.SetActive(true);
             CheckMarckGameObject.SetActive(false);
@@ -38,14 +41,14 @@ public class UICategoryMenuItem : UIMenuItem
             GetComponent<RectTransform>().localScale = Vector3.one;
             return;
         }
+        SubCategoryGameObject.SetActive(false);
 
-        var puzzles = LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == category.ID).ToList();
+        var puzzles = LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == _category.ID).ToList();
 
         var solveCount = puzzles.Count(p => p.Solved);
 
-        BuyGameObject.SetActive(_avalable);
+        BuyGameObject.SetActive(!IsCategoryAvalable());
 
-        SubCategoryGameObject.SetActive(false);
         CheckMarckGameObject.SetActive(solveCount == puzzles.Count);
         CounterText.gameObject.SetActive(solveCount != puzzles.Count);
 
@@ -53,24 +56,42 @@ public class UICategoryMenuItem : UIMenuItem
             ArabicFixer.Fix(solveCount.ToString(), true, true),
             ArabicFixer.Fix(puzzles.Count.ToString(), true, true));
 
-
+        if (!IsCategoryAvalable())
+            CounterText.text = string.Format(ArabicFixer.Fix(_category.Price.ToString(), true, true));
+        else
+            CounterText.text = string.Format("{0}/{1}",
+                ArabicFixer.Fix(solveCount.ToString(), true, true),
+                ArabicFixer.Fix(puzzles.Count.ToString(), true, true));
+        
         GetComponent<RectTransform>().localScale = Vector3.one;
     }
 
-    private static bool IsCategoryAvalable(Category category)
+    private bool IsCategoryAvalable()
     {
-        if (category.Price <= 0) return true;
-        List<Purchases> list = LocalDBController.Table<Purchases>().SqlWhere(p => p.PurchaseID == "C-" + category.ID).ToList();
-        Debug.Log(list.Count);
-        if (list.Count>0) return true;
+        if (_category.Price <= 0)
+            return true;
+
+        if (
+            LocalDBController.Table<Purchases>()
+            .FirstOrDefault(p => p.PurchaseID == "C-" + _category.ID) != null
+            )
+            return true;
+
         return false;
     }
 
     public override void Select()
     {
-        if (_avalable)
+        if (IsCategoryAvalable())
+        {
+            if (!_category.Visit)
+            {
+                _category.Visit = true;
+                LocalDBController.InsertOrReplace(_category);
+            }
             base.Select();
+        }
         else
-            ((LocalCategorySelectionWindow)_list).LockSelect();
+            ((LocalCategorySelectionWindow)_list).LockSelect(_category);
     }
 }

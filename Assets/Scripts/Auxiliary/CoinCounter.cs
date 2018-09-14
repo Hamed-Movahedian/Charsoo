@@ -23,6 +23,12 @@ public class CoinCounter : BaseObject
 
     public void SetCounter()
     {
+        if (!gameObject.activeInHierarchy)
+        {
+            _coinCount = PurchaseManager.CurrentCoin;
+            _text.text = ArabicFixer.Fix(_coinCount.ToString("D"), false, true);
+            return;
+        }
         StopAllCoroutines();
         StartCoroutine(ChangeCoin(PurchaseManager.CurrentCoin));
     }
@@ -35,7 +41,7 @@ public class CoinCounter : BaseObject
         if (cc < newCount)
             while (cc + _step < newCount)
             {
-                GetComponent<RectTransform>().localScale = _scale*Random.Range(0.8f, 1.2f);
+                GetComponent<RectTransform>().localScale = _scale * Random.Range(0.8f, 1.2f);
                 cc += _step;
                 _text.text = ArabicFixer.Fix(cc.ToString("D"), false, true);
                 yield return new WaitForEndOfFrame();
@@ -43,7 +49,7 @@ public class CoinCounter : BaseObject
         else
             while (cc - _step > newCount)
             {
-                GetComponent<RectTransform>().localScale = _scale*Random.Range(0.8f, 1.2f);
+                GetComponent<RectTransform>().localScale = _scale * Random.Range(0.8f, 1.2f);
                 cc -= _step;
                 _text.text = ArabicFixer.Fix(cc.ToString("D"), false, true);
                 yield return new WaitForEndOfFrame();
