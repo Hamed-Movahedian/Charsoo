@@ -3950,8 +3950,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53922.9
-    y: 50092.305
+    x: 53392.9
+    y: 50052.418
     width: 20
     height: 20
   Info: 
@@ -3976,8 +3976,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53774.96
-    y: 50092.305
+    x: 53244.96
+    y: 50052.418
     width: 20
     height: 20
   Info: 
@@ -4005,8 +4005,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53811.2
-    y: 50138.875
+    x: 53281.2
+    y: 50098.99
     width: 20
     height: 20
   Info: 
@@ -4026,14 +4026,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 1247893180}
-  IsSelected: 0
+  IsSelected: 1
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53790
-    y: 50040
+    x: 53260
+    y: 50000
     width: 136
-    height: 100.30469
+    height: 100.41797
   Info: 
   InputSocketList:
   - {fileID: 121398962}
@@ -6884,6 +6884,7 @@ Transform:
   - {fileID: 1899846509}
   - {fileID: 338012149}
   - {fileID: 277750405}
+  - {fileID: 1953455004}
   m_Father: {fileID: 1610461280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9273,6 +9274,7 @@ GameObject:
   - component: {fileID: 338012151}
   - component: {fileID: 338012150}
   - component: {fileID: 338012154}
+  - component: {fileID: 338012155}
   m_Layer: 0
   m_Name: ' (FollowMachineNode)'
   m_TagString: Untagged
@@ -9309,8 +9311,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52154.96
-    y: 50668.504
+    x: 52264.96
+    y: 50393.324
     width: 20
     height: 20
   Info: 
@@ -9334,8 +9336,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 52413.766
-    y: 50706.68
+    x: 52692.57
+    y: 50396.68
     width: 20
     height: 20
   Info: Exit
@@ -9360,8 +9362,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52191.2
-    y: 50746.76
+    x: 52301.2
+    y: 50451.496
     width: 20
     height: 20
   Info: 
@@ -9385,13 +9387,14 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 52170
-    y: 50610
-    width: 246.86719
-    height: 138.1914
+    x: 52280
+    y: 50300
+    width: 415.67188
+    height: 152.92578
   Info: LocalPuzzles
   InputSocketList:
   - {fileID: 338012150}
+  - {fileID: 338012155}
   OutputSocketList:
   - {fileID: 338012151}
   DefaultOutputSocket: {fileID: 338012152}
@@ -9415,6 +9418,31 @@ MonoBehaviour:
   OutputSocket: {fileID: 277750408}
   EditPoints: []
   ClickEditpointIndex: 0
+--- !u!114 &338012155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 338012148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1610461281}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 52264.96
+    y: 50418.125
+    width: 20
+    height: 20
+  Info: Jump to puzzle selection
+  Node: {fileID: 338012153}
+  EdgeList:
+  - {fileID: 1953455010}
+  Icon: {fileID: 0}
 --- !u!1 &340334817
 GameObject:
   m_ObjectHideFlags: 0
@@ -10433,7 +10461,7 @@ MonoBehaviour:
     x: 53330
     y: 50690
     width: 153
-    height: 113.03906
+    height: 112.87109
   Info: Exit
   InputSocketList:
   - {fileID: 361325155}
@@ -10457,7 +10485,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53351.2
-    y: 50801.61
+    y: 50801.44
     width: 20
     height: 20
   Info: 
@@ -10482,7 +10510,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53314.96
-    y: 50748.67
+    y: 50748.645
     width: 20
     height: 20
   Info: 
@@ -13434,7 +13462,7 @@ MonoBehaviour:
   EditPoints:
   - {x: -0.22759801, y: 0.5811811}
   - {x: 1.1806854, y: 0.536341}
-  ClickEditpointIndex: 2
+  ClickEditpointIndex: 1
 --- !u!1 &451656602
 GameObject:
   m_ObjectHideFlags: 0
@@ -18481,6 +18509,133 @@ Transform:
   m_Father: {fileID: 380901888}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &596997732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596997733}
+  - component: {fileID: 596997737}
+  - component: {fileID: 596997736}
+  - component: {fileID: 596997735}
+  - component: {fileID: 596997734}
+  m_Layer: 0
+  m_Name: Jump to puzzle selection (InputNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &596997733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596997732}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1630589529}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &596997734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596997732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 596997735}
+  OutputSocket: {fileID: 987821910}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &596997735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596997732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1247893180}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 53076.188
+    y: 49225.74
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 596997737}
+  EdgeList:
+  - {fileID: 596997734}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &596997736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596997732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1247893180}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 52874.617
+    y: 49291.76
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 596997737}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &596997737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596997732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1381462374, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1247893180}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 52853.418
+    y: 49153.867
+    width: 225.8711
+    height: 139.32422
+  Info: Jump to puzzle selection
+  InputSocketList: []
+  OutputSocketList:
+  - {fileID: 596997735}
+  DefaultOutputSocket: {fileID: 596997736}
+  Active: 1
 --- !u!1 &599558626
 GameObject:
   m_ObjectHideFlags: 0
@@ -25842,7 +25997,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52637.105
-    y: 49867.305
+    y: 49867.137
     width: 20
     height: 20
   Info: Puzzle List
@@ -25868,7 +26023,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52637.105
-    y: 49835.793
+    y: 49835.625
     width: 20
     height: 20
   Info: Child Category List
@@ -25894,7 +26049,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52384.96
-    y: 49798.67
+    y: 49798.645
     width: 20
     height: 20
   Info: 
@@ -25919,7 +26074,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52421.2
-    y: 49907.383
+    y: 49907.215
     width: 20
     height: 20
   Info: 
@@ -25946,7 +26101,7 @@ MonoBehaviour:
     x: 52400
     y: 49740
     width: 240.20703
-    height: 168.8125
+    height: 168.64453
   Info: Refresh List
   InputSocketList:
   - {fileID: 867088360}
@@ -28791,7 +28946,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53153.113
-    y: 50228.67
+    y: 50228.645
     width: 20
     height: 20
   Info: 
@@ -28817,7 +28972,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52894.96
-    y: 50228.67
+    y: 50228.645
     width: 20
     height: 20
   Info: 
@@ -28842,7 +28997,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52931.2
-    y: 50281.61
+    y: 50281.44
     width: 20
     height: 20
   Info: 
@@ -28869,7 +29024,7 @@ MonoBehaviour:
     x: 52910
     y: 50170
     width: 246.21484
-    height: 113.03906
+    height: 112.87109
   Info: UnlockCategory
   InputSocketList:
   - {fileID: 948518281}
@@ -29616,7 +29771,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53687.65
-    y: 49537.305
+    y: 49537.137
     width: 20
     height: 20
   Info: SelectedLockItem
@@ -29642,7 +29797,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53687.65
-    y: 49505.793
+    y: 49505.625
     width: 20
     height: 20
   Info: Select
@@ -29668,7 +29823,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53274.96
-    y: 49527.24
+    y: 49527.07
     width: 20
     height: 20
   Info: Show and Wait
@@ -29676,6 +29831,7 @@ MonoBehaviour:
   EdgeList:
   - {fileID: 1236972288}
   - {fileID: 1609757738}
+  - {fileID: 596997734}
   Icon: {fileID: 0}
 --- !u!114 &987821911
 MonoBehaviour:
@@ -29694,7 +29850,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53274.96
-    y: 49502.438
+    y: 49502.27
     width: 20
     height: 20
   Info: Wait only
@@ -29719,7 +29875,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53311.2
-    y: 49608.895
+    y: 49608.727
     width: 20
     height: 20
   Info: 
@@ -29746,7 +29902,7 @@ MonoBehaviour:
     x: 53290
     y: 49410
     width: 400.75
-    height: 200.32422
+    height: 200.15625
   Info: PuzzleSelectionWindow
   InputSocketList:
   - {fileID: 987821911}
@@ -29777,7 +29933,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53687.65
-    y: 49568.812
+    y: 49568.645
     width: 20
     height: 20
   Info: Back
@@ -34900,7 +35056,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55020.625
-    y: 49148.67
+    y: 49148.645
     width: 20
     height: 20
   Info: 
@@ -34928,7 +35084,7 @@ MonoBehaviour:
     x: 54660
     y: 49090
     width: 363.72656
-    height: 113.03906
+    height: 112.87109
   Info: UnlockCategoryPuzzles
   InputSocketList:
   - {fileID: 1154330559}
@@ -34961,7 +35117,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54681.2
-    y: 49201.61
+    y: 49201.44
     width: 20
     height: 20
   Info: 
@@ -34986,7 +35142,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54644.96
-    y: 49148.67
+    y: 49148.645
     width: 20
     height: 20
   Info: 
@@ -35697,7 +35853,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55275.18
-    y: 49642.53
+    y: 49642.08
     width: 20
     height: 20
   Info: Play Next
@@ -35723,7 +35879,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55014.96
-    y: 49592.043
+    y: 49591.87
     width: 20
     height: 20
   Info: 
@@ -35748,7 +35904,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55051.2
-    y: 49714.12
+    y: 49713.668
     width: 20
     height: 20
   Info: 
@@ -35775,7 +35931,7 @@ MonoBehaviour:
     x: 55030
     y: 49520
     width: 248.28125
-    height: 195.55078
+    height: 195.09766
   Info: Prepare next puzzle for spawn
   InputSocketList:
   - {fileID: 1175825982}
@@ -35830,7 +35986,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55275.18
-    y: 49674.043
+    y: 49673.59
     width: 20
     height: 20
   Info: No Next Puzzle
@@ -35878,7 +36034,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52424.96
-    y: 50088.67
+    y: 50088.645
     width: 20
     height: 20
   Info: 
@@ -35905,7 +36061,7 @@ MonoBehaviour:
     x: 52440
     y: 50030
     width: 289.0586
-    height: 168.8125
+    height: 168.64453
   Info: Unlock Puzzle
   InputSocketList:
   - {fileID: 1176079549}
@@ -35932,7 +36088,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52461.2
-    y: 50197.383
+    y: 50197.215
     width: 20
     height: 20
   Info: 
@@ -35957,7 +36113,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52725.957
-    y: 50157.305
+    y: 50157.137
     width: 20
     height: 20
   Info: Unlocked
@@ -35983,7 +36139,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52725.957
-    y: 50125.793
+    y: 50125.625
     width: 20
     height: 20
   Info: Cancel
@@ -37604,7 +37760,7 @@ MonoBehaviour:
   - {x: -0.03522387, y: 0.08632063}
   - {x: 0.6954102, y: 0.23579974}
   - {x: 1.0324265, y: 0.108690105}
-  ClickEditpointIndex: 2
+  ClickEditpointIndex: 3
 --- !u!114 &1236972289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37622,7 +37778,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55622.9
-    y: 49172.305
+    y: 49172.418
     width: 20
     height: 20
   Info: 
@@ -37648,7 +37804,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55474.96
-    y: 49172.305
+    y: 49172.418
     width: 20
     height: 20
   Info: 
@@ -37675,7 +37831,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55511.2
-    y: 49218.875
+    y: 49218.99
     width: 20
     height: 20
   Info: 
@@ -37702,7 +37858,7 @@ MonoBehaviour:
     x: 55490
     y: 49120
     width: 136
-    height: 100.30469
+    height: 100.41797
   Info: 
   InputSocketList:
   - {fileID: 1236972290}
@@ -37767,8 +37923,8 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -53191.484, y: -47982.523}
-  Zoom: 0.41142723
+  Position: {x: -51785.17, y: -49192.535}
+  Zoom: 0.49142727
   NodeList:
   - {fileID: 1934340075}
   - {fileID: 361325153}
@@ -37789,6 +37945,7 @@ MonoBehaviour:
   - {fileID: 948518283}
   - {fileID: 1609757742}
   - {fileID: 1175825984}
+  - {fileID: 596997737}
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &1254507130
@@ -40966,7 +41123,7 @@ MonoBehaviour:
   EditPoints:
   - {x: 0.26295117, y: -0.24017909}
   - {x: 0.93493104, y: 0.41264275}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 0
 --- !u!114 &1347777817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40984,7 +41141,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54035.22
-    y: 49552.043
+    y: 49551.87
     width: 20
     height: 20
   Info: 
@@ -41010,7 +41167,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53834.96
-    y: 49552.043
+    y: 49551.87
     width: 20
     height: 20
   Info: 
@@ -41035,7 +41192,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53871.2
-    y: 49618.348
+    y: 49617.895
     width: 20
     height: 20
   Info: 
@@ -41062,7 +41219,7 @@ MonoBehaviour:
     x: 53850
     y: 49480
     width: 188.32031
-    height: 139.77734
+    height: 139.32422
   Info: Back to categories
   InputSocketList:
   - {fileID: 1347777818}
@@ -48541,6 +48698,7 @@ GameObject:
   - component: {fileID: 1604686897}
   - component: {fileID: 1604686886}
   - component: {fileID: 1604686892}
+  - component: {fileID: 1604686898}
   m_Layer: 0
   m_Name: Window (WindowNode)
   m_TagString: Untagged
@@ -48564,8 +48722,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50654.96
-    y: 50313.324
+    x: 50614.96
+    y: 50223.324
     width: 20
     height: 20
   Info: Wait only
@@ -48588,8 +48746,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50670
-    y: 50220
+    x: 50630
+    y: 50130
     width: 344.95312
     height: 295.7422
   Info: MainMenu
@@ -48624,8 +48782,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51011.85
-    y: 50474.23
+    x: 50971.85
+    y: 50384.23
     width: 20
     height: 20
   Info: Shuffle
@@ -48649,8 +48807,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51011.85
-    y: 50442.723
+    x: 50971.85
+    y: 50352.723
     width: 20
     height: 20
   Info: PuzzleCollection
@@ -48693,8 +48851,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51011.85
-    y: 50411.21
+    x: 50971.85
+    y: 50321.21
     width: 20
     height: 20
   Info: About
@@ -48719,8 +48877,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51011.85
-    y: 50379.7
+    x: 50971.85
+    y: 50289.7
     width: 20
     height: 20
   Info: CreatePuzzle
@@ -48745,8 +48903,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 51011.85
-    y: 50348.19
+    x: 50971.85
+    y: 50258.19
     width: 20
     height: 20
   Info: Store
@@ -48768,16 +48926,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 51011.85
-    y: 50316.68
+    x: 50971.85
+    y: 50226.68
     width: 20
     height: 20
   Info: Continue
   Node: {fileID: 1604686883}
-  EdgeList: []
+  EdgeList:
+  - {fileID: 1604686898}
   Icon: {fileID: 0}
   AutoHide: 0
 --- !u!4 &1604686891
@@ -48888,8 +49047,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50691.2
-    y: 50514.312
+    x: 50651.2
+    y: 50424.312
     width: 20
     height: 20
   Info: 
@@ -48913,8 +49072,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50654.96
-    y: 50338.125
+    x: 50614.96
+    y: 50248.125
     width: 20
     height: 20
   Info: Show and Wait
@@ -48923,6 +49082,25 @@ MonoBehaviour:
   - {fileID: 720323807}
   - {fileID: 1720711184}
   Icon: {fileID: 0}
+--- !u!114 &1604686898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1604686881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1604686890}
+  OutputSocket: {fileID: 1953455007}
+  EditPoints:
+  - {x: 0.7138713, y: -0.16492704}
+  ClickEditpointIndex: 1
 --- !u!1 &1608396543
 GameObject:
   m_ObjectHideFlags: 0
@@ -49081,7 +49259,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52657.082
-    y: 50477.305
+    y: 50477.137
     width: 20
     height: 20
   Info: CategoryParent
@@ -49107,7 +49285,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52657.082
-    y: 50445.793
+    y: 50445.625
     width: 20
     height: 20
   Info: ExitLocalPuzzles
@@ -49133,7 +49311,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52394.96
-    y: 50408.67
+    y: 50408.645
     width: 20
     height: 20
   Info: 
@@ -49158,7 +49336,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52431.2
-    y: 50517.383
+    y: 50517.215
     width: 20
     height: 20
   Info: 
@@ -49185,7 +49363,7 @@ MonoBehaviour:
     x: 52410
     y: 50350
     width: 250.1836
-    height: 168.8125
+    height: 168.64453
   Info: Back
   InputSocketList:
   - {fileID: 1609267717}
@@ -49289,7 +49467,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53217.9
-    y: 49672.305
+    y: 49672.418
     width: 20
     height: 20
   Info: 
@@ -49315,7 +49493,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53054.96
-    y: 49672.305
+    y: 49672.418
     width: 20
     height: 20
   Info: 
@@ -49340,7 +49518,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53091.2
-    y: 49718.875
+    y: 49718.99
     width: 20
     height: 20
   Info: 
@@ -49367,7 +49545,7 @@ MonoBehaviour:
     x: 53070
     y: 49620
     width: 151
-    height: 100.30469
+    height: 100.41797
   Info: 
   InputSocketList:
   - {fileID: 1609757740}
@@ -49423,7 +49601,7 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -51489.95, y: -49759.043}
+  Position: {x: -50811.074, y: -49464.793}
   Zoom: 0.5200004
   NodeList:
   - {fileID: 720323809}
@@ -49437,6 +49615,7 @@ MonoBehaviour:
   - {fileID: 1899846512}
   - {fileID: 338012153}
   - {fileID: 277750410}
+  - {fileID: 1953455009}
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &1611429975
@@ -49844,6 +50023,7 @@ Transform:
   - {fileID: 948518278}
   - {fileID: 1609757737}
   - {fileID: 1175825979}
+  - {fileID: 596997733}
   m_Father: {fileID: 1247893179}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53127,9 +53307,9 @@ MonoBehaviour:
   InputSocket: {fileID: 1720711185}
   OutputSocket: {fileID: 1604686897}
   EditPoints:
-  - {x: 0.004899611, y: 0.36295912}
+  - {x: 0.07044408, y: 0.4801022}
   - {x: 1.0133404, y: 0.2948076}
-  ClickEditpointIndex: 0
+  ClickEditpointIndex: 1
 --- !u!114 &1720711185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53146,8 +53326,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51952.9
-    y: 50431.08
+    x: 52112.9
+    y: 50311.08
     width: 20
     height: 20
   Info: 
@@ -53172,8 +53352,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51804.96
-    y: 50431.08
+    x: 51964.96
+    y: 50311.08
     width: 20
     height: 20
   Info: 
@@ -53183,6 +53363,7 @@ MonoBehaviour:
   - {fileID: 448237897}
   - {fileID: 1039895951}
   - {fileID: 1334536964}
+  - {fileID: 1953455011}
   Icon: {fileID: 0}
 --- !u!114 &1720711187
 MonoBehaviour:
@@ -53200,8 +53381,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51820
-    y: 50380
+    x: 51980
+    y: 50260
     width: 136
     height: 99.078125
   Info: 
@@ -53227,8 +53408,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51841.2
-    y: 50477.65
+    x: 52001.2
+    y: 50357.65
     width: 20
     height: 20
   Info: 
@@ -53288,7 +53469,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54084.96
-    y: 49138.67
+    y: 49138.645
     width: 20
     height: 20
   Info: 
@@ -53313,7 +53494,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54379.996
-    y: 49175.793
+    y: 49175.625
     width: 20
     height: 20
   Info: Cancel
@@ -53339,7 +53520,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54121.2
-    y: 49247.383
+    y: 49247.215
     width: 20
     height: 20
   Info: 
@@ -53366,7 +53547,7 @@ MonoBehaviour:
     x: 54100
     y: 49080
     width: 283.09766
-    height: 168.8125
+    height: 168.64453
   Info: Unlock Puzzle
   InputSocketList:
   - {fileID: 1720724730}
@@ -53414,7 +53595,7 @@ MonoBehaviour:
   - {x: -0.118184365, y: 0.11900185}
   - {x: 0.3235784, y: 0.28917688}
   - {x: 0.8820646, y: 0.16580392}
-  ClickEditpointIndex: 2
+  ClickEditpointIndex: 3
 --- !u!114 &1720724736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53432,7 +53613,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54379.996
-    y: 49207.305
+    y: 49207.137
     width: 20
     height: 20
   Info: Unlocked
@@ -54207,7 +54388,7 @@ MonoBehaviour:
     x: 52810
     y: 50450
     width: 327.59375
-    height: 139.77734
+    height: 139.32422
   Info: LocalCategorySelectionWindow => Hide
   InputSocketList:
   - {fileID: 1777906127}
@@ -54240,7 +54421,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52831.2
-    y: 50588.348
+    y: 50587.895
     width: 20
     height: 20
   Info: 
@@ -54265,7 +54446,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53134.492
-    y: 50522.043
+    y: 50521.87
     width: 20
     height: 20
   Info: 
@@ -54309,7 +54490,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52794.96
-    y: 50522.043
+    y: 50521.87
     width: 20
     height: 20
   Info: 
@@ -55785,7 +55966,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52994.492
-    y: 49522.043
+    y: 49521.87
     width: 20
     height: 20
   Info: 
@@ -55811,7 +55992,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52654.96
-    y: 49522.043
+    y: 49521.87
     width: 20
     height: 20
   Info: 
@@ -55836,7 +56017,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52691.2
-    y: 49588.348
+    y: 49587.895
     width: 20
     height: 20
   Info: 
@@ -55863,7 +56044,7 @@ MonoBehaviour:
     x: 52670
     y: 49450
     width: 327.59375
-    height: 139.77734
+    height: 139.32422
   Info: LocalCategorySelectionWindow => Hide
   InputSocketList:
   - {fileID: 1818706823}
@@ -57932,7 +58113,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54479.01
-    y: 49392.043
+    y: 49391.87
     width: 20
     height: 20
   Info: 
@@ -57958,7 +58139,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54084.96
-    y: 49392.043
+    y: 49391.87
     width: 20
     height: 20
   Info: 
@@ -57983,7 +58164,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54121.2
-    y: 49458.348
+    y: 49457.895
     width: 20
     height: 20
   Info: 
@@ -58010,7 +58191,7 @@ MonoBehaviour:
     x: 54100
     y: 49320
     width: 382.11328
-    height: 139.77734
+    height: 139.32422
   Info: LocalPuzzlesSelectionWindow => SetForSpawn
   InputSocketList:
   - {fileID: 1893268203}
@@ -58440,7 +58621,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52286.42
-    y: 50277.305
+    y: 50277.137
     width: 20
     height: 20
   Info: SelectedLockItem
@@ -58466,7 +58647,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52286.42
-    y: 50245.793
+    y: 50245.625
     width: 20
     height: 20
   Info: Select
@@ -58492,7 +58673,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51874.96
-    y: 50267.24
+    y: 50267.07
     width: 20
     height: 20
   Info: Show and Wait
@@ -58518,7 +58699,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51874.96
-    y: 50242.438
+    y: 50242.27
     width: 20
     height: 20
   Info: Wait only
@@ -58542,7 +58723,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51911.2
-    y: 50348.895
+    y: 50348.727
     width: 20
     height: 20
   Info: 
@@ -58563,13 +58744,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1247893180}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 51890
     y: 50150
     width: 399.52344
-    height: 200.32422
+    height: 200.15625
   Info: CategorySelectionWindow
   InputSocketList:
   - {fileID: 1902854716}
@@ -58600,7 +58781,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52286.42
-    y: 50308.812
+    y: 50308.645
     width: 20
     height: 20
   Info: Back
@@ -59042,7 +59223,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54564.96
-    y: 49438.67
+    y: 49438.645
     width: 20
     height: 20
   Info: 
@@ -59070,7 +59251,7 @@ MonoBehaviour:
     x: 54580
     y: 49380
     width: 235
-    height: 168.8125
+    height: 168.64453
   Info: Play Puzzle
   InputSocketList:
   - {fileID: 1920164252}
@@ -59097,7 +59278,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54601.2
-    y: 49547.383
+    y: 49547.215
     width: 20
     height: 20
   Info: 
@@ -59122,7 +59303,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54811.9
-    y: 49507.305
+    y: 49507.137
     width: 20
     height: 20
   Info: End Play
@@ -59148,7 +59329,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54811.9
-    y: 49475.793
+    y: 49475.625
     width: 20
     height: 20
   Info: Back
@@ -59950,7 +60131,7 @@ MonoBehaviour:
     x: 51480
     y: 50300
     width: 136
-    height: 100.30469
+    height: 100.41797
   Info: 
   InputSocketList: []
   OutputSocketList:
@@ -59974,7 +60155,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51501.2
-    y: 50398.875
+    y: 50398.99
     width: 20
     height: 20
   Info: 
@@ -59999,7 +60180,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51612.9
-    y: 50352.305
+    y: 50352.418
     width: 20
     height: 20
   Info: 
@@ -60261,6 +60442,216 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1950732437}
   m_CullTransparentMesh: 0
+--- !u!1 &1953455003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1953455004}
+  - component: {fileID: 1953455009}
+  - component: {fileID: 1953455008}
+  - component: {fileID: 1953455007}
+  - component: {fileID: 1953455006}
+  - component: {fileID: 1953455005}
+  - component: {fileID: 1953455010}
+  - component: {fileID: 1953455011}
+  m_Layer: 0
+  m_Name: ' (ActionNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1953455004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953455003}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 266652874}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1953455005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953455003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1610461281}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 51759.5
+    y: 49818.19
+    width: 20
+    height: 20
+  Info: No Last Puzzle
+  Node: {fileID: 1953455009}
+  EdgeList:
+  - {fileID: 1953455011}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1953455006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953455003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1610461281}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 51759.5
+    y: 49786.68
+    width: 20
+    height: 20
+  Info: Play
+  Node: {fileID: 1953455009}
+  EdgeList:
+  - {fileID: 1953455010}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1953455007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953455003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1610461281}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51424.96
+    y: 49748.504
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1953455009}
+  EdgeList:
+  - {fileID: 1604686898}
+  Icon: {fileID: 0}
+--- !u!114 &1953455008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953455003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1610461281}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51461.2
+    y: 49858.27
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1953455009}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1953455009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953455003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1610461281}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 51440
+    y: 49690
+    width: 322.60156
+    height: 169.69922
+  Info: Show Last Played Puzzle
+  InputSocketList:
+  - {fileID: 1953455007}
+  OutputSocketList:
+  - {fileID: 1953455006}
+  - {fileID: 1953455005}
+  DefaultOutputSocket: {fileID: 1953455008}
+  Active: 1
+  Lables:
+  - Play
+  - No Last Puzzle
+  TargetGameObject: {fileID: 618070916}
+  ComponentTypeName: LocalPuzzleDB
+  MethodName: Void ShowLastPlayedPuzzle()
+  ParameterValueStrings:
+  - 
+  - 
+--- !u!114 &1953455010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953455003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1953455006}
+  OutputSocket: {fileID: 338012155}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &1953455011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953455003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1953455005}
+  OutputSocket: {fileID: 1720711186}
+  EditPoints: []
+  ClickEditpointIndex: 0
 --- !u!4 &1961834717
 Transform:
   m_ObjectHideFlags: 0

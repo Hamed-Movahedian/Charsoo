@@ -50,7 +50,7 @@ public class LocalPuzzleDB : MonoBehaviour
         PuzzleList.SetForSpawn(nextPuzzle);
         FollowMachine.SetOutput("Play Next");
     }
-    
+
     public void UnlockCategoryPuzzles()
     {
         int? id = PuzzleList.PlayingCategory.ID;
@@ -68,5 +68,28 @@ public class LocalPuzzleDB : MonoBehaviour
         LocalDBController.InsertOrReplace(purchase);
     }
 
+    [FollowMachine("Show Last Played Puzzle", "Play,No Last Puzzle")]
+    public void ShowLastPlayedPuzzle()
+    {
+        int lastPuzzleID = ZPlayerPrefs.GetInt("LastPlayedPuzzle");
+        if (lastPuzzleID == 0)
+        {
+            FollowMachine.SetOutput("No Last Puzzle");
+            return;
+        }
+
+        int? categoryID = LocalDBController.Table<Puzzle>().First(p=>p.ID==lastPuzzleID).CategoryID;
+        if (categoryID != null)
+        {
+            int id = categoryID.Value;
+            Category category = LocalDBController.Table<Category>().First(c=>c.ID==id);
+            Debug.Log(category.ID);
+            PuzzleList.CategoryWindow.Select(category);
+            FollowMachine.SetOutput("Play");
+            return;
+        }
+        FollowMachine.SetOutput("No Last Puzzle");
+
+    }
 
 }
