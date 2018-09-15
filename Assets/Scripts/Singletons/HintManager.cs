@@ -130,8 +130,7 @@ public class HintManager : BaseObject
 
         StartCoroutine(ShowEffect(HintParts[index], HintRects[index], 0.1f));
     }
-
-
+    
     private IEnumerator ShowEffect(List<Letter> part, List<RectTransform> partRects, float f)
     {
         GameObject effect = Instantiate(HintEffect);
@@ -158,11 +157,8 @@ public class HintManager : BaseObject
             }
             );
     }
-
-
-
-
-    [FollowMachine("Hint One Part", "First Part,Last Part")]
+    
+    [FollowMachine("Hint One Part", "First Part,Last Part,New Part")]
     public void ShowNextPart()
     {
         if (_wordHintActive)
@@ -195,23 +191,6 @@ public class HintManager : BaseObject
         _partId++;
     }
 
-    public void ShowHwoleWord()
-    {
-        if (_wordHintActive)
-        {
-            return;
-        }
-
-        if (HintParts.Count <= 0)
-            CreatHintParts();
-
-        for (int i = _partId; i < HintParts.Count; i++)
-            ShowNextPart();
-
-        _wordHintActive = true;
-
-    }
-
     public void CheckHintWord()
     {
         if (!_selectedWord)
@@ -220,7 +199,6 @@ public class HintManager : BaseObject
         if (_selectedWord.IsComplete)
         {
             OnWordComplete.Invoke();
-            //_wordHintActive = false;
             HideHintLetters();
         }
     }

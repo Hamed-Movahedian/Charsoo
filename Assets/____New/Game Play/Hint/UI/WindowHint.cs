@@ -10,6 +10,6 @@ public class WindowHint : MgsUIWindow
 
     public override void Refresh()
     {
-        ShowStartOfWordButton.interactable = AdManager.Instance.IsAvailable;
+        ShowStartOfWordButton.interactable = AdManager.Instance.IsAvailable|| Application.isEditor;
     }
 }
