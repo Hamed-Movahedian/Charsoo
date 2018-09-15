@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using FMachine;
 using FollowMachineDll.Attributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,9 +13,9 @@ public class HintManager : BaseObject
     public int FullWord = 35;
     public int FullWordset = 60;
 
-    public UnityEvent OnLowMoney;
-    public UnityEvent CancelHint;
-    public UnityEvent OnHintShow;
+    //public UnityEvent OnLowMoney;
+    //public UnityEvent CancelHint;
+    public UnityEvent OnWordComplete;
 
     public RectTransform WordHintPanel;
     public RectTransform LetterPrefab;
@@ -161,12 +162,11 @@ public class HintManager : BaseObject
 
 
 
-    [FollowMachine("Hint One Part")]
+    [FollowMachine("Hint One Part", "First Part,Last Part")]
     public void ShowNextPart()
     {
         if (_wordHintActive)
         {
-            CancelHint.Invoke();
             return;
         }
 
@@ -175,7 +175,6 @@ public class HintManager : BaseObject
             if (_selectedWord == SelectWord())
                 if (_partId >= HintParts.Count)
                 {
-                    CancelHint.Invoke();
                     return;
                 }
         }
@@ -185,37 +184,33 @@ public class HintManager : BaseObject
             CreatHintParts();
         }
         ShowPart(_partId);
+        if (_partId == 0)
+            FollowMachine.SetOutput("First Part");
+        if (_partId == HintParts.Count - 1)
+        {
+            _wordHintActive = true;
+            FollowMachine.SetOutput("Last Part");
+        }
+
         _partId++;
-        OnHintShow.Invoke();
     }
 
-    [FollowMachine("Hint Full")]
     public void ShowHwoleWord()
     {
         if (_wordHintActive)
         {
-            CancelHint.Invoke();
             return;
         }
 
-        if (PurchaseManager.PayCoin(FullWord))
-        {
-            if (HintParts.Count <= 0)
-                CreatHintParts();
+        if (HintParts.Count <= 0)
+            CreatHintParts();
 
-            for (int i = _partId; i < HintParts.Count; i++)
-                ShowNextPart();
+        for (int i = _partId; i < HintParts.Count; i++)
+            ShowNextPart();
 
-            _wordHintActive = true;
-            OnHintShow.Invoke();
-        }
-        else
-        {
-            //CancelHint.Invoke();
-            OnLowMoney.Invoke();
-        }
+        _wordHintActive = true;
+
     }
-
 
     public void CheckHintWord()
     {
@@ -224,7 +219,8 @@ public class HintManager : BaseObject
 
         if (_selectedWord.IsComplete)
         {
-            _wordHintActive = false;
+            OnWordComplete.Invoke();
+            //_wordHintActive = false;
             HideHintLetters();
         }
     }
@@ -255,6 +251,14 @@ public class HintManager : BaseObject
         }
 
         WordHintPanel.gameObject.SetActive(false);
+    }
+
+    [FollowMachine("Is Word Complete Hinted?", "Yes,No")]
+    public void CheckComplete()
+    {
+        FollowMachine.SetOutput(_wordHintActive ? "Yes" : "No");
+        _wordHintActive = false;
+
     }
 
 }
