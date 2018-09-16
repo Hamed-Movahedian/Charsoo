@@ -305,8 +305,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8586113}
   m_HandleRect: {fileID: 0}
   m_Direction: 2
-  m_Value: 0.09
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -667,8 +667,8 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -54675.273, y: -50349.836}
-  Zoom: 0.5800004
+  Position: {x: -54307.46, y: -49914.17}
+  Zoom: 0.44000024
   NodeList:
   - {fileID: 821107258}
   - {fileID: 1128767856}
@@ -696,6 +696,7 @@ MonoBehaviour:
   - {fileID: 482691084}
   - {fileID: 627377882}
   - {fileID: 1352449065}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &14200291
@@ -729,7 +730,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &14200293
 MonoBehaviour:
@@ -765,8 +766,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54921.71
-    y: 51582.664
+    x: 54911.71
+    y: 51582.516
     width: 20
     height: 20
   Info: 
@@ -791,8 +792,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54644.96
-    y: 51582.664
+    x: 54634.96
+    y: 51582.516
     width: 20
     height: 20
   Info: 
@@ -816,8 +817,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54681.2
-    y: 51648.902
+    x: 54671.2
+    y: 51649.36
     width: 20
     height: 20
   Info: 
@@ -841,10 +842,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54660
+    x: 54650
     y: 51510
     width: 264.8125
-    height: 140.33203
+    height: 140.78906
   Info: LetterController => DeleteAllLetters
   InputSocketList:
   - {fileID: 14200295}
@@ -1250,7 +1251,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55186.715
-    y: 52462.664
+    y: 52462.516
     width: 20
     height: 20
   Info: 
@@ -1276,7 +1277,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54914.96
-    y: 52462.664
+    y: 52462.516
     width: 20
     height: 20
   Info: 
@@ -1301,7 +1302,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54951.2
-    y: 52528.902
+    y: 52529.36
     width: 20
     height: 20
   Info: 
@@ -1328,7 +1329,7 @@ MonoBehaviour:
     x: 54930
     y: 52390
     width: 259.8164
-    height: 140.33203
+    height: 140.78906
   Info: LetterController => DeleteAllLetters
   InputSocketList:
   - {fileID: 27787042}
@@ -1486,6 +1487,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 733770753}
+  - {fileID: 593490986}
   - {fileID: 1577661418}
   - {fileID: 1160277063}
   - {fileID: 62620774}
@@ -1724,8 +1727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -327.95}
-  m_SizeDelta: {x: 1020, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -327.95}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42511352
 MonoBehaviour:
@@ -2206,7 +2209,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 30280930}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2253,6 +2256,136 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 62620773}
   m_CullTransparentMesh: 0
+--- !u!1 &63710221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63710226}
+  - component: {fileID: 63710222}
+  - component: {fileID: 63710223}
+  - component: {fileID: 63710224}
+  - component: {fileID: 63710225}
+  m_Layer: 0
+  m_Name: ' (EventNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &63710222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63710221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1505753306, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54640
+    y: 51580
+    width: 139
+    height: 100.44531
+  Info: 
+  InputSocketList: []
+  OutputSocketList:
+  - {fileID: 63710224}
+  DefaultOutputSocket: {fileID: 63710223}
+  Active: 1
+  TargetGameObject: {fileID: 1822953616}
+  ComponentTypeName: MovingEffect
+  FieldName: OnArrive
+--- !u!114 &63710223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63710221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54661.2
+    y: 51679.016
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 63710222}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &63710224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63710221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 54775.9
+    y: 51632.445
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 63710222}
+  EdgeList:
+  - {fileID: 63710225}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &63710225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63710221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 63710224}
+  OutputSocket: {fileID: 1523900843}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!4 &63710226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63710221}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 885230849}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &65778793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,8 +2496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479.81763, y: -1200}
-  m_SizeDelta: {x: 899.63525, y: 240}
+  m_AnchoredPosition: {x: 480.2539, y: -1200}
+  m_SizeDelta: {x: 900.5078, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66952759
 MonoBehaviour:
@@ -2487,8 +2620,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -537.95}
-  m_SizeDelta: {x: 1020, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -537.95}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &68855351
 MonoBehaviour:
@@ -2971,7 +3104,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54798.9
-    y: 52432.664
+    y: 52432.516
     width: 20
     height: 20
   Info: 
@@ -2997,7 +3130,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54504.96
-    y: 52432.664
+    y: 52432.516
     width: 20
     height: 20
   Info: 
@@ -3022,7 +3155,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54541.2
-    y: 52498.902
+    y: 52499.36
     width: 20
     height: 20
   Info: 
@@ -3049,7 +3182,7 @@ MonoBehaviour:
     x: 54520
     y: 52360
     width: 282
-    height: 140.33203
+    height: 140.78906
   Info: WordManager => DeleteAllWords
   InputSocketList:
   - {fileID: 84472380}
@@ -3521,7 +3654,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54343.9
-    y: 50592.664
+    y: 50592.516
     width: 20
     height: 20
   Info: 
@@ -3547,7 +3680,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54144.96
-    y: 50592.664
+    y: 50592.516
     width: 20
     height: 20
   Info: 
@@ -3572,7 +3705,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54181.2
-    y: 50658.902
+    y: 50659.36
     width: 20
     height: 20
   Info: 
@@ -3599,7 +3732,7 @@ MonoBehaviour:
     x: 54160
     y: 50520
     width: 187
-    height: 140.33203
+    height: 140.78906
   Info: Show Start Effect
   InputSocketList:
   - {fileID: 108339098}
@@ -3693,8 +3826,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479.81763, y: -540}
-  m_SizeDelta: {x: 899.63525, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -540}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115407093
 MonoBehaviour:
@@ -3953,7 +4086,7 @@ MonoBehaviour:
   EditPoints:
   - {x: 0.1378121, y: -0.35217404}
   - {x: 0.7746016, y: -0.27842733}
-  ClickEditpointIndex: 0
+  ClickEditpointIndex: 2
 --- !u!114 &121398961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3971,7 +4104,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53392.9
-    y: 50053.496
+    y: 50052.46
     width: 20
     height: 20
   Info: 
@@ -3997,7 +4130,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53244.96
-    y: 50053.496
+    y: 50052.46
     width: 20
     height: 20
   Info: 
@@ -4026,7 +4159,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53281.2
-    y: 50100.066
+    y: 50099.03
     width: 20
     height: 20
   Info: 
@@ -4053,7 +4186,7 @@ MonoBehaviour:
     x: 53260
     y: 50000
     width: 136
-    height: 101.49609
+    height: 100.46094
   Info: 
   InputSocketList:
   - {fileID: 121398962}
@@ -4618,11 +4751,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 53893.9
-    y: 51522.664
+    x: 53743.9
+    y: 51492.516
     width: 20
     height: 20
   Info: 
@@ -4647,10 +4780,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53710
-    y: 51450
+    x: 53560
+    y: 51420
     width: 187
-    height: 140.33203
+    height: 140.78906
   Info: Hide Start Effect
   InputSocketList:
   - {fileID: 136820363}
@@ -4677,8 +4810,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53731.2
-    y: 51588.902
+    x: 53581.2
+    y: 51559.36
     width: 20
     height: 20
   Info: 
@@ -4702,8 +4835,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53694.96
-    y: 51522.664
+    x: 53544.96
+    y: 51492.516
     width: 20
     height: 20
   Info: 
@@ -4722,7 +4855,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &140708324
 GameObject:
@@ -5428,12 +5561,12 @@ RectTransform:
   - {fileID: 2139272928}
   - {fileID: 66952758}
   m_Father: {fileID: 1199230063}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -353.69995}
-  m_SizeDelta: {x: -120, y: 1535.5}
+  m_AnchoredPosition: {x: 0, y: -505.6999}
+  m_SizeDelta: {x: -120, y: 1383.5}
   m_Pivot: {x: 0.49999994, y: 1}
 --- !u!114 &154409514
 MonoBehaviour:
@@ -6355,8 +6488,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479.81763, y: -960}
-  m_SizeDelta: {x: 899.63525, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -960}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221433369
 MonoBehaviour:
@@ -6786,11 +6919,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 897301473}
     m_Modifications:
-    - target: {fileID: 114407920269446584, guid: d35d39f1823792a4fb5c68c880720467,
-        type: 2}
-      propertyPath: Action.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4009489543804256, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6821,49 +6949,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4009489543804256, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1939522705750120, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1824902677233042, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
-      propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4096602371042686, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -14.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 4233574632627958, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4503217716853556, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4096602371042686, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433166418258578, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4853038084113708, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114407920269446584, guid: d35d39f1823792a4fb5c68c880720467,
-        type: 2}
-      propertyPath: Action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114407920269446584, guid: d35d39f1823792a4fb5c68c880720467,
-        type: 2}
-      propertyPath: Action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d35d39f1823792a4fb5c68c880720467, type: 2}
@@ -8140,7 +8226,7 @@ MonoBehaviour:
     x: 56330
     y: 51380
     width: 320.6914
-    height: 171.22266
+    height: 170.04688
   Info: Buy Package
   InputSocketList:
   - {fileID: 293965631}
@@ -8170,7 +8256,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56351.2
-    y: 51549.793
+    y: 51548.617
     width: 20
     height: 20
   Info: 
@@ -8195,7 +8281,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56647.59
-    y: 51509.715
+    y: 51508.54
     width: 20
     height: 20
   Info: Cancel
@@ -8270,7 +8356,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56647.59
-    y: 51478.203
+    y: 51477.027
     width: 20
     height: 20
   Info: Buy
@@ -8296,7 +8382,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56314.96
-    y: 51499.65
+    y: 51498.473
     width: 20
     height: 20
   Info: Show and Wait
@@ -8321,7 +8407,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56314.96
-    y: 51474.848
+    y: 51473.67
     width: 20
     height: 20
   Info: Wait only
@@ -9358,6 +9444,94 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentColor: {r: 1, g: 1, b: 1, a: 0}
+--- !u!1 &331945284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331945285}
+  - component: {fileID: 331945288}
+  - component: {fileID: 331945287}
+  - component: {fileID: 331945286}
+  m_Layer: 5
+  m_Name: CountText (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &331945285
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331945284}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 581166788}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -102.39996, y: -76.995865}
+  m_SizeDelta: {x: 205.23, y: 86.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &331945286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331945284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de80c63be0fb8a4c9b09b4aba80fc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeTextTime: 1
+--- !u!114 &331945287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331945284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 2
+    m_MaxSize: 107
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0663\u0664\u0665\u0666\u0663\u0664"
+--- !u!222 &331945288
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331945284}
+  m_CullTransparentMesh: 0
 --- !u!1 &335191730
 GameObject:
   m_ObjectHideFlags: 0
@@ -9572,8 +9746,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52264.96
-    y: 50393.324
+    x: 52494.96
+    y: 50253.324
     width: 20
     height: 20
   Info: 
@@ -9597,8 +9771,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 52692.57
-    y: 50396.68
+    x: 52922.57
+    y: 50256.68
     width: 20
     height: 20
   Info: Exit
@@ -9623,8 +9797,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52301.2
-    y: 50451.496
+    x: 52531.2
+    y: 50311.496
     width: 20
     height: 20
   Info: 
@@ -9644,12 +9818,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
-  IsSelected: 0
+  IsSelected: 1
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 52280
-    y: 50300
+    x: 52510
+    y: 50160
     width: 415.67188
     height: 152.92578
   Info: LocalPuzzles
@@ -9695,8 +9869,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52264.96
-    y: 50418.125
+    x: 52494.96
+    y: 50278.125
     width: 20
     height: 20
   Info: Jump to puzzle selection
@@ -10609,7 +10783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -600, y: 0}
+  m_AnchoredPosition: {x: -600, y: 0.000046161615}
   m_SizeDelta: {x: 1200, y: 500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &360343035
@@ -10722,7 +10896,7 @@ MonoBehaviour:
     x: 53330
     y: 50690
     width: 153
-    height: 115.3125
+    height: 114.6875
   Info: Exit
   InputSocketList:
   - {fileID: 361325155}
@@ -10746,7 +10920,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53351.2
-    y: 50803.883
+    y: 50803.258
     width: 20
     height: 20
   Info: 
@@ -10771,7 +10945,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53314.96
-    y: 50750.406
+    y: 50749.574
     width: 20
     height: 20
   Info: 
@@ -11459,7 +11633,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54125.547
-    y: 50409.336
+    y: 50408.88
     width: 20
     height: 20
   Info: 
@@ -11485,7 +11659,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53904.96
-    y: 50409.336
+    y: 50408.88
     width: 20
     height: 20
   Info: 
@@ -11510,7 +11684,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53941.2
-    y: 50462.24
+    y: 50462.086
     width: 20
     height: 20
   Info: 
@@ -11537,7 +11711,7 @@ MonoBehaviour:
     x: 53920
     y: 50350
     width: 208.64844
-    height: 113.66797
+    height: 113.515625
   Info: Show HUD
   InputSocketList:
   - {fileID: 391276369}
@@ -11687,6 +11861,7 @@ GameObject:
   - component: {fileID: 398823488}
   - component: {fileID: 398823487}
   - component: {fileID: 398823490}
+  - component: {fileID: 398823491}
   m_Layer: 0
   m_Name: Show Finish effect (ActionNode)
   m_TagString: Untagged
@@ -11710,10 +11885,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54120
-    y: 51920
+    x: 54040
+    y: 51890
     width: 229.71484
-    height: 140.33203
+    height: 140.78906
   Info: Show Finish effect
   InputSocketList:
   - {fileID: 398823488}
@@ -11741,16 +11916,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 54141.2
-    y: 52058.902
+    x: 54061.2
+    y: 52029.36
     width: 20
     height: 20
   Info: 
   Node: {fileID: 398823485}
-  EdgeList: []
+  EdgeList:
+  - {fileID: 398823490}
   Icon: {fileID: 0}
   AutoHide: 1
 --- !u!114 &398823487
@@ -11766,17 +11942,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54346.613
-    y: 51992.664
+    x: 54266.613
+    y: 51962.516
     width: 20
     height: 20
   Info: 
   Node: {fileID: 398823485}
   EdgeList:
-  - {fileID: 398823490}
+  - {fileID: 398823491}
   Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &398823488
@@ -11795,8 +11971,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54104.96
-    y: 51992.664
+    x: 54024.96
+    y: 51962.516
     width: 20
     height: 20
   Info: 
@@ -11831,8 +12007,26 @@ MonoBehaviour:
   Graph: {fileID: 0}
   IsSelected: 0
   IsHover: 0
-  InputSocket: {fileID: 398823487}
+  InputSocket: {fileID: 398823486}
   OutputSocket: {fileID: 1474636073}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &398823491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398823484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 398823487}
+  OutputSocket: {fileID: 2010105828}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!1 &399022897
@@ -12150,7 +12344,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55054.96
-    y: 51549.336
+    y: 51548.88
     width: 20
     height: 20
   Info: 
@@ -12177,7 +12371,7 @@ MonoBehaviour:
     x: 55070
     y: 51490
     width: 153
-    height: 113.66797
+    height: 113.515625
   Info: Back
   InputSocketList:
   - {fileID: 405023461}
@@ -12201,7 +12395,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55091.2
-    y: 51602.24
+    y: 51602.086
     width: 20
     height: 20
   Info: 
@@ -12277,7 +12471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &409789307
 MonoBehaviour:
@@ -12292,7 +12486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 0}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   InputSocket: {fileID: 409789308}
   OutputSocket: {fileID: 1633106324}
   EditPoints: []
@@ -12313,8 +12507,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54155.547
-    y: 51629.336
+    x: 54175.547
+    y: 51658.88
     width: 20
     height: 20
   Info: 
@@ -12339,14 +12533,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53934.96
-    y: 51629.336
+    x: 53954.96
+    y: 51658.88
     width: 20
     height: 20
   Info: 
   Node: {fileID: 409789311}
   EdgeList:
-  - {fileID: 762456500}
+  - {fileID: 1710863376}
   - {fileID: 136820359}
   Icon: {fileID: 0}
 --- !u!114 &409789310
@@ -12365,8 +12559,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53971.2
-    y: 51682.24
+    x: 53991.2
+    y: 51712.086
     width: 20
     height: 20
   Info: 
@@ -12387,13 +12581,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 53950
-    y: 51570
+    x: 53970
+    y: 51600
     width: 208.64844
-    height: 113.66797
+    height: 113.515625
   Info: Hide HUD
   InputSocketList:
   - {fileID: 409789309}
@@ -12444,8 +12638,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479.81763, y: -120}
-  m_SizeDelta: {x: 899.63525, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -120}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412015062
 MonoBehaviour:
@@ -12807,7 +13001,7 @@ MonoBehaviour:
     x: 56800
     y: 51710
     width: 151
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 423799268}
@@ -12839,7 +13033,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56821.2
-    y: 51810.434
+    y: 51809.57
     width: 20
     height: 20
   Info: 
@@ -12864,7 +13058,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56947.9
-    y: 51763.863
+    y: 51763
     width: 20
     height: 20
   Info: 
@@ -12890,9 +13084,9 @@ MonoBehaviour:
   InputSocket: {fileID: 423799265}
   OutputSocket: {fileID: 2063872086}
   EditPoints:
-  - {x: -0.049577203, y: -0.09976591}
-  - {x: 0.83602107, y: -0.32528612}
-  ClickEditpointIndex: 2
+  - {x: 0.017308487, y: -0.06980549}
+  - {x: 0.9744739, y: -0.10538035}
+  ClickEditpointIndex: 0
 --- !u!4 &423799267
 Transform:
   m_ObjectHideFlags: 0
@@ -12923,7 +13117,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56784.96
-    y: 51763.863
+    y: 51763
     width: 20
     height: 20
   Info: 
@@ -13041,8 +13235,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -957.95}
-  m_SizeDelta: {x: 1020, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -957.95}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431907128
 MonoBehaviour:
@@ -13793,8 +13987,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51565.152
-    y: 50166.68
+    x: 51575.152
+    y: 50146.68
     width: 20
     height: 20
   Info: Back
@@ -13819,8 +14013,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51284.96
-    y: 50163.324
+    x: 51294.96
+    y: 50143.324
     width: 20
     height: 20
   Info: Wait only
@@ -13844,8 +14038,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51300
-    y: 50070
+    x: 51310
+    y: 50050
     width: 268.2539
     height: 169.69922
   Info: Store
@@ -13876,8 +14070,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 51565.152
-    y: 50198.19
+    x: 51575.152
+    y: 50178.19
     width: 20
     height: 20
   Info: Buy
@@ -13902,8 +14096,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51321.2
-    y: 50238.27
+    x: 51331.2
+    y: 50218.27
     width: 20
     height: 20
   Info: 
@@ -13927,8 +14121,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51284.96
-    y: 50188.125
+    x: 51294.96
+    y: 50168.125
     width: 20
     height: 20
   Info: Show and Wait
@@ -13955,7 +14149,7 @@ MonoBehaviour:
   EditPoints:
   - {x: -0.22759801, y: 0.5811811}
   - {x: 1.1806854, y: 0.536341}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 2
 --- !u!1 &451656602
 GameObject:
   m_ObjectHideFlags: 0
@@ -15192,7 +15386,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56238.38
-    y: 50840.656
+    y: 50839.637
     width: 20
     height: 20
   Info: 
@@ -15218,7 +15412,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56044.96
-    y: 50840.656
+    y: 50839.637
     width: 20
     height: 20
   Info: 
@@ -15243,7 +15437,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56081.2
-    y: 50894.02
+    y: 50892.844
     width: 20
     height: 20
   Info: 
@@ -15270,7 +15464,7 @@ MonoBehaviour:
     x: 56060
     y: 50780
     width: 181.48047
-    height: 115.44922
+    height: 114.27344
   Info: Hint Sound
   InputSocketList:
   - {fileID: 482691082}
@@ -15396,14 +15590,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 14198445}
-  IsSelected: 0
+  IsSelected: 1
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56370
+    x: 56550
     y: 51020
     width: 209.89844
-    height: 202.73438
+    height: 201.5586
   Info: Hint One Part
   InputSocketList:
   - {fileID: 484780732}
@@ -15415,8 +15609,8 @@ MonoBehaviour:
   Active: 1
   Lables:
   - First Part
-  - Last Part
   - New Part
+  - Last Part
   TargetGameObject: {fileID: 1094032883}
   ComponentTypeName: HintManager
   MethodName: Void ShowNextPart()
@@ -15439,8 +15633,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56391.2
-    y: 51221.305
+    x: 56571.2
+    y: 51220.13
     width: 20
     height: 20
   Info: 
@@ -15464,14 +15658,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56576.797
-    y: 51181.223
+    x: 56756.797
+    y: 51180.047
     width: 20
     height: 20
-  Info: New Part
+  Info: Last Part
   Node: {fileID: 484780723}
   EdgeList:
-  - {fileID: 484780726}
+  - {fileID: 484780728}
   Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &484780726
@@ -15488,7 +15682,7 @@ MonoBehaviour:
   Graph: {fileID: 0}
   IsSelected: 0
   IsHover: 0
-  InputSocket: {fileID: 484780725}
+  InputSocket: {fileID: 484780727}
   OutputSocket: {fileID: 2135311198}
   EditPoints: []
   ClickEditpointIndex: 0
@@ -15505,17 +15699,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 14198445}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 56576.797
-    y: 51149.715
+    x: 56756.797
+    y: 51148.54
     width: 20
     height: 20
-  Info: Last Part
+  Info: New Part
   Node: {fileID: 484780723}
   EdgeList:
-  - {fileID: 484780728}
+  - {fileID: 484780726}
   Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &484780728
@@ -15532,7 +15726,7 @@ MonoBehaviour:
   Graph: {fileID: 0}
   IsSelected: 0
   IsHover: 0
-  InputSocket: {fileID: 484780727}
+  InputSocket: {fileID: 484780725}
   OutputSocket: {fileID: 1376376567}
   EditPoints: []
   ClickEditpointIndex: 0
@@ -15565,8 +15759,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 56576.797
-    y: 51118.203
+    x: 56756.797
+    y: 51117.027
     width: 20
     height: 20
   Info: First Part
@@ -15609,8 +15803,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56354.96
-    y: 51080.656
+    x: 56534.96
+    y: 51079.637
     width: 20
     height: 20
   Info: 
@@ -15668,7 +15862,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56973.9
-    y: 50353.863
+    y: 50313
     width: 20
     height: 20
   Info: 
@@ -15693,7 +15887,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56774.96
-    y: 50353.863
+    y: 50313
     width: 20
     height: 20
   Info: 
@@ -15718,7 +15912,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56811.2
-    y: 50400.434
+    y: 50359.57
     width: 20
     height: 20
   Info: 
@@ -15743,9 +15937,9 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56790
-    y: 50300
+    y: 50260
     width: 187
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 486458256}
@@ -16016,7 +16210,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1282707693}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16154,7 +16348,7 @@ MonoBehaviour:
     x: 53760
     y: 50780
     width: 187
-    height: 140.33203
+    height: 140.78906
   Info: Hide Start Effect
   InputSocketList:
   - {fileID: 496360130}
@@ -16182,7 +16376,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53781.2
-    y: 50918.902
+    y: 50919.36
     width: 20
     height: 20
   Info: 
@@ -16207,7 +16401,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53943.9
-    y: 50852.664
+    y: 50852.516
     width: 20
     height: 20
   Info: 
@@ -16251,7 +16445,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53744.96
-    y: 50852.664
+    y: 50852.516
     width: 20
     height: 20
   Info: 
@@ -16608,7 +16802,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54001.01
-    y: 52122.664
+    y: 52122.516
     width: 20
     height: 20
   Info: 
@@ -16634,7 +16828,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53784.96
-    y: 52122.664
+    y: 52122.516
     width: 20
     height: 20
   Info: 
@@ -16659,7 +16853,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53821.2
-    y: 52188.902
+    y: 52189.36
     width: 20
     height: 20
   Info: 
@@ -16686,7 +16880,7 @@ MonoBehaviour:
     x: 53800
     y: 52050
     width: 204.11328
-    height: 140.33203
+    height: 140.78906
   Info: Raycaster Disable
   InputSocketList:
   - {fileID: 505389534}
@@ -16804,8 +16998,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 887.5, y: -116.425}
-  m_SizeDelta: {x: 525, y: 132.85}
+  m_AnchoredPosition: {x: 797.88086, y: -116.425}
+  m_SizeDelta: {x: 465.2539, y: 132.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511866967
 MonoBehaviour:
@@ -16920,6 +17114,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2115631541}
+  - {fileID: 911054602}
   - {fileID: 1142685071}
   - {fileID: 1162076381}
   m_Father: {fileID: 697940341}
@@ -17302,7 +17498,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53624.266
-    y: 51999.336
+    y: 51998.88
     width: 20
     height: 20
   Info: 
@@ -17328,7 +17524,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53451.2
-    y: 52052.24
+    y: 52052.086
     width: 20
     height: 20
   Info: 
@@ -17355,7 +17551,7 @@ MonoBehaviour:
     x: 53430
     y: 51940
     width: 197.36719
-    height: 113.66797
+    height: 113.515625
   Info: Finish Puzzle
   InputSocketList: []
   OutputSocketList:
@@ -18176,6 +18372,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 551512906}
   m_CullTransparentMesh: 0
+--- !u!4 &552577414 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1235381215}
 --- !u!1 &552767584
 GameObject:
   m_ObjectHideFlags: 0
@@ -18280,11 +18481,11 @@ RectTransform:
   m_Children:
   - {fileID: 1585078778}
   m_Father: {fileID: 1199230063}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchoredPosition: {x: 0, y: -352}
   m_SizeDelta: {x: -120, y: 307.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556380701
@@ -18665,6 +18866,141 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565685273}
   m_CullTransparentMesh: 0
+--- !u!1 &567522185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 567522190}
+  - component: {fileID: 567522186}
+  - component: {fileID: 567522187}
+  - component: {fileID: 567522188}
+  - component: {fileID: 567522189}
+  m_Layer: 0
+  m_Name: ' (FollowMachineNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &567522186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 567522185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1220595171, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 1
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 54770
+    y: 51860
+    width: 256.01953
+    height: 113.515625
+  Info: Reward Machine
+  InputSocketList:
+  - {fileID: 567522189}
+  OutputSocketList:
+  - {fileID: 567522188}
+  DefaultOutputSocket: {fileID: 567522187}
+  Active: 1
+  FollowMachine: {fileID: 1863047269}
+--- !u!114 &567522187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 567522185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54791.2
+    y: 51972.086
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 567522186}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &567522188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 567522185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 55022.918
+    y: 51918.88
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 567522186}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &567522189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 567522185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54754.96
+    y: 51918.88
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 567522186}
+  EdgeList:
+  - {fileID: 2010105826}
+  Icon: {fileID: 0}
+--- !u!4 &567522190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 567522185}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 840395954}
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &573905740
 GameObject:
   m_ObjectHideFlags: 0
@@ -18708,8 +19044,8 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -53606.332, y: -50139.133}
-  Zoom: 0.6000002
+  Position: {x: -54151.59, y: -51425.926}
+  Zoom: 0.65999997
   NodeList:
   - {fileID: 634301670}
   - {fileID: 405023462}
@@ -18731,7 +19067,6 @@ MonoBehaviour:
   - {fileID: 391276371}
   - {fileID: 496360126}
   - {fileID: 27787044}
-  - {fileID: 683760246}
   - {fileID: 1927967804}
   - {fileID: 1633106320}
   - {fileID: 14200297}
@@ -18751,6 +19086,11 @@ MonoBehaviour:
   - {fileID: 679920453}
   - {fileID: 1921034912}
   - {fileID: 1474636068}
+  - {fileID: 1710863373}
+  - {fileID: 567522186}
+  - {fileID: 2010105822}
+  - {fileID: 883773085}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &574233438
@@ -19051,6 +19391,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 657963224}
+  - {fileID: 331945285}
   - {fileID: 1642329048}
   - {fileID: 1608396544}
   - {fileID: 1465027123}
@@ -19368,7 +19710,7 @@ MonoBehaviour:
     x: 53270
     y: 50770
     width: 185.57422
-    height: 140.33203
+    height: 140.78906
   Info: Play after start effect
   InputSocketList: []
   OutputSocketList:
@@ -19395,7 +19737,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53291.2
-    y: 50908.902
+    y: 50909.36
     width: 20
     height: 20
   Info: 
@@ -19420,7 +19762,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53452.473
-    y: 50842.664
+    y: 50842.516
     width: 20
     height: 20
   Info: 
@@ -19535,6 +19877,94 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 591619135}
   m_CullTransparentMesh: 0
+--- !u!1 &593490985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593490986}
+  - component: {fileID: 593490989}
+  - component: {fileID: 593490988}
+  - component: {fileID: 593490987}
+  m_Layer: 5
+  m_Name: CountText (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &593490986
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593490985}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 30280930}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -102.4, y: -76.995804}
+  m_SizeDelta: {x: 205.23, y: 86.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &593490987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593490985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de80c63be0fb8a4c9b09b4aba80fc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeTextTime: 1
+--- !u!114 &593490988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593490985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 2
+    m_MaxSize: 107
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0663\u0664\u0665\u0666\u0663\u0664"
+--- !u!222 &593490989
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593490985}
+  m_CullTransparentMesh: 0
 --- !u!1 &594836778
 GameObject:
   m_ObjectHideFlags: 0
@@ -19630,8 +20060,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 53076.188
-    y: 49228.176
+    x: 52822.77
+    y: 49242.746
     width: 20
     height: 20
   Info: 
@@ -19656,8 +20086,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52874.617
-    y: 49295.562
+    x: 52621.2
+    y: 49309.6
     width: 20
     height: 20
   Info: 
@@ -19681,10 +20111,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52853.418
-    y: 49153.867
+    x: 52600
+    y: 49170
     width: 225.8711
-    height: 143.125
+    height: 141.03125
   Info: Jump to puzzle selection
   InputSocketList: []
   OutputSocketList:
@@ -19748,7 +20178,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55801.844
-    y: 51209.715
+    y: 51208.54
     width: 20
     height: 20
   Info: NotEnough
@@ -19792,7 +20222,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55801.844
-    y: 51178.203
+    y: 51177.027
     width: 20
     height: 20
   Info: Payed
@@ -19818,13 +20248,12 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55574.96
-    y: 51140.656
+    y: 51139.637
     width: 20
     height: 20
   Info: 
   Node: {fileID: 597850770}
   EdgeList:
-  - {fileID: 2063872079}
   - {fileID: 1331839110}
   Icon: {fileID: 0}
 --- !u!114 &597850768
@@ -19844,7 +20273,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55611.2
-    y: 51249.793
+    y: 51248.617
     width: 20
     height: 20
   Info: 
@@ -19884,7 +20313,7 @@ MonoBehaviour:
     x: 55590
     y: 51080
     width: 214.94531
-    height: 171.22266
+    height: 170.04688
   Info: Pay Coin
   InputSocketList:
   - {fileID: 597850767}
@@ -20186,8 +20615,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479.81763, y: -120}
-  m_SizeDelta: {x: 899.63525, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -120}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &601881107
 MonoBehaviour:
@@ -20792,7 +21221,7 @@ MonoBehaviour:
     x: 56140
     y: 51160
     width: 175.35156
-    height: 115.44922
+    height: 141.54688
   Info: Hint Sound
   InputSocketList:
   - {fileID: 627377887}
@@ -20824,7 +21253,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56161.2
-    y: 51274.02
+    y: 51300.117
     width: 20
     height: 20
   Info: 
@@ -20849,7 +21278,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56312.25
-    y: 51220.656
+    y: 51233.273
     width: 20
     height: 20
   Info: 
@@ -20906,7 +21335,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56124.96
-    y: 51220.656
+    y: 51233.273
     width: 20
     height: 20
   Info: 
@@ -20962,10 +21391,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53430
+    x: 53280
     y: 50540
     width: 136
-    height: 101
+    height: 100.24219
   Info: 
   InputSocketList: []
   OutputSocketList:
@@ -20985,11 +21414,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53562.9
-    y: 50593
+    x: 53412.9
+    y: 50592.242
     width: 20
     height: 20
   Info: 
@@ -21027,8 +21456,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53451.2
-    y: 50639.57
+    x: 53301.2
+    y: 50638.812
     width: 20
     height: 20
   Info: 
@@ -21371,8 +21800,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -149, y: -76.95068}
-  m_SizeDelta: {x: 277.06476, y: 86.53999}
+  m_AnchoredPosition: {x: -102.39996, y: -76.95068}
+  m_SizeDelta: {x: 205.23, y: 86.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647144840
 MonoBehaviour:
@@ -21400,7 +21829,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 107
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -21787,6 +22216,75 @@ Transform:
   m_Father: {fileID: 299110617}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &657963223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 657963224}
+  - component: {fileID: 657963226}
+  - component: {fileID: 657963225}
+  m_Layer: 5
+  m_Name: CoinImage (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &657963224
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657963223}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 581166788}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -236.40002, y: -76.995865}
+  m_SizeDelta: {x: 58.380005, y: 59.899994}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &657963225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657963223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1c268675637ae8e46aa9162f317a707f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &657963226
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657963223}
+  m_CullTransparentMesh: 0
 --- !u!1 &658854372
 GameObject:
   m_ObjectHideFlags: 0
@@ -22195,7 +22693,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 37
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &679920450
 MonoBehaviour:
@@ -22214,7 +22712,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54565.09
-    y: 50419.336
+    y: 50418.88
     width: 20
     height: 20
   Info: 
@@ -22239,7 +22737,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54394.96
-    y: 50419.336
+    y: 50418.88
     width: 20
     height: 20
   Info: 
@@ -22264,7 +22762,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54431.2
-    y: 50472.24
+    y: 50472.086
     width: 20
     height: 20
   Info: 
@@ -22291,7 +22789,7 @@ MonoBehaviour:
     x: 54410
     y: 50360
     width: 158.1914
-    height: 113.66797
+    height: 113.515625
   Info: Play Clip
   InputSocketList:
   - {fileID: 679920451}
@@ -22306,167 +22804,6 @@ MonoBehaviour:
   MethodName: Void PlayOtherClip(Int32)
   ParameterValueStrings:
   - 1
---- !u!1 &683760245
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 683760251}
-  - component: {fileID: 683760246}
-  - component: {fileID: 683760247}
-  - component: {fileID: 683760250}
-  - component: {fileID: 683760248}
-  - component: {fileID: 683760249}
-  m_Layer: 0
-  m_Name: Hide HUD (ActionNode)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &683760246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 683760245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 573905742}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 54770
-    y: 51920
-    width: 208.64844
-    height: 113.66797
-  Info: Hide HUD
-  InputSocketList:
-  - {fileID: 683760250}
-  OutputSocketList:
-  - {fileID: 683760248}
-  DefaultOutputSocket: {fileID: 683760247}
-  Active: 1
-  Lables:
-  - 
-  TargetGameObject: {fileID: 277882281}
-  ComponentTypeName: GameObject
-  MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
---- !u!114 &683760247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 683760245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 573905742}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 54791.2
-    y: 52032.24
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 683760246}
-  EdgeList: []
-  Icon: {fileID: 0}
-  AutoHide: 1
---- !u!114 &683760248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 683760245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 573905742}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 54975.547
-    y: 51979.336
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 683760246}
-  EdgeList:
-  - {fileID: 683760249}
-  Icon: {fileID: 0}
-  AutoHide: 0
---- !u!114 &683760249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 683760245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 683760248}
-  OutputSocket: {fileID: 1927967802}
-  EditPoints: []
-  ClickEditpointIndex: 0
---- !u!114 &683760250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 683760245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 573905742}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 54754.96
-    y: 51979.336
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 683760246}
-  EdgeList:
-  - {fileID: 708928327}
-  Icon: {fileID: 0}
---- !u!4 &683760251
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 683760245}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 840395954}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &689227950
 GameObject:
   m_ObjectHideFlags: 0
@@ -22637,8 +22974,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57154.96
-    y: 50793.863
+    x: 57334.96
+    y: 50793
     width: 20
     height: 20
   Info: 
@@ -22662,8 +22999,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57353.9
-    y: 50793.863
+    x: 57533.9
+    y: 50793
     width: 20
     height: 20
   Info: 
@@ -22687,8 +23024,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57191.2
-    y: 50840.434
+    x: 57371.2
+    y: 50839.57
     width: 20
     height: 20
   Info: 
@@ -22725,10 +23062,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57170
+    x: 57350
     y: 50740
     width: 187
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 694383337}
@@ -23113,7 +23450,7 @@ Transform:
   - {fileID: 28446916}
   - {fileID: 361306136}
   m_Father: {fileID: 888204870}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &708928321
 GameObject:
@@ -23151,10 +23488,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54440
-    y: 52080
+    x: 54740
+    y: 52050
     width: 277.34375
-    height: 140.33203
+    height: 140.78906
   Info: Disable Canvas Raycaster
   InputSocketList:
   - {fileID: 708928325}
@@ -23185,8 +23522,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54461.2
-    y: 52218.902
+    x: 54761.2
+    y: 52189.36
     width: 20
     height: 20
   Info: 
@@ -23210,8 +23547,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54714.242
-    y: 52152.664
+    x: 55014.242
+    y: 52122.516
     width: 20
     height: 20
   Info: 
@@ -23236,8 +23573,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54424.96
-    y: 52152.664
+    x: 54724.96
+    y: 52122.516
     width: 20
     height: 20
   Info: 
@@ -23273,7 +23610,7 @@ MonoBehaviour:
   IsSelected: 0
   IsHover: 0
   InputSocket: {fileID: 708928324}
-  OutputSocket: {fileID: 683760250}
+  OutputSocket: {fileID: 883773090}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!1 &715420750
@@ -24194,6 +24531,75 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &733770752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 733770753}
+  - component: {fileID: 733770755}
+  - component: {fileID: 733770754}
+  m_Layer: 5
+  m_Name: CoinImage (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &733770753
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733770752}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 30280930}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -236.4, y: -76.995804}
+  m_SizeDelta: {x: 58.380005, y: 59.899994}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &733770754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733770752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1c268675637ae8e46aa9162f317a707f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &733770755
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733770752}
+  m_CullTransparentMesh: 0
 --- !u!4 &736865261
 Transform:
   m_ObjectHideFlags: 0
@@ -24528,10 +24934,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53440
-    y: 51610
+    x: 53400
+    y: 51660
     width: 187.76953
-    height: 113.66797
+    height: 113.515625
   Info: Back HUD
   InputSocketList: []
   OutputSocketList:
@@ -24557,8 +24963,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53461.2
-    y: 51722.24
+    x: 53421.2
+    y: 51772.086
     width: 20
     height: 20
   Info: 
@@ -24579,11 +24985,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 53624.668
-    y: 51669.336
+    x: 53584.668
+    y: 51718.88
     width: 20
     height: 20
   Info: 
@@ -24607,7 +25013,7 @@ MonoBehaviour:
   IsSelected: 0
   IsHover: 0
   InputSocket: {fileID: 762456499}
-  OutputSocket: {fileID: 409789309}
+  OutputSocket: {fileID: 1710863378}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!4 &762456501
@@ -24621,7 +25027,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &768060299
 GameObject:
@@ -25156,7 +25562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -333.53906, y: -76.95068}
+  m_AnchoredPosition: {x: -236.40002, y: -76.95068}
   m_SizeDelta: {x: 58.380005, y: 59.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &782400969
@@ -25636,7 +26042,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54332.566
-    y: 50859.336
+    y: 50858.88
     width: 20
     height: 20
   Info: 
@@ -25662,7 +26068,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54114.96
-    y: 50859.336
+    y: 50858.88
     width: 20
     height: 20
   Info: 
@@ -25687,7 +26093,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54151.2
-    y: 50912.24
+    y: 50912.086
     width: 20
     height: 20
   Info: 
@@ -25714,7 +26120,7 @@ MonoBehaviour:
     x: 54130
     y: 50800
     width: 205.66797
-    height: 113.66797
+    height: 113.515625
   Info: Spawn Words
   InputSocketList:
   - {fileID: 804318228}
@@ -25748,6 +26154,81 @@ MonoBehaviour:
   OutputSocket: {fileID: 1929359625}
   EditPoints: []
   ClickEditpointIndex: 0
+--- !u!1 &804539766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 804539767}
+  - component: {fileID: 804539769}
+  - component: {fileID: 804539768}
+  m_Layer: 5
+  m_Name: Clue (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &804539767
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804539766}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1350798712}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -515, y: -0.0000019073486}
+  m_SizeDelta: {x: 515, y: 80}
+  m_Pivot: {x: 0.0000000037252903, y: 0.49999997}
+--- !u!114 &804539768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804539766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9686275, g: 0.8117648, b: 0.3529412, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 7
+    m_MaxSize: 70
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Nik_Name + PlayerId
+--- !u!222 &804539769
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804539766}
+  m_CullTransparentMesh: 0
 --- !u!1 &805168264 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1939522705750120, guid: d35d39f1823792a4fb5c68c880720467,
@@ -25794,8 +26275,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479.81763, y: -750}
-  m_SizeDelta: {x: 899.63525, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -750}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &807303783
 MonoBehaviour:
@@ -26126,6 +26607,34 @@ Transform:
   m_Father: {fileID: 947379310}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &819628150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819628151}
+  m_Layer: 0
+  m_Name: Follow Machine Collection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &819628151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 819628150}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &821083783
 GameObject:
   m_ObjectHideFlags: 0
@@ -26287,7 +26796,7 @@ MonoBehaviour:
     x: 54300
     y: 51140
     width: 136
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList: []
   OutputSocketList:
@@ -26311,7 +26820,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54321.2
-    y: 51240.434
+    y: 51239.57
     width: 20
     height: 20
   Info: 
@@ -26336,7 +26845,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54432.9
-    y: 51193.863
+    y: 51193
     width: 20
     height: 20
   Info: 
@@ -26623,8 +27132,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1200023978}
-  - {fileID: 1646697472}
+  - {fileID: 1785710802}
+  - {fileID: 1879324423}
   - {fileID: 1407304313}
   - {fileID: 1344185210}
   m_Father: {fileID: 310650233}
@@ -27075,7 +27584,6 @@ Transform:
   - {fileID: 391276367}
   - {fileID: 496360131}
   - {fileID: 27787039}
-  - {fileID: 683760251}
   - {fileID: 1927967800}
   - {fileID: 1633106325}
   - {fileID: 14200292}
@@ -27095,6 +27603,10 @@ Transform:
   - {fileID: 679920448}
   - {fileID: 1921034916}
   - {fileID: 1474636072}
+  - {fileID: 1710863377}
+  - {fileID: 567522190}
+  - {fileID: 2010105827}
+  - {fileID: 883773089}
   m_Father: {fileID: 573905741}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27488,6 +28000,7 @@ MonoBehaviour:
   - {fileID: 1183842329}
   - {fileID: 492634605}
   - {fileID: 698460883}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &863772794
@@ -27564,7 +28077,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 863772797}
   m_HandleRect: {fileID: 0}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -27694,7 +28207,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52637.105
-    y: 49869.58
+    y: 49868.953
     width: 20
     height: 20
   Info: Puzzle List
@@ -27720,7 +28233,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52637.105
-    y: 49838.066
+    y: 49837.44
     width: 20
     height: 20
   Info: Child Category List
@@ -27746,7 +28259,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52384.96
-    y: 49800.406
+    y: 49799.574
     width: 20
     height: 20
   Info: 
@@ -27771,7 +28284,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52421.2
-    y: 49909.656
+    y: 49909.03
     width: 20
     height: 20
   Info: 
@@ -27798,7 +28311,7 @@ MonoBehaviour:
     x: 52400
     y: 49740
     width: 240.20703
-    height: 171.08594
+    height: 170.46094
   Info: Refresh List
   InputSocketList:
   - {fileID: 867088360}
@@ -28200,8 +28713,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479.81763, y: -540}
-  m_SizeDelta: {x: 899.63525, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -540}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878710021
 MonoBehaviour:
@@ -28440,6 +28953,196 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &883773084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883773089}
+  - component: {fileID: 883773085}
+  - component: {fileID: 883773086}
+  - component: {fileID: 883773090}
+  - component: {fileID: 883773087}
+  - component: {fileID: 883773088}
+  m_Layer: 0
+  m_Name: Hide Hint Button (AnimationNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &883773085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883773084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1216935281, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 55120
+    y: 52160
+    width: 187
+    height: 140.78906
+  Info: Hide Hint Button
+  InputSocketList:
+  - {fileID: 883773090}
+  OutputSocketList:
+  - {fileID: 883773087}
+  DefaultOutputSocket: {fileID: 883773086}
+  Active: 1
+  Animator: {fileID: 277882286}
+  StartState: HideHintButton
+  EndState: HUDRest
+--- !u!114 &883773086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883773084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 55141.2
+    y: 52299.36
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 883773085}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &883773087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883773084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 55303.9
+    y: 52232.516
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 883773085}
+  EdgeList:
+  - {fileID: 883773088}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &883773088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883773084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 883773087}
+  OutputSocket: {fileID: 1927967802}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!4 &883773089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883773084}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 840395954}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &883773090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883773084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 55104.96
+    y: 52232.516
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 883773085}
+  EdgeList:
+  - {fileID: 708928327}
+  Icon: {fileID: 0}
+--- !u!1 &885230848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885230849}
+  m_Layer: 0
+  m_Name: Repository
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &885230849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 885230848}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1483412099}
+  - {fileID: 1666558076}
+  - {fileID: 1737762379}
+  - {fileID: 63710226}
+  - {fileID: 1523900840}
+  m_Father: {fileID: 1863047268}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886845674
 GameObject:
   m_ObjectHideFlags: 0
@@ -28680,9 +29383,9 @@ Transform:
   - {fileID: 1222244982}
   - {fileID: 1415881647}
   - {fileID: 1383502454}
+  - {fileID: 1147136428}
   - {fileID: 707072025}
   - {fileID: 1010829915}
-  - {fileID: 1147136428}
   - {fileID: 1611429976}
   - {fileID: 44754173}
   - {fileID: 1721541443}
@@ -28869,6 +29572,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 552577414}
   - {fileID: 805168265}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -29314,6 +30018,94 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 908611084}
   m_CullTransparentMesh: 0
+--- !u!1 &911054601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 911054602}
+  - component: {fileID: 911054605}
+  - component: {fileID: 911054604}
+  - component: {fileID: 911054603}
+  m_Layer: 5
+  m_Name: CountText (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &911054602
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911054601}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 512012498}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -102.39996, y: -76.99574}
+  m_SizeDelta: {x: 205.23, y: 86.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &911054603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911054601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de80c63be0fb8a4c9b09b4aba80fc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeTextTime: 1
+--- !u!114 &911054604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911054601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 2
+    m_MaxSize: 107
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0663\u0664\u0665\u0666\u0663\u0664"
+--- !u!222 &911054605
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911054601}
+  m_CullTransparentMesh: 0
 --- !u!1 &911151070
 GameObject:
   m_ObjectHideFlags: 0
@@ -29411,7 +30203,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1282707693}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -30114,6 +30906,7 @@ MonoBehaviour:
   - {fileID: 541544904}
   - {fileID: 2035955109}
   - {fileID: 1560757194}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &935416528
@@ -30519,6 +31312,7 @@ MonoBehaviour:
   - {fileID: 323357551}
   - {fileID: 840088177}
   - {fileID: 876060797}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &947379308
@@ -30738,7 +31532,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53153.113
-    y: 50230.406
+    y: 50229.574
     width: 20
     height: 20
   Info: 
@@ -30764,7 +31558,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52894.96
-    y: 50230.406
+    y: 50229.574
     width: 20
     height: 20
   Info: 
@@ -30789,7 +31583,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52931.2
-    y: 50283.883
+    y: 50283.258
     width: 20
     height: 20
   Info: 
@@ -30816,7 +31610,7 @@ MonoBehaviour:
     x: 52910
     y: 50170
     width: 246.21484
-    height: 115.3125
+    height: 114.6875
   Info: UnlockCategory
   InputSocketList:
   - {fileID: 948518281}
@@ -31054,6 +31848,75 @@ Transform:
   m_Father: {fileID: 1820834936}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &964583929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964583930}
+  - component: {fileID: 964583932}
+  - component: {fileID: 964583931}
+  m_Layer: 5
+  m_Name: CoinImage (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &964583930
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964583929}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1282707693}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -236.40002, y: -76.946365}
+  m_SizeDelta: {x: 58.380005, y: 59.899994}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &964583931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964583929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1c268675637ae8e46aa9162f317a707f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &964583932
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964583929}
+  m_CullTransparentMesh: 0
 --- !u!1 &966724988
 GameObject:
   m_ObjectHideFlags: 0
@@ -31562,8 +32425,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53687.65
-    y: 49539.58
+    x: 53697.65
+    y: 49478.953
     width: 20
     height: 20
   Info: SelectedLockItem
@@ -31588,8 +32451,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53687.65
-    y: 49508.066
+    x: 53697.65
+    y: 49447.44
     width: 20
     height: 20
   Info: Select
@@ -31614,8 +32477,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53274.96
-    y: 49529.51
+    x: 53284.96
+    y: 49468.887
     width: 20
     height: 20
   Info: Show and Wait
@@ -31641,8 +32504,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53274.96
-    y: 49504.71
+    x: 53284.96
+    y: 49444.086
     width: 20
     height: 20
   Info: Wait only
@@ -31666,8 +32529,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53311.2
-    y: 49611.168
+    x: 53321.2
+    y: 49550.543
     width: 20
     height: 20
   Info: 
@@ -31691,10 +32554,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53290
-    y: 49410
+    x: 53300
+    y: 49350
     width: 400.75
-    height: 202.59766
+    height: 201.97266
   Info: PuzzleSelectionWindow
   InputSocketList:
   - {fileID: 987821911}
@@ -31724,8 +32587,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53687.65
-    y: 49571.086
+    x: 53697.65
+    y: 49510.46
     width: 20
     height: 20
   Info: Back
@@ -31934,6 +32797,94 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 991066933}
   m_CullTransparentMesh: 0
+--- !u!1 &994648345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994648346}
+  - component: {fileID: 994648349}
+  - component: {fileID: 994648348}
+  - component: {fileID: 994648347}
+  m_Layer: 5
+  m_Name: CountText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &994648346
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 994648345}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1350798712}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -102.39996, y: -76.95068}
+  m_SizeDelta: {x: 205.23, y: 86.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &994648347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 994648345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de80c63be0fb8a4c9b09b4aba80fc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeTextTime: 1
+--- !u!114 &994648348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 994648345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 2
+    m_MaxSize: 107
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0663\u0664\u0665\u0666\u0663\u0664"
+--- !u!222 &994648349
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 994648345}
+  m_CullTransparentMesh: 0
 --- !u!1 &996568952
 GameObject:
   m_ObjectHideFlags: 0
@@ -32122,8 +33073,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -1167.95}
-  m_SizeDelta: {x: 1020, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -1167.95}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1006698336
 MonoBehaviour:
@@ -32249,7 +33200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 888204870}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1010829916
 MonoBehaviour:
@@ -32323,6 +33274,94 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!1 &1013634272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013634273}
+  - component: {fileID: 1013634276}
+  - component: {fileID: 1013634275}
+  - component: {fileID: 1013634274}
+  m_Layer: 5
+  m_Name: CountText (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1013634273
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1013634272}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1282707693}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -102.39996, y: -76.946365}
+  m_SizeDelta: {x: 205.23, y: 86.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1013634274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1013634272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de80c63be0fb8a4c9b09b4aba80fc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeTextTime: 1
+--- !u!114 &1013634275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1013634272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 2
+    m_MaxSize: 107
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0663\u0664\u0665\u0666\u0663\u0664"
+--- !u!222 &1013634276
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1013634272}
+  m_CullTransparentMesh: 0
 --- !u!1 &1014933753
 GameObject:
   m_ObjectHideFlags: 0
@@ -32638,7 +33677,7 @@ MonoBehaviour:
     x: 52610
     y: 50910
     width: 240.10938
-    height: 140.33203
+    height: 140.78906
   Info: Enable On Part hint
   InputSocketList:
   - {fileID: 1027658245}
@@ -32670,7 +33709,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52631.2
-    y: 51048.902
+    y: 51049.36
     width: 20
     height: 20
   Info: 
@@ -32695,7 +33734,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52847.008
-    y: 50982.664
+    y: 50982.516
     width: 20
     height: 20
   Info: 
@@ -32739,7 +33778,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52594.96
-    y: 50982.664
+    y: 50982.516
     width: 20
     height: 20
   Info: 
@@ -32758,7 +33797,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1030381092
 GameObject:
@@ -33428,7 +34467,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54016.613
-    y: 52302.664
+    y: 52302.516
     width: 20
     height: 20
   Info: 
@@ -33454,7 +34493,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53774.96
-    y: 52302.664
+    y: 52302.516
     width: 20
     height: 20
   Info: 
@@ -33479,7 +34518,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53811.2
-    y: 52368.902
+    y: 52369.36
     width: 20
     height: 20
   Info: 
@@ -33506,7 +34545,7 @@ MonoBehaviour:
     x: 53790
     y: 52230
     width: 229.71484
-    height: 140.33203
+    height: 140.78906
   Info: Hide Finish effect
   InputSocketList:
   - {fileID: 1055200075}
@@ -34221,7 +35260,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54941.01
-    y: 50912.664
+    y: 50912.516
     width: 20
     height: 20
   Info: 
@@ -34246,7 +35285,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54724.96
-    y: 50912.664
+    y: 50912.516
     width: 20
     height: 20
   Info: 
@@ -34271,7 +35310,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54761.2
-    y: 50978.902
+    y: 50979.36
     width: 20
     height: 20
   Info: 
@@ -34298,7 +35337,7 @@ MonoBehaviour:
     x: 54740
     y: 50840
     width: 204.11328
-    height: 140.33203
+    height: 140.78906
   Info: Raycaster => set_enabled
   InputSocketList:
   - {fileID: 1075611118}
@@ -34734,8 +35773,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1088928744}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 0.5
+  m_Size: 0.90042317
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -36022,7 +37061,7 @@ MonoBehaviour:
   EditPoints:
   - {x: 0.031745587, y: 0.29585776}
   - {x: 0.9454272, y: 0.381549}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 0
 --- !u!114 &1113292562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36058,7 +37097,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55659.266
-    y: 50889.715
+    y: 50888.54
     width: 20
     height: 20
   Info: Cancel
@@ -36084,7 +37123,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55659.266
-    y: 50858.203
+    y: 50857.027
     width: 20
     height: 20
   Info: Rewarded
@@ -36110,7 +37149,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55464.96
-    y: 50820.656
+    y: 50819.637
     width: 20
     height: 20
   Info: 
@@ -36134,7 +37173,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55501.2
-    y: 50929.793
+    y: 50928.617
     width: 20
     height: 20
   Info: 
@@ -36161,7 +37200,7 @@ MonoBehaviour:
     x: 55480
     y: 50760
     width: 182.36719
-    height: 171.22266
+    height: 170.04688
   Info: Show Ad
   InputSocketList:
   - {fileID: 1113292565}
@@ -36368,7 +37407,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55664.96
-    y: 51333.863
+    y: 51333
     width: 20
     height: 20
   Info: 
@@ -36393,7 +37432,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55701.2
-    y: 51380.434
+    y: 51379.57
     width: 20
     height: 20
   Info: 
@@ -36420,7 +37459,7 @@ MonoBehaviour:
     x: 55680
     y: 51280
     width: 153
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 1128767854}
@@ -36604,7 +37643,7 @@ RectTransform:
   m_Children:
   - {fileID: 476492882}
   m_Father: {fileID: 512012498}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -36753,7 +37792,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 888204870}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1147136429
 MonoBehaviour:
@@ -36837,7 +37876,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55020.625
-    y: 49150.406
+    y: 49149.574
     width: 20
     height: 20
   Info: 
@@ -36865,7 +37904,7 @@ MonoBehaviour:
     x: 54660
     y: 49090
     width: 363.72656
-    height: 115.3125
+    height: 114.6875
   Info: UnlockCategoryPuzzles
   InputSocketList:
   - {fileID: 1154330559}
@@ -36898,7 +37937,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54681.2
-    y: 49203.883
+    y: 49203.258
     width: 20
     height: 20
   Info: 
@@ -36923,7 +37962,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54644.96
-    y: 49150.406
+    y: 49149.574
     width: 20
     height: 20
   Info: 
@@ -36990,11 +38029,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 53886.316
-    y: 50602.664
+    y: 50602.516
     width: 20
     height: 20
   Info: 
@@ -37020,7 +38059,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53684.96
-    y: 50602.664
+    y: 50602.516
     width: 20
     height: 20
   Info: 
@@ -37045,7 +38084,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53721.2
-    y: 50668.902
+    y: 50669.36
     width: 20
     height: 20
   Info: 
@@ -37072,7 +38111,7 @@ MonoBehaviour:
     x: 53700
     y: 50530
     width: 189.41797
-    height: 140.33203
+    height: 140.78906
   Info: HUD => SetupHUD
   InputSocketList:
   - {fileID: 1155508254}
@@ -37134,7 +38173,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 30280930}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -37209,7 +38248,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 512012498}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -37634,7 +38673,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55275.18
-    y: 49645.88
+    y: 49643.785
     width: 20
     height: 20
   Info: Play Next
@@ -37660,7 +38699,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55014.96
-    y: 49594.31
+    y: 49592.746
     width: 20
     height: 20
   Info: 
@@ -37685,7 +38724,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55051.2
-    y: 49717.47
+    y: 49715.375
     width: 20
     height: 20
   Info: 
@@ -37712,7 +38751,7 @@ MonoBehaviour:
     x: 55030
     y: 49520
     width: 248.28125
-    height: 198.89844
+    height: 196.80469
   Info: Prepare next puzzle for spawn
   InputSocketList:
   - {fileID: 1175825982}
@@ -37767,7 +38806,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55275.18
-    y: 49677.39
+    y: 49675.297
     width: 20
     height: 20
   Info: No Next Puzzle
@@ -37814,8 +38853,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52424.96
-    y: 50090.406
+    x: 52414.96
+    y: 50079.574
     width: 20
     height: 20
   Info: 
@@ -37839,10 +38878,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52440
-    y: 50030
+    x: 52430
+    y: 50020
     width: 289.0586
-    height: 171.08594
+    height: 170.46094
   Info: Unlock Puzzle
   InputSocketList:
   - {fileID: 1176079549}
@@ -37868,8 +38907,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52461.2
-    y: 50199.656
+    x: 52451.2
+    y: 50189.03
     width: 20
     height: 20
   Info: 
@@ -37890,11 +38929,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1247893180}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52725.957
-    y: 50159.58
+    x: 52715.957
+    y: 50148.953
     width: 20
     height: 20
   Info: Unlocked
@@ -37919,8 +38958,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52725.957
-    y: 50128.066
+    x: 52715.957
+    y: 50117.44
     width: 20
     height: 20
   Info: Cancel
@@ -38494,10 +39533,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56830
+    x: 57010
     y: 50700
     width: 174.69922
-    height: 143.03516
+    height: 141.54688
   Info: Active Hint Panel
   InputSocketList:
   - {fileID: 1191836722}
@@ -38528,8 +39567,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56851.2
-    y: 50841.605
+    x: 57031.2
+    y: 50840.117
     width: 20
     height: 20
   Info: 
@@ -38553,8 +39592,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57001.598
-    y: 50774.45
+    x: 57181.598
+    y: 50773.273
     width: 20
     height: 20
   Info: 
@@ -38579,8 +39618,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56814.96
-    y: 50774.45
+    x: 56994.96
+    y: 50773.273
     width: 20
     height: 20
   Info: 
@@ -38714,6 +39753,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1048904333}
+  - {fileID: 1350798712}
   - {fileID: 556380699}
   - {fileID: 154409513}
   m_Father: {fileID: 85897226}
@@ -38724,75 +39764,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1200023977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1200023978}
-  - component: {fileID: 1200023980}
-  - component: {fileID: 1200023979}
-  m_Layer: 5
-  m_Name: CoinImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1200023978
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1200023977}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 828735648}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -333.53906, y: -76.95068}
-  m_SizeDelta: {x: 58.380005, y: 59.899994}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1200023979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1200023977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1c268675637ae8e46aa9162f317a707f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1200023980
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1200023977}
-  m_CullTransparentMesh: 0
 --- !u!1 &1202441924
 GameObject:
   m_ObjectHideFlags: 0
@@ -39029,6 +40000,7 @@ MonoBehaviour:
   - {fileID: 831801402}
   - {fileID: 796230454}
   - {fileID: 922802090}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &1209640109
@@ -39660,6 +40632,84 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &1235381215
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 897301473}
+    m_Modifications:
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.7491512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945559895727146, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.86499983
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.86499983
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154491021999358, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342365714462420, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048696671140632, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 16.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048696671140632, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198977386030356, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198977386030356, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -12.7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7ef15084a22f14439887f4671b0b62c, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1236972286
 GameObject:
   m_ObjectHideFlags: 0
@@ -39713,7 +40763,7 @@ MonoBehaviour:
   - {x: -0.03522387, y: 0.08632063}
   - {x: 0.6954102, y: 0.23579974}
   - {x: 1.0324265, y: 0.108690105}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 3
 --- !u!114 &1236972289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39731,7 +40781,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55622.9
-    y: 49173.496
+    y: 49172.46
     width: 20
     height: 20
   Info: 
@@ -39757,7 +40807,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55474.96
-    y: 49173.496
+    y: 49172.46
     width: 20
     height: 20
   Info: 
@@ -39784,7 +40834,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55511.2
-    y: 49220.066
+    y: 49219.03
     width: 20
     height: 20
   Info: 
@@ -39811,7 +40861,7 @@ MonoBehaviour:
     x: 55490
     y: 49120
     width: 136
-    height: 101.49609
+    height: 100.46094
   Info: 
   InputSocketList:
   - {fileID: 1236972290}
@@ -39876,8 +40926,8 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -53939.055, y: -48331.426}
-  Zoom: 0.43142724
+  Position: {x: -53217.633, y: -48722.816}
+  Zoom: 0.53142726
   NodeList:
   - {fileID: 1934340075}
   - {fileID: 361325153}
@@ -39899,6 +40949,7 @@ MonoBehaviour:
   - {fileID: 1609757742}
   - {fileID: 1175825984}
   - {fileID: 596997737}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &1254603479
@@ -40453,8 +41504,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479.81763, y: -330}
-  m_SizeDelta: {x: 899.63525, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -330}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1261590698
 MonoBehaviour:
@@ -40831,7 +41882,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1280401314
 MonoBehaviour:
@@ -40868,7 +41919,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52857.008
-    y: 51252.664
+    y: 51252.516
     width: 20
     height: 20
   Info: 
@@ -40894,7 +41945,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52604.96
-    y: 51252.664
+    y: 51252.516
     width: 20
     height: 20
   Info: 
@@ -40919,7 +41970,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52641.2
-    y: 51318.902
+    y: 51319.36
     width: 20
     height: 20
   Info: 
@@ -40946,7 +41997,7 @@ MonoBehaviour:
     x: 52620
     y: 51180
     width: 240.10938
-    height: 140.33203
+    height: 140.78906
   Info: Disable On Part hint
   InputSocketList:
   - {fileID: 1280401316}
@@ -41057,6 +42108,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 964583930}
+  - {fileID: 1013634273}
   - {fileID: 1461083418}
   - {fileID: 494176711}
   - {fileID: 913133570}
@@ -41392,10 +42445,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53440
-    y: 52230
+    x: 53420
+    y: 52260
     width: 197.36719
-    height: 140.33203
+    height: 140.78906
   Info: Finish Effect button
   InputSocketList: []
   OutputSocketList:
@@ -41421,8 +42474,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53461.2
-    y: 52368.902
+    x: 53441.2
+    y: 52399.36
     width: 20
     height: 20
   Info: 
@@ -41446,8 +42499,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53634.266
-    y: 52302.664
+    x: 53614.266
+    y: 52332.516
     width: 20
     height: 20
   Info: 
@@ -42234,7 +43287,7 @@ MonoBehaviour:
   EditPoints:
   - {x: -0.048702814, y: -0.18115693}
   - {x: 0.88571286, y: -0.20324895}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 2
 --- !u!114 &1331839111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42252,7 +43305,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 57387.9
-    y: 51413.863
+    y: 51413
     width: 20
     height: 20
   Info: 
@@ -42278,7 +43331,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 57224.96
-    y: 51413.863
+    y: 51413
     width: 20
     height: 20
   Info: 
@@ -42303,7 +43356,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 57261.2
-    y: 51460.434
+    y: 51459.57
     width: 20
     height: 20
   Info: 
@@ -42330,7 +43383,7 @@ MonoBehaviour:
     x: 57240
     y: 51360
     width: 151
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 1331839112}
@@ -42915,7 +43968,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uFEAA\uFEF3\uFEAE\uFEA7"
+  m_Text: "\u0647\uFE8E\uFB95\uFEB7\u0648\uFEAE\uFED3"
 --- !u!222 &1344185212
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43095,9 +44148,9 @@ MonoBehaviour:
   InputSocket: {fileID: 1347777817}
   OutputSocket: {fileID: 121398962}
   EditPoints:
-  - {x: 0.26295117, y: -0.24017909}
-  - {x: 0.93493104, y: 0.41264275}
-  ClickEditpointIndex: 2
+  - {x: 0.102864414, y: -0.23344724}
+  - {x: 0.9129899, y: 0.15963359}
+  ClickEditpointIndex: 0
 --- !u!114 &1347777817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43114,8 +44167,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54035.22
-    y: 49554.31
+    x: 54095.22
+    y: 49602.746
     width: 20
     height: 20
   Info: 
@@ -43140,8 +44193,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53834.96
-    y: 49554.31
+    x: 53894.96
+    y: 49602.746
     width: 20
     height: 20
   Info: 
@@ -43165,8 +44218,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53871.2
-    y: 49621.695
+    x: 53931.2
+    y: 49669.6
     width: 20
     height: 20
   Info: 
@@ -43190,10 +44243,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53850
-    y: 49480
+    x: 53910
+    y: 49530
     width: 188.32031
-    height: 143.125
+    height: 141.03125
   Info: Back to categories
   InputSocketList:
   - {fileID: 1347777818}
@@ -43318,6 +44371,78 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1350798711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1350798712}
+  - component: {fileID: 1350798714}
+  - component: {fileID: 1350798713}
+  m_Layer: 5
+  m_Name: ScreenHeader (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1350798712
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350798711}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1642470567}
+  - {fileID: 994648346}
+  - {fileID: 804539767}
+  m_Father: {fileID: 1199230063}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -77.09509}
+  m_SizeDelta: {x: 0, y: 154.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1350798713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350798711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.07220722, g: 0.06781771, b: 0.11320752, a: 0.37254903}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1350798714
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350798711}
+  m_CullTransparentMesh: 0
 --- !u!1 &1352449064
 GameObject:
   m_ObjectHideFlags: 0
@@ -43349,14 +44474,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 14198445}
-  IsSelected: 1
-  IsHover: 1
+  IsSelected: 0
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 55160
     y: 50900
     width: 235
-    height: 115.44922
+    height: 114.27344
   Info: Share Machine
   InputSocketList:
   - {fileID: 1352449068}
@@ -43382,7 +44507,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55181.2
-    y: 51014.02
+    y: 51012.844
     width: 20
     height: 20
   Info: 
@@ -43407,7 +44532,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55391.9
-    y: 50960.656
+    y: 50959.637
     width: 20
     height: 20
   Info: 
@@ -43432,7 +44557,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55144.96
-    y: 50960.656
+    y: 50959.637
     width: 20
     height: 20
   Info: 
@@ -43888,9 +45013,9 @@ GameObject:
   - component: {fileID: 1371533046}
   - component: {fileID: 1371533045}
   - component: {fileID: 1371533050}
-  - component: {fileID: 1371533049}
   - component: {fileID: 1371533051}
   - component: {fileID: 1371533052}
+  - component: {fileID: 1371533049}
   m_Layer: 0
   m_Name: ' (ActionNode)(Clone)'
   m_TagString: Untagged
@@ -43927,8 +45052,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56566.973
-    y: 50878.203
+    x: 56746.973
+    y: 50877.027
     width: 20
     height: 20
   Info: First Part
@@ -43953,8 +45078,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56344.96
-    y: 50840.656
+    x: 56524.96
+    y: 50839.637
     width: 20
     height: 20
   Info: 
@@ -43978,8 +45103,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56381.2
-    y: 50981.305
+    x: 56561.2
+    y: 50980.13
     width: 20
     height: 20
   Info: 
@@ -44003,10 +45128,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56360
+    x: 56540
     y: 50780
     width: 210.07422
-    height: 202.73438
+    height: 201.5586
   Info: Hint One Part
   InputSocketList:
   - {fileID: 1371533046}
@@ -44018,8 +45143,8 @@ MonoBehaviour:
   Active: 1
   Lables:
   - First Part
-  - Last Part
   - New Part
+  - Last Part
   TargetGameObject: {fileID: 1094032883}
   ComponentTypeName: HintManager
   MethodName: Void ShowNextPart()
@@ -44040,7 +45165,7 @@ MonoBehaviour:
   Graph: {fileID: 0}
   IsSelected: 0
   IsHover: 0
-  InputSocket: {fileID: 1371533050}
+  InputSocket: {fileID: 1371533052}
   OutputSocket: {fileID: 1376376567}
   EditPoints: []
   ClickEditpointIndex: 0
@@ -44060,14 +45185,13 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 56566.973
-    y: 50909.715
+    x: 56746.973
+    y: 50908.54
     width: 20
     height: 20
-  Info: Last Part
+  Info: New Part
   Node: {fileID: 1371533048}
-  EdgeList:
-  - {fileID: 1371533049}
+  EdgeList: []
   Icon: {fileID: 0}
   AutoHide: 0
 --- !u!114 &1371533051
@@ -44101,16 +45225,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 14198445}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 56566.973
-    y: 50941.223
+    x: 56746.973
+    y: 50940.047
     width: 20
     height: 20
-  Info: New Part
+  Info: Last Part
   Node: {fileID: 1371533048}
-  EdgeList: []
+  EdgeList:
+  - {fileID: 1371533049}
   Icon: {fileID: 0}
   AutoHide: 0
 --- !u!1 &1376376563
@@ -44149,10 +45274,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56900
+    x: 57080
     y: 50950
     width: 187
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 1376376567}
@@ -44179,8 +45304,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56921.2
-    y: 51050.434
+    x: 57101.2
+    y: 51049.57
     width: 20
     height: 20
   Info: 
@@ -44204,8 +45329,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57083.9
-    y: 51003.863
+    x: 57263.9
+    y: 51003
     width: 20
     height: 20
   Info: 
@@ -44230,8 +45355,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56884.96
-    y: 51003.863
+    x: 57064.96
+    y: 51003
     width: 20
     height: 20
   Info: 
@@ -45496,7 +46621,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56644.773
-    y: 50375.79
+    y: 50374.3
     width: 20
     height: 20
   Info: Yes
@@ -45540,7 +46665,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56644.773
-    y: 50407.3
+    y: 50405.812
     width: 20
     height: 20
   Info: No
@@ -45566,7 +46691,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56364.96
-    y: 50324.45
+    y: 50323.273
     width: 20
     height: 20
   Info: 
@@ -45591,7 +46716,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56401.2
-    y: 50447.38
+    y: 50445.89
     width: 20
     height: 20
   Info: 
@@ -45631,7 +46756,7 @@ MonoBehaviour:
     x: 56380
     y: 50250
     width: 267.875
-    height: 198.8086
+    height: 197.32031
   Info: Is Word Complete Hinted?
   InputSocketList:
   - {fileID: 1436176487}
@@ -46024,8 +47149,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 55909.062
-    y: 50304.45
+    x: 55809.062
+    y: 50283.273
     width: 20
     height: 20
   Info: 
@@ -46050,8 +47175,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 55711.2
-    y: 50371.605
+    x: 55611.2
+    y: 50350.117
     width: 20
     height: 20
   Info: 
@@ -46085,13 +47210,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 14198445}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 55690
-    y: 50230
+    x: 55590
+    y: 50210
     width: 222.16406
-    height: 143.03516
+    height: 141.54688
   Info: Hinted Word Completed
   InputSocketList: []
   OutputSocketList:
@@ -46169,7 +47294,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55947.9
-    y: 50903.863
+    y: 50903
     width: 20
     height: 20
   Info: 
@@ -46195,7 +47320,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55784.96
-    y: 50903.863
+    y: 50903
     width: 20
     height: 20
   Info: 
@@ -46221,7 +47346,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55821.2
-    y: 50950.434
+    y: 50949.57
     width: 20
     height: 20
   Info: 
@@ -46248,7 +47373,7 @@ MonoBehaviour:
     x: 55800
     y: 50850
     width: 151
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 1451627556}
@@ -47105,7 +48230,7 @@ RectTransform:
   m_Children:
   - {fileID: 1280723801}
   m_Father: {fileID: 1282707693}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -47294,7 +48419,7 @@ MonoBehaviour:
     x: 56790
     y: 50460
     width: 187
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 1463370788}
@@ -47322,7 +48447,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56811.2
-    y: 50560.434
+    y: 50559.57
     width: 20
     height: 20
   Info: 
@@ -47347,7 +48472,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56973.9
-    y: 50513.863
+    y: 50513
     width: 20
     height: 20
   Info: 
@@ -47372,7 +48497,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56774.96
-    y: 50513.863
+    y: 50513
     width: 20
     height: 20
   Info: 
@@ -47421,7 +48546,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581166788}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -47860,10 +48985,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54370
-    y: 51830
+    x: 54390
+    y: 52060
     width: 158.1914
-    height: 113.66797
+    height: 113.515625
   Info: Play Clip
   InputSocketList:
   - {fileID: 1474636073}
@@ -47894,8 +49019,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54391.2
-    y: 51942.24
+    x: 54411.2
+    y: 52172.086
     width: 20
     height: 20
   Info: 
@@ -47916,11 +49041,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54525.09
-    y: 51889.336
+    x: 54545.09
+    y: 52118.88
     width: 20
     height: 20
   Info: 
@@ -47958,7 +49083,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 39
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1474636073
 MonoBehaviour:
@@ -47976,8 +49101,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 54354.96
-    y: 51889.336
+    x: 54374.96
+    y: 52118.88
     width: 20
     height: 20
   Info: 
@@ -48051,6 +49176,133 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1483412095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1483412099}
+  - component: {fileID: 1483412096}
+  - component: {fileID: 1483412097}
+  - component: {fileID: 1483412098}
+  - component: {fileID: 1483412100}
+  m_Layer: 0
+  m_Name: ' (InputNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1483412096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483412095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1381462374, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54460
+    y: 51800
+    width: 136
+    height: 100.44531
+  Info: 
+  InputSocketList: []
+  OutputSocketList:
+  - {fileID: 1483412098}
+  DefaultOutputSocket: {fileID: 1483412097}
+  Active: 1
+--- !u!114 &1483412097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483412095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54481.2
+    y: 51899.016
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1483412096}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1483412098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483412095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 54592.9
+    y: 51852.445
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1483412096}
+  EdgeList:
+  - {fileID: 1483412100}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!4 &1483412099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483412095}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 885230849}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483412100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483412095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1483412098}
+  OutputSocket: {fileID: 1737762378}
+  EditPoints: []
+  ClickEditpointIndex: 0
 --- !u!1 &1484087059
 GameObject:
   m_ObjectHideFlags: 0
@@ -48654,8 +49906,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -1407.95}
-  m_SizeDelta: {x: 1020, y: 240}
+  m_AnchoredPosition: {x: 480.2539, y: -1407.95}
+  m_SizeDelta: {x: 900.5078, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1502948879
 MonoBehaviour:
@@ -48853,6 +50105,7 @@ MonoBehaviour:
   NodeList:
   - {fileID: 935416529}
   - {fileID: 515636983}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &1507269222
@@ -49510,6 +50763,168 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1522538231}
   m_CullTransparentMesh: 0
+--- !u!1 &1523900839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1523900840}
+  - component: {fileID: 1523900845}
+  - component: {fileID: 1523900844}
+  - component: {fileID: 1523900843}
+  - component: {fileID: 1523900842}
+  - component: {fileID: 1523900841}
+  m_Layer: 0
+  m_Name: ' (ActionNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1523900840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523900839}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 885230849}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1523900841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523900839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1523900842}
+  OutputSocket: {fileID: 1666558077}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!114 &1523900842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523900839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 55037.9
+    y: 51722.445
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1523900845}
+  EdgeList:
+  - {fileID: 1523900841}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1523900843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523900839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54874.96
+    y: 51722.445
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1523900845}
+  EdgeList:
+  - {fileID: 63710225}
+  Icon: {fileID: 0}
+--- !u!114 &1523900844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523900839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54911.2
+    y: 51769.016
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1523900845}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1523900845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523900839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54890
+    y: 51670
+    width: 151
+    height: 100.44531
+  Info: 
+  InputSocketList:
+  - {fileID: 1523900843}
+  OutputSocketList:
+  - {fileID: 1523900842}
+  DefaultOutputSocket: {fileID: 1523900844}
+  Active: 1
+  Lables:
+  - 
+  TargetGameObject: {fileID: 2127709794}
+  ComponentTypeName: PurchaseManager
+  MethodName: Void GiveSolveReward()
+  ParameterValueStrings:
+  - 
+  - 
 --- !u!1 &1538602673
 GameObject:
   m_ObjectHideFlags: 0
@@ -50436,8 +51851,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -747.95}
-  m_SizeDelta: {x: 1020, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -747.95}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1560008386
 MonoBehaviour:
@@ -50816,7 +52231,7 @@ RectTransform:
   m_Children:
   - {fileID: 1367216475}
   m_Father: {fileID: 30280930}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -51475,6 +52890,7 @@ MonoBehaviour:
   - {fileID: 1097356854}
   - {fileID: 1715790976}
   - {fileID: 358765380}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &1596963274
@@ -51530,6 +52946,7 @@ MonoBehaviour:
   - {fileID: 1658596373}
   - {fileID: 496655635}
   - {fileID: 1474086231}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &1597252245
@@ -52011,7 +53428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 50971.85
@@ -52037,7 +53454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
   IsSelected: 0
-  IsHover: 1
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 50971.85
@@ -52240,7 +53657,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 581166788}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -52370,7 +53787,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52657.082
-    y: 50479.58
+    y: 50478.953
     width: 20
     height: 20
   Info: CategoryParent
@@ -52396,7 +53813,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52657.082
-    y: 50448.066
+    y: 50447.44
     width: 20
     height: 20
   Info: ExitLocalPuzzles
@@ -52422,7 +53839,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52394.96
-    y: 50410.406
+    y: 50409.574
     width: 20
     height: 20
   Info: 
@@ -52447,7 +53864,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52431.2
-    y: 50519.656
+    y: 50519.03
     width: 20
     height: 20
   Info: 
@@ -52474,7 +53891,7 @@ MonoBehaviour:
     x: 52410
     y: 50350
     width: 250.1836
-    height: 171.08594
+    height: 170.46094
   Info: Back
   InputSocketList:
   - {fileID: 1609267717}
@@ -52578,7 +53995,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53217.9
-    y: 49673.496
+    y: 49602.46
     width: 20
     height: 20
   Info: 
@@ -52604,7 +54021,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53054.96
-    y: 49673.496
+    y: 49602.46
     width: 20
     height: 20
   Info: 
@@ -52629,7 +54046,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53091.2
-    y: 49720.066
+    y: 49649.03
     width: 20
     height: 20
   Info: 
@@ -52654,9 +54071,9 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53070
-    y: 49620
+    y: 49550
     width: 151
-    height: 101.49609
+    height: 100.46094
   Info: 
   InputSocketList:
   - {fileID: 1609757740}
@@ -52712,7 +54129,7 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -49428.1, y: -49749.254}
+  Position: {x: -51175.582, y: -49896.816}
   Zoom: 0.5200004
   NodeList:
   - {fileID: 720323809}
@@ -52727,6 +54144,7 @@ MonoBehaviour:
   - {fileID: 338012153}
   - {fileID: 277750410}
   - {fileID: 1953455009}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &1611429975
@@ -53177,7 +54595,7 @@ MonoBehaviour:
     x: 54250
     y: 51510
     width: 282
-    height: 140.33203
+    height: 140.78906
   Info: WordManager => DeleteAllWords
   InputSocketList:
   - {fileID: 1633106324}
@@ -53210,7 +54628,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54271.2
-    y: 51648.902
+    y: 51649.36
     width: 20
     height: 20
   Info: 
@@ -53235,7 +54653,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54528.9
-    y: 51582.664
+    y: 51582.516
     width: 20
     height: 20
   Info: 
@@ -53279,7 +54697,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54234.96
-    y: 51582.664
+    y: 51582.516
     width: 20
     height: 20
   Info: 
@@ -53298,7 +54716,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1633702875
 GameObject:
@@ -53667,7 +55085,7 @@ RectTransform:
   m_Children:
   - {fileID: 41256744}
   m_Father: {fileID: 581166788}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -53759,6 +55177,75 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1642329047}
+  m_CullTransparentMesh: 0
+--- !u!1 &1642470566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642470567}
+  - component: {fileID: 1642470569}
+  - component: {fileID: 1642470568}
+  m_Layer: 5
+  m_Name: CoinImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1642470567
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642470566}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1350798712}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -236.40005, y: -76.95068}
+  m_SizeDelta: {x: 58.380005, y: 59.899994}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1642470568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642470566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1c268675637ae8e46aa9162f317a707f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1642470569
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642470566}
   m_CullTransparentMesh: 0
 --- !u!1 &1643850672
 GameObject:
@@ -54025,94 +55512,6 @@ Transform:
   m_Father: {fileID: 14198444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1646697471
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1646697472}
-  - component: {fileID: 1646697475}
-  - component: {fileID: 1646697474}
-  - component: {fileID: 1646697473}
-  m_Layer: 5
-  m_Name: CountText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1646697472
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1646697471}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 828735648}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -149, y: -76.95068}
-  m_SizeDelta: {x: 277.06476, y: 86.53999}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1646697473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1646697471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de80c63be0fb8a4c9b09b4aba80fc93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChangeTextTime: 1
---- !u!114 &1646697474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1646697471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
-    m_FontSize: 25
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 2
-    m_MaxSize: 107
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\u0663\u0664\u0665\u0666\u0663\u0664"
---- !u!222 &1646697475
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1646697471}
-  m_CullTransparentMesh: 0
 --- !u!1 &1646865238
 GameObject:
   m_ObjectHideFlags: 0
@@ -54308,8 +55707,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 479.81763, y: -330}
-  m_SizeDelta: {x: 899.63525, y: 180}
+  m_AnchoredPosition: {x: 480.2539, y: -330}
+  m_SizeDelta: {x: 900.5078, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1655491215
 MonoBehaviour:
@@ -54843,6 +56242,113 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1664812628}
   m_CullTransparentMesh: 0
+--- !u!1 &1666558075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1666558076}
+  - component: {fileID: 1666558079}
+  - component: {fileID: 1666558078}
+  - component: {fileID: 1666558077}
+  m_Layer: 0
+  m_Name: ' (OutputNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1666558076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666558075}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 885230849}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1666558077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666558075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 55214.96
+    y: 51852.445
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1666558079}
+  EdgeList:
+  - {fileID: 1523900841}
+  Icon: {fileID: 0}
+--- !u!114 &1666558078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666558075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 55251.2
+    y: 51899.016
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1666558079}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1666558079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666558075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1431799399, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 55230
+    y: 51800
+    width: 153
+    height: 100.44531
+  Info: 
+  InputSocketList:
+  - {fileID: 1666558077}
+  OutputSocketList: []
+  DefaultOutputSocket: {fileID: 1666558078}
+  Active: 1
 --- !u!1 &1666610588
 GameObject:
   m_ObjectHideFlags: 0
@@ -55150,7 +56656,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1673226674
 MonoBehaviour:
@@ -55169,7 +56675,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53128.66
-    y: 51359.336
+    y: 51358.88
     width: 20
     height: 20
   Info: 
@@ -55194,7 +56700,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52904.96
-    y: 51359.336
+    y: 51358.88
     width: 20
     height: 20
   Info: 
@@ -55219,7 +56725,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52941.2
-    y: 51412.24
+    y: 51412.086
     width: 20
     height: 20
   Info: 
@@ -55246,7 +56752,7 @@ MonoBehaviour:
     x: 52920
     y: 51300
     width: 211.76172
-    height: 113.66797
+    height: 113.515625
   Info: Hide free hint
   InputSocketList:
   - {fileID: 1673226675}
@@ -56022,6 +57528,167 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1710863372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1710863377}
+  - component: {fileID: 1710863373}
+  - component: {fileID: 1710863374}
+  - component: {fileID: 1710863378}
+  - component: {fileID: 1710863375}
+  - component: {fileID: 1710863376}
+  m_Layer: 0
+  m_Name: Hide HintPanel (ActionNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1710863373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710863372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 53720
+    y: 51690
+    width: 225.16016
+    height: 113.515625
+  Info: Hide HintPanel
+  InputSocketList:
+  - {fileID: 1710863378}
+  OutputSocketList:
+  - {fileID: 1710863375}
+  DefaultOutputSocket: {fileID: 1710863374}
+  Active: 1
+  Lables:
+  - 
+  TargetGameObject: {fileID: 1500257639}
+  ComponentTypeName: GameObject
+  MethodName: Void SetActive(Boolean)
+  ParameterValueStrings:
+  - False
+--- !u!114 &1710863374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710863372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 53741.2
+    y: 51802.086
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1710863373}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1710863375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710863372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 53942.06
+    y: 51748.88
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1710863373}
+  EdgeList:
+  - {fileID: 1710863376}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1710863376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710863372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 1710863375}
+  OutputSocket: {fileID: 409789309}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!4 &1710863377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710863372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 840395954}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710863378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710863372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 53704.96
+    y: 51748.88
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1710863373}
+  EdgeList:
+  - {fileID: 762456500}
+  Icon: {fileID: 0}
 --- !u!114 &1711583503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56600,7 +58267,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54084.96
-    y: 49140.406
+    y: 49139.574
     width: 20
     height: 20
   Info: 
@@ -56625,7 +58292,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54379.996
-    y: 49178.066
+    y: 49177.44
     width: 20
     height: 20
   Info: Cancel
@@ -56651,7 +58318,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54121.2
-    y: 49249.656
+    y: 49249.03
     width: 20
     height: 20
   Info: 
@@ -56678,7 +58345,7 @@ MonoBehaviour:
     x: 54100
     y: 49080
     width: 283.09766
-    height: 171.08594
+    height: 170.46094
   Info: Unlock Puzzle
   InputSocketList:
   - {fileID: 1720724730}
@@ -56726,7 +58393,7 @@ MonoBehaviour:
   - {x: -0.118184365, y: 0.11900185}
   - {x: 0.3235784, y: 0.28917688}
   - {x: 0.8820646, y: 0.16580392}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 3
 --- !u!114 &1720724736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56744,7 +58411,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54379.996
-    y: 49209.58
+    y: 49208.953
     width: 20
     height: 20
   Info: Unlocked
@@ -57030,6 +58697,147 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1734196606}
   m_CullTransparentMesh: 0
+--- !u!1 &1737762374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737762379}
+  - component: {fileID: 1737762375}
+  - component: {fileID: 1737762376}
+  - component: {fileID: 1737762378}
+  - component: {fileID: 1737762377}
+  m_Layer: 0
+  m_Name: Show RewardEffect (ActionNode)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1737762375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737762374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54800
+    y: 51850
+    width: 208.88672
+    height: 139.77734
+  Info: Show RewardEffect
+  InputSocketList:
+  - {fileID: 1737762378}
+  OutputSocketList:
+  - {fileID: 1737762377}
+  DefaultOutputSocket: {fileID: 1737762376}
+  Active: 1
+  Lables:
+  - 
+  TargetGameObject: {fileID: 2060048784}
+  ComponentTypeName: GameObject
+  MethodName: Void SetActive(Boolean)
+  ParameterValueStrings:
+  - True
+--- !u!114 &1737762376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737762374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54821.2
+    y: 51988.348
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1737762375}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &1737762377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737762374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 55005.785
+    y: 51922.11
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1737762375}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &1737762378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737762374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 1863047269}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54784.96
+    y: 51922.11
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 1737762375}
+  EdgeList:
+  - {fileID: 1483412100}
+  Icon: {fileID: 0}
+--- !u!4 &1737762379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737762374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 885230849}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1753055119
 GameObject:
   m_ObjectHideFlags: 0
@@ -57246,7 +59054,7 @@ MonoBehaviour:
     x: 55580
     y: 52300
     width: 165.16406
-    height: 113.66797
+    height: 113.515625
   Info: End Play
   InputSocketList:
   - {fileID: 1755978832}
@@ -57270,7 +59078,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55601.2
-    y: 52412.24
+    y: 52412.086
     width: 20
     height: 20
   Info: 
@@ -57295,7 +59103,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55564.96
-    y: 52359.336
+    y: 52358.88
     width: 20
     height: 20
   Info: 
@@ -57519,7 +59327,7 @@ MonoBehaviour:
     x: 52810
     y: 50450
     width: 327.59375
-    height: 143.125
+    height: 141.03125
   Info: LocalCategorySelectionWindow => Hide
   InputSocketList:
   - {fileID: 1777906127}
@@ -57552,7 +59360,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52831.2
-    y: 50591.695
+    y: 50589.6
     width: 20
     height: 20
   Info: 
@@ -57577,7 +59385,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53134.492
-    y: 50524.31
+    y: 50522.746
     width: 20
     height: 20
   Info: 
@@ -57621,7 +59429,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52794.96
-    y: 50524.31
+    y: 50522.746
     width: 20
     height: 20
   Info: 
@@ -57860,6 +59668,75 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785658516}
+  m_CullTransparentMesh: 0
+--- !u!1 &1785710801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785710802}
+  - component: {fileID: 1785710804}
+  - component: {fileID: 1785710803}
+  m_Layer: 5
+  m_Name: CoinImage (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1785710802
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1785710801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 828735648}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -236.40002, y: -76.95058}
+  m_SizeDelta: {x: 58.380005, y: 59.899994}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1785710803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1785710801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1c268675637ae8e46aa9162f317a707f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1785710804
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1785710801}
   m_CullTransparentMesh: 0
 --- !u!1 &1787648393
 GameObject:
@@ -58447,8 +60324,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 312.5, y: -116.425}
-  m_SizeDelta: {x: 525, y: 132.85}
+  m_AnchoredPosition: {x: 282.62695, y: -116.425}
+  m_SizeDelta: {x: 465.2539, y: 132.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806346416
 MonoBehaviour:
@@ -58926,7 +60803,7 @@ MonoBehaviour:
     x: 52950
     y: 51040
     width: 211.76172
-    height: 113.66797
+    height: 113.515625
   Info: Show free hint
   InputSocketList:
   - {fileID: 1816908812}
@@ -58958,7 +60835,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52971.2
-    y: 51152.24
+    y: 51152.086
     width: 20
     height: 20
   Info: 
@@ -58983,7 +60860,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53158.66
-    y: 51099.336
+    y: 51098.88
     width: 20
     height: 20
   Info: 
@@ -59008,7 +60885,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52934.96
-    y: 51099.336
+    y: 51098.88
     width: 20
     height: 20
   Info: 
@@ -59027,7 +60904,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1818706819
 GameObject:
@@ -59097,7 +60974,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52994.492
-    y: 49524.31
+    y: 49522.746
     width: 20
     height: 20
   Info: 
@@ -59123,7 +61000,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52654.96
-    y: 49524.31
+    y: 49522.746
     width: 20
     height: 20
   Info: 
@@ -59148,7 +61025,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52691.2
-    y: 49591.695
+    y: 49589.6
     width: 20
     height: 20
   Info: 
@@ -59175,7 +61052,7 @@ MonoBehaviour:
     x: 52670
     y: 49450
     width: 327.59375
-    height: 143.125
+    height: 141.03125
   Info: LocalCategorySelectionWindow => Hide
   InputSocketList:
   - {fileID: 1818706823}
@@ -59221,6 +61098,11 @@ Transform:
   m_Father: {fileID: 947379310}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1822953616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1890538310186684, guid: c7ef15084a22f14439887f4671b0b62c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1235381215}
 --- !u!1 &1823203609
 GameObject:
   m_ObjectHideFlags: 0
@@ -60021,6 +61903,7 @@ Transform:
   - {fileID: 1209557897}
   - {fileID: 573905741}
   - {fileID: 1247893179}
+  - {fileID: 1863047268}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60032,7 +61915,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1839215847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -509353194, guid: 4f787a8394f396147bc8133addbf07bc, type: 3}
+  m_Script: {fileID: 332151741, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1842279487
@@ -60489,6 +62372,58 @@ Transform:
   m_Father: {fileID: 947379310}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1863047267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863047268}
+  - component: {fileID: 1863047269}
+  m_Layer: 0
+  m_Name: Reward Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863047268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863047267}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -497.425, y: -947.39136, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 885230849}
+  m_Father: {fileID: 1839215848}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1863047269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1863047267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Position: {x: -54453.5, y: -51404.07}
+  Zoom: 0.9000001
+  NodeList:
+  - {fileID: 1483412096}
+  - {fileID: 1666558079}
+  - {fileID: 1737762375}
+  - {fileID: 63710222}
+  - {fileID: 1523900845}
+  GroupList: []
+  LastRunningNode: {fileID: 0}
+  IsRunning: 0
 --- !u!1 &1863881231
 GameObject:
   m_ObjectHideFlags: 0
@@ -60799,10 +62734,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53420
-    y: 51430
+    x: 53260
+    y: 51350
     width: 179.16797
-    height: 140.33203
+    height: 140.78906
   Info: Back start effect
   InputSocketList: []
   OutputSocketList:
@@ -60828,8 +62763,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53441.2
-    y: 51568.902
+    x: 53281.2
+    y: 51489.36
     width: 20
     height: 20
   Info: 
@@ -60853,8 +62788,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 53596.066
-    y: 51502.664
+    x: 53436.066
+    y: 51422.516
     width: 20
     height: 20
   Info: 
@@ -60894,6 +62829,94 @@ Transform:
   m_Father: {fileID: 840395954}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1879324422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1879324423}
+  - component: {fileID: 1879324426}
+  - component: {fileID: 1879324425}
+  - component: {fileID: 1879324424}
+  m_Layer: 5
+  m_Name: CountText (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1879324423
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1879324422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 828735648}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -102.39996, y: -76.95058}
+  m_SizeDelta: {x: 205.23, y: 86.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1879324424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1879324422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de80c63be0fb8a4c9b09b4aba80fc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeTextTime: 1
+--- !u!114 &1879324425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1879324422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 765fcf7e4aadd214389bad99bbaf6cb5, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 2
+    m_MaxSize: 107
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0663\u0664\u0665\u0666\u0663\u0664"
+--- !u!222 &1879324426
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1879324422}
+  m_CullTransparentMesh: 0
 --- !u!1 &1884035375
 GameObject:
   m_ObjectHideFlags: 0
@@ -61007,7 +63030,7 @@ MonoBehaviour:
     x: 52360
     y: 51310
     width: 230.10938
-    height: 140.33203
+    height: 140.78906
   Info: AdManager => OnUnavalable
   InputSocketList: []
   OutputSocketList:
@@ -61034,7 +63057,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52381.2
-    y: 51448.902
+    y: 51449.36
     width: 20
     height: 20
   Info: 
@@ -61059,7 +63082,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52587.008
-    y: 51382.664
+    y: 51382.516
     width: 20
     height: 20
   Info: 
@@ -61097,7 +63120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891861544
 GameObject:
@@ -61244,7 +63267,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54479.01
-    y: 49394.31
+    y: 49392.746
     width: 20
     height: 20
   Info: 
@@ -61270,7 +63293,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54084.96
-    y: 49394.31
+    y: 49392.746
     width: 20
     height: 20
   Info: 
@@ -61295,7 +63318,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54121.2
-    y: 49461.695
+    y: 49459.6
     width: 20
     height: 20
   Info: 
@@ -61322,7 +63345,7 @@ MonoBehaviour:
     x: 54100
     y: 49320
     width: 382.11328
-    height: 143.125
+    height: 141.03125
   Info: LocalPuzzlesSelectionWindow => SetForSpawn
   InputSocketList:
   - {fileID: 1893268203}
@@ -61752,7 +63775,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52286.42
-    y: 50279.58
+    y: 50278.953
     width: 20
     height: 20
   Info: SelectedLockItem
@@ -61778,7 +63801,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52286.42
-    y: 50248.066
+    y: 50247.44
     width: 20
     height: 20
   Info: Select
@@ -61804,7 +63827,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51874.96
-    y: 50269.51
+    y: 50268.887
     width: 20
     height: 20
   Info: Show and Wait
@@ -61830,7 +63853,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51874.96
-    y: 50244.71
+    y: 50244.086
     width: 20
     height: 20
   Info: Wait only
@@ -61854,7 +63877,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51911.2
-    y: 50351.168
+    y: 50350.543
     width: 20
     height: 20
   Info: 
@@ -61881,7 +63904,7 @@ MonoBehaviour:
     x: 51890
     y: 50150
     width: 399.52344
-    height: 202.59766
+    height: 201.97266
   Info: CategorySelectionWindow
   InputSocketList:
   - {fileID: 1902854716}
@@ -61912,7 +63935,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52286.42
-    y: 50311.086
+    y: 50310.46
     width: 20
     height: 20
   Info: Back
@@ -62157,10 +64180,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57340
+    x: 57520
     y: 50950
     width: 187
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 1913833301}
@@ -62187,8 +64210,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57361.2
-    y: 51050.434
+    x: 57541.2
+    y: 51049.57
     width: 20
     height: 20
   Info: 
@@ -62212,8 +64235,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57523.9
-    y: 51003.863
+    x: 57703.9
+    y: 51003
     width: 20
     height: 20
   Info: 
@@ -62237,8 +64260,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 57324.96
-    y: 51003.863
+    x: 57504.96
+    y: 51003
     width: 20
     height: 20
   Info: 
@@ -62327,7 +64350,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56097.9
-    y: 51333.863
+    y: 51333
     width: 20
     height: 20
   Info: 
@@ -62353,7 +64376,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55934.96
-    y: 51333.863
+    y: 51333
     width: 20
     height: 20
   Info: 
@@ -62378,7 +64401,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55971.2
-    y: 51380.434
+    y: 51379.57
     width: 20
     height: 20
   Info: 
@@ -62405,7 +64428,7 @@ MonoBehaviour:
     x: 55950
     y: 51280
     width: 151
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 1914386305}
@@ -62652,7 +64675,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54564.96
-    y: 49440.406
+    y: 49439.574
     width: 20
     height: 20
   Info: 
@@ -62673,14 +64696,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 1247893180}
-  IsSelected: 0
+  IsSelected: 1
   IsHover: 1
   Rect:
     serializedVersion: 2
     x: 54580
     y: 49380
     width: 235
-    height: 171.08594
+    height: 170.46094
   Info: Play Puzzle
   InputSocketList:
   - {fileID: 1920164252}
@@ -62707,7 +64730,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54601.2
-    y: 49549.656
+    y: 49549.03
     width: 20
     height: 20
   Info: 
@@ -62732,7 +64755,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54811.9
-    y: 49509.58
+    y: 49508.953
     width: 20
     height: 20
   Info: End Play
@@ -62758,7 +64781,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54811.9
-    y: 49478.066
+    y: 49477.44
     width: 20
     height: 20
   Info: Back
@@ -62855,7 +64878,7 @@ MonoBehaviour:
     x: 53520
     y: 50690
     width: 158.1914
-    height: 113.66797
+    height: 113.515625
   Info: Play Clip
   InputSocketList:
   - {fileID: 1921034917}
@@ -62887,7 +64910,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53541.2
-    y: 50802.24
+    y: 50802.086
     width: 20
     height: 20
   Info: 
@@ -62912,7 +64935,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53675.09
-    y: 50749.336
+    y: 50748.88
     width: 20
     height: 20
   Info: 
@@ -62950,7 +64973,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1921034917
 MonoBehaviour:
@@ -62969,7 +64992,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53504.96
-    y: 50749.336
+    y: 50748.88
     width: 20
     height: 20
   Info: 
@@ -63339,7 +65362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1927967801
 MonoBehaviour:
@@ -63357,8 +65380,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 55258.23
-    y: 52159.336
+    x: 55648.23
+    y: 52148.88
     width: 20
     height: 20
   Info: 
@@ -63382,14 +65405,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 55034.96
-    y: 52159.336
+    x: 55424.96
+    y: 52148.88
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1927967804}
   EdgeList:
-  - {fileID: 683760249}
+  - {fileID: 883773088}
   Icon: {fileID: 0}
 --- !u!114 &1927967803
 MonoBehaviour:
@@ -63407,8 +65430,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 55071.2
-    y: 52212.24
+    x: 55461.2
+    y: 52202.086
     width: 20
     height: 20
   Info: 
@@ -63432,10 +65455,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 55050
-    y: 52100
+    x: 55440
+    y: 52090
     width: 211.33203
-    height: 113.66797
+    height: 113.515625
   Info: Focus Letters
   InputSocketList:
   - {fileID: 1927967802}
@@ -63482,7 +65505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1929359623
 MonoBehaviour:
@@ -63519,7 +65542,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54663.9
-    y: 50732.664
+    y: 50732.516
     width: 20
     height: 20
   Info: 
@@ -63545,7 +65568,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54464.96
-    y: 50732.664
+    y: 50732.516
     width: 20
     height: 20
   Info: 
@@ -63570,7 +65593,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54501.2
-    y: 50798.902
+    y: 50799.36
     width: 20
     height: 20
   Info: 
@@ -63597,7 +65620,7 @@ MonoBehaviour:
     x: 54480
     y: 50660
     width: 187
-    height: 140.33203
+    height: 140.78906
   Info: Show Hint Button
   InputSocketList:
   - {fileID: 1929359625}
@@ -63721,7 +65744,7 @@ MonoBehaviour:
     x: 51480
     y: 50300
     width: 136
-    height: 101.49609
+    height: 100.46094
   Info: 
   InputSocketList: []
   OutputSocketList:
@@ -63745,7 +65768,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51501.2
-    y: 50400.066
+    y: 50399.03
     width: 20
     height: 20
   Info: 
@@ -63770,7 +65793,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 51612.9
-    y: 50353.496
+    y: 50352.46
     width: 20
     height: 20
   Info: 
@@ -64083,8 +66106,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 51759.5
-    y: 49818.19
+    x: 51749.5
+    y: 49838.19
     width: 20
     height: 20
   Info: No Last Puzzle
@@ -64109,8 +66132,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 51759.5
-    y: 49786.68
+    x: 51749.5
+    y: 49806.68
     width: 20
     height: 20
   Info: Play
@@ -64135,8 +66158,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51424.96
-    y: 49748.504
+    x: 51414.96
+    y: 49768.504
     width: 20
     height: 20
   Info: 
@@ -64160,8 +66183,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51461.2
-    y: 49858.27
+    x: 51451.2
+    y: 49878.27
     width: 20
     height: 20
   Info: 
@@ -64185,8 +66208,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51440
-    y: 49690
+    x: 51430
+    y: 49710
     width: 322.60156
     height: 169.69922
   Info: Show Last Played Puzzle
@@ -64413,7 +66436,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52537.008
-    y: 51072.664
+    y: 51072.516
     width: 20
     height: 20
   Info: 
@@ -64439,7 +66462,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52331.2
-    y: 51138.902
+    y: 51139.36
     width: 20
     height: 20
   Info: 
@@ -64466,7 +66489,7 @@ MonoBehaviour:
     x: 52310
     y: 51000
     width: 230.10938
-    height: 140.33203
+    height: 140.78906
   Info: AdManager => OnAvalable
   InputSocketList: []
   OutputSocketList:
@@ -64487,7 +66510,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971252134
 GameObject:
@@ -64519,7 +66542,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1971252136
 MonoBehaviour:
@@ -64556,7 +66579,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53642.863
-    y: 51129.336
+    y: 51128.88
     width: 20
     height: 20
   Info: 
@@ -64582,7 +66605,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53471.2
-    y: 51182.24
+    y: 51182.086
     width: 20
     height: 20
   Info: 
@@ -64609,7 +66632,7 @@ MonoBehaviour:
     x: 53450
     y: 51070
     width: 195.96484
-    height: 113.66797
+    height: 113.515625
   Info: Hint Button
   InputSocketList: []
   OutputSocketList:
@@ -65348,7 +67371,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56254.965
-    y: 50284.45
+    y: 50283.273
     width: 20
     height: 20
   Info: 
@@ -65374,7 +67397,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56034.96
-    y: 50284.45
+    y: 50283.273
     width: 20
     height: 20
   Info: 
@@ -65399,7 +67422,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56071.2
-    y: 50351.605
+    y: 50350.117
     width: 20
     height: 20
   Info: 
@@ -65426,7 +67449,7 @@ MonoBehaviour:
     x: 56050
     y: 50210
     width: 208.0664
-    height: 143.03516
+    height: 141.54688
   Info: Deactive Hint Panel
   InputSocketList:
   - {fileID: 1996573531}
@@ -65742,6 +67765,196 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009157897}
   m_CullTransparentMesh: 0
+--- !u!1 &2010105821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2010105827}
+  - component: {fileID: 2010105822}
+  - component: {fileID: 2010105823}
+  - component: {fileID: 2010105828}
+  - component: {fileID: 2010105825}
+  - component: {fileID: 2010105824}
+  - component: {fileID: 2010105826}
+  m_Layer: 0
+  m_Name: ' (ActionNode)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2010105822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010105821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54400
+    y: 51830
+    width: 207.89844
+    height: 169.28906
+  Info: Has Reward?
+  InputSocketList:
+  - {fileID: 2010105828}
+  OutputSocketList:
+  - {fileID: 2010105825}
+  - {fileID: 2010105824}
+  DefaultOutputSocket: {fileID: 2010105823}
+  Active: 1
+  Lables:
+  - Yes
+  - No
+  TargetGameObject: {fileID: 2110327045}
+  ComponentTypeName: WordSpawner
+  MethodName: Void RewardPuzzle()
+  ParameterValueStrings:
+  - 
+  - 
+--- !u!114 &2010105823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010105821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54421.2
+    y: 51997.86
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 2010105822}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 1
+--- !u!114 &2010105824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010105821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54604.797
+    y: 51957.78
+    width: 20
+    height: 20
+  Info: No
+  Node: {fileID: 2010105822}
+  EdgeList: []
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &2010105825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010105821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 54604.797
+    y: 51926.27
+    width: 20
+    height: 20
+  Info: Yes
+  Node: {fileID: 2010105822}
+  EdgeList:
+  - {fileID: 2010105826}
+  Icon: {fileID: 0}
+  AutoHide: 0
+--- !u!114 &2010105826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010105821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 2010105825}
+  OutputSocket: {fileID: 567522189}
+  EditPoints: []
+  ClickEditpointIndex: 0
+--- !u!4 &2010105827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010105821}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 840395954}
+  m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2010105828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2010105821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 573905742}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 54384.96
+    y: 51888.88
+    width: 20
+    height: 20
+  Info: 
+  Node: {fileID: 2010105822}
+  EdgeList:
+  - {fileID: 398823491}
+  Icon: {fileID: 0}
 --- !u!1 &2013533092
 GameObject:
   m_ObjectHideFlags: 0
@@ -66178,7 +68391,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54404.242
-    y: 52362.664
+    y: 52362.516
     width: 20
     height: 20
   Info: 
@@ -66204,7 +68417,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54114.96
-    y: 52362.664
+    y: 52362.516
     width: 20
     height: 20
   Info: 
@@ -66229,7 +68442,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54151.2
-    y: 52428.902
+    y: 52429.36
     width: 20
     height: 20
   Info: 
@@ -66256,7 +68469,7 @@ MonoBehaviour:
     x: 54130
     y: 52290
     width: 277.34375
-    height: 140.33203
+    height: 140.78906
   Info: Enable Canvas Raycaster
   InputSocketList:
   - {fileID: 2016343504}
@@ -66400,8 +68613,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53701.645
-    y: 50409.336
+    x: 53621.645
+    y: 50388.88
     width: 20
     height: 20
   Info: 
@@ -66426,8 +68639,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53524.96
-    y: 50409.336
+    x: 53444.96
+    y: 50388.88
     width: 20
     height: 20
   Info: 
@@ -66451,8 +68664,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53561.2
-    y: 50462.24
+    x: 53481.2
+    y: 50442.086
     width: 20
     height: 20
   Info: 
@@ -66471,7 +68684,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2020012148
 MonoBehaviour:
@@ -66489,10 +68702,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53540
-    y: 50350
+    x: 53460
+    y: 50330
     width: 164.7461
-    height: 113.66797
+    height: 113.515625
   Info: Play Clip
   InputSocketList:
   - {fileID: 2020012145}
@@ -67001,7 +69214,7 @@ MonoBehaviour:
     x: 55930
     y: 51020
     width: 174.69922
-    height: 143.03516
+    height: 141.54688
   Info: Active Hint Panel
   InputSocketList:
   - {fileID: 2037463124}
@@ -67033,7 +69246,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55951.2
-    y: 51161.605
+    y: 51160.117
     width: 20
     height: 20
   Info: 
@@ -67058,7 +69271,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 56101.598
-    y: 51094.45
+    y: 51093.273
     width: 20
     height: 20
   Info: 
@@ -67115,13 +69328,14 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 55914.96
-    y: 51094.45
+    y: 51093.273
     width: 20
     height: 20
   Info: 
   Node: {fileID: 2037463119}
   EdgeList:
   - {fileID: 597850765}
+  - {fileID: 2063872079}
   Icon: {fileID: 0}
 --- !u!1 &2038041874
 GameObject:
@@ -67660,6 +69874,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2059063029}
   m_CullTransparentMesh: 0
+--- !u!1 &2060048784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1945559895727146, guid: c7ef15084a22f14439887f4671b0b62c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1235381215}
 --- !u!1 &2061965975
 GameObject:
   m_ObjectHideFlags: 0
@@ -67822,9 +70041,9 @@ GameObject:
   - component: {fileID: 2063872083}
   - component: {fileID: 2063872082}
   - component: {fileID: 2063872081}
-  - component: {fileID: 2063872079}
   - component: {fileID: 2063872091}
   - component: {fileID: 2063872092}
+  - component: {fileID: 2063872079}
   m_Layer: 0
   m_Name: ' (WindowNode)'
   m_TagString: Untagged
@@ -67847,7 +70066,7 @@ MonoBehaviour:
   IsSelected: 0
   IsHover: 0
   InputSocket: {fileID: 2063872084}
-  OutputSocket: {fileID: 597850767}
+  OutputSocket: {fileID: 2037463124}
   EditPoints: []
   ClickEditpointIndex: 0
 --- !u!114 &2063872080
@@ -67867,7 +70086,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54998.836
-    y: 51209.715
+    y: 51208.54
     width: 20
     height: 20
   Info: ShowOnePart
@@ -67911,7 +70130,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54998.836
-    y: 51304.246
+    y: 51303.07
     width: 20
     height: 20
   Info: Back
@@ -67937,7 +70156,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54998.836
-    y: 51272.734
+    y: 51271.56
     width: 20
     height: 20
   Info: SolvePuzzle
@@ -67958,11 +70177,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graph: {fileID: 14198445}
   IsSelected: 0
-  IsHover: 0
+  IsHover: 1
   Rect:
     serializedVersion: 2
     x: 54998.836
-    y: 51241.223
+    y: 51240.047
     width: 20
     height: 20
   Info: FullWord
@@ -67988,7 +70207,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54998.836
-    y: 51178.203
+    y: 51177.027
     width: 20
     height: 20
   Info: AskFriend
@@ -68014,7 +70233,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54634.96
-    y: 51199.65
+    y: 51198.473
     width: 20
     height: 20
   Info: Show and Wait
@@ -68040,7 +70259,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54634.96
-    y: 51174.848
+    y: 51173.67
     width: 20
     height: 20
   Info: Wait only
@@ -68065,7 +70284,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54671.2
-    y: 51344.324
+    y: 51343.15
     width: 20
     height: 20
   Info: 
@@ -68092,7 +70311,7 @@ MonoBehaviour:
     x: 54650
     y: 51080
     width: 351.9375
-    height: 265.7539
+    height: 264.57812
   Info: Hint window
   InputSocketList:
   - {fileID: 2063872087}
@@ -69224,6 +71443,7 @@ MonoBehaviour:
   WordSet: {fileID: 1661613100}
   Clue: 
   PuzzleRow: 
+  PuzzleReward: 0
 --- !u!1 &2110423846
 GameObject:
   m_ObjectHideFlags: 0
@@ -69310,6 +71530,75 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2110812563}
+  m_CullTransparentMesh: 0
+--- !u!1 &2115631540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2115631541}
+  - component: {fileID: 2115631543}
+  - component: {fileID: 2115631542}
+  m_Layer: 5
+  m_Name: CoinImage (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2115631541
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115631540}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 512012498}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -236.40002, y: -76.99574}
+  m_SizeDelta: {x: 58.380005, y: 59.899994}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2115631542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115631540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1c268675637ae8e46aa9162f317a707f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2115631543
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115631540}
   m_CullTransparentMesh: 0
 --- !u!1 &2115670725
 GameObject:
@@ -69838,7 +72127,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 840395954}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2129279775
 MonoBehaviour:
@@ -69857,7 +72146,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53854.96
-    y: 51139.336
+    y: 51138.88
     width: 20
     height: 20
   Info: 
@@ -69882,7 +72171,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 54101.9
-    y: 51139.336
+    y: 51138.88
     width: 20
     height: 20
   Info: 
@@ -69907,7 +72196,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 53891.2
-    y: 51192.24
+    y: 51192.086
     width: 20
     height: 20
   Info: 
@@ -69927,14 +72216,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 573905742}
-  IsSelected: 1
-  IsHover: 1
+  IsSelected: 0
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 53870
     y: 51080
     width: 235
-    height: 113.66797
+    height: 113.515625
   Info: Hint Machine
   InputSocketList:
   - {fileID: 2129279775}
@@ -70097,10 +72386,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56900
+    x: 57080
     y: 51120
     width: 136
-    height: 101.86328
+    height: 101
   Info: 
   InputSocketList:
   - {fileID: 2135311198}
@@ -70124,8 +72413,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56921.2
-    y: 51220.434
+    x: 57101.2
+    y: 51219.57
     width: 20
     height: 20
   Info: 
@@ -70149,8 +72438,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 57032.9
-    y: 51173.863
+    x: 57212.9
+    y: 51173
     width: 20
     height: 20
   Info: 
@@ -70178,7 +72467,7 @@ MonoBehaviour:
   EditPoints:
   - {x: -0.03562885, y: -0.19114105}
   - {x: 1.0370795, y: -0.33666408}
-  ClickEditpointIndex: 2
+  ClickEditpointIndex: 1
 --- !u!4 &2135311197
 Transform:
   m_ObjectHideFlags: 0
@@ -70208,8 +72497,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 56884.96
-    y: 51173.863
+    x: 57064.96
+    y: 51173
     width: 20
     height: 20
   Info: 
@@ -70454,6 +72743,7 @@ MonoBehaviour:
   NodeList:
   - {fileID: 878961710}
   - {fileID: 2099924422}
+  GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!4 &2146931320

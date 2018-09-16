@@ -29,10 +29,10 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
 
     public void SetForSpawn()
     {
-        SetForSpawn(SelectedPuzzle);
+        SetForSpawn(SelectedPuzzle,!SelectedPuzzle.Solved);
     }
 
-    public void SetForSpawn(Puzzle selectedPuzzle)
+    public void SetForSpawn(Puzzle selectedPuzzle, bool hasReward=false)
     {
         _playingPuzzle = selectedPuzzle;
         //Puzzle selectedPuzzle
@@ -41,6 +41,7 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
         Singleton.Instance.WordSpawner.WordSet = wordSet;
         Singleton.Instance.WordSpawner.Clue = selectedPuzzle.Clue;
         Singleton.Instance.WordSpawner.PuzzleRow = selectedPuzzle.Row.ToString();
+        Singleton.Instance.WordSpawner.PuzzleReward = hasReward;
 
         Singleton.Instance.WordSpawner.EditorInstatiate = null;
     }

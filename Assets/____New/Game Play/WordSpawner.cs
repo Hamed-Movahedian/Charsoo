@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMachine;
 using FollowMachineDll.Attributes;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -18,6 +19,14 @@ public class WordSpawner : BaseObject
     private Bounds _bounds;
     public string Clue;
     public string PuzzleRow;
+    public bool PuzzleReward;
+
+
+    [FollowMachine("Has Reward?", "Yes,No")]
+    public void RewardPuzzle()
+    {
+        FollowMachine.SetOutput(PuzzleReward?"Yes":"No");
+    }
 
 
     [FollowMachine("Spawn Words")]

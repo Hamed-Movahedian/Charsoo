@@ -14,7 +14,8 @@ namespace Soomla.Store.Charsoo
         void Start()
         {
             _handler=new CharsooStoreEventHandler();
-            SoomlaStore.Initialize(new CharsooStoreAsset());
+            bool b = SoomlaStore.Initialize(new CharsooStoreAsset());
+            Debug.Log(b);
         }
 
         // UpdateData is called once per frame
