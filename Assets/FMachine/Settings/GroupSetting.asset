@@ -3,21 +3,20 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2031606062, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: WindowSetting
+  m_Script: {fileID: 1942993130, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: GroupSetting
   m_EditorClassIdentifier: 
-  InspectorWith: 308.1
-  BoxSelectionStyle:
+  Style:
     m_Name: 
     m_Normal:
       m_Background: {fileID: 2800000, guid: ed19e2433bd23a748a6e8c3acdc3e691, type: 3}
       m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
       m_ScaledBackgrounds: []
@@ -47,10 +46,10 @@ MonoBehaviour:
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Border:
-      m_Left: 5
-      m_Right: 5
-      m_Top: 5
-      m_Bottom: 5
+      m_Left: 4
+      m_Right: 4
+      m_Top: 4
+      m_Bottom: 4
     m_Margin:
       m_Left: 0
       m_Right: 0
@@ -59,15 +58,15 @@ MonoBehaviour:
     m_Padding:
       m_Left: 0
       m_Right: 0
-      m_Top: 0
+      m_Top: -48
       m_Bottom: 0
     m_Overflow:
       m_Left: 0
       m_Right: 0
       m_Top: 0
       m_Bottom: 0
-    m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_Font: {fileID: 12800000, guid: 58d2f05dab2ac494d9cb47d4c5d178fa, type: 3}
+    m_FontSize: 34
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0
@@ -79,4 +78,3 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  Icon: {fileID: 2800000, guid: 0679d7a2d274e3748b63a0bb76028952, type: 3}
