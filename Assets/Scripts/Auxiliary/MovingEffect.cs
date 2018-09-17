@@ -10,9 +10,11 @@ public class MovingEffect : MonoBehaviour
     public UnityEvent OnArrive;
     public float LifeTime;
     private float _velocity;
+    private Vector3 _startPos;
     // Use this for initialization
 	void Start ()
 	{
+	    _startPos = transform.localPosition;
 	}
 
     private void OnEnable()
@@ -33,7 +35,9 @@ public class MovingEffect : MonoBehaviour
             }
         transform.position = _parent.position;
         OnArrive.Invoke();
-        Destroy(_parent.gameObject,LifeTime);
+        //Destroy(_parent.gameObject,LifeTime);
+        transform.localPosition = _startPos;
+        _parent.gameObject.SetActive(false);
     }
 
 }

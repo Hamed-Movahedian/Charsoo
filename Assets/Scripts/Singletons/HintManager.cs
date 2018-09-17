@@ -130,7 +130,7 @@ public class HintManager : BaseObject
 
         StartCoroutine(ShowEffect(HintParts[index], HintRects[index], 0.1f));
     }
-    
+
     private IEnumerator ShowEffect(List<Letter> part, List<RectTransform> partRects, float f)
     {
         GameObject effect = Instantiate(HintEffect);
@@ -157,12 +157,13 @@ public class HintManager : BaseObject
             }
             );
     }
-    
-    [FollowMachine("Hint One Part", "First Part,Last Part,New Part")]
+
+    [FollowMachine("Hint One Part", "First Part,New Part,Last Part")]
     public void ShowNextPart()
     {
         if (_wordHintActive)
         {
+            FollowMachine.SetOutput("Last Part");
             return;
         }
 
@@ -171,6 +172,7 @@ public class HintManager : BaseObject
             if (_selectedWord == SelectWord())
                 if (_partId >= HintParts.Count)
                 {
+                    FollowMachine.SetOutput("Last Part");
                     return;
                 }
         }
@@ -182,11 +184,13 @@ public class HintManager : BaseObject
         ShowPart(_partId);
         if (_partId == 0)
             FollowMachine.SetOutput("First Part");
-        if (_partId == HintParts.Count - 1)
+        else if (_partId >= HintParts.Count - 1)
         {
             _wordHintActive = true;
             FollowMachine.SetOutput("Last Part");
         }
+        else
+            FollowMachine.SetOutput("New Part");
 
         _partId++;
     }
