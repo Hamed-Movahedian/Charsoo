@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShareScreenShot : BaseObject
 {
     public Rect ScalerRect;
-    public Text Address;
+    //public Text Address;
 
     #region New Version of sharing
 
@@ -110,7 +110,8 @@ public class ShareScreenShot : BaseObject
         screenShot.Apply();
 
         byte[] dataToSave = screenShot.EncodeToJPG();
-        string destination = Path.Combine(Application.persistentDataPath, "Hint.jpg");
+        string fileName = "Hint" + WordSpawner.Clue + ".jpg";
+        string destination = Path.Combine(Application.persistentDataPath, fileName);
 
 
         if (File.Exists(destination))
@@ -124,7 +125,7 @@ public class ShareScreenShot : BaseObject
         while (!File.Exists(destination))
             yield return new WaitForSeconds(0.1f);
 
-        Address.text = destination + "\n" + Application.persistentDataPath;
+        Debug.Log(destination + "\n" + Application.persistentDataPath);
 
         StartCoroutine(SaveAndShare(destination));
 
@@ -137,12 +138,14 @@ public class ShareScreenShot : BaseObject
         AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
         intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
         AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
-        AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", "file://" + destination);
+        AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse",  destination);
         intentObject.Call<AndroidJavaObject>(
             "putExtra",
             intentClass.GetStatic<string>("EXTRA_STREAM"),
             uriObject
             );
+
+        Debug.Log(destination);
 
         intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"),
             "برای حل این معما به کمک نیاز دارم." +

@@ -51,6 +51,7 @@ public class UILocalPuzzleMenuItem : UIMenuItem
     {
         if (!_puzzle.Paid)
         {
+            Debug.Log("Selected LockItem ");
             ((LocalPuzzlesSelectionWindow)_list).LockSelect();
             return;
         }

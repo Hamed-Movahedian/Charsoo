@@ -273,32 +273,37 @@ namespace Soomla.Store
 			localItemBalances = new Dictionary<string, int> ();
 			localUpgrades = new Dictionary<string, LocalUpgrade>();
 			localEquippedGoods = new HashSet<string>();
-			
-			foreach(VirtualCurrency item in StoreInfo.Currencies){
+
+
+            foreach (VirtualCurrency item in StoreInfo.Currencies){
 				localItemBalances[item.ItemId] = VirtualCurrencyStorage.GetBalance(item);
 			}
-			
-			foreach(VirtualGood item in StoreInfo.Goods){
-				localItemBalances[item.ItemId] =  VirtualGoodsStorage.GetBalance(item);
-				
-				UpgradeVG upgrade = VirtualGoodsStorage.GetCurrentUpgrade(item);
+
+		    foreach (VirtualGood item in StoreInfo.Goods)
+		    {
+
+                localItemBalances[item.ItemId] =  VirtualGoodsStorage.GetBalance(item);
+/*
+                UpgradeVG upgrade = VirtualGoodsStorage.GetCurrentUpgrade(item);
 				if (upgrade != null) {
-					int upgradeLevel = GetGoodUpgradeLevel(item.ItemId);
+
+                    int upgradeLevel = GetGoodUpgradeLevel(item.ItemId);
 					localUpgrades.AddOrUpdate(item.ItemId, new LocalUpgrade { itemId = upgrade.ItemId, level = upgradeLevel });
 				}
-				
-				if (item is EquippableVG) {
-					if (VirtualGoodsStorage.IsEquipped((EquippableVG)item)) {
+                if (item is EquippableVG) {
+
+                    if (VirtualGoodsStorage.IsEquipped((EquippableVG)item)) {
 						localEquippedGoods.Add(item.ItemId);
 					}
-				}
+				}*/
 			}
-		}
+
+        }
 
 
-		/** A set of private functions to refresh the local inventory whenever there are changes on runtime. **/
+        /** A set of private functions to refresh the local inventory whenever there are changes on runtime. **/
 
-		public static void RefreshOnGoodUpgrade(VirtualGood vg, UpgradeVG uvg) {
+        public static void RefreshOnGoodUpgrade(VirtualGood vg, UpgradeVG uvg) {
 			if (uvg == null) {
 				localUpgrades.Remove(vg.ItemId);
 			} else {

@@ -56,6 +56,7 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
 
     public void LockSelect()
     {
+        Debug.Log("SelectedLockItem");
         Close("SelectedLockItem");
     }
 

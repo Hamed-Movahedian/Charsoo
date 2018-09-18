@@ -47,47 +47,48 @@ namespace Soomla.Store
 		/// </summary>
 		/// <param name="storeAssets">Your game's economy.</param>
 		/// <exception cref="ExitGUIException">Thrown if soomlaSecret is missing or has not been changed.</exception>
-		public static bool Initialize(IStoreAssets storeAssets) {
+		public static bool Initialize(IStoreAssets storeAssets)
+		{
 			if (string.IsNullOrEmpty(CoreSettings.SoomlaSecret)) {
 				SoomlaUtils.LogError(TAG, "MISSING SoomlaSecret !!! Stopping here !!");
 				throw new ExitGUIException();
 			}
-			
-			if (CoreSettings.SoomlaSecret==CoreSettings.ONLY_ONCE_DEFAULT) {
+
+            if (CoreSettings.SoomlaSecret==CoreSettings.ONLY_ONCE_DEFAULT) {
 				SoomlaUtils.LogError(TAG, "You have to change SoomlaSecret !!! Stopping here !!");
 				throw new ExitGUIException();
 			}
 
-			var storeEvents = GameObject.FindObjectOfType<StoreEvents> ();
+            var storeEvents = GameObject.FindObjectOfType<StoreEvents> ();
 			if (storeEvents == null) {
 				SoomlaUtils.LogDebug(TAG, "StoreEvents Component not found in scene. We're continuing from here but you won't get many events.");
 			}
 
-			if (initialized) {
+            if (initialized) {
 				string err = "SoomlaStore is already initialized. You can't initialize it twice!";
 				StoreEvents.Instance.onUnexpectedErrorInStore(err, true);
 				SoomlaUtils.LogError(TAG, err);
 				return false;
 			}
 
-			SoomlaUtils.LogDebug(TAG, "SoomlaStore Initializing ...");
+            SoomlaUtils.LogDebug(TAG, "SoomlaStore Initializing ...");
 
 			instance._loadBillingService();
 
-			StoreInfo.SetStoreAssets(storeAssets);
+            StoreInfo.SetStoreAssets(storeAssets);
 
 #if UNITY_IOS
 			// On iOS we only refresh market items
 			instance._refreshMarketItemsDetails();
 #elif UNITY_ANDROID
-			// On Android we refresh market items and restore transactions
-			instance._refreshInventory();
+            // On Android we refresh market items and restore transactions
+            instance._refreshInventory();
 #endif
 
-			initialized = true;
+            initialized = true;
 			StoreEvents.Instance.onSoomlaStoreInitialized("", true);
 
-			return true;
+            return true;
 		}
 
 		/// <summary>
