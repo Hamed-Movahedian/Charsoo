@@ -45,7 +45,7 @@ public class UIMenuItemList : MgsUIWindow
 
     }
 
-    public void Select([CanBeNull] object data)
+    public virtual void Select([CanBeNull] object data)
     {
         _selectedData = data;
         Close("Select");

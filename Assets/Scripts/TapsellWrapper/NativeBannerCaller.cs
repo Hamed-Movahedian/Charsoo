@@ -35,6 +35,8 @@ public class NativeBannerCaller : MonoBehaviour
 
     public void GetNative()
     {
+        AdButton.gameObject.SetActive(false);
+
         _nativeAd = null;
         Tapsell.requestNativeBannerAd(this, _zoneId,
             (TapsellNativeBannerAd result) =>
@@ -42,6 +44,7 @@ public class NativeBannerCaller : MonoBehaviour
                 // onRequestFilled
                 _nativeAd = result; // store this to show the ad later
                 OnAdReady.Invoke();
+                AdButton.gameObject.SetActive(true);
                 SetAdVisual();
             },
 
@@ -73,7 +76,7 @@ public class NativeBannerCaller : MonoBehaviour
         if (HorizentalImage != null) HorizentalImage.sprite = TextureToSprite(_nativeAd.getLandscapeBannerImage());
         if (Icon != null) Icon.sprite = TextureToSprite(_nativeAd.getIcon());
         //BannerGameObject.transform.SetSiblingIndex(UnityEngine.Random.Range(0, 4));
-        BannerGameObject.SetActive(true);
+        AdButton.gameObject.SetActive(true);
         _nativeAd.onShown();
 
         AdButton.onClick.RemoveAllListeners();
@@ -90,7 +93,7 @@ public class NativeBannerCaller : MonoBehaviour
         if (_reFocusTime - _unFocusTime > 4)
         {
             OnReward.Invoke();
-            BannerGameObject.SetActive(false);
+            AdButton.gameObject.SetActive(false);
             GetNative();
         }
 

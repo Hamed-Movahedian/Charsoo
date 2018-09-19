@@ -9,7 +9,7 @@ public class UserPuzzleSelectionWindow : UIMenuItemList
     {
 
         var userPuzzles = LocalDBController.Instance.UserPuzzles.GetUserPuzzles();
-        userPuzzles.Sort((p1,p2)=>p1.ID.CompareTo(p2.ID));
+        userPuzzles.Sort((p2,p1)=>p1.ID.CompareTo(p2.ID));
         UpdateItems(userPuzzles.Cast<object>());
 
     }

@@ -1,9 +1,11 @@
-﻿using FMachine;
+﻿using System.Collections.Generic;
+using FMachine;
 using FollowMachineDll.Attributes;
 using Soomla.Store;
 using Soomla.Store.Charsoo;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PurchaseManager : BaseObject
 {
@@ -13,7 +15,7 @@ public class PurchaseManager : BaseObject
     public UnityEvent OnReward;
     public AudioClip PayCoinAudioClip;
     public AudioClip GiveCoinAudioClip;
-    public GameObject BuyDublerButton;
+    public List<Button> BuyDublerButtons;
     private int _rewardMultiplier = 1;
     // Use this for initialization
     void Start()
@@ -25,7 +27,12 @@ public class PurchaseManager : BaseObject
         ZPlayerPrefs.SetInt("Doubler", hasDubler?1:0);
         _rewardMultiplier = 1 + (hasDubler ? 1 : 0);
         _rewardMultiplier = Mathf.Clamp(_rewardMultiplier, 1, 2);
-        BuyDublerButton.SetActive(!hasDubler);
+        BuyDublerButtons.ForEach(b=>b.interactable=!hasDubler);
+    }
+
+    public int GetBalance(string itemID)
+    {
+        return 1;// StoreInventory.GetItemBalance(itemID);
     }
 
     public void GiveSolveReward()
