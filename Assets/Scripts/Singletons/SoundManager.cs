@@ -35,7 +35,7 @@ public class SoundManager : BaseObject
     {
         PlayAudioClip(WordFindAudioClips[_currentWordIndex]);
         _currentWordIndex++;
-        _currentWordIndex = Mathf.Min(_currentWordIndex, WordFindAudioClips.Count);
+        _currentWordIndex = Mathf.Min(_currentWordIndex, WordFindAudioClips.Count-1);
     }
 
     public void PlayAudioClip(AudioClip clip)

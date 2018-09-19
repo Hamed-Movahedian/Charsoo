@@ -220,7 +220,7 @@ public class HintManager : BaseObject
         OnWordCompelete.Invoke();
     }
 
-    private void ClearHintPanel()
+    public void ClearHintPanel()
     {
         HintParts.Clear();
         HintRects.Clear();
@@ -231,8 +231,15 @@ public class HintManager : BaseObject
             o.transform.parent = null;
             Destroy(o);
         }
-
         WordHintPanel.gameObject.SetActive(false);
+    }
+
+    public void ResetHint()
+    {
+        _wordHintActive = false;
+        ClearHintPanel();
+        HideHintLetters();
+        _selectedWord = null;
     }
 
     [FollowMachine("Is Word Complete Hinted?", "Yes,No")]

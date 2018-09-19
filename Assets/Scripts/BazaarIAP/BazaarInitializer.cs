@@ -10,18 +10,24 @@ namespace Soomla.Store.Charsoo
     {
 
         private static CharsooStoreEventHandler _handler;
+        //public SceneLoader SceneLoad;
         // Use this for initialization
-        void Start()
+        public void Start()
         {
-            _handler=new CharsooStoreEventHandler();
-            bool b = SoomlaStore.Initialize(new CharsooStoreAsset());
-            Debug.Log(b);
+            Initialize();
         }
 
         // UpdateData is called once per frame
         void Update()
         {
 
+        }
+
+        public void Initialize()
+        {
+            _handler = new CharsooStoreEventHandler();
+            CharsooStoreAsset storeAsset = new CharsooStoreAsset();
+            SoomlaStore.Initialize(storeAsset);
         }
     }
 }

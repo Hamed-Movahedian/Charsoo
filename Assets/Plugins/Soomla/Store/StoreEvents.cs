@@ -468,19 +468,23 @@ namespace Soomla.Store {
 		public void onSoomlaStoreInitialized(string message) {
 			onSoomlaStoreInitialized(message, false);
 		}
-		public void onSoomlaStoreInitialized(string message, bool alsoPush) {
-			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onSoomlaStoreInitialized");
+		public void onSoomlaStoreInitialized(string message, bool alsoPush)
+        {
+
+            SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onSoomlaStoreInitialized");
 
 			StoreInventory.RefreshLocalInventory();
 
-			StoreEvents.OnSoomlaStoreInitialized();
+            StoreEvents.OnSoomlaStoreInitialized();
 
-			if (alsoPush) {
+            if (alsoPush) {
 #if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
 				sep.PushEventSoomlaStoreInitialized();
+            Debug.Log("PushEventSoomlaStoreInitialized");
+
 #endif
-			}
-		}
+            }
+        }
 
 #if UNITY_ANDROID && !UNITY_EDITOR
 		public void onIabServiceStarted(string message) {

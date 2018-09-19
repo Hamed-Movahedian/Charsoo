@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Soomla.Store.Charsoo
 {
-    public class CharsooStoreEventHandler : BaseObject
+    public class CharsooStoreEventHandler
     {
         public CharsooStoreEventHandler()
         {
@@ -50,7 +50,7 @@ namespace Soomla.Store.Charsoo
                 if(ZPlayerPrefs.GetInt("Coin")!=balance)
                 {
                     ZPlayerPrefs.SetInt("Coin", balance);
-                    PurchaseManager.CurrencyChanged();
+                    Singleton.Instance.PurchaseManager.CurrencyChanged();
                 }
             }
         }
