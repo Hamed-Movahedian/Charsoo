@@ -17,7 +17,7 @@ public class CategoryComponent : TableComponent
     
     #region Create
 
-    public static Transform Create(Category category, Transform parenTransform, DatabaseComponent databaseComponent)
+    public static Transform Create(Category category, Transform parenTransform)
     {
         // create game object
         GameObject go = new GameObject("None");
@@ -32,7 +32,6 @@ public class CategoryComponent : TableComponent
         categoryComponent.Name = category.Name;
         categoryComponent.Icon = category.Icon;
         categoryComponent.Price = category.Price;
-        categoryComponent.Database=databaseComponent;
         categoryComponent.Dirty = false;
 
         // return CategoryComponent transform
@@ -100,7 +99,6 @@ public class CategoryComponent : TableComponent
 
     }
 
-
     #endregion
 
     #region IsChanged
@@ -146,7 +144,7 @@ public class CategoryComponent : TableComponent
 
     public bool AddSubcategory(Category newCategory)
     {
-        Create(newCategory, transform, Database);
+        Create(newCategory, transform);
 
         return true;
     }
@@ -165,10 +163,8 @@ public class CategoryComponent : TableComponent
 
     public bool AddPuzzle(Puzzle puzzle)
     {
-        
-
         // Create CategoryComponent
-        PuzzleComponent.Create(puzzle, transform, Database);
+        PuzzleComponent.Create(puzzle, transform);
 
         return true; 
     }

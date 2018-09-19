@@ -12,7 +12,7 @@ public class TableComponent : MonoBehaviour
     public int ID;
 
     [HideInInspector]
-    public DatabaseComponent Database;
+    public DatabaseComponent Database2;
 
     private bool _dirty = true;
 

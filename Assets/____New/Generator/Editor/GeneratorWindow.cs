@@ -85,23 +85,11 @@ public class GeneratorWindow : EditorWindow
             foreach (var word in wordManager.GetComponentsInChildren<Word>())
             {
                 wordSet.Words.Add(new SWord(word));
-
-                if (wordManager.ErrorWords.Contains(word))
-                    wordSet.NonuniqWords.Add(wordSet.Words.Last());
             }
 
             #endregion
 
-            #region Save word set asset
-
-            string fileName = EditorUtility.SaveFilePanelInProject("Save WordSet Asset", "wordSet", "asset",
-                "Save Asset");
-
-            AssetDatabase.CreateAsset(wordSet, fileName);
-            AssetDatabase.SaveAssets();
-
-            #endregion
-
+ 
             #region Save wordset to database
             // create category in database
             var puzzle = new Puzzle

@@ -55,7 +55,7 @@ public class DatabaseComponent : MonoBehaviour
 
         // Create category components
         foreach (Category subCategory in subCategories)
-            CreateCategory(CategoryComponent.Create(subCategory, parenTransform, this));
+            CreateCategory(CategoryComponent.Create(subCategory, parenTransform)); 
 
         // Find all puzzles
         var puzzles = _puzzles.Where(p => p.CategoryID == categoryID);
@@ -63,31 +63,13 @@ public class DatabaseComponent : MonoBehaviour
         // Create puzzle components
         foreach (var puzzle in puzzles)
         {
-            PuzzleComponent.Create(puzzle, parenTransform, this);
+            PuzzleComponent.Create(puzzle, parenTransform);
         }
     }
 
 
     #endregion
- 
-    public T Reload<T>(int id) where T : BaseTable, new()
-    {
-
-        return null; //DataService.Connection.Table<T>().SqlWhere(r => r.ID == id).FirstOrDefault();
-    }
-
-    public bool Create(object o)
-    {
-        return true; //DataService.Connection.Insert(o)!=0;
-
-    }
-
-    public bool Delete(object o)
-    {
-        return true; //DataService.Connection.Delete(o) != 0;
-    }
-
-
+    
     #region Set Categories and puzzles from server
 
     public void SetCategories(List<Category> categories)
@@ -101,6 +83,5 @@ public class DatabaseComponent : MonoBehaviour
     }
 
     #endregion
-
-
+    
 }

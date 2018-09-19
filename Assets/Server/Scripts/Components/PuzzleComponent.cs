@@ -13,7 +13,7 @@ public class PuzzleComponent : TableComponent
 
     #region Create
 
-    public static void Create(Puzzle puzzle, Transform parenTransform, DatabaseComponent databaseComponent)
+    public static void Create(Puzzle puzzle, Transform parenTransform)
     {
         // Creat game object
         GameObject go = new GameObject();
@@ -28,7 +28,6 @@ public class PuzzleComponent : TableComponent
         puzzleComponent.Clue = puzzle.Clue;
         puzzleComponent.Content = puzzle.Content;
         puzzleComponent.Dirty = false;
-        puzzleComponent.Database = databaseComponent;
     }
     
 
