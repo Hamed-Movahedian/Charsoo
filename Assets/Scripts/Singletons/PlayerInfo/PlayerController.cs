@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using ArabicSupport;
+using FMachine;
+using FollowMachineDll.Attributes;
 using MgsCommonLib.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -136,6 +138,13 @@ public class PlayerController : BaseObject
                 .Table<PlayerInfo>()
                 .FirstOrDefault();
 
-        return PlayerInfo == null ? null : PlayerInfo.PlayerID;
+        return PlayerInfo?.PlayerID;
+    }
+
+    [FollowMachine("Has Player ID ?","Yes,No")]
+    public void HasPlayerID()
+    {
+        FollowMachine.SetOutput(
+            GetPlayerID()==null?"No":"Yes");
     }
 }

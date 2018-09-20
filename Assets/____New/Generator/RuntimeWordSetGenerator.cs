@@ -26,67 +26,6 @@ public class RuntimeWordSetGenerator : MonoBehaviour
     private int _targetFrameRate;
     private int _vSyncCount;
 
-/*
-    [FollowMachine("Generate")]
-    public IEnumerator StartProcess()
-    {
-
-
-        // ***************************** Clue
-        clue:
-        yield return gui.ShowClue();
-        if (gui.Back)
-            yield break;
-
-
-        // ***************************** Words
-        words:
-        yield return gui.ShowWords();
-        if (gui.Back)
-            goto clue;
-
-
-        // ***************************** Count
-        count:
-        yield return gui.ShowWordCount();
-        if (gui.Back)
-            goto words;
-
-        //****************************** Generate
-        generate:
-        yield return Generate();
-        if (GenerationFaild)
-        {
-            yield return gui.ShowGenerationFailed();
-
-            if (gui.Back)
-                goto count;
-            else
-                goto generate;
-        }
-
-        // ***************************** Selection
-        yield return gui.ShowSelection();
-        if (gui.Back)
-            goto count;
-        if (gui.Result == "Regenerate")
-            goto generate;
-
-
-        //***************************** Shuffle
-        yield return Partitioner.Shuffle();
-
-        //***************************** Save
-        UserPuzzlesController.Instance.Save();
-
-        //***************************** Success message
-        yield return UIController.Instance.DisplayMessage(ThemeManager.Instance.LanguagePack.GetLable("SuccesfullOperation"));
-
-
-
-    }
-*/
-
     public void Finish()
     {
         //**************************** Clear screen
