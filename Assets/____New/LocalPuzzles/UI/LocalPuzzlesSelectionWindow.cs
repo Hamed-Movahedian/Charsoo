@@ -37,7 +37,7 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
         _playingPuzzle = selectedPuzzle;
         //Puzzle selectedPuzzle
         WordSet wordSet = selectedPuzzle.GetWordSet();
-
+        Singleton.Instance.WordSpawner.ClearTable();
         Singleton.Instance.WordSpawner.WordSet = wordSet;
         Singleton.Instance.WordSpawner.Clue = selectedPuzzle.Clue;
         Singleton.Instance.WordSpawner.PuzzleRow = selectedPuzzle.Row.ToString();

@@ -38,14 +38,7 @@ public class WordSpawner : BaseObject
             return;
         }
 
-        // Delete all thing
-        LetterController.DeleteAllLetters();
-
-        if (_locationDictionary == null)
-            _locationDictionary = new Dictionary<Vector2, Letter>();
-        _locationDictionary.Clear();
-
-        WordManager.DeleteAllWords();
+        ClearTable();
 
         // Find center
         _bounds = WordSet.GetBound();
@@ -66,6 +59,18 @@ public class WordSpawner : BaseObject
         WordManager.GetWordsFormChilds();
         LetterController.ConnectAdjacentLetters();
 
+    }
+
+    public void ClearTable()
+    {
+        // Delete all thing
+        LetterController.DeleteAllLetters();
+
+        if (_locationDictionary == null)
+            _locationDictionary = new Dictionary<Vector2, Letter>();
+        _locationDictionary.Clear();
+
+        WordManager.DeleteAllWords();
     }
 
     private void SpawnWord(SWord sWord)

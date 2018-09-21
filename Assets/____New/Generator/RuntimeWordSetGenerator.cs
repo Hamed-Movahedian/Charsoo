@@ -66,7 +66,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         Generator.AllWords = WordsWindow.WordsText.text.Replace(' ', '\n');
         Generator.Clue = ClueWindow.ClueInputField.text;
         Generator.Initialize();
-        Generator.UsedWordCount = (int) WordCountWindow.WordCountSlider.value;
+        Generator.UsedWordCount = (int) WordCountWindow.WordCountSlider.maxValue;
         Generator.MaxResults = 100;
 
         #endregion

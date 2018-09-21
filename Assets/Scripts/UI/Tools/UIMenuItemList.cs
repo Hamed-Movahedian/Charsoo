@@ -41,8 +41,9 @@ public class UIMenuItemList : MgsUIWindow
             PoolManager.Instance.Return(lastItem);
         }
 
-        ContentParent.GetComponent<ListContentSizeSetter>().SetupSize(dataList.Count,Prefab);
+        ListContentSizeSetter setter = ContentParent.GetComponent<ListContentSizeSetter>();
 
+        if (setter != null) setter.SetupSize(dataList.Count,Prefab);
     }
 
     public virtual void Select([CanBeNull] object data)
