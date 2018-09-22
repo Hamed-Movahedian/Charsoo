@@ -138,13 +138,50 @@ public class PlayerController : BaseObject
                 .Table<PlayerInfo>()
                 .FirstOrDefault();
 
+       
         return PlayerInfo?.PlayerID;
     }
 
-    [FollowMachine("Has Player ID ?","Yes,No")]
-    public void HasPlayerID()
+    [FollowMachine("Register To Server", "Success,Fail")]
+    public IEnumerator RegisterPlayerToServer()
     {
-        FollowMachine.SetOutput(
-            GetPlayerID()==null?"No":"Yes");
+        // Register player to server and get PlayerID
+        yield return ServerController.Post<PlayerInfo>(
+            @"PlayerInfo/Create",
+            PlayerInfo,
+            r => { PlayerInfo = r; });
+
+        FollowMachine.SetOutput(PlayerInfo.PlayerID == null ? "Fail" : "Success");
+    }
+
+    public void CreatePlayerInfo(string playerName)
+    {
+        LocalDBController
+            .InsertOrReplace(new PlayerInfo
+            {
+                Name = playerName,
+            });
+    }
+
+    [FollowMachine("Valid Name?","Yes,No")]
+    public void IsValidName(string playerName)
+    {
+        FollowMachine.SetOutput(playerName == null || playerName.Trim() == "" ? "No" : "Yes");
+    }
+    [FollowMachine("Check Player Info ?","No Player Info,No Player ID,Has Player ID")]
+    public void CheckPlayerInfo()
+    {
+        PlayerInfo =
+            LocalDBController
+                .Table<PlayerInfo>()
+                .FirstOrDefault();
+
+        if (PlayerInfo == null)
+            FollowMachine.SetOutput("No Player Info");
+        else if (PlayerInfo.PlayerID == null)
+            FollowMachine.SetOutput("No Player ID");
+        else 
+            FollowMachine.SetOutput("Has Player ID");
+
     }
 }

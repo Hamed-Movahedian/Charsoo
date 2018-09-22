@@ -16,7 +16,7 @@ public class Puzzle : BaseTable
     {
         WordSet wordSet = new WordSet();
         string decompressString = StringCompressor.DecompressString(Content);
-        string replace = decompressString.Replace("Direction", "WordDirection");
+        string replace = decompressString.Replace("\"Direction\"", "\"WordDirection\"");
         JsonUtility.FromJsonOverwrite(replace, wordSet);
         return wordSet;
     }

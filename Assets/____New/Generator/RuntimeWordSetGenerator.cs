@@ -118,6 +118,12 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
     }
 
+    [FollowMachine("Generate words", "Success,Fail")]
+    public IEnumerator Generate(string clue, string words, float count)
+    {
+        return null;
+    }
+
     [FollowMachine("Save puzzle")]
     public void Save()
     {

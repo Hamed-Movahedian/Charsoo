@@ -15,6 +15,8 @@ MonoBehaviour:
   - Name: SuccesfullOperation
     Text: ".\uFEAA\uFEB7 \u0645\uFE8E\uFEA0\uFEE7\u0627 \uFE96\uFEF4\uFED8\uFED3\uFEEE\uFEE3
       \uFE8E\uFE91 \u062A\uFE8E\uFEF4\uFEE0\uFEE4\uFECB"
+  - Name: Null
+    Text: 
   - Name: Inprogress/AccountRecovery
     Text: "... \u064A\uFEAE\uFE91\u0631\uFE8E\uFB90 \u0628\uFE8E\uFEB4\uFEA3 \uFEEA\uFE91
       \u0644\uFE8E\uFEBC\uFE97\u0627 \u0644\uFE8E\uFEA3 \u0631\u062F\r"
@@ -103,3 +105,8 @@ MonoBehaviour:
   - Name: Puzzle/OnlineNotAvailable
     Text: "\u064A\u0632\u0627\uFEAA\uFEE7\u0627 \u0647\u0627\u0631 \u064A\u062F\u0648\u0632
       \uFEEA\uFE91 \uFEB6\uFEA8\uFE91 \uFEE6\uFEF3\u0627\n.\u062F\uFEEE\uFEB8\uFEF4\uFEE3"
+  - Name: Player/DefaultName
+    Text: "\u0645\uFE8E\uFEE7 \u0646\u0648\uFEAA\uFE91"
+  - Name: Player/NoNameMSG
+    Text: "\uFEAA\uFEF4\uFEE8\uFB90 \u062F\u0631\u0627\u0648 \u0627\u0631 \u062F\uFEEE\uFEA7
+      \u0645\uFE8E\uFEE7"
