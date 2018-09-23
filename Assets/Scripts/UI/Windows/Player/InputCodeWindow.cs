@@ -14,7 +14,6 @@ public class InputCodeWindow : UIWindowBase
         yield return Hide();
 
         // Check is code valid
-        if (AccountManager.Instance.IsCodeValid(CodeInputField.text))
         {
             // ************** Code is valid => Restore account
 
@@ -56,7 +55,6 @@ public class InputCodeWindow : UIWindowBase
             }
 
         }
-        else
         {
             // *************** Code isn't valid
 

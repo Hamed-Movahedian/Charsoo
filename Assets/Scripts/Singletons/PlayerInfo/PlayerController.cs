@@ -30,12 +30,20 @@ public class PlayerController : BaseObject
     #region New PlayerID Event
 
     public delegate void NewPlayerIDEventHandler(int newPlayerID);
+
     public event NewPlayerIDEventHandler NewPlayerID;
 
-    protected virtual void OnNewPlayerID(int newplayerid)
+    public virtual void OnNewPlayerID()
     {
-        var handler = NewPlayerID;
-        if (handler != null) handler(newplayerid);
+        LocalDBController
+            .DataService
+            .Connection.DeleteAll<PlayerInfo>();
+
+        LocalDBController
+            .InsertOrReplace(PlayerInfo);
+
+        if (PlayerInfo.PlayerID != null)
+            NewPlayerID?.Invoke(PlayerInfo.PlayerID.Value);
     }
 
     #endregion
@@ -74,7 +82,7 @@ public class PlayerController : BaseObject
             if (PlayerInfo.PlayerID != null)
             {
                 // run OnSetplayerID event
-                OnNewPlayerID(PlayerInfo.PlayerID.Value);
+                OnNewPlayerID();
             }
         }
 
@@ -145,13 +153,16 @@ public class PlayerController : BaseObject
     [FollowMachine("Register To Server", "Success,Fail")]
     public IEnumerator RegisterPlayerToServer()
     {
+        PlayerInfo.PlayerID = -1;
         // Register player to server and get PlayerID
         yield return ServerController.Post<PlayerInfo>(
             @"PlayerInfo/Create",
             PlayerInfo,
             r => { PlayerInfo = r; });
+        if (PlayerInfo.PlayerID == -1)
+            PlayerInfo.PlayerID = null;
 
-        FollowMachine.SetOutput(PlayerInfo.PlayerID == null ? "Fail" : "Success");
+        FollowMachine.SetOutput(PlayerInfo?.PlayerID == null ? "Fail" : "Success");
     }
 
     public void CreatePlayerInfo(string playerName)
