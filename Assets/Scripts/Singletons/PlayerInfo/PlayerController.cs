@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using ArabicSupport;
 using FMachine;
 using FollowMachineDll.Attributes;
 using MgsCommonLib.UI;
@@ -47,48 +46,8 @@ public class PlayerController : BaseObject
     }
 
     #endregion
-    
+
     #region LogIn
-
-    public IEnumerator LogIn()
-    {
-        // Get player info from localDB
-        PlayerInfo = 
-            LocalDBController
-            .Table<PlayerInfo>()
-            .FirstOrDefault();
-
-        // This is first time login
-        if (PlayerInfo == null)
-        {
-            PlayerInfo = new PlayerInfo()
-            {
-                Name = ArabicFixer.Fix("بدون نام")
-            };
-            yield return UIController.Instance
-                .PlayerInfoEditor
-                .EditPlayerInfo();
-        }
-
-        if (PlayerInfo.PlayerID == null)
-        {
-            // Register player to server and get PlayerID
-            yield return ServerController.Post<PlayerInfo>(
-                @"PlayerInfo/Create",
-                PlayerInfo,
-                r => { PlayerInfo = r; }); ;
-
-            // If player successfully registered to server
-            if (PlayerInfo.PlayerID != null)
-            {
-                // run OnSetplayerID event
-                OnNewPlayerID();
-            }
-        }
-
-        StartCoroutine(LoginToDB());
-
-    }
 
     private IEnumerator LoginToDB()
     {
@@ -106,7 +65,7 @@ public class PlayerController : BaseObject
 
     private IEnumerator FlashOutLocalLogins()
     {
-        List<LogIn> logIns = 
+        List<LogIn> logIns =
             LocalDBController.Table<LogIn>().ToList();
 
         yield return ServerController.Post<int>(
@@ -121,9 +80,13 @@ public class PlayerController : BaseObject
 
     #endregion
 
- 
+
     public void SaveToLocalDB()
     {
+        LocalDBController
+            .DataService
+            .Connection.DeleteAll<PlayerInfo>();
+
         LocalDBController.InsertOrReplace(PlayerInfo);
     }
 
@@ -138,16 +101,18 @@ public class PlayerController : BaseObject
         SaveToLocalDB();
     }
 
-    public int? GetPlayerID()
+    public int? GetPlayerID
     {
-        // Get player info from localDB
-        PlayerInfo =
-            LocalDBController
-                .Table<PlayerInfo>()
-                .FirstOrDefault();
-
-       
-        return PlayerInfo?.PlayerID;
+        get
+        {
+            // Get player info from localDB
+            PlayerInfo =
+                LocalDBController
+                    .Table<PlayerInfo>()
+                    .FirstOrDefault();
+            
+            return PlayerInfo?.PlayerID;
+        }
     }
 
     [FollowMachine("Register To Server", "Success,Fail")]
@@ -174,12 +139,12 @@ public class PlayerController : BaseObject
             });
     }
 
-    [FollowMachine("Valid Name?","Yes,No")]
+    [FollowMachine("Valid Name?", "Yes,No")]
     public void IsValidName(string playerName)
     {
         FollowMachine.SetOutput(playerName == null || playerName.Trim() == "" ? "No" : "Yes");
     }
-    [FollowMachine("Check Player Info ?","No Player Info,No Player ID,Has Player ID")]
+    [FollowMachine("Check Player Info ?", "No Player Info,No Player ID,Has Player ID")]
     public void CheckPlayerInfo()
     {
         PlayerInfo =
@@ -191,7 +156,7 @@ public class PlayerController : BaseObject
             FollowMachine.SetOutput("No Player Info");
         else if (PlayerInfo.PlayerID == null)
             FollowMachine.SetOutput("No Player ID");
-        else 
+        else
             FollowMachine.SetOutput("Has Player ID");
 
     }

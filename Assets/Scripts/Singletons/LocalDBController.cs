@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using MgsCommonLib;
 using SQLite4Unity3d;
 using UnityEngine;
@@ -77,5 +77,26 @@ public class LocalDBController: MgsSingleton<LocalDBController>
     }
 
     #endregion
-    
+
+    #region SetLastUpdate
+    public void SetLastUpdate(DateTime lastUpdate, string tableName)
+    {
+        var lastUpdateRecord = Table<LastTableUpdates>()
+            .FirstOrDefault(l => l.TableName == tableName);
+
+        if (lastUpdateRecord == null)
+        {
+            InsertOrReplace(new LastTableUpdates
+            {
+                TableName = tableName,
+                LastUpdate = lastUpdate
+            });
+        }
+        else
+        {
+            lastUpdateRecord.LastUpdate = lastUpdate;
+            InsertOrReplace(lastUpdateRecord);
+        }
+    }
+    #endregion
 }

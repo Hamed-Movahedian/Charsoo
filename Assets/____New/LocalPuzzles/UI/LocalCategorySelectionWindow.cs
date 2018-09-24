@@ -15,13 +15,14 @@ public class LocalCategorySelectionWindow : UIMenuItemList
 
     public override void Refresh()
     {
-        int? parentID = null;
+        int? parentID = 3;
         if (SelectedCategory != null)
             parentID = SelectedCategory?.ID;
 
+
         var categories = LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == parentID).ToList();
-        categories.Sort((p1, p2) => p1.Row.CompareTo(p2.ID));
-        CategoryName.text = SelectedCategory!=null?ArabicFixer.Fix(SelectedCategory.Name):ArabicFixer.Fix("جدول های اصلی");
+        categories.Sort((p1, p2) => p1.Row.CompareTo(p2.Row));
+        CategoryName.text = SelectedCategory != null ? ArabicFixer.Fix(SelectedCategory.Name) : ArabicFixer.Fix("جدول های اصلی");
         UpdateItems(categories.Cast<object>());
     }
 
@@ -38,18 +39,18 @@ public class LocalCategorySelectionWindow : UIMenuItemList
     public void Back()
     {
 
-        if (SelectedCategory == null)
+        if (SelectedCategory == null || SelectedCategory.ParentID == 3)
             FollowMachine.SetOutput("ExitLocalPuzzles");
         else
         {
-            if (SelectedCategory.ParentID == null)
+            if (SelectedCategory.ParentID == null )
             {
-                Select((Category) null);
-                FollowMachine.SetOutput("CategoryParent");
+                //Select((Category)null);
+                FollowMachine.SetOutput("ExitLocalPuzzles");
                 return;
             }
 
-            Category pc = 
+            Category pc =
                 LocalDBController.Table<Category>()
                 .SqlWhere(c => c.ID == SelectedCategory.ParentID)
                 .ToList()[0];

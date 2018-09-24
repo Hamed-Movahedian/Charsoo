@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections;
 using FMachine;
 using FollowMachineDll.Attributes;
-using MgsCommonLib;
-using MgsCommonLib.Theme;
-using MgsCommonLib.UI;
-using MgsCommonLib.Utilities;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class RuntimeWordSetGenerator : MonoBehaviour
 {
@@ -60,8 +51,6 @@ public class RuntimeWordSetGenerator : MonoBehaviour
     {
        FollowMachine.SetOutput("Fail");
 
-        #region Setup word generator
-
         // Setup generator
         Generator.AllWords = WordsWindow.WordsText.text.Replace(' ', '\n');
         Generator.Clue = ClueWindow.ClueInputField.text;
@@ -69,21 +58,8 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         Generator.UsedWordCount = (int) WordCountWindow.WordCountSlider.maxValue;
         Generator.MaxResults = 100;
 
-        #endregion
-
-        #region Generate words ...
-
-        // Generate words
-        yield return MgsCoroutine.StartCoroutineRuntime(
-            Generator.MakeWordSet(),
-            () => UIController.Instance.SetProgressbar(
-                MgsCoroutine.Percentage,
-                ThemeManager.Instance.LanguagePack.GetLable("Inprogress/GenerateWordSet")),
-            0.1);
-
-        #endregion
-
-        #region Setup partitioner
+        // Generate Word set
+        yield return Generator.MakeWordSet();
 
         // Setup partitioner
         Partitioner.MaxSize = 5;
@@ -91,31 +67,19 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         Partitioner.MaxTry = 200;
         Partitioner.Validate = false;
 
-        #endregion
-
         // Spawn words
         var bestWordSet = Generator.GetBestWordSet();
-
+        
         GameController.Instance.SpawnWordSet(bestWordSet);
 
-        #region Partition word set ...
 
         // Run partitioner
-        yield return MgsCoroutine.StartCoroutineRuntime(
-            Partitioner.PortionLetters(),
-            () => UIController.Instance.SetProgressbar(
-                MgsCoroutine.Percentage,
-                //ThemeManager.Instance.LanguagePack.Inprogress_PartitionWordSet),
-                MgsCoroutine.Info),
-            .1);
+        yield return Partitioner.PortionLetters();
 
+        
         // if partition successfully break
         if (Partitioner.PartitionSuccessfully)
             FollowMachine.SetOutput("Success");
-
-        #endregion
-
-
     }
 
     [FollowMachine("Generate words", "Success,Fail")]

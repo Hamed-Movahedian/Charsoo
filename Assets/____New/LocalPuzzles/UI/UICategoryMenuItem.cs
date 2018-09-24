@@ -23,7 +23,6 @@ public class UICategoryMenuItem : UIMenuItem
 
     protected override void Refresh(object data)
     {
-
         _category = (Category)data;
         //_avalable = IsCategoryAvalable(category);
 
@@ -57,18 +56,32 @@ public class UICategoryMenuItem : UIMenuItem
             ArabicFixer.Fix(puzzles.Count.ToString(), true, true));
 
         if (!IsCategoryAvalable())
-            CounterText.text = string.Format(ArabicFixer.Fix(_category.Price.ToString(), true, true));
+            CounterText.text = string.Format(ArabicFixer.Fix("300", true, true));
         else
             CounterText.text = string.Format("{0}/{1}",
                 ArabicFixer.Fix(solveCount.ToString(), true, true),
                 ArabicFixer.Fix(puzzles.Count.ToString(), true, true));
-        
+
         GetComponent<RectTransform>().localScale = Vector3.one;
+
     }
 
     private bool IsCategoryAvalable()
     {
-        if (_category.Price <= 0)
+        bool preIsSolved = true;
+
+        if (_category.PrerequisiteID!=null)
+        {
+
+            Category preCat = LocalDBController.Table<Category>().FirstOrDefault(c => c.ID == _category.PrerequisiteID);
+
+            if (preCat != null)
+                foreach (Puzzle p in LocalDBController.Table<Puzzle>().Where(p => p.CategoryID == preCat.ID))
+                    preIsSolved = p.Solved;
+        }
+
+
+        if (_category.Price <= 0 && preIsSolved)
             return true;
 
         if (

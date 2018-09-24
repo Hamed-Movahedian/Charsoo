@@ -4,22 +4,15 @@ using ArabicSupport;
 using FMachine;
 using FollowMachineDll.Attributes;
 using MgsCommonLib;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class AccountManager : MgsSingleton<AccountManager>
 {
-
-    #region Fields
-
-    // Is successfully connect to an account
-    public bool IsConnected = false;
-
     // cache random code and phone number
     private string _generatedCode;
     private string _phoneNumber;
 
-
-    #endregion
 
     [FollowMachine("Send RandomCode To PhoneNumber", "Success,Not Register,No Sms Service,Invalid Phone Number,Network Error")]
     public IEnumerator SendRandomCodeToPhoneNumber(string phoneNumber)
@@ -35,7 +28,7 @@ public class AccountManager : MgsSingleton<AccountManager>
         _phoneNumber = phoneNumber;
 
         // Generate random number
-        _generatedCode = Random.Range(1000, 9999).ToString();
+        GenerateRandomCode();
 
         // Ask server to send sms
         yield return ServerController.Post<string>(
@@ -52,9 +45,16 @@ public class AccountManager : MgsSingleton<AccountManager>
             {
                 // Set default error code to network error
                 FollowMachine.SetOutput("Network Error");
-                SendCodeResult = SendCodeResultEnum.NetworkError;
             });
 
+        if (FollowMachine.CheckOutputLable("Success"))
+            yield return new WaitForSeconds(3);
+
+    }
+
+    public void GenerateRandomCode()
+    {
+        _generatedCode = Random.Range(1000, 9999).ToString();
     }
 
     [FollowMachine("Is Code Valid?", "Yes,No")]
@@ -76,9 +76,6 @@ public class AccountManager : MgsSingleton<AccountManager>
                 // Set player info and save to local DB
                 Singleton.Instance.PlayerController
                     .SetPlayerInfoAndSaveTolocalDB(playerInfo);
-
-                // Account is connected
-                IsConnected = true;
 
                 // Set connection result to success
                 FollowMachine.SetOutput("Success");

@@ -32,25 +32,7 @@ public class UserPuzzleLocalDB
         }
     }
 
-    public void SetLastUpdate(DateTime lastUpdate)
-    {
-        var lastUpdateRecord = LocalDBController.Table<LastTableUpdates>()
-            .FirstOrDefault(l => l.TableName == "UserPuzzles");
 
-        if (lastUpdateRecord == null)
-        {
-            LocalDBController.InsertOrReplace(new LastTableUpdates
-            {
-                TableName = "UserPuzzles",
-                LastUpdate = lastUpdate
-            });
-        }
-        else
-        {
-            lastUpdateRecord.LastUpdate = lastUpdate;
-            LocalDBController.InsertOrReplace(lastUpdateRecord);
-        }
-    }
 
     public void UpdatePuzzles(IEnumerable<IUpdatedUserPuzzle> updatedUserPuzzles)
     {

@@ -26,7 +26,7 @@ public class UIStoreMenuItem : UIMenuItem
         PriceText.gameObject.SetActive(!hasItem);
         GetComponent<Button>().interactable = !hasItem;
         int price = storeItem.Price;
-        PriceText.text = ArabicFixer.Fix(price > 0 ? "تومان" + price : "رایگان", true, true);
+        PriceText.text = ArabicFixer.Fix(price > 0 ? " تومان " + price : "رایگان", true, true);
         GetComponent<RectTransform>().localScale=Vector3.one;
     }
 

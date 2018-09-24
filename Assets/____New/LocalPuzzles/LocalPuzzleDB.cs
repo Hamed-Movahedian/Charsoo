@@ -48,6 +48,10 @@ public class LocalPuzzleDB : MonoBehaviour
 
     public void UnlockCategoryPuzzles()
     {
+        int? playerID = null;
+        if (LocalDBController.Table<PlayerInfo>().FirstOrDefault() != null)
+            playerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID;
+
         int? id = PuzzleList.PlayingCategory.ID;
         foreach (Puzzle puzzle in LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == id))
         {
@@ -57,7 +61,7 @@ public class LocalPuzzleDB : MonoBehaviour
         Purchases purchase = new Purchases
         {
             LastUpdate = DateTime.Now,
-            PlayerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID,
+            PlayerID = playerID,
             PurchaseID = "C-P-" + id
         };
         LocalDBController.InsertOrReplace(purchase);
