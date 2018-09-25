@@ -13,8 +13,6 @@ public class HintManager : BaseObject
     public int FullWord = 35;
     public int FullWordset = 60;
 
-    //public UnityEvent OnLowMoney;
-    //public UnityEvent CancelHint;
     public UnityEvent OnWordComplete;
 
     public RectTransform WordHintPanel;

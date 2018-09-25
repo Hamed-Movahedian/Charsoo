@@ -42,7 +42,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         _vSyncCount = QualitySettings.vSyncCount;
         Application.targetFrameRate = 0;
         QualitySettings.vSyncCount = 0;
-        WordsWindow.WordsText.text="فسنجان سمبوسه سوپ کشک خورشقيمه قرمهسبزي قیمه بادمجان شیربرنج کلهپاچه باقالی‌پلو شیشلیک رشته‌پلو";
+        WordsWindow.WordsText.text = "";//"فسنجان سمبوسه سوپ کشک خورشقيمه قرمهسبزي قیمه بادمجان شیربرنج کلهپاچه باقالی‌پلو شیشلیک رشته‌پلو";
 
     }
 

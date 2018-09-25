@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FollowMachineDll.Attributes;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -21,10 +22,11 @@ public class MovingEffect : MonoBehaviour
     {
         _parent = transform.parent;
         _velocity = (_parent.position - transform.position).magnitude/MoveTime;
-        StartCoroutine(GotoParrent());
+        //StartCoroutine(GotoParrent());
     }
 
-    private IEnumerator GotoParrent()
+    //[FollowMachine("Generate words", "Success,Fail")]
+    public IEnumerator GotoParrent()
     {
         while ((transform.position -_parent.position).magnitude >0.5f)
             {
@@ -35,7 +37,6 @@ public class MovingEffect : MonoBehaviour
             }
         transform.position = _parent.position;
         OnArrive.Invoke();
-        //Destroy(_parent.gameObject,LifeTime);
         transform.localPosition = _startPos;
         _parent.gameObject.SetActive(false);
     }
