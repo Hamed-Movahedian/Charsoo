@@ -47,7 +47,7 @@ public class UserPuzzleLocalDB
                 Rate = puzzleUpdate.Rate,
                 Content = puzzleUpdate.Content,
                 PlayCount = puzzleUpdate.PlayCount,
-                CategoryName= puzzleUpdate.CategoryName
+                CategoryName = puzzleUpdate.CategoryName
             };
 
             LocalDBController.InsertOrReplace(puzzle);
@@ -67,7 +67,13 @@ public class UserPuzzleLocalDB
 
     public void AddPuzzle(UserPuzzle puzzle)
     {
-        puzzle.ID = LocalDBController.Table<UserPuzzle>().Max(p => p.ID) + 1;
+        var userPuzzles = LocalDBController.Table<UserPuzzle>().ToList();
+
+        if (userPuzzles.Count > 0)
+            puzzle.ID = userPuzzles.Max(p => p.ID) + 1;
+        else
+            puzzle.ID = 1;
+
         LocalDBController.InsertOrReplace(puzzle);
     }
 }

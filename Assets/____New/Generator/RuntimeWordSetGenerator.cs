@@ -61,8 +61,15 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         // Generate Word set
         yield return Generator.MakeWordSet();
 
+        // fail to generate word sets
+        if (!Generator.Successful)
+        {
+            FollowMachine.SetOutput("Fail");
+            yield break;
+        }
+
         // Setup partitioner
-        Partitioner.MaxSize = 5;
+        Partitioner.MaxSize = 4;
         Partitioner.MinSize = 1;
         Partitioner.MaxTry = 200;
         Partitioner.Validate = false;

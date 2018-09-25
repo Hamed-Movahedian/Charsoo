@@ -6,43 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using FMachine;
 using FollowMachineDll.Attributes;
+using MgsCommonLib;
 using UnityEngine;
 
 namespace Assets.Scripts.Singletons
 {
-    public class PurchaseController : MonoBehaviour
+    public class PurchaseController : MgsSingleton<PurchaseController>
     {
-        [FollowMachine("Restore Purchases", "Success,Fail,Not Register")]
-        public IEnumerator RestorePurchase(int? playerID)
+        public void RestorePurchase(List<Purchases> purchaseses)
         {
-            if (playerID == null)
-            {
-                FollowMachine.SetOutput("Not Register");
-                yield break;
-            }
-            
-            // Get records from server
-            List<Purchases> purchaseses = null;
-            yield return ServerController.Post<List<Purchases>>(
-                $@"Purchases/GetPurchase?playerID={playerID}&clientLastCmdTime={DateTime.MinValue:s}",
-                null,
-                pList => { purchaseses = pList; });
+            // Clear table
+            LocalDBController.DataService.Connection.DeleteAll<Purchases>();
 
-            // Add records to local table
-            if(purchaseses==null)
-                FollowMachine.SetOutput("Fail");
-            else
-            {
-                // Clear table
-                LocalDBController.DataService.Connection.DeleteAll<Purchases>();
-
-                // Add new records
-                LocalDBController
-                    .DataService.Connection
-                    .InsertAll(purchaseses, typeof(Purchases));
-
-                FollowMachine.SetOutput("Success");
-            }
+            // Add new records
+            LocalDBController
+                .DataService.Connection
+                .InsertAll(purchaseses, typeof(Purchases));
         }
     }
 }

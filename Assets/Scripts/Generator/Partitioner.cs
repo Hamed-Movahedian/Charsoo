@@ -60,22 +60,18 @@ public class Partitioner : BaseObject
                     .ToList()
                     .ForEach(l => l.SetupBridges());
 
-                if (Validate)
-                {
-                    yield return _validator.ValidateWordSet(Paritions);
+                yield return _validator.ValidateWordSet(Paritions, Validate);
 
-                    if (!_validator.IsValid)
-                    {
-                        InvalidResults++;
-                        continue;
-                    }
+                if (!_validator.IsValid)
+                {
+                    InvalidResults++;
+                    continue;
                 }
 
                 PartitionSuccessfully = true;
 
                 yield break;
             }
-            
         }
         PartitionSuccessfully = false;
 

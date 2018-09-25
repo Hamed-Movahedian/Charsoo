@@ -27,7 +27,7 @@ public class WordSetValidator
 
     #region ValidateWordSet - Validate current partitioned word set
 
-    public IEnumerator ValidateWordSet(List<List<Letter>> partitions)
+    public IEnumerator ValidateWordSet(List<List<Letter>> partitions, bool checkMoreThanOneSequence)
     {
         MgsCoroutine.Info += "\n Validating...";
 
@@ -69,7 +69,7 @@ public class WordSetValidator
         #endregion
 
         #region Check for word with more than one sequence
-
+        if(checkMoreThanOneSequence)
         foreach (var word in _words)
         {
             _word = word;

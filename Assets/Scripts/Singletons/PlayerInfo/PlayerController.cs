@@ -11,17 +11,11 @@ public class PlayerController : BaseObject
 {
     #region Public
 
-    public PlayerInfo PlayerInfo;
+    private PlayerInfo PlayerInfo;
 
     #endregion
 
     #region Properties
-
-    public string Name
-    {
-        get { return PlayerInfo.Name; }
-        set { PlayerInfo.Name = value; }
-    }
 
 
     #endregion

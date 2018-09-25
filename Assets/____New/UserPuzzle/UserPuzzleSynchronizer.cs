@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using FMachine;
 using FollowMachineDll.Attributes;
+using MgsCommonLib;
 using MgsCommonLib.Theme;
 using UnityEngine;
 
-internal class UserPuzzleSynchronizer : MonoBehaviour
+internal class UserPuzzleSynchronizer : MgsSingleton<UserPuzzleSynchronizer>
 {
     [FollowMachine("Sync UserPuzzles","Success,Fail,Not Registered")]
     public IEnumerator Syncing()
@@ -44,15 +46,15 @@ internal class UserPuzzleSynchronizer : MonoBehaviour
         FollowMachine.SetOutput("Success");
     }
 
-    [FollowMachine("Restore UserPuzzles", "Success,Fail,Not Registered")]
-    public IEnumerator RestoreUserPuzzles()
+    public void RestoreUserPuzzles(List<UserPuzzle> userPuzzles)
     {
         // clear user puzzle table
         LocalDBController.DataService.Connection.DeleteAll<UserPuzzle>();
 
-        // set min value for last update
-        LocalDBController.Instance.SetLastUpdate(DateTime.MinValue, "UserPuzzles");
-
-        return Syncing();
+        // insert user puzzles
+        LocalDBController
+            .DataService
+            .Connection
+            .InsertAll(userPuzzles, typeof(UserPuzzle));
     }
 }

@@ -45,7 +45,9 @@ public class WordSetGenerator : BaseObject
         SWord word = null;
         int index = 0;
 
-        while (_results.Count < MaxResults)
+        var startTime = Time.time;
+
+        while (_results.Count < MaxResults && Time.time < startTime + _words.Count * 2 )
         {
             MgsCoroutine.Info = _results.Count + " word set found.";
             if (BruteForce)
@@ -65,6 +67,12 @@ public class WordSetGenerator : BaseObject
             yield return TryOtherWords(word);
         }
 
+        if (_results.Count == 0)
+        {
+            Successful = false;
+            yield break;
+        }
+
         MgsCoroutine.Info = "Sorting...";
         MgsCoroutine.ForceUpdate();
 
@@ -77,6 +85,7 @@ public class WordSetGenerator : BaseObject
             .ToList();
 
         print(_results.Count + " WordSet Found");
+        Successful = true;
 
     }
 
@@ -126,11 +135,13 @@ public class WordSetGenerator : BaseObject
         MgsCoroutine.Title = "Generate Word set";
     }
 
+    public bool Successful { get; set; }
+
     private IEnumerator TryOtherWords(SWord lastWord)
     {
         // Show Progress Bar
         MgsCoroutine.Info = _results.Count.ToString("N0") + " WordSet Found";
-        MgsCoroutine.Percentage = _results.Count/(float) MaxResults;
+        MgsCoroutine.Percentage = _results.Count / (float)MaxResults;
 
         yield return null;
 
@@ -147,10 +158,10 @@ public class WordSetGenerator : BaseObject
             ResultFound();
         else
         {
-            List<SWord> _unusedWords = _words.Where(w => _usedWords.Find(uw=>uw.Name==w.Name)==null).ToList();
+            List<SWord> _unusedWords = _words.Where(w => _usedWords.Find(uw => uw.Name == w.Name) == null).ToList();
 
-            int index=0;
-            SWord word=null;
+            int index = 0;
+            SWord word = null;
 
             while (_unusedWords.Count > 0)
             {
@@ -159,7 +170,7 @@ public class WordSetGenerator : BaseObject
                     index = Random.Range(0, _unusedWords.Count);
                     word = _unusedWords[index];
                     _unusedWords.RemoveAt(index);
-                    
+
                 }
                 else
                 {
@@ -408,7 +419,7 @@ public class WordSetGenerator : BaseObject
 
         return true;
     }
-    
+
     #endregion
 
     #region SpawnWordSet

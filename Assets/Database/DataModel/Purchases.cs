@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-class Purchases
+public class Purchases
 {
     public int? PlayerID { get; set; }
     public string PurchaseID { get; set; }
