@@ -33,7 +33,9 @@ public class RTFixText : MonoBehaviour
     {
         while (true)
         {
-            GetComponent<Text>().text = ArabicFixer.Fix(TargetText.text.Replace("ی", "ي"));
+            string s = TargetText.text.Replace("ی", "ي");
+            GetComponent<Text>().text = ArabicFixer.Fix(s);
+            GetComponentInParent<InputField>().text = s;
             yield return new WaitForSeconds(0.1f);
         }
     }

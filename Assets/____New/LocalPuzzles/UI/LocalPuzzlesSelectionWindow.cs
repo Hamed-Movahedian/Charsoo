@@ -15,7 +15,7 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
     public Text CategoryName;
     public Category PlayingCategory;
 
-    private Puzzle _playingPuzzle;
+    public Puzzle PlayingPuzzle;
 
     public override void Refresh()
     {
@@ -34,13 +34,13 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
 
     public void SetForSpawn(Puzzle selectedPuzzle, bool hasReward=false)
     {
-        _playingPuzzle = selectedPuzzle;
+        PlayingPuzzle = selectedPuzzle;
         //Puzzle selectedPuzzle
         WordSet wordSet = selectedPuzzle.GetWordSet();
         Singleton.Instance.WordSpawner.ClearTable();
         Singleton.Instance.WordSpawner.WordSet = wordSet;
         Singleton.Instance.WordSpawner.Clue = selectedPuzzle.Clue;
-        Singleton.Instance.WordSpawner.PuzzleRow = selectedPuzzle.Row.ToString();
+        Singleton.Instance.WordSpawner.PuzzleRow = (selectedPuzzle.Row+1).ToString();
         Singleton.Instance.WordSpawner.PuzzleReward = hasReward;
 
         Singleton.Instance.WordSpawner.EditorInstatiate = null;

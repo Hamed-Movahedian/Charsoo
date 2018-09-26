@@ -17,7 +17,7 @@ public class LocalPuzzleDB : MonoBehaviour
     [FollowMachine("Prepare next puzzle for spawn", "Play Next,No Next Puzzle")]
     public void PuzzleSolved()
     {
-        _playingPuzzle = PuzzleList.SelectedPuzzle;
+        _playingPuzzle = PuzzleList.PlayingPuzzle;
 
         if (!_playingPuzzle.Solved)
         {
@@ -27,8 +27,8 @@ public class LocalPuzzleDB : MonoBehaviour
         }
 
 
-        TableQuery<Puzzle> puzzles = LocalDBController.Table<Puzzle>().
-            SqlWhere(p => p.CategoryID == _playingPuzzle.CategoryID);
+        IEnumerable<Puzzle> puzzles = LocalDBController.Table<Puzzle>().
+            Where(p => p.CategoryID == _playingPuzzle.CategoryID);
 
         Puzzle nextPuzzle = puzzles.FirstOrDefault(p => p.Row == _playingPuzzle.Row + 1);
 
@@ -41,7 +41,7 @@ public class LocalPuzzleDB : MonoBehaviour
 
         nextPuzzle.Paid = true;
         LocalDBController.InsertOrReplace(nextPuzzle);
-
+        
         PuzzleList.SetForSpawn(nextPuzzle,!nextPuzzle.Solved);
         FollowMachine.SetOutput("Play Next");
     }

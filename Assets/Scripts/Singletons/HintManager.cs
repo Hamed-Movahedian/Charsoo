@@ -147,13 +147,9 @@ public class HintManager : BaseObject
         rectPos.z = -2;
         effect.transform.GetChild(0).position = rectPos;
         effect.SetActive(true);
-        effect.transform.GetChild(0).GetComponent<MovingEffect>().OnArrive.AddListener
-            (() =>
-            {
-                foreach (Letter t in part)
-                    t.Frame.SetActive(true);
-            }
-            );
+        yield return effect.transform.GetChild(0).GetComponent<MovingEffect>().GotoParrent();
+        foreach (Letter t in part)
+            t.Frame.SetActive(true);
     }
 
     [FollowMachine("Hint One Part", "First Part,New Part,Last Part")]

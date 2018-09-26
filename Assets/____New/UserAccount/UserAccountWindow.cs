@@ -17,7 +17,14 @@ public class UserAccountWindow : MgsUIWindow
 
     [CanBeNull] private PlayerInfo _playerInfo;
 
-    public void Start()
+    public void OnEnable()
+    {
+
+
+    }
+
+
+    public override void Refresh()
     {
         _playerInfo = LocalDBController.Table<PlayerInfo>().FirstOrDefault();
 
@@ -32,28 +39,25 @@ public class UserAccountWindow : MgsUIWindow
         PlayerID.interactable = _playerInfo.PlayerID == null;
         PlayerID.onClick.AddListener(() => Close("Register Player Info"));
 
-        PlayerID.transform.GetChild(0).GetComponent<Text>().text = 
+        PlayerID.transform.GetChild(0).GetComponent<Text>().text =
             ArabicFixer.Fix(
-                _playerInfo.PlayerID!=null?
+                _playerInfo.PlayerID != null ?
                     _playerInfo.PlayerID.ToString()
-                    :"بدون شناسه", true, true);
+                    : "بدون شناسه", true, true);
 
-        UserPuzzleCount.onClick.AddListener(()=> Close("Goto User Puzzles") );
+        UserPuzzleCount.onClick.AddListener(() => Close("Goto User Puzzles"));
         UserPuzzleCount.transform.GetChild(0).GetComponent<Text>().text =
-            ArabicFixer.Fix(LocalDBController.Table<UserPuzzle>().Count().ToString(),true,true);
+            ArabicFixer.Fix(LocalDBController.Table<UserPuzzle>().Count().ToString(), true, true);
 
         Telephone.interactable = _playerInfo.Telephone.Length < 5;
         Telephone.onClick.AddListener(() => Close("Register Phone Number"));
         Telephone.transform.GetChild(0).GetComponent<Text>().text =
-            ArabicFixer.Fix(_playerInfo.Telephone.Length>5?_playerInfo.Telephone:"اتصال به شماره موبایل");
+            ArabicFixer.Fix(_playerInfo.Telephone.Length > 5 ? _playerInfo.Telephone : "اتصال به شماره موبایل");
 
         Email.interactable = _playerInfo.Email.Length < 5;
         Email.onClick.AddListener(() => Close("Register Email"));
         Email.transform.GetChild(0).GetComponent<Text>().text =
-            _playerInfo.Email.Length > 5 ? _playerInfo.Email : ArabicFixer.Fix( "اتصال به ایمیل");
-
+            _playerInfo.Email.Length > 5 ? _playerInfo.Email : ArabicFixer.Fix("اتصال به ایمیل");
 
     }
-
-
 }
