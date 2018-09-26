@@ -111,7 +111,7 @@ public class AccountManager : MgsSingleton<AccountManager>
         }
     }
 
-    [FollowMachine("Set Phone Number","Success,Fail")]
+    [FollowMachine("Set Phone Number", "Success,No Sms Service,Invalid Phone Number,Network Error,Repetitive Number")]
     public IEnumerator SetPhoneNumber(string phoneNumber)
     {
         //PlayerInfo playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
