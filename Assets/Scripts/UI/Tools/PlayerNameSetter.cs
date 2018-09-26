@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 public class PlayerNameSetter : MonoBehaviour
 {
-    private Text _text;
+    public Text IDText;
     public void OnEnable()
     {
         PlayerInfo info = LocalDBController.Table<PlayerInfo>().FirstOrDefault();
-        GetComponent<Text>().text = ArabicFixer.Fix(info.PlayerID+"   "+ info.Name);
+        GetComponent<Text>().text = ArabicFixer.Fix(info.Name);
+        IDText.text="ID: # " + info.PlayerID;
     }
 
 }
