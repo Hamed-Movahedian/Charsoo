@@ -20,14 +20,6 @@ MonoBehaviour:
   - Name: Inprogress/AccountRecovery
     Text: "... \u064A\uFEAE\uFE91\u0631\uFE8E\uFB90 \u0628\uFE8E\uFEB4\uFEA3 \uFEEA\uFE91
       \u0644\uFE8E\uFEBC\uFE97\u0627 \u0644\uFE8E\uFEA3 \u0631\u062F\r"
-  - Name: Inprogress/AccountRecovery/RestoreUserPuzzles
-    Text: "... \uFEAE\uFE91\u0631\uFE8E\uFB90 \u064A\uFE8E\uFEEB \u0644\u0648\uFEAA\uFE9F
-      \uFEF2\uFE91\uFE8E\uFEF3\u0632\uFE8E\uFE91"
-  - Name: Inprogress/AccountRecovery/RestorePurchase
-    Text: "... \uFE8E\uFEEB\uFEAA\uFEF3\uFEAE\uFEA7 \uFEF2\uFE91\uFE8E\uFEF3\u0632\uFE8E\uFE91"
-  - Name: Inprogress/AccountRecovery/RestorePlayHistory
-    Text: "...\u0647\uFEAA\uFEB7 \u064A\u0632\uFE8E\uFE91 \u064A\uFE8E\uFEEB \u0644\u0648\uFEAA\uFE9F
-      \uFEEA\uFED8\uFE91\uFE8E\uFEB3 \uFEF2\uFE91\uFE8E\uFEF3\u0632\uFE8E\uFE91"
   - Name: Inprogress/SendCode
     Text: ". . . \uFEAA\uFB90 \u0644\uFE8E\uFEB3\u0631\u0627 \u0644\uFE8E\uFEA3\u0631\u062F"
   - Name: Inprogress/ServerConnection
@@ -48,19 +40,12 @@ MonoBehaviour:
   - Name: Error/UnknownPhoneNumber
     Text: "\uFE96\uFEB3\u0627 \u0647\uFEAA\uFEB8\uFEE7 \uFE96\uFE92\uFE9B \uFEE6\uFED4\uFEE0\uFE97
       \u0647\u0631\uFE8E\uFEE4\uFEB7 \uFEE6\uFEF3\u0627"
+  - Name: Error/RepetivePhoneNumber
+    Text: "\u0647\uFEAA\uFEB7 \uFE96\uFE92\uFE9B \uFEFC\uFE92\uFED7 \uFEE6\uFED4\uFEE0\uFE97
+      \u0647\u0631\uFE8E\uFEE4\uFEB7 \uFEE6\uFEF3\u0627"
   - Name: Error/AccountRecovery
     Text: " \uFEEA\uFE91 \u0644\uFE8E\uFEBC\uFE97\u0627 \u0646\uFE8E\uFB91\uFEE3\u0627\n\u062F\u0631\u0627\uFEAA\uFEE7
       \u062F\uFEEE\uFE9F\u0648 \u064A\uFEAE\uFE91\u0631\uFE8E\uFB90 \u0628\uFE8E\uFEB4\uFEA3"
-  - Name: Error/AccountRecovery/RestoreUserPuzzles
-    Text: "... \uFEAE\uFE91\u0631\uFE8E\uFB90 \u064A\uFE8E\uFEEB \u0644\u0648\uFEAA\uFE9F
-      \uFEF2\uFE91\uFE8E\uFEF3\u0632\uFE8E\uFE91 \u0631\u062F \uFE8E\uFEC4\uFEA7"
-  - Name: Error/AccountRecovery/RestorePurchase
-    Text: "... \uFE8E\uFEEB\uFEAA\uFEF3\uFEAE\uFEA7 \uFEF2\uFE91\uFE8E\uFEF3\u0632\uFE8E\uFE91
-      \u0631\u062F \uFE8E\uFEC4\uFEA7"
-  - Name: Error/AccountRecovery/RestorePlayHistory
-    Text: "...\u0647\uFEAA\uFEB7 \u064A\u0632\uFE8E\uFE91 \u064A\uFE8E\uFEEB \u0644\u0648\uFEAA\uFE9F
-      \uFEEA\uFED8\uFE91\uFE8E\uFEB3 \uFEF2\uFE91\uFE8E\uFEF3\u0632\uFE8E\uFE91 \u0631\u062F
-      \uFE8E\uFEC4\uFEA7"
   - Name: Error/InvalidCode
     Text: "!\uFE96\uFEB4\uFEF4\uFEE7 \uFEA2\uFEF4\uFEA4\uFEBB \uFEAA\uFB90"
   - Name: Error/InvalidPhoneNumber
@@ -115,6 +100,8 @@ MonoBehaviour:
     Text: "\u062F\uFEAA\uFEA0\uFEE3 \u0634\uFEFC\uFE97"
   - Name: Button/Continue
     Text: "\uFEEA\uFEE3\u0627\u062F\u0627"
+  - Name: Button/Register
+    Text: "\uFE96\uFE92\uFE9B"
   - Name: Title/Puzzle/Locked
     Text: 
   - Name: Puzzle/PuzzleLocked
@@ -137,6 +124,8 @@ MonoBehaviour:
   - Name: Player/NoNameMSG
     Text: "\uFEAA\uFEF4\uFEE8\uFB90 \u062F\u0631\u0627\u0648 \u0627\u0631 \u062F\uFEEE\uFEA7
       \u0645\uFE8E\uFEE7"
+  - Name: Player/NoID
+    Text: "\uFEEA\uFEB3\uFE8E\uFEE8\uFEB7 \u0646\u0648\uFEAA\uFE91"
   - Name: General/ExitWarn
     Text: "\u061F\uFEAA\uFEF3\uFEEE\uFEB7 \u062C\u0631\uFE8E\uFEA7 \u064A\u0632\uFE8E\uFE91
       \u0632\u0627 \uFEAA\uFEF4\uFEEB\u0627\uFEEE\uFEA8\uFEF4\uFEE3"

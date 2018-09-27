@@ -21,6 +21,6 @@ public class PlayerInfo
 
     public bool HasAccount()
     {
-        return Telephone != "" || Email != "";
+        return !string.IsNullOrEmpty(Telephone) ;
     }
 }

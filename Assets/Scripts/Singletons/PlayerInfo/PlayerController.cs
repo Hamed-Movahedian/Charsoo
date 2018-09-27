@@ -11,7 +11,7 @@ public class PlayerController : BaseObject
 {
     #region Public
 
-    private PlayerInfo PlayerInfo;
+    private PlayerInfo _playerInfo;
 
     #endregion
 
@@ -33,10 +33,10 @@ public class PlayerController : BaseObject
             .Connection.DeleteAll<PlayerInfo>();
 
         LocalDBController
-            .InsertOrReplace(PlayerInfo);
+            .InsertOrReplace(_playerInfo);
 
-        if (PlayerInfo.PlayerID != null)
-            NewPlayerID?.Invoke(PlayerInfo.PlayerID.Value);
+        if (_playerInfo.PlayerID != null)
+            NewPlayerID?.Invoke(_playerInfo.PlayerID.Value);
     }
 
     #endregion
@@ -46,15 +46,15 @@ public class PlayerController : BaseObject
     private IEnumerator LoginToDB()
     {
 
-        yield return LocalDBController.AddLogin(PlayerInfo.PlayerID);
+        yield return LocalDBController.AddLogin(_playerInfo.PlayerID);
 
-        if (PlayerInfo.PlayerID != null)
+        if (_playerInfo.PlayerID != null)
             yield return FlashOutLocalLogins();
 
         NameText nameText = FindObjectOfType<NameText>();
 
         if (nameText != null)
-            nameText.SetName(PlayerInfo.Name);
+            nameText.SetName(_playerInfo.Name);
     }
 
     private IEnumerator FlashOutLocalLogins()
@@ -74,58 +74,90 @@ public class PlayerController : BaseObject
 
     #endregion
 
-
+    #region Old Methods
     public void SaveToLocalDB()
     {
         LocalDBController
             .DataService
             .Connection.DeleteAll<PlayerInfo>();
 
-        LocalDBController.InsertOrReplace(PlayerInfo);
+        LocalDBController.InsertOrReplace(_playerInfo);
     }
 
     public void SetPlayerInfo(PlayerInfo playerInfo)
     {
-        PlayerInfo = playerInfo;
+        _playerInfo = playerInfo;
     }
 
     public void SetPlayerInfoAndSaveTolocalDB(PlayerInfo playerInfo)
     {
         SetPlayerInfo(playerInfo);
         SaveToLocalDB();
-    }
+    } 
+    #endregion
 
-    public int? GetPlayerID
+    #region Playerinfo records
+    public PlayerInfo PlayerInfo
     {
         get
         {
-            // Get player info from localDB
-            PlayerInfo =
-                LocalDBController
-                    .Table<PlayerInfo>()
-                    .FirstOrDefault();
-            
-            return PlayerInfo?.PlayerID;
+            if (_playerInfo == null)
+                // Get player info from localDB
+                _playerInfo =
+                    LocalDBController
+                        .Table<PlayerInfo>()
+                        .FirstOrDefault();
+
+            return _playerInfo;
         }
     }
+    public int? GetPlayerID => PlayerInfo?.PlayerID;
+    public string PlayerID => GetPlayerID?.ToString();
 
+    public string PlayerName => PlayerInfo?.Name;
+    public string PlayerTelephone => PlayerInfo?.Telephone;
+    #endregion
+
+    #region RegisterPlayerToServer
     [FollowMachine("Register To Server", "Success,Fail")]
     public IEnumerator RegisterPlayerToServer()
     {
-        PlayerInfo.PlayerID = -1;
+        _playerInfo.PlayerID = -1;
         // Register player to server and get PlayerID
         yield return ServerController.Post<PlayerInfo>(
             @"PlayerInfo/Create",
-            PlayerInfo,
-            r => { PlayerInfo = r; });
-        if (PlayerInfo.PlayerID == -1)
-            PlayerInfo.PlayerID = null;
+            _playerInfo,
+            r => { _playerInfo = r; });
+        if (_playerInfo.PlayerID == -1)
+            _playerInfo.PlayerID = null;
 
-        FollowMachine.SetOutput(PlayerInfo?.PlayerID == null ? "Fail" : "Success");
+        FollowMachine.SetOutput(_playerInfo?.PlayerID == null ? "Fail" : "Success");
     }
 
+    #endregion
+
+    #region CreatePlayerInfo 
     public void CreatePlayerInfo(string playerName)
     {
+        LocalDBController
+            .DataService
+            .Connection
+            .DeleteAll<PlayerInfo>();
+        LocalDBController
+            .DataService
+            .Connection
+            .DeleteAll<PlayPuzzles>();
+        LocalDBController
+            .DataService
+            .Connection
+            .DeleteAll<UserPuzzle>();
+        LocalDBController
+            .DataService
+            .Connection
+            .DeleteAll<Purchases>();
+
+
+
         LocalDBController
             .InsertOrReplace(new PlayerInfo
             {
@@ -133,25 +165,35 @@ public class PlayerController : BaseObject
             });
     }
 
+    #endregion
+
+    #region IsValidName
     [FollowMachine("Valid Name?", "Yes,No")]
     public void IsValidName(string playerName)
     {
         FollowMachine.SetOutput(playerName == null || playerName.Trim() == "" ? "No" : "Yes");
     }
-    [FollowMachine("Check Player Info ?", "No Player Info,No Player ID,Has Player ID")]
+
+    #endregion    [FollowMachine("Check Player Info ?", "No Player Info,No Player ID,Has Player ID")]
+
+    #region CheckPlayerInfo
     public void CheckPlayerInfo()
     {
-        PlayerInfo =
+        _playerInfo =
             LocalDBController
                 .Table<PlayerInfo>()
                 .FirstOrDefault();
 
-        if (PlayerInfo == null)
+        if (_playerInfo == null)
             FollowMachine.SetOutput("No Player Info");
-        else if (PlayerInfo.PlayerID == null)
+        else if (_playerInfo.PlayerID == null)
             FollowMachine.SetOutput("No Player ID");
         else
             FollowMachine.SetOutput("Has Player ID");
 
     }
+
+    #endregion
+
+
 }

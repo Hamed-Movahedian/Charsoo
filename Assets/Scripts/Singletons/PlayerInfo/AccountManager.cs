@@ -16,9 +16,24 @@ public class AccountManager : MgsSingleton<AccountManager>
     private string _phoneNumber;
 
 
+    #region HasAccount
+
+    [FollowMachine("Has Account", "Yes,No")]
+    public void HasAccount()
+    {
+        PlayerInfo playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
+
+        if (playerInfo != null && playerInfo.HasAccount())
+            FollowMachine.SetOutput("Yes");
+        else
+            FollowMachine.SetOutput("No");
+    }
+    #endregion
+
+
     #region Send RandomCode To PhoneNumber
-    [FollowMachine("Send RandomCode To PhoneNumber", "Success,Not Register,No Sms Service,Invalid Phone Number,Network Error")]
-    public IEnumerator SendRandomCodeToPhoneNumber(string phoneNumber)
+    [FollowMachine("Send RandomCode To PhoneNumber", "Success,Not Register,No Sms Service,Invalid Phone Number,Network Error,Repetitive Number")]
+    public IEnumerator SendRandomCodeToPhoneNumber(string phoneNumber, bool forRegister)
     {
         // Check phone number
         if (phoneNumber[0] != '0' || phoneNumber.Length != 11)
@@ -35,7 +50,7 @@ public class AccountManager : MgsSingleton<AccountManager>
 
         // Ask server to send sms
         yield return ServerController.Post<string>(
-            $@"Account/SendSms?phoneNumber={phoneNumber}&code={_generatedCode}",
+            $@"Account/SendSms?phoneNumber={phoneNumber}&code={_generatedCode}&forRegister{forRegister}",
             null,
             // On success
             respond =>
@@ -57,17 +72,22 @@ public class AccountManager : MgsSingleton<AccountManager>
 
     #endregion
 
+    #region GenerateRandomCode
     public void GenerateRandomCode()
     {
         _generatedCode = Random.Range(1000, 9999).ToString();
     }
+    #endregion
 
+    #region IsCodeValid
     [FollowMachine("Is Code Valid?", "Yes,No")]
     public void IsCodeValid(string inputCode)
     {
         FollowMachine.SetOutput(inputCode == _generatedCode ? "Yes" : "No");
     }
+    #endregion
 
+    #region ConnectToAccount
     [FollowMachine("Connect To Account", "Success,Network Error,Account Error")]
     public IEnumerator ConnectToAccount()
     {
@@ -111,16 +131,31 @@ public class AccountManager : MgsSingleton<AccountManager>
         }
     }
 
-    [FollowMachine("Set Phone Number", "Success,No Sms Service,Invalid Phone Number,Network Error,Repetitive Number")]
-    public IEnumerator SetPhoneNumber(string phoneNumber)
-    {
-        //PlayerInfo playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
+    #endregion
 
-        /*yield return ServerController.Post<AccountInfo>(
-            $@"Account/UpdatePlayerInfo",
-            ,
+    #region SetPhoneNumber
+    [FollowMachine("Register Phone Number", "Success,Fail,Network Error")]
+    public IEnumerator RegisterPhoneNumber(string phoneNumber)
+    {
+        PlayerInfo playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
+
+        if (playerInfo == null)
+        {
+            FollowMachine.SetOutput("Fail");
+            yield break;
+        }
+
+        var lastTelephone = playerInfo.Telephone;
+        playerInfo.Telephone = phoneNumber;
+
+        yield return ServerController.Post<string>(
+            $@"PlayerInfo/Update?id={playerInfo.PlayerID}",
+            playerInfo,
             // On Successfully connect to the account
-            info => { accountInfo = info; },
+            respnse =>
+            {
+                FollowMachine.SetOutput(respnse);
+            },
             // On Error
             request =>
             {
@@ -130,11 +165,16 @@ public class AccountManager : MgsSingleton<AccountManager>
 
                 // Account recovery Error !!!!
                 else if (request.isHttpError)
-                    FollowMachine.SetOutput("Account Error");
-            });*/
-        return null;
-    }
+                    FollowMachine.SetOutput("Fail");
+            });
 
+        if(!FollowMachine.CheckOutputLable("Success"))
+            playerInfo.Telephone = lastTelephone;
+
+    }
+    #endregion
+
+    #region AccountInfo (for server data exchange)
     public class AccountInfo
     {
         public PlayerInfo PlayerInfo;
@@ -142,4 +182,6 @@ public class AccountManager : MgsSingleton<AccountManager>
         public List<PlayPuzzles> PlayPuzzleses;
         public List<Purchases> Purchaseses;
     }
+
+    #endregion
 }

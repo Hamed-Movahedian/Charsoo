@@ -57,4 +57,25 @@ internal class UserPuzzleSynchronizer : MgsSingleton<UserPuzzleSynchronizer>
             .Connection
             .InsertAll(userPuzzles, typeof(UserPuzzle));
     }
+
+    #region PuzzleCount
+
+    public int PuzzleCount
+    {
+        get
+        {
+            var userPuzzles = LocalDBController
+                .Table<UserPuzzle>();
+            if (userPuzzles == null)
+                return 0;
+
+            return userPuzzles.Count();
+        }
+    }
+
+    public string PuzzleCountText => PuzzleCount.ToString();
+
+
+    #endregion
+
 }
