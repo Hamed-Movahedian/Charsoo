@@ -9,7 +9,7 @@ using UnityEngine;
 
 internal class UserPuzzleSynchronizer : MgsSingleton<UserPuzzleSynchronizer>
 {
-    [FollowMachine("Sync UserPuzzles","Success,Fail,Not Registered")]
+    [FollowMachine("Sync UserPuzzles", "Success,Fail,Not Registered")]
     public IEnumerator Syncing()
     {
         FollowMachine.SetOutput("Fail");
@@ -51,11 +51,8 @@ internal class UserPuzzleSynchronizer : MgsSingleton<UserPuzzleSynchronizer>
         // clear user puzzle table
         LocalDBController.DataService.Connection.DeleteAll<UserPuzzle>();
 
-        // insert user puzzles
-        LocalDBController
-            .DataService
-            .Connection
-            .InsertAll(userPuzzles, typeof(UserPuzzle));
+        foreach (UserPuzzle puzzle in userPuzzles)
+            LocalDBController.InsertOrReplace(puzzle);
     }
 
     #region PuzzleCount

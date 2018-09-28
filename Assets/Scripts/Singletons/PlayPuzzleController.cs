@@ -44,7 +44,7 @@ namespace Assets.Scripts.Singletons
             _currentPuzzle = new PlayPuzzles
             {
                 Time = DateTime.Now,
-                PlayerID = Singleton.Instance.PlayerController.GetPlayerID,
+                PlayerID = Singleton.Instance.PlayerController.GetPlayerID ?? -1,
                 Duration = duration,
                 HintCount1 = Hint1,
                 HintCount2 = Hint2,
