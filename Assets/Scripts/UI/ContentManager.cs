@@ -56,7 +56,7 @@ public class ContentManager : BaseObject
         _parentCategory = parentCateroy;
 
         // Set Header
-        HeaderTitle.text = parentCateroy!=null ? ArabicFixer.Fix(parentCateroy.Name) : "";
+        HeaderTitle.text = parentCateroy!=null ? PersianFixer.Fix(parentCateroy.Name) : "";
 
         // Clear list
         DynamicList.Clear();

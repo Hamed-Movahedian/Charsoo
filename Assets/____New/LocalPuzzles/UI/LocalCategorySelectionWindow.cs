@@ -22,7 +22,7 @@ public class LocalCategorySelectionWindow : UIMenuItemList
 
         var categories = LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == parentID).ToList();
         categories.Sort((p1, p2) => p1.Row.CompareTo(p2.Row));
-        CategoryName.text = SelectedCategory != null ? ArabicFixer.Fix(SelectedCategory.Name) : ArabicFixer.Fix("جدول های اصلی");
+        CategoryName.text = SelectedCategory != null ? PersianFixer.Fix(SelectedCategory.Name) : PersianFixer.Fix("جدول های اصلی");
         UpdateItems(categories.Cast<object>());
     }
 

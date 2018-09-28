@@ -13,7 +13,7 @@ public class HUD : BaseObject
 
     public void SetupHUD()
     {
-        _clue = ArabicFixer.Fix(WordSpawner.Clue);
+        _clue = PersianFixer.Fix(WordSpawner.Clue);
         StartClueText.text = _clue;
         HeaderClueText.text = _clue;
         HintClueText.text = _clue;

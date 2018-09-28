@@ -17,7 +17,7 @@ public class CoinCounter : BaseObject
         _scale = GetComponent<RectTransform>().localScale;
         _text = GetComponent<Text>();
         _coinCount = ZPlayerPrefs.GetInt("Coin");
-        _text.text = ArabicFixer.Fix(_coinCount.ToString("D"), false, true);
+        _text.text = PersianFixer.Fix(_coinCount.ToString("D"), false, true);
         PurchaseManager.OnCurrencyChange.AddListener(SetCounter);
     }
 
@@ -26,7 +26,7 @@ public class CoinCounter : BaseObject
         if (!gameObject.activeInHierarchy)
         {
             _coinCount = PurchaseManager.CurrentCoin;
-            _text.text = ArabicFixer.Fix(_coinCount.ToString("D"), false, true);
+            _text.text = PersianFixer.Fix(_coinCount.ToString("D"), false, true);
             return;
         }
         StopAllCoroutines();
@@ -43,7 +43,7 @@ public class CoinCounter : BaseObject
             {
                 GetComponent<RectTransform>().localScale = _scale * Random.Range(0.8f, 1.2f);
                 cc += _step;
-                _text.text = ArabicFixer.Fix(cc.ToString("D"), false, true);
+                _text.text = PersianFixer.Fix(cc.ToString("D"), false, true);
                 yield return new WaitForEndOfFrame();
             }
         else
@@ -51,11 +51,11 @@ public class CoinCounter : BaseObject
             {
                 GetComponent<RectTransform>().localScale = _scale * Random.Range(0.8f, 1.2f);
                 cc -= _step;
-                _text.text = ArabicFixer.Fix(cc.ToString("D"), false, true);
+                _text.text = PersianFixer.Fix(cc.ToString("D"), false, true);
                 yield return new WaitForEndOfFrame();
             }
 
-        _text.text = ArabicFixer.Fix(newCount.ToString("D"), false, true);
+        _text.text = PersianFixer.Fix(newCount.ToString("D"), false, true);
         GetComponent<RectTransform>().localScale = _scale;
         _coinCount = newCount;
         yield return null;

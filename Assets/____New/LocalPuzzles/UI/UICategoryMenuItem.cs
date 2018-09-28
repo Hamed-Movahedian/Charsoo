@@ -26,7 +26,7 @@ public class UICategoryMenuItem : UIMenuItem
         _category = (Category)data;
         //_avalable = IsCategoryAvalable(category);
 
-        Name.text = ArabicFixer.Fix(_category.Name);
+        Name.text = PersianFixer.Fix(_category.Name);
 
         NewIconGameObject.SetActive(!_category.Visit);
 
@@ -44,7 +44,7 @@ public class UICategoryMenuItem : UIMenuItem
 
         var puzzles = LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == _category.ID).ToList();
 
-        var solveCount = puzzles.Count(p => p.Solved);
+        var solveCount = puzzles.Count(p => LocalDBController.Table<PlayPuzzles>().FirstOrDefault(pp=>pp.PuzzleID==p.ID&&pp.Success)!=null);
 
         BuyGameObject.SetActive(!IsCategoryAvalable());
 
@@ -52,15 +52,15 @@ public class UICategoryMenuItem : UIMenuItem
         CounterText.gameObject.SetActive(solveCount != puzzles.Count);
 
         CounterText.text = string.Format("{0}/{1}",
-            ArabicFixer.Fix(solveCount.ToString(), true, true),
-            ArabicFixer.Fix(puzzles.Count.ToString(), true, true));
+            PersianFixer.Fix(solveCount.ToString(), true, true),
+            PersianFixer.Fix(puzzles.Count.ToString(), true, true));
 
         if (!IsCategoryAvalable())
-            CounterText.text = string.Format(ArabicFixer.Fix("300", true, true));
+            CounterText.text = string.Format(PersianFixer.Fix("300", true, true));
         else
             CounterText.text = string.Format("{0}/{1}",
-                ArabicFixer.Fix(solveCount.ToString(), true, true),
-                ArabicFixer.Fix(puzzles.Count.ToString(), true, true));
+                PersianFixer.Fix(solveCount.ToString(), true, true),
+                PersianFixer.Fix(puzzles.Count.ToString(), true, true));
 
         GetComponent<RectTransform>().localScale = Vector3.one;
 

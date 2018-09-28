@@ -20,7 +20,7 @@ public class UserPuzzleInfoWindow : MgsUIWindow
     {
         var puzzle = PuzzleSelectionWindow.SelectedPuzzle;
 
-        Clue.text = ArabicFixer.Fix(puzzle.Clue);
+        Clue.text = PersianFixer.Fix(puzzle.Clue);
 
         RegisterButton.interactable = puzzle.ServerID == null;
         ShareButton.interactable = puzzle.ServerID != null;
@@ -31,15 +31,18 @@ public class UserPuzzleInfoWindow : MgsUIWindow
         if (puzzle.ServerID == null)
             Description.text = ThemeManager.Instance.LanguagePack.GetLable("NotRegisterFull");
         else if (puzzle.CategoryName == null)
+        {
             Description.text = ThemeManager.Instance.LanguagePack.GetLable("InReviewFull");
+            Description.text = Description.text.Replace("*****", PersianFixer.Fix(puzzle.ServerID.ToString()));
+        }
         else if (puzzle.CategoryName == "")
             Description.text = ThemeManager.Instance.LanguagePack.GetLable("NoCategoryFull");
         else
         {
-            PlayCount.text = ArabicFixer.Fix("نفر") + puzzle.PlayCount;
+            PlayCount.text = PersianFixer.Fix("نفر") + puzzle.PlayCount;
             if (puzzle.Rate != null) RateImage.fillAmount = puzzle.Rate.Value / 5f;
             Description.text = ThemeManager.Instance.LanguagePack.
-                GetLable("UserPuzzleAcceptedFull").Replace("***",ArabicFixer.Fix(puzzle.CategoryName));
+                GetLable("UserPuzzleAcceptedFull").Replace("***", PersianFixer.Fix(puzzle.CategoryName));
         }
     }
 
@@ -56,6 +59,7 @@ public class UserPuzzleInfoWindow : MgsUIWindow
 
         Singleton.Instance.WordSpawner.WordSet = wordSet;
         Singleton.Instance.WordSpawner.Clue = selectedPuzzle.Clue;
+        Singleton.Instance.WordSpawner.PuzzleID = -1;
         Singleton.Instance.WordSpawner.PuzzleRow = "";
 
         Singleton.Instance.WordSpawner.EditorInstatiate = null;

@@ -35,7 +35,7 @@ public class WordSpawnerEditor : EditorWindow
 
         if (_wordSet)
         {
-            EditorGUILayout.LabelField("Word Set Clue : ", ArabicFixer.Fix(_wordSet.Clue));
+            EditorGUILayout.LabelField("Word Set Clue : ", PersianFixer.Fix(_wordSet.Clue));
             EditorGUILayout.LabelField("Word Count : ", _wordSet.Words.Count.ToString());
             EditorGUILayout.LabelField("Nonunique Word Count : ", _wordSet.NonuniqWords.Count.ToString());
 

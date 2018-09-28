@@ -15,7 +15,7 @@ class UIUserPuzzleMenuItem : UIMenuItem
     {
         var puzzle = (UserPuzzle)data;
 
-        ClueText.text = ArabicFixer.Fix(puzzle.Clue);
+        ClueText.text = PersianFixer.Fix(puzzle.Clue);
 
         RateImage.gameObject.SetActive(puzzle.Rate != null);
         PlayCount.gameObject.SetActive(puzzle.PlayCount.HasValue && puzzle.PlayCount > 0);
@@ -27,7 +27,7 @@ class UIUserPuzzleMenuItem : UIMenuItem
             puzzle.ServerID == null ? ThemeManager.Instance.LanguagePack.GetLable("NotRegister") :
             puzzle.CategoryName == null ? ThemeManager.Instance.LanguagePack.GetLable("InReview") :
             puzzle.CategoryName == "" ? ThemeManager.Instance.LanguagePack.GetLable("NoCategory") :
-            ArabicFixer.Fix(puzzle.CategoryName);
+            PersianFixer.Fix(puzzle.CategoryName);
 
 
         if (puzzle.PlayCount != null) PlayCount.text = puzzle.PlayCount.ToString();

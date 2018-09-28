@@ -33,7 +33,7 @@ public class UnlockItem : MonoBehaviour
         BuyCoinPanel.SetActive(false);
         AskForBuyPanel.SetActive(true);
         _price = free ? FreePackUnlock : pack.Price;
-        PanelText.text = ArabicFixer.Fix(UnlockPack.Replace("---", _price.ToString()), false, true);
+        PanelText.text = PersianFixer.Fix(UnlockPack.Replace("---", _price.ToString()), false, true);
         gameObject.SetActive(true);
     }
 
@@ -44,7 +44,7 @@ public class UnlockItem : MonoBehaviour
         BuyCoinPanel.SetActive(false);
         AskForBuyPanel.SetActive(true);
         _price = PackPuzzles;
-        PanelText.text = ArabicFixer.Fix(UnlockPuzzles.Replace("---", _price.ToString()), false, true);
+        PanelText.text = PersianFixer.Fix(UnlockPuzzles.Replace("---", _price.ToString()), false, true);
         gameObject.SetActive(true);
     }
 

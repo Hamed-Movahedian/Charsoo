@@ -37,7 +37,7 @@ public class PuzzleComponent : TableComponent
 
     protected override string GetName()
     {
-        return "P - " + ArabicFixer.Fix(Clue); 
+        return "P - " + PersianFixer.Fix(Clue); 
     }
 
 

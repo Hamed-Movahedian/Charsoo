@@ -6,7 +6,7 @@ using System.Text;
 
 public class PlayPuzzles
 {
-    public int PlayerID { get; set; }
+    public int? PlayerID { get; set; }
     public int PuzzleID { get; set; }
     public System.DateTime Time { get; set; }
     public int MoveCount { get; set; }

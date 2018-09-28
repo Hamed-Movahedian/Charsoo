@@ -20,6 +20,7 @@ public class WordSpawner : BaseObject
     public string Clue;
     public string PuzzleRow;
     public bool PuzzleReward;
+    public int PuzzleID;
 
 
     [FollowMachine("Has Reward?", "Yes,No")]

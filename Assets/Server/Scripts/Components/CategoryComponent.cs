@@ -67,7 +67,7 @@ public class CategoryComponent : TableComponent
 
     protected override string GetName()
     {
-        return "C - " + ArabicFixer.Fix(Name);
+        return "C - " + PersianFixer.Fix(Name);
     }
     
 

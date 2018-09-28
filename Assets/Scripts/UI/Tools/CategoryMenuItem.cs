@@ -49,7 +49,7 @@ public class CategoryMenuItem : BaseObject
 
     private void SetVisuals()
     {
-        Name.text = ArabicFixer.Fix(_data.Name);
+        Name.text = PersianFixer.Fix(_data.Name);
         NewIconGameObject.SetActive(!_data.Visit);
         // if has subcategory
         if (LocalDBController.Table<Category>()
@@ -77,8 +77,8 @@ public class CategoryMenuItem : BaseObject
         CounerText.gameObject.SetActive(solveCount != puzzles.Count);
 
         CounerText.text = string.Format("{0}/{1}", 
-            ArabicFixer.Fix(solveCount.ToString(),true,true),
-            ArabicFixer.Fix(puzzles.Count.ToString(), true, true));
+            PersianFixer.Fix(solveCount.ToString(),true,true),
+            PersianFixer.Fix(puzzles.Count.ToString(), true, true));
 
     }
 

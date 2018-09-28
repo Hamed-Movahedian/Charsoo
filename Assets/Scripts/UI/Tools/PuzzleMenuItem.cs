@@ -49,12 +49,12 @@ public class PuzzleMenuItem : BaseObject
     {
         CheckLockCondition();
 
-        Row.text = ArabicFixer.Fix((_data.Row + 1).ToString(), true, true);
+        Row.text = PersianFixer.Fix((_data.Row + 1).ToString(), true, true);
         LockIcon.SetActive(_lock);
         SolvedIcon.SetActive(_data.Solved);
         Row.gameObject.SetActive(!_lock);
 
-        Clue.text = _lock ? ArabicFixer.Fix("بسته") : ArabicFixer.Fix(_data.Clue);
+        Clue.text = _lock ? PersianFixer.Fix("بسته") : PersianFixer.Fix(_data.Clue);
     }
 
     #endregion

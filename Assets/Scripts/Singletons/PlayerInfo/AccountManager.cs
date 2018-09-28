@@ -50,7 +50,7 @@ public class AccountManager : MgsSingleton<AccountManager>
 
         // Ask server to send sms
         yield return ServerController.Post<string>(
-            $@"Account/SendSms?phoneNumber={phoneNumber}&code={_generatedCode}&forRegister{forRegister}",
+            $@"Account/SendSms?phoneNumber={phoneNumber}&code={_generatedCode}&forRegister={forRegister}",
             null,
             // On success
             respond =>

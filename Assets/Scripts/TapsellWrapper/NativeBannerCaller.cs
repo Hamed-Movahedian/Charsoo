@@ -68,9 +68,9 @@ public class NativeBannerCaller : MonoBehaviour
 
     private void SetAdVisual()
     {
-        if (Title != null) Title.text = ArabicFixer.Fix(_nativeAd.getTitle(), true, true);
-        if (Description != null) Description.text = ArabicFixer.Fix(_nativeAd.getDescription());
-        if (Content != null) Content.text = ArabicFixer.Fix(_nativeAd.getCallToAction());
+        if (Title != null) Title.text = PersianFixer.Fix(_nativeAd.getTitle(), true, true);
+        if (Description != null) Description.text = PersianFixer.Fix(_nativeAd.getDescription());
+        if (Content != null) Content.text = PersianFixer.Fix(_nativeAd.getCallToAction());
 
         if (VerticalImage != null) VerticalImage.sprite = TextureToSprite(_nativeAd.getPortraitBannerImage());
         if (HorizentalImage != null) HorizentalImage.sprite = TextureToSprite(_nativeAd.getLandscapeBannerImage());

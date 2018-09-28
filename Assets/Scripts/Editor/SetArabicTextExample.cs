@@ -21,9 +21,9 @@ public class PersianTextWindow : EditorWindow
     {
         Text = EditorGUILayout.TextField("Text ", Text);
         if(!string.IsNullOrEmpty(Text))
-        EditorGUILayout.LabelField("Fix text ",ArabicFixer.Fix(Text));
+        EditorGUILayout.LabelField("Fix text ",PersianFixer.Fix(Text));
         if (GUILayout.Button("Copy"))
-            EditorGUIUtility.systemCopyBuffer = ArabicFixer.Fix(Text);
+            EditorGUIUtility.systemCopyBuffer = PersianFixer.Fix(Text);
 
     }
 

@@ -10,7 +10,7 @@ public class PlayerNameSetter : MonoBehaviour
     public void OnEnable()
     {
         PlayerInfo info = LocalDBController.Table<PlayerInfo>().FirstOrDefault();
-        GetComponent<Text>().text = ArabicFixer.Fix(info.Name);
+        GetComponent<Text>().text = PersianFixer.Fix(info.Name);
         IDText.text="ID: # " + info.PlayerID;
     }
 

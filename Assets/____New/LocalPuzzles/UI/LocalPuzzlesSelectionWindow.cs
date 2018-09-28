@@ -20,7 +20,7 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
     public override void Refresh()
     {
         PlayingCategory = CategoryWindow.SelectedCategory;
-        CategoryName.text = PlayingCategory != null ? ArabicFixer.Fix(PlayingCategory.Name) : ArabicFixer.Fix("جدول های اصلی");
+        CategoryName.text = PlayingCategory != null ? PersianFixer.Fix(PlayingCategory.Name) : PersianFixer.Fix("جدول های اصلی");
         var puzzles = LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == PlayingCategory.ID).ToList();
         puzzles.Sort((p1, p2) => p1.Row.CompareTo(p2.Row));
         UpdateItems(puzzles.Cast<object>());
@@ -42,6 +42,7 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
         Singleton.Instance.WordSpawner.Clue = selectedPuzzle.Clue;
         Singleton.Instance.WordSpawner.PuzzleRow = (selectedPuzzle.Row+1).ToString();
         Singleton.Instance.WordSpawner.PuzzleReward = hasReward;
+        Singleton.Instance.WordSpawner.PuzzleID = selectedPuzzle.ID;
 
         Singleton.Instance.WordSpawner.EditorInstatiate = null;
     }
