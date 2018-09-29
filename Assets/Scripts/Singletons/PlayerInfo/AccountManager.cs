@@ -13,7 +13,7 @@ public class AccountManager : MgsSingleton<AccountManager>
 {
     // cache random code and phone number
     private string _generatedCode;
-    private string _phoneNumber="09133173190";
+    private string _phoneNumber;//="09133173190";
 
 
     #region HasAccount

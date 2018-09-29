@@ -22,7 +22,7 @@ namespace Assets.Scripts.Singletons
         public void RestorePlayHistory(List<PlayPuzzles> playPuzzleses)
         {
             LocalDBController.DataService.Connection.DeleteAll<PlayPuzzles>();
-
+            playPuzzleses.ForEach(pp=>pp.Dirty=false);
             // Add new records
             LocalDBController
                 .DataService.Connection
@@ -101,22 +101,22 @@ namespace Assets.Scripts.Singletons
                 {
                     resualt = respond;
                     //FollowMachine.SetOutput(respond);
-                    },
+                },
                 request =>
                 {
                     if (request.isNetworkError)
                     {
                         //FollowMachine.SetOutput("No Network");
-                        Debug.Log("No Network");
+                        resualt = "No Network";
                     }
                     else if (request.isHttpError)
                     {
                         //FollowMachine.SetOutput("Fail");
-                        Debug.Log("Fail");
+                        resualt = "Fail";
                     }
                 });
 
-            if (resualt=="Success")
+            if (resualt == "Success")
             {
                 playPuzzleses.ForEach(pp =>
                 {
@@ -124,6 +124,22 @@ namespace Assets.Scripts.Singletons
                     LocalDBController.InsertOrReplace(pp);
                 });
             }
+        }
+
+        public void GetHistory()
+        {
+            StartCoroutine(GetPlayHistory());
+        }
+
+        public IEnumerator GetPlayHistory()
+        {
+            List<PlayPuzzles> playPuzzles = new List<PlayPuzzles>();
+            yield return ServerController
+            .Get<List<PlayPuzzles>>($@"PlayPuzzles/{Singleton.Instance.PlayerController.GetPlayerID ?? 0}",
+            pp => { playPuzzles = (List<PlayPuzzles>)pp; });
+
+            playPuzzles?.ForEach(LocalDBController.InsertOrReplace);
+
         }
     }
 

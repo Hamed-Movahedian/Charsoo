@@ -22,12 +22,12 @@ public class UILocalPuzzleMenuItem : UIMenuItem
     {
         _puzzle = (Puzzle)data;
         ClueText.text =
-            IsAvalable() ? PersianFixer.Fix(_puzzle.Clue) :
+            IsAvalable(_puzzle) ? PersianFixer.Fix(_puzzle.Clue) :
             ThemeManager.Instance.LanguagePack.GetLable("LockPuzzle");
 
-        GetComponent<Image>().color = IsAvalable() ? OpenColor : LockColor;
-        Row.gameObject.SetActive(IsAvalable());
-        LockIcon.gameObject.SetActive(!IsAvalable());
+        GetComponent<Image>().color = IsAvalable(_puzzle) ? OpenColor : LockColor;
+        Row.gameObject.SetActive(IsAvalable(_puzzle));
+        LockIcon.gameObject.SetActive(!IsAvalable(_puzzle));
 
         SolvedIcon.gameObject.SetActive(
             LocalDBController.Table<PlayPuzzles>()
@@ -38,22 +38,15 @@ public class UILocalPuzzleMenuItem : UIMenuItem
         GetComponent<RectTransform>().localScale = Vector3.one;
     }
 
-    private bool IsAvalable()
+    private bool IsAvalable(Puzzle puzzle)
     {
-        if (_puzzle.Paid)
+        if (puzzle.Paid|| puzzle.Row == 0)
             return true;
-
-        if (_puzzle.Row == 0)
-        {
-            _puzzle.Paid = true;
-            LocalDBController.InsertOrReplace(_puzzle);
-            return true;
-        }
 
         var prePuzzle = LocalDBController
             .Table<Puzzle>()
-            .SqlWhere(p => p.CategoryID == _puzzle.CategoryID)
-            .FirstOrDefault(p => p.Row == _puzzle.Row - 1);
+            .SqlWhere(p => p.CategoryID == puzzle.CategoryID)
+            .FirstOrDefault(p => p.Row == puzzle.Row - 1);
 
         if (prePuzzle == null)
             return true;
@@ -68,9 +61,8 @@ public class UILocalPuzzleMenuItem : UIMenuItem
 
     public override void Select()
     {
-        if (!_puzzle.Paid)
+        if (!IsAvalable(_puzzle))
         {
-            Debug.Log("Selected LockItem ");
             ((LocalPuzzlesSelectionWindow)_list).LockSelect();
             return;
         }

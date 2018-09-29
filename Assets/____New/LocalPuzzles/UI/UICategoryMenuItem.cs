@@ -44,23 +44,21 @@ public class UICategoryMenuItem : UIMenuItem
 
         var puzzles = LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == _category.ID).ToList();
 
-        var solveCount = puzzles.Count(p => LocalDBController.Table<PlayPuzzles>().FirstOrDefault(pp=>pp.PuzzleID==p.ID&&pp.Success)!=null);
+        var solveCount = puzzles.Count(IsPuzzleSolved);
 
         BuyGameObject.SetActive(!IsCategoryAvalable());
 
         CheckMarckGameObject.SetActive(solveCount == puzzles.Count);
         CounterText.gameObject.SetActive(solveCount != puzzles.Count);
 
-        CounterText.text = string.Format("{0}/{1}",
-            PersianFixer.Fix(solveCount.ToString(), true, true),
-            PersianFixer.Fix(puzzles.Count.ToString(), true, true));
+        CounterText.text =
+            $"{PersianFixer.Fix(solveCount.ToString(), true, true)}/{PersianFixer.Fix(puzzles.Count.ToString(), true, true)}";
 
         if (!IsCategoryAvalable())
             CounterText.text = string.Format(PersianFixer.Fix("300", true, true));
         else
-            CounterText.text = string.Format("{0}/{1}",
-                PersianFixer.Fix(solveCount.ToString(), true, true),
-                PersianFixer.Fix(puzzles.Count.ToString(), true, true));
+            CounterText.text =
+                $"{PersianFixer.Fix(solveCount.ToString(), true, true)}/{PersianFixer.Fix(puzzles.Count.ToString(), true, true)}";
 
         GetComponent<RectTransform>().localScale = Vector3.one;
 
@@ -77,7 +75,7 @@ public class UICategoryMenuItem : UIMenuItem
 
             if (preCat != null)
                 foreach (Puzzle p in LocalDBController.Table<Puzzle>().Where(p => p.CategoryID == preCat.ID))
-                    preIsSolved = p.Solved;
+                    preIsSolved = IsPuzzleSolved(p);
         }
 
 
@@ -91,6 +89,11 @@ public class UICategoryMenuItem : UIMenuItem
             return true;
 
         return false;
+    }
+
+    private static bool IsPuzzleSolved(Puzzle p)
+    {
+        return LocalDBController.Table<PlayPuzzles>().FirstOrDefault(pp => pp.PuzzleID == p.ID && pp.Success) != null;
     }
 
     public override void Select()
