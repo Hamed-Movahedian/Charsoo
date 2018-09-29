@@ -51,11 +51,12 @@ namespace Assets.Scripts.Singletons
                 HintCount3 = Hint3,
                 PuzzleID = Singleton.Instance.WordSpawner.PuzzleID,
                 MoveCount = 0,
-                Success = solved
+                Success = solved,
+                Dirty = true
             };
 
             if (_currentPuzzle.PuzzleID != -1)
-                LocalDBController.InsertOrReplace(_currentPuzzle);
+            { LocalDBController.InsertOrReplace(_currentPuzzle); }
         }
 
         public void AddHint(int mode)
@@ -77,6 +78,53 @@ namespace Assets.Scripts.Singletons
             }
         }
 
+        public void SendPlayHistory()
+        {
+            StartCoroutine(Sync());
+        }
+
+        [FollowMachine("Sync with server", "Success,Fail,No Network")]
+        public IEnumerator Sync()
+        {
+            var playPuzzleses = LocalDBController
+                .Table<PlayPuzzles>()
+                .SqlWhere(p => p.Dirty)
+                .ToList();
+
+            if (playPuzzleses.Count == 0)
+                yield break;
+            string resualt = "";
+            yield return ServerController.Post<string>(
+                $@"PlayPuzzles/AddHistory",
+                playPuzzleses,
+                respond =>
+                {
+                    resualt = respond;
+                    //FollowMachine.SetOutput(respond);
+                    },
+                request =>
+                {
+                    if (request.isNetworkError)
+                    {
+                        //FollowMachine.SetOutput("No Network");
+                        Debug.Log("No Network");
+                    }
+                    else if (request.isHttpError)
+                    {
+                        //FollowMachine.SetOutput("Fail");
+                        Debug.Log("Fail");
+                    }
+                });
+
+            if (resualt=="Success")
+            {
+                playPuzzleses.ForEach(pp =>
+                {
+                    pp.Dirty = false;
+                    LocalDBController.InsertOrReplace(pp);
+                });
+            }
+        }
     }
 
 

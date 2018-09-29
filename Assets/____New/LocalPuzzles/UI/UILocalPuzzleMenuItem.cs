@@ -50,10 +50,15 @@ public class UILocalPuzzleMenuItem : UIMenuItem
             return true;
         }
 
-        int preID = LocalDBController.Table<Puzzle>()
-            .Where(p => p.CategoryID == _puzzle.CategoryID)
-            .FirstOrDefault(p => p.Row == _puzzle.Row - 1)
-            .ID;
+        var prePuzzle = LocalDBController
+            .Table<Puzzle>()
+            .SqlWhere(p => p.CategoryID == _puzzle.CategoryID)
+            .FirstOrDefault(p => p.Row == _puzzle.Row - 1);
+
+        if (prePuzzle == null)
+            return true;
+
+        int preID = prePuzzle.ID;
 
         PlayPuzzles playPuzzles = LocalDBController.Table<PlayPuzzles>()
             .FirstOrDefault(pp => pp.PuzzleID == preID && pp.Success);

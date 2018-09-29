@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class OnlinePuzzleController : MonoBehaviour
 {
-    [FollowMachine("Prepare online puzzle for spawn")]
+    [FollowMachine("Prepare online puzzle for spawn","Success,Fail")]
     public IEnumerator SetForSpawn(int ID)
     {
         UserPuzzle selectedPuzzle=null;
@@ -14,8 +14,13 @@ public class OnlinePuzzleController : MonoBehaviour
         // Ask command center to connect to account
          yield return ServerController
             .Get<UserPuzzle>($@"UserPuzzles/{ID}",
-                  info => { selectedPuzzle = (UserPuzzle) info; } );
+                  puzzle => { selectedPuzzle = (UserPuzzle) puzzle; } );
 
+        if (selectedPuzzle == null)
+        {
+            FollowMachine.SetOutput("Fail");
+            yield break;
+        }
 
         var json = StringCompressor.DecompressString(selectedPuzzle.Content);
 
@@ -29,10 +34,12 @@ public class OnlinePuzzleController : MonoBehaviour
         Singleton.Instance.WordSpawner.PuzzleRow = "";
 
         Singleton.Instance.WordSpawner.EditorInstatiate = null;
+        FollowMachine.SetOutput("Success");
+
     }
 
 
-    [FollowMachine("Prepare online puzzle for spawn")]
+    [FollowMachine("Prepare online puzzle for spawn", "Success,Fail")]
     public IEnumerator SetForSpawn(string ID)
     {
         yield return SetForSpawn(int.Parse(ID));

@@ -14,6 +14,7 @@ public class PlayPuzzles
     public int HintCount2 { get; set; }
     public int HintCount3 { get; set; }
     public bool Success { get; set; }
+    public bool Dirty { get; set; }
     public int Duration { get; set; }
 
 }
