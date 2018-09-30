@@ -19,9 +19,6 @@ public class Recorder : BaseObject
         foreach (var word in WordManager.GetComponentsInChildren<Word>())
         {
             wordSet.Words.Add(new SWord(word));
-
-            if (WordManager.ErrorWords.Contains(word))
-                wordSet.NonuniqWords.Add(wordSet.Words.Last());
         }
 
         return wordSet;

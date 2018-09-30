@@ -7,16 +7,11 @@ public class WordManager : BaseObject
 {
     public WordHighlightEffect WordCompleteEffect;
     public UnityEvent OnEnd;
-    public List<Word> ErrorWords = new List<Word>();
 
-    public List<Word> Words;
-    private List<Word> _lastCompleteWords;
+    public List<Word> Words { get; set; }
 
     void Start()
     {
-        if (_lastCompleteWords == null)
-            _lastCompleteWords = new List<Word>();
-
         GetWordsFormChilds();
     }
 
@@ -28,41 +23,13 @@ public class WordManager : BaseObject
         Words.AddRange(GetComponentsInChildren<Word>());
     }
 
-    public IEnumerator Check()
-    {
-        _lastCompleteWords.Clear();
-
-        foreach (Word word in Words)
-            if (!word.IsComplete)
-                if (word.Check())
-                    _lastCompleteWords.Add(word);
-
-        if (_lastCompleteWords.Count > 0)
-        {
-            HintManager.CheckHintWord();
-            yield return ShowWordEffect();
-
-            if (IsFinished())
-                OnEnd.Invoke();
-        }
-    }
-
-    private bool IsFinished()
+    public void CheckFinishGame()
     {
         foreach (Word word in Words)
             if (!word.IsComplete)
-                return false;
+                return;
 
-        return true;
-    }
-
- 
-    private IEnumerator ShowWordEffect()
-    {
-        foreach (Word word in _lastCompleteWords)
-            word.ShowCompeleteEffect();
-
-        yield return new WaitForSeconds(0.4f);
+        OnEnd.Invoke();
     }
 
     public void DeleteAllWords()
@@ -78,8 +45,7 @@ public class WordManager : BaseObject
                 DestroyImmediate(child.gameObject);
         }
 
-        if (Words != null)
-            Words.Clear();
+        Words?.Clear();
 
     }
 

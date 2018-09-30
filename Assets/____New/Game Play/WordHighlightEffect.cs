@@ -1,24 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WordHighlightEffect : BaseObject
 {
+    public UnityEvent OnShowEffect;
     public GameObject HighLightGameObject;
     public GameObject CircleEffectGameObject;
 
     public float Delay = 0.5f;
-
-    private void OnEnable()
-    {
-        SoundManager.PlayWordCompeletClip();
-        Invoke("Disable", Delay);
-    }
-
-    private void Disable()
-    {
-        Destroy(gameObject);
-    }
 
     public void Show(Bounds bound)
     {
@@ -36,4 +27,17 @@ public class WordHighlightEffect : BaseObject
 
         gameObject.SetActive(true);
     }
+
+    public IEnumerator ShowEffects(List<Bounds> boundses)
+    {
+        foreach (var boundse in boundses)
+        {
+            OnShowEffect.Invoke();
+            Show(boundse);
+            yield return new WaitForSeconds(Delay);
+            gameObject.SetActive(false);
+            yield return null;
+        }
+    }
+
 }

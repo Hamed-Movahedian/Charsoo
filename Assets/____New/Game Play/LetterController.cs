@@ -11,8 +11,9 @@ public class LetterController : BaseObject
 
     public float Acceleration = 5;
 
-    public List<Letter> AllLetters;
-    public List<Letter> SelectedLetters;
+    public List<Letter> AllLetters { get; set; }
+    public List<Letter> SelectedLetters { get; set; } = new List<Letter>();
+    public List<Letter> LastSelectedLetters { get; set; } = new List<Letter>();
 
     #endregion
 
@@ -20,6 +21,8 @@ public class LetterController : BaseObject
 
     public UnityEvent OnLetterSelected;
     public UnityEvent OnLetterUnselected;
+    public UnityEvent OnDropLetter;
+
     private List<Vector2> _deltaList;
 
     #endregion
@@ -94,11 +97,14 @@ public class LetterController : BaseObject
         foreach (Letter letter in SelectedLetters)
             letter.Unselect();
 
+        LastSelectedLetters.Clear();
+        LastSelectedLetters.AddRange(SelectedLetters);
+
         SelectedLetters.Clear();
 
         yield return new WaitForSeconds(0.1f);
 
-        yield return WordManager.Check();
+        OnDropLetter.Invoke();
     }
 
     #endregion

@@ -105,7 +105,6 @@ public class WordSpawner : BaseObject
                 else
                 {
                     letter = Instantiate(LetterPrefab);
-                    //letter.OnSpawn.Invoke();
                 }
 
                 // Position
@@ -126,9 +125,8 @@ public class WordSpawner : BaseObject
             }
 
             wordComponent.Letters.Add(letter);
-            //letter.gameObject.SetActive(false);
+            letter.gameObject.SetActive(false);
         }
-        LetterController.ConnectAdjacentLetters();
 
         if (Application.isPlaying)
         {
