@@ -16,7 +16,7 @@ public class ExportWordsetToText : ScriptableWizard
     void OnWizardCreate()
     {
         string Allfile = "";
-        foreach (PuzzleComponent puzzle in FindObjectsOfType<PuzzleComponent>())
+        foreach (PuzzleComponent puzzle in Selection.activeGameObject.GetComponentsInChildren<PuzzleComponent>())
         {
             string p ="اشاره: "+ puzzle.Clue+",";
             WordSet ws=new WordSet();

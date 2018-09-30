@@ -19,10 +19,8 @@ public class LocalPuzzleDB : MonoBehaviour
     {
         _playingPuzzle = PuzzleList.PlayingPuzzle;
 
-        if (!_playingPuzzle.Solved)
+        if (!IsPuzzleSolved(_playingPuzzle))
         {
-            _playingPuzzle.Solved = true;
-            LocalDBController.InsertOrReplace(_playingPuzzle);
             ZPlayerPrefs.SetInt("LastPlayedPuzzle", _playingPuzzle.ID);
         }
 
@@ -32,19 +30,19 @@ public class LocalPuzzleDB : MonoBehaviour
 
         Puzzle nextPuzzle = puzzles.FirstOrDefault(p => p.Row == _playingPuzzle.Row + 1);
 
-        if (nextPuzzle==null || nextPuzzle.Solved)
+        if (nextPuzzle == null || IsPuzzleSolved(nextPuzzle))
         {
             FollowMachine.SetOutput("No Next Puzzle");
             return;
         }
 
-
-        nextPuzzle.Paid = true;
-        LocalDBController.InsertOrReplace(nextPuzzle);
-        
-        PuzzleList.SetForSpawn(nextPuzzle,!nextPuzzle.Solved);
+        PuzzleList.SetForSpawn(nextPuzzle, !IsPuzzleSolved(nextPuzzle));
         FollowMachine.SetOutput("Play Next");
     }
+
+    private static bool IsPuzzleSolved(Puzzle nextPuzzle) => 
+        LocalDBController.Table<PlayPuzzles>().
+        FirstOrDefault(pp => pp.PuzzleID == nextPuzzle.ID && pp.Success) != null;
 
     public void UnlockCategoryPuzzles()
     {
@@ -77,11 +75,11 @@ public class LocalPuzzleDB : MonoBehaviour
             return;
         }
 
-        int? categoryID = LocalDBController.Table<Puzzle>().FirstOrDefault(p=>p.ID==lastPuzzleID).CategoryID;
+        int? categoryID = LocalDBController.Table<Puzzle>().FirstOrDefault(p => p.ID == lastPuzzleID).CategoryID;
         if (categoryID != null)
         {
             int id = categoryID.Value;
-            Category category = LocalDBController.Table<Category>().First(c=>c.ID==id);
+            Category category = LocalDBController.Table<Category>().First(c => c.ID == id);
             Debug.Log(category.ID);
             PuzzleList.CategoryWindow.Select(category);
             FollowMachine.SetOutput("Play");
