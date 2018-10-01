@@ -55,7 +55,7 @@ public class CameraController : BaseObject
                 _camera.orthographicSize += deltaMagnitudeDiff * OrthoZoomSpeed;
 
                 // Make sure the orthographic size never drops below zero.
-                _camera.orthographicSize = Mathf.Max(_camera.orthographicSize, 0.1f);
+                _camera.orthographicSize = Mathf.Max(_camera.orthographicSize, 7);
 
                 KeepCameraInTableBounds();
             }
@@ -65,9 +65,6 @@ public class CameraController : BaseObject
     private void Zoom(float z)
     {
         _camera.orthographicSize += z;
-
-        if (_camera.orthographicSize * 2 > Table.BoundRect.height)
-            _camera.orthographicSize = Table.BoundRect.height / 2;
 
         KeepCameraInTableBounds();
     }
@@ -91,6 +88,10 @@ public class CameraController : BaseObject
 
     private void KeepCameraInTableBounds()
     {
+        if (_camera.orthographicSize * 2 > Table.BoundRect.height)
+            _camera.orthographicSize = Table.BoundRect.height / 2;
+
+
         Vector2 min = _camera.ViewportToWorldPoint(Vector3.zero);
         Vector2 max = _camera.ViewportToWorldPoint(Vector3.one);
 
@@ -136,6 +137,8 @@ public class CameraController : BaseObject
             transform.position = Vector3.Lerp(startPos, endPos, value);
 
             _camera.orthographicSize = Mathf.Lerp(startSize, endSize, value);
+
+            KeepCameraInTableBounds();
 
             yield return null;
 

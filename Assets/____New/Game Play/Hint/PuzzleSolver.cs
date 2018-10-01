@@ -39,6 +39,18 @@ public class PuzzleSolver : MonoBehaviour
             }
         }
 
+        // center 
+        Vector3 center=Vector3.zero;
+        LetterPositions.Values.ToList().ForEach(p=>center+=p);
+        center*=1f/LetterPositions.Count;
+
+        var delta = Camera.main.transform.position-center;
+        delta.z = 0;
+        delta.x = Mathf.Round(delta.x);
+        delta.y = Mathf.Round(delta.y);
+        
+        LetterPositions.Keys.ToList().ForEach(l=>LetterPositions[l]+=delta);
+
     }
 
     private void Place(Word word, Letter cLetter)
