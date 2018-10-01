@@ -5,9 +5,11 @@ using UnityEngine;
 public class CameraController : BaseObject
 {
     public float ScrollZoomSpeed = 0.3f;
-    public float FinalZoomDuration=2;
-    public float VerticalOffset=0;
-    public float ZoomRatio=1.5f;
+    public float FinalZoomDuration = 2;
+    public float VerticalOffset = 0;
+    public float ZoomRatio = 1.5f;
+
+    public float OrthoZoomSpeed = 0.5f;        // The rate of change of the orthographic size in orthographic mode.
 
     private Vector3 _startmousePosition;
     private Vector3 _camraStartPan;
@@ -21,10 +23,43 @@ public class CameraController : BaseObject
 
     void Update()
     {
-        float delta = Input.GetAxis("Mouse ScrollWheel");
+        if (Application.isEditor)
+        {
+            float delta = Input.GetAxis("Mouse ScrollWheel");
 
-        if (delta != 0)
-            Zoom(Mathf.Sign(delta) * ScrollZoomSpeed);
+            if (delta != 0)
+                Zoom(Mathf.Sign(delta) * ScrollZoomSpeed);
+
+        }
+        else
+        {
+            if (Input.touchCount == 2)
+            {
+                // Store both touches.
+                Touch touchZero = Input.GetTouch(0);
+                Touch touchOne = Input.GetTouch(1);
+
+                // Find the position in the previous frame of each touch.
+                Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+                Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+                // Find the magnitude of the vector (the distance) between the touches in each frame.
+                float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+                float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+
+                // Find the difference in the distances between each frame.
+                float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+                // If the camera is orthographic...
+
+                // ... change the orthographic size based on the change in distance between the touches.
+                _camera.orthographicSize += deltaMagnitudeDiff * OrthoZoomSpeed;
+
+                // Make sure the orthographic size never drops below zero.
+                _camera.orthographicSize = Mathf.Max(_camera.orthographicSize, 0.1f);
+
+                KeepCameraInTableBounds();
+            }
+        }
     }
 
     private void Zoom(float z)
@@ -81,9 +116,9 @@ public class CameraController : BaseObject
         float startSize = _camera.orthographicSize;
         Vector3 startPos = transform.position;
         // End size
-        float endSize = (Mathf.Max(bound.extents.x,bound.extents.y)*2+3/_camera.aspect);
+        float endSize = (Mathf.Max(bound.extents.x, bound.extents.y) * 2 + 3 / _camera.aspect);
         // End pos
-        Vector3 endPos = bound.center+Vector3.down*VerticalOffset;
+        Vector3 endPos = bound.center + Vector3.down * VerticalOffset;
 
         endPos.z = transform.position.z;
 
