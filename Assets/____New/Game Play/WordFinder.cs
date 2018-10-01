@@ -44,7 +44,7 @@ public class WordFinder : MonoBehaviour
                     letter = Next(letter, direction);
                 }
 
-                if(!foundLetters.Any(dropLetters.Contains))
+                if(dropLetters.Count>0 && !foundLetters.Any(dropLetters.Contains))
                     continue;
 
                 if (!CheckCorrectWords(foundLetters, direction, words))
