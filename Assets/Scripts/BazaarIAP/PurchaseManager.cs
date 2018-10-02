@@ -22,7 +22,6 @@ public class PurchaseManager : BaseObject
     {
         CurrentCoin = StoreInventory.GetItemBalance("charsoo_coin");
         bool hasDubler = StoreInventory.GetItemBalance("charsoo_doubler")>0;
-        Debug.Log(hasDubler);
         ZPlayerPrefs.SetInt("Coin", CurrentCoin);
         ZPlayerPrefs.SetInt("Doubler", hasDubler?1:0);
         _rewardMultiplier = 1 + (hasDubler ? 1 : 0);
@@ -30,14 +29,12 @@ public class PurchaseManager : BaseObject
         BuyDublerButtons.ForEach(b=>b.interactable=!hasDubler);
     }
 
-    public int GetBalance(string itemID)
-    {
-        return 1;// StoreInventory.GetItemBalance(itemID);
-    }
-
     public void GiveSolveReward()
     {
         OnReward.Invoke();
+#if UNITY_EDITOR
+        return;
+#endif
         GiveCoin(_rewardMultiplier * WordsetSolveReward);
     }
     
@@ -54,6 +51,10 @@ public class PurchaseManager : BaseObject
 
     public bool PayCoin(int amount)
     {
+#if UNITY_EDITOR
+        return true;
+#endif
+
         if (amount > CurrentCoin)
             return false;
 

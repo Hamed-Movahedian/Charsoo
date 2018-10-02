@@ -90,6 +90,7 @@ public class CategoryEditor : Editor
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.LabelField("ID", _categoryComponent.ID.ToString());
+        EditorGUILayout.LabelField("Puzzle Count", _categoryComponent.transform.childCount.ToString());
 
         DrawDefaultInspector();
     }

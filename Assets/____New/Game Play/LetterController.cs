@@ -203,18 +203,20 @@ public class LetterController : BaseObject
 
     public void DeleteAllLetters()
     {
-        
+        if (AllLetters == null)
+            return;
+
         while (AllLetters.Count > 0)
         {
             Letter letter = AllLetters[0];
 
-            if (letter!=null)
+            if (letter != null)
             {
                 if (!Application.isPlaying)
                     DestroyImmediate(letter.gameObject);
                 else
                     Destroy(letter.gameObject);
-                
+
             }
             AllLetters.Remove(letter);
         }
