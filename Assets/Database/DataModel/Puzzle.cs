@@ -14,7 +14,7 @@ public class Puzzle : BaseTable
     {
         get
         {
-            return LocalDBController.Table<PlayPuzzles>().FirstOrDefault(p => p.PuzzleID == ID && p.Success)!=null;
+            return LocalDBController.Table<PlayPuzzles>().FirstOrDefault(p => p.PuzzleID == ID && p.Success) != null;
         }
     }
 

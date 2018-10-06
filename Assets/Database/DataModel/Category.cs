@@ -18,8 +18,7 @@ public class Category : BaseTable
     {
         get
         {
-            string pID = "C-P-" + ID;
-            return LocalDBController.Table<Purchases>().FirstOrDefault(p => p.PurchaseID == pID) != null;
+            return LocalDBController.Table<Purchases>().FirstOrDefault(p => p.PurchaseID.Trim() == "C-P-" + ID) != null;
         }
     }
 
@@ -27,8 +26,7 @@ public class Category : BaseTable
     {
         get
         {
-            string pID = "C-" + ID;
-            return LocalDBController.Table<Purchases>().FirstOrDefault(p => p.PurchaseID == pID)!=null;
+            return LocalDBController.Table<Purchases>().FirstOrDefault(p => p.PurchaseID.Trim() == "C-" + ID) != null;
         }
     }
 
