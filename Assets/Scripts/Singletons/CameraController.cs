@@ -23,42 +23,36 @@ public class CameraController : BaseObject
 
     void Update()
     {
-        if (Application.isEditor)
+        float delta = Input.GetAxis("Mouse ScrollWheel");
+
+        if (delta != 0)
+            Zoom(Mathf.Sign(delta)*ScrollZoomSpeed);
+
+        if (Input.touchCount == 2)
         {
-            float delta = Input.GetAxis("Mouse ScrollWheel");
+            // Store both touches.
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
 
-            if (delta != 0)
-                Zoom(Mathf.Sign(delta) * ScrollZoomSpeed);
+            // Find the position in the previous frame of each touch.
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
-        }
-        else
-        {
-            if (Input.touchCount == 2)
-            {
-                // Store both touches.
-                Touch touchZero = Input.GetTouch(0);
-                Touch touchOne = Input.GetTouch(1);
+            // Find the magnitude of the vector (the distance) between the touches in each frame.
+            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
 
-                // Find the position in the previous frame of each touch.
-                Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-                Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+            // Find the difference in the distances between each frame.
+            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+            // If the camera is orthographic...
 
-                // Find the magnitude of the vector (the distance) between the touches in each frame.
-                float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-                float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+            // ... change the orthographic size based on the change in distance between the touches.
+            _camera.orthographicSize += deltaMagnitudeDiff*OrthoZoomSpeed;
 
-                // Find the difference in the distances between each frame.
-                float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-                // If the camera is orthographic...
+            // Make sure the orthographic size never drops below zero.
+            _camera.orthographicSize = Mathf.Max(_camera.orthographicSize, 7);
 
-                // ... change the orthographic size based on the change in distance between the touches.
-                _camera.orthographicSize += deltaMagnitudeDiff * OrthoZoomSpeed;
-
-                // Make sure the orthographic size never drops below zero.
-                _camera.orthographicSize = Mathf.Max(_camera.orthographicSize, 7);
-
-                KeepCameraInTableBounds();
-            }
+            KeepCameraInTableBounds();
         }
     }
 

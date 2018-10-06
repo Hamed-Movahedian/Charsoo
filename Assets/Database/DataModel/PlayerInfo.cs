@@ -11,6 +11,8 @@ public class PlayerInfo
         Avatar = "No Avatar";
         Telephone = "";
         Email = "";
+        CoinCount = 0;
+        Dirty = true;
     }
 
     public int? PlayerID { get; set; }
@@ -18,6 +20,9 @@ public class PlayerInfo
     public string Avatar { get; set; }
     public string Telephone { get; set; }
     public string Email { get; set; }
+    public int CoinCount { get; set; }
+    public bool Dirty { get; set; }
+
 
     public bool HasAccount()
     {

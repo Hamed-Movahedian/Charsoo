@@ -39,8 +39,6 @@ public class Singleton : MonoBehaviour
 
     public HUD HUD;
 
-    public ContentManager ContentManager;
-
     public CommandController CommandController;
 
     public PlayerController PlayerController;

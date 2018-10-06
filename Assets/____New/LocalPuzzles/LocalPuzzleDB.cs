@@ -11,38 +11,32 @@ public class LocalPuzzleDB : MonoBehaviour
 {
     private Puzzle _playingPuzzle;
     public LocalPuzzlesSelectionWindow PuzzleList;
-
-
-
+    
     [FollowMachine("Prepare next puzzle for spawn", "Play Next,No Next Puzzle")]
     public void PuzzleSolved()
     {
         _playingPuzzle = PuzzleList.PlayingPuzzle;
 
-        if (!IsPuzzleSolved(_playingPuzzle))
+        if (!_playingPuzzle.Solved)
         {
             ZPlayerPrefs.SetInt("LastPlayedPuzzle", _playingPuzzle.ID);
         }
 
 
         IEnumerable<Puzzle> puzzles = LocalDBController.Table<Puzzle>().
-            Where(p => p.CategoryID == _playingPuzzle.CategoryID);
+            SqlWhere(p => p.CategoryID == _playingPuzzle.CategoryID);
 
         Puzzle nextPuzzle = puzzles.FirstOrDefault(p => p.Row == _playingPuzzle.Row + 1);
 
-        if (nextPuzzle == null || IsPuzzleSolved(nextPuzzle))
+        if (nextPuzzle == null || nextPuzzle.Solved)
         {
             FollowMachine.SetOutput("No Next Puzzle");
             return;
         }
 
-        PuzzleList.SetForSpawn(nextPuzzle, !IsPuzzleSolved(nextPuzzle));
+        PuzzleList.SetForSpawn(nextPuzzle);
         FollowMachine.SetOutput("Play Next");
     }
-
-    private static bool IsPuzzleSolved(Puzzle nextPuzzle) => 
-        LocalDBController.Table<PlayPuzzles>().
-        FirstOrDefault(pp => pp.PuzzleID == nextPuzzle.ID && pp.Success) != null;
 
     public void UnlockCategoryPuzzles()
     {
@@ -51,11 +45,7 @@ public class LocalPuzzleDB : MonoBehaviour
             playerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID;
 
         int? id = PuzzleList.PlayingCategory.ID;
-        foreach (Puzzle puzzle in LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == id))
-        {
-            puzzle.Paid = true;
-            LocalDBController.InsertOrReplace(puzzle);
-        }
+
         Purchases purchase = new Purchases
         {
             LastUpdate = DateTime.Now,

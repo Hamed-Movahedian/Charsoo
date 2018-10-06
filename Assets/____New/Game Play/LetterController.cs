@@ -11,7 +11,7 @@ public class LetterController : BaseObject
 
     public float Acceleration = 5;
 
-    public List<Letter> AllLetters { get; set; }
+    public List<Letter> AllLetters { get; set; }=new List<Letter>();
     public List<Letter> SelectedLetters { get; set; } = new List<Letter>();
     public List<Letter> LastSelectedLetters { get; set; } = new List<Letter>();
 

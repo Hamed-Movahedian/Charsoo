@@ -134,13 +134,7 @@ public class WordSpawner : BaseObject
             StartCoroutine(EnableParts());
         }
         else
-        {
-            List<List<Letter>> parts = CreateParts();
-
-            foreach (List<Letter> part in parts)
-                foreach (Letter l in part)
-                    l.gameObject.SetActive(true);
-        }
+            LetterController.AllLetters.ForEach(l => l.gameObject.SetActive(true));
     }
 
     #region enable letters PART BY PART

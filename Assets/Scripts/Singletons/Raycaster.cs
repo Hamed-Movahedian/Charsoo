@@ -42,6 +42,9 @@ public class Raycaster : BaseObject
         if (!_enablePan)
             return;
 
+        if (Input.touchCount > 1)
+            return;
+
         #region Start Drag letter or Pan
 
         if (Input.GetMouseButtonDown(0))
