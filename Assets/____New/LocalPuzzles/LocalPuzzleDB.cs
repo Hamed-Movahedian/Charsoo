@@ -11,7 +11,7 @@ public class LocalPuzzleDB : MonoBehaviour
 {
     private Puzzle _playingPuzzle;
     public LocalPuzzlesSelectionWindow PuzzleList;
-    
+
     [FollowMachine("Prepare next puzzle for spawn", "Play Next,No Next Puzzle")]
     public void PuzzleSolved()
     {
@@ -41,8 +41,7 @@ public class LocalPuzzleDB : MonoBehaviour
     public void UnlockCategoryPuzzles()
     {
         int? playerID = null;
-        if (LocalDBController.Table<PlayerInfo>().FirstOrDefault() != null)
-            playerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID;
+        playerID = Singleton.Instance.PlayerController.GetPlayerID;
 
         int? id = PuzzleList.PlayingCategory.ID;
 
@@ -50,7 +49,9 @@ public class LocalPuzzleDB : MonoBehaviour
         {
             LastUpdate = DateTime.Now,
             PlayerID = playerID,
-            PurchaseID = "C-P-" + id
+            PurchaseID = "C-P-" + id,
+            Dirty = true
+
         };
         LocalDBController.InsertOrReplace(purchase);
     }
