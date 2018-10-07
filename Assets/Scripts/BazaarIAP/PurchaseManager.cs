@@ -23,8 +23,6 @@ public class PurchaseManager : BaseObject
     {
         CurrentCoin = StoreInventory.GetItemBalance("charsoo_coin");
         bool hasDubler = StoreInventory.GetItemBalance("charsoo_doubler") > 0;
-        ZPlayerPrefs.SetInt("Coin", CurrentCoin);
-        ZPlayerPrefs.SetInt("Doubler", hasDubler ? 1 : 0);
         _rewardMultiplier = 1 + (hasDubler ? 1 : 0);
         _rewardMultiplier = Mathf.Clamp(_rewardMultiplier, 1, 2);
         BuyDublerButtons.ForEach(b => b.interactable = !hasDubler);
@@ -33,42 +31,46 @@ public class PurchaseManager : BaseObject
     public void GiveSolveReward()
     {
         OnReward.Invoke();
-/*#if UNITY_EDITOR
-        return;
-#endif*/
         GiveCoin(_rewardMultiplier * WordsetSolveReward);
     }
 
     public void BuyItem(string itemId)
     {
+        int cBalance = StoreInventory.GetItemBalance("charsoo_coin");
+
         StoreInventory.BuyItem(itemId);
+
+        if (StoreInventory.GetItemBalance("charsoo_coin") > cBalance)
+            SoundManager.PlayAudioClip(GiveCoinAudioClip);
     }
 
     [FollowMachine("Pay Coin", "Payed,NotEnough")]
     public void PayCoins(int amount)
     {
-        FollowMachine.SetOutput(PayCoin(amount) ? "Payed" : "NotEnough");
+        if (amount > CurrentCoin)
+        {
+            FollowMachine.SetOutput("NotEnough");
+            return;
+        }
+
+        StoreInventory.TakeItem("charsoo_coin", amount);
+
+        SoundManager.PlayAudioClip(PayCoinAudioClip);
+
+        FollowMachine.SetOutput("Payed");
     }
 
     public bool PayCoin(int amount)
     {
-/*
-#if UNITY_EDITOR
-        return true;
-#endif
-*/
-    
 
-        if (amount > CurrentCoin)
-            return false;
+        Debug.Log("PurchaseManager.PayCoin IS using");
 
-        StoreInventory.TakeItem("charsoo_coin", amount);
-        //SoundManager.PlayAudioClip(PayCoinAudioClip);
-        return true;
+        return false;
     }
 
     public void GiveCoin(int amount)
     {
+        SoundManager.PlayAudioClip(GiveCoinAudioClip);
         StoreInventory.GiveItem("charsoo_coin", amount);
     }
 
@@ -81,7 +83,6 @@ public class PurchaseManager : BaseObject
         yield return PlayerController.ChangeCoinCount(CurrentCoin);
         Start();
         OnCurrencyChange.Invoke();
-        SoundManager.PlayAudioClip(GiveCoinAudioClip);
     }
 
     public void HcurrencyChanged()

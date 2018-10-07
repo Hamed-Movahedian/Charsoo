@@ -80,4 +80,30 @@ public class LocalPuzzleDB : MonoBehaviour
 
     }
 
+
+    public IEnumerator ReportPuzzle()
+    {
+        string resualt = "";
+        string puzzlePlayer = Singleton.Instance.WordSpawner.PuzzleID + "/" + Singleton.Instance.PlayerController.GetPlayerID;
+
+        yield return ServerController.Post<string>(
+            $@"Puzzles/Report?puzzlePlayer={puzzlePlayer}",
+            null,
+            // On Successfully connect to the account
+            info => { resualt = info; },
+            // On Error
+            request =>
+            {
+                // Network Error !!!!!
+                if (request.isNetworkError)
+                    resualt="Network Error";
+
+                // Account recovery Error !!!!
+                else if (request.isHttpError)
+                    resualt="Account Error";
+            });
+
+
+        Debug.Log(resualt);
+    }
 }
