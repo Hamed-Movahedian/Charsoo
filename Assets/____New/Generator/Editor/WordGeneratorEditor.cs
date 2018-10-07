@@ -30,19 +30,6 @@ public class WordGeneratorEditor : Editor
             _wg.SpawnWordSet();
         }
 
-        if (GUILayout.Button("Spawn Next"))
-        {
-            _wg.EditorInstantiate = EditorInstantiate;
-            _wg.NextResultIndex++;
-            _wg.SpawnWordSet();
-        }
-        if (GUILayout.Button("Spawn Previous"))
-        {
-            _wg.EditorInstantiate = EditorInstantiate;
-            _wg.NextResultIndex--;
-            _wg.SpawnWordSet();
-        }
-
         DrawDefaultInspector();
     }
 

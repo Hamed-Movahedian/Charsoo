@@ -21,6 +21,7 @@ public class WordSpawner : BaseObject
     public string PuzzleRow;
     public bool PuzzleReward;
     public int PuzzleID;
+    public bool SpawnPartByPart = true;
 
 
     [FollowMachine("Has Reward?", "Yes,No")]
@@ -131,7 +132,10 @@ public class WordSpawner : BaseObject
         if (Application.isPlaying)
         {
             StartCoroutine(CameraController.FocusAllLetters());
-            StartCoroutine(EnableParts());
+            if (SpawnPartByPart)
+                StartCoroutine(EnableParts());
+            else
+                LetterController.AllLetters.ForEach(l => l.gameObject.SetActive(true));
         }
         else
             LetterController.AllLetters.ForEach(l => l.gameObject.SetActive(true));

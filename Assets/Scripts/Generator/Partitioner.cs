@@ -11,7 +11,6 @@ public class Partitioner : BaseObject
 {
     public int MinSize = 2;
     public int MaxSize = 3;
-    public int ErrorCount = 1;
     public List<List<Letter>> Paritions;
     public Color ParitionColor;
     public Action<UnityEngine.Object, string> Undo;
@@ -27,7 +26,7 @@ public class Partitioner : BaseObject
     public bool PartitionSuccessfully;
     public int MaxTry;
 
-    #region Partitionerer
+    #region Partitioner
 
     public IEnumerator PortionLetters()
     {
@@ -56,7 +55,8 @@ public class Partitioner : BaseObject
             if (TryPartition())
             {
                 // SetupBridges for all letters
-                Paritions.SelectMany(p => p)
+                Paritions
+                    .SelectMany(p => p)
                     .ToList()
                     .ForEach(l => l.SetupBridges());
 
@@ -88,6 +88,7 @@ public class Partitioner : BaseObject
         // Clear partitions
         if (Paritions == null)
             Paritions = new List<List<Letter>>();
+
         Paritions.Clear();
 
         // Add first partition with all letters
@@ -218,6 +219,21 @@ public class Partitioner : BaseObject
     public IEnumerator Shuffle()
     {
         _compressCount = 1;
+
+        if(Paritions==null)
+            Paritions=new List<List<Letter>>();
+        Paritions.Clear();
+
+        var allLetters = 
+            new List<Letter>(Singleton.Instance.LetterController.AllLetters);
+
+        while (allLetters.Count>0)
+        {
+            var letters = new List<Letter>();
+            allLetters[0].GetConnectedLetters(letters);
+            Paritions.Add(letters);
+            letters.ForEach(l=>allLetters.Remove(l));
+        }
 
         #region Shuffle partions
 

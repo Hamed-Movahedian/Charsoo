@@ -17,21 +17,17 @@ public class WordSetGenerator : BaseObject
     [TextArea]
     public string AllWords;
 
-    public List<string> WordStrings;
+    private List<string> _wordStrings;
 
-    public int NextResultIndex = 0;
-    public List<List<SWord>> EndResults;
-
-
-    private HashSet<string> _results;
+    private int _foundResultCount = 0;
 
     private List<SWord> _words = new List<SWord>();
     private List<SWord> _usedWords = new List<SWord>();
     private WordSet _wordSet;
-    private Dictionary<string, int> _nameToId;
     private CommonLettersDictionary _clDictionary;
     public Func<Letter, Letter> EditorInstantiate;
     public string Clue;
+    private List<SWord> _bestResult;
 
     #endregion
 
@@ -47,9 +43,9 @@ public class WordSetGenerator : BaseObject
 
         var startTime = Time.time;
 
-        while (_results.Count < MaxResults && Time.time < startTime + _words.Count * 2 )
+        while (_foundResultCount < MaxResults && Time.time < startTime + _words.Count * 2 )
         {
-            MgsCoroutine.Info = _results.Count + " word set found.";
+            MgsCoroutine.Info = _foundResultCount + " word set found.";
             if (BruteForce)
             {
                 if (index < _words.Count)
@@ -67,24 +63,14 @@ public class WordSetGenerator : BaseObject
             yield return TryOtherWords(word);
         }
 
-        if (_results.Count == 0)
+        if (_foundResultCount == 0)
         {
             Successful = false;
             yield break;
         }
 
-        MgsCoroutine.Info = "Sorting...";
-        MgsCoroutine.ForceUpdate();
-
-        yield return null;
-
-        EndResults = _results
-            .Select(ConvertToList)
-            .OrderByDescending(Fitness4)
-            .Take(1000)
-            .ToList();
-
-        print(_results.Count + " WordSet Found");
+        
+        print(_foundResultCount + " WordSet Found");
         Successful = true;
 
     }
@@ -95,7 +81,7 @@ public class WordSetGenerator : BaseObject
         Partitioner partitioner = GetComponent<Partitioner>();
         partitioner.Clear();
 
-        WordStrings = AllWords
+        _wordStrings = AllWords
             .Replace("‌", "")
             .Split(' ', '\n', '\t', '-', '–')
             .Select(s => s.Trim())
@@ -104,20 +90,11 @@ public class WordSetGenerator : BaseObject
             .ToList();
 
         // Clear results
-        if (_results == null)
-            _results = new HashSet<string>();
-
-        _results.Clear();
+        _foundResultCount = 0;
+        _bestResult = null;
 
         // Initialize 
-        _clDictionary = new CommonLettersDictionary(WordStrings);
-        NextResultIndex = 0;
-
-        // Set word name to id dictionary
-        _nameToId = new Dictionary<string, int>();
-
-        for (int i = 0; i < WordStrings.Count; i++)
-            _nameToId.Add(WordStrings[i], i);
+        _clDictionary = new CommonLettersDictionary(_wordStrings);
 
 
         // ** Setup words
@@ -129,7 +106,7 @@ public class WordSetGenerator : BaseObject
         _words.Clear();
         _usedWords.Clear();
 
-        foreach (string wordString in WordStrings)
+        foreach (string wordString in _wordStrings)
             _words.Add(new SWord { Name = wordString });
 
         MgsCoroutine.Title = "Generate Word set";
@@ -140,13 +117,13 @@ public class WordSetGenerator : BaseObject
     private IEnumerator TryOtherWords(SWord lastWord)
     {
         // Show Progress Bar
-        MgsCoroutine.Info = _results.Count.ToString("N0") + " WordSet Found";
-        MgsCoroutine.Percentage = _results.Count / (float)MaxResults;
+        MgsCoroutine.Info = _foundResultCount.ToString("N0") + " WordSet Found";
+        MgsCoroutine.Percentage = _foundResultCount / (float)MaxResults;
 
         yield return null;
 
         // Safe Guard
-        if (_results.Count > MaxResults)
+        if (_foundResultCount > MaxResults)
             yield break;
 
 
@@ -308,59 +285,12 @@ public class WordSetGenerator : BaseObject
 
     private void ResultFound()
     {
-        string sResult = ConvertToString(_usedWords);
+        _foundResultCount++;
 
-        if (_results.Contains(sResult))
-            return;
-        else
-            _results.Add(sResult);
-
-
-    }
-
-    #endregion
-
-    #region List <-> string
-
-    private string ConvertToString(List<SWord> words)
-    {
-
-        var idWords = words.Select(w => new
-        {
-            ID = _nameToId[w.Name],
-            Dir = w.WordDirection == WordDirection.Horizontal ? "H" : "V",
-            w.X,
-            w.Y,
-            w.MatchCount
-        })
-            .OrderBy(w => w.ID)
-            .ToList();
-
-        int x = idWords[0].X;
-        int y = idWords[0].Y;
-
-
-        return idWords
-            .Select(w => string.Format("{0} {1} {2} {3} {4},", w.ID, w.Dir, w.X - x, w.Y - y, w.MatchCount))
-            .Aggregate("", (a, b) => a + b);
-    }
-
-    private List<SWord> ConvertToList(string sList)
-    {
-        return sList
-            .Split(',')
-            .Where(s => s.Length > 0)
-            .Select(s => s.Split(' '))
-            .Select(sl => new SWord
-            {
-                Name = WordStrings[int.Parse(sl[0])],
-                WordDirection = sl[1] == "H" ? WordDirection.Horizontal : WordDirection.Vertical,
-                X = int.Parse(sl[2]),
-                Y = int.Parse(sl[3]),
-                MatchCount = int.Parse(sl[4])
-
-            })
-            .ToList();
+        if (_bestResult == null)
+            _bestResult = new List<SWord>(_usedWords);
+        else if (Fitness4(_usedWords) > Fitness4(_bestResult))
+            _bestResult = new List<SWord>(_usedWords);
     }
 
     #endregion
@@ -427,19 +357,13 @@ public class WordSetGenerator : BaseObject
     [ContextMenu("SpawnWordSet")]
     public void SpawnWordSet()
     {
-        if (EndResults.Count == 0)
+        if (_foundResultCount == 0)
             return;
-
-        if (NextResultIndex >= EndResults.Count)
-            NextResultIndex = 0;
-
-        if (NextResultIndex < 0)
-            NextResultIndex = EndResults.Count - 1;
 
         if (_wordSet == null)
             _wordSet = new WordSet();
 
-        _wordSet.Words = EndResults[NextResultIndex];
+        _wordSet.Words = _bestResult;
         _wordSet.Clue = Clue;
 
         WordSpawner.WordSet = _wordSet;
@@ -452,10 +376,13 @@ public class WordSetGenerator : BaseObject
 
     public WordSet GetBestWordSet()
     {
+        if (_bestResult == null)
+            throw new Exception("No word set found!!");
+
         if (_wordSet == null)
             _wordSet = new WordSet();
 
-        _wordSet.Words = EndResults[NextResultIndex];
+        _wordSet.Words = _bestResult;
         _wordSet.Clue = Clue;
         return _wordSet;
     }
