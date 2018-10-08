@@ -183,4 +183,11 @@ public class Letter : BaseObject
     {
         return GetComponentInChildren<TextMesh>().text[0];
     }
+
+    public bool IsConnectedTo(Letter letter)
+    {
+        if (letter == null)
+            return false;
+        return ConnectedLetters.Contains(letter);
+    }
 }

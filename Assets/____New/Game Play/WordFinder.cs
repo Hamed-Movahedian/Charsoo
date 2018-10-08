@@ -36,26 +36,43 @@ public class WordFinder : MonoBehaviour
                 if (!IsStart(letter, direction))
                     continue;
 
-                var foundLetters = new List<Letter>();
+                List<List<Letter>> foundLettersList = FindLettersList(letter,direction);
 
-                while (letter != null)
+                foreach (var foundLetters in foundLettersList)
                 {
-                    foundLetters.Add(letter);
-                    letter = Next(letter, direction);
-                }
+                    if (dropLetters.Count > 0 && !foundLetters.Any(dropLetters.Contains))
+                        continue;
 
-                if(dropLetters.Count>0 && !foundLetters.Any(dropLetters.Contains))
-                    continue;
+                    if (!CheckCorrectWords(foundLetters, direction, words))
+                        CheckErrorWords(foundLetters, direction, words);
 
-                if (!CheckCorrectWords(foundLetters, direction, words))
-                    CheckErrorWords(foundLetters,direction,words);
-            }
+                }            }
         }
 
         if(FoundErrorWords.Count>0 || FoundWords.Count>0)
             FollowMachine.SetOutput("Found");
         else
             FollowMachine.SetOutput("Not found");
+    }
+
+    private List<List<Letter>> FindLettersList(Letter letter, WordDirection direction)
+    {
+        var lettersList= new List<List<Letter>>();
+        var letters=new List<Letter>();
+
+        while (letter!=null)
+        {
+            letters.Add(letter);
+
+            var next = Next(letter, direction);
+
+            if(!letter.IsConnectedTo(next))
+                lettersList.Add(new List<Letter>(letters));
+
+            letter = next;
+        }
+
+        return lettersList;
     }
 
     private void CheckErrorWords(List<Letter> letters, WordDirection direction, List<Word> words)
@@ -112,14 +129,40 @@ public class WordFinder : MonoBehaviour
         return false;
     }
 
-    private Letter Next(Letter letter, WordDirection direction) =>
-        _location.ContainsKey(letter.transform.position + Next(direction)) ?
-            _location[letter.transform.position + Next(direction)] :
-            null;
+    private Letter Next(Letter letter, WordDirection direction)
+    {
+        if (_location.ContainsKey(letter.transform.position + Next(direction)))
+            return _location[letter.transform.position + Next(direction)];
+        else
+            return null;
+    }
 
-    private bool IsStart(Letter letter, WordDirection direction) =>
-            _location.ContainsKey(letter.transform.position + Next(direction)) &&
-            !_location.ContainsKey(letter.transform.position - Next(direction));
+    private bool IsStart(Letter letter, WordDirection direction)
+    {
+        // if next is empty return false
+        if (!HasNextLetter(letter, direction))
+            return false;
+
+        if (!HasPreLetter(letter, direction))
+            return true;
+
+        return !PreLetter(letter, direction).IsConnectedTo(letter);
+    }
+
+    private Letter PreLetter(Letter letter, WordDirection direction)
+    {
+        return _location[letter.transform.position - Next(direction)];
+    }
+
+    private bool HasPreLetter(Letter letter, WordDirection direction)
+    {
+        return _location.ContainsKey(letter.transform.position - Next(direction));
+    }
+
+    private bool HasNextLetter(Letter letter, WordDirection direction)
+    {
+        return _location.ContainsKey(letter.transform.position + Next(direction));
+    }
 
     private static Vector3 Next(WordDirection direction) =>
         direction == WordDirection.Horizontal ? Vector3.left : Vector3.down;

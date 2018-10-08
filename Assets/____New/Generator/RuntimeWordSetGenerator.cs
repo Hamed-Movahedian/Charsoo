@@ -33,7 +33,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
     public void Initialize()
     {
-        
+
         GameController.Instance.ClearWords();
 
         // Disable letter selection
@@ -49,16 +49,14 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
     }
 
-    [FollowMachine("Generate words","Success,Fail")]
+    [FollowMachine("Generate words", "Success,Fail")]
     public IEnumerator Generate()
     {
-       FollowMachine.SetOutput("Fail");
-
         // Setup generator
         Generator.AllWords = WordsWindow.WordsText.text.Replace(' ', '\n');
         Generator.Clue = ClueWindow.ClueInputField.text;
         Generator.Initialize();
-        Generator.UsedWordCount = (int) WordCountWindow.WordCountSlider.maxValue;
+        Generator.UsedWordCount = (int)WordCountWindow.WordCountSlider.maxValue;
         Generator.MaxResults = 100;
 
         // Generate Word set
@@ -71,12 +69,6 @@ public class RuntimeWordSetGenerator : MonoBehaviour
             yield break;
         }
 
-        // Setup partitioner
-        Partitioner.MaxSize = 4;
-        Partitioner.MinSize = 1;
-        Partitioner.MaxTry = 200;
-        Partitioner.Validate = false;
-
         // Spawn words
         var bestWordSet = Generator.GetBestWordSet();
 
@@ -84,19 +76,15 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         GameController.Instance.SpawnWordSet(bestWordSet);
         Singleton.Instance.WordSpawner.SpawnPartByPart = true;
 
-
         // Run partitioner
-        //yield return Partitioner.PortionLetters();
-        if(_partitioner==null)
-        _partitioner =new NewPartitioner();
+        if (_partitioner == null)
+            _partitioner = new NewPartitioner();
         _partitioner.Portion();
-        
-        // if partition successfully break
-        //if (Partitioner.PartitionSuccessfully)
-            FollowMachine.SetOutput("Success");
+
+        FollowMachine.SetOutput("Success");
     }
 
- 
+
 
     public IEnumerator Shuffle()
     {
