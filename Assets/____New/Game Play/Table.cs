@@ -5,6 +5,10 @@ using UnityEngine;
 public class Table : MonoBehaviour
 {
     public int Size=19;
+    public List<Texture2D> BackGrounds=new List<Texture2D>();
+
+    private Material _material;
+
 
     #region BoundRect
 
@@ -28,6 +32,19 @@ public class Table : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        _material = GetComponent<MeshRenderer>().sharedMaterial;
+        SetSize();
+    }
+
+    public void SetRandomBackground()
+    {
+        if(BackGrounds.Count>0) _material.mainTexture = BackGrounds[Random.Range(0, BackGrounds.Count)];
+        SetSize();
+    }
+
+    public void ResetBackground()
+    {
+        if (BackGrounds.Count > 0) _material.mainTexture = BackGrounds[0];
         SetSize();
     }
 
@@ -36,7 +53,7 @@ public class Table : MonoBehaviour
     {
         transform.position =Vector3.zero;
 
-        Size = GetComponent<MeshRenderer>().sharedMaterial.mainTexture.height;
+        Size = _material.mainTexture.height;
         transform.localScale = new Vector3(Size, Size, 1);
         if (Size%2 == 0)
             transform.position = new Vector3(0.5f, 0.5f, 0);
