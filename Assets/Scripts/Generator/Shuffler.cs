@@ -38,18 +38,7 @@ public class Shuffler
 
     private static List<LetterBound> ComputeLetterBounds()
     {
-        List<List<Letter>> paritions = new List<List<Letter>>();
-
-        var allLetters =
-            new List<Letter>(Singleton.Instance.LetterController.AllLetters);
-
-        while (allLetters.Count > 0)
-        {
-            var letters = new List<Letter>();
-            allLetters[0].GetConnectedLetters(letters);
-            paritions.Add(letters);
-            letters.ForEach(l => allLetters.Remove(l));
-        }
+        List<List<Letter>> paritions = NewPartitioner.GetPartitions();
 
         #region Shuffle partions
 
@@ -126,8 +115,10 @@ public class Shuffler
             letterBound.TargetY += -y / 2 - 2;
 
         #endregion
+
         return letterBounds;
     }
+
 }
 public class LetterBound
 {

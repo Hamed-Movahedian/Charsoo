@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using FMachine;
 using FollowMachineDll.Attributes;
 using MgsCommonLib.Animation;
+using UnityEditor;
 using UnityEngine;
 
 public class RuntimeWordSetGenerator : MonoBehaviour
@@ -18,6 +20,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
     private int _targetFrameRate;
     private int _vSyncCount;
     private NewPartitioner _partitioner;
+    private Shuffler _shuffler;
 
     public void Finish()
     {
@@ -78,12 +81,19 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         // Run partitioner
         if (_partitioner == null)
             _partitioner = new NewPartitioner();
-        _partitioner.Portion();
+        yield return _partitioner.Portion();
 
         FollowMachine.SetOutput("Success");
     }
 
+    public IEnumerator Suffle()
+    {
+        if (_shuffler == null)
+            _shuffler = new Shuffler();
 
+
+        yield return _shuffler.ShuffleRuntime(this);
+    }
 
  
     [FollowMachine("Save puzzle")]

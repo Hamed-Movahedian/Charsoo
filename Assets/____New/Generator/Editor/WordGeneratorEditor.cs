@@ -77,7 +77,14 @@ public class WordGeneratorEditor : Editor
         {
             if (_partitioner == null)
                 _partitioner = new NewPartitioner();
-            _partitioner.Portion();
+            
+            MgsCoroutine.GetTime = GetTime;
+            MgsCoroutine.Start(
+                _partitioner.Portion(),
+                () => EditorUtility.DisplayCancelableProgressBar(MgsCoroutine.Title, "Partitioning..", MgsCoroutine.Percentage),
+                0.1);
+
+            EditorUtility.ClearProgressBar();
         }
 
         if (GUILayout.Button("Shuffle"))
@@ -85,7 +92,7 @@ public class WordGeneratorEditor : Editor
             if (_shuffler == null)
                 _shuffler = new Shuffler();
 
-            Undo.RecordObjects(FindObjectsOfType<Letter>().Cast<Object>().ToArray(), "Shuffle");
+            Undo.RecordObjects(FindObjectsOfType<Letter>().Select(l=>(Object) (l.transform)).ToArray(), "Shuffle");
 
             _shuffler.ShuffleEditor();
         }
