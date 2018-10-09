@@ -40,7 +40,7 @@ public class WordManager : BaseObject
             var child = transform.GetChild(0);
             child.parent = null;
             if (Application.isPlaying)
-                Destroy(child.gameObject);
+                PoolManager.Instance.Return(child.GetComponent<Word>());
             else
                 DestroyImmediate(child.gameObject);
         }

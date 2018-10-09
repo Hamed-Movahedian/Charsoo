@@ -10,6 +10,7 @@ using UnityEngine.Networking;
 public class WordSpawner : BaseObject
 {
     //************* public
+    public Word WordPrefab;
     public Letter LetterPrefab;
     public WordSet WordSet;
     public Func<Letter, Letter> EditorInstatiate;
@@ -77,14 +78,17 @@ public class WordSpawner : BaseObject
 
     private void SpawnWord(SWord sWord)
     {
-        GameObject wordGameObject = new GameObject(sWord.Name);
-
         // Word component
-        Word wordComponent = wordGameObject.AddComponent<Word>();
-        wordComponent.Letters = new List<Letter>();
+        Word wordComponent = (Word) PoolManager.Instance.Get(WordPrefab, WordManager.transform);
+
+        if (wordComponent.Letters == null)
+            wordComponent.Letters = new List<Letter>();
+        else
+            wordComponent.Letters.Clear();
+
+        wordComponent.name = ArabicSupport.ArabicFixer.Fix(sWord.Name);
         wordComponent.Direction = sWord.WordDirection;
         wordComponent.Name = sWord.Name;
-        wordGameObject.transform.parent = WordManager.transform;
 
         for (int i = 0; i < sWord.Name.Length; i++)
         {
@@ -105,7 +109,9 @@ public class WordSpawner : BaseObject
                 }
                 else
                 {
-                    letter = Instantiate(LetterPrefab);
+                    letter = (Letter) PoolManager.Instance.Get(
+                        LetterPrefab,
+                        LetterController.transform);
                 }
 
                 // Position
@@ -119,7 +125,6 @@ public class WordSpawner : BaseObject
 
                 // LetterController
                 LetterController.AllLetters.Add(letter);
-                letter.transform.parent = LetterController.transform;
 
                 // Add to Dictionary
                 _locationDictionary.Add(sWord.Locations(i), letter);

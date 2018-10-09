@@ -215,7 +215,7 @@ public class LetterController : BaseObject
                 if (!Application.isPlaying)
                     DestroyImmediate(letter.gameObject);
                 else
-                    Destroy(letter.gameObject);
+                    PoolManager.Instance.Return(letter);
 
             }
             AllLetters.Remove(letter);
