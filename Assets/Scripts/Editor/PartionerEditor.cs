@@ -4,15 +4,16 @@ using MgsCommonLib.Utilities;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(Partitioner))]
+/*
+[CustomEditor(typeof(NewPartitioner))]
 public class PartionerEditor : Editor
 {
-    private Partitioner _partitioner;
+    private NewPartitioner _partitioner;
     private double _startTime;
 
     public override void OnInspectorGUI()
     {
-        _partitioner = target as Partitioner;
+        _partitioner = target as NewPartitioner;
 
         if (GUILayout.Button("Partition"))
         {
@@ -64,3 +65,4 @@ public class PartionerEditor : Editor
         return EditorApplication.timeSinceStartup;
     }
 }
+*/

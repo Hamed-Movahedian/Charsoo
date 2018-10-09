@@ -14,7 +14,6 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
     [Header("Components")]
     public WordSetGenerator Generator;
-    public Partitioner Partitioner;
 
     private int _targetFrameRate;
     private int _vSyncCount;
@@ -86,120 +85,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
 
 
-    public IEnumerator Shuffle()
-    {
-        List<List<Letter>> paritions = new List<List<Letter>>();
-
-        var allLetters =
-            new List<Letter>(Singleton.Instance.LetterController.AllLetters);
-
-        while (allLetters.Count > 0)
-        {
-            var letters = new List<Letter>();
-            allLetters[0].GetConnectedLetters(letters);
-            paritions.Add(letters);
-            letters.ForEach(l => allLetters.Remove(l));
-        }
-
-        #region Shuffle partions
-
-        for (int i = 0; i < paritions.Count * 2; i++)
-        {
-            int p1 = Random.Range(0, paritions.Count);
-            int p2 = Random.Range(0, paritions.Count);
-
-            var tp = paritions[p1];
-            paritions[p1] = paritions[p2];
-            paritions[p2] = tp;
-        }
-
-        #endregion
-
-        #region Get bounds
-
-        List<LetterBound> letterBounds = new List<LetterBound>();
-
-        foreach (List<Letter> letters in paritions)
-            letterBounds.Add(new LetterBound(letters));
-
-        #endregion
-
-        #region Place as a grid
-
-        int columns = Mathf.RoundToInt(Mathf.Sqrt(letterBounds.Count));
-
-        int x = 0, y = 0;
-
-        for (int i = 0; i <= columns; i++)
-        {
-            int width = 0;
-            int height = 0;
-
-            for (int j = 0; j < columns; j++)
-            {
-                int index = i * columns + j;
-
-                if (index >= paritions.Count)
-                    break;
-
-                width += letterBounds[index].Width;
-
-                if (height < letterBounds[index].Height)
-                    height = letterBounds[index].Height;
-            }
-
-            x = -width / 2;
-
-            for (int j = 0; j < columns; j++)
-            {
-                int index = i * columns + j;
-
-                if (index >= paritions.Count)
-                    break;
-
-                var bounds = letterBounds[index];
-
-                bounds.SetTarget(x, y + (height - bounds.Height) / 2);
-
-                x += bounds.Width;
-
-            }
-
-            y += height;
-        }
-
-        #endregion
-
-        #region Move to center
-
-        foreach (var letterBound in letterBounds)
-            letterBound.TargetY += -y / 2 - 2;
-
-        #endregion
-
-        if (Application.isPlaying)
-        {
-            // Get target bound
-            Bounds targetBounds = letterBounds[0].GetBounds();
-
-            for (int i = 1; i < letterBounds.Count; i++)
-                letterBounds[i].AddBounds(ref targetBounds);
-
-            StartCoroutine(Singleton.Instance.CameraController.FocusToBound(targetBounds));
-
-            yield return MsgAnimation.RunAnimation(
-                1f,
-                (v) =>
-                {
-                    foreach (var letterBound in letterBounds)
-                        letterBound.MoveTowardTarget(v);
-                });
-        }
-        else
-            foreach (var letterBound in letterBounds)
-                letterBound.MoveTowardTarget(1f);
-    }
-
+ 
     [FollowMachine("Save puzzle")]
     public void Save()
     {

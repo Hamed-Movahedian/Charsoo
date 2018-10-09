@@ -28,6 +28,7 @@ public class WordSetGenerator : BaseObject
     public Func<Letter, Letter> EditorInstantiate;
     public string Clue;
     private List<SWord> _bestResult;
+    public Color PartitionGizmoColor;
 
     #endregion
 
@@ -78,8 +79,6 @@ public class WordSetGenerator : BaseObject
     public void Initialize()
     {
         // Clear last partitions
-        Partitioner partitioner = GetComponent<Partitioner>();
-        partitioner.Clear();
 
         _wordStrings = AllWords
             .Replace("‌", "")

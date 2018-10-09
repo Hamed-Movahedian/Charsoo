@@ -106,6 +106,8 @@ public class WordSpawner : BaseObject
                     {
                         Debug.LogError("EditorInstatiate not set !!!");
                     }
+
+                    letter.transform.parent = LetterController.transform;
                 }
                 else
                 {

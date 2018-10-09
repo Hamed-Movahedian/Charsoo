@@ -7,7 +7,7 @@ using MgsCommonLib.Utilities;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Partitioner : BaseObject
+public class PartitionerOld : BaseObject
 {
     public int MinSize = 2;
     public int MaxSize = 3;
@@ -43,7 +43,7 @@ public class Partitioner : BaseObject
             _validator = new WordSetValidator();
 
 
-        _validator.Initialize(this);
+        _validator.Initialize();
 
 
         for (TryCount = 0; TryCount < MaxTry; TryCount++)
@@ -430,63 +430,4 @@ public class Partitioner : BaseObject
 
 }
 
-public class LetterBound
-{
-    public int X, Y, Width, Height;
-
-    public int TargetY;
-    public int TargetX;
-    public Vector3 Min;
-    private Vector3 _lastDelta = Vector3.zero;
-
-    private List<Letter> _letters;
-
-    public LetterBound(List<Letter> letters)
-    {
-        _letters = letters;
-        X = Mathf.RoundToInt(letters.Min(l => l.transform.position.x)) - 1;
-        Y = Mathf.RoundToInt(letters.Min(l => l.transform.position.y)) - 1;
-
-        Width = Mathf.RoundToInt(letters.Max(l => l.transform.position.x)) - X + 1;
-        Height = Mathf.RoundToInt(letters.Max(l => l.transform.position.y)) - Y + 1;
-
-        Min = new Vector3(X, Y, 0);
-    }
-
-
-    public void SetTarget(int x, int y)
-    {
-        TargetX = x;
-        TargetY = y;
-    }
-
-    public void MoveTowardTarget(float value)
-    {
-        Vector3 delta = Vector3.Lerp(Min, new Vector3(TargetX, TargetY), value) - Min;
-
-        _letters.ForEach(l => l.transform.position += delta - _lastDelta);
-
-        _lastDelta = delta;
-    }
-
-    public Bounds GetBounds()
-    {
-        var delta = new Vector3(TargetX, TargetY) - Min;
-
-        var bounds = new Bounds(_letters[0].transform.position+delta, Vector3.zero);
-
-        for (int i = 1; i < _letters.Count; i++)
-            bounds.Encapsulate(_letters[i].transform.position + delta);
-
-        return bounds;
-    }
-
-    public void AddBounds(ref Bounds bounds)
-    {
-        var delta = new Vector3(TargetX, TargetY) - Min;
-
-        foreach (Letter letter in _letters)
-            bounds.Encapsulate(letter.transform.position + delta);
-    }
-}
 

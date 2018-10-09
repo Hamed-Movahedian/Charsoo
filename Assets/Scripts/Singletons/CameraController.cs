@@ -16,7 +16,7 @@ public class CameraController : BaseObject
     private Camera _camera;
     private Vector3 _lastMousePos;
 
-    void Start()
+    public void Start()
     {
         _camera = GetComponent<Camera>();
     }
