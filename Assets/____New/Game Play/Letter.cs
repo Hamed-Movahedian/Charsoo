@@ -53,6 +53,13 @@ public class Letter : BaseObject
         OnSpawn.Invoke();
     }
 
+    private void OnEnable()
+    {
+        Start();
+    }
+
+
+
     #endregion
 
     #region SetupBridges

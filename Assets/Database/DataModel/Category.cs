@@ -18,7 +18,8 @@ public class Category : BaseTable
     {
         get
         {
-            return LocalDBController.Table<Purchases>().FirstOrDefault(p => p.PurchaseID.Trim() == "C-P-" + ID) != null;
+            var pId = "C-P-" + ID;
+            return LocalDBController.Table<Purchases>().SqlWhere(p => p.PurchaseID == pId).Any();
         }
     }
 
@@ -26,7 +27,9 @@ public class Category : BaseTable
     {
         get
         {
-            return LocalDBController.Table<Purchases>().FirstOrDefault(p => p.PurchaseID.Trim() == "C-" + ID) != null;
+            var pId = ("C-" + ID);
+
+            return LocalDBController.Table<Purchases>().SqlWhere(p =>p.PurchaseID == pId).Any();
         }
     }
 
@@ -34,7 +37,10 @@ public class Category : BaseTable
     {
         get
         {
-            foreach (Puzzle p in LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == ID))
+            var puzzles = LocalDBController
+                .Table<Puzzle>().SqlWhere(p => p.CategoryID == ID);
+
+            foreach (Puzzle p in puzzles)
                 if (!p.Solved) return false;
             return true;
         }

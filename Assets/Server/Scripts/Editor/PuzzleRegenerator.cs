@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MgsCommonLib.Utilities;
 using UnityEditor;
 using UnityEngine;
 
@@ -60,8 +61,8 @@ public class PuzzleRegenerator : EditorWindow
 
         #endregion
 
-        
-        #region Spawn wordSet
+
+        #region Regenerate wordSet
 
         if (GUILayout.Button("Regenerate"))
         {
@@ -77,7 +78,20 @@ public class PuzzleRegenerator : EditorWindow
             {
                 wordGenerator.AllWords += word.Name + " ";
             }
-            
+            wordGenerator.UsedWordCount = _wordSet.Words.Count;
+            MgsCoroutine.GetTime = GetTime;
+            MgsCoroutine.Start(
+                wordGenerator.MakeWordSet(),
+                () => EditorUtility.DisplayCancelableProgressBar(MgsCoroutine.Title, MgsCoroutine.Info, MgsCoroutine.Percentage),
+                0.1);
+
+            EditorUtility.ClearProgressBar();
+
+            wordGenerator.EditorInstantiate = EditorInstantiate;
+
+            wordGenerator.SpawnWordSet();
+
+            Selection.activeObject = wordGenerator.gameObject;
         }
 
         #endregion
@@ -106,9 +120,6 @@ public class PuzzleRegenerator : EditorWindow
 
             #endregion
 
-
-
-
             #region Create New wordSet
 
             WordSet wordSet = new WordSet();
@@ -122,8 +133,7 @@ public class PuzzleRegenerator : EditorWindow
             }
 
             #endregion
-
-
+            
             #region Save wordset to database
             // create category in database
             var puzzle = new Puzzle
@@ -136,13 +146,14 @@ public class PuzzleRegenerator : EditorWindow
                 LastUpdate = DateTime.Now
             };
 
-            Puzzle newPuzzle = ServerEditor.Post<Puzzle>(@"Puzzles/Create", puzzle, "Create puzzle", "Create");
+            _puzzle.PuzzleData.Content = puzzle.Content;
+            _puzzle.PuzzleData.Clue= puzzle.Clue;
+            _puzzle.Dirty = true;
+            _puzzle.UpdateData();
 
-            if (newPuzzle == null)
-            {
-                EditorUtility.DisplayDialog("Error", "Puzzle can't save in server!", "OK");
-                return;
-            }
+            if (!ServerEditor.Post(@"Puzzles/Update/" + _puzzle.PuzzleData.ID, _puzzle.PuzzleData, "Update puzzle", "Update"))
+                _puzzle.PuzzleData = null;
+
 
             //_category.AddPuzzle(newPuzzle);
 
@@ -152,6 +163,12 @@ public class PuzzleRegenerator : EditorWindow
     private Letter EditorInstantiate(Letter letterPrefab)
     {
         return (Letter)PrefabUtility.InstantiatePrefab(letterPrefab);
+    }
+
+
+    private static double GetTime()
+    {
+        return EditorApplication.timeSinceStartup;
     }
 
 }

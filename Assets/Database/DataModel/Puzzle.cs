@@ -14,7 +14,10 @@ public class Puzzle : BaseTable
     {
         get
         {
-            return LocalDBController.Table<PlayPuzzles>().FirstOrDefault(p => p.PuzzleID == ID && p.Success) != null;
+            return LocalDBController
+                .Table<PlayPuzzles>()
+                .SqlWhere(p => p.PuzzleID == ID)
+                .Any(p => p.Success);
         }
     }
 
@@ -25,7 +28,11 @@ public class Puzzle : BaseTable
             if (Row == 0)
                 return true;
 
-            Category category = LocalDBController.Table<Category>().FirstOrDefault(c => c.ID == CategoryID.Value);
+            Category category = LocalDBController
+                .Table<Category>()
+                .SqlWhere(c => c.ID == CategoryID.Value)
+                .FirstOrDefault();
+
             if (category.IsUnlocked)
             {
                 return true;

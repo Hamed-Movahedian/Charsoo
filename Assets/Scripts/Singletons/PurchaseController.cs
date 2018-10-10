@@ -17,7 +17,7 @@ namespace Assets.Scripts.Singletons
         {
             // Clear table
             LocalDBController.DataService.Connection.DeleteAll<Purchases>();
-
+            purchaseses.ForEach(p=>p.PurchaseID=p.PurchaseID.Trim());
             // Add new records
             LocalDBController
                 .DataService.Connection

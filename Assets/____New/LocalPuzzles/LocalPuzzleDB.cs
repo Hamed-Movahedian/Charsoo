@@ -17,13 +17,13 @@ public class LocalPuzzleDB : MonoBehaviour
     {
         _playingPuzzle = PuzzleList.PlayingPuzzle;
 
-        if (!_playingPuzzle.Solved)
+        if (Singleton.Instance.WordSpawner.PuzzleReward)
         {
             ZPlayerPrefs.SetInt("LastPlayedPuzzle", _playingPuzzle.ID);
         }
 
 
-        IEnumerable<Puzzle> puzzles = LocalDBController.Table<Puzzle>().
+        var puzzles = LocalDBController.Table<Puzzle>().
             SqlWhere(p => p.CategoryID == _playingPuzzle.CategoryID);
 
         Puzzle nextPuzzle = puzzles.FirstOrDefault(p => p.Row == _playingPuzzle.Row + 1);
@@ -66,11 +66,20 @@ public class LocalPuzzleDB : MonoBehaviour
             return;
         }
 
-        int? categoryID = LocalDBController.Table<Puzzle>().FirstOrDefault(p => p.ID == lastPuzzleID).CategoryID;
+        Puzzle puzzle = LocalDBController.Table<Puzzle>().
+            SqlWhere(p => p.ID == lastPuzzleID).
+            FirstOrDefault();
+
+        int? categoryID = puzzle?.CategoryID;
         if (categoryID != null)
         {
             int id = categoryID.Value;
-            Category category = LocalDBController.Table<Category>().First(c => c.ID == id);
+            Category category = 
+                LocalDBController.
+                Table<Category>().
+                SqlWhere(c => c.ID == id).
+                FirstOrDefault();
+
             Debug.Log(category.ID);
             PuzzleList.CategoryWindow.Select(category);
             FollowMachine.SetOutput("Play");
@@ -100,10 +109,9 @@ public class LocalPuzzleDB : MonoBehaviour
 
                 // Account recovery Error !!!!
                 else if (request.isHttpError)
-                    resualt="Account Error";
+                    resualt="Puzzle Error";
             });
 
 
-        Debug.Log(resualt);
     }
 }

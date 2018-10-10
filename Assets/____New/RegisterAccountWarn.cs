@@ -8,19 +8,17 @@ public class RegisterAccountWarn : MonoBehaviour
     private PlayerInfo _playerInfo;
     public float Speed = 1;
 
-    private void Start()
+    public void Start()
     {
-        _playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
     }
 
 
     private void OnEnable()
     {
-        if (_playerInfo != null && _playerInfo.Telephone == null)
+        if (Singleton.Instance.PlayerController.PlayerTelephone.Trim().Length < 10)
             StartCoroutine(WarnByAnimation());
         else
-            gameObject.SetActive(false);
-
+            GetComponent<CanvasGroup>().alpha = 0;
     }
 
     private IEnumerator WarnByAnimation()

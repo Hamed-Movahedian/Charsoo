@@ -80,15 +80,16 @@ public class WordSpawner : BaseObject
     {
         // Word component
         Word wordComponent = (Word) PoolManager.Instance.Get(WordPrefab, WordManager.transform);
+        wordComponent.IsComplete = false;
 
         if (wordComponent.Letters == null)
             wordComponent.Letters = new List<Letter>();
         else
             wordComponent.Letters.Clear();
 
-        wordComponent.name = ArabicSupport.ArabicFixer.Fix(sWord.Name);
         wordComponent.Direction = sWord.WordDirection;
         wordComponent.Name = sWord.Name;
+        wordComponent.gameObject.name = PersianFixer.Fix(sWord.Name);
 
         for (int i = 0; i < sWord.Name.Length; i++)
         {
@@ -134,6 +135,7 @@ public class WordSpawner : BaseObject
 
             wordComponent.Letters.Add(letter);
             letter.gameObject.SetActive(false);
+            
         }
 
         if (Application.isPlaying)
