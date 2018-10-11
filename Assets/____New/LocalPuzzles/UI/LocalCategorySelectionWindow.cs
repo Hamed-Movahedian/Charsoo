@@ -69,7 +69,9 @@ public class LocalCategorySelectionWindow : UIMenuItemList
         {
             LastUpdate = DateTime.Now,
             PlayerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID,
-            PurchaseID = "C-" + _clickedCategory.ID
+            PurchaseID = "C-" + _clickedCategory.ID,
+            Dirty = true
+
         };
         LocalDBController.InsertOrReplace(purchase);
 

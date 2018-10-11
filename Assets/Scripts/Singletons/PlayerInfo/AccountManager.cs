@@ -6,7 +6,9 @@ using Assets.Scripts.Singletons;
 using FMachine;
 using FollowMachineDll.Attributes;
 using MgsCommonLib;
+using Soomla.Store;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class AccountManager : MgsSingleton<AccountManager>
@@ -126,6 +128,12 @@ public class AccountManager : MgsSingleton<AccountManager>
             UserPuzzleSynchronizer.Instance.RestoreUserPuzzles(accountInfo.UserPuzzles);
 
             // Set connection result to success
+
+
+            ZPlayerPrefs.DeleteAll();
+
+            StoreInventory.GiveItem("charsoo_coin", accountInfo.PlayerInfo.CoinCount);
+
             FollowMachine.SetOutput("Success");
         }
     }
@@ -167,7 +175,7 @@ public class AccountManager : MgsSingleton<AccountManager>
                     FollowMachine.SetOutput("Fail");
             });
 
-        if(!FollowMachine.CheckOutputLable("Success"))
+        if (!FollowMachine.CheckOutputLable("Success"))
             playerInfo.Telephone = lastTelephone;
 
     }

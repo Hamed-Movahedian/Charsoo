@@ -56,7 +56,6 @@ public class TableComponent : MonoBehaviour
 #if UNITY_EDITOR
         EditorApplication.hierarchyWindowChanged += HierarchyChanged;
 #endif
-        Debug.Log("OnEnable");
     }
 
     void OnDisable()

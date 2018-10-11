@@ -12,55 +12,46 @@ public class LocalPuzzleDB : MonoBehaviour
     private Puzzle _playingPuzzle;
     public LocalPuzzlesSelectionWindow PuzzleList;
 
-
-
     [FollowMachine("Prepare next puzzle for spawn", "Play Next,No Next Puzzle")]
     public void PuzzleSolved()
     {
         _playingPuzzle = PuzzleList.PlayingPuzzle;
 
-        if (!IsPuzzleSolved(_playingPuzzle))
+        if (Singleton.Instance.WordSpawner.PuzzleReward)
         {
             ZPlayerPrefs.SetInt("LastPlayedPuzzle", _playingPuzzle.ID);
         }
 
 
-        IEnumerable<Puzzle> puzzles = LocalDBController.Table<Puzzle>().
-            Where(p => p.CategoryID == _playingPuzzle.CategoryID);
+        var puzzles = LocalDBController.Table<Puzzle>().
+            SqlWhere(p => p.CategoryID == _playingPuzzle.CategoryID);
 
         Puzzle nextPuzzle = puzzles.FirstOrDefault(p => p.Row == _playingPuzzle.Row + 1);
 
-        if (nextPuzzle == null || IsPuzzleSolved(nextPuzzle))
+        if (nextPuzzle == null || nextPuzzle.Solved)
         {
             FollowMachine.SetOutput("No Next Puzzle");
             return;
         }
 
-        PuzzleList.SetForSpawn(nextPuzzle, !IsPuzzleSolved(nextPuzzle));
+        PuzzleList.SetForSpawn(nextPuzzle);
         FollowMachine.SetOutput("Play Next");
     }
-
-    private static bool IsPuzzleSolved(Puzzle nextPuzzle) => 
-        LocalDBController.Table<PlayPuzzles>().
-        FirstOrDefault(pp => pp.PuzzleID == nextPuzzle.ID && pp.Success) != null;
 
     public void UnlockCategoryPuzzles()
     {
         int? playerID = null;
-        if (LocalDBController.Table<PlayerInfo>().FirstOrDefault() != null)
-            playerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID;
+        playerID = Singleton.Instance.PlayerController.GetPlayerID;
 
         int? id = PuzzleList.PlayingCategory.ID;
-        foreach (Puzzle puzzle in LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == id))
-        {
-            puzzle.Paid = true;
-            LocalDBController.InsertOrReplace(puzzle);
-        }
+
         Purchases purchase = new Purchases
         {
             LastUpdate = DateTime.Now,
             PlayerID = playerID,
-            PurchaseID = "C-P-" + id
+            PurchaseID = "C-P-" + id,
+            Dirty = true
+
         };
         LocalDBController.InsertOrReplace(purchase);
     }
@@ -75,11 +66,20 @@ public class LocalPuzzleDB : MonoBehaviour
             return;
         }
 
-        int? categoryID = LocalDBController.Table<Puzzle>().FirstOrDefault(p => p.ID == lastPuzzleID).CategoryID;
+        Puzzle puzzle = LocalDBController.Table<Puzzle>().
+            SqlWhere(p => p.ID == lastPuzzleID).
+            FirstOrDefault();
+
+        int? categoryID = puzzle?.CategoryID;
         if (categoryID != null)
         {
             int id = categoryID.Value;
-            Category category = LocalDBController.Table<Category>().First(c => c.ID == id);
+            Category category = 
+                LocalDBController.
+                Table<Category>().
+                SqlWhere(c => c.ID == id).
+                FirstOrDefault();
+
             Debug.Log(category.ID);
             PuzzleList.CategoryWindow.Select(category);
             FollowMachine.SetOutput("Play");
@@ -89,4 +89,29 @@ public class LocalPuzzleDB : MonoBehaviour
 
     }
 
+
+    public IEnumerator ReportPuzzle()
+    {
+        string resualt = "";
+        string puzzlePlayer = Singleton.Instance.WordSpawner.PuzzleID + "/" + Singleton.Instance.PlayerController.GetPlayerID;
+
+        yield return ServerController.Post<string>(
+            $@"Puzzles/Report?puzzlePlayer={puzzlePlayer}",
+            null,
+            // On Successfully connect to the account
+            info => { resualt = info; },
+            // On Error
+            request =>
+            {
+                // Network Error !!!!!
+                if (request.isNetworkError)
+                    resualt="Network Error";
+
+                // Account recovery Error !!!!
+                else if (request.isHttpError)
+                    resualt="Puzzle Error";
+            });
+
+
+    }
 }

@@ -74,7 +74,7 @@ public class SWord
 
     public SWord(Word word)
     {
-        Name = word.name;
+        Name = word.Name;
         WordDirection = word.Direction;
         X = (int)word.Letters[0].transform.position.x;
         Y = (int)word.Letters[0].transform.position.y;

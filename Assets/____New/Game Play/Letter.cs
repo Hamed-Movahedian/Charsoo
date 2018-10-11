@@ -53,6 +53,13 @@ public class Letter : BaseObject
         OnSpawn.Invoke();
     }
 
+    private void OnEnable()
+    {
+        Start();
+    }
+
+
+
     #endregion
 
     #region SetupBridges
@@ -182,5 +189,12 @@ public class Letter : BaseObject
     public char GetCharacter()
     {
         return GetComponentInChildren<TextMesh>().text[0];
+    }
+
+    public bool IsConnectedTo(Letter letter)
+    {
+        if (letter == null)
+            return false;
+        return ConnectedLetters.Contains(letter);
     }
 }

@@ -236,9 +236,9 @@ public class WordSetValidator
     
     #region Initialize
 
-    public void Initialize(Partitioner partitioner)
+    public void Initialize()
     {
-        _wordComponents = partitioner.WordManager.GetComponentsInChildren<Word>();
+        _wordComponents = Singleton.Instance.WordManager.GetComponentsInChildren<Word>();
 
         _words = _wordComponents
             .Select(wc => wc.Name)
@@ -248,7 +248,7 @@ public class WordSetValidator
 
         _charToLetter = new Dictionary<char, List<Letter>>();
 
-        partitioner.LetterController.AllLetters.ForEach(l =>
+        Singleton.Instance.LetterController.AllLetters.ForEach(l =>
         {
             if (!_charToLetter.ContainsKey(l.Char))
                 _charToLetter.Add(l.Char, new List<Letter>());

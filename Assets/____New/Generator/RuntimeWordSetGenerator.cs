@@ -1,6 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using FMachine;
 using FollowMachineDll.Attributes;
+using MgsCommonLib.Animation;
+using UnityEditor;
 using UnityEngine;
 
 public class RuntimeWordSetGenerator : MonoBehaviour
@@ -12,10 +16,11 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
     [Header("Components")]
     public WordSetGenerator Generator;
-    public Partitioner Partitioner;
 
     private int _targetFrameRate;
     private int _vSyncCount;
+    private NewPartitioner _partitioner;
+    private Shuffler _shuffler;
 
     public void Finish()
     {
@@ -30,7 +35,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
     public void Initialize()
     {
-        
+
         GameController.Instance.ClearWords();
 
         // Disable letter selection
@@ -46,16 +51,14 @@ public class RuntimeWordSetGenerator : MonoBehaviour
 
     }
 
-    [FollowMachine("Generate words","Success,Fail")]
+    [FollowMachine("Generate words", "Success,Fail")]
     public IEnumerator Generate()
     {
-       FollowMachine.SetOutput("Fail");
-
         // Setup generator
         Generator.AllWords = WordsWindow.WordsText.text.Replace(' ', '\n');
         Generator.Clue = ClueWindow.ClueInputField.text;
         Generator.Initialize();
-        Generator.UsedWordCount = (int) WordCountWindow.WordCountSlider.maxValue;
+        Generator.UsedWordCount = (int)WordCountWindow.WordCountSlider.maxValue;
         Generator.MaxResults = 100;
 
         // Generate Word set
@@ -68,33 +71,31 @@ public class RuntimeWordSetGenerator : MonoBehaviour
             yield break;
         }
 
-        // Setup partitioner
-        Partitioner.MaxSize = 4;
-        Partitioner.MinSize = 1;
-        Partitioner.MaxTry = 200;
-        Partitioner.Validate = false;
-
         // Spawn words
         var bestWordSet = Generator.GetBestWordSet();
-        
-        GameController.Instance.SpawnWordSet(bestWordSet);
 
+        Singleton.Instance.WordSpawner.SpawnPartByPart = false;
+        GameController.Instance.SpawnWordSet(bestWordSet);
+        Singleton.Instance.WordSpawner.SpawnPartByPart = true;
 
         // Run partitioner
-        yield return Partitioner.PortionLetters();
+        if (_partitioner == null)
+            _partitioner = new NewPartitioner();
+        yield return _partitioner.Portion();
 
-        
-        // if partition successfully break
-        if (Partitioner.PartitionSuccessfully)
-            FollowMachine.SetOutput("Success");
+        FollowMachine.SetOutput("Success");
     }
 
-    [FollowMachine("Generate words", "Success,Fail")]
-    public IEnumerator Generate(string clue, string words, float count)
+    public IEnumerator Suffle()
     {
-        return null;
+        if (_shuffler == null)
+            _shuffler = new Shuffler();
+
+
+        yield return _shuffler.ShuffleRuntime(this);
     }
 
+ 
     [FollowMachine("Save puzzle")]
     public void Save()
     {

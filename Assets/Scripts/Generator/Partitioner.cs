@@ -7,11 +7,10 @@ using MgsCommonLib.Utilities;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Partitioner : BaseObject
+public class PartitionerOld : BaseObject
 {
     public int MinSize = 2;
     public int MaxSize = 3;
-    public int ErrorCount = 1;
     public List<List<Letter>> Paritions;
     public Color ParitionColor;
     public Action<UnityEngine.Object, string> Undo;
@@ -27,7 +26,7 @@ public class Partitioner : BaseObject
     public bool PartitionSuccessfully;
     public int MaxTry;
 
-    #region Partitionerer
+    #region Partitioner
 
     public IEnumerator PortionLetters()
     {
@@ -44,7 +43,7 @@ public class Partitioner : BaseObject
             _validator = new WordSetValidator();
 
 
-        _validator.Initialize(this);
+        _validator.Initialize();
 
 
         for (TryCount = 0; TryCount < MaxTry; TryCount++)
@@ -56,7 +55,8 @@ public class Partitioner : BaseObject
             if (TryPartition())
             {
                 // SetupBridges for all letters
-                Paritions.SelectMany(p => p)
+                Paritions
+                    .SelectMany(p => p)
                     .ToList()
                     .ForEach(l => l.SetupBridges());
 
@@ -88,6 +88,7 @@ public class Partitioner : BaseObject
         // Clear partitions
         if (Paritions == null)
             Paritions = new List<List<Letter>>();
+
         Paritions.Clear();
 
         // Add first partition with all letters
@@ -218,6 +219,21 @@ public class Partitioner : BaseObject
     public IEnumerator Shuffle()
     {
         _compressCount = 1;
+
+        if(Paritions==null)
+            Paritions=new List<List<Letter>>();
+        Paritions.Clear();
+
+        var allLetters = 
+            new List<Letter>(Singleton.Instance.LetterController.AllLetters);
+
+        while (allLetters.Count>0)
+        {
+            var letters = new List<Letter>();
+            allLetters[0].GetConnectedLetters(letters);
+            Paritions.Add(letters);
+            letters.ForEach(l=>allLetters.Remove(l));
+        }
 
         #region Shuffle partions
 
@@ -414,63 +430,4 @@ public class Partitioner : BaseObject
 
 }
 
-public class LetterBound
-{
-    public int X, Y, Width, Height;
-
-    public int TargetY;
-    public int TargetX;
-    public Vector3 Min;
-    private Vector3 _lastDelta = Vector3.zero;
-
-    private List<Letter> _letters;
-
-    public LetterBound(List<Letter> letters)
-    {
-        _letters = letters;
-        X = Mathf.RoundToInt(letters.Min(l => l.transform.position.x)) - 1;
-        Y = Mathf.RoundToInt(letters.Min(l => l.transform.position.y)) - 1;
-
-        Width = Mathf.RoundToInt(letters.Max(l => l.transform.position.x)) - X + 1;
-        Height = Mathf.RoundToInt(letters.Max(l => l.transform.position.y)) - Y + 1;
-
-        Min = new Vector3(X, Y, 0);
-    }
-
-
-    public void SetTarget(int x, int y)
-    {
-        TargetX = x;
-        TargetY = y;
-    }
-
-    public void MoveTowardTarget(float value)
-    {
-        Vector3 delta = Vector3.Lerp(Min, new Vector3(TargetX, TargetY), value) - Min;
-
-        _letters.ForEach(l => l.transform.position += delta - _lastDelta);
-
-        _lastDelta = delta;
-    }
-
-    public Bounds GetBounds()
-    {
-        var delta = new Vector3(TargetX, TargetY) - Min;
-
-        var bounds = new Bounds(_letters[0].transform.position+delta, Vector3.zero);
-
-        for (int i = 1; i < _letters.Count; i++)
-            bounds.Encapsulate(_letters[i].transform.position + delta);
-
-        return bounds;
-    }
-
-    public void AddBounds(ref Bounds bounds)
-    {
-        var delta = new Vector3(TargetX, TargetY) - Min;
-
-        foreach (Letter letter in _letters)
-            bounds.Encapsulate(letter.transform.position + delta);
-    }
-}
 

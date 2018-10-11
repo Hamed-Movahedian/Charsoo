@@ -50,7 +50,7 @@ namespace Soomla.Store.Charsoo
                 if(ZPlayerPrefs.GetInt("Coin")!=balance)
                 {
                     ZPlayerPrefs.SetInt("Coin", balance);
-                    Singleton.Instance.PurchaseManager.CurrencyChanged();
+                    Singleton.Instance.PurchaseManager.HcurrencyChanged();
                 }
             }
         }

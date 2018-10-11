@@ -11,7 +11,7 @@ public class LetterController : BaseObject
 
     public float Acceleration = 5;
 
-    public List<Letter> AllLetters { get; set; }
+    public List<Letter> AllLetters { get; set; }=new List<Letter>();
     public List<Letter> SelectedLetters { get; set; } = new List<Letter>();
     public List<Letter> LastSelectedLetters { get; set; } = new List<Letter>();
 
@@ -31,29 +31,39 @@ public class LetterController : BaseObject
 
     private void Start()
     {
-        AllLetters = FindObjectsOfType<Letter>().ToList();
+        EditorInitialize();
         BulidDeltaList();
         ConnectAdjacentLetters();
     }
 
+    public void EditorInitialize()
+    {
+        AllLetters = FindObjectsOfType<Letter>().ToList();
+    }
+
     public void ConnectAdjacentLetters()
     {
-        foreach (Letter letter in AllLetters)
+        ConnectAdjacentLetters(AllLetters);
+    }
+
+    public void ConnectAdjacentLetters(List<Letter> letters)
+    {
+        foreach (Letter letter in letters)
         {
             letter.Snap();
             letter.ConnectedLetters.Clear();
         }
 
-        for (int i = 0; i < AllLetters.Count; i++)
-            for (int j = i + 1; j < AllLetters.Count; j++)
-                if (Math.Abs((AllLetters[i].transform.position - AllLetters[j].transform.position).magnitude -
+        for (int i = 0; i < letters.Count; i++)
+            for (int j = i + 1; j < letters.Count; j++)
+                if (Math.Abs((letters[i].transform.position - letters[j].transform.position).magnitude -
                              1) < 0.1f)
                 {
-                    AllLetters[i].ConnectedLetters.Add(AllLetters[j]);
-                    AllLetters[j].ConnectedLetters.Add(AllLetters[i]);
+                    letters[i].ConnectedLetters.Add(letters[j]);
+                    letters[j].ConnectedLetters.Add(letters[i]);
                 }
 
-        foreach (Letter letter in AllLetters)
+        foreach (Letter letter in letters)
             letter.SetupBridges();
     }
 
@@ -215,7 +225,7 @@ public class LetterController : BaseObject
                 if (!Application.isPlaying)
                     DestroyImmediate(letter.gameObject);
                 else
-                    Destroy(letter.gameObject);
+                    PoolManager.Instance.Return(letter);
 
             }
             AllLetters.Remove(letter);

@@ -27,7 +27,6 @@ public class UICategoryMenuItem : UIMenuItem
         //_avalable = IsCategoryAvalable(category);
 
         Name.text = PersianFixer.Fix(_category.Name);
-
         NewIconGameObject.SetActive(!_category.Visit);
 
 
@@ -40,19 +39,17 @@ public class UICategoryMenuItem : UIMenuItem
             GetComponent<RectTransform>().localScale = Vector3.one;
             return;
         }
+
         SubCategoryGameObject.SetActive(false);
 
         var puzzles = LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == _category.ID).ToList();
 
-        var solveCount = puzzles.Count(IsPuzzleSolved);
+        var solveCount = puzzles.Count(p => p.Solved);
 
         BuyGameObject.SetActive(!IsCategoryAvalable());
 
-        CheckMarckGameObject.SetActive(solveCount == puzzles.Count);
-        CounterText.gameObject.SetActive(solveCount != puzzles.Count);
-
-        CounterText.text =
-            $"{PersianFixer.Fix(solveCount.ToString(), true, true)}/{PersianFixer.Fix(puzzles.Count.ToString(), true, true)}";
+        CheckMarckGameObject.SetActive(_category.Completed);
+        CounterText.gameObject.SetActive(!_category.Completed);
 
         if (!IsCategoryAvalable())
             CounterText.text = string.Format(PersianFixer.Fix("300", true, true));
@@ -66,36 +63,21 @@ public class UICategoryMenuItem : UIMenuItem
 
     private bool IsCategoryAvalable()
     {
-        bool preIsSolved = true;
-
-        if (_category.PrerequisiteID!=null)
+        if (_category.PrerequisiteID != null)
         {
-
             Category preCat = LocalDBController.Table<Category>().FirstOrDefault(c => c.ID == _category.PrerequisiteID);
 
             if (preCat != null)
-                foreach (Puzzle p in LocalDBController.Table<Puzzle>().Where(p => p.CategoryID == preCat.ID))
-                    preIsSolved = IsPuzzleSolved(p);
+            {
+                if (preCat.Completed)
+                    return true;
+
+                return _category.IsPurchased;
+            }
         }
 
-
-        if (_category.Price <= 0 && preIsSolved)
-            return true;
-
-        if (
-            LocalDBController.Table<Purchases>()
-            .FirstOrDefault(p => p.PurchaseID == "C-" + _category.ID) != null
-            )
-            return true;
-
-        return false;
+        return _category.IsPurchased || _category.Price == 0;
     }
-
-    private static bool IsPuzzleSolved(Puzzle p)
-    {
-        return LocalDBController.Table<PlayPuzzles>().FirstOrDefault(pp => pp.PuzzleID == p.ID && pp.Success) != null;
-    }
-
     public override void Select()
     {
         if (IsCategoryAvalable())

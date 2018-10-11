@@ -5,6 +5,7 @@ using FMachine;
 using FollowMachineDll.Attributes;
 using MgsCommonLib.UI;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class PlayerController : BaseObject
@@ -93,7 +94,7 @@ public class PlayerController : BaseObject
     {
         SetPlayerInfo(playerInfo);
         SaveToLocalDB();
-    } 
+    }
     #endregion
 
     #region Playerinfo records
@@ -156,7 +157,7 @@ public class PlayerController : BaseObject
             .Connection
             .DeleteAll<Purchases>();
 
-
+        ZPlayerPrefs.DeleteAll();
 
         LocalDBController
             .InsertOrReplace(new PlayerInfo
@@ -177,6 +178,7 @@ public class PlayerController : BaseObject
     #endregion    [FollowMachine("Check Player Info ?", "No Player Info,No Player ID,Has Player ID")]
 
     #region CheckPlayerInfo
+    [FollowMachine("Check Player Info", "No Player Info,No Player ID,Not Sync,Has Player ID")]
     public void CheckPlayerInfo()
     {
         _playerInfo =
@@ -188,12 +190,36 @@ public class PlayerController : BaseObject
             FollowMachine.SetOutput("No Player Info");
         else if (_playerInfo.PlayerID == null)
             FollowMachine.SetOutput("No Player ID");
-        else
+        else if (!_playerInfo.Dirty)
             FollowMachine.SetOutput("Has Player ID");
-
+        else if (_playerInfo.Dirty)
+            FollowMachine.SetOutput("Not Sync");
     }
 
     #endregion
 
+    public IEnumerator SyncPlayerInfo()
+    {
+        if (_playerInfo.PlayerID == null)
+            yield return RegisterPlayerToServer();
+        else
+            yield return ServerController.Post<string>(
+                $@"PlayerInfo/Update?id={GetPlayerID}",
+                _playerInfo,
+                // On Successfully connect to the account
+                respnse =>
+                {
+                    if (respnse == "Success") _playerInfo.Dirty = false;
+                });
 
+        LocalDBController.DeleteAll<PlayerInfo>();
+        LocalDBController.InsertOrReplace(_playerInfo);
+    }
+
+
+    public IEnumerator ChangeCoinCount(int currentCoin)
+    {
+        _playerInfo.CoinCount = currentCoin;
+        yield return SyncPlayerInfo();
+    }
 }

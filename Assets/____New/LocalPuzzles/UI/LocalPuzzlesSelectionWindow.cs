@@ -29,10 +29,10 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
 
     public void SetForSpawn()
     {
-        SetForSpawn(SelectedPuzzle,!SelectedPuzzle.Solved);
+        SetForSpawn(SelectedPuzzle);
     }
 
-    public void SetForSpawn(Puzzle selectedPuzzle, bool hasReward=false)
+    public void SetForSpawn(Puzzle selectedPuzzle)
     {
         PlayingPuzzle = selectedPuzzle;
         //Puzzle selectedPuzzle
@@ -41,7 +41,7 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
         Singleton.Instance.WordSpawner.WordSet = wordSet;
         Singleton.Instance.WordSpawner.Clue = selectedPuzzle.Clue;
         Singleton.Instance.WordSpawner.PuzzleRow = (selectedPuzzle.Row+1).ToString();
-        Singleton.Instance.WordSpawner.PuzzleReward = hasReward;
+        Singleton.Instance.WordSpawner.PuzzleReward = !selectedPuzzle.Solved;
         Singleton.Instance.WordSpawner.PuzzleID = selectedPuzzle.ID;
 
         Singleton.Instance.WordSpawner.EditorInstatiate = null;
@@ -63,21 +63,13 @@ public class LocalPuzzlesSelectionWindow : UIMenuItemList
 
     public void UnlockCategoryPuzzles()
     {
-
-        foreach (Puzzle puzzle in LocalDBController.Table<Puzzle>().SqlWhere(p => p.CategoryID == PlayingCategory.ID))
+        Purchases purchase = new Purchases
         {
-            puzzle.Paid = true;
-            LocalDBController.InsertOrReplace(puzzle);
-            Purchases purchase = new Purchases
-            {
-                LastUpdate = DateTime.Now,
-                PlayerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID,
-                PurchaseID = "C-P-" + PlayingCategory.ID
-            };
-            LocalDBController.InsertOrReplace(purchase);
-        }
+            LastUpdate = DateTime.Now,
+            PlayerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID,
+            PurchaseID = "C-P-" + PlayingCategory.ID
+        };
+
+        LocalDBController.InsertOrReplace(purchase);
     }
-
-
-
 }

@@ -15,7 +15,6 @@ public class BaseObject : MonoBehaviour
         }
     }
     public HUD HUD { get { return S.HUD; } }
-    public ContentManager ContentManager { get { return S.ContentManager; } }
     public PurchaseManager PurchaseManager { get { return S.PurchaseManager; } }
     public LetterController LetterController { get { return S.LetterController; } }
     public SoundManager SoundManager { get { return S.SoundManager; } }

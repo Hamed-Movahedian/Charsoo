@@ -12,7 +12,7 @@ public class GeneratorWindow : EditorWindow
 
     #region Window
 
-    [MenuItem("Window/Generator")]
+    [MenuItem("Word Game/Generator")]
     public static void ShowWindow()
     {
         GetWindow(typeof(GeneratorWindow));
@@ -99,8 +99,6 @@ public class GeneratorWindow : EditorWindow
                 Clue = wordSet.Clue,
                 Row = _category.transform.childCount,
                 Content = StringCompressor.CompressString(JsonUtility.ToJson(wordSet)),
-                Solved = false,
-                Paid = false,
                 LastUpdate = DateTime.Now
             };
 
