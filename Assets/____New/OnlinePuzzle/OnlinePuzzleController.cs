@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using FMachine;
 using FollowMachineDll.Attributes;
+using MgsCommonLib;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-public class OnlinePuzzleController : MonoBehaviour
+public class OnlinePuzzleController : MgsSingleton<OnlinePuzzleController>
 {
+    public JObject ServerRespond { get; set; }
+
     [FollowMachine("Prepare online puzzle for spawn","Success,Fail")]
     public IEnumerator SetForSpawn(int ID)
     {
@@ -39,6 +43,7 @@ public class OnlinePuzzleController : MonoBehaviour
     }
 
 
+
     [FollowMachine("Prepare online puzzle for spawn", "Success,Fail")]
     public IEnumerator SetForSpawn(string ID)
     {
@@ -46,5 +51,29 @@ public class OnlinePuzzleController : MonoBehaviour
     }
 
 
+    [FollowMachine("Get invited user puzzle from server", "Success,Network Error,Fail")]
+    public IEnumerator GetUserPuzzle(string puzzleID, string senderID)
+    {
+        ServerRespond=null;
+
+        yield return ServerController
+            .Post<string>($@"UserPuzzles/GetInviteData?puzzleID={puzzleID}&senderID={senderID}",
+                null,
+                r =>
+                {
+                    ServerRespond =JObject.Parse(r);
+                    FollowMachine.SetOutput("Success");
+                },
+                request =>
+                {
+                    if(request.isNetworkError)
+                        FollowMachine.SetOutput("Network Error");
+                    else
+                        FollowMachine.SetOutput("Fail");
+                }
+                );
+
+        
+    }
 
 }
