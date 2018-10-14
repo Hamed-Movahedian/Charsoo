@@ -52,20 +52,16 @@ public class BounderWindow : EditorWindow
 
     #region Privates
 
-    private List<string> _boundText = new List<string>();
-    private List<Type> _boundTypes = new List<Type>();
+    private GameObject _targetGO;
+
+    private Type _baseType = null;
+
+    private List<RTMemberInfo> _boundMembers = new List<RTMemberInfo>();
 
     private List<MemberInfo> _memberInfos = new List<MemberInfo>();
-
-    private GameObject _targetGO;
-    private Dictionary<string, Type> _typeDic = new Dictionary<string, Type>();
-    private Vector2 _scrollPos;
     private string _search;
 
-    private readonly List<Type> _supportedTypes = new List<Type>
-    {
-        typeof(Int32),typeof(Boolean),typeof(string),typeof(Single)
-    };
+    private Vector2 _scrollPos;
 
     #endregion
 
@@ -90,147 +86,27 @@ public class BounderWindow : EditorWindow
     {
         _search = "";
 
-        if (_boundTypes.Count == 0)
+        if (_baseType == null)
         {
             _memberInfos.Clear();
             return;
         }
 
-        var finalType = _boundTypes[_boundTypes.Count - 1];
+        var type = _baseType;
 
-        _memberInfos = finalType
+        if (_boundMembers.Count > 0)
+            type = _boundMembers[_boundMembers.Count - 1].MemberType;
+
+        _memberInfos = type
             .GetMembers(BindingFlags.Public | BindingFlags.Instance)
-            .Where(m => IsValidMember(m))
+            .Where(m => BounderUtilitys.IsValidMember(m))
             .OrderBy(m => m.Name)
-            .OrderBy(m => GetTypeDistance(finalType, m.DeclaringType))
+            .OrderBy(m => type.GetTypeDistance(m.DeclaringType))
             .ToList();
     }
     #endregion
 
-    #region Utils
-    private int GetTypeDistance(Type finalType, Type type)
-    {
-        int i = 0;
-        while (type != finalType)
-        {
-            finalType = finalType.BaseType;
-            i++;
-        }
-
-        return i;
-    }
-    private Type GetMemberType(MemberInfo memberInfo)
-    {
-        switch (memberInfo.MemberType)
-        {
-            case MemberTypes.Field:
-                return ((FieldInfo)memberInfo).FieldType;
-            case MemberTypes.Method:
-                return ((MethodInfo)memberInfo).ReturnType;
-            case MemberTypes.Property:
-                return ((PropertyInfo)memberInfo).PropertyType;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-    }
-
-    private MemberInfo GetMember(Type type, string s)
-    {
-        if (s.Contains("("))
-            s = s.Split('(')[0];
-
-        var memberInfos = type.GetMember(s);
-
-        if (memberInfos.Length == 0)
-            throw new Exception($"Member name {s} not found !!!");
-
-        if (memberInfos.Length > 1)
-            throw new Exception($"Member name {s} more than one found !!!");
-
-        return memberInfos[0];
-    }
-
-    #endregion
-
-    #region IsValidMember
-    private bool IsValidMember(MemberInfo m)
-    {
-        if (m.MemberType != MemberTypes.Field &&
-            m.MemberType != MemberTypes.Property &&
-            m.MemberType != MemberTypes.Method)
-            return false;
-
-
-        if (m.MemberType == MemberTypes.Method)
-        {
-            var methodInfo = m as MethodInfo;
-
-            if (
-                methodInfo.IsGenericMethod |
-                methodInfo.IsConstructor |
-                (methodInfo.Name.Contains('_') && methodInfo.Name != "get_Item") |
-                (methodInfo.ReturnType == typeof(void) || methodInfo.ReturnType == typeof(IEnumerator))
-                )
-                return false;
-
-            foreach (var parameterInfo in methodInfo.GetParameters())
-            {
-                if (!_supportedTypes.Contains(parameterInfo.ParameterType))
-                    return false;
-            }
-        }
-
-        return true;
-    }
-
-    #endregion
-
-    #region Frindly Names
-    private string GetTypeFrindlyName(Type type)
-    {
-        return $"{type.Name,-35} ({type.FullName})";
-    }
-    #endregion
-
-    #region Reset
-    private void Reset()
-    {
-        _boundText.Clear();
-        _memberInfos.Clear();
-    }
-    #endregion
-
-    #region AddLevel
-    private void AddLevel(int i)
-    {
-
-        string text;
-
-        if (_memberInfos[i].MemberType == MemberTypes.Method)
-            text = _memberInfos[i].Name + "()";
-        else
-            text = _memberInfos[i].Name;
-
-        _boundText.Add(text);
-        _boundTypes.Add(GetMemberType(_memberInfos[i]));
-
-        UpdateList();
-    }
-
-    #endregion
-
-    #region Back
-    private void Back()
-    {
-        _boundText.RemoveAt(_boundText.Count - 1);
-        _boundTypes.RemoveAt(_boundTypes.Count-1);
-        UpdateList();
-    }
-
-    #endregion
-
     // ********************* GUI
-
     #region OnGUI
     void OnGUI()
     {
@@ -239,13 +115,13 @@ public class BounderWindow : EditorWindow
         #region TargetGameObject
 
         // ********************   TargetGameObject
-        var gameObject = (GameObject) EditorGUILayout.ObjectField("Game Object", _targetGO, typeof(GameObject), true);
+        var gameObject = (GameObject)EditorGUILayout.ObjectField("Game Object", _targetGO, typeof(GameObject), true);
 
         if (_targetGO != gameObject)
         {
             _targetGO = gameObject;
-            _boundTypes.Clear();
-            _boundText.Clear();
+            _baseType = null;
+            _boundMembers.Clear();
             UpdateList();
         }
 
@@ -257,36 +133,23 @@ public class BounderWindow : EditorWindow
         #region Component
 
         // target game object components + GameObject
-        var types = _targetGO.GetComponents<Component>()
-            .Select(c => c.GetType())
-            .ToList();
-
-        types.Insert(0, typeof(GameObject));
+        List<Type> types = BounderUtilitys.GetGameObjectComponentTypes(_targetGO);
 
         // Select _boundTypes first item
         int index = 0;
 
-        if (_boundTypes.Count == 0)
-        {
-            _boundTypes.Add(null);
-        }
-        
-        index = types.IndexOf(_boundTypes[0]);
+
+        index = types.IndexOf(_baseType);
 
         if (index == -1)
             index = types.Count - 1;
 
         index = EditorGUILayout.Popup(new GUIContent("Component"), index, types.Select(t => t.Name).ToArray());
 
-        if (types[index] != _boundTypes[0])
+        if (types[index] != _baseType)
         {
-            _boundTypes.Clear();
-            _boundTypes.Add(types[index]);
-
-            _boundText.Clear();
-            _boundText.Add(types[index].Name);
-
-
+            _baseType = types[index];
+            _boundMembers.Clear();
             UpdateList();
         }
 
@@ -298,15 +161,33 @@ public class BounderWindow : EditorWindow
 
         GUILayout.BeginHorizontal();
 
-        GUILayout.Label(_boundText.Aggregate((a, b) => a + "." + b), BindStringStyle);
+        var text = _baseType.Name;
 
-        if (_boundText.Count > 1)
-            if (GUILayout.Button(" ◄ ", GUILayout.ExpandWidth(false), GUILayout.ExpandHeight(true)))
-                Back();
+        _boundMembers.ForEach(bm => text += "." + bm.Name);
+
+        GUILayout.Label(text, BindStringStyle);
+
+        GUILayout.FlexibleSpace();
+
+        if (_boundMembers.Count > 0)
+            if (GUILayout.Button(" ◄ ", GUILayout.ExpandWidth(false), GUILayout.Height(20)))
+            {
+                _boundMembers.RemoveAt(_boundMembers.Count - 1);
+                UpdateList();
+            }
 
         GUILayout.EndHorizontal();
 
-        EditorUtils.BoldSeparator();
+        BounderUtilitys.BoldSeparator();
+
+        #endregion
+
+        #region Member GUI
+
+
+        if (_boundMembers.Count > 0)
+            _boundMembers.Last().OnGUI();
+
 
         #endregion
 
@@ -327,14 +208,14 @@ public class BounderWindow : EditorWindow
         {
             GUI.SetNextControlName("SearchToolbar");
             _search = EditorGUILayout.TextField(_search, SearchTextFieldStyle);
-            if (GUILayout.Button("", (GUIStyle) "ToolbarSeachCancelButton"))
+            if (GUILayout.Button("", (GUIStyle)"ToolbarSeachCancelButton"))
             {
                 _search = string.Empty;
                 GUI.SetNextControlName("SearchToolbar");
             }
         }
         GUILayout.EndHorizontal();
-        EditorUtils.BoldSeparator();
+        BounderUtilitys.BoldSeparator();
 
         #endregion
 
@@ -351,16 +232,19 @@ public class BounderWindow : EditorWindow
                     continue;
 
             if (lastItemType != _memberInfos[i].DeclaringType && lastItemType != null)
-                EditorUtils.BoldSeparator();
+                BounderUtilitys.BoldSeparator();
 
             lastItemType = _memberInfos[i].DeclaringType;
 
-            DrawItem(i);
+            DrawMember(i);
 
             var lastRect = GUILayoutUtility.GetLastRect();
+
             if (GUI.Button(lastRect, GUIContent.none, GUIStyle.none))
             {
-                AddLevel(i);
+                _boundMembers.Add(new RTMemberInfo(_memberInfos[i]));
+
+                UpdateList();
             }
         }
 
@@ -369,10 +253,12 @@ public class BounderWindow : EditorWindow
         #endregion
     }
 
+
+
     #endregion
 
     #region DrawItem
-    private void DrawItem(int index)
+    private void DrawMember(int index)
     {
         GUILayout.BeginHorizontal(ItemStyle);
 
@@ -420,4 +306,48 @@ public class BounderWindow : EditorWindow
     }
 
     #endregion
+
+    public static void EditBound(GameObject boundObject, string boundText, Type requreType, Action<GameObject, string> OnBound)
+    {
+        BounderWindow window = EditorWindow.GetWindow<BounderWindow>();
+
+        window.EditBounds(boundObject, boundText, requreType, OnBound);
+
+        window.Show();
+    }
+
+    private void EditBounds(GameObject boundObject, string boundText, Type requreType, Action<GameObject, string> onBound)
+    {
+        _targetGO = boundObject;
+        _boundMembers = new List<RTMemberInfo>();
+
+        if (boundObject == null || boundText == "")
+        {
+            _targetGO = null;
+            _baseType = null;
+        }
+        else
+        {
+            var bTexts = boundText.Split('.').ToList();
+
+            List<Type> types = BounderUtilitys.GetGameObjectComponentTypes(_targetGO);
+
+            _baseType = types.FirstOrDefault(t => t.Name == bTexts[0]);
+
+            if (_baseType != null)
+            {
+                var type = _baseType;
+
+                for (int i = 1; i < bTexts.Count; i++)
+                {
+                    var memberInfo = new RTMemberInfo(type,bTexts[i]);
+
+                    _boundMembers.Add(memberInfo);
+
+                    type = memberInfo.GetType();
+                }
+
+            }
+        }
+    }
 }
