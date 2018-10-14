@@ -52,7 +52,7 @@ public class BounderWindow : EditorWindow
 
     #region Privates
 
-    private List<string> _sText = new List<string>();
+    private List<string> _boundText = new List<string>();
     private List<string> _menuItems = new List<string>();
     private List<MemberInfo> _memberInfos = new List<MemberInfo>();
     private List<Type> _types = new List<Type>();
@@ -66,8 +66,7 @@ public class BounderWindow : EditorWindow
         typeof(Int32),typeof(Boolean),typeof(string),typeof(Single)
     };
     #endregion
-
-
+    
     #region Window Functions
 
     [MenuItem("Test/Bounder")]
@@ -88,7 +87,7 @@ public class BounderWindow : EditorWindow
     private void UpdateList()
     {
         _search = "";
-        if (_sText.Count == 0)
+        if (_boundText.Count == 0)
         {
             if (_targetGO == null)
             {
@@ -129,6 +128,10 @@ public class BounderWindow : EditorWindow
     #endregion
 
     #region Utils
+    private bool IsDisplayingMembers()
+    {
+        return _boundText.Count != 0;
+    }
     private int GetTypeDistance(Type finalType, Type type)
     {
         int i = 0;
@@ -209,14 +212,14 @@ public class BounderWindow : EditorWindow
     #region GetFinalType
     private Type GetFinalType()
     {
-        if (_sText.Count == 0)
+        if (_boundText.Count == 0)
             return null;
 
-        var type = _typeDic[_sText[0]];
+        var type = _typeDic[_boundText[0]];
 
-        for (int i = 1; i < _sText.Count; i++)
+        for (int i = 1; i < _boundText.Count; i++)
         {
-            var memberInfo = GetMember(type, _sText[i]);
+            var memberInfo = GetMember(type, _boundText[i]);
             type = GetMemberType(memberInfo);
         }
 
@@ -224,8 +227,7 @@ public class BounderWindow : EditorWindow
     }
 
     #endregion
-
-
+    
     #region Frindly Names
     private string GetMemberFrindlyName(MemberInfo memberInfo)
     {
@@ -266,19 +268,22 @@ public class BounderWindow : EditorWindow
     }
     #endregion
 
+    #region Reset
     private void Reset()
     {
-        _sText.Clear();
+        _boundText.Clear();
         _menuItems.Clear();
         _types.Clear();
         _memberInfos.Clear();
     }
+    #endregion
 
+    #region AddLevel
     private void AddLevel(int i)
     {
-        if (_sText.Count == 0)
+        if (_boundText.Count == 0)
         {
-            _sText.Add(_types[i].Name);
+            _boundText.Add(_types[i].Name);
         }
         else
         {
@@ -289,16 +294,18 @@ public class BounderWindow : EditorWindow
             else
                 text = _memberInfos[i].Name;
 
-            _sText.Add(text);
+            _boundText.Add(text);
         }
 
         UpdateList();
     }
 
+    #endregion
+
     #region Back
     private void Back()
     {
-        _sText.RemoveAt(_sText.Count - 1);
+        _boundText.RemoveAt(_boundText.Count - 1);
 
         UpdateList();
     }
@@ -308,7 +315,10 @@ public class BounderWindow : EditorWindow
     #region GUI
     void OnGUI()
     {
-        // ********************   Get TargetGameObject
+        GUILayout.Space(5);
+
+        #region TargetGameObject
+        // ********************   TargetGameObject
         var gameObject = (GameObject)EditorGUILayout.ObjectField("Game Object", _targetGO, typeof(GameObject), true);
 
         if (_targetGO != gameObject)
@@ -321,58 +331,64 @@ public class BounderWindow : EditorWindow
         if (_targetGO == null)
             return;
 
+        #endregion
 
+        #region Serialize text and back
         // ********************    Serialize text and back
-        if (_sText.Count > 0)
+        if (_boundText.Count > 0)
         {
             GUILayout.BeginHorizontal();
 
-            GUILayout.Label(_sText.Aggregate((a, b) => a + "." + b), BindStringStyle);
+            GUILayout.Label(_boundText.Aggregate((a, b) => a + "." + b), BindStringStyle);
 
-            GUILayout.FlexibleSpace();
-            if (GUILayout.Button("◄"))
+            //GUILayout.FlexibleSpace();
+            if (GUILayout.Button(" ◄ ", GUILayout.ExpandHeight(true)))
                 Back();
 
             GUILayout.EndHorizontal();
         }
 
         EditorUtils.BoldSeparator();
-
-
+        #endregion
+        
+        #region SEARCH
         // *******************   SEARCH
-        if (Event.current.keyCode == KeyCode.DownArrow) { GUIUtility.keyboardControl = 0; }
-        if (Event.current.keyCode == KeyCode.UpArrow) { GUIUtility.keyboardControl = 0; }
-        // GUILayout.Space(2);
+        if (Event.current.keyCode == KeyCode.DownArrow) { GUI.SetNextControlName("SearchToolbar"); }
+        if (Event.current.keyCode == KeyCode.UpArrow) { GUI.SetNextControlName("SearchToolbar"); }
         GUILayout.BeginHorizontal();
-        GUI.SetNextControlName("SearchToolbar");
-        _search = EditorGUILayout.TextField(_search, SearchTextFieldStyle);
-        if (GUILayout.Button("", (GUIStyle)"ToolbarSeachCancelButton"))
         {
-            _search = string.Empty;
-            GUIUtility.keyboardControl = 0;
+            GUI.SetNextControlName("SearchToolbar");
+            _search = EditorGUILayout.TextField(_search, SearchTextFieldStyle);
+            if (GUILayout.Button("", (GUIStyle)"ToolbarSeachCancelButton"))
+            {
+                _search = string.Empty;
+                GUI.SetNextControlName("SearchToolbar");
+            }
         }
         GUILayout.EndHorizontal();
+        EditorUtils.BoldSeparator();
+        #endregion
+        
+        #region Item List
+        // ********************** Item List
+        Type lastItemType = null;
 
         _scrollPos = GUILayout.BeginScrollView(_scrollPos);
-
-        Type lastItemType = null;
         for (int i = 0; i < _menuItems.Count; i++)
         {
             if (_search != "")
                 if (!_menuItems[i].StartsWith(_search, StringComparison.CurrentCultureIgnoreCase))
                     continue;
 
-            if (_sText.Count != 0)
+            if (IsDisplayingMembers())
             {
-                if (lastItemType != _memberInfos[i].DeclaringType)
+                if (lastItemType != _memberInfos[i].DeclaringType && lastItemType != null)
                     EditorUtils.BoldSeparator();
 
                 lastItemType = _memberInfos[i].DeclaringType;
             }
 
-            GUILayout.BeginHorizontal(ItemStyle);
             DrawItem(i);
-            GUILayout.EndHorizontal();
 
             var lastRect = GUILayoutUtility.GetLastRect();
 
@@ -383,16 +399,17 @@ public class BounderWindow : EditorWindow
 
 
         }
-        GUILayout.EndScrollView();
+        GUILayout.EndScrollView(); 
+        #endregion
     }
-
-
     #endregion
 
     #region DrawItem
     private void DrawItem(int index)
     {
-        if (_sText.Count == 0)
+        GUILayout.BeginHorizontal(ItemStyle);
+        
+        if (_boundText.Count == 0)
         {
             GUILayout.Label(_types[index].Name, ItemLableStyle, GUILayout.Width(200));
             GUILayout.Label($"({_types[index].FullName})", ItemLableStyle);
@@ -443,6 +460,7 @@ public class BounderWindow : EditorWindow
             GUILayout.Label(_memberInfos[index].DeclaringType.Name, ItemLableStyle, GUILayout.Width(200));
             GUILayout.Label(lable2, ItemLableStyle);
         }
+        GUILayout.EndHorizontal();
     }
 
     #endregion
