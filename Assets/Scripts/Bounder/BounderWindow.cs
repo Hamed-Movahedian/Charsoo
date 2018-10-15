@@ -52,59 +52,16 @@ public class BounderWindow : EditorWindow
 
     #region Privates
 
-    private GameObject _targetGO;
+    private BoundData _boundData = null;
 
-    private Type _baseType = null;
-
-    private List<RTMemberInfo> _boundMembers = new List<RTMemberInfo>();
-
-    private List<MemberInfo> _memberInfos = new List<MemberInfo>();
-    private string _search;
+    private string _search = "";
 
     private Vector2 _scrollPos;
+    private Type _requreType;
+    private Action<GameObject, string> _onBound;
 
     #endregion
 
-    #region Window Functions
-
-    [MenuItem("Test/Bounder")]
-    static void Init()
-    {
-        EditorWindow window = EditorWindow.GetWindow<BounderWindow>();
-        window.Show();
-    }
-
-    private void OnEnable()
-    {
-        //Reset();
-        UpdateList();
-    }
-    #endregion
-
-    #region UpdateList
-    private void UpdateList()
-    {
-        _search = "";
-
-        if (_baseType == null)
-        {
-            _memberInfos.Clear();
-            return;
-        }
-
-        var type = _baseType;
-
-        if (_boundMembers.Count > 0)
-            type = _boundMembers[_boundMembers.Count - 1].MemberType;
-
-        _memberInfos = type
-            .GetMembers(BindingFlags.Public | BindingFlags.Instance)
-            .Where(m => BounderUtilitys.IsValidMember(m))
-            .OrderBy(m => m.Name)
-            .OrderBy(m => type.GetTypeDistance(m.DeclaringType))
-            .ToList();
-    }
-    #endregion
 
     // ********************* GUI
     #region OnGUI
@@ -115,17 +72,10 @@ public class BounderWindow : EditorWindow
         #region TargetGameObject
 
         // ********************   TargetGameObject
-        var gameObject = (GameObject)EditorGUILayout.ObjectField("Game Object", _targetGO, typeof(GameObject), true);
+        _boundData.GameObject =
+            (GameObject)EditorGUILayout.ObjectField("Game Object", _boundData.GameObject, typeof(GameObject), true);
 
-        if (_targetGO != gameObject)
-        {
-            _targetGO = gameObject;
-            _baseType = null;
-            _boundMembers.Clear();
-            UpdateList();
-        }
-
-        if (_targetGO == null)
+        if (_boundData.GameObject == null)
             return;
 
         #endregion
@@ -133,25 +83,17 @@ public class BounderWindow : EditorWindow
         #region Component
 
         // target game object components + GameObject
-        List<Type> types = BounderUtilitys.GetGameObjectComponentTypes(_targetGO);
+        List<Type> types = _boundData.GetCandidateBaseTypes();
 
         // Select _boundTypes first item
-        int index = 0;
-
-
-        index = types.IndexOf(_baseType);
+        int index = types.IndexOf(_boundData.BaseType);
 
         if (index == -1)
             index = types.Count - 1;
 
         index = EditorGUILayout.Popup(new GUIContent("Component"), index, types.Select(t => t.Name).ToArray());
 
-        if (types[index] != _baseType)
-        {
-            _baseType = types[index];
-            _boundMembers.Clear();
-            UpdateList();
-        }
+        _boundData.BaseType = types[index];
 
         #endregion
 
@@ -161,20 +103,19 @@ public class BounderWindow : EditorWindow
 
         GUILayout.BeginHorizontal();
 
-        var text = _baseType.Name;
-
-        _boundMembers.ForEach(bm => text += "." + bm.Name);
-
-        GUILayout.Label(text, BindStringStyle);
+        GUILayout.Label(_boundData.BoundText, BindStringStyle);
 
         GUILayout.FlexibleSpace();
 
-        if (_boundMembers.Count > 0)
+        if (_boundData.HasMember)
             if (GUILayout.Button(" ◄ ", GUILayout.ExpandWidth(false), GUILayout.Height(20)))
-            {
-                _boundMembers.RemoveAt(_boundMembers.Count - 1);
-                UpdateList();
-            }
+                _boundData.RemoveLastMemeber();
+
+        if (GUILayout.Button(" Bound ", GUILayout.ExpandWidth(false), GUILayout.Height(20)))
+        {
+            _onBound?.Invoke(_boundData.GameObject, _boundData.BoundText);
+            Close();
+        }
 
         GUILayout.EndHorizontal();
 
@@ -182,14 +123,7 @@ public class BounderWindow : EditorWindow
 
         #endregion
 
-        #region Member GUI
-
-
-        if (_boundMembers.Count > 0)
-            _boundMembers.Last().OnGUI();
-
-
-        #endregion
+        _boundData.OnGUI();
 
         #region SEARCH
 
@@ -225,6 +159,7 @@ public class BounderWindow : EditorWindow
         Type lastItemType = null;
 
         _scrollPos = GUILayout.BeginScrollView(_scrollPos);
+        var _memberInfos = _boundData.NextLevelMembers;
         for (int i = 0; i < _memberInfos.Count; i++)
         {
             if (_search != "")
@@ -236,16 +171,12 @@ public class BounderWindow : EditorWindow
 
             lastItemType = _memberInfos[i].DeclaringType;
 
-            DrawMember(i);
+            DrawMember(_memberInfos[i]);
 
             var lastRect = GUILayoutUtility.GetLastRect();
 
             if (GUI.Button(lastRect, GUIContent.none, GUIStyle.none))
-            {
-                _boundMembers.Add(new RTMemberInfo(_memberInfos[i]));
-
-                UpdateList();
-            }
+                _boundData.Add(_memberInfos[i]);
         }
 
         GUILayout.EndScrollView();
@@ -258,28 +189,28 @@ public class BounderWindow : EditorWindow
     #endregion
 
     #region DrawItem
-    private void DrawMember(int index)
+    private void DrawMember(MemberInfo memberInfo)
     {
         GUILayout.BeginHorizontal(ItemStyle);
 
         var memberType = "";
 
-        switch (_memberInfos[index].MemberType)
+        switch (memberInfo.MemberType)
         {
             case MemberTypes.Field:
-                var fieldInfo = (FieldInfo)_memberInfos[index];
+                var fieldInfo = (FieldInfo)memberInfo;
 
                 memberType = $"{fieldInfo.FieldType.Name}";
                 break;
 
             case MemberTypes.Property:
-                var propertyInfo = _memberInfos[index] as PropertyInfo;
+                var propertyInfo = memberInfo as PropertyInfo;
 
                 memberType = $"{propertyInfo.PropertyType.Name}";
                 break;
 
             case MemberTypes.Method:
-                var methodInfo = _memberInfos[index] as MethodInfo;
+                var methodInfo = memberInfo as MethodInfo;
 
                 memberType = $"{methodInfo.ReturnType.Name}(";
 
@@ -299,14 +230,15 @@ public class BounderWindow : EditorWindow
                 throw new ArgumentOutOfRangeException();
         }
 
-        GUILayout.Label(_memberInfos[index].Name, ItemLableStyle, GUILayout.Width(200));
-        GUILayout.Label(_memberInfos[index].DeclaringType.Name, ItemLableStyle, GUILayout.Width(200));
+        GUILayout.Label(memberInfo.Name, ItemLableStyle, GUILayout.Width(200));
+        GUILayout.Label(memberInfo.DeclaringType.Name, ItemLableStyle, GUILayout.Width(200));
         GUILayout.Label(memberType, ItemLableStyle);
         GUILayout.EndHorizontal();
     }
 
     #endregion
 
+    #region EditBound
     public static void EditBound(GameObject boundObject, string boundText, Type requreType, Action<GameObject, string> OnBound)
     {
         BounderWindow window = EditorWindow.GetWindow<BounderWindow>();
@@ -318,36 +250,11 @@ public class BounderWindow : EditorWindow
 
     private void EditBounds(GameObject boundObject, string boundText, Type requreType, Action<GameObject, string> onBound)
     {
-        _targetGO = boundObject;
-        _boundMembers = new List<RTMemberInfo>();
-
-        if (boundObject == null || boundText == "")
-        {
-            _targetGO = null;
-            _baseType = null;
-        }
-        else
-        {
-            var bTexts = boundText.Split('.').ToList();
-
-            List<Type> types = BounderUtilitys.GetGameObjectComponentTypes(_targetGO);
-
-            _baseType = types.FirstOrDefault(t => t.Name == bTexts[0]);
-
-            if (_baseType != null)
-            {
-                var type = _baseType;
-
-                for (int i = 1; i < bTexts.Count; i++)
-                {
-                    var memberInfo = new RTMemberInfo(type,bTexts[i]);
-
-                    _boundMembers.Add(memberInfo);
-
-                    type = memberInfo.GetType();
-                }
-
-            }
-        }
+        _boundData = new BoundData(boundObject, boundText);
+        _requreType = requreType;
+        _onBound = onBound;
     }
+
+    #endregion
+
 }

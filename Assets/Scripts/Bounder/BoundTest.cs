@@ -6,9 +6,9 @@ public class BoundTest : MonoBehaviour
 {
     public GameObject BoundObject;
     public string BoundText;
+
     public string Value;
-
-
+    
     [ContextMenu("Edit")]
     public void EditBound()
     {
@@ -22,5 +22,17 @@ public class BoundTest : MonoBehaviour
                 BoundText = text;
             }
             );
+    }
+    [ContextMenu("GetValue")]
+    public void GetValue()
+    {
+        var boundData = new BoundData(BoundObject, BoundText);
+
+        object o= boundData.GetValue(typeof(string));
+
+        if(o==null)
+            return;
+
+        Value = o.ToString();
     }
 }

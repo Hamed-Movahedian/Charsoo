@@ -3,21 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 
 internal static class BounderUtilitys
 {
-    #region privates
-
-    public static Dictionary<Type,object> TypeDefaults=new Dictionary<Type, object>
-    {
-        {typeof(Int32),0 },
-        {typeof(string),"" },
-        {typeof(Single),0f },
-        {typeof(Boolean),false },
-    };
-
-    #endregion
 
     #region BoldSeparator
     public static void BoldSeparator()
@@ -48,7 +38,7 @@ internal static class BounderUtilitys
         }
     }
     #endregion
-    
+
     #region GetTypeDistance
     public static int GetTypeDistance(this Type type, Type baseType)
     {
@@ -88,7 +78,7 @@ internal static class BounderUtilitys
 
             foreach (var parameterInfo in methodInfo.GetParameters())
             {
-                if (!TypeDefaults.ContainsKey(parameterInfo.ParameterType))
+                if (!SupportedTypes.IsSupported(parameterInfo.ParameterType))
                     return false;
             }
         }
@@ -97,13 +87,5 @@ internal static class BounderUtilitys
     }
     #endregion
 
-    public static List<Type> GetGameObjectComponentTypes(GameObject gameObject)
-    {
-        var types = gameObject.GetComponents<Component>()
-            .Select(c => c.GetType())
-            .ToList();
-
-        types.Insert(0, typeof(GameObject));
-        return types;
-    }
+ 
 }
