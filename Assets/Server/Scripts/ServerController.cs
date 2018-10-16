@@ -4,36 +4,31 @@ using System.Collections.Generic;
 using System.Text;
 using MgsCommonLib;
 using Newtonsoft.Json;
+using UnityEngine;
 using UnityEngine.Networking;
 
-public class ServerController : MgsSingleton<ServerController>
+public class ServerController : ServerControllerBase
 {
     public UserPuzzlesServer UserPuzzles=new UserPuzzlesServer();
 
-    #region URL
-
-    public static string URL
+    public string URL
     {
         get
         {
-#if UNITY_EDITOR
-            //return "http://charsoogame.ir";
-            return "http://localhost:52391";
-#else
-            return "http://charsoogame.ir";
-#endif
+            if (ServerState == ServerStateEnum.Local && Application.isEditor)
+                return "http://localhost:52391";
+            else
+                return "http://charsoogame.ir";
 
         }
     }
-
-    #endregion
 
     #region PostRequst
 
     public static UnityWebRequest PostRequest(string url, object bodyData)
     {
         UnityWebRequest request = new UnityWebRequest(
-            URL+@"/api/" + url,
+            ((ServerController)Instance).URL+@"/api/" + url,
             "POST",
             new DownloadHandlerBuffer(),
             (bodyData==null) ? null : new UploadHandlerRaw(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(bodyData))));
@@ -49,7 +44,7 @@ public class ServerController : MgsSingleton<ServerController>
 
     public static UnityWebRequest GetRequest(string url)
     {
-        UnityWebRequest request = UnityWebRequest.Get(URL + @"/api/"+ url);
+        UnityWebRequest request = UnityWebRequest.Get(((ServerController)Instance).URL + @"/api/"+ url);
 
         request.SetRequestHeader("Content-Type", "application/json");
 
@@ -103,4 +98,13 @@ public class ServerController : MgsSingleton<ServerController>
     
 
     #endregion
+
+    public override IEnumerator SendRequest(string methodName, List<string> paramNames, List<object> paramObjects)
+    {
+        return null;
+
+    }
+
+
+
 }
