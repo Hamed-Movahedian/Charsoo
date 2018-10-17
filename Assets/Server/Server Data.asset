@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -335215326, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: Server Data
+  m_EditorClassIdentifier: 
+  ServerState: 0
+  LocalURL: http://localhost:52391
+  RemoteURL: http://charsoogame.ir
+  Controllers:
+  - Name: Account
+    Methods:
+    - SendSms(String phoneNumber ,String code ,Boolean forRegister)
+    - RegisterPhoneNumber(Int32 playerID ,String phoneNumber)
+    - ConnectToAccount(String phoneNumber)
+  - Name: Categories
+    Methods:
+    - GetCategories()
+    - Updates(DateTime recent)
+    - GetCategory(Int32 id)
+    - Update/{id}(Int32 id ,Category category)
+    - Create(Category category)
+    - Delete/{id}(Int32 id)
+  - Name: Commands
+    Methods:
+    - GetCommands(Int32 playerID ,DateTime clientLastCmdTime)
+  - Name: Login
+    Methods:
+    - GetLogIns()
+    - GetLogIn(Int32 id)
+    - RestorePlayerInfo(String deviceId)
+    - PutLogIn(Int32 id ,LogIn logIn)
+    - AddRange(List`1 logIns)
+    - DeleteLogIn(Int32 id)
+  - Name: PlayerInfo
+    Methods:
+    - GetPlayerInfoes()
+    - GetPlayerInfo(Int32 id)
+    - Update(Int32 id ,[FromBody] PlayerInfo playerInfo)
+    - Create(PlayerInfo playerInfo)
+    - DeletePlayerInfo(Int32 id)
+  - Name: PlayPuzzles
+    Methods:
+    - GetPlayerHistory(Int32 playerID)
+    - AddHistory(List`1 history)
+  - Name: Purchases
+    Methods:
+    - GetPurchase(Int32 playerID ,DateTime lastUpdate)
+    - AddPurchases(List`1 purchases)
+  - Name: Puzzles
+    Methods:
+    - GetPuzzles()
+    - Updates(DateTime recent)
+    - GetPuzzle(Int32 id)
+    - Update/{id}(Int32 id ,Puzzle puzzle)
+    - Create(Puzzle puzzle)
+    - Report(String puzzlePlayer)
+    - Delete/{id}(Int32 id)
+    - Replace(Int32 id ,[FromBody] Puzzle puzzle)
+  - Name: UserPuzzles
+    Methods:
+    - GetInviteData(Int32 puzzleID ,Int32 senderID)
+    - RegisterFeedback(Int32 puzzleID ,Int32 playerID ,Single star)
+    - Sync(InData inData)
+    - GetPlayerInfo(Int32 id)

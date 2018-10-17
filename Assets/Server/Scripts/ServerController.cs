@@ -11,17 +11,7 @@ public class ServerController : ServerControllerBase
 {
     public UserPuzzlesServer UserPuzzles=new UserPuzzlesServer();
 
-    public string URL
-    {
-        get
-        {
-            if (ServerState == ServerStateEnum.Local && Application.isEditor)
-                return "http://localhost:52391";
-            else
-                return "http://charsoogame.ir";
 
-        }
-    }
 
     #region PostRequst
 
