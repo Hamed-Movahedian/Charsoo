@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MgsCommonLib.Utilities;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class PuzzleRegenerator : EditorWindow
 {
@@ -27,6 +28,7 @@ public class PuzzleRegenerator : EditorWindow
         #region Get clue and category
 
         GUILayout.Label("Generator", EditorStyles.boldLabel);
+
         _clue = EditorGUILayout.TextField("Clue", _clue);
 
 
@@ -39,6 +41,7 @@ public class PuzzleRegenerator : EditorWindow
 
         if (GUILayout.Button("Spawn"))
         {
+            _clue = _puzzle.Clue;
             var Wordspawner = FindObjectOfType<WordSpawner>();
 
             if (Wordspawner == null)
@@ -96,10 +99,10 @@ public class PuzzleRegenerator : EditorWindow
 
         #endregion
 
-        
+
         if (GUILayout.Button("Save"))
         {
-            
+
             #region Get word manager
 
             var wordManagers = FindObjectsOfType<WordManager>();
@@ -133,29 +136,29 @@ public class PuzzleRegenerator : EditorWindow
             }
 
             #endregion
-            
-            #region Save wordset to database
+
+            #region Replace Puzzle TO Server
             // create category in database
             var puzzle = new Puzzle
             {
-                ID = 1,
+                ID = _puzzle.PuzzleData.ID,
                 CategoryID = _puzzle.PuzzleData.CategoryID,
-                Clue = _puzzle.Clue,
+                Clue = _clue,
                 Row = _puzzle.PuzzleData.Row,
                 Content = StringCompressor.CompressString(JsonUtility.ToJson(wordSet)),
                 LastUpdate = DateTime.Now
             };
 
             _puzzle.PuzzleData.Content = puzzle.Content;
-            _puzzle.PuzzleData.Clue= puzzle.Clue;
+            _puzzle.PuzzleData.Clue = puzzle.Clue;
             _puzzle.Dirty = true;
             _puzzle.UpdateData();
 
-            if (!ServerEditor.Post(@"Puzzles/Update/" + _puzzle.PuzzleData.ID, _puzzle.PuzzleData, "Update puzzle", "Update"))
-                _puzzle.PuzzleData = null;
+            UnityWebRequest request =ServerController.PostRequest($@"Puzzles/Replace?id={puzzle.ID}",
+                puzzle);
 
-
-            //_category.AddPuzzle(newPuzzle);
+            request.SendWebRequest();
+            _puzzle.Dirty = true;
 
             #endregion
         }

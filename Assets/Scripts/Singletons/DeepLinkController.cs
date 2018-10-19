@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class DeepLinkController : MonoBehaviour
 {
-    public string Data { get; set; } = "sup|31|1074";
+    public string Data { get; set; } = "sup&31&1074";
 
     [FollowMachine("Check Lunch Method", "Normal,Unkown Command,Show User Puzzle")]
     public void GetDeepLinkInfo()
@@ -43,7 +43,7 @@ public class DeepLinkController : MonoBehaviour
 
     private void CheckData()
     {
-        var parts = Data.Split('|');
+        var parts = Data.Split('&');
 
         if (parts.Length == 0)
         {

@@ -64,4 +64,6 @@ public class UserPuzzleInfoWindow : MgsUIWindow
 
         Singleton.Instance.WordSpawner.EditorInstatiate = null;
     }
+
+    public int? GetPuzzleID => PuzzleSelectionWindow.SelectedPuzzle.ServerID;
 }

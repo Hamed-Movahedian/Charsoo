@@ -17,7 +17,7 @@ public class HUD : BaseObject
         StartClueText.text = _clue;
         HeaderClueText.text = _clue;
         HintClueText.text = _clue;
-        IndexText.text = WordSpawner.PuzzleRow;
+        IndexText.text = PersianFixer.Fix(WordSpawner.PuzzleRow);
     }
 
 }
