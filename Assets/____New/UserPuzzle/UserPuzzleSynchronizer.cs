@@ -16,7 +16,7 @@ internal class UserPuzzleSynchronizer : MgsSingleton<UserPuzzleSynchronizer>
 
         // Cache ...
         var upLocalDB = LocalDBController.Instance.UserPuzzles;
-        var upServer = ServerController.Instance.UserPuzzles;
+        var upServer = ((ServerController) ServerController.Instance).UserPuzzles;
 
         // If playerID==null exit!!
         int? playerID = Singleton.Instance.PlayerController.GetPlayerID;

@@ -52,6 +52,15 @@ public class ServerEditor
         return (JsonConvert.DeserializeObject<TReturnType>(request.downloadHandler.text));
     }
 
+    public static string Get(string url, string title, string operation)
+    {
+        UnityWebRequest request = ServerController.GetRequest(url);
+
+        if (!ProcessRequest(request, title, operation)) return "";
+
+        return request.downloadHandler.text;
+    }
+
     public static bool Post(string url, object bodyData, string title, string operation)
     {
         var request = ServerController.PostRequest(url, bodyData);
