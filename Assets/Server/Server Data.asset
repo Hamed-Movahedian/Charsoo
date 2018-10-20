@@ -11,62 +11,173 @@ MonoBehaviour:
   m_Script: {fileID: -120015390, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: Server Data
   m_EditorClassIdentifier: 
-  ServerState: 1
+  ServerState: 0
   LocalURL: http://localhost:52391
   RemoteURL: http://charsoogame.ir
   Controllers:
   - Name: Account
     Methods:
-    - SendSms(String phoneNumber ,String code ,Boolean forRegister)
-    - RegisterPhoneNumber(Int32 playerID ,String phoneNumber)
-    - ConnectToAccount(String phoneNumber)
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
   - Name: Categories
     Methods:
-    - GetCategories()
-    - Updates(DateTime recent)
-    - GetCategory(Int32 id)
-    - Update(Int32 id ,Category category)
-    - Create(Category category)
-    - Delete(Int32 id)
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
   - Name: Commands
     Methods:
-    - GetCommands(Int32 playerID ,DateTime clientLastCmdTime)
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
   - Name: Login
     Methods:
-    - GetLogIns()
-    - GetLogIn(Int32 id)
-    - RestorePlayerInfo(String deviceId)
-    - PutLogIn(Int32 id ,LogIn logIn)
-    - AddRange(List`1 logIns)
-    - DeleteLogIn(Int32 id)
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
   - Name: PlayerInfo
     Methods:
-    - GetPlayerInfoes()
-    - GetPlayerInfo(Int32 id)
-    - Update(Int32 id ,[FromBody] PlayerInfo playerInfo)
-    - Create(PlayerInfo playerInfo)
-    - DeletePlayerInfo(Int32 id)
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
   - Name: PlayPuzzles
     Methods:
-    - GetPlayerHistory(Int32 playerID)
-    - AddHistory(List`1 history)
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
   - Name: Purchases
     Methods:
-    - GetPurchase(Int32 playerID ,DateTime lastUpdate)
-    - AddPurchases(List`1 purchases)
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
   - Name: Puzzles
     Methods:
-    - GetPuzzles()
-    - Updates(DateTime recent)
-    - GetPuzzle(Int32 id)
-    - Update(Int32 id ,Puzzle puzzle)
-    - Create(Puzzle puzzle)
-    - Report(String puzzlePlayer)
-    - Delete(Int32 id)
-    - Replace(Int32 id ,[FromBody] Puzzle puzzle)
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
   - Name: UserPuzzles
     Methods:
-    - GetInviteData(Int32 puzzleID ,Int32 senderID)
-    - RegisterFeedback(Int32 puzzleID ,Int32 playerID ,Single star)
-    - Sync(InData inData)
-    - GetPlayerInfo(Int32 id)
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []
+    - Name: 
+      Info: 
+      ConnectionMethod: 0
+      Outputs: []

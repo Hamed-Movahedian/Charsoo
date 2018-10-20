@@ -71,13 +71,13 @@ public class PuzzleRegenerator : EditorWindow
         if (GUILayout.Button("Regenerate"))
         {
             var wordGenerator = FindObjectOfType<WordSetGenerator>();
-            wordGenerator.AllWords = "";
             if (wordGenerator == null)
             {
                 EditorUtility.DisplayDialog("Error", "Can't find word spawner", "Ok");
                 return;
             }
 
+            wordGenerator.AllWords = "";
             foreach (var word in _wordSet.Words)
             {
                 wordGenerator.AllWords += word.Name + " ";
@@ -150,16 +150,13 @@ public class PuzzleRegenerator : EditorWindow
                 LastUpdate = DateTime.Now
             };
 
-            _puzzle.PuzzleData.Content = puzzle.Content;
-            _puzzle.PuzzleData.Clue = puzzle.Clue;
+            _puzzle.Content = puzzle.Content;
+            _puzzle.Clue = puzzle.Clue;
             _puzzle.Dirty = true;
             _puzzle.UpdateData();
 
-            UnityWebRequest request =ServerController.PostRequest($@"Puzzles/Update?id={puzzle.ID}",
-                puzzle);
-
-            request.SendWebRequest();
-            _puzzle.Dirty = true;
+            ServerEditor.Post(@"Puzzles/Update/" + _puzzle.PuzzleData.ID, puzzle, "Update puzzle",
+                "Update");
 
             #endregion
         }

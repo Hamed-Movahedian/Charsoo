@@ -31,7 +31,7 @@ public static class NativeShare
 		ShareIOS(body, filePath);
 #else
         Debug.Log("No sharing set up for this platform.");
-        Debug.Log("Subject: " + subject);
+        //Debug.Log("Subject: " + subject);
         Debug.Log("Body: " + body);
 #endif
     }
