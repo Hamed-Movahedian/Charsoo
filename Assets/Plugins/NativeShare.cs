@@ -21,27 +21,14 @@ public static class NativeShare
     /// <param name="mimeType"></param>
     /// <param name="chooser"></param>
     /// <param name="chooserText"></param>
-    public static void Share(string body, string filePath = null, string url = null, string subject = "", string mimeType = "text/html", bool chooser = false, string chooserText = "Select sharing app")
-    {
-        ShareMultiple(body, new string[] { filePath }, url, subject, mimeType, chooser);
-    }
-
-    /// <summary>
-    /// Shares multiple files at once
-    /// </summary>
-    /// <param name="body"></param>
-    /// <param name="filePaths">The paths to the attached files</param>
-    /// <param name="url"></param>
-    /// <param name="subject"></param>
-    /// <param name="mimeType"></param>
-    /// <param name="chooser"></param>
-    /// <param name="chooserText"></param>
-    public static void ShareMultiple(string body, string[] filePaths = null, string url = null, string subject = "", string mimeType = "text/html", bool chooser = false, string chooserText = "Select sharing app")
+    public static void Share(
+        string body,
+        string filePath = null)
     {
 #if UNITY_ANDROID
-		ShareAndroid(body, subject, url, filePaths, mimeType, chooser, chooserText);
+        ShareAndroid(body, filePath);
 #elif UNITY_IOS
-		ShareIOS(body, subject, url, filePaths);
+		ShareIOS(body, filePath);
 #else
         Debug.Log("No sharing set up for this platform.");
         Debug.Log("Subject: " + subject);
@@ -50,64 +37,36 @@ public static class NativeShare
     }
 
 #if UNITY_ANDROID
-	public static void ShareAndroid(string body, string subject, string url, string[] filePaths, string mimeType, bool chooser, string chooserText)
-	{
-		using (AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent"))
-		using (AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent"))
-		{
-			using (intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND")))
-			{ }
-			using (intentObject.Call<AndroidJavaObject>("setType", mimeType))
-			{ }
-			using (intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"), subject))
-			{ }
-			using (intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), body))
-			{ }
+    public static void ShareAndroid(string body, string filePath)
+    {
+        Debug.Log($"{body}\n{filePath}");
+        //AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
 
-			if (!string.IsNullOrEmpty(url))
-			{
-				// attach url
-				using (AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri"))
-				using (AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", url))
-				using (intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uriObject))
-				{ }
-			}
-			else if (filePaths != null)
-			{
-				// attach extra files (pictures, pdf, etc.)
-				using (AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri"))
-				using (AndroidJavaObject uris = new AndroidJavaObject("java.util.ArrayList"))
-				{
-					for (int i = 0; i < filePaths.Length; i++)
-					{
-						//instantiate the object Uri with the parse of the url's file
-						using (AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", "file://" + filePaths[i]))
-						{
-							uris.Call<bool>("add", uriObject);
-						}
-					}
+        AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
+        AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
 
-					using (intentObject.Call<AndroidJavaObject>("putParcelableArrayListExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uris))
-					{ }
-				}
-			}
+        intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
+        Debug.Log("Attach Body");
+        intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), body);
 
-			// finally start application
-			using (AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-			using (AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity"))
-			{
-				if (chooser)
-                {
-                    AndroidJavaObject jChooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intentObject, chooserText);
-                    currentActivity.Call("startActivity", jChooser);
-                }
-                else
-                {
-                    currentActivity.Call("startActivity", intentObject);
-                }
-			}
-		}
-	}
+        if (filePath.Length != 0)
+        {
+            AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
+            AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", filePath);
+            intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uriObject);
+            intentObject.Call<AndroidJavaObject>("setType", "image/jpeg");
+        }
+        else
+            intentObject.Call<AndroidJavaObject>("setType", "text/html");
+
+
+        // finally start application
+        AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
+        currentActivity.Call("startActivity", intentObject);
+
+    }
+
 #endif
 
 #if UNITY_IOS
@@ -128,27 +87,17 @@ public static class NativeShare
 
 	[DllImport ("__Internal")] private static extern void showSocialSharing(ref SocialSharingStruct conf);
 
-	public static void ShareIOS(string title, string message)
-	{
-		ConfigStruct conf = new ConfigStruct();
-		conf.title  = title;
-		conf.message = message;
-		showAlertMessage(ref conf);
-	}
 
-	public static void ShareIOS(string body, string subject, string url, string[] filePaths)
+	public static void ShareIOS(string body, string filePath)
 	{
 		SocialSharingStruct conf = new SocialSharingStruct();
 		conf.text = body;
-		string paths = string.Join(";", filePaths);
-		if (string.IsNullOrEmpty(paths))
-			paths = url;
-		else if (!string.IsNullOrEmpty(url))
-			paths += ";" + url;
-		conf.filePaths = paths;
-		conf.subject = subject;
+    
+        if (filePath.Length != 0)
+            conf.filePaths = filePath;
 
 		showSocialSharing(ref conf);
 	}
 #endif
+
 }

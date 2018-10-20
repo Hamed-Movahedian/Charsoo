@@ -22,6 +22,7 @@ public class PlayerInfo
     public string Email { get; set; }
     public int CoinCount { get; set; }
     public bool Dirty { get; set; }
+    public bool HasDubler { get; set; }
 
 
     public bool HasAccount()

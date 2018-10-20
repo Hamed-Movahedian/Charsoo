@@ -49,13 +49,13 @@ public class Letter : BaseObject
 
     void Start()
     {
-        _renderers= GetComponentsInChildren<Renderer>();
-        OnSpawn.Invoke();
+        
     }
 
     private void OnEnable()
     {
-        Start();
+        _renderers = GetComponentsInChildren<Renderer>();
+        OnSpawn.Invoke();
     }
 
 

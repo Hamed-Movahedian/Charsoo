@@ -18,11 +18,12 @@ public class PurchaseManager : BaseObject
     public AudioClip GiveCoinAudioClip;
     public List<Button> BuyDublerButtons;
     private int _rewardMultiplier = 1;
+    private PlayerInfo _playerInfo;
     // Use this for initialization
     void Start()
     {
-        CurrentCoin = StoreInventory.GetItemBalance("charsoo_coin");
-        bool hasDubler = StoreInventory.GetItemBalance("charsoo_doubler") > 0;
+        _playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
+        bool hasDubler = _playerInfo.HasDubler;
         _rewardMultiplier = 1 + (hasDubler ? 1 : 0);
         _rewardMultiplier = Mathf.Clamp(_rewardMultiplier, 1, 2);
         BuyDublerButtons.ForEach(b => b.interactable = !hasDubler);
@@ -47,25 +48,16 @@ public class PurchaseManager : BaseObject
     [FollowMachine("Pay Coin", "Payed,NotEnough")]
     public void PayCoins(int amount)
     {
-        if (amount > CurrentCoin)
+        if (amount > _playerInfo.CoinCount)
         {
             FollowMachine.SetOutput("NotEnough");
             return;
         }
-
         StoreInventory.TakeItem("charsoo_coin", amount);
 
         SoundManager.PlayAudioClip(PayCoinAudioClip);
 
         FollowMachine.SetOutput("Payed");
-    }
-
-    public bool PayCoin(int amount)
-    {
-
-        Debug.Log("PurchaseManager.PayCoin IS using");
-
-        return false;
     }
 
     public void GiveCoin(int amount)
@@ -76,13 +68,9 @@ public class PurchaseManager : BaseObject
 
     public IEnumerator CurrencyChanged()
     {
-
-        CurrentCoin = StoreInventory.GetItemBalance("charsoo_coin");
-        ZPlayerPrefs.SetInt("Coin", CurrentCoin);
-        ZPlayerPrefs.SetInt("Doubler", StoreInventory.GetItemBalance("charsoo_doubler"));
-        yield return PlayerController.ChangeCoinCount(CurrentCoin);
-        Start();
         OnCurrencyChange.Invoke();
+        yield return null;
+        Start();
     }
 
     public void HcurrencyChanged()

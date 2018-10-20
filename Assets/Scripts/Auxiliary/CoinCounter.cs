@@ -8,7 +8,7 @@ public class CoinCounter : BaseObject
 {
     private Text _text;
     private int _coinCount = 0;
-    public float ChangeTextTime = 2f;
+    public float ChangeTextTime = 1f;
     private int _step = 6;
     private Vector3 _scale;
     // Use this for initialization
@@ -16,27 +16,29 @@ public class CoinCounter : BaseObject
     {
         _scale = GetComponent<RectTransform>().localScale;
         _text = GetComponent<Text>();
-        _coinCount = ZPlayerPrefs.GetInt("Coin");
+        _coinCount = PlayerController.PlayerInfo.CoinCount;
         _text.text = PersianFixer.Fix(_coinCount.ToString("D"), false, true);
         PurchaseManager.OnCurrencyChange.AddListener(SetCounter);
     }
 
     public void SetCounter()
     {
+        //_coinCount = Singleton.Instance.PlayerController.PlayerInfo.CoinCount;
+
         if (!gameObject.activeInHierarchy)
         {
-            _coinCount = PurchaseManager.CurrentCoin;
+            _coinCount = PlayerController.PlayerInfo.CoinCount;
             _text.text = PersianFixer.Fix(_coinCount.ToString("D"), false, true);
             return;
         }
         StopAllCoroutines();
-        StartCoroutine(ChangeCoin(PurchaseManager.CurrentCoin));
+        StartCoroutine(ChangeCoin(PlayerController.PlayerInfo.CoinCount));
     }
 
     IEnumerator ChangeCoin(int newCount)
     {
         int cc = _coinCount;
-        _step = (int)((Mathf.Abs(newCount - cc) / ChangeTextTime) / 60);
+        _step = (int)(Mathf.Abs(newCount - cc) / ChangeTextTime / 60);
         _step = Mathf.Max(_step, 1);
         if (cc < newCount)
             while (cc + _step < newCount)

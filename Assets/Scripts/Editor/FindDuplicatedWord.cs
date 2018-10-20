@@ -20,7 +20,7 @@ public class FindDuplicatedWord : ScriptableWizard
 
     void OnWizardCreate()
     {
-        foreach (PuzzleComponent puzzle in FindObjectsOfType<PuzzleComponent>())
+        foreach (PuzzleComponent puzzle in Selection.activeTransform.GetComponentsInChildren<PuzzleComponent>())
         {
             string c = puzzle.Clue;
             WordSet ws = new WordSet();
@@ -66,11 +66,11 @@ public class FindDuplicatedWord : ScriptableWizard
                         continue;
                     }
 
-                    export += "\n\n" + word + "\t" + "\t :کلمه";
+                    export += "\n:\t" + word +"\t";
 
                     foreach (string cat in cats)
                     {
-                        export += "\n" + cat;
+                        export += "," + cat;
                     }
                 }
             }

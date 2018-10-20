@@ -76,4 +76,36 @@ public class OnlinePuzzleController : MgsSingleton<OnlinePuzzleController>
         
     }
 
+    public void SpawnInvitedPuzzle()
+    {
+        var json = StringCompressor.DecompressString(ServerRespond["Content"].ToString());
+
+        WordSet wordSet = new WordSet();
+
+        JsonUtility.FromJsonOverwrite(json, wordSet);
+
+        Singleton.Instance.WordSpawner.WordSet = wordSet;
+        Singleton.Instance.WordSpawner.Clue = ServerRespond["Clue"].ToString();
+        Singleton.Instance.WordSpawner.PuzzleID = -1;
+        Singleton.Instance.WordSpawner.PuzzleRow = ServerRespond["Creator"].ToString();
+
+        Singleton.Instance.WordSpawner.EditorInstatiate = null;
+        FollowMachine.SetOutput("Success");
+    }
+
+    [FollowMachine("Send FeedBack To Server", "Success,Network Error,Fail")]
+    public IEnumerator FeedBack(float star,string puzzleID)
+    {
+        yield return ServerController
+    .Post<string>($@"UserPuzzles/RegisterFeedback?puzzleID={puzzleID}&playerID={Singleton.Instance.PlayerController.GetPlayerID}&star={star}",
+        null,
+        r =>{FollowMachine.SetOutput("Success");},
+        request =>{ FollowMachine.SetOutput(request.isNetworkError ? "Network Error" : "Fail"); }
+        );
+
+
+
+        
+    }
+
 }

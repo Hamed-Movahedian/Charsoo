@@ -222,4 +222,9 @@ public class PlayerController : BaseObject
         _playerInfo.CoinCount = currentCoin;
         yield return SyncPlayerInfo();
     }
+
+    public void HsyncPlayerInfo()
+    {
+        StartCoroutine(SyncPlayerInfo());
+    }
 }

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
-using UnityEngine.UI;
+using FMachine;
+using FollowMachineDll.Attributes;
 
 public class ShareScreenShot : BaseObject
 {
@@ -16,84 +17,29 @@ public class ShareScreenShot : BaseObject
 
     #endregion
 
-
-
     public struct PixleSize
     {
         public Vector2 Input;
-        public int X { get { return (int)Input.x; } }
-        public int Y { get { return (int)Input.y; } }
+
+        public int X
+        {
+            get { return (int)Input.x; }
+        }
+
+        public int Y
+        {
+            get { return (int)Input.y; }
+        }
     }
 
     public void ShareScreenshot()
     {
         if (!_isBusy)
-            StartCoroutine(CaptureScreenshot());
+            StartCoroutine(ShareHintWondow());
     }
 
-
-
-    /*
-            public IEnumerator CaptureScreenshot()
-            {
-                _isBusy = true;
-                yield return new WaitForEndOfFrame();
-
-                _fileName = "screenshot.png";
-                ScreenCapture.CaptureScreenshot(_fileName,2);
-                string destination = Path.Combine(Application.persistentDataPath, _fileName);
-
-                yield return new WaitForSeconds(0.3f);
-                Address.text = destination + "\n" + Application.persistentDataPath;
-
-
-
-                AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
-                AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
-                intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
-                AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
-                AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", "file://" + destination);
-                intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uriObject);
-                intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"),
-                    " بازی چارسو رو میتونی از بازار دانلود کنی:" +
-                    "\n" +
-                    "https://cafebazaar.ir/app/com.Matarsak.charsoo/?l=fa"
-                );
-                intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_SUBJECT"),
-                    "برای حل این معما به کمک نیاز دارم.");
-                intentObject.Call<AndroidJavaObject>("setType", "image/*");
-                AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-                AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
-                AndroidJavaObject chooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intentObject,
-                    "Share your problem");
-
-                currentActivity.Call("startActivity", chooser);
-
-                yield return new WaitForSecondsRealtime(1f);
-
-                yield return new WaitUntil(()=>_isFocus);
-
-                _isBusy = false;
-
-
-
-
-            }
-
-            private void OnApplicationFocus(bool focus)
-            {
-                _isFocus = focus;
-            }
-
-
-        */
-
-
-
-    public IEnumerator CaptureScreenshot()
+    public IEnumerator ShareHintWondow()
     {
-        Debug.Log("hi");
-
         Vector2 screen = new Vector2(Screen.width, Screen.height);
         PixleSize picSize = new PixleSize()
         {
@@ -108,9 +54,9 @@ public class ShareScreenShot : BaseObject
         Texture2D screenShot = new Texture2D(picSize.X, picSize.Y, TextureFormat.RGB24, true);
         screenShot.ReadPixels(rectToScreenShot, 0, 0);
         screenShot.Apply();
-
+        int random = Random.Range(1 ,55465463);
         byte[] dataToSave = screenShot.EncodeToJPG();
-        string fileName = "Hint" + WordSpawner.Clue + ".jpg";
+        string fileName = "Hint" + WordSpawner.Clue +random+ ".jpg";
         string destination = Path.Combine(Application.persistentDataPath, fileName);
 
 
@@ -127,58 +73,35 @@ public class ShareScreenShot : BaseObject
 
         Debug.Log(destination + "\n" + Application.persistentDataPath);
 
-        StartCoroutine(SaveAndShare(destination));
+        string body = "برای حل این معما به کمک نیاز دارم." +
+              "\n" +
+              " بازی چارسو رو میتونی از بازار دانلود کنی:" +
+              "\n" +
+              "https://cafebazaar.ir/app/com.Matarsak.charsoo/?l=fa";
 
+        NativeShare.Share(body, destination);
     }
 
-    IEnumerator SaveAndShare(string destination)
+    [FollowMachine("Share Puzzle", "NotOnline,Success")]
+    public void SharePuzzle(int? puzzleID)
     {
-        yield return new WaitForEndOfFrame();
-        AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
-        AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
-        intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
-        AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
-        AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse",  destination);
-        intentObject.Call<AndroidJavaObject>(
-            "putExtra",
-            intentClass.GetStatic<string>("EXTRA_STREAM"),
-            uriObject
-            );
+        if (!puzzleID.HasValue)
+        {
+            FollowMachine.SetOutput("NotOnline");
+            return;
+        }
 
-        Debug.Log(destination);
+        string body = "حدس میزنم از حل کردن این جدول لذت ببری.\n خودم این جدول رو ساختم. امتحانش کن." +
+                   "\n" +
+                   "http://charsoogame.ir/inapp/sup&" + puzzleID + "&" + PlayerController.PlayerID +
+                   "\n" +
+                   " بازی چارسو رو میتونی از بازار دانلود کنی:" +
+                   "\n" +
+                   "https://cafebazaar.ir/app/com.Matarsak.charsoo/?l=fa";
 
-        intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"),
-            "برای حل این معما به کمک نیاز دارم." +
-            "\n" +
-            " بازی چارسو رو میتونی از بازار دانلود کنی:" +
-            "\n" +
-            "https://cafebazaar.ir/app/com.Matarsak.charsoo/?l=fa"
-        );
+        NativeShare.Share(body, "");
 
-
-        intentObject.Call<AndroidJavaObject>("setType", "image/jpeg");
-
-        //AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", "file://" + destination);
-
-        /*
-                AndroidJavaObject fileObject = new AndroidJavaObject("java.io.File", destination);
-
-                bool fileExist = fileObject.Call<bool>("exists");
-                if (fileExist)
-                {
-                    AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("fromFile", fileObject);
-                    intentObject.Call<AndroidJavaObject>(
-                        "putExtra",
-                        intentClass.GetStatic<string>("EXTRA_STREAM"),
-                        uriObject
-                    );
-                }
-        */
-
-        AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-        AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
-        //AndroidJavaObject chooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intentObject,"Share your problem");
-
-        currentActivity.Call("startActivity", intentObject);
+        FollowMachine.SetOutput("Success");
     }
+
 }
