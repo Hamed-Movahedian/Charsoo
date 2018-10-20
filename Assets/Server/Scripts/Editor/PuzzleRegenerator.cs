@@ -154,7 +154,7 @@ public class PuzzleRegenerator : EditorWindow
             _puzzle.Dirty = true;
             _puzzle.UpdateData();
 
-            UnityWebRequest request =ServerController.PostRequest($@"Puzzles/Replace?id={puzzle.ID}",
+            UnityWebRequest request =ServerController.PostRequest($@"Puzzles/Update?id={puzzle.ID}",
                 puzzle);
 
             request.SendWebRequest();

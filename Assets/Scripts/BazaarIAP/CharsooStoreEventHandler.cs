@@ -30,26 +30,21 @@ namespace Soomla.Store.Charsoo
             if (pviItemId.Contains("_CoinsPack"))
                 return;
 
-            switch (pviItemId)
-            {
-                case "no_uw_ads":
-                    ZPlayerPrefs.SetInt("NoAds",1);
-                    break;
-
-                case "charsoo_doubler":
-                    ZPlayerPrefs.SetInt("Doubler", 1);
-                    break;
-
-            }
+            if (pviItemId == "charsoo_doubler")
+                Singleton.Instance.PlayerController.PlayerInfo.HasDubler=true;
         }
 
         public void OnCurrencyBalanceChanged(VirtualCurrency virtualCurrency, int balance, int amountAdded)
         {
-            if (virtualCurrency.ItemId== "charsoo_coin")
+            if (virtualCurrency.ItemId == "charsoo_coin")
             {
-                if(ZPlayerPrefs.GetInt("Coin")!=balance)
+                var playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
+                int coinCount = playerInfo.CoinCount;
+                if (coinCount != balance)
                 {
-                    ZPlayerPrefs.SetInt("Coin", balance);
+                    playerInfo.CoinCount = balance;
+                    playerInfo.Dirty = true;
+                    Singleton.Instance.PlayerController.HsyncPlayerInfo();
                     Singleton.Instance.PurchaseManager.HcurrencyChanged();
                 }
             }

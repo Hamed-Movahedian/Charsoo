@@ -13,13 +13,13 @@ public class DeepLinkController : MonoBehaviour
     [FollowMachine("Check Lunch Method", "Normal,Unkown Command,Show User Puzzle")]
     public void GetDeepLinkInfo()
     {
-        if (Application.platform==RuntimePlatform.Android)
+        if (Application.platform == RuntimePlatform.Android)
         {
             AndroidJavaClass UnityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject currentActivity = UnityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
- 
+
             AndroidJavaObject intent = currentActivity.Call<AndroidJavaObject>("getIntent");
- 
+
             var action = intent.Call<string>("getAction");
 
             if (action.Contains("VIEW"))
@@ -37,6 +37,7 @@ public class DeepLinkController : MonoBehaviour
         }
         else
         {
+            //FollowMachine.SetOutput("Normal");
             CheckData();
         }
     }
