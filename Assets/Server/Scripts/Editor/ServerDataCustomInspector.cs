@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FollowMachineDll.Assets;
 using Newtonsoft.Json.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -18,23 +19,38 @@ public class ServerDataCustomInspector : Editor
 
         if (GUILayout.Button("Update Interface"))
         {
-            var controllers= ServerEditor.Get(@"Interface/GetControllers", "Download interface", "Download");
+            var controllers = ServerEditor.Get(@"Interface/GetControllers", "Download interface", "Download");
 
             var controllersJArray = JArray.Parse(controllers);
 
             _serverData.Controllers.Clear();
 
-            foreach (var controllerJObject in controllersJArray)
+            foreach (JToken controllerJObject in controllersJArray)
             {
                 var controller = new ServerData.Controller();
 
-                controller.Name = (string) controllerJObject["Name"];
+                controller.Name = (string)controllerJObject["Name"];
 
-                controller.Methods=new List<string>();
+
+
+                controller.Methods = new List<ServerData.Controller.MethodData>();
 
                 foreach (var methodJobject in controllerJObject["Methods"])
                 {
-                    controller.Methods.Add((string) methodJobject["Name"]);
+                    var outputs = (string)methodJobject["Outputs"];
+
+                    controller.Methods.Add(new ServerData.Controller.MethodData
+                    {
+                        Name = (string)methodJobject["Name"],
+                        Info = (string)methodJobject["Info"],
+                        Outputs = outputs == null
+                            ? new List<string>()
+                            : outputs
+                                .Split(',')
+                                .Select(s => s.Trim())
+                                .Where(s => !string.IsNullOrEmpty(s))
+                                .ToList()
+                    });
                 }
                 _serverData.Controllers.Add(controller);
             }

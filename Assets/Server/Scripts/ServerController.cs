@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using FollowMachineDll.Components;
 using MgsCommonLib;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -10,9 +11,7 @@ using UnityEngine.Networking;
 public class ServerController : ServerControllerBase
 {
     public UserPuzzlesServer UserPuzzles=new UserPuzzlesServer();
-
-
-
+    
     #region PostRequst
 
     public static UnityWebRequest PostRequest(string url, object bodyData)
@@ -88,13 +87,9 @@ public class ServerController : ServerControllerBase
     
 
     #endregion
-
-    public override IEnumerator SendRequest(string methodName, List<string> paramNames, List<object> paramObjects)
+    
+    public override string GetOutputFollowControl()
     {
         return null;
-
     }
-
-
-
 }

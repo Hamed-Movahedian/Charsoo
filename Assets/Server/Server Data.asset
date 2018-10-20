@@ -8,7 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -335215326, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Script: {fileID: -120015390, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: Server Data
   m_EditorClassIdentifier: 
   ServerState: 1
@@ -25,9 +25,9 @@ MonoBehaviour:
     - GetCategories()
     - Updates(DateTime recent)
     - GetCategory(Int32 id)
-    - Update/{id}(Int32 id ,Category category)
+    - Update(Int32 id ,Category category)
     - Create(Category category)
-    - Delete/{id}(Int32 id)
+    - Delete(Int32 id)
   - Name: Commands
     Methods:
     - GetCommands(Int32 playerID ,DateTime clientLastCmdTime)
@@ -59,10 +59,10 @@ MonoBehaviour:
     - GetPuzzles()
     - Updates(DateTime recent)
     - GetPuzzle(Int32 id)
-    - Update/{id}(Int32 id ,Puzzle puzzle)
+    - Update(Int32 id ,Puzzle puzzle)
     - Create(Puzzle puzzle)
     - Report(String puzzlePlayer)
-    - Delete/{id}(Int32 id)
+    - Delete(Int32 id)
     - Replace(Int32 id ,[FromBody] Puzzle puzzle)
   - Name: UserPuzzles
     Methods:
