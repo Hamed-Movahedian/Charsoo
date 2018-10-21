@@ -200,9 +200,12 @@ public class PlayerController : BaseObject
 
     public IEnumerator SyncPlayerInfo()
     {
+        LocalDBController.DeleteAll<PlayerInfo>();
+        LocalDBController.InsertOrReplace(_playerInfo);
+
         if (_playerInfo.PlayerID == null)
             yield return RegisterPlayerToServer();
-        else
+        if (_playerInfo.PlayerID != null)
             yield return ServerController.Post<string>(
                 $@"PlayerInfo/Update?id={GetPlayerID}",
                 _playerInfo,
@@ -215,8 +218,7 @@ public class PlayerController : BaseObject
         LocalDBController.DeleteAll<PlayerInfo>();
         LocalDBController.InsertOrReplace(_playerInfo);
     }
-
-
+    
     public IEnumerator ChangeCoinCount(int currentCoin)
     {
         _playerInfo.CoinCount = currentCoin;
@@ -226,5 +228,15 @@ public class PlayerController : BaseObject
     public void HsyncPlayerInfo()
     {
         StartCoroutine(SyncPlayerInfo());
+    }
+
+    public void ChangePlayerInfo(PlayerInfo playerInfo)
+    {
+        if (PlayerInfo.PlayerID == playerInfo.PlayerID)
+        {
+            _playerInfo = playerInfo;
+            _playerInfo.Dirty = true;
+            StartCoroutine(SyncPlayerInfo());
+        }
     }
 }

@@ -23,7 +23,7 @@ public class PurchaseManager : BaseObject
     void Start()
     {
         _playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
-        bool hasDubler = _playerInfo.HasDubler;
+        bool hasDubler = _playerInfo?.HasDubler ?? false;
         _rewardMultiplier = 1 + (hasDubler ? 1 : 0);
         _rewardMultiplier = Mathf.Clamp(_rewardMultiplier, 1, 2);
         BuyDublerButtons.ForEach(b => b.interactable = !hasDubler);

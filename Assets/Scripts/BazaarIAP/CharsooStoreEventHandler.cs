@@ -31,7 +31,12 @@ namespace Soomla.Store.Charsoo
                 return;
 
             if (pviItemId == "charsoo_doubler")
-                Singleton.Instance.PlayerController.PlayerInfo.HasDubler=true;
+            {
+                var playerController = Singleton.Instance.PlayerController;
+                PlayerInfo playerInfo = playerController.PlayerInfo;
+                playerInfo.HasDubler = true;
+                
+            }
         }
 
         public void OnCurrencyBalanceChanged(VirtualCurrency virtualCurrency, int balance, int amountAdded)
@@ -43,8 +48,7 @@ namespace Soomla.Store.Charsoo
                 if (coinCount != balance)
                 {
                     playerInfo.CoinCount = balance;
-                    playerInfo.Dirty = true;
-                    Singleton.Instance.PlayerController.HsyncPlayerInfo();
+                    Singleton.Instance.PlayerController.ChangePlayerInfo(playerInfo);
                     Singleton.Instance.PurchaseManager.HcurrencyChanged();
                 }
             }
