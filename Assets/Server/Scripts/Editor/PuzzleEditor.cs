@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FollowMachineEditor.Server;
 using UnityEditor;
 using UnityEngine;
 
@@ -86,6 +87,7 @@ public class PuzzleEditor : Editor
 
         if (!ServerEditor.Post(@"Puzzles/Update/" + component.PuzzleData.ID, component.PuzzleData, "Update puzzle", "Update"))
             component.PuzzleData = null;
+
     }
     
 

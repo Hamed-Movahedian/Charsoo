@@ -41,6 +41,11 @@ public class LetterController : BaseObject
         AllLetters = FindObjectsOfType<Letter>().ToList();
     }
 
+    private void OnValidate()
+    {
+        EditorInitialize();
+    }
+
     public void ConnectAdjacentLetters()
     {
         ConnectAdjacentLetters(AllLetters);
