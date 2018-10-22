@@ -93,6 +93,7 @@ public class LetterController : BaseObject
 
     public void LetterSelected(Letter letter)
     {
+        Debug.Log($"Letter {letter.Char} is selected");
         OnLetterSelected.Invoke();
 
         SelectedLetters.Clear();
