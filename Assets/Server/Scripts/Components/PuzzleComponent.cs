@@ -37,6 +37,7 @@ public class PuzzleComponent : TableComponent
 
     protected override string GetName()
     {
+        return "P - " + Clue; 
         return "P - " + PersianFixer.Fix(Clue); 
     }
 

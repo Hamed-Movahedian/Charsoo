@@ -87,7 +87,7 @@ public class NewPartitioner
         if (firstTime)
         {
             half = letters.Count -
-                   Mathf.Min(letters.Count - 2, UnityEngine.Random.Range(2, 4));
+                   Mathf.Min(letters.Count - 2, UnityEngine.Random.Range(1, 4));
         }
         else
         {
@@ -95,7 +95,7 @@ public class NewPartitioner
                 return;
 
             half = letters.Count -
-                   Mathf.Min(letters.Count - 3, UnityEngine.Random.Range(2, 4));
+                   Mathf.Min(letters.Count - 3, UnityEngine.Random.Range(1, 4));
 
         }
 
