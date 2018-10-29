@@ -22,12 +22,7 @@ MonoBehaviour:
       Prefix: SendSms
       Info: Send SMS
       ConnectionMethod: 1
-      Outputs:
-      - Repetitive Number
-      - Not Register
-      - Invalid Phone Number
-      - No Sms Service
-      - Success
+      Outputs: []
       Parameters:
       - Name: phoneNumber
         FormBody: 0
@@ -62,12 +57,6 @@ MonoBehaviour:
   - Name: CategoriesController
     Prefix: api/Categories
     Methods:
-    - Name: GetCategories
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters: []
     - Name: GetCategoryUpdates
       Prefix: Updates
       Info: 
@@ -77,15 +66,6 @@ MonoBehaviour:
       - Name: recent
         FormBody: 0
         TypeName: DateTime
-    - Name: GetCategory
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters:
-      - Name: id
-        FormBody: 0
-        TypeName: Int32
     - Name: UpdateCategory
       Prefix: Update/{id}
       Info: 
@@ -134,21 +114,6 @@ MonoBehaviour:
   - Name: LogInController
     Prefix: api/Login
     Methods:
-    - Name: GetLogIns
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters: []
-    - Name: GetLogIn
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters:
-      - Name: id
-        FormBody: 0
-        TypeName: Int32
     - Name: RestorePlayerInfoByDeviceID
       Prefix: RestorePlayerInfo
       Info: 
@@ -158,18 +123,6 @@ MonoBehaviour:
       - Name: deviceId
         FormBody: 0
         TypeName: String
-    - Name: PutLogIn
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters:
-      - Name: id
-        FormBody: 0
-        TypeName: Int32
-      - Name: logIn
-        FormBody: 0
-        TypeName: LogIn
     - Name: AddLogins
       Prefix: AddRange
       Info: 
@@ -179,33 +132,9 @@ MonoBehaviour:
       - Name: logIns
         FormBody: 0
         TypeName: List`1
-    - Name: DeleteLogIn
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters:
-      - Name: id
-        FormBody: 0
-        TypeName: Int32
   - Name: PlayerInfoController
     Prefix: api/PlayerInfo
     Methods:
-    - Name: GetPlayerInfoes
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters: []
-    - Name: GetPlayerInfo
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters:
-      - Name: id
-        FormBody: 0
-        TypeName: Int32
     - Name: UpdatePlayerInfo
       Prefix: Update
       Info: 
@@ -227,15 +156,6 @@ MonoBehaviour:
       - Name: playerInfo
         FormBody: 0
         TypeName: PlayerInfo
-    - Name: DeletePlayerInfo
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters:
-      - Name: id
-        FormBody: 0
-        TypeName: Int32
   - Name: PlayPuzzlesController
     Prefix: api/PlayPuzzles
     Methods:
@@ -284,12 +204,6 @@ MonoBehaviour:
   - Name: PuzzlesController
     Prefix: api/Puzzles
     Methods:
-    - Name: GetPuzzles
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters: []
     - Name: GetPuzzlesUpdates
       Prefix: Updates
       Info: 
@@ -299,15 +213,6 @@ MonoBehaviour:
       - Name: recent
         FormBody: 0
         TypeName: DateTime
-    - Name: GetPuzzle
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters:
-      - Name: id
-        FormBody: 0
-        TypeName: Int32
     - Name: UpdatePuzzle
       Prefix: Update/{id}
       Info: 
@@ -398,12 +303,3 @@ MonoBehaviour:
       - Name: inData
         FormBody: 0
         TypeName: InData
-    - Name: GetPlayerInfo
-      Prefix: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-      Parameters:
-      - Name: id
-        FormBody: 0
-        TypeName: Int32
