@@ -12,7 +12,7 @@ using Random = UnityEngine.Random;
 public class NewPartitioner
 {
     private List<int> _partSizeList = new List<int> { 2, 3, 3, 3 };
-    public IEnumerator Portion()
+    public IEnumerator Portion(int tryCount=500)
     {
         Singleton.Instance.LetterController.EditorInitialize();
 
@@ -21,7 +21,7 @@ public class NewPartitioner
         float bestScore = 100000;
         List<List<Letter>> bestPartitons = null;
 
-        for (int i = 0; i < 500; i++)
+        for (int i = 0; i < tryCount; i++)
         {
             Singleton.Instance.LetterController.ConnectAdjacentLetters();
 

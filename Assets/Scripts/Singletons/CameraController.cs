@@ -21,12 +21,18 @@ public class CameraController : BaseObject
         _camera = GetComponent<Camera>();
     }
 
+    public void InitiateCamView()
+    {
+        _camera.orthographicSize = 10;
+        _camera.transform.position = Vector3.zero - 10 * Vector3.forward;
+    }
+
     void Update()
     {
         float delta = Input.GetAxis("Mouse ScrollWheel");
 
         if (delta != 0)
-            Zoom(Mathf.Sign(delta)*ScrollZoomSpeed);
+            Zoom(Mathf.Sign(delta) * ScrollZoomSpeed);
 
         if (Input.touchCount == 2)
         {
@@ -47,7 +53,7 @@ public class CameraController : BaseObject
             // If the camera is orthographic...
 
             // ... change the orthographic size based on the change in distance between the touches.
-            _camera.orthographicSize += deltaMagnitudeDiff*OrthoZoomSpeed;
+            _camera.orthographicSize += deltaMagnitudeDiff * OrthoZoomSpeed;
 
             // Make sure the orthographic size never drops below zero.
             _camera.orthographicSize = Mathf.Max(_camera.orthographicSize, 7);

@@ -25,12 +25,12 @@ class UIUserPuzzleMenuItem : UIMenuItem
 
         State.text =
             puzzle.ServerID == null ? ThemeManager.Instance.LanguagePack.GetLable("NotRegister") :
-            puzzle.CategoryName == null ? ThemeManager.Instance.LanguagePack.GetLable("InReview") :
-            puzzle.CategoryName == "" ? ThemeManager.Instance.LanguagePack.GetLable("NoCategory") :
+            puzzle.CategoryName == "" ? ThemeManager.Instance.LanguagePack.GetLable("InReview") :
+            puzzle.CategoryName == "-" ? ThemeManager.Instance.LanguagePack.GetLable("NoCategory") :
             PersianFixer.Fix(puzzle.CategoryName);
 
 
-        if (puzzle.PlayCount != null) PlayCount.text = puzzle.PlayCount.ToString();
+        if (puzzle.PlayCount != null) PlayCount.text =PersianFixer.Fix(puzzle.PlayCount+ " نفر ",true,true);
 
         if (puzzle.Rate != null) RateImage.fillAmount = puzzle.Rate.Value / 5f;
 

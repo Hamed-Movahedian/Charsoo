@@ -189,14 +189,18 @@ public class HintManager : BaseObject
         _partId++;
     }
 
+    [FollowMachine("Is Hinted Word Complete?", "Yes,No")]
     public void CheckHintWord()
     {
         if (!_selectedWord)
+        {
+            FollowMachine.SetOutput("No");
             return;
+        }
 
         if (_selectedWord.IsComplete)
         {
-            OnWordComplete.Invoke();
+            FollowMachine.SetOutput("Yes");
             HideHintLetters();
         }
     }

@@ -25,24 +25,32 @@ public class UserPuzzleInfoWindow : MgsUIWindow
         RegisterButton.interactable = puzzle.ServerID == null;
         ShareButton.interactable = puzzle.ServerID != null;
 
-        RateImage.gameObject.SetActive(!string.IsNullOrEmpty(puzzle.CategoryName));
-        PlayCount.gameObject.SetActive(!string.IsNullOrEmpty(puzzle.CategoryName));
+        RateImage.gameObject.SetActive(puzzle.PlayCount != null);
+        PlayCount.gameObject.SetActive(puzzle.PlayCount != null);
 
         if (puzzle.ServerID == null)
             Description.text = ThemeManager.Instance.LanguagePack.GetLable("NotRegisterFull");
-        else if (puzzle.CategoryName == null)
+        else if (puzzle.CategoryName == "")
         {
             Description.text = ThemeManager.Instance.LanguagePack.GetLable("InReviewFull");
-            Description.text = Description.text.Replace("*****", PersianFixer.Fix(puzzle.ServerID.ToString()));
+            Description.text = Description.text.Replace("**-**", PersianFixer.Fix(puzzle.ServerID.ToString()));
         }
-        else if (puzzle.CategoryName == "")
-            Description.text = ThemeManager.Instance.LanguagePack.GetLable("NoCategoryFull");
-        else
+        else if (puzzle.CategoryName == "-")
         {
-            PlayCount.text = PersianFixer.Fix("نفر") + puzzle.PlayCount;
+            Description.text = ThemeManager.Instance.LanguagePack.GetLable("NoCategoryFull");
+            Description.text = Description.text.Replace("**-**", PersianFixer.Fix(puzzle.ServerID.ToString()));
+        }
+        if (puzzle.ServerID != null)
+        {
+            PlayCount.text = PersianFixer.Fix(puzzle.PlayCount + " نفر ", true, true);
             if (puzzle.Rate != null) RateImage.fillAmount = puzzle.Rate.Value / 5f;
-            Description.text = ThemeManager.Instance.LanguagePack.
-                GetLable("UserPuzzleAcceptedFull").Replace("***", PersianFixer.Fix(puzzle.CategoryName));
+            if (puzzle.CategoryName != null && puzzle.CategoryName.Length > 1)
+            {
+                Description.text = ThemeManager.Instance.LanguagePack.
+                  GetLable("UserPuzzleAcceptedFull").Replace("***", PersianFixer.Fix(puzzle.CategoryName));
+                Description.text = Description.text.Replace("**-**", PersianFixer.Fix(puzzle.ServerID.ToString()));
+
+            }
         }
     }
 

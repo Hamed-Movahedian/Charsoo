@@ -44,7 +44,7 @@ public class WordSetGenerator : BaseObject
 
         var startTime = Time.time;
 
-        while (_foundResultCount < MaxResults && Time.time < startTime + _words.Count * 2 )
+        while (_foundResultCount < MaxResults || Time.time < startTime + _words.Count * 2)
         {
             MgsCoroutine.Info = _foundResultCount + " word set found.";
             if (BruteForce)
@@ -60,6 +60,8 @@ public class WordSetGenerator : BaseObject
             word.X = 0;
             word.Y = 0;
             word.WordDirection = WordDirection.Horizontal;
+/*            if (_foundResultCount >= MaxResults)
+                break;*/
 
             yield return TryOtherWords(word);
         }
@@ -70,7 +72,7 @@ public class WordSetGenerator : BaseObject
             yield break;
         }
 
-        
+
         print(_foundResultCount + " WordSet Found");
         Successful = true;
 
@@ -87,7 +89,7 @@ public class WordSetGenerator : BaseObject
             .Where(s => s.Length > 0 && s[0] != '/')
             .Distinct()
             .ToList();
-
+        UsedWordCount = (UsedWordCount == 0) ? _wordStrings.Count : Mathf.Clamp(UsedWordCount, 1, _wordStrings.Count);
         // Clear results
         _foundResultCount = 0;
         _bestResult = null;

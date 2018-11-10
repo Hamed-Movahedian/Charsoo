@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : MonoBehaviour
+public class Table : BaseObject
 {
     public int Size=19;
     public List<Texture2D> BackGrounds=new List<Texture2D>();
@@ -46,17 +46,18 @@ public class Table : MonoBehaviour
     {
         if (BackGrounds.Count > 0) _material.mainTexture = BackGrounds[0];
         SetSize();
+        _boundRect=new Rect(0,0,0,0);
     }
 
     [ContextMenu("SetSize")]
     public void SetSize()
     {
-        transform.position =Vector3.zero;
+        transform.position =5*Vector3.forward;
 
         Size = _material.mainTexture.height;
         transform.localScale = new Vector3(Size, Size, 1);
         if (Size%2 == 0)
-            transform.position = new Vector3(0.5f, 0.5f, 0);
+            transform.position = new Vector3(0.5f, 0.5f, 5);
 
     }
 }

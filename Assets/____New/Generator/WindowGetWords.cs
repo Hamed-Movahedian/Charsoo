@@ -8,13 +8,13 @@ using UnityEngine.UI;
 public class WindowGetWords : MgsUIWindow
 {
     public InputField WordsText;
-    public WindowGetWordCount WordCount;
+    //public WindowGetWordCount WordCount;
     public override void OnClose()
     {
-        WordCount.WordCountSlider.maxValue = GetWords().Count;
+/*        WordCount.WordCountSlider.maxValue = GetWords().Count;
         if (WordCount.WordCountSlider.minValue == 0)
             WordCount.WordCountSlider.value = (WordCount.WordCountSlider.maxValue + 2) / 2;
-        WordCount.WordCountSlider.minValue = 2;
+        WordCount.WordCountSlider.minValue = 2;*/
     }
 
     public List<string> GetWords()

@@ -15,7 +15,7 @@ public class AccountManager : MgsSingleton<AccountManager>
 {
     // cache random code and phone number
     private string _generatedCode;
-    private string _phoneNumber="09133173190";
+    private string _phoneNumber = " ";
 
 
     #region HasAccount
@@ -32,20 +32,26 @@ public class AccountManager : MgsSingleton<AccountManager>
     }
     #endregion
 
-
     #region Send RandomCode To PhoneNumber
     [FollowMachine("Send RandomCode To PhoneNumber", "Success,Not Register,No Sms Service,Invalid Phone Number,Network Error,Repetitive Number")]
     public IEnumerator SendRandomCodeToPhoneNumber(string phoneNumber, bool forRegister)
     {
         // Check phone number
-        if (phoneNumber[0] != '0' || phoneNumber.Length != 11)
+
+        if (phoneNumber.Length != 11 || phoneNumber[0] != '0')
         {
             FollowMachine.SetOutput("Invalid Phone Number");
             yield break;
         }
 
         // Save phone number for later use
-        _phoneNumber = phoneNumber;
+        if (phoneNumber == _phoneNumber)
+        {
+            FollowMachine.SetOutput("Success");
+            yield return new WaitForSeconds(3);
+            yield break;
+        }
+
 
         // Generate random number
         GenerateRandomCode();
@@ -68,7 +74,10 @@ public class AccountManager : MgsSingleton<AccountManager>
             });
 
         if (FollowMachine.CheckOutputLable("Success"))
+        {
+            _phoneNumber = phoneNumber;
             yield return new WaitForSeconds(3);
+        }
 
     }
 
@@ -85,7 +94,8 @@ public class AccountManager : MgsSingleton<AccountManager>
     [FollowMachine("Is Code Valid?", "Yes,No")]
     public void IsCodeValid(string inputCode)
     {
-        FollowMachine.SetOutput(inputCode == _generatedCode ? "Yes" : "No");
+        bool v = inputCode == _generatedCode;
+        FollowMachine.SetOutput(v ? "Yes" : "No");
     }
     #endregion
 
@@ -135,6 +145,8 @@ public class AccountManager : MgsSingleton<AccountManager>
             StoreInventory.GiveItem("charsoo_coin", accountInfo.PlayerInfo.CoinCount);
 
             FollowMachine.SetOutput("Success");
+
+            _phoneNumber = " ";
         }
     }
 

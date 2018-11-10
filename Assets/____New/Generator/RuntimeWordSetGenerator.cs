@@ -12,7 +12,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
     [Header("Windows")]
     public WindowGetWords WordsWindow;
     public WindowGetClue ClueWindow;
-    public WindowGetWordCount WordCountWindow;
+    //public WindowGetWordCount WordCountWindow;
 
     [Header("Components")]
     public WordSetGenerator Generator;
@@ -48,6 +48,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         Application.targetFrameRate = 0;
         QualitySettings.vSyncCount = 0;
         WordsWindow.WordsText.text = "فسنجان سمبوسه سوپ کشک خورشقيمه قرمهسبزي قیمه بادمجان شیربرنج کلهپاچه باقالی‌پلو شیشلیک رشته‌پلو";
+        WordsWindow.WordsText.text = "";
 
     }
 
@@ -55,11 +56,12 @@ public class RuntimeWordSetGenerator : MonoBehaviour
     public IEnumerator Generate()
     {
         // Setup generator
-        Generator.AllWords = WordsWindow.WordsText.text.Replace(' ', '\n');
+        string allWords = WordsWindow.WordsText.text.Replace(' ', '\n');
+        Generator.AllWords = allWords;
         Generator.Clue = ClueWindow.ClueInputField.text;
         Generator.Initialize();
-        Generator.UsedWordCount = (int)WordCountWindow.WordCountSlider.maxValue;
-        Generator.MaxResults = 100;
+        Generator.UsedWordCount = 0;
+        Generator.MaxResults = allWords.Length;
 
         // Generate Word set
         yield return Generator.MakeWordSet();
@@ -81,7 +83,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         // Run partitioner
         if (_partitioner == null)
             _partitioner = new NewPartitioner();
-        yield return _partitioner.Portion();
+        yield return _partitioner.Portion(5* allWords.Length);
 
         FollowMachine.SetOutput("Success");
     }

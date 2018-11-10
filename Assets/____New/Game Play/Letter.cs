@@ -55,7 +55,13 @@ public class Letter : BaseObject
     private void OnEnable()
     {
         _renderers = GetComponentsInChildren<Renderer>();
+
         OnSpawn.Invoke();
+    }
+
+    private void OnDisable()
+    {
+        OnUnSelect.Invoke();
     }
 
 
