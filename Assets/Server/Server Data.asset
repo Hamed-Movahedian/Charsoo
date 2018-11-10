@@ -11,173 +11,295 @@ MonoBehaviour:
   m_Script: {fileID: -120015390, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: Server Data
   m_EditorClassIdentifier: 
-  ServerState: 1
+  ServerState: 0
   LocalURL: http://localhost:52391
   RemoteURL: http://charsoogame.ir
   Controllers:
-  - Name: Account
+  - Name: AccountController
+    Prefix: api/Account
     Methods:
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
+    - Name: SendSms
+      Prefix: SendSms
+      Info: Send SMS
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: phoneNumber
+        FormBody: 0
+        TypeName: String
+      - Name: code
+        FormBody: 0
+        TypeName: String
+      - Name: forRegister
+        FormBody: 0
+        TypeName: Boolean
+    - Name: RegisterPhoneNumber
+      Prefix: RegisterPhoneNumber
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: playerID
+        FormBody: 0
+        TypeName: Int32
+      - Name: phoneNumber
+        FormBody: 0
+        TypeName: String
+    - Name: ConnectToAccount
+      Prefix: ConnectToAccount
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-  - Name: Categories
+      Parameters:
+      - Name: phoneNumber
+        FormBody: 0
+        TypeName: String
+  - Name: CategoriesController
+    Prefix: api/Categories
     Methods:
-    - Name: 
+    - Name: GetCategoryUpdates
+      Prefix: Updates
       Info: 
       ConnectionMethod: 0
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: recent
+        FormBody: 0
+        TypeName: DateTime
+    - Name: UpdateCategory
+      Prefix: Update/{id}
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: id
+        FormBody: 0
+        TypeName: Int32
+      - Name: category
+        FormBody: 0
+        TypeName: Category
+    - Name: CreateCategory
+      Prefix: Create
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: category
+        FormBody: 0
+        TypeName: Category
+    - Name: DeleteCategory
+      Prefix: Delete/{id}
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-  - Name: Commands
+      Parameters:
+      - Name: id
+        FormBody: 0
+        TypeName: Int32
+  - Name: CommandController
+    Prefix: api/Commands
     Methods:
-    - Name: 
+    - Name: GetRecentCommands
+      Prefix: GetCommands
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-  - Name: Login
+      Parameters:
+      - Name: playerID
+        FormBody: 0
+        TypeName: Int32
+      - Name: clientLastCmdTime
+        FormBody: 0
+        TypeName: DateTime
+  - Name: LogInController
+    Prefix: api/Login
     Methods:
-    - Name: 
+    - Name: RestorePlayerInfoByDeviceID
+      Prefix: RestorePlayerInfo
       Info: 
       ConnectionMethod: 0
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: deviceId
+        FormBody: 0
+        TypeName: String
+    - Name: AddLogins
+      Prefix: AddRange
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-  - Name: PlayerInfo
+      Parameters:
+      - Name: logIns
+        FormBody: 0
+        TypeName: List`1
+  - Name: PlayerInfoController
+    Prefix: api/PlayerInfo
     Methods:
-    - Name: 
+    - Name: UpdatePlayerInfo
+      Prefix: Update
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: id
+        FormBody: 0
+        TypeName: Int32
+      - Name: playerInfo
+        FormBody: 1
+        TypeName: PlayerInfo
+    - Name: CreatePlayerInfo
+      Prefix: Create
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-  - Name: PlayPuzzles
+      Parameters:
+      - Name: playerInfo
+        FormBody: 0
+        TypeName: PlayerInfo
+  - Name: PlayPuzzlesController
+    Prefix: api/PlayPuzzles
     Methods:
-    - Name: 
+    - Name: GetPlayerHistory
+      Prefix: GetPlayerHistory
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: playerID
+        FormBody: 0
+        TypeName: Int32
+    - Name: AddHistory
+      Prefix: AddHistory
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-  - Name: Purchases
+      Parameters:
+      - Name: history
+        FormBody: 0
+        TypeName: List`1
+  - Name: PurchasesController
+    Prefix: api/Purchases
     Methods:
-    - Name: 
+    - Name: GetPurchase
+      Prefix: GetPurchase
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: playerID
+        FormBody: 0
+        TypeName: Int32
+      - Name: lastUpdate
+        FormBody: 0
+        TypeName: DateTime
+    - Name: UpdatePurchases
+      Prefix: AddPurchases
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-  - Name: Puzzles
+      Parameters:
+      - Name: purchases
+        FormBody: 0
+        TypeName: List`1
+  - Name: PuzzlesController
+    Prefix: api/Puzzles
     Methods:
-    - Name: 
+    - Name: GetPuzzlesUpdates
+      Prefix: Updates
       Info: 
       ConnectionMethod: 0
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: recent
+        FormBody: 0
+        TypeName: DateTime
+    - Name: UpdatePuzzle
+      Prefix: Update/{id}
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: id
+        FormBody: 0
+        TypeName: Int32
+      - Name: puzzle
+        FormBody: 0
+        TypeName: Puzzle
+    - Name: CreatePuzzle
+      Prefix: Create
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: puzzle
+        FormBody: 0
+        TypeName: Puzzle
+    - Name: Report
+      Prefix: Report
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: puzzlePlayer
+        FormBody: 0
+        TypeName: String
+    - Name: DeletePuzzle
+      Prefix: Delete/{id}
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: id
+        FormBody: 0
+        TypeName: Int32
+    - Name: ReplacePuzzle
+      Prefix: Replace
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
-  - Name: UserPuzzles
+      Parameters:
+      - Name: id
+        FormBody: 0
+        TypeName: Int32
+      - Name: puzzle
+        FormBody: 1
+        TypeName: Puzzle
+  - Name: UserPuzzlesController
+    Prefix: api/UserPuzzles
     Methods:
-    - Name: 
+    - Name: GetInviteData
+      Prefix: GetInviteData
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: puzzleID
+        FormBody: 0
+        TypeName: Int32
+      - Name: senderID
+        FormBody: 0
+        TypeName: Int32
+    - Name: RegisterFeedback
+      Prefix: RegisterFeedback
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
+      Parameters:
+      - Name: puzzleID
+        FormBody: 0
+        TypeName: Int32
+      - Name: playerID
+        FormBody: 0
+        TypeName: Int32
+      - Name: star
+        FormBody: 0
+        TypeName: Single
+    - Name: Sync
+      Prefix: Sync
       Info: 
-      ConnectionMethod: 0
+      ConnectionMethod: 1
       Outputs: []
-    - Name: 
-      Info: 
-      ConnectionMethod: 0
-      Outputs: []
+      Parameters:
+      - Name: inData
+        FormBody: 0
+        TypeName: InData
