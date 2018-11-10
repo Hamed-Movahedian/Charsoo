@@ -140,8 +140,9 @@ public class AccountManager : MgsSingleton<AccountManager>
             // Set connection result to success
 
 
-            ZPlayerPrefs.DeleteAll();
+            //ZPlayerPrefs.DeleteAll();
 
+            StoreInventory.TakeItem("charsoo_coin", StoreInventory.GetItemBalance("charsoo_coin"));
             StoreInventory.GiveItem("charsoo_coin", accountInfo.PlayerInfo.CoinCount);
 
             FollowMachine.SetOutput("Success");
