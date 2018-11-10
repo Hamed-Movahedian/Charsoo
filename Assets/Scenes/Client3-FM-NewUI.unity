@@ -200,13 +200,20 @@ MonoBehaviour:
   - {fileID: 1716481}
   DefaultOutputSocket: {fileID: 1716480}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1454134727}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -440,6 +447,65 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &5632801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5632803}
+  - component: {fileID: 5632802}
+  m_Layer: 0
+  m_Name: Group (EGroup)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &5632802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5632801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1387964382, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 946453210}
+  IsSelected: 0
+  IsHover: 0
+  Rect:
+    serializedVersion: 2
+    x: 50532.758
+    y: 50199.977
+    width: 1681.4219
+    height: 813.6914
+  Info: Login
+  NodeList:
+  - {fileID: 840088177}
+  - {fileID: 876060797}
+  - {fileID: 1807093173}
+  - {fileID: 248298781}
+  - {fileID: 1866189837}
+  - {fileID: 682296401}
+  - {fileID: 1044229922}
+  Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &5632803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 5632801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1439199256}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7290743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,13 +1067,20 @@ MonoBehaviour:
   - {fileID: 12172630}
   DefaultOutputSocket: {fileID: 12172632}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void set_active(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -1110,14 +1183,20 @@ MonoBehaviour:
   - {fileID: 13980997}
   DefaultOutputSocket: {fileID: 13980996}
   Active: 1
-  Lables:
-  - Payed
-  - NotEnough
   TargetGameObject: {fileID: 2127709794}
   ComponentTypeName: PurchaseManager
   MethodName: Void PayCoins(Int32)
-  ParameterValueStrings:
-  - 300
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 300
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -1476,14 +1555,11 @@ MonoBehaviour:
   - {fileID: 14200294}
   DefaultOutputSocket: {fileID: 14200296}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 947379308}
   ComponentTypeName: LetterController
   MethodName: Void DeleteAllLetters()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -2026,14 +2102,11 @@ MonoBehaviour:
   - {fileID: 27787041}
   DefaultOutputSocket: {fileID: 27787043}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 947379308}
   ComponentTypeName: LetterController
   MethodName: Void DeleteAllLetters()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -2450,14 +2523,11 @@ MonoBehaviour:
   - {fileID: 31704625}
   DefaultOutputSocket: {fileID: 31704627}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: CameraController
   MethodName: System.Collections.IEnumerator FocusAllLetters()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -2866,22 +2936,35 @@ MonoBehaviour:
   - {fileID: 52353873}
   DefaultOutputSocket: {fileID: 52353870}
   Active: 1
-  Lables:
-  - Success
-  - Fail
-  - Network Error
   TargetGameObject: {fileID: 1147136427}
   ComponentTypeName: AccountManager
   MethodName: System.Collections.IEnumerator RegisterPhoneNumber(System.String)
-  ParameterValueStrings:
-  - InputField.text
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 278321428}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/AccountRecovery
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 278321428}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &52353872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3750,21 +3833,36 @@ MonoBehaviour:
   - {fileID: 72946477}
   DefaultOutputSocket: {fileID: 72946472}
   Active: 1
-  Lables:
-  - NotOnline
-  - Success
   TargetGameObject: {fileID: 788287518}
   ComponentTypeName: ShareScreenShot
   MethodName: Void SharePuzzle(System.Nullable`1[System.Int32])
-  ParameterValueStrings:
-  - UserPuzzleInfoWindow.GetPuzzleID
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 599558626}
+      _componentType:
+        _assemblyQualifiedName: UserPuzzleInfoWindow, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UserPuzzleInfoWindow, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: GetPuzzleID
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 599558626}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &72946472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4530,14 +4628,11 @@ MonoBehaviour:
   - {fileID: 84472379}
   DefaultOutputSocket: {fileID: 84472381}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 59797856}
   ComponentTypeName: WordManager
   MethodName: Void DeleteAllWords()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -4845,26 +4940,75 @@ MonoBehaviour:
   - {fileID: 89138453}
   DefaultOutputSocket: {fileID: 89138456}
   Active: 1
-  Lables:
-  - Found
-  - Not found
   TargetGameObject: {fileID: 35330603}
   ComponentTypeName: WordFinder
   MethodName: Void Search(System.Collections.Generic.List`1[Letter], System.Collections.Generic.List`1[Letter],
     System.Collections.Generic.List`1[Word])
-  ParameterValueStrings:
-  - LetterController.AllLetters
-  - LetterController.AllLetters
-  - WordManager.Words
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 947379308}
+      _componentType:
+        _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: AllLetters
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[Letter, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 947379308}
+      _componentType:
+        _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: AllLetters
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[Letter, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 59797856}
+      _componentType:
+        _assemblyQualifiedName: WordManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: WordManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
+        _name: Words
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[Word, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 010101
-  ParameterGameObjects:
-  - {fileID: 947379308}
-  - {fileID: 947379308}
-  - {fileID: 59797856}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!1 &90395952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5092,12 +5236,20 @@ MonoBehaviour:
   - {fileID: 102238759}
   DefaultOutputSocket: {fileID: 102238761}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1885209047}
   ComponentTypeName: PlayPuzzleController
   MethodName: Void FinishPuzzle(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -5416,12 +5568,20 @@ MonoBehaviour:
   - {fileID: 107042725}
   DefaultOutputSocket: {fileID: 107042727}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1454134727}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -6087,12 +6247,20 @@ MonoBehaviour:
   - {fileID: 115861547}
   DefaultOutputSocket: {fileID: 115861549}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 312375728}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -6820,13 +6988,20 @@ MonoBehaviour:
   - {fileID: 130222774}
   DefaultOutputSocket: {fileID: 130222773}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1048904332}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -8365,7 +8540,7 @@ MonoBehaviour:
   EditPoints:
   - {x: 0.052948132, y: 0.17440419}
   - {x: 0.86877716, y: 0.36494792}
-  ClickEditpointIndex: 1
+  ClickEditpointIndex: 2
   AutoHide: 1
   ExcludeInLayout: 0
 --- !u!114 &152456141
@@ -8827,13 +9002,11 @@ MonoBehaviour:
   - {fileID: 158912560}
   DefaultOutputSocket: {fileID: 158912559}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1113652172}
   ComponentTypeName: PurchaseController
   MethodName: System.Collections.IEnumerator SyncPurchases()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
@@ -9209,12 +9382,20 @@ MonoBehaviour:
   - {fileID: 168261736}
   DefaultOutputSocket: {fileID: 168261738}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1905156979}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -9890,14 +10071,11 @@ MonoBehaviour:
   - {fileID: 189905090}
   DefaultOutputSocket: {fileID: 189905092}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 329027017}
   ComponentTypeName: ApplicationController
   MethodName: Void Exit()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -11742,14 +11920,11 @@ MonoBehaviour:
   - {fileID: 247290417}
   DefaultOutputSocket: {fileID: 247290416}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1094032883}
   ComponentTypeName: HintManager
   MethodName: Void ResetHint()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -11936,8 +12111,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51167.04
-    y: 50375.984
+    x: 51319.797
+    y: 50417.652
     width: 20
     height: 20
   Info: Fail
@@ -11963,8 +12138,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51167.04
-    y: 50344.473
+    x: 51319.797
+    y: 50386.14
     width: 20
     height: 20
   Info: Success
@@ -11990,8 +12165,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50898.434
-    y: 50307.676
+    x: 51051.19
+    y: 50349.344
     width: 20
     height: 20
   Info: 
@@ -12015,8 +12190,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50934.67
-    y: 50416.062
+    x: 51087.43
+    y: 50457.73
     width: 20
     height: 20
   Info: 
@@ -12041,8 +12216,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50913.473
-    y: 50249.72
+    x: 51066.23
+    y: 50291.387
     width: 256.66797
     height: 167.77344
   Info: Register To Server
@@ -12053,15 +12228,11 @@ MonoBehaviour:
   - {fileID: 248298777}
   DefaultOutputSocket: {fileID: 248298780}
   Active: 1
-  Lables:
-  - Success
-  - Fail
   TargetGameObject: {fileID: 1415881646}
   ComponentTypeName: PlayerController
   MethodName: System.Collections.IEnumerator RegisterPlayerToServer()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
@@ -12306,13 +12477,11 @@ MonoBehaviour:
   - {fileID: 255612155}
   DefaultOutputSocket: {fileID: 255612157}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 2067092943}
   ComponentTypeName: SoundManager
   MethodName: Void ResetSounds()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -12695,28 +12864,45 @@ MonoBehaviour:
   - {fileID: 257497703}
   DefaultOutputSocket: {fileID: 257497709}
   Active: 1
-  Lables:
-  - Success
-  - Not Register
-  - No Sms Service
-  - Invalid Phone Number
-  - Network Error
-  - Repetitive Number
   TargetGameObject: {fileID: 1147136427}
   ComponentTypeName: AccountManager
   MethodName: System.Collections.IEnumerator SendRandomCodeToPhoneNumber(System.String,
     Boolean)
-  ParameterValueStrings:
-  - InputField.text
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 278321428}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/SendCode
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 0100
-  ParameterGameObjects:
-  - {fileID: 278321428}
-  - {fileID: 0}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!4 &257497711
 Transform:
   m_ObjectHideFlags: 0
@@ -12908,12 +13094,20 @@ MonoBehaviour:
   - {fileID: 258151671}
   DefaultOutputSocket: {fileID: 258151672}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1885209047}
   ComponentTypeName: PlayPuzzleController
   MethodName: Void AddHint(Int32)
-  ParameterValueStrings:
-  - 1
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 1
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -12965,22 +13159,57 @@ MonoBehaviour:
   - {fileID: 258167113}
   DefaultOutputSocket: {fileID: 258167112}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 584277016}
   ComponentTypeName: PuzzleSolverAnimation
   MethodName: System.Collections.IEnumerator RunAnimation(System.Collections.Generic.List`1[Letter],
     System.Collections.Generic.Dictionary`2[Letter,UnityEngine.Vector3])
-  ParameterValueStrings:
-  - LetterController.AllLetters
-  - PuzzleSolver.LetterPositions
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 947379308}
+      _componentType:
+        _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: AllLetters
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[Letter, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 584277016}
+      _componentType:
+        _assemblyQualifiedName: PuzzleSolver, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: PuzzleSolver, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: LetterPositions
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.Dictionary`2[[Letter, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[UnityEngine.Vector3,
+          UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 0101
-  ParameterGameObjects:
-  - {fileID: 947379308}
-  - {fileID: 584277016}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &258167112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13252,12 +13481,20 @@ MonoBehaviour:
   - {fileID: 259271628}
   DefaultOutputSocket: {fileID: 259271630}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 312375728}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -14860,12 +15097,20 @@ MonoBehaviour:
   - {fileID: 295705483}
   DefaultOutputSocket: {fileID: 295705485}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -15315,24 +15560,53 @@ MonoBehaviour:
   - {fileID: 319131137}
   DefaultOutputSocket: {fileID: 319131136}
   Active: 1
-  Lables:
-  - Success
-  - Network Error
-  - Fail
   TargetGameObject: {fileID: 1354105004}
   ComponentTypeName: OnlinePuzzleController
   MethodName: System.Collections.IEnumerator GetUserPuzzle(System.String, System.String)
-  ParameterValueStrings:
-  - DeepLinkController.PuzzleID
-  - DeepLinkController.UserID
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 914338254}
+      _componentType:
+        _assemblyQualifiedName: DeepLinkController, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: DeepLinkController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: PuzzleID
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 914338254}
+      _componentType:
+        _assemblyQualifiedName: DeepLinkController, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: DeepLinkController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: UserID
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 0101
-  ParameterGameObjects:
-  - {fileID: 914338254}
-  - {fileID: 914338254}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &319131136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16073,8 +16347,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50192.9
-    y: 50227.957
+    x: 50282.9
+    y: 50337.957
     width: 20
     height: 20
   Info: 
@@ -16100,8 +16374,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50060
-    y: 50170
+    x: 50150
+    y: 50280
     width: 136
     height: 112
   Info: Login
@@ -16139,8 +16413,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50081.2
-    y: 50280.57
+    x: 50171.2
+    y: 50390.57
     width: 20
     height: 20
   Info: 
@@ -17456,14 +17730,11 @@ MonoBehaviour:
   - {fileID: 356252865}
   DefaultOutputSocket: {fileID: 356252867}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1611429975}
   ComponentTypeName: RuntimeWordSetGenerator
   MethodName: Void Finish()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -18147,21 +18418,17 @@ MonoBehaviour:
   - {fileID: 367124175}
   DefaultOutputSocket: {fileID: 367124177}
   Active: 1
-  Lables:
-  - Success
-  - Fail
   TargetGameObject: {fileID: 1354105004}
   ComponentTypeName: OnlinePuzzleController
   MethodName: Void SpawnInvitedPuzzle()
-  ParameterValueStrings:
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 0}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &367124177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18481,21 +18748,35 @@ MonoBehaviour:
   - {fileID: 371386634}
   DefaultOutputSocket: {fileID: 371386636}
   Active: 1
-  Lables:
-  - Yes
-  - No
   TargetGameObject: {fileID: 1415881646}
   ComponentTypeName: PlayerController
   MethodName: Void IsValidName(System.String)
-  ParameterValueStrings:
-  - InputField.text
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 991066933}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 991066933}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!1001 &372106846
 Prefab:
   m_ObjectHideFlags: 0
@@ -18674,13 +18955,11 @@ MonoBehaviour:
   - {fileID: 376112863}
   DefaultOutputSocket: {fileID: 376112865}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 59797856}
   ComponentTypeName: WordManager
   MethodName: Void CheckFinishGame()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -19290,13 +19569,20 @@ MonoBehaviour:
   - {fileID: 391276368}
   DefaultOutputSocket: {fileID: 391276370}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 277882281}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -19435,13 +19721,20 @@ MonoBehaviour:
   - {fileID: 398823487}
   DefaultOutputSocket: {fileID: 398823486}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 805168264}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -20280,13 +20573,20 @@ MonoBehaviour:
   - {fileID: 409789308}
   DefaultOutputSocket: {fileID: 409789310}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 277882281}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -20813,14 +21113,11 @@ MonoBehaviour:
   - {fileID: 415642374}
   DefaultOutputSocket: {fileID: 415642376}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1822953616}
   ComponentTypeName: MovingEffect
   MethodName: System.Collections.IEnumerator GotoParrent()
-  ParameterValueStrings:
-  - True
-  - 0
-  - 0
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -20980,13 +21277,20 @@ MonoBehaviour:
   - {fileID: 423799265}
   DefaultOutputSocket: {fileID: 423799264}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void set_active(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -21720,12 +22024,20 @@ MonoBehaviour:
   - {fileID: 439191061}
   DefaultOutputSocket: {fileID: 439191060}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1885209047}
   ComponentTypeName: PlayPuzzleController
   MethodName: Void AddHint(Int32)
-  ParameterValueStrings:
-  - 3
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 3
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -21888,13 +22200,20 @@ MonoBehaviour:
   - {fileID: 444887138}
   DefaultOutputSocket: {fileID: 444887137}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -22915,12 +23234,20 @@ MonoBehaviour:
   - {fileID: 467207669}
   DefaultOutputSocket: {fileID: 467207670}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 2060048784}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -23955,13 +24282,20 @@ MonoBehaviour:
   - {fileID: 482691081}
   DefaultOutputSocket: {fileID: 482691083}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 2067092943}
   ComponentTypeName: SoundManager
   MethodName: Void PlayOtherClip(Int32)
-  ParameterValueStrings:
-  - 3
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 3
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -24019,16 +24353,11 @@ MonoBehaviour:
   - {fileID: 484780725}
   DefaultOutputSocket: {fileID: 484780724}
   Active: 1
-  Lables:
-  - First Part
-  - New Part
-  - Last Part
   TargetGameObject: {fileID: 1094032883}
   ComponentTypeName: HintManager
   MethodName: Void ShowNextPart()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -24902,21 +25231,35 @@ MonoBehaviour:
   - {fileID: 490322373}
   DefaultOutputSocket: {fileID: 490322369}
   Active: 1
-  Lables:
-  - Success
-  - Fail
   TargetGameObject: {fileID: 1354105004}
   ComponentTypeName: OnlinePuzzleController
   MethodName: System.Collections.IEnumerator SetForSpawn(System.String)
-  ParameterValueStrings:
-  - InputField.text
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 1811203202}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 1811203202}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &490322369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25153,9 +25496,9 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50526.875
-    y: 49470
-    width: 2533.5977
-    height: 445.8828
+    y: 49500
+    width: 2643.5977
+    height: 447.39062
   Info: Create Player Info
   NodeList:
   - {fileID: 1830240803}
@@ -25462,14 +25805,11 @@ MonoBehaviour:
   - {fileID: 492634607}
   DefaultOutputSocket: {fileID: 492634606}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 399022897}
   ComponentTypeName: UserPuzzleSelectionWindow
   MethodName: System.Collections.IEnumerator Hide()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -25991,13 +26331,20 @@ MonoBehaviour:
   - {fileID: 496655632}
   DefaultOutputSocket: {fileID: 496655634}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -26081,10 +26428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 503825625}
-  - component: {fileID: 503825629}
   - component: {fileID: 503825628}
-  - component: {fileID: 503825627}
-  - component: {fileID: 503825626}
   m_Layer: 0
   m_Name: ' (EntryPointNode)'
   m_TagString: Untagged
@@ -26105,53 +26449,6 @@ Transform:
   m_Father: {fileID: 1439199256}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &503825626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 503825624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 0}
-  IsSelected: 0
-  IsHover: 0
-  InputSocket: {fileID: 503825627}
-  OutputSocket: {fileID: 1807093170}
-  EditPoints: []
-  ClickEditpointIndex: 0
-  AutoHide: 0
-  ExcludeInLayout: 0
---- !u!114 &503825627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 503825624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 946453210}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50213.625
-    y: 50398.633
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 503825629}
-  EdgeList:
-  - {fileID: 503825626}
-  Icon: {fileID: 0}
-  AutoEdgeHide: 0
-  AutoHide: 0
 --- !u!114 &503825628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26169,41 +26466,15 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 50051.926
-    y: 50445.203
+    y: 50446.29
     width: 20
     height: 20
   Info: 
-  Node: {fileID: 503825629}
+  Node: {fileID: 0}
   EdgeList: []
   Icon: {fileID: 0}
   AutoEdgeHide: 0
   AutoHide: 1
---- !u!114 &503825629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 503825624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1935184719, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 946453210}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50030.727
-    y: 50346.72
-    width: 186
-    height: 99.91406
-  Info: 
-  InputSocketList: []
-  OutputSocketList:
-  - {fileID: 503825627}
-  DefaultOutputSocket: {fileID: 503825628}
-  Active: 0
 --- !u!1 &505389530
 GameObject:
   m_ObjectHideFlags: 0
@@ -26362,13 +26633,20 @@ MonoBehaviour:
   - {fileID: 505389533}
   DefaultOutputSocket: {fileID: 505389535}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void set_enabled(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -26473,16 +26751,11 @@ MonoBehaviour:
   - {fileID: 506792527}
   DefaultOutputSocket: {fileID: 506792529}
   Active: 1
-  Lables:
-  - Normal
-  - Unkown Command
-  - Show User Puzzle
   TargetGameObject: {fileID: 914338254}
   ComponentTypeName: DeepLinkController
   MethodName: Void GetDeepLinkInfo()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -28629,20 +28902,66 @@ MonoBehaviour:
   - {fileID: 543923349}
   DefaultOutputSocket: {fileID: 543923348}
   Active: 1
-  PropertyCount: 2
-  DynamicValue: 0001
-  PropertyGameObjects:
-  - {fileID: 74285241}
-  - {fileID: 718951742}
-  PropertyString:
-  - Button.interactable
-  - Text.text
-  ValueGameObjects:
-  - {fileID: 0}
-  - {fileID: 1415881646}
-  ValueString:
-  - False
-  - PlayerController.PlayerTelephone
+  PropertyCount: 0
+  DynamicValue: 
+  PropertyGameObjects: []
+  PropertyString: []
+  ValueGameObjects: []
+  ValueString: []
+  Assinments:
+  - SetValue:
+      _source: {fileID: 74285241}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Button, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Selectable, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: interactable
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 0
+      _bindValues: []
+      Lable: 
+      _constValues:
+      - Type:
+          _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        _valueString: false
+        _unityObject: {fileID: 0}
+  - SetValue:
+      _source: {fileID: 718951742}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 1
+      _bindValues:
+      - _source: {fileID: 1415881646}
+        _componentType:
+          _assemblyQualifiedName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        MemberInfo:
+        - _declaringType:
+            _assemblyQualifiedName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+          _name: PlayerTelephone
+          _memberType: 16
+          Parameters: []
+        ReturnType:
+          _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+      Lable: 
+      _constValues: []
 --- !u!114 &543923348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29004,8 +29323,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51124.96
-    y: 49812.074
+    x: 51344.96
+    y: 49801.53
     width: 20
     height: 20
   Info: 
@@ -29031,8 +29350,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51161.2
-    y: 49858.645
+    x: 51381.2
+    y: 49848.1
     width: 20
     height: 20
   Info: 
@@ -29057,10 +29376,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51140
-    y: 49760
+    x: 51360
+    y: 49750
     width: 153
-    height: 100.07422
+    height: 99.53125
   Info: 
   InputSocketList:
   - {fileID: 548800094}
@@ -30959,15 +31278,11 @@ MonoBehaviour:
   - {fileID: 587241497}
   DefaultOutputSocket: {fileID: 587241498}
   Active: 1
-  Lables:
-  - Success
-  - Fail
   TargetGameObject: {fileID: 1415881646}
   ComponentTypeName: PlayerController
   MethodName: System.Collections.IEnumerator RegisterPlayerToServer()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
@@ -31191,16 +31506,11 @@ MonoBehaviour:
   - {fileID: 588263099}
   DefaultOutputSocket: {fileID: 588263102}
   Active: 1
-  Lables:
-  - Success
-  - Network Error
-  - Account Error
   TargetGameObject: {fileID: 1147136427}
   ComponentTypeName: AccountManager
   MethodName: System.Collections.IEnumerator ConnectToAccount()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/AccountRecovery
   ProgressbarShow: 1
@@ -32094,14 +32404,20 @@ MonoBehaviour:
   - {fileID: 597850764}
   DefaultOutputSocket: {fileID: 597850768}
   Active: 1
-  Lables:
-  - Payed
-  - NotEnough
   TargetGameObject: {fileID: 2127709794}
   ComponentTypeName: PurchaseManager
   MethodName: Void PayCoins(Int32)
-  ParameterValueStrings:
-  - 23
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 23
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -32239,14 +32555,11 @@ MonoBehaviour:
   - {fileID: 600026905}
   DefaultOutputSocket: {fileID: 600026904}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1611429975}
   ComponentTypeName: RuntimeWordSetGenerator
   MethodName: Void Finish()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -33125,13 +33438,11 @@ MonoBehaviour:
   - {fileID: 620948297}
   DefaultOutputSocket: {fileID: 620948299}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: CameraController
   MethodName: Void InitiateCamView()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -33518,13 +33829,20 @@ MonoBehaviour:
   - {fileID: 627377884}
   DefaultOutputSocket: {fileID: 627377883}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 2067092943}
   ComponentTypeName: SoundManager
   MethodName: Void PlayOtherClip(Int32)
-  ParameterValueStrings:
-  - 4
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 4
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -34408,17 +34726,11 @@ MonoBehaviour:
   - {fileID: 644022692}
   DefaultOutputSocket: {fileID: 644022685}
   Active: 1
-  Lables:
-  - No Player Info
-  - No Player ID
-  - Not Sync
-  - Has Player ID
   TargetGameObject: {fileID: 1415881646}
   ComponentTypeName: PlayerController
   MethodName: Void CheckPlayerInfo()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -34787,12 +35099,20 @@ MonoBehaviour:
   - {fileID: 645175589}
   DefaultOutputSocket: {fileID: 645175591}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1885209047}
   ComponentTypeName: PlayPuzzleController
   MethodName: Void FinishPuzzle(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -35155,8 +35475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 946453210}
-  IsSelected: 1
-  IsHover: 1
+  IsSelected: 0
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 52150
@@ -35562,13 +35882,11 @@ MonoBehaviour:
   - {fileID: 653083533}
   DefaultOutputSocket: {fileID: 653083534}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1891861544}
   ComponentTypeName: MgsUIWindow
   MethodName: System.Collections.IEnumerator Hide()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -36026,13 +36344,20 @@ MonoBehaviour:
   - {fileID: 661923294}
   DefaultOutputSocket: {fileID: 661923295}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void set_active(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -36495,13 +36820,20 @@ MonoBehaviour:
   - {fileID: 677967386}
   DefaultOutputSocket: {fileID: 677967388}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1454134727}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -36712,13 +37044,20 @@ MonoBehaviour:
   - {fileID: 679920450}
   DefaultOutputSocket: {fileID: 679920452}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 2067092943}
   ComponentTypeName: SoundManager
   MethodName: Void PlayOtherClip(Int32)
-  ParameterValueStrings:
-  - 1
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 1
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -36770,8 +37109,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51591.2
-    y: 50920.57
+    x: 51743.957
+    y: 50962.24
     width: 20
     height: 20
   Info: 
@@ -36796,8 +37135,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51554.96
-    y: 50867.957
+    x: 51707.72
+    y: 50909.625
     width: 20
     height: 20
   Info: 
@@ -36821,8 +37160,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51570
-    y: 50810
+    x: 51722.758
+    y: 50851.668
     width: 153
     height: 112
   Info: Success
@@ -42488,13 +42827,20 @@ MonoBehaviour:
   - {fileID: 708928324}
   DefaultOutputSocket: {fileID: 708928323}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1869832533}
   ComponentTypeName: GraphicRaycaster
   MethodName: Void set_enabled(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -42842,15 +43188,11 @@ MonoBehaviour:
   - {fileID: 711298653}
   DefaultOutputSocket: {fileID: 711298650}
   Active: 1
-  Lables:
-  - Yes
-  - No
   TargetGameObject: {fileID: 1094032883}
   ComponentTypeName: HintManager
   MethodName: Void CheckHintWord()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -43218,8 +43560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Graph: {fileID: 1610461281}
-  IsSelected: 1
-  IsHover: 1
+  IsSelected: 0
+  IsHover: 0
   Rect:
     serializedVersion: 2
     x: 48510
@@ -44921,21 +45263,17 @@ MonoBehaviour:
   - {fileID: 757038854}
   DefaultOutputSocket: {fileID: 757038856}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1147136427}
   ComponentTypeName: AccountManager
   MethodName: Void GenerateRandomCode()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 0000
-  ParameterGameObjects:
-  - {fileID: 0}
-  - {fileID: 0}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!4 &757038858
 Transform:
   m_ObjectHideFlags: 0
@@ -45022,12 +45360,20 @@ MonoBehaviour:
   - {fileID: 760767865}
   DefaultOutputSocket: {fileID: 760767864}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1048904332}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -45473,13 +45819,20 @@ MonoBehaviour:
   - {fileID: 769326555}
   DefaultOutputSocket: {fileID: 769326557}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void set_enabled(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -46612,14 +46965,11 @@ MonoBehaviour:
   - {fileID: 796230451}
   DefaultOutputSocket: {fileID: 796230453}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 106129619}
   ComponentTypeName: WindowGetClue
   MethodName: Void ClearClue()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -46834,14 +47184,11 @@ MonoBehaviour:
   - {fileID: 804318227}
   DefaultOutputSocket: {fileID: 804318229}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 2110327045}
   ComponentTypeName: WordSpawner
   MethodName: Void SpawnWords()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -47491,16 +47838,44 @@ MonoBehaviour:
   - {fileID: 811688219}
   DefaultOutputSocket: {fileID: 811688221}
   Active: 1
-  PropertyCount: 1
-  DynamicValue: 01
-  PropertyGameObjects:
-  - {fileID: 68165970}
-  PropertyString:
-  - Text.text
-  ValueGameObjects:
-  - {fileID: 914338254}
-  ValueString:
-  - DeepLinkController.Data
+  PropertyCount: 0
+  DynamicValue: 
+  PropertyGameObjects: []
+  PropertyString: []
+  ValueGameObjects: []
+  ValueString: []
+  Assinments:
+  - SetValue:
+      _source: {fileID: 68165970}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 1
+      _bindValues:
+      - _source: {fileID: 914338254}
+        _componentType:
+          _assemblyQualifiedName: DeepLinkController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        MemberInfo:
+        - _declaringType:
+            _assemblyQualifiedName: DeepLinkController, Assembly-CSharp, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+          _name: Data
+          _memberType: 16
+          Parameters: []
+        ReturnType:
+          _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+      Lable: 
+      _constValues: []
 --- !u!114 &811688221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47681,21 +48056,55 @@ MonoBehaviour:
   - {fileID: 818680567}
   DefaultOutputSocket: {fileID: 818680566}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 584277016}
   ComponentTypeName: PuzzleSolver
   MethodName: Void Solve(System.Collections.Generic.List`1[Letter], System.Collections.Generic.List`1[Word])
-  ParameterValueStrings:
-  - LetterController.AllLetters
-  - WordManager.Words
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 947379308}
+      _componentType:
+        _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: AllLetters
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[Letter, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 59797856}
+      _componentType:
+        _assemblyQualifiedName: WordManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: WordManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
+        _name: Words
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[Word, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 0101
-  ParameterGameObjects:
-  - {fileID: 947379308}
-  - {fileID: 59797856}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &818680566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48392,15 +48801,11 @@ MonoBehaviour:
   - {fileID: 831801398}
   DefaultOutputSocket: {fileID: 831801401}
   Active: 1
-  Lables:
-  - Yes
-  - No
   TargetGameObject: {fileID: 106129619}
   ComponentTypeName: WindowGetClue
   MethodName: Void CheckClue()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -48670,8 +49075,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51843.383
-    y: 50279.812
+    x: 51996.14
+    y: 50321.48
     width: 20
     height: 20
   Info: 
@@ -48696,8 +49101,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51858.42
-    y: 50221.855
+    x: 52011.18
+    y: 50263.523
     width: 153
     height: 112
   Info: Success
@@ -48722,8 +49127,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51879.62
-    y: 50332.426
+    x: 52032.38
+    y: 50374.094
     width: 20
     height: 20
   Info: 
@@ -49667,15 +50072,11 @@ MonoBehaviour:
   - {fileID: 867088358}
   DefaultOutputSocket: {fileID: 867088361}
   Active: 1
-  Lables:
-  - Child Category List
-  - Puzzle List
   TargetGameObject: {fileID: 1556434278}
   ComponentTypeName: LocalCategorySelectionWindow
   MethodName: Void ListToShow()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -49979,8 +50380,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51820
-    y: 50420
+    x: 51972.758
+    y: 50461.668
     width: 153
     height: 112
   Info: Fail
@@ -50005,8 +50406,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51841.2
-    y: 50530.57
+    x: 51993.957
+    y: 50572.24
     width: 20
     height: 20
   Info: 
@@ -50031,8 +50432,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51804.96
-    y: 50477.957
+    x: 51957.72
+    y: 50519.625
     width: 20
     height: 20
   Info: 
@@ -50232,12 +50633,20 @@ MonoBehaviour:
   - {fileID: 878703582}
   DefaultOutputSocket: {fileID: 878703581}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void TriggerRaycast(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -50957,13 +51366,11 @@ MonoBehaviour:
   - {fileID: 886173938}
   DefaultOutputSocket: {fileID: 886173940}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1538602673}
   ComponentTypeName: Table
   MethodName: Void ResetBackground()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -51154,8 +51561,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52794.96
-    y: 49577.957
+    x: 52904.96
+    y: 49607.957
     width: 20
     height: 20
   Info: 
@@ -51180,8 +51587,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 53007.37
-    y: 49577.957
+    x: 53117.37
+    y: 49607.957
     width: 20
     height: 20
   Info: 
@@ -51206,8 +51613,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52831.2
-    y: 49630.57
+    x: 52941.2
+    y: 49660.57
     width: 20
     height: 20
   Info: 
@@ -51245,8 +51652,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52810
-    y: 49520
+    x: 52920
+    y: 49550
     width: 200.47266
     height: 112
   Info: LoadLevel 1
@@ -51256,12 +51663,20 @@ MonoBehaviour:
   - {fileID: 894765687}
   DefaultOutputSocket: {fileID: 894765688}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 329027017}
   ComponentTypeName: ApplicationController
   MethodName: Void LoadLevel(Int32)
-  ParameterValueStrings:
-  - 1
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 1
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -52643,13 +53058,20 @@ MonoBehaviour:
   - {fileID: 922802092}
   DefaultOutputSocket: {fileID: 922802091}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1048904332}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -52979,12 +53401,20 @@ MonoBehaviour:
   - {fileID: 929056355}
   DefaultOutputSocket: {fileID: 929056357}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 2014739815}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -53556,7 +53986,7 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -51412.367, y: -48425.39}
+  Position: {x: -49757.203, y: -49365.234}
   Zoom: 0.4600004
   NodeList:
   - {fileID: 323357551}
@@ -53570,7 +54000,6 @@ MonoBehaviour:
   - {fileID: 2104349407}
   - {fileID: 248298781}
   - {fileID: 1866189837}
-  - {fileID: 503825629}
   - {fileID: 652640403}
   - {fileID: 152456145}
   - {fileID: 682296401}
@@ -53580,6 +54009,7 @@ MonoBehaviour:
   - {fileID: 2107722371}
   GroupList:
   - {fileID: 491569224}
+  - {fileID: 5632802}
   LastRunningNode: {fileID: 0}
   IsRunning: 0
 --- !u!1 &947379308
@@ -53820,14 +54250,11 @@ MonoBehaviour:
   - {fileID: 948518280}
   DefaultOutputSocket: {fileID: 948518282}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1556434278}
   ComponentTypeName: LocalCategorySelectionWindow
   MethodName: Void UnlockCategory()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -55692,14 +56119,11 @@ MonoBehaviour:
   - {fileID: 998598039}
   DefaultOutputSocket: {fileID: 998598041}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1094032883}
   ComponentTypeName: HintManager
   MethodName: Void ResetHint()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -56503,13 +56927,20 @@ MonoBehaviour:
   - {fileID: 1027658243}
   DefaultOutputSocket: {fileID: 1027658242}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 444946708}
   ComponentTypeName: Button
   MethodName: Void set_interactable(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -57518,13 +57949,20 @@ MonoBehaviour:
   - {fileID: 1040584007}
   DefaultOutputSocket: {fileID: 1040584009}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void set_enabled(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -57761,8 +58199,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51463.566
-    y: 50602.355
+    x: 51616.324
+    y: 50644.023
     width: 20
     height: 20
   Info: Fail
@@ -57788,8 +58226,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51463.566
-    y: 50570.844
+    x: 51616.324
+    y: 50612.51
     width: 20
     height: 20
   Info: Success
@@ -57815,8 +58253,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51194.96
-    y: 50521.004
+    x: 51347.72
+    y: 50562.67
     width: 20
     height: 20
   Info: 
@@ -57840,8 +58278,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51231.2
-    y: 50642.434
+    x: 51383.957
+    y: 50684.1
     width: 20
     height: 20
   Info: 
@@ -57866,8 +58304,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51210
-    y: 50450
+    x: 51362.758
+    y: 50491.668
     width: 256.66797
     height: 193.86328
   Info: PlayerController => SyncPlayerInfo
@@ -57878,15 +58316,11 @@ MonoBehaviour:
   - {fileID: 1044229918}
   DefaultOutputSocket: {fileID: 1044229921}
   Active: 1
-  Lables:
-  - Success
-  - Fail
   TargetGameObject: {fileID: 1415881646}
   ComponentTypeName: PlayerController
   MethodName: System.Collections.IEnumerator SyncPlayerInfo()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
@@ -58343,13 +58777,20 @@ MonoBehaviour:
   - {fileID: 1055200074}
   DefaultOutputSocket: {fileID: 1055200076}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 805168264}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -58512,12 +58953,20 @@ MonoBehaviour:
   - {fileID: 1057307790}
   DefaultOutputSocket: {fileID: 1057307792}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1885209047}
   ComponentTypeName: PlayPuzzleController
   MethodName: Void AddHint(Int32)
-  ParameterValueStrings:
-  - 2
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 2
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -58653,10 +59102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1060978466}
-  - component: {fileID: 1060978462}
   - component: {fileID: 1060978463}
-  - component: {fileID: 1060978465}
-  - component: {fileID: 1060978464}
   m_Layer: 0
   m_Name: ' (ActionNode)'
   m_TagString: Untagged
@@ -58664,44 +59110,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1060978462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1060978461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 99743790, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1931633712}
-  IsSelected: 1
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50240.23
-    y: 49828.918
-    width: 151
-    height: 100.07422
-  Info: 
-  InputSocketList:
-  - {fileID: 1060978465}
-  OutputSocketList:
-  - {fileID: 1060978464}
-  DefaultOutputSocket: {fileID: 1060978463}
-  Active: 1
-  Lables: []
-  TargetGameObject: {fileID: 1354105004}
-  ComponentTypeName: 
-  MethodName: 
-  ParameterValueStrings:
-  - 
-  - 
-  ProgressbarWindow: {fileID: 0}
-  ProgressbarMessage: 
-  ProgressbarShow: 1
-  ProgressbarHide: 1
 --- !u!114 &1060978463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58723,61 +59131,11 @@ MonoBehaviour:
     width: 20
     height: 20
   Info: 
-  Node: {fileID: 1060978462}
+  Node: {fileID: 0}
   EdgeList: []
   Icon: {fileID: 0}
   AutoEdgeHide: 0
   AutoHide: 1
---- !u!114 &1060978464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1060978461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1931633712}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50388.13
-    y: 49880.992
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 1060978462}
-  EdgeList: []
-  Icon: {fileID: 0}
-  AutoEdgeHide: 0
-  AutoHide: 0
---- !u!114 &1060978465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1060978461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -633217054, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Graph: {fileID: 1931633712}
-  IsSelected: 0
-  IsHover: 0
-  Rect:
-    serializedVersion: 2
-    x: 50225.19
-    y: 49880.992
-    width: 20
-    height: 20
-  Info: 
-  Node: {fileID: 1060978462}
-  EdgeList: []
-  Icon: {fileID: 0}
 --- !u!4 &1060978466
 Transform:
   m_ObjectHideFlags: 0
@@ -59668,13 +60026,20 @@ MonoBehaviour:
   - {fileID: 1075611117}
   DefaultOutputSocket: {fileID: 1075611119}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void set_enabled(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -59818,19 +60183,36 @@ MonoBehaviour:
   - {fileID: 1083517172}
   DefaultOutputSocket: {fileID: 1083517174}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1907487230}
   ComponentTypeName: WordHighlightEffect
   MethodName: System.Collections.IEnumerator ShowEffects(System.Collections.Generic.List`1[UnityEngine.Bounds])
-  ParameterValueStrings:
-  - WordFinder.FoundWords
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 35330603}
+      _componentType:
+        _assemblyQualifiedName: WordFinder, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: WordFinder, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
+        _name: FoundWords
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[UnityEngine.Bounds,
+          UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 35330603}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &1083517176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60368,13 +60750,20 @@ MonoBehaviour:
   - {fileID: 1092770082}
   DefaultOutputSocket: {fileID: 1092770081}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 2127709794}
   ComponentTypeName: PurchaseManager
   MethodName: Void GiveCoin(Int32)
-  ParameterValueStrings:
-  - 20
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 20
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -60653,14 +61042,20 @@ MonoBehaviour:
   - {fileID: 1093687394}
   DefaultOutputSocket: {fileID: 1093687396}
   Active: 1
-  Lables:
-  - Payed
-  - NotEnough
   TargetGameObject: {fileID: 2127709794}
   ComponentTypeName: PurchaseManager
   MethodName: Void PayCoins(Int32)
-  ParameterValueStrings:
-  - 70
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 70
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -61328,14 +61723,11 @@ MonoBehaviour:
   - {fileID: 1110311519}
   DefaultOutputSocket: {fileID: 1110311521}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1611429975}
   ComponentTypeName: RuntimeWordSetGenerator
   MethodName: System.Collections.IEnumerator Suffle()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -61761,15 +62153,11 @@ MonoBehaviour:
   - {fileID: 1113292563}
   DefaultOutputSocket: {fileID: 1113292566}
   Active: 1
-  Lables:
-  - Rewarded
-  - Cancel
   TargetGameObject: {fileID: 1099092390}
   ComponentTypeName: AdManager
   MethodName: System.Collections.IEnumerator ShowAd()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -63058,14 +63446,11 @@ MonoBehaviour:
   - {fileID: 1154330556}
   DefaultOutputSocket: {fileID: 1154330558}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 618070916}
   ComponentTypeName: LocalPuzzleDB
   MethodName: Void UnlockCategoryPuzzles()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -63272,14 +63657,11 @@ MonoBehaviour:
   - {fileID: 1155508253}
   DefaultOutputSocket: {fileID: 1155508255}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 277882281}
   ComponentTypeName: HUD
   MethodName: Void SetupHUD()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -63537,12 +63919,11 @@ MonoBehaviour:
   - {fileID: 1161397776}
   DefaultOutputSocket: {fileID: 1161397778}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1885209047}
   ComponentTypeName: PlayPuzzleController
   MethodName: Void SendPlayHistory()
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -64054,13 +64435,11 @@ MonoBehaviour:
   - {fileID: 1175371757}
   DefaultOutputSocket: {fileID: 1175371759}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1147136427}
   ComponentTypeName: AccountManager
   MethodName: Void GenerateRandomCode()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -64290,15 +64669,11 @@ MonoBehaviour:
   - {fileID: 1175825986}
   DefaultOutputSocket: {fileID: 1175825983}
   Active: 1
-  Lables:
-  - Play Next
-  - No Next Puzzle
   TargetGameObject: {fileID: 618070916}
   ComponentTypeName: LocalPuzzleDB
   MethodName: Void PuzzleSolved()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -64820,13 +65195,20 @@ MonoBehaviour:
   - {fileID: 1177975584}
   DefaultOutputSocket: {fileID: 1177975586}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1454134727}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -65125,14 +65507,11 @@ MonoBehaviour:
   - {fileID: 1183842326}
   DefaultOutputSocket: {fileID: 1183842328}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 599558626}
   ComponentTypeName: UserPuzzleInfoWindow
   MethodName: Void SetForSpawn()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -65184,13 +65563,11 @@ MonoBehaviour:
   - {fileID: 1189571168}
   DefaultOutputSocket: {fileID: 1189571167}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1611429975}
   ComponentTypeName: RuntimeWordSetGenerator
   MethodName: Void Save()
-  ParameterValueStrings:
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -65353,13 +65730,20 @@ MonoBehaviour:
   - {fileID: 1191836721}
   DefaultOutputSocket: {fileID: 1191836720}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1500257639}
   ComponentTypeName: GameObject
   MethodName: Void set_active(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -66168,21 +66552,35 @@ MonoBehaviour:
   - {fileID: 1211963102}
   DefaultOutputSocket: {fileID: 1211963104}
   Active: 1
-  Lables:
-  - Yes
-  - No
   TargetGameObject: {fileID: 1147136427}
   ComponentTypeName: AccountManager
   MethodName: Void IsCodeValid(System.String)
-  ParameterValueStrings:
-  - InputField.text
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 689227950}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 689227950}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!4 &1211963106
 Transform:
   m_ObjectHideFlags: 0
@@ -68008,28 +68406,45 @@ MonoBehaviour:
   - {fileID: 1268604821}
   DefaultOutputSocket: {fileID: 1268604818}
   Active: 1
-  Lables:
-  - Success
-  - Not Register
-  - No Sms Service
-  - Invalid Phone Number
-  - Network Error
-  - Repetitive Number
   TargetGameObject: {fileID: 1147136427}
   ComponentTypeName: AccountManager
   MethodName: System.Collections.IEnumerator SendRandomCodeToPhoneNumber(System.String,
     Boolean)
-  ParameterValueStrings:
-  - InputField.text
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 278321428}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/SendCode
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 0100
-  ParameterGameObjects:
-  - {fileID: 278321428}
-  - {fileID: 0}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!4 &1268604820
 Transform:
   m_ObjectHideFlags: 0
@@ -68483,13 +68898,20 @@ MonoBehaviour:
   - {fileID: 1280401315}
   DefaultOutputSocket: {fileID: 1280401317}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 444946708}
   ComponentTypeName: Button
   MethodName: Void set_interactable(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -69424,15 +69846,11 @@ MonoBehaviour:
   - {fileID: 1304491421}
   DefaultOutputSocket: {fileID: 1304491424}
   Active: 1
-  Lables:
-  - Rewarded
-  - Cancel
   TargetGameObject: {fileID: 1099092390}
   ComponentTypeName: AdManager
   MethodName: System.Collections.IEnumerator ShowAd()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -69968,16 +70386,44 @@ MonoBehaviour:
   - {fileID: 1312951104}
   DefaultOutputSocket: {fileID: 1312951106}
   Active: 1
-  PropertyCount: 1
-  DynamicValue: 01
-  PropertyGameObjects:
-  - {fileID: 435446017}
-  PropertyString:
-  - Text.text
-  ValueGameObjects:
-  - {fileID: 1415881646}
-  ValueString:
-  - PlayerController.PlayerName
+  PropertyCount: 0
+  DynamicValue: 
+  PropertyGameObjects: []
+  PropertyString: []
+  ValueGameObjects: []
+  ValueString: []
+  Assinments:
+  - SetValue:
+      _source: {fileID: 435446017}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 1
+      _bindValues:
+      - _source: {fileID: 1415881646}
+        _componentType:
+          _assemblyQualifiedName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        MemberInfo:
+        - _declaringType:
+            _assemblyQualifiedName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+          _name: PlayerName
+          _memberType: 16
+          Parameters: []
+        ReturnType:
+          _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+      Lable: 
+      _constValues: []
 --- !u!114 &1312951106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70372,12 +70818,20 @@ MonoBehaviour:
   - {fileID: 1328162480}
   DefaultOutputSocket: {fileID: 1328162479}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -70606,19 +71060,36 @@ MonoBehaviour:
   - {fileID: 1328591065}
   DefaultOutputSocket: {fileID: 1328591067}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 30178321}
   ComponentTypeName: WordHighlightEffect
   MethodName: System.Collections.IEnumerator ShowEffects(System.Collections.Generic.List`1[UnityEngine.Bounds])
-  ParameterValueStrings:
-  - WordFinder.FoundErrorWords
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 35330603}
+      _componentType:
+        _assemblyQualifiedName: WordFinder, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: WordFinder, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
+        _name: FoundErrorWords
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[UnityEngine.Bounds,
+          UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 35330603}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &1328591069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70889,13 +71360,20 @@ MonoBehaviour:
   - {fileID: 1331839111}
   DefaultOutputSocket: {fileID: 1331839113}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void set_active(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -71602,14 +72080,11 @@ MonoBehaviour:
   - {fileID: 1347777817}
   DefaultOutputSocket: {fileID: 1347777819}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 125967042}
   ComponentTypeName: LocalPuzzlesSelectionWindow
   MethodName: Void Back()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -72593,16 +73068,11 @@ MonoBehaviour:
   - {fileID: 1371533052}
   DefaultOutputSocket: {fileID: 1371533047}
   Active: 1
-  Lables:
-  - First Part
-  - New Part
-  - Last Part
   TargetGameObject: {fileID: 1094032883}
   ComponentTypeName: HintManager
   MethodName: Void ShowNextPart()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -73697,13 +74167,11 @@ MonoBehaviour:
   - {fileID: 1387197547}
   DefaultOutputSocket: {fileID: 1387197549}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1885209047}
   ComponentTypeName: PlayPuzzleController
   MethodName: Void StartPuzzle()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -74069,14 +74537,11 @@ MonoBehaviour:
   - {fileID: 1409441648}
   DefaultOutputSocket: {fileID: 1409441647}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 788287518}
   ComponentTypeName: ShareScreenShot
   MethodName: Void ShareScreenshot()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -74390,13 +74855,11 @@ MonoBehaviour:
   - {fileID: 1419007748}
   DefaultOutputSocket: {fileID: 1419007750}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 618070916}
   ComponentTypeName: LocalPuzzleDB
   MethodName: System.Collections.IEnumerator ReportPuzzle()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
@@ -74648,13 +75111,20 @@ MonoBehaviour:
   - {fileID: 1421352336}
   DefaultOutputSocket: {fileID: 1421352338}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void set_enabled(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -75073,14 +75543,20 @@ MonoBehaviour:
   - {fileID: 1435583572}
   DefaultOutputSocket: {fileID: 1435583571}
   Active: 1
-  Lables:
-  - Payed
-  - NotEnough
   TargetGameObject: {fileID: 2127709794}
   ComponentTypeName: PurchaseManager
   MethodName: Void PayCoins(Int32)
-  ParameterValueStrings:
-  - 300
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 300
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -75405,15 +75881,11 @@ MonoBehaviour:
   - {fileID: 1436176486}
   DefaultOutputSocket: {fileID: 1436176488}
   Active: 1
-  Lables:
-  - Yes
-  - No
   TargetGameObject: {fileID: 1094032883}
   ComponentTypeName: HintManager
   MethodName: Void CheckComplete()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -75586,6 +76058,7 @@ Transform:
   - {fileID: 1044229915}
   - {fileID: 894765689}
   - {fileID: 2107722366}
+  - {fileID: 5632803}
   m_Father: {fileID: 946453209}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76180,15 +76653,11 @@ MonoBehaviour:
   - {fileID: 1460514589}
   DefaultOutputSocket: {fileID: 1460514593}
   Active: 1
-  Lables:
-  - Success
-  - Fail
   TargetGameObject: {fileID: 1611429975}
   ComponentTypeName: RuntimeWordSetGenerator
   MethodName: System.Collections.IEnumerator Generate()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/GenerateWordSet
   ProgressbarShow: 1
@@ -77037,13 +77506,20 @@ MonoBehaviour:
   - {fileID: 1473965732}
   DefaultOutputSocket: {fileID: 1473965731}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1179864}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -77443,13 +77919,20 @@ MonoBehaviour:
   - {fileID: 1474636070}
   DefaultOutputSocket: {fileID: 1474636069}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 2067092943}
   ComponentTypeName: SoundManager
   MethodName: Void PlayOtherClip(Int32)
-  ParameterValueStrings:
-  - 6
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 6
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -78248,12 +78731,20 @@ MonoBehaviour:
   - {fileID: 1491708170}
   DefaultOutputSocket: {fileID: 1491708172}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 2014739815}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -78330,12 +78821,20 @@ MonoBehaviour:
   - {fileID: 1495908637}
   DefaultOutputSocket: {fileID: 1495908636}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1048904332}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -78923,24 +79422,97 @@ MonoBehaviour:
   - {fileID: 1511034578}
   DefaultOutputSocket: {fileID: 1511034580}
   Active: 1
-  PropertyCount: 3
-  DynamicValue: 010100
-  PropertyGameObjects:
-  - {fileID: 980362700}
-  - {fileID: 2000312734}
-  - {fileID: 518875867}
-  PropertyString:
-  - Text.text
-  - Text.text
-  - Button.interactable
-  ValueGameObjects:
-  - {fileID: 1415881646}
-  - {fileID: 1484087059}
-  - {fileID: 0}
-  ValueString:
-  - PlayerController.PlayerID
-  - UserPuzzleSynchronizer.PuzzleCountText
-  - True
+  PropertyCount: 0
+  DynamicValue: 
+  PropertyGameObjects: []
+  PropertyString: []
+  ValueGameObjects: []
+  ValueString: []
+  Assinments:
+  - SetValue:
+      _source: {fileID: 980362700}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 1
+      _bindValues:
+      - _source: {fileID: 1415881646}
+        _componentType:
+          _assemblyQualifiedName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        MemberInfo:
+        - _declaringType:
+            _assemblyQualifiedName: PlayerController, Assembly-CSharp, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+          _name: PlayerID
+          _memberType: 16
+          Parameters: []
+        ReturnType:
+          _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+      Lable: 
+      _constValues: []
+  - SetValue:
+      _source: {fileID: 2000312734}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 1
+      _bindValues:
+      - _source: {fileID: 1484087059}
+        _componentType:
+          _assemblyQualifiedName: UserPuzzleSynchronizer, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        MemberInfo:
+        - _declaringType:
+            _assemblyQualifiedName: UserPuzzleSynchronizer, Assembly-CSharp, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+          _name: PuzzleCountText
+          _memberType: 16
+          Parameters: []
+        ReturnType:
+          _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+      Lable: 
+      _constValues: []
+  - SetValue:
+      _source: {fileID: 518875867}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Button, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Selectable, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: interactable
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 0
+      _bindValues: []
+      Lable: 
+      _constValues:
+      - Type:
+          _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        _valueString: true
+        _unityObject: {fileID: 0}
 --- !u!114 &1511034580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79512,12 +80084,20 @@ MonoBehaviour:
   - {fileID: 1525722258}
   DefaultOutputSocket: {fileID: 1525722257}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void TriggerRaycast(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -79814,8 +80394,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50914.883
-    y: 49854.383
+    x: 51064.883
+    y: 49774.168
     width: 20
     height: 20
   Info: Success
@@ -79841,8 +80421,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50664.96
-    y: 49802.85
+    x: 50814.96
+    y: 49722.473
     width: 20
     height: 20
   Info: 
@@ -79866,8 +80446,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50701.2
-    y: 49957.484
+    x: 50851.2
+    y: 49877.27
     width: 20
     height: 20
   Info: 
@@ -79892,10 +80472,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50680
-    y: 49730
+    x: 50830
+    y: 49650
     width: 237.98438
-    height: 228.91406
+    height: 228.69922
   Info: Send FeedBack To Server
   InputSocketList:
   - {fileID: 1535283040}
@@ -79905,24 +80485,35 @@ MonoBehaviour:
   - {fileID: 1535283045}
   DefaultOutputSocket: {fileID: 1535283041}
   Active: 1
-  Lables:
-  - Success
-  - Network Error
-  - Fail
   TargetGameObject: {fileID: 1354105004}
   ComponentTypeName: OnlinePuzzleController
   MethodName: System.Collections.IEnumerator FeedBack(Single)
-  ParameterValueStrings:
-  - Slider.value
-  - DeepLinkController.PuzzleID
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 562706266}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Slider, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Slider, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: value
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 0101
-  ParameterGameObjects:
-  - {fileID: 562706266}
-  - {fileID: 914338254}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &1535283043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79979,8 +80570,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50914.883
-    y: 49917.402
+    x: 51064.883
+    y: 49837.188
     width: 20
     height: 20
   Info: Fail
@@ -80006,8 +80597,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 50914.883
-    y: 49885.895
+    x: 51064.883
+    y: 49805.68
     width: 20
     height: 20
   Info: Network Error
@@ -80474,28 +81065,101 @@ MonoBehaviour:
   - {fileID: 1551789474}
   DefaultOutputSocket: {fileID: 1551789473}
   Active: 1
-  PropertyCount: 4
-  DynamicValue: 00000000
-  PropertyGameObjects:
-  - {fileID: 694670500}
-  - {fileID: 980362700}
-  - {fileID: 718951742}
-  - {fileID: 74285241}
-  PropertyString:
-  - Button.interactable
-  - Text.text
-  - Text.text
-  - Button.interactable
-  ValueGameObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ValueString:
-  - True
-  - Player/NoID
-  - Null
-  - False
+  PropertyCount: 0
+  DynamicValue: 
+  PropertyGameObjects: []
+  PropertyString: []
+  ValueGameObjects: []
+  ValueString: []
+  Assinments:
+  - SetValue:
+      _source: {fileID: 694670500}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Button, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Selectable, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: interactable
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 0
+      _bindValues: []
+      Lable: 
+      _constValues:
+      - Type:
+          _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        _valueString: true
+        _unityObject: {fileID: 0}
+  - SetValue:
+      _source: {fileID: 980362700}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 0
+      _bindValues: []
+      Lable: 
+      _constValues:
+      - Type:
+          _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        _valueString: '{"Text":"Player/NoID","IsConst":false}'
+        _unityObject: {fileID: 0}
+  - SetValue:
+      _source: {fileID: 718951742}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 0
+      _bindValues: []
+      Lable: 
+      _constValues:
+      - Type:
+          _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        _valueString: '{"Text":"Null","IsConst":false}'
+        _unityObject: {fileID: 0}
+  - SetValue:
+      _source: {fileID: 74285241}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Button, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Selectable, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: interactable
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 0
+      _bindValues: []
+      Lable: 
+      _constValues:
+      - Type:
+          _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        _valueString: false
+        _unityObject: {fileID: 0}
 --- !u!114 &1551789473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83497,15 +84161,11 @@ MonoBehaviour:
   - {fileID: 1609267715}
   DefaultOutputSocket: {fileID: 1609267718}
   Active: 1
-  Lables:
-  - ExitLocalPuzzles
-  - CategoryParent
   TargetGameObject: {fileID: 1556434278}
   ComponentTypeName: LocalCategorySelectionWindow
   MethodName: Void Back()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -83688,12 +84348,20 @@ MonoBehaviour:
   - {fileID: 1609545896}
   DefaultOutputSocket: {fileID: 1609545898}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void EnablePan(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -83856,13 +84524,20 @@ MonoBehaviour:
   - {fileID: 1609757739}
   DefaultOutputSocket: {fileID: 1609757741}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 2130587852}
   ComponentTypeName: ScrollRect
   MethodName: Void set_verticalNormalizedPosition(Single)
-  ParameterValueStrings:
-  - 1
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 1
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -84303,12 +84978,20 @@ MonoBehaviour:
   - {fileID: 1620053258}
   DefaultOutputSocket: {fileID: 1620053260}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 277882281}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -84746,12 +85429,11 @@ MonoBehaviour:
   - {fileID: 1631882546}
   DefaultOutputSocket: {fileID: 1631882548}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1885209047}
   ComponentTypeName: PlayPuzzleController
   MethodName: Void SendPlayHistory()
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -84806,21 +85488,35 @@ MonoBehaviour:
   - {fileID: 1632374487}
   DefaultOutputSocket: {fileID: 1632374486}
   Active: 1
-  Lables:
-  - Yes
-  - No
   TargetGameObject: {fileID: 1147136427}
   ComponentTypeName: AccountManager
   MethodName: Void IsCodeValid(System.String)
-  ParameterValueStrings:
-  - InputField.text
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 689227950}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 689227950}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &1632374486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85026,14 +85722,11 @@ MonoBehaviour:
   - {fileID: 1633106322}
   DefaultOutputSocket: {fileID: 1633106321}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 59797856}
   ComponentTypeName: WordManager
   MethodName: Void DeleteAllWords()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -86352,13 +87045,20 @@ MonoBehaviour:
   - {fileID: 1658596370}
   DefaultOutputSocket: {fileID: 1658596372}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -86521,13 +87221,11 @@ MonoBehaviour:
   - {fileID: 1661412988}
   DefaultOutputSocket: {fileID: 1661412990}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1113652172}
   ComponentTypeName: PurchaseController
   MethodName: System.Collections.IEnumerator SyncPurchases()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
@@ -87221,13 +87919,20 @@ MonoBehaviour:
   - {fileID: 1673226674}
   DefaultOutputSocket: {fileID: 1673226676}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 886845674}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -87974,14 +88679,11 @@ MonoBehaviour:
   - {fileID: 1695839261}
   DefaultOutputSocket: {fileID: 1695839263}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: CameraController
   MethodName: Void H_FocusAll()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -88152,26 +88854,75 @@ MonoBehaviour:
   - {fileID: 1699746565}
   DefaultOutputSocket: {fileID: 1699746568}
   Active: 1
-  Lables:
-  - Found
-  - Not found
   TargetGameObject: {fileID: 35330603}
   ComponentTypeName: WordFinder
   MethodName: Void Search(System.Collections.Generic.List`1[Letter], System.Collections.Generic.List`1[Letter],
     System.Collections.Generic.List`1[Word])
-  ParameterValueStrings:
-  - LetterController.AllLetters
-  - LetterController.LastSelectedLetters
-  - WordManager.Words
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 947379308}
+      _componentType:
+        _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: AllLetters
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[Letter, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 947379308}
+      _componentType:
+        _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: LetterController, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: LastSelectedLetters
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[Letter, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 59797856}
+      _componentType:
+        _assemblyQualifiedName: WordManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+          PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: WordManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+            PublicKeyToken=null
+        _name: Words
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.Collections.Generic.List`1[[Word, Assembly-CSharp,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+          Culture=neutral, PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 010101
-  ParameterGameObjects:
-  - {fileID: 947379308}
-  - {fileID: 947379308}
-  - {fileID: 59797856}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!114 &1699746570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88513,16 +89264,11 @@ MonoBehaviour:
   - {fileID: 1703259026}
   DefaultOutputSocket: {fileID: 1703259017}
   Active: 1
-  Lables:
-  - Success
-  - Fail
-  - Not Registered
   TargetGameObject: {fileID: 1484087059}
   ComponentTypeName: UserPuzzleSynchronizer
   MethodName: System.Collections.IEnumerator Syncing()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 1521639586}
   ProgressbarMessage: Inprogress/ServerConnection
   ProgressbarShow: 1
@@ -88761,13 +89507,20 @@ MonoBehaviour:
   - {fileID: 1710863375}
   DefaultOutputSocket: {fileID: 1710863374}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1500257639}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -89246,13 +89999,20 @@ MonoBehaviour:
   - {fileID: 1717374779}
   DefaultOutputSocket: {fileID: 1717374778}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void set_active(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -90854,12 +91614,20 @@ MonoBehaviour:
   - {fileID: 1754089315}
   DefaultOutputSocket: {fileID: 1754089317}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1905156979}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -91042,8 +91810,8 @@ MonoBehaviour:
   IsHover: 1
   Rect:
     serializedVersion: 2
-    x: 50640.08
-    y: 49486.605
+    x: 50570.08
+    y: 49717.695
     width: 20
     height: 20
   Info: Continue
@@ -91069,8 +91837,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50294.96
-    y: 49508.05
+    x: 50224.96
+    y: 49739.14
     width: 20
     height: 20
   Info: Show and Wait
@@ -91094,8 +91862,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50294.96
-    y: 49483.25
+    x: 50224.96
+    y: 49714.34
     width: 20
     height: 20
   Info: Wait only
@@ -91118,8 +91886,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50331.2
-    y: 49541.42
+    x: 50261.2
+    y: 49772.51
     width: 20
     height: 20
   Info: 
@@ -91144,10 +91912,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50310
-    y: 49390
+    x: 50240
+    y: 49620
     width: 333.1797
-    height: 152.85156
+    height: 153.9414
   Info: FeedbackWindow
   InputSocketList:
   - {fileID: 1759043266}
@@ -91214,8 +91982,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50020.332
-    y: 49917.98
+    x: 49892.9
+    y: 49741.53
     width: 20
     height: 20
   Info: 
@@ -91241,10 +92009,10 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 49887.434
-    y: 49865.906
+    x: 49760
+    y: 49690
     width: 136
-    height: 100.07422
+    height: 99.53125
   Info: 
   InputSocketList: []
   OutputSocketList:
@@ -91267,8 +92035,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 49908.633
-    y: 49964.55
+    x: 49781.2
+    y: 49788.1
     width: 20
     height: 20
   Info: 
@@ -91435,12 +92203,20 @@ MonoBehaviour:
   - {fileID: 1770558770}
   DefaultOutputSocket: {fileID: 1770558772}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 312375728}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -91685,13 +92461,11 @@ MonoBehaviour:
   - {fileID: 1771571281}
   DefaultOutputSocket: {fileID: 1771571283}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1538602673}
   ComponentTypeName: Table
   MethodName: Void SetRandomBackground()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -91821,14 +92595,11 @@ MonoBehaviour:
   - {fileID: 1777906125}
   DefaultOutputSocket: {fileID: 1777906124}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1556434278}
   ComponentTypeName: LocalCategorySelectionWindow
   MethodName: System.Collections.IEnumerator Hide()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -93124,12 +93895,20 @@ MonoBehaviour:
   - {fileID: 1805462899}
   DefaultOutputSocket: {fileID: 1805462901}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void EnablePan(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -93339,8 +94118,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50699.87
-    y: 50407.773
+    x: 50852.63
+    y: 50449.44
     width: 20
     height: 20
   Info: Not Sync
@@ -93406,8 +94185,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50699.87
-    y: 50376.266
+    x: 50852.63
+    y: 50417.934
     width: 20
     height: 20
   Info: No Player ID
@@ -93433,8 +94212,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50699.87
-    y: 50344.754
+    x: 50852.63
+    y: 50386.42
     width: 20
     height: 20
   Info: No Player Info
@@ -93460,15 +94239,14 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50414.96
-    y: 50307.957
+    x: 50567.72
+    y: 50349.625
     width: 20
     height: 20
   Info: 
   Node: {fileID: 1807093173}
   EdgeList:
   - {fileID: 323357549}
-  - {fileID: 503825626}
   - {fileID: 1830240807}
   Icon: {fileID: 0}
 --- !u!114 &1807093171
@@ -93487,8 +94265,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50451.2
-    y: 50479.367
+    x: 50603.957
+    y: 50521.035
     width: 20
     height: 20
   Info: 
@@ -93526,8 +94304,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50430
-    y: 50250
+    x: 50582.758
+    y: 50291.668
     width: 272.97266
     height: 230.79688
   Info: Check Player Info
@@ -93540,17 +94318,11 @@ MonoBehaviour:
   - {fileID: 1807093175}
   DefaultOutputSocket: {fileID: 1807093171}
   Active: 1
-  Lables:
-  - No Player Info
-  - No Player ID
-  - Not Sync
-  - Has Player ID
   TargetGameObject: {fileID: 1415881646}
   ComponentTypeName: PlayerController
   MethodName: Void CheckPlayerInfo()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -93591,8 +94363,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 50699.87
-    y: 50439.285
+    x: 50852.63
+    y: 50480.953
     width: 20
     height: 20
   Info: Has Player ID
@@ -94003,13 +94775,20 @@ MonoBehaviour:
   - {fileID: 1816908811}
   DefaultOutputSocket: {fileID: 1816908810}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 886845674}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -94262,13 +95041,11 @@ MonoBehaviour:
   - {fileID: 1817939086}
   DefaultOutputSocket: {fileID: 1817939088}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: CameraController
   MethodName: Void InitiateCamView()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -94431,14 +95208,11 @@ MonoBehaviour:
   - {fileID: 1818706822}
   DefaultOutputSocket: {fileID: 1818706824}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1556434278}
   ComponentTypeName: LocalCategorySelectionWindow
   MethodName: System.Collections.IEnumerator Hide()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -94846,13 +95620,11 @@ MonoBehaviour:
   - {fileID: 1825585323}
   DefaultOutputSocket: {fileID: 1825585324}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 2127709794}
   ComponentTypeName: PurchaseManager
   MethodName: Void GiveSolveReward()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -99918,6 +100690,7 @@ MonoBehaviour:
   Node: {fileID: 1830240803}
   EdgeList:
   - {fileID: 2104349403}
+  - {fileID: 2104349408}
   Icon: {fileID: 0}
 --- !u!114 &1830240801
 MonoBehaviour:
@@ -101379,14 +102152,11 @@ MonoBehaviour:
   - {fileID: 1860562912}
   DefaultOutputSocket: {fileID: 1860562914}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1611429975}
   ComponentTypeName: RuntimeWordSetGenerator
   MethodName: Void Initialize()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -101791,8 +102561,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51366.96
-    y: 50279.312
+    x: 51519.72
+    y: 50320.98
     width: 20
     height: 20
   Info: 
@@ -101836,8 +102606,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51643.387
-    y: 50279.312
+    x: 51796.145
+    y: 50320.98
     width: 20
     height: 20
   Info: 
@@ -101863,8 +102633,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51403.2
-    y: 50344.97
+    x: 51555.957
+    y: 50386.637
     width: 20
     height: 20
   Info: 
@@ -101902,8 +102672,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 51382
-    y: 50208.31
+    x: 51534.758
+    y: 50249.977
     width: 264.48828
     height: 138.08984
   Info: PlayerController => OnNewPlayerID
@@ -101913,13 +102683,11 @@ MonoBehaviour:
   - {fileID: 1866189834}
   DefaultOutputSocket: {fileID: 1866189835}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1415881646}
   ComponentTypeName: PlayerController
   MethodName: Void OnNewPlayerID()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -102584,20 +103352,57 @@ MonoBehaviour:
   - {fileID: 1888723838}
   DefaultOutputSocket: {fileID: 1888723840}
   Active: 1
-  PropertyCount: 2
-  DynamicValue: 0000
-  PropertyGameObjects:
-  - {fileID: 74285241}
-  - {fileID: 718951742}
-  PropertyString:
-  - Button.interactable
-  - Text.text
-  ValueGameObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  ValueString:
-  - True
-  - Button/Register
+  PropertyCount: 0
+  DynamicValue: 
+  PropertyGameObjects: []
+  PropertyString: []
+  ValueGameObjects: []
+  ValueString: []
+  Assinments:
+  - SetValue:
+      _source: {fileID: 74285241}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Button, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Selectable, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: interactable
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 0
+      _bindValues: []
+      Lable: 
+      _constValues:
+      - Type:
+          _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        _valueString: true
+        _unityObject: {fileID: 0}
+  - SetValue:
+      _source: {fileID: 718951742}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+    GetValue:
+      _valueType: 0
+      _bindValues: []
+      Lable: 
+      _constValues:
+      - Type:
+          _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        _valueString: '{"Text":"Button/Register","IsConst":false}'
+        _unityObject: {fileID: 0}
 --- !u!114 &1888723840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102898,15 +103703,11 @@ MonoBehaviour:
   - {fileID: 1893268202}
   DefaultOutputSocket: {fileID: 1893268204}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 125967042}
   ComponentTypeName: LocalPuzzlesSelectionWindow
   MethodName: Void SetForSpawn()
-  ParameterValueStrings:
-  - 
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -103774,8 +104575,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52381.836
-    y: 49661.004
+    x: 52434.96
+    y: 49701.004
     width: 20
     height: 20
   Info: 
@@ -103819,8 +104620,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52661.164
-    y: 49661.004
+    x: 52714.29
+    y: 49701.004
     width: 20
     height: 20
   Info: 
@@ -103846,8 +104647,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52418.074
-    y: 49726.66
+    x: 52471.2
+    y: 49766.66
     width: 20
     height: 20
   Info: 
@@ -103885,8 +104686,8 @@ MonoBehaviour:
   IsHover: 0
   Rect:
     serializedVersion: 2
-    x: 52396.875
-    y: 49590
+    x: 52450
+    y: 49630
     width: 267.39062
     height: 138.08984
   Info: PlayerController => CreatePlayerInfo
@@ -103896,19 +104697,35 @@ MonoBehaviour:
   - {fileID: 1908263641}
   DefaultOutputSocket: {fileID: 1908263642}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1415881646}
   ComponentTypeName: PlayerController
   MethodName: Void CreatePlayerInfo(System.String)
-  ParameterValueStrings:
-  - InputField.text
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 1
+    _bindValues:
+    - _source: {fileID: 991066933}
+      _componentType:
+        _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      MemberInfo:
+      - _declaringType:
+          _assemblyQualifiedName: UnityEngine.UI.InputField, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        _name: text
+        _memberType: 16
+        Parameters: []
+      ReturnType:
+        _assemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+    Lable: 
+    _constValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
   ProgressbarHide: 1
-  DynamicParameter: 01
-  ParameterGameObjects:
-  - {fileID: 991066933}
+  DynamicParameter: 
+  ParameterGameObjects: []
 --- !u!1 &1911758541
 GameObject:
   m_ObjectHideFlags: 0
@@ -104426,13 +105243,20 @@ MonoBehaviour:
   - {fileID: 1914386304}
   DefaultOutputSocket: {fileID: 1914386306}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void set_active(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -104890,13 +105714,20 @@ MonoBehaviour:
   - {fileID: 1921034914}
   DefaultOutputSocket: {fileID: 1921034913}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 2067092943}
   ComponentTypeName: SoundManager
   MethodName: Void PlayOtherClip(Int32)
-  ParameterValueStrings:
-  - 2
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 2
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -105714,14 +106545,11 @@ MonoBehaviour:
   - {fileID: 1927967801}
   DefaultOutputSocket: {fileID: 1927967803}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: CameraController
   MethodName: System.Collections.IEnumerator FocusAllLetters()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -106056,14 +106884,13 @@ MonoBehaviour:
   m_Script: {fileID: -97238677, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: -49784.676, y: -48936.324}
-  Zoom: 0.5400004
+  Position: {x: -49703.836, y: -48435.42}
+  Zoom: 0.34000003
   NodeList:
   - {fileID: 1765764361}
   - {fileID: 548800096}
   - {fileID: 1759043268}
   - {fileID: 1535283042}
-  - {fileID: 1060978462}
   GroupList: []
   LastRunningNode: {fileID: 0}
   IsRunning: 0
@@ -106549,12 +107376,20 @@ MonoBehaviour:
   - {fileID: 1942140631}
   DefaultOutputSocket: {fileID: 1942140633}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 277882281}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -106695,13 +107530,20 @@ MonoBehaviour:
   - {fileID: 1944770050}
   DefaultOutputSocket: {fileID: 1944770052}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void set_enabled(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -106865,12 +107707,20 @@ MonoBehaviour:
   - {fileID: 1946788566}
   DefaultOutputSocket: {fileID: 1946788568}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -107035,13 +107885,20 @@ MonoBehaviour:
   - {fileID: 1951087348}
   DefaultOutputSocket: {fileID: 1951087349}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: Raycaster
   MethodName: Void set_enabled(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -107309,15 +108166,11 @@ MonoBehaviour:
   - {fileID: 1953455005}
   DefaultOutputSocket: {fileID: 1953455008}
   Active: 1
-  Lables:
-  - Play
-  - No Last Puzzle
   TargetGameObject: {fileID: 618070916}
   ComponentTypeName: LocalPuzzleDB
   MethodName: Void ShowLastPlayedPuzzle()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -107609,15 +108462,11 @@ MonoBehaviour:
   - {fileID: 1965886099}
   DefaultOutputSocket: {fileID: 1965886101}
   Active: 1
-  Lables:
-  - Yes
-  - No
   TargetGameObject: {fileID: 1147136427}
   ComponentTypeName: AccountManager
   MethodName: Void HasAccount()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -108874,13 +109723,20 @@ MonoBehaviour:
   - {fileID: 1991935061}
   DefaultOutputSocket: {fileID: 1991935062}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1048904332}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -109131,13 +109987,20 @@ MonoBehaviour:
   - {fileID: 1996573530}
   DefaultOutputSocket: {fileID: 1996573532}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1500257639}
   ComponentTypeName: GameObject
   MethodName: Void set_active(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -109508,15 +110371,11 @@ MonoBehaviour:
   - {fileID: 2010105824}
   DefaultOutputSocket: {fileID: 2010105823}
   Active: 1
-  Lables:
-  - Yes
-  - No
   TargetGameObject: {fileID: 2110327045}
   ComponentTypeName: WordSpawner
   MethodName: Void RewardPuzzle()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -110441,13 +111300,20 @@ MonoBehaviour:
   - {fileID: 2016343503}
   DefaultOutputSocket: {fileID: 2016343505}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1869832533}
   ComponentTypeName: GraphicRaycaster
   MethodName: Void set_enabled(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -110524,12 +111390,20 @@ MonoBehaviour:
   - {fileID: 2016470900}
   DefaultOutputSocket: {fileID: 2016470899}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -110929,13 +111803,20 @@ MonoBehaviour:
   - {fileID: 2020012144}
   DefaultOutputSocket: {fileID: 2020012146}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 2067092943}
   ComponentTypeName: SoundManager
   MethodName: Void PlayOtherClip(Int32)
-  ParameterValueStrings:
-  - 0
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: 0
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -111096,13 +111977,11 @@ MonoBehaviour:
   - {fileID: 2028102544}
   DefaultOutputSocket: {fileID: 2028102543}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 897301468}
   ComponentTypeName: CameraController
   MethodName: System.Collections.IEnumerator FocusAllLetters()
-  ParameterValueStrings:
-  - 
-  - 
+  ParameterValueStrings: []
+  ParameterGetValues: []
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -111534,13 +112413,20 @@ MonoBehaviour:
   - {fileID: 2037463121}
   DefaultOutputSocket: {fileID: 2037463120}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1500257639}
   ComponentTypeName: GameObject
   MethodName: Void set_active(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -111975,13 +112861,20 @@ MonoBehaviour:
   - {fileID: 2038319729}
   DefaultOutputSocket: {fileID: 2038319731}
   Active: 1
-  Lables:
-  - 
   TargetGameObject: {fileID: 1365755783}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -112033,12 +112926,20 @@ MonoBehaviour:
   - {fileID: 2038452818}
   DefaultOutputSocket: {fileID: 2038452817}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 2014739815}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - True
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: true
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1
@@ -114653,6 +115554,8 @@ GameObject:
   - component: {fileID: 2104349402}
   - component: {fileID: 2104349404}
   - component: {fileID: 2104349403}
+  - component: {fileID: 2104349409}
+  - component: {fileID: 2104349408}
   m_Layer: 0
   m_Name: Player NoNameMSG (DialogeNode)
   m_TagString: Untagged
@@ -114704,7 +115607,7 @@ MonoBehaviour:
   EditPoints:
   - {x: -0.0038190428, y: -0.048636403}
   - {x: 0.92498493, y: -0.15453008}
-  ClickEditpointIndex: 2
+  ClickEditpointIndex: 1
   AutoHide: 1
   ExcludeInLayout: 0
 --- !u!114 &2104349404
@@ -114751,7 +115654,7 @@ MonoBehaviour:
   Rect:
     serializedVersion: 2
     x: 52031.62
-    y: 49864.453
+    y: 49895.96
     width: 20
     height: 20
   Info: 
@@ -114792,21 +115695,71 @@ MonoBehaviour:
     x: 52010.42
     y: 49729.617
     width: 290.51953
-    height: 136.26562
+    height: 167.77344
   Info: Player NoNameMSG
   InputSocketList:
   - {fileID: 2104349402}
   OutputSocketList:
   - {fileID: 2104349404}
+  - {fileID: 2104349409}
   DefaultOutputSocket: {fileID: 2104349405}
   Active: 1
   Window: {fileID: 613290836}
   Title: Null
   Message: Player/NoNameMSG
   Icon: 'Error/General '
-  Timer: 0
+  Timer: 2
   Buttons:
   - Button/Ok
+--- !u!114 &2104349408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2104349401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 382031981, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 0}
+  IsSelected: 0
+  IsHover: 0
+  InputSocket: {fileID: 2104349409}
+  OutputSocket: {fileID: 1830240800}
+  EditPoints:
+  - {x: -0.026636047, y: -0.035379387}
+  - {x: 0.9320002, y: -0.16091216}
+  ClickEditpointIndex: 1
+  AutoHide: 1
+  ExcludeInLayout: 0
+--- !u!114 &2104349409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2104349401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -392567818, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph: {fileID: 946453210}
+  IsSelected: 0
+  IsHover: 1
+  Rect:
+    serializedVersion: 2
+    x: 52297.84
+    y: 49855.883
+    width: 20
+    height: 20
+  Info: Time Out
+  Node: {fileID: 2104349407}
+  EdgeList:
+  - {fileID: 2104349408}
+  Icon: {fileID: 0}
+  AutoEdgeHide: 0
+  AutoHide: 0
 --- !u!1 &2105556515
 GameObject:
   m_ObjectHideFlags: 0
@@ -115040,12 +115993,20 @@ MonoBehaviour:
   - {fileID: 2107722368}
   DefaultOutputSocket: {fileID: 2107722370}
   Active: 1
-  Lables: []
   TargetGameObject: {fileID: 1454134727}
   ComponentTypeName: GameObject
   MethodName: Void SetActive(Boolean)
-  ParameterValueStrings:
-  - False
+  ParameterValueStrings: []
+  ParameterGetValues:
+  - _valueType: 0
+    _bindValues: []
+    Lable: 
+    _constValues:
+    - Type:
+        _assemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      _valueString: false
+      _unityObject: {fileID: 0}
   ProgressbarWindow: {fileID: 0}
   ProgressbarMessage: 
   ProgressbarShow: 1

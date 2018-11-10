@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: -120015390, guid: 82ce07d18c680ad41be97304ab80bd92, type: 3}
   m_Name: Server Data
   m_EditorClassIdentifier: 
-  ServerState: 0
+  ServerState: 1
   LocalURL: http://localhost:52391
   RemoteURL: http://charsoogame.ir
   Controllers:
@@ -22,38 +22,63 @@ MonoBehaviour:
       Prefix: SendSms
       Info: Send SMS
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Repetitive Number
+      - Not Register
+      - Invalid Phone Number
+      - No Sms Service
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: phoneNumber
         FormBody: 0
         TypeName: String
+        AssemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: code
         FormBody: 0
         TypeName: String
+        AssemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: forRegister
         FormBody: 0
         TypeName: Boolean
+        AssemblyQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: RegisterPhoneNumber
       Prefix: RegisterPhoneNumber
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: playerID
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: phoneNumber
         FormBody: 0
         TypeName: String
+        AssemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: ConnectToAccount
       Prefix: ConnectToAccount
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: phoneNumber
         FormBody: 0
         TypeName: String
+        AssemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
   - Name: CategoriesController
     Prefix: api/Categories
     Methods:
@@ -61,41 +86,63 @@ MonoBehaviour:
       Prefix: Updates
       Info: 
       ConnectionMethod: 0
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: recent
         FormBody: 0
         TypeName: DateTime
+        AssemblyQualifiedName: System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: UpdateCategory
       Prefix: Update/{id}
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: id
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: category
         FormBody: 0
         TypeName: Category
+        AssemblyQualifiedName: CharsooWebAPI.Models.Category, CharsooWebAPI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     - Name: CreateCategory
       Prefix: Create
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: category
         FormBody: 0
         TypeName: Category
+        AssemblyQualifiedName: CharsooWebAPI.Models.Category, CharsooWebAPI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     - Name: DeleteCategory
       Prefix: Delete/{id}
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: id
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
   - Name: CommandController
     Prefix: api/Commands
     Methods:
@@ -103,14 +150,21 @@ MonoBehaviour:
       Prefix: GetCommands
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: playerID
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: clientLastCmdTime
         FormBody: 0
         TypeName: DateTime
+        AssemblyQualifiedName: System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
   - Name: LogInController
     Prefix: api/Login
     Methods:
@@ -118,20 +172,31 @@ MonoBehaviour:
       Prefix: RestorePlayerInfo
       Info: 
       ConnectionMethod: 0
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: deviceId
         FormBody: 0
         TypeName: String
+        AssemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: AddLogins
       Prefix: AddRange
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: logIns
         FormBody: 0
         TypeName: List`1
+        AssemblyQualifiedName: System.Collections.Generic.List`1[[CharsooWebAPI.Models.LogIn,
+          CharsooWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
+          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - Name: PlayerInfoController
     Prefix: api/PlayerInfo
     Methods:
@@ -139,23 +204,35 @@ MonoBehaviour:
       Prefix: Update
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: id
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: playerInfo
         FormBody: 1
         TypeName: PlayerInfo
+        AssemblyQualifiedName: CharsooWebAPI.Models.PlayerInfo, CharsooWebAPI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     - Name: CreatePlayerInfo
       Prefix: Create
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: playerInfo
         FormBody: 0
         TypeName: PlayerInfo
+        AssemblyQualifiedName: CharsooWebAPI.Models.PlayerInfo, CharsooWebAPI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
   - Name: PlayPuzzlesController
     Prefix: api/PlayPuzzles
     Methods:
@@ -163,20 +240,31 @@ MonoBehaviour:
       Prefix: GetPlayerHistory
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: playerID
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: AddHistory
       Prefix: AddHistory
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: history
         FormBody: 0
         TypeName: List`1
+        AssemblyQualifiedName: System.Collections.Generic.List`1[[CharsooWebAPI.Models.PlayPuzzle,
+          CharsooWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
+          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - Name: PurchasesController
     Prefix: api/Purchases
     Methods:
@@ -184,23 +272,36 @@ MonoBehaviour:
       Prefix: GetPurchase
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: playerID
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: lastUpdate
         FormBody: 0
         TypeName: DateTime
+        AssemblyQualifiedName: System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: UpdatePurchases
       Prefix: AddPurchases
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: purchases
         FormBody: 0
         TypeName: List`1
+        AssemblyQualifiedName: System.Collections.Generic.List`1[[CharsooWebAPI.Models.Purchase,
+          CharsooWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
+          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
   - Name: PuzzlesController
     Prefix: api/Puzzles
     Methods:
@@ -208,62 +309,96 @@ MonoBehaviour:
       Prefix: Updates
       Info: 
       ConnectionMethod: 0
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: recent
         FormBody: 0
         TypeName: DateTime
+        AssemblyQualifiedName: System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: UpdatePuzzle
       Prefix: Update/{id}
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: id
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: puzzle
         FormBody: 0
         TypeName: Puzzle
+        AssemblyQualifiedName: CharsooWebAPI.Models.Puzzle, CharsooWebAPI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     - Name: CreatePuzzle
       Prefix: Create
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: puzzle
         FormBody: 0
         TypeName: Puzzle
+        AssemblyQualifiedName: CharsooWebAPI.Models.Puzzle, CharsooWebAPI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     - Name: Report
       Prefix: Report
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: puzzlePlayer
         FormBody: 0
         TypeName: String
+        AssemblyQualifiedName: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: DeletePuzzle
       Prefix: Delete/{id}
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: id
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: ReplacePuzzle
       Prefix: Replace
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: id
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: puzzle
         FormBody: 1
         TypeName: Puzzle
+        AssemblyQualifiedName: CharsooWebAPI.Models.Puzzle, CharsooWebAPI, Version=1.0.0.0,
+          Culture=neutral, PublicKeyToken=null
   - Name: UserPuzzlesController
     Prefix: api/UserPuzzles
     Methods:
@@ -271,35 +406,56 @@ MonoBehaviour:
       Prefix: GetInviteData
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: puzzleID
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: senderID
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: RegisterFeedback
       Prefix: RegisterFeedback
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: puzzleID
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: playerID
         FormBody: 0
         TypeName: Int32
+        AssemblyQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
       - Name: star
         FormBody: 0
         TypeName: Single
+        AssemblyQualifiedName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
     - Name: Sync
       Prefix: Sync
       Info: 
       ConnectionMethod: 1
-      Outputs: []
+      Outputs:
+      - Success
+      - Network Error
+      - Http Error
       Parameters:
       - Name: inData
         FormBody: 0
         TypeName: InData
+        AssemblyQualifiedName: CharsooWebAPI.Controllers.UserPuzzlesController+InData,
+          CharsooWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
