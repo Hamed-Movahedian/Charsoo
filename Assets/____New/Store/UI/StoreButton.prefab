@@ -133,8 +133,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 0.77254903}
-    m_HighlightedColor: {r: 0.209, g: 0.209, b: 0.209, a: 0.841}
+    m_NormalColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
+    m_HighlightedColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
     m_PressedColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0.841}
     m_DisabledColor: {r: 0.16900924, g: 0.21700001, b: 0.082026005, a: 0.7137255}
     m_ColorMultiplier: 1
@@ -303,7 +303,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 004fc98c4aca7aa439d537dc02250dbe, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -410,8 +410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140.32346, y: -90}
-  m_SizeDelta: {x: 180.64693, y: 80.2}
+  m_AnchoredPosition: {x: 156.56293, y: -90}
+  m_SizeDelta: {x: 213.12587, y: 80.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224086875494697876
 RectTransform:
@@ -429,8 +429,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 475, y: -201}
-  m_SizeDelta: {x: 830, y: 180}
+  m_AnchoredPosition: {x: 460, y: -90}
+  m_SizeDelta: {x: 920, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224110193420722626
 RectTransform:
@@ -447,8 +447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 681.6766, y: -90}
-  m_SizeDelta: {x: 196.64693, y: 105.5}
+  m_AnchoredPosition: {x: 755.437, y: -90}
+  m_SizeDelta: {x: 229.12587, y: 105.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224419827256426198
 RectTransform:
@@ -465,8 +465,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 407, y: -90}
-  m_SizeDelta: {x: 352.70618, y: 140}
+  m_AnchoredPosition: {x: 451.99997, y: -90}
+  m_SizeDelta: {x: 377.74823, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224489041641224176
 RectTransform:

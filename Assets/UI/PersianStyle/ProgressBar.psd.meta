@@ -8,6 +8,7 @@ TextureImporter:
     21300006: ProgressBar_Border_EXP
     21300008: ProgressBar_0
     21300010: ProgressBar_1
+    21300012: ProgressBar_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -220,13 +221,33 @@ TextureImporter:
         width: 300
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: b0946e9f2ca40fd44a605a37de08b007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProgressBar_2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 99
+        width: 215
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4eb3fe3a1614b4e8b4508e3f7a6a62
       vertices: []
       indices: 
       edges: []

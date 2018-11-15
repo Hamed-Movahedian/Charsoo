@@ -123,18 +123,30 @@ public class PlayerController : BaseObject
     [FollowMachine("Register To Server", "Success,Fail")]
     public IEnumerator RegisterPlayerToServer()
     {
+        yield return RegisterPlayer();
+
+        FollowMachine.SetOutput(_playerInfo?.PlayerID == null ? "Fail" : "Success");
+    }
+
+    private IEnumerator RegisterPlayer()
+    {
         _playerInfo.PlayerID = -1;
         // Register player to server and get PlayerID
         yield return ServerController.Post<PlayerInfo>(
             @"PlayerInfo/Create",
             _playerInfo,
             r => { _playerInfo = r; });
+
         if (_playerInfo.PlayerID == -1)
             _playerInfo.PlayerID = null;
-
-        FollowMachine.SetOutput(_playerInfo?.PlayerID == null ? "Fail" : "Success");
+        else
+            OnNewPlayerID();
     }
 
+    public void RegisterPlayerAsync()
+    {
+        StartCoroutine(RegisterPlayer());
+    }
     #endregion
 
     #region CreatePlayerInfo 
@@ -178,7 +190,7 @@ public class PlayerController : BaseObject
     #endregion    [FollowMachine("Check Player Info ?", "No Player Info,No Player ID,Has Player ID")]
 
     #region CheckPlayerInfo
-    [FollowMachine("Check Player Info", "No Player Info,No Player ID,Not Sync,Has Player ID")]
+    [FollowMachine("Check Player Info", "No Player Info,No Player ID,Has Player ID")]
     public void CheckPlayerInfo()
     {
         _playerInfo =
@@ -190,10 +202,8 @@ public class PlayerController : BaseObject
             FollowMachine.SetOutput("No Player Info");
         else if (_playerInfo.PlayerID == null)
             FollowMachine.SetOutput("No Player ID");
-        else if (!_playerInfo.Dirty)
+        else
             FollowMachine.SetOutput("Has Player ID");
-        else if (_playerInfo.Dirty)
-            FollowMachine.SetOutput("Not Sync");
     }
 
     #endregion
