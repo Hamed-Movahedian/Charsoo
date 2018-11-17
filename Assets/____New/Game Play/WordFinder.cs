@@ -18,6 +18,7 @@ public class WordFinder : MonoBehaviour
     [FollowMachine("Search for complete words", "Found,Not found")]
     public void Search(List<Letter> letters,List<Letter> dropLetters, List<Word> words)
     {
+        Debug.Log("finding words");
         // Initialize
         FoundWords.Clear();
         FoundErrorWords.Clear();

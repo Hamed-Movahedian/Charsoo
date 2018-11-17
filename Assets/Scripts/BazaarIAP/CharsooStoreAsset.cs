@@ -25,7 +25,7 @@ namespace Soomla.Store.Charsoo
         {
             return new VirtualCurrencyPack[]
             {
-                FFTYCoin_PACK, FIVHUNDCoin_PACK, THOUSANDCoin_PACK, THRTHOUSNDCoin_PACK, TENTHOUSNDCoin_PACK
+                FFTYCoin_PACK,HUNDFFTYCoin_PACK, FIVHUNDCoin_PACK, THOUSANDCoin_PACK, THRTHOUSNDCoin_PACK, TENTHOUSNDCoin_PACK
             };
         }
 
@@ -39,6 +39,8 @@ namespace Soomla.Store.Charsoo
         public const string CHARSOO_CURRENCY_ITEM_ID = "charsoo_coin";      //ItemID in BAZAAR    شناسهٔ کالا
 
         public const string FFTYCoin_PACK_PRODUCT_ID = "50coin";            //ItemID in BAZAAR    شناسهٔ کالا
+
+        public const string HUNDFFTYCoin_PACK_PRODUCT_ID = "150coin";            //ItemID in BAZAAR    شناسهٔ کالا
 
         public const string FIVHUNDCoin_PACK_PRODUCT_ID = "500coin";        //ItemID in BAZAAR    شناسهٔ کالا
 
@@ -76,34 +78,44 @@ namespace Soomla.Store.Charsoo
             new PurchaseWithMarket(FFTYCoin_PACK_PRODUCT_ID, 0)
         );
 
-        //500 Coin Pack     590tuman
+        //150 Coin Pack     1000tuman           ************ TEST *************
+        public static VirtualCurrencyPack HUNDFFTYCoin_PACK = new VirtualCurrencyPack(
+            "150 coin",                                                  // name
+            "Buy 150 coins",                                             // description
+            "150_CoinsPack",                                             // item id
+            150,                                                         // number of currencies in the pack
+            CHARSOO_CURRENCY_ITEM_ID,                                   // the currency associated with this pack
+            new PurchaseWithMarket(HUNDFFTYCoin_PACK_PRODUCT_ID, 980)
+            );
+
+        //500 Coin Pack     2500tuman
         public static VirtualCurrencyPack FIVHUNDCoin_PACK = new VirtualCurrencyPack(
             "500 coin",                                                // name
             "Buy 500 coins",                                           // description
             "500_CoinsPack",                                           // item id
             500,                                                       // number of currencies in the pack
             CHARSOO_CURRENCY_ITEM_ID,                                  // the currency associated with this pack
-            new PurchaseWithMarket(FIVHUNDCoin_PACK_PRODUCT_ID, 5900)
+            new PurchaseWithMarket(FIVHUNDCoin_PACK_PRODUCT_ID, 24500)
         );
 
-        //1000 Coin Pack    1000tuman
+        //1000 Coin Pack    5000tuman
         public static VirtualCurrencyPack THOUSANDCoin_PACK = new VirtualCurrencyPack(
             "1000 coin",                                                 // name
             "Buy 1000 coins",                                            // description
             "1000_CoinsPack",                                            // item id
             1000,                                                        // number of currencies in the pack
             CHARSOO_CURRENCY_ITEM_ID,                                    // the currency associated with this pack
-            new PurchaseWithMarket(THOUSANDCoin_PACK_PRODUCT_ID, 10000)
+            new PurchaseWithMarket(THOUSANDCoin_PACK_PRODUCT_ID, 49000)
         );
 
-        //3000 Coin Pack    2500tuman
+        //3000 Coin Pack    10000tuman
         public static VirtualCurrencyPack THRTHOUSNDCoin_PACK = new VirtualCurrencyPack(
             "3000 coin",                                         // name
             "Buy 3000 coins",                                    // description
             "3000_CoinsPack",                                    // item id
             3000,                                                // number of currencies in the pack
             CHARSOO_CURRENCY_ITEM_ID,                            // the currency associated with this pack
-            new PurchaseWithMarket(THRTHOUSNDCoin_PACK_PRODUCT_ID, 25000)
+            new PurchaseWithMarket(THRTHOUSNDCoin_PACK_PRODUCT_ID, 9900)
         );
 
         //10000 Coin Pack    5900tuman
@@ -127,12 +139,13 @@ namespace Soomla.Store.Charsoo
             "no_uw_ads",                                                       // item id
             new PurchaseWithMarket(NO_ADS_LIFETIME_PRODUCT_ID, 15000));  // the way this virtual good is purchased
 
+
         //Double Coin Earn      5000tuman
         public static VirtualGood CHARSOO_DOUBLER = new LifetimeVG(
             "Double Earn Coins",                                               // name
             "Customers get double coin for solve each puzzle", // description
             "charsoo_doubler",                                               // item id
-            new PurchaseWithMarket(CHARSOO_DOUBLER_LIFETIME_ID, 50000)); // the way this virtual good is purchased
+            new PurchaseWithMarket(CHARSOO_DOUBLER_LIFETIME_ID, 25000)); // the way this virtual good is purchased
 
         #endregion
     }

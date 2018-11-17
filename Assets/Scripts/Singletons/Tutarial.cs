@@ -10,6 +10,7 @@ public class Tutarial : MonoBehaviour
     private int _puzzleIndex = 0;
     private Puzzle _puzzle;
     public HUD HUD;
+
     public void SetPuzzle()
     {
         _puzzle = LocalDBController
@@ -34,8 +35,8 @@ public class Tutarial : MonoBehaviour
     public void SetupHUD()
     {
         HUD.StartClueText.text = _puzzleIndex == 0? PersianFixer.Fix("به چارسو \n خوش آمدید"): PersianFixer.Fix(_puzzle.Clue);
-        HUD.HeaderClueText.text = _puzzle.Clue;
-        HUD.HintClueText.text = _puzzle.Clue;
+        HUD.HeaderClueText.text = PersianFixer.Fix(_puzzle.Clue);
+        HUD.HintClueText.text = PersianFixer.Fix(_puzzle.Clue);
         HUD.IndexText.text = PersianFixer.Fix((_puzzle.Row+1).ToString(),true,true);
     }
 
