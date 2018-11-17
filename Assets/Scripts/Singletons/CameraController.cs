@@ -8,14 +8,14 @@ public class CameraController : BaseObject
     public float FinalZoomDuration = 2;
     public float VerticalOffset = 0;
     public float ZoomRatio = 1.5f;
-
+    
     public float OrthoZoomSpeed = 0.5f;        // The rate of change of the orthographic size in orthographic mode.
 
     private Vector3 _startmousePosition;
     private Vector3 _camraStartPan;
     private Camera _camera;
     private Vector3 _lastMousePos;
-
+    private bool _cameraChangeView = true;
     public void Start()
     {
         _camera = GetComponent<Camera>();
@@ -29,6 +29,9 @@ public class CameraController : BaseObject
 
     void Update()
     {
+        if (!_cameraChangeView)
+            return;
+
         float delta = Input.GetAxis("Mouse ScrollWheel");
 
         if (delta != 0)
@@ -64,6 +67,8 @@ public class CameraController : BaseObject
 
     private void Zoom(float z)
     {
+        if (!_cameraChangeView)
+            return;
         _camera.orthographicSize += z;
 
         KeepCameraInTableBounds();
@@ -72,11 +77,15 @@ public class CameraController : BaseObject
 
     public void StartPan()
     {
+        if (!_cameraChangeView)
+            return;
         _lastMousePos = Input.mousePosition;
     }
 
     public void Pan()
     {
+        if (!_cameraChangeView)
+            return;
         transform.position +=
             _camera.ScreenToWorldPoint(_lastMousePos) -
             _camera.ScreenToWorldPoint(Input.mousePosition);
@@ -154,5 +163,10 @@ public class CameraController : BaseObject
     public void H_FocusAll()
     {
         StartCoroutine(FocusAllLetters());
+    }
+
+    public void PanAndZoom(bool enable)
+    {
+        _cameraChangeView = enable;
     }
 }
