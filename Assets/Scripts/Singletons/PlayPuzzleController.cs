@@ -13,6 +13,29 @@ namespace Assets.Scripts.Singletons
 {
     public class PlayPuzzleController : MgsSingleton<PlayPuzzleController>
     {
+
+        public void Start()
+        {
+            Singleton.Instance.PlayerController.NewPlayerID += UpdatePlayerId;
+            StartCoroutine(Sync());
+
+        }
+
+        private void UpdatePlayerId(int newplayerid)
+        {
+            List<PlayPuzzles> table = new List<PlayPuzzles>();
+            table = LocalDBController.Table<PlayPuzzles>().ToList();
+            LocalDBController.DeleteAll<PlayPuzzles>();
+            foreach (PlayPuzzles playPuzzle in table)
+            {
+                playPuzzle.PlayerID = newplayerid;
+                playPuzzle.Dirty = true;
+                LocalDBController.InsertOrReplace(playPuzzle);
+            }
+            StartCoroutine(Sync());
+        }
+
+
         public int Hint3, Hint2, Hint1;
 
         private float _startTime;
@@ -22,7 +45,7 @@ namespace Assets.Scripts.Singletons
         public void RestorePlayHistory(List<PlayPuzzles> playPuzzleses)
         {
             LocalDBController.DataService.Connection.DeleteAll<PlayPuzzles>();
-            playPuzzleses.ForEach(pp=>pp.Dirty=false);
+            playPuzzleses.ForEach(pp => pp.Dirty = false);
             // Add new records
             LocalDBController
                 .DataService.Connection

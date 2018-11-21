@@ -65,10 +65,11 @@ public class LocalCategorySelectionWindow : UIMenuItemList
 
     public void UnlockCategory()
     {
+        int? id = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID;
         Purchases purchase = new Purchases
         {
             LastUpdate = DateTime.Now,
-            PlayerID = LocalDBController.Table<PlayerInfo>().FirstOrDefault().PlayerID,
+            PlayerID = id ?? -1,
             PurchaseID = "C-" + _clickedCategory.ID,
             Dirty = true
 

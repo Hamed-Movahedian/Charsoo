@@ -23,7 +23,6 @@ public class CoinCounter : BaseObject
 
     public void SetCounter()
     {
-        //_coinCount = Singleton.Instance.PlayerController.PlayerInfo.CoinCount;
 
         if (!gameObject.activeInHierarchy)
         {

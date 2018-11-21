@@ -150,6 +150,11 @@ public class PlayerController : BaseObject
     #endregion
 
     #region CreatePlayerInfo 
+
+    public void CreateEmptyPlayer()
+    {
+        CreatePlayerInfo("بدون نام");
+    }
     public void CreatePlayerInfo(string playerName)
     {
         LocalDBController
@@ -171,11 +176,13 @@ public class PlayerController : BaseObject
 
         ZPlayerPrefs.DeleteAll();
 
+        _playerInfo = new PlayerInfo
+        {
+            CoinCount = 0,
+            Name = playerName,
+        };
         LocalDBController
-            .InsertOrReplace(new PlayerInfo
-            {
-                Name = playerName,
-            });
+            .InsertOrReplace(_playerInfo);
     }
 
     #endregion
@@ -246,7 +253,9 @@ public class PlayerController : BaseObject
         {
             _playerInfo = playerInfo;
             _playerInfo.Dirty = true;
-            StartCoroutine(SyncPlayerInfo());
+            //StartCoroutine(SyncPlayerInfo());        
+            LocalDBController.DeleteAll<PlayerInfo>();
+            LocalDBController.InsertOrReplace(_playerInfo);
         }
     }
 }
