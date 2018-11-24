@@ -38,8 +38,7 @@ public class Table : BaseObject
 
     public void SetRandomBackground()
     {
-        if(BackGrounds.Count>0) _material.mainTexture = BackGrounds[Random.Range(0, BackGrounds.Count)];
-        SetSize();
+
     }
 
     public void ResetBackground()
@@ -59,5 +58,11 @@ public class Table : BaseObject
         if (Size%2 == 0)
             transform.position = new Vector3(0.5f, 0.5f, 5);
 
+    }
+
+    public void SetBackground(int iconIndex)
+    {
+        _material.mainTexture = BackGrounds[iconIndex];
+        SetSize();
     }
 }

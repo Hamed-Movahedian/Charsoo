@@ -21,6 +21,9 @@ public class UICategoryMenuItem : UIMenuItem
     public GameObject NewIconGameObject;
     private Category _category;
 
+    public List<Sprite> Sprites;
+    private int _iconIndex=0;
+
     protected override void Refresh(object data)
     {
         _category = (Category)data;
@@ -28,6 +31,9 @@ public class UICategoryMenuItem : UIMenuItem
 
         Name.text = PersianFixer.Fix(_category.Name);
         NewIconGameObject.SetActive(!_category.Visit);
+
+        _iconIndex = int.Parse(_category.Icon);
+        Icon.sprite = Sprites[_iconIndex];
 
 
         if (LocalDBController.Table<Category>().SqlWhere(c => c.ParentID == _category.ID).Any())
@@ -87,6 +93,7 @@ public class UICategoryMenuItem : UIMenuItem
                 _category.Visit = true;
                 LocalDBController.InsertOrReplace(_category);
             }
+            Singleton.Instance.Table.SetBackground(_iconIndex);
             base.Select();
         }
         else

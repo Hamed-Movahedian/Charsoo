@@ -194,8 +194,13 @@ public class PlayerController : BaseObject
         FollowMachine.SetOutput(playerName == null || playerName.Trim() == "" ? "No" : "Yes");
     }
 
-    #endregion    [FollowMachine("Check Player Info ?", "No Player Info,No Player ID,Has Player ID")]
+    [FollowMachine("Valid Name?", "Yes,No")]
+    public void IsValidName(InputField playerName)
+    {
+        FollowMachine.SetOutput(playerName.text.Trim() == "بدون نام" || playerName.text == null || playerName.text.Trim() == "" ? "No" : "Yes");
+    }
 
+    #endregion
     #region CheckPlayerInfo
     [FollowMachine("Check Player Info", "No Player Info,No Player ID,Has Player ID")]
     public void CheckPlayerInfo()
@@ -257,5 +262,18 @@ public class PlayerController : BaseObject
             LocalDBController.DeleteAll<PlayerInfo>();
             LocalDBController.InsertOrReplace(_playerInfo);
         }
+    }
+
+    [FollowMachine("Has Name?", "Yes,No")]
+    public void HasName()
+    {
+        FollowMachine.SetOutput((PlayerName.Trim()=="بدون نام"|| PlayerName.Trim() == "") ?"No":"Yes");
+    }
+
+    public void SetName(InputField name)
+    {
+        string nameText = name.text;
+        _playerInfo.Name = nameText;
+        StartCoroutine(SyncPlayerInfo());
     }
 }

@@ -60,7 +60,14 @@ public class OnlinePuzzleController : MgsSingleton<OnlinePuzzleController>
     [FollowMachine("Prepare online puzzle for spawn", "Success,Fail")]
     public IEnumerator SetForSpawn(string ID)
     {
-        yield return SetForSpawn(int.Parse(ID));
+        if (ID.Length<2)
+        {
+            FollowMachine.SetOutput("Fail");
+            yield break;
+        }
+
+        int id = int.Parse(ID);
+        yield return SetForSpawn(id);
     }
     
     [FollowMachine("Get invited user puzzle from server", "Success,Network Error,Fail")]
