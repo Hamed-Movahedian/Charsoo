@@ -20,7 +20,7 @@ public class UIStoreMenuItem : UIMenuItem
         bool hasItem = false;
 
         if (storeItem.IsVirtualGood)
-            hasItem = (StoreInventory.GetItemBalance(storeItem.ItemId) > 0);
+            hasItem = Singleton.Instance.PlayerController.PlayerInfo?.HasDubler??false;
 
         HasItemIcon.gameObject.SetActive(hasItem);
         PriceText.gameObject.SetActive(!hasItem);

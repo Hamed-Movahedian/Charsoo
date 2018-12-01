@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FMachine;
 using FollowMachineDll.Attributes;
+using FollowMachineDll.Components;
 using MgsCommonLib.UI;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -140,8 +141,22 @@ public class PlayerController : BaseObject
         if (_playerInfo.PlayerID == -1)
             _playerInfo.PlayerID = null;
         else
+        {
             OnNewPlayerID();
+
+            string pusheId = PlayerPrefs.GetString("PID", "");
+
+            if (pusheId == "")
+                yield break;
+
+            yield return ServerControllerBase.Post<string>(
+                    $@"PushIDs/Update?playerID={_playerInfo.PlayerID}",
+                    pusheId,
+                    Debug.Log
+                );
+        }
     }
+
 
     public void RegisterPlayerAsync()
     {
@@ -201,6 +216,7 @@ public class PlayerController : BaseObject
     }
 
     #endregion
+
     #region CheckPlayerInfo
     [FollowMachine("Check Player Info", "No Player Info,No Player ID,Has Player ID")]
     public void CheckPlayerInfo()
@@ -228,6 +244,7 @@ public class PlayerController : BaseObject
         if (_playerInfo.PlayerID == null)
             yield return RegisterPlayerToServer();
         if (_playerInfo.PlayerID != null)
+        {
             yield return ServerController.Post<string>(
                 $@"PlayerInfo/Update?id={GetPlayerID}",
                 _playerInfo,
@@ -237,10 +254,25 @@ public class PlayerController : BaseObject
                     if (respnse == "Success") _playerInfo.Dirty = false;
                 });
 
+            string pusheId = FindObjectsOfType<Pushe>()[0].Pid;
+
+            if (pusheId == "")
+            {
+                Debug.Log("no push id");
+                yield break;
+            }
+
+            yield return ServerControllerBase.Post<string>(
+                    $@"PushIDs/Update?playerID={_playerInfo.PlayerID}",
+                    pusheId,
+                    Debug.Log
+                );
+        }
+
         LocalDBController.DeleteAll<PlayerInfo>();
         LocalDBController.InsertOrReplace(_playerInfo);
     }
-    
+
     public IEnumerator ChangeCoinCount(int currentCoin)
     {
         _playerInfo.CoinCount = currentCoin;
@@ -258,7 +290,7 @@ public class PlayerController : BaseObject
         {
             _playerInfo = playerInfo;
             _playerInfo.Dirty = true;
-            //StartCoroutine(SyncPlayerInfo());        
+            StartCoroutine(SyncPlayerInfo());        
             LocalDBController.DeleteAll<PlayerInfo>();
             LocalDBController.InsertOrReplace(_playerInfo);
         }
@@ -267,7 +299,7 @@ public class PlayerController : BaseObject
     [FollowMachine("Has Name?", "Yes,No")]
     public void HasName()
     {
-        FollowMachine.SetOutput((PlayerName.Trim()=="بدون نام"|| PlayerName.Trim() == "") ?"No":"Yes");
+        FollowMachine.SetOutput((PlayerName.Trim() == "بدون نام" || PlayerName.Trim() == "") ? "No" : "Yes");
     }
 
     public void SetName(InputField name)
