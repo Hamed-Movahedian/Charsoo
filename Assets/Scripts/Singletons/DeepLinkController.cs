@@ -25,7 +25,7 @@ public class DeepLinkController : MonoBehaviour
             if (action.Contains("VIEW"))
             {
                 Data = intent.Call<string>("getDataString");
-                Data = Data.Split('/').Last();
+                Data = Data.Split('?').Last();
                 //"ShowPuzzle,u8217,hosein"
 
                 CheckData();

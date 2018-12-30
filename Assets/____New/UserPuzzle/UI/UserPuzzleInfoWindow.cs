@@ -74,4 +74,9 @@ public class UserPuzzleInfoWindow : MgsUIWindow
     }
 
     public int? GetPuzzleID => PuzzleSelectionWindow.SelectedPuzzle.ServerID;
+
+    public string GetPuzzleClue()
+    {
+        return PuzzleSelectionWindow.SelectedPuzzle.Clue;
+    }
 }

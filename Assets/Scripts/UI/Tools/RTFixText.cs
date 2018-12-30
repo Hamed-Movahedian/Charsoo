@@ -7,12 +7,10 @@ using UnityEngine.UI;
 public class RTFixText : MonoBehaviour
 {
     public Text TargetText;
-    private Text _text;
     private string _content;
 
     public void Start()
     {
-        _text = GetComponent<Text>();
     }
 
     private void OnEnable()

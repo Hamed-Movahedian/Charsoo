@@ -2,17 +2,14 @@
 using SQLite4Unity3d;
 using UnityEditor;
 using UnityEditor.Build;
+using UnityEditor.Build.Reporting;
 using UnityEditor.MemoryProfiler;
 using UnityEngine;
 
-class PrebuildScript : IPreprocessBuild
+class PrebuildScript : IPreprocessBuildWithReport
 {
-
     public int callbackOrder { get { return 0; } }
-    private static string dbPath= Application.dataPath + "/StreamingAssets/OldDB.db";
-    private SQLiteConnection _connection;
-
-    public void OnPreprocessBuild(BuildTarget target, string path)
+    public void OnPreprocessBuild(BuildReport report)
     {
         _connection = new SQLiteConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create);
 
@@ -23,5 +20,8 @@ class PrebuildScript : IPreprocessBuild
         _connection.DeleteAll<LogIn>();
         _connection.DeleteAll<LastTableUpdates>();
     }
+
+    private static string dbPath = Application.dataPath + "/StreamingAssets/OldDB.db";
+    private SQLiteConnection _connection;
 }
 #endif

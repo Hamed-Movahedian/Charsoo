@@ -11,6 +11,12 @@ public class ApplicationController : MonoBehaviour
         Application.Quit();
     }
 
+    public void Vibrate()
+    {
+        if (Application.isMobilePlatform)
+            Handheld.Vibrate();
+    }
+
     public void LoadLevel(int level)
     {
         SceneManager.LoadScene(level);

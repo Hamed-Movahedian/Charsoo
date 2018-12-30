@@ -200,6 +200,10 @@ public class PlayerController : BaseObject
             .InsertOrReplace(_playerInfo);
     }
 
+    public void CreatePlayerInfo(InputField nameInputField)
+    {
+        CreatePlayerInfo(nameInputField.text);
+    }
     #endregion
 
     #region IsValidName
@@ -238,11 +242,11 @@ public class PlayerController : BaseObject
 
     public IEnumerator SyncPlayerInfo()
     {
-        LocalDBController.DeleteAll<PlayerInfo>();
-        LocalDBController.InsertOrReplace(_playerInfo);
+        //LocalDBController.DeleteAll<PlayerInfo>();
+        //LocalDBController.InsertOrReplace(_playerInfo);
 
         if (_playerInfo.PlayerID == null)
-            yield return RegisterPlayerToServer();
+            yield return RegisterPlayer();
         if (_playerInfo.PlayerID != null)
         {
             yield return ServerController.Post<string>(
@@ -257,12 +261,9 @@ public class PlayerController : BaseObject
             string pusheId = FindObjectsOfType<Pushe>()[0].Pid;
 
             if (pusheId == "")
-            {
                 Debug.Log("no push id");
-                yield break;
-            }
-
-            yield return ServerControllerBase.Post<string>(
+            else
+                yield return ServerControllerBase.Post<string>(
                     $@"PushIDs/Update?playerID={_playerInfo.PlayerID}",
                     pusheId,
                     Debug.Log
@@ -291,8 +292,8 @@ public class PlayerController : BaseObject
             _playerInfo = playerInfo;
             _playerInfo.Dirty = true;
             StartCoroutine(SyncPlayerInfo());        
-            LocalDBController.DeleteAll<PlayerInfo>();
-            LocalDBController.InsertOrReplace(_playerInfo);
+            //LocalDBController.DeleteAll<PlayerInfo>();
+            //LocalDBController.InsertOrReplace(_playerInfo);
         }
     }
 

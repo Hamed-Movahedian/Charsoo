@@ -48,6 +48,9 @@ public class PurchaseManager : BaseObject
     [FollowMachine("Pay Coin", "Payed,NotEnough")]
     public void PayCoins(int amount)
     {
+        if (_playerInfo == null)
+            _playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
+
         if (amount > _playerInfo.CoinCount)
         {
             FollowMachine.SetOutput("NotEnough");
