@@ -61,7 +61,6 @@ namespace Soomla.Store.Charsoo
                 PlayerInfo playerInfo = playerController.PlayerInfo;
                 playerInfo.HasDubler = true;
                 playerInfo.Dirty = true;
-                //LocalDBController.InsertOrReplace(playerInfo);
                 Singleton.Instance.PlayerController.ChangePlayerInfo(playerInfo);
             }
         }
@@ -76,7 +75,6 @@ namespace Soomla.Store.Charsoo
                 {
                     playerInfo.CoinCount = balance;
                     playerInfo.Dirty = true;
-                    //LocalDBController.InsertOrReplace(playerInfo);
                     Singleton.Instance.PlayerController.ChangePlayerInfo(playerInfo);
                     Singleton.Instance.PurchaseManager.HcurrencyChanged();
                 }

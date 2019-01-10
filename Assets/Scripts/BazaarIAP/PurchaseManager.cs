@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using FMachine;
 using FollowMachineDll.Attributes;
+using Newtonsoft.Json.Linq;
 using Soomla.Store;
 using Soomla.Store.Charsoo;
 using UnityEngine;
@@ -17,22 +20,44 @@ public class PurchaseManager : BaseObject
     public AudioClip PayCoinAudioClip;
     public AudioClip GiveCoinAudioClip;
     public List<Button> BuyDublerButtons;
-    private int _rewardMultiplier = 1;
     private PlayerInfo _playerInfo;
+    private int _rewardMultiplier;
+
     // Use this for initialization
     void Start()
     {
+        //CommandController.AddListenerForCommand("GiveReward",GiveReward);
         _playerInfo = Singleton.Instance.PlayerController.PlayerInfo;
         bool hasDubler = _playerInfo?.HasDubler ?? false;
-        _rewardMultiplier = 1 + (hasDubler ? 1 : 0);
-        _rewardMultiplier = Mathf.Clamp(_rewardMultiplier, 1, 2);
         BuyDublerButtons.ForEach(b => b.interactable = !hasDubler);
+    }
+
+    public int RewardMultiplier
+    {
+        get
+        {
+            _rewardMultiplier = _playerInfo!=null ? 1 + (_playerInfo.HasDubler? 1 : 0):1;
+            return _rewardMultiplier;
+        } 
+    }
+
+    private void GiveReward(JToken dataToken)
+    {
+        // Get new categories from json
+        List<JToken> newRewards = dataToken.Select(ct => ct.ToObject<JToken>()).ToList();
+
+        // Add or update local db
+        foreach (JToken newReward in newRewards)
+        {
+            int amount= int.Parse(newReward["RewardAmount"].ToString().Trim());
+        }
+
     }
 
     public void GiveSolveReward()
     {
         OnReward.Invoke();
-        GiveCoin(_rewardMultiplier * WordsetSolveReward);
+        GiveCoin(RewardMultiplier * WordsetSolveReward);
     }
 
     public void BuyItem(string itemId)

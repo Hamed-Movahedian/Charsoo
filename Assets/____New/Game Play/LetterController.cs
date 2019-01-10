@@ -22,6 +22,7 @@ public class LetterController : BaseObject
     public UnityEvent OnLetterSelected;
     public UnityEvent OnLetterUnselected;
     public UnityEvent OnDropLetter;
+    public UnityEvent OnReleaseLetter;
 
     private List<Vector2> _deltaList;
 
@@ -106,6 +107,8 @@ public class LetterController : BaseObject
 
     public IEnumerator LetterUnselected()
     {
+        OnReleaseLetter.Invoke();
+
         yield return MoveToSafePlace();
 
         OnLetterUnselected.Invoke();

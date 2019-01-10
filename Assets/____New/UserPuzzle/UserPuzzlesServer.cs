@@ -2,12 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMachine;
+using UnityEngine;
 
 public class UserPuzzlesServer
 {
     private InData _result;
     private DateTime _test;
     public bool UnsuccessfullSync { get { return _result == null; } }
+
+
+    public IEnumerator SetUserPuzleCategory(int userPuzzleId, int category)
+    {
+        yield return ServerController.Post<string>
+            (
+            $@"UserPuzzles/SetCategory?puzzleID={userPuzzleId}&category={category}",
+            null,
+            Debug.Log,
+            request =>{Debug.Log(request.isNetworkError ? "Network Error" : "Fail"); }
+            );
+    }
 
     public IEnumerator Sync(int playerID, List<UserPuzzle> unregisteredPuzzles, DateTime lastUpdate)
     {

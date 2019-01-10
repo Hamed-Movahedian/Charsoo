@@ -225,15 +225,26 @@ public class PlayerController : BaseObject
     [FollowMachine("Check Player Info", "No Player Info,No Player ID,Has Player ID")]
     public void CheckPlayerInfo()
     {
+
         _playerInfo =
             LocalDBController
                 .Table<PlayerInfo>()
                 .FirstOrDefault();
 
         if (_playerInfo == null)
+        {
             FollowMachine.SetOutput("No Player Info");
-        else if (_playerInfo.PlayerID == null)
+        }
+        else if (_playerInfo.PlayerID == null || _playerInfo.PlayerID == -1)
+        {
+            if (_playerInfo.PlayerID==-1)
+            {
+                _playerInfo.PlayerID = null;
+                LocalDBController.DeleteAll<PlayerInfo>();
+                LocalDBController.InsertOrReplace(_playerInfo);
+            }
             FollowMachine.SetOutput("No Player ID");
+        }
         else
             FollowMachine.SetOutput("Has Player ID");
     }
@@ -242,8 +253,8 @@ public class PlayerController : BaseObject
 
     public IEnumerator SyncPlayerInfo()
     {
-        //LocalDBController.DeleteAll<PlayerInfo>();
-        //LocalDBController.InsertOrReplace(_playerInfo);
+        LocalDBController.DeleteAll<PlayerInfo>();
+        LocalDBController.InsertOrReplace(_playerInfo);
 
         if (_playerInfo.PlayerID == null)
             yield return RegisterPlayer();
@@ -255,7 +266,12 @@ public class PlayerController : BaseObject
                 // On Successfully connect to the account
                 respnse =>
                 {
-                    if (respnse == "Success") _playerInfo.Dirty = false;
+                    if (respnse == "Success")
+                    {
+                        _playerInfo.Dirty = false;
+                        LocalDBController.DeleteAll<PlayerInfo>();
+                        LocalDBController.InsertOrReplace(_playerInfo);
+                    }
                 });
 
             string pusheId = FindObjectsOfType<Pushe>()[0].Pid;
@@ -268,10 +284,10 @@ public class PlayerController : BaseObject
                     pusheId,
                     Debug.Log
                 );
+
         }
 
-        LocalDBController.DeleteAll<PlayerInfo>();
-        LocalDBController.InsertOrReplace(_playerInfo);
+
     }
 
     public IEnumerator ChangeCoinCount(int currentCoin)
@@ -291,9 +307,7 @@ public class PlayerController : BaseObject
         {
             _playerInfo = playerInfo;
             _playerInfo.Dirty = true;
-            StartCoroutine(SyncPlayerInfo());        
-            //LocalDBController.DeleteAll<PlayerInfo>();
-            //LocalDBController.InsertOrReplace(_playerInfo);
+            StartCoroutine(SyncPlayerInfo());
         }
     }
 
@@ -301,6 +315,15 @@ public class PlayerController : BaseObject
     public void HasName()
     {
         FollowMachine.SetOutput((PlayerName.Trim() == "بدون نام" || PlayerName.Trim() == "") ? "No" : "Yes");
+    }
+
+    [FollowMachine("Has User Puzzle?", "Yes,No")]
+    public void HasUserPuzzle()
+    {
+        FollowMachine.SetOutput(
+            !LocalDBController.Table<UserPuzzle>().Any()&&
+            LocalDBController.Table<PlayPuzzles>().Count()>10 &&
+            Random.Range(0, 100) > 70 ? "Yes" : "No");
     }
 
     public void SetName(InputField name)
