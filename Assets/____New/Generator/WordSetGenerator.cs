@@ -44,7 +44,7 @@ public class WordSetGenerator : BaseObject
 
         var startTime = Time.time;
 
-        while (_foundResultCount < MaxResults || Time.time < startTime + _words.Count * 2)
+        while (_foundResultCount < MaxResults && Time.time < startTime + _words.Count * 2)
         {
             MgsCoroutine.Info = _foundResultCount + " word set found.";
             if (BruteForce)
@@ -287,11 +287,18 @@ public class WordSetGenerator : BaseObject
     private void ResultFound()
     {
         _foundResultCount++;
+        
+        var fitness = Fitness4(_usedWords);
 
+        print($"r({_foundResultCount}) fitness = {fitness}");
+        
         if (_bestResult == null)
             _bestResult = new List<SWord>(_usedWords);
-        else if (Fitness4(_usedWords) > Fitness4(_bestResult))
-            _bestResult = new List<SWord>(_usedWords);
+        else
+        {
+            if (fitness > Fitness4(_bestResult))
+                _bestResult = new List<SWord>(_usedWords);
+        }
     }
 
     #endregion

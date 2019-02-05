@@ -61,7 +61,7 @@ public class RuntimeWordSetGenerator : MonoBehaviour
         Generator.Clue = ClueWindow.ClueInputField.text;
         Generator.Initialize();
         Generator.UsedWordCount = 0;
-        Generator.MaxResults = allWords.Length;
+        Generator.MaxResults = 10;// allWords.Length;
 
         // Generate Word set
         yield return Generator.MakeWordSet();

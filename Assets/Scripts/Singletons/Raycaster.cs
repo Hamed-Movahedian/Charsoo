@@ -39,6 +39,7 @@ public class Raycaster : BaseObject
 
     void Update()
     {
+        
         if (!_enablePan)
             return;
 
@@ -53,13 +54,40 @@ public class Raycaster : BaseObject
             }
         }
 
+        bool startCondition=false, dragCondition=false, endCondition=false;
+        Vector3 pos=Vector3.zero;
+        if (Application.isMobilePlatform)
+        {
+            if (Input.touchCount == 1)
+            {
+                startCondition =  
+                    Input.touches[0].phase == TouchPhase.Began || (!_letterDrag && !_cameraDrag);
+                dragCondition=Input.touches[0].phase == TouchPhase.Moved;
+                endCondition=Input.touches[0].phase == TouchPhase.Ended;
+                pos = Input.touches[0].position;
+            }
+            else if (Input.touchCount == 2)
+            {
+                endCondition=true;
+                pos = Input.touches[0].position;
+            }
+
+        }
+        else
+        {
+            startCondition = Input.GetMouseButtonDown(0);
+            dragCondition = Input.GetMouseButton(0);
+            endCondition = Input.GetMouseButtonUp(0);
+            pos = Input.mousePosition;
+        }
+        
         #region Start Drag letter or Pan
 
-        if (Input.GetMouseButtonDown(0))
+        if (startCondition)
         {
-            _lastDragPos = _camera.ScreenToWorldPoint(Input.mousePosition);
+            _lastDragPos = _camera.ScreenToWorldPoint(pos);
 
-            Collider2D collider = Physics2D.OverlapPoint(_camera.ScreenToWorldPoint(Input.mousePosition), LetterLayerMask);
+            Collider2D collider = Physics2D.OverlapPoint(_camera.ScreenToWorldPoint(pos), LetterLayerMask);
 
             if (collider != null)
             {
@@ -90,9 +118,9 @@ public class Raycaster : BaseObject
 
         #region Letter Draging or Pan
 
-        if (Input.GetMouseButton(0))
+        if (dragCondition)
         {
-            Vector3 dragpos = _camera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 dragpos = _camera.ScreenToWorldPoint(pos);
             
             if(_letterDrag)
                 LetterController.Move(dragpos-_lastDragPos);
@@ -107,7 +135,7 @@ public class Raycaster : BaseObject
 
         #region Letter end drag
 
-        if (Input.GetMouseButtonUp(0) )
+        if (endCondition)
         {
             if (_letterDrag)
             {

@@ -121,12 +121,28 @@ public class CameraController : BaseObject
 
     public IEnumerator FocusToBound(Bounds bound)
     {
+        return FocusToBoundExtra(bound, false);
+    }
+    public IEnumerator FocusToBoundExtra(Bounds bound,bool extra)
+    {
         // Start pos & size
 
         float startSize = _camera.orthographicSize;
         Vector3 startPos = transform.position;
+        
+        
         // End size
-        float endSize = (Mathf.Max(bound.extents.x, bound.extents.y) * 2 + 3 / _camera.aspect);
+        float endSize;
+        if(extra)
+            endSize= Mathf.Max(
+            8.8f, 
+            (Mathf.Max(bound.extents.x, bound.extents.y*_camera.aspect) * 2 + 2 ));
+        else
+            endSize= Mathf.Max(
+            8.8f, 
+            (Mathf.Max(bound.extents.x, bound.extents.y) * 2 + (3) / _camera.aspect));
+        
+        print($"extends{bound.extents} \nsize={endSize}");
         // End pos
         Vector3 endPos = bound.center + Vector3.down * VerticalOffset;
 
@@ -157,12 +173,20 @@ public class CameraController : BaseObject
 
     public IEnumerator FocusAllLetters()
     {
-        yield return FocusToBound(LetterController.GetLettersBound());
+        return FocusAllLettersExtra(false);
+    }
+    public IEnumerator FocusAllLettersExtra(bool extra)
+    {
+        yield return FocusToBoundExtra(LetterController.GetLettersBound(),extra);
     }
 
     public void H_FocusAll()
     {
-        StartCoroutine(FocusAllLetters());
+        StartCoroutine(FocusAllLettersExtra(false));
+    }
+    public void H_FocusAllExtra()
+    {
+        StartCoroutine(FocusAllLettersExtra(true));
     }
 
     public void PanAndZoom(bool enable)

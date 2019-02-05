@@ -35,6 +35,11 @@ public class WordSpawner : BaseObject
     [FollowMachine("Spawn Words")]
     public void SpawnWords()
     {
+        SpawnWordsExtraZoom(false);
+    }
+    [FollowMachine("Spawn Words Extra zoom")]
+    public void SpawnWordsExtraZoom(bool extra)
+    {
         if (WordSet == null)
         {
             Debug.LogError("WordSet is null !!!");
@@ -62,6 +67,16 @@ public class WordSpawner : BaseObject
         WordManager.GetWordsFormChilds();
         LetterController.ConnectAdjacentLetters();
 
+        if (Application.isPlaying)
+        {
+            StartCoroutine(CameraController.FocusAllLettersExtra(extra));
+            if (SpawnPartByPart)
+                StartCoroutine(EnableParts());
+            else
+                LetterController.AllLetters.ForEach(l => l.gameObject.SetActive(true));
+        }
+        else
+            LetterController.AllLetters.ForEach(l => l.gameObject.SetActive(true));
     }
 
     public void ClearTable()
@@ -138,16 +153,7 @@ public class WordSpawner : BaseObject
             
         }
 
-        if (Application.isPlaying)
-        {
-            StartCoroutine(CameraController.FocusAllLetters());
-            if (SpawnPartByPart)
-                StartCoroutine(EnableParts());
-            else
-                LetterController.AllLetters.ForEach(l => l.gameObject.SetActive(true));
-        }
-        else
-            LetterController.AllLetters.ForEach(l => l.gameObject.SetActive(true));
+
     }
 
     #region enable letters PART BY PART
