@@ -326,6 +326,18 @@ public class PlayerController : BaseObject
             Random.Range(0, 100) > 70 ? "Yes" : "No");
     }
 
+
+    public void ChangeCoin(int amount)
+    {
+        var coinCount = _playerInfo.CoinCount;
+        coinCount += amount;
+        _playerInfo.CoinCount = coinCount;
+
+        PurchaseManager.HcurrencyChanged(amount);
+        
+        StartCoroutine(SyncPlayerInfo());
+    }
+
     public void SetName(InputField name)
     {
         string nameText = name.text;

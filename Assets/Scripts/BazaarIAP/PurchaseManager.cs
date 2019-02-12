@@ -60,16 +60,6 @@ public class PurchaseManager : BaseObject
         GiveCoin(RewardMultiplier * WordsetSolveReward);
     }
 
-    public void BuyItem(string itemId)
-    {
-        int cBalance = StoreInventory.GetItemBalance("charsoo_coin");
-
-        StoreInventory.BuyItem(itemId);
-
-        if (StoreInventory.GetItemBalance("charsoo_coin") > cBalance)
-            SoundManager.PlayAudioClip(GiveCoinAudioClip);
-    }
-
     [FollowMachine("Pay Coin", "Payed,NotEnough")]
     public void PayCoins(int amount)
     {
@@ -81,17 +71,14 @@ public class PurchaseManager : BaseObject
             FollowMachine.SetOutput("NotEnough");
             return;
         }
-        StoreInventory.TakeItem("charsoo_coin", amount);
-
-        SoundManager.PlayAudioClip(PayCoinAudioClip);
+        PlayerController.ChangeCoin(-amount);
 
         FollowMachine.SetOutput("Payed");
     }
 
     public void GiveCoin(int amount)
     {
-        SoundManager.PlayAudioClip(GiveCoinAudioClip);
-        StoreInventory.GiveItem("charsoo_coin", amount);
+        PlayerController.ChangeCoin(amount);
     }
 
     public IEnumerator CurrencyChanged()
@@ -100,9 +87,11 @@ public class PurchaseManager : BaseObject
         yield return null;
         Start();
     }
-
-    public void HcurrencyChanged()
+    
+    public void HcurrencyChanged(int opt)
     {
+        if (opt>0) SoundManager.PlayAudioClip(GiveCoinAudioClip);
+        if (opt<0) SoundManager.PlayAudioClip(PayCoinAudioClip);
         StartCoroutine(CurrencyChanged());
     }
 }

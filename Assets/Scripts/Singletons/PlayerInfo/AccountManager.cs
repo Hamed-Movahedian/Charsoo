@@ -139,20 +139,6 @@ public class AccountManager : MgsSingleton<AccountManager>
 
             // Set connection result to success
 
-
-
-            int balance = StoreInventory.GetItemBalance("charsoo_coin");
-            if (balance > accountInfo.PlayerInfo.CoinCount)
-            {
-                PlayerPrefs.DeleteAll();
-                StoreInventory.TakeItem("charsoo_coin", balance - accountInfo.PlayerInfo.CoinCount);
-            }
-            else if (accountInfo.PlayerInfo.CoinCount < balance)
-            {
-                PlayerPrefs.DeleteAll();
-                StoreInventory.GiveItem("charsoo_coin", accountInfo.PlayerInfo.CoinCount - balance);
-            }
-
             FollowMachine.SetOutput("Success");
 
             _phoneNumber = " ";
