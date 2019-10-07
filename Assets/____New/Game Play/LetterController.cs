@@ -11,7 +11,7 @@ public class LetterController : BaseObject
 
     public float Acceleration = 5;
 
-    public List<Letter> AllLetters { get; set; }=new List<Letter>();
+    public List<Letter> AllLetters { get; set; } = new List<Letter>();
     public List<Letter> SelectedLetters { get; set; } = new List<Letter>();
     public List<Letter> LastSelectedLetters { get; set; } = new List<Letter>();
 
@@ -25,6 +25,7 @@ public class LetterController : BaseObject
     public UnityEvent OnReleaseLetter;
 
     private List<Vector2> _deltaList;
+    private bool selectIsAvalaible = true;
 
     #endregion
 
@@ -61,13 +62,13 @@ public class LetterController : BaseObject
         }
 
         for (int i = 0; i < letters.Count; i++)
-            for (int j = i + 1; j < letters.Count; j++)
-                if (Math.Abs((letters[i].transform.position - letters[j].transform.position).magnitude -
-                             1) < 0.1f)
-                {
-                    letters[i].ConnectedLetters.Add(letters[j]);
-                    letters[j].ConnectedLetters.Add(letters[i]);
-                }
+        for (int j = i + 1; j < letters.Count; j++)
+            if (Math.Abs((letters[i].transform.position - letters[j].transform.position).magnitude -
+                         1) < 0.1f)
+            {
+                letters[i].ConnectedLetters.Add(letters[j]);
+                letters[j].ConnectedLetters.Add(letters[i]);
+            }
 
         foreach (Letter letter in letters)
             letter.SetupBridges();
@@ -82,8 +83,8 @@ public class LetterController : BaseObject
         _deltaList = new List<Vector2>();
 
         for (int x = -Table.Size; x < Table.Size; x++)
-            for (int y = -Table.Size; y < Table.Size; y++)
-                _deltaList.Add(new Vector2(x, y));
+        for (int y = -Table.Size; y < Table.Size; y++)
+            _deltaList.Add(new Vector2(x, y));
 
         _deltaList = _deltaList.OrderBy(v => v.magnitude).ToList();
     }
@@ -94,6 +95,9 @@ public class LetterController : BaseObject
 
     public void LetterSelected(Letter letter)
     {
+        if (!selectIsAvalaible)
+            return;
+        
         Debug.Log($"Letter {letter.Char} is selected");
         OnLetterSelected.Invoke();
 
@@ -105,37 +109,53 @@ public class LetterController : BaseObject
             selectedLetter.Select();
     }
 
+    public void ResetLetters()
+    {
+        AllLetters.ForEach(l => l.ResetLetter());
+    }
+
     public IEnumerator LetterUnselected()
     {
         OnReleaseLetter.Invoke();
+        
+        selectIsAvalaible = false;
+
 
         yield return MoveToSafePlace();
 
         OnLetterUnselected.Invoke();
 
+/*
         foreach (Letter letter in SelectedLetters)
             letter.Unselect();
+*/
 
         LastSelectedLetters.Clear();
         LastSelectedLetters.AddRange(SelectedLetters);
 
         SelectedLetters.Clear();
 
-        yield return new WaitForSeconds(0.1f);
-
+        yield return new WaitForSeconds(0.2f);
+//added
+        foreach (Letter letter in LastSelectedLetters)
+            letter.Unselect();
+//        
         OnDropLetter.Invoke();
+        
+        selectIsAvalaible = true;
+
     }
 
     #endregion
 
     #region Move
 
-
     public void Move(Vector3 delta)
     {
         foreach (Letter selectedLetter in SelectedLetters)
             selectedLetter.Move(delta);
     }
+
     #endregion
 
     #region MoveToSafePlace
@@ -151,7 +171,7 @@ public class LetterController : BaseObject
 
     private IEnumerator MoveTo(Vector2 delta)
     {
-        delta = delta + SnapPos(SelectedLetters[0]) - (Vector2)SelectedLetters[0].transform.position;
+        delta = delta + SnapPos(SelectedLetters[0]) - (Vector2) SelectedLetters[0].transform.position;
 
         float duration = Mathf.Sqrt(delta.magnitude / Acceleration);
 
@@ -180,8 +200,6 @@ public class LetterController : BaseObject
             selectedLetter.Move(delta - lastDelta);
             selectedLetter.Snap();
         }
-
-
     }
 
     private Vector2 FindSafeMove()
@@ -200,10 +218,10 @@ public class LetterController : BaseObject
     private bool IsSafeMove(Vector2 delta)
     {
         foreach (Letter selectedLetter in SelectedLetters)
-            foreach (Letter unselectedLetter in AllLetters)
-                if (!unselectedLetter.IsSelected)
-                    if (SnapPos(selectedLetter) + delta == SnapPos(unselectedLetter))
-                        return false;
+        foreach (Letter unselectedLetter in AllLetters)
+            if (!unselectedLetter.IsSelected)
+                if (SnapPos(selectedLetter) + delta == SnapPos(unselectedLetter))
+                    return false;
 
         return true;
     }
@@ -219,7 +237,6 @@ public class LetterController : BaseObject
     }
 
     #endregion
-
     public void DeleteAllLetters()
     {
         if (AllLetters == null)
@@ -235,8 +252,8 @@ public class LetterController : BaseObject
                     DestroyImmediate(letter.gameObject);
                 else
                     PoolManager.Instance.Return(letter);
-
             }
+
             AllLetters.Remove(letter);
         }
     }
@@ -251,5 +268,4 @@ public class LetterController : BaseObject
 
         return bound;
     }
-
 }

@@ -35,13 +35,20 @@ public class Raycaster : BaseObject
     }
 
 
+    private void OnEnable()
+    {
+        EnablePan(true);
+    }
+
     #region UpdateData
 
     void Update()
     {
+/*
         
         if (!_enablePan)
             return;
+*/
 
         if (Input.touchCount > 1)
         {
@@ -96,15 +103,13 @@ public class Raycaster : BaseObject
 
                 Letter letter = collider.GetComponent<Letter>();
 
-                if (letter != null)
+                if (letter != null /*&& !letter.IsLocked*/)
+                {
                     LetterController.LetterSelected(letter);
-                else
-                    Debug.LogError("Letter component doesn't exist!!!");
-
-                _letterDrag = true;
-
+                    _letterDrag = true;
+                }
             }
-            else
+            else if (_enablePan)
             {
                 _cameraDrag = true;
                 CameraController.StartPan();

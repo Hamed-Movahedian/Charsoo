@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using FMachine;
+using FollowMachineDll.Attributes;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,11 +25,17 @@ public class WordManager : BaseObject
         Words.AddRange(GetComponentsInChildren<Word>());
     }
 
+    [FollowMachine("Is Puzzle Solved?", "No,Yes")]
     public void CheckFinishGame()
     {
         foreach (Word word in Words)
             if (!word.IsComplete)
+            {
+                FollowMachine.SetOutput("No");
                 return;
+            }
+
+        FollowMachine.SetOutput("Yes");
 
         OnEnd.Invoke();
     }

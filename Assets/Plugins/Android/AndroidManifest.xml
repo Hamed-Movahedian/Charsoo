@@ -32,6 +32,7 @@
     </activity>
     <activity android:name="ir.tapsell.sdk.TapsellAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
     <activity android:name="com.bobardo.bazaar.iab.ServiceBillingBazaar$IabActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity android:name="com.bazaar.BazaarIABProxyActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
     <activity android:name="com.soomla.store.billing.bazaar.BazaarIabService$IabActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
     <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver">
       <intent-filter>

@@ -101,7 +101,6 @@
             <e p="Blur.shader" t="Include" />
           </e>
         </e>
-        <e p="InputFieldDone.cs" t="Include" />
         <e p="Letters" t="Include">
           <e p="LettersShader.shader" t="Include" />
         </e>
@@ -802,6 +801,7 @@
             <e p="CharsooStoreEventHandler.cs" t="Include" />
             <e p="PurchaseManager.cs" t="Include" />
           </e>
+          <e p="ChangeLeterState.cs" t="Include" />
           <e p="Editor" t="Include">
             <e p="ExportCurreptedPuzzles.cs" t="Include" />
             <e p="ExportWordsetToText.cs" t="Include" />
@@ -822,6 +822,7 @@
             <e p="Shuffler.cs" t="Include" />
             <e p="WordSetValidator.cs" t="Include" />
           </e>
+          <e p="InputFieldDone.cs" t="Include" />
           <e p="InvokeEvents.cs" t="Include" />
           <e p="JsonDotNet" t="Include">
             <e p="link.xml" t="Include" />

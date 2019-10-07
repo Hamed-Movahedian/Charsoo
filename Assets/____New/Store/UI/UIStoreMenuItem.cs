@@ -32,6 +32,7 @@ public class UIStoreMenuItem : UIMenuItem
 
     public override void Select()
     {
+        Debug.Log("selected");
         ((StoreMenuItemList)_list).Select(_data);
     }
 }

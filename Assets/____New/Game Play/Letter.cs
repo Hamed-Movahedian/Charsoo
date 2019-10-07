@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 
 public class Letter : BaseObject
 {
-
     #region Public
 
     public List<GameObject> UpBridge;
@@ -17,6 +16,7 @@ public class Letter : BaseObject
     public List<Letter> ConnectedLetters;
 
     public bool IsSelected = false;
+    public bool IsLocked = false;
 
     public bool Active = true;
     public GameObject Frame;
@@ -49,7 +49,6 @@ public class Letter : BaseObject
 
     void Start()
     {
-        
     }
 
     private void OnEnable()
@@ -63,8 +62,6 @@ public class Letter : BaseObject
     {
         OnUnSelect.Invoke();
     }
-
-
 
     #endregion
 
@@ -90,12 +87,12 @@ public class Letter : BaseObject
         }
 
         foreach (GameObject rbGameObject in RightBridge)
-            rbGameObject.SetActive(RightLetter!=null);
+            rbGameObject.SetActive(RightLetter != null);
 
         foreach (GameObject ubGameObject in UpBridge)
-            ubGameObject.SetActive(UpLetter!=null);
-
+            ubGameObject.SetActive(UpLetter != null);
     }
+
     #endregion
 
     #region GetConnectedLetters
@@ -110,18 +107,21 @@ public class Letter : BaseObject
         foreach (Letter letter in ConnectedLetters)
             letter.GetConnectedLetters(letters);
     }
+
     #endregion
 
     #region Select/Unselected
 
     public void Select()
     {
+        //if (IsSelected) return;
         IsSelected = true;
         OnSelect.Invoke();
     }
 
     public void Unselect()
     {
+        //if (!IsSelected)return;
         IsSelected = false;
         OnUnSelect.Invoke();
     }
@@ -135,7 +135,6 @@ public class Letter : BaseObject
         transform.position += delta;
     }
 
-
     #endregion
 
     #region Snap
@@ -147,6 +146,7 @@ public class Letter : BaseObject
         position.y = Mathf.Round(position.y);
         transform.position = position;
     }
+
     #endregion
 
     public void AddToBounds(ref Bounds bound)
@@ -158,7 +158,7 @@ public class Letter : BaseObject
     public bool IsNextTo(Letter letter, WordDirection wordDirection)
     {
         if (wordDirection == WordDirection.Horizontal)
-            return 
+            return
                 Math.Abs(transform.position.x - (letter.transform.position.x + 1)) < 0.1f &&
                 Math.Abs(transform.position.y - letter.transform.position.y) < 0.1f;
         else
@@ -202,5 +202,14 @@ public class Letter : BaseObject
         if (letter == null)
             return false;
         return ConnectedLetters.Contains(letter);
+    }
+
+    public void ResetLetter()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.ResetTrigger("Select");
+        animator.ResetTrigger("UnSelect");
+        animator.ResetTrigger("UnSelect");
+        animator.SetTrigger("Reset");
     }
 }
