@@ -681,102 +681,6 @@
           </e>
           <e p="NativeShare.cs" t="Include" />
           <e p="NativeShareScreen.cs" t="Include" />
-          <e p="Soomla" t="Include">
-            <e p="Core" t="Include">
-              <e p="AndroidImpl" t="Include">
-                <e p="KeyValueStorageAndroid.cs" t="Include" />
-                <e p="RewardStorageAndroid.cs" t="Include" />
-              </e>
-              <e p="Config" t="Include">
-                <e p="android" t="Include">
-                  <e p="ISoomlaManifestTools.cs" t="Include" />
-                  <e p="SoomlaAndroidUtil.cs" t="Include" />
-                  <e p="SoomlaManifestTools.cs" t="Include" />
-                </e>
-                <e p="CoreSettings.cs" t="Include" />
-                <e p="ISoomlaPostBuildTool.cs" t="Include" />
-                <e p="ISoomlaSettings.cs" t="Include" />
-                <e p="ObjectDictionary.cs" t="Include" />
-                <e p="SoomlaEditorScript.cs" t="Include" />
-                <e p="SoomlaPostBuildTools.cs" t="Include" />
-                <e p="UnityDictionary.cs" t="Include" />
-              </e>
-              <e p="CoreEvents.cs" t="Include" />
-              <e p="data" t="Include">
-                <e p="JSONConsts.cs" t="Include" />
-                <e p="KeyValueStorage.cs" t="Include" />
-                <e p="RewardStorage.cs" t="Include" />
-              </e>
-              <e p="JSONObject.cs" t="Include" />
-              <e p="NullCheckable.cs" t="Include" />
-              <e p="rewards" t="Include">
-                <e p="BadgeReward.cs" t="Include" />
-                <e p="RandomReward.cs" t="Include" />
-                <e p="Reward.cs" t="Include" />
-                <e p="SequenceReward.cs" t="Include" />
-              </e>
-              <e p="Schedule.cs" t="Include" />
-              <e p="SoomlaEntity.cs" t="Include" />
-              <e p="SoomlaExtensions.cs" t="Include" />
-              <e p="SoomlaUtils.cs" t="Include" />
-            </e>
-            <e p="Store" t="Include">
-              <e p="AndroidImpl" t="Include">
-                <e p="AndroidJNIHandler.cs" t="Include" />
-                <e p="SoomlaStoreAndroid.cs" t="Include" />
-                <e p="StoreEventPusherAndroid.cs" t="Include" />
-                <e p="StoreInfoAndroid.cs" t="Include" />
-                <e p="VirtualCurrencyStorageAndroid.cs" t="Include" />
-                <e p="VirtualGoodsStorageAndroid.cs" t="Include" />
-              </e>
-              <e p="Config" t="Include">
-                <e p="StoreManifestTools.cs" t="Include" />
-                <e p="StoreSettings.cs" t="Include" />
-              </e>
-              <e p="data" t="Include">
-                <e p="StoreInfo.cs" t="Include" />
-                <e p="StoreJSONConsts.cs" t="Include" />
-                <e p="VirtualCurrencyStorage.cs" t="Include" />
-                <e p="VirtualGoodsStorage.cs" t="Include" />
-                <e p="VirtualItemStorage.cs" t="Include" />
-              </e>
-              <e p="domain" t="Include">
-                <e p="MarketItem.cs" t="Include" />
-                <e p="PurchasableVirtualItem.cs" t="Include" />
-                <e p="VirtualCategory.cs" t="Include" />
-                <e p="virtualCurrencies" t="Include">
-                  <e p="VirtualCurrency.cs" t="Include" />
-                  <e p="VirtualCurrencyPack.cs" t="Include" />
-                </e>
-                <e p="virtualGoods" t="Include">
-                  <e p="EquippableVG.cs" t="Include" />
-                  <e p="LifetimeVG.cs" t="Include" />
-                  <e p="SingleUsePackVG.cs" t="Include" />
-                  <e p="SingleUseVG.cs" t="Include" />
-                  <e p="UpgradeVG.cs" t="Include" />
-                  <e p="VirtualGood.cs" t="Include" />
-                </e>
-                <e p="VirtualItem.cs" t="Include" />
-              </e>
-              <e p="exceptions" t="Include">
-                <e p="InsufficientFundsException.cs" t="Include" />
-                <e p="NotEnoughGoodsException.cs" t="Include" />
-                <e p="VirtualItemNotFoundException.cs" t="Include" />
-              </e>
-              <e p="IStoreAssets.cs" t="Include" />
-              <e p="purchaseTypes" t="Include">
-                <e p="PurchaseType.cs" t="Include" />
-                <e p="PurchaseWithMarket.cs" t="Include" />
-                <e p="PurchaseWithVirtualItem.cs" t="Include" />
-              </e>
-              <e p="rewards" t="Include">
-                <e p="VirtualItemReward.cs" t="Include" />
-              </e>
-              <e p="SoomlaStore.cs" t="Include" />
-              <e p="StoreEvents.cs" t="Include" />
-              <e p="StoreInventory.cs" t="Include" />
-            </e>
-          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Auxiliary" t="Include">
@@ -796,9 +700,7 @@
             <e p="TextColorAdapter.cs" t="Include" />
           </e>
           <e p="BazaarIAP" t="Include">
-            <e p="BazaarInitializer.cs" t="Include" />
-            <e p="CharsooStoreAsset.cs" t="Include" />
-            <e p="CharsooStoreEventHandler.cs" t="Include" />
+            <e p="CharsooStoreInitializer.cs" t="Include" />
             <e p="PurchaseManager.cs" t="Include" />
           </e>
           <e p="ChangeLeterState.cs" t="Include" />
@@ -908,14 +810,23 @@
             <e p="ServerController.cs" t="Include" />
           </e>
         </e>
-        <e p="Soomla" t="Include">
-          <e p="Editor" t="Include">
-            <e p="SoomlaPostBuild.cs" t="Include" />
-            <e p="SoomlaSettingsEditor.cs" t="Include" />
-          </e>
-        </e>
         <e p="Source" t="Include">
           <e p="Pushe.cs" t="Include" />
+        </e>
+        <e p="TirdParty" t="Include">
+          <e p="CafeBazaarIAB" t="Include">
+            <e p="AbstractManager.cs" t="Include" />
+            <e p="ActionExtensions.cs" t="Include" />
+            <e p="BazaarIAB.cs" t="Include" />
+            <e p="BazaarIABEventManager.cs" t="Include" />
+            <e p="BazaarPurchase.cs" t="Include" />
+            <e p="BazaarSkuInfo.cs" t="Include" />
+            <e p="Demo" t="Include">
+              <e p="BazaarIABEventListener.cs" t="Include" />
+              <e p="IABTestUI.cs" t="Include" />
+            </e>
+            <e p="SimpleJSON.cs" t="Include" />
+          </e>
         </e>
         <e p="UI" t="Include">
           <e p="AlphaMask.shader" t="Include" />

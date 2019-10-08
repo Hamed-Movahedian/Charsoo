@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ArabicSupport;
-using Soomla.Store;
+using BazaarPlugin;
 using UnityEngine;
 
 public class StoreMenuItemList : UIMenuItemList
@@ -19,7 +19,7 @@ public class StoreMenuItemList : UIMenuItemList
     {
         StoreItem sItem = (StoreItem) data;
         if (sItem != null) 
-            StoreInventory.BuyItem(sItem.ItemId);
+            BazaarIAB.purchaseProduct(sItem.ItemId);
 
         Close("Purchased");
     }

@@ -6,7 +6,6 @@ using Assets.Scripts.Singletons;
 using FMachine;
 using FollowMachineDll.Attributes;
 using MgsCommonLib;
-using Soomla.Store;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Soomla.Store.Charsoo;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;

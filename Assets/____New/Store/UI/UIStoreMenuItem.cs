@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using ArabicSupport;
-using Soomla.Store;
 using UnityEngine;
 using UnityEngine.UI;
 

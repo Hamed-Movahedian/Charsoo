@@ -5,8 +5,6 @@ using System.Linq;
 using FMachine;
 using FollowMachineDll.Attributes;
 using Newtonsoft.Json.Linq;
-using Soomla.Store;
-using Soomla.Store.Charsoo;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
