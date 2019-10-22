@@ -10,13 +10,31 @@ public class CharsooStoreInitializer : MonoBehaviour
     private string key =
         "MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwDIFHbmF19C0fpkum4/dnvmMIVIJKcbOwH2LRDDYmPedEsnM5aPRW00kqCpBUAVAsnlmXHNCXSb/Jv7ux5n9d4K/4PY0fI+37RgYHhNki+Rz0d4XiuUiG3Rdlo6XV9paVcCUDiP1OUVtw7IEf0imXWzjIGuAkvL2oCWMhZqDBwZQXoOwWmvb18SMYxZcvIuz72RxbUdzDKzN0ug8ZFatFcIXV2MSjSqNhLKzR9un78CAwEAAQ==";
 
+    private string[] skues=new string[] { };
+
     #endregion
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         BazaarIAB.init(key);
+        BazaarIAB.enableLogging(true);
+
         IABEventManager.purchaseSucceededEvent += OnPurchased;
+        IABEventManager.billingNotSupportedEvent += notAvalaible;
+        IABEventManager.billingSupportedEvent += Support;
+    }
+
+    private void Support()
+    {
+        Debug.Log("Init Done");
+        BazaarIAB.queryInventory(skues);
+        Debug.Log("Skus:\n" + skues);
+    }
+
+    private void notAvalaible(string obj)
+    {
+        Debug.Log("Init Error");
     }
 
     private void OnPurchased(BazaarPurchase obj)
@@ -76,6 +94,4 @@ public class CharsooStoreInitializer : MonoBehaviour
     }
     
     */
-
-
 }
