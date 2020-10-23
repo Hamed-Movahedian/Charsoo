@@ -171,6 +171,9 @@ public class LetterController : BaseObject
 
     private IEnumerator MoveTo(Vector2 delta)
     {
+        if (SelectedLetters.Count<1)
+            yield break;
+        
         delta = delta + SnapPos(SelectedLetters[0]) - (Vector2) SelectedLetters[0].transform.position;
 
         float duration = Mathf.Sqrt(delta.magnitude / Acceleration);

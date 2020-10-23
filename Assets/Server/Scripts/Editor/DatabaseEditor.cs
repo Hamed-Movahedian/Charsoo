@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using FollowMachineEditor.Server;
 using Newtonsoft.Json;
 using UnityEditor;
@@ -15,13 +16,13 @@ public class DatabaseEditor : Editor
     public override void OnInspectorGUI()
     {
         _databaseComponent = target as DatabaseComponent;
-        
+
         #region ReloadAll
 
         if (GUILayout.Button("ReloadAll"))
         {
             // read all categories
-            var categories= ServerEditor.Get<List<Category>>(@"Categories", "Download categories", "Download");
+            var categories = ServerEditor.Get<List<Category>>(@"Categories", "Download categories", "Download");
 
             if (categories == null)
                 return;
@@ -39,7 +40,6 @@ public class DatabaseEditor : Editor
             // create game objects
             _databaseComponent.ReloadAll();
         }
-
 
         #endregion
 
@@ -68,8 +68,8 @@ public class DatabaseEditor : Editor
 
         if (GUILayout.Button("Sync All with localDB"))
         {
-             // read all categories
-            var categories= ServerEditor.Get<List<Category>>(@"Categories", "Download categories", "Download");
+            // read all categories
+            var categories = ServerEditor.Get<List<Category>>(@"Categories", "Download categories", "Download");
 
             if (categories == null)
                 return;
@@ -88,11 +88,48 @@ public class DatabaseEditor : Editor
 
             foreach (Puzzle puzzle in puzzles)
                 LocalDBController.InsertOrReplace(puzzle);
-
-
         }
 
         #endregion
+
+        if (GUILayout.Button("Update Categories in Server From LOCAL"))
+        {
+            SendCategoriesToServer();
+        }
+
+        if (GUILayout.Button("Update Puzzles in Server From LOCAL"))
+        {
+            SendPuzzlesToServer();
+        }
     }
 
+    public void SendCategoriesToServer()
+    {
+        List<Category> cats = new List<Category>();
+        cats.AddRange(LocalDBController.Table<Category>().ToList());
+
+        while (cats.Any())
+            foreach (Category c in cats)
+            {
+                if (c.PrerequisiteID == null || cats.FirstOrDefault(t => t.ID == c.PrerequisiteID) == null)
+                    if (c.ParentID == null || cats.FirstOrDefault(t => t.ID == c.ParentID) == null)
+                    {
+                        ServerEditor.Post(@"Categories/Create", c, "Update category", "Update");
+                        cats.Remove(c);
+                        break;
+                    }
+            }
+    }
+
+    public void SendPuzzlesToServer()
+    {
+        List<Puzzle> puzzles = new List<Puzzle>();
+        puzzles.AddRange(LocalDBController.Table<Puzzle>().ToList());
+        Debug.Log(puzzles.Count);
+
+        foreach (Puzzle p in puzzles)
+        {
+            ServerEditor.Post(@"Puzzles/Create", p, "Update Puzzle", "Update");
+        }
+    }
 }
