@@ -132,7 +132,7 @@ public class ShareScreenShot : BaseObject
 
         string body = "حدس میزنم از حل کردن این جدول لذت ببری.\n خودم این جدول رو ساختم. امتحانش کن." +
                    "\n" +
-                   "http://charsoogame.ir/inapp.html?sup&" + puzzleID + "&" + PlayerController.PlayerID ;
+                   "http://charsoog.ir/inapp.html?sup&" + puzzleID + "&" + PlayerController.PlayerID ;
 
         NativeShare.Share(body, destination);
         FollowMachine.SetOutput("Success");
