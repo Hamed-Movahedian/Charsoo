@@ -59,6 +59,7 @@
           <e p="RegisterAccountWarn.cs" t="Include" />
           <e p="Store" t="Include">
             <e p="UI" t="Include">
+              <e p="SelectIabMethod.cs" t="Include" />
               <e p="StoreMenuItemList.cs" t="Include" />
               <e p="UIStoreMenuItem.cs" t="Include" />
             </e>
@@ -849,6 +850,31 @@
         <e p="Word Sets" t="Include">
           <e p="AllWordsetsFiles" t="Include">
             <e p="WordSets.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Zarinpal" t="Include">
+          <e p="Example" t="Include">
+            <e p="ZarinpalExample.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="BuildPostProcessor.cs" t="Include" />
+              <e p="IManifestTools.cs" t="Include" />
+              <e p="StoreManifestTools.cs" t="Include" />
+              <e p="ZarinpalConfigEditor.cs" t="Include" />
+              <e p="ZarinpalManifestTools.cs" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="IZarinpalPlatform.cs" t="Include" />
+              <e p="TestZarinpal.cs" t="Include" />
+              <e p="Zarinpal.cs" t="Include" />
+              <e p="ZarinpalAndroid.cs" t="Include" />
+              <e p="ZarinpalConfig.cs" t="Include" />
+              <e p="ZarinpalEditor.cs" t="Include" />
+              <e p="ZarinpaliOS.cs" t="Include" />
+              <e p="ZarinpalLog.cs" t="Include" />
+            </e>
+            <e p="ZarinpalStore.cs" t="Include" />
           </e>
         </e>
       </e>

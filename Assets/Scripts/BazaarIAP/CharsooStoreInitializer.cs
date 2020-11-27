@@ -10,19 +10,23 @@ public class CharsooStoreInitializer : MonoBehaviour
     private string key =
         "MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwDIFHbmF19C0fpkum4/dnvmMIVIJKcbOwH2LRDDYmPedEsnM5aPRW00kqCpBUAVAsnlmXHNCXSb/Jv7ux5n9d4K/4PY0fI+37RgYHhNki+Rz0d4XiuUiG3Rdlo6XV9paVcCUDiP1OUVtw7IEf0imXWzjIGuAkvL2oCWMhZqDBwZQXoOwWmvb18SMYxZcvIuz72RxbUdzDKzN0ug8ZFatFcIXV2MSjSqNhLKzR9un78CAwEAAQ==";
 
-    private string[] skues=new string[] { };
+    private string[] skues = new string[] { };
 
     #endregion
 
+    public static bool IsBazaarSuported = true;
+    public bool support = true;
+
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
-        BazaarIAB.init(key);
-        BazaarIAB.enableLogging(true);
-
         IABEventManager.purchaseSucceededEvent += OnPurchased;
         IABEventManager.billingNotSupportedEvent += notAvalaible;
         IABEventManager.billingSupportedEvent += Support;
+        ZarinpalStore.OnPurchaseDone += s => { OnPurchase(s,false); };
+
+        DontDestroyOnLoad(gameObject);
+        BazaarIAB.init(key);
+        BazaarIAB.enableLogging(true);
     }
 
     private void Support()
@@ -34,12 +38,21 @@ public class CharsooStoreInitializer : MonoBehaviour
 
     private void notAvalaible(string obj)
     {
+        IsBazaarSuported = false;
+        support = false;
         Debug.Log("Init Error");
     }
 
     private void OnPurchased(BazaarPurchase obj)
     {
-        if (obj.ProductId.Trim() == "charsoo_doubler")
+        string productId = obj.ProductId;
+        OnPurchase(productId, true);
+    }
+
+    private static void OnPurchase(string productId, bool bazaar)
+    {
+        string s = productId.ToLower();
+        if (s.Trim().Contains("doubler"))
         {
             var playerController = Singleton.Instance.PlayerController;
             PlayerInfo playerInfo = playerController.PlayerInfo;
@@ -48,9 +61,9 @@ public class CharsooStoreInitializer : MonoBehaviour
             Singleton.Instance.PlayerController.ChangePlayerInfo(playerInfo);
         }
 
-        if (obj.ProductId.Contains("coin"))
+        if (s.ToLower().Contains("coin"))
         {
-            string id = obj.ProductId.Replace("coin", "").Trim();
+            string id = s.Replace("coin", "").Trim();
             Debug.Log(id);
             id = id.Replace("coin", "").Trim();
             Debug.Log(id);
@@ -59,7 +72,8 @@ public class CharsooStoreInitializer : MonoBehaviour
             Singleton.Instance.PlayerController.ChangeCoin(count);
         }
 
-        BazaarIAB.consumeProduct(obj.ProductId);
+        if (bazaar)
+            BazaarIAB.consumeProduct(s);
     }
 
 

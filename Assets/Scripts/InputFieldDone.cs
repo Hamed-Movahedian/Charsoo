@@ -19,6 +19,14 @@ public class InputFieldDone : MonoBehaviour
           }
      }
 
+     private void OnEnable()
+     {
+          if(inputField==null)
+               inputField = GetComponent<InputField>();
+
+          inputField.text = "";
+     }
+
      private void Done(string s)
      {
           button.onClick.Invoke();
