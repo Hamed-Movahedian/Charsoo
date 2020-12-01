@@ -14,13 +14,9 @@ public class CharsooStoreInitializer : MonoBehaviour
 
     #endregion
 
-    public static bool IsBazaarSuported = true;
-    public bool support = true;
-
     private void Start()
     {
         IABEventManager.purchaseSucceededEvent += OnPurchased;
-        IABEventManager.billingNotSupportedEvent += notAvalaible;
         IABEventManager.billingSupportedEvent += Support;
         ZarinpalStore.OnPurchaseDone += s => { OnPurchase(s,false); };
 
@@ -34,13 +30,6 @@ public class CharsooStoreInitializer : MonoBehaviour
         Debug.Log("Init Done");
         BazaarIAB.queryInventory(skues);
         Debug.Log("Skus:\n" + skues);
-    }
-
-    private void notAvalaible(string obj)
-    {
-        IsBazaarSuported = false;
-        support = false;
-        Debug.Log("Init Error");
     }
 
     private void OnPurchased(BazaarPurchase obj)

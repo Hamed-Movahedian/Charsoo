@@ -98,7 +98,6 @@ public class LetterController : BaseObject
         if (!selectIsAvalaible)
             return;
         
-        Debug.Log($"Letter {letter.Char} is selected");
         OnLetterSelected.Invoke();
 
         SelectedLetters.Clear();

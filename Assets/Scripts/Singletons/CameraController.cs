@@ -142,7 +142,6 @@ public class CameraController : BaseObject
             8.8f, 
             (Mathf.Max(bound.extents.x, bound.extents.y) * 2 + (3) / _camera.aspect));
         
-        print($"extends{bound.extents} \nsize={endSize}");
         // End pos
         Vector3 endPos = bound.center + Vector3.down * VerticalOffset;
 

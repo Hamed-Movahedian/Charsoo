@@ -80,7 +80,6 @@ public class LocalPuzzleDB : MonoBehaviour
                 SqlWhere(c => c.ID == id).
                 FirstOrDefault();
 
-            Debug.Log(category.ID);
             PuzzleList.CategoryWindow.Select(category);
             FollowMachine.SetOutput("Play");
             return;

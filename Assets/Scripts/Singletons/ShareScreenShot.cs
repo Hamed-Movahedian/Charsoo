@@ -77,9 +77,9 @@ public class ShareScreenShot : BaseObject
 
         string body = "برای حل این معما به کمک نیاز دارم." +
               "\n" +
-              " بازی چارسو رو میتونی از بازار دانلود کنی:" +
+              " بازی چارسو رو میتونی اینجا دانلود کنی:" +
               "\n" +
-              "https://cafebazaar.ir/app/com.Matarsak.charsoo/?l=fa";
+              "https://charsoog.ir";
 
         NativeShare.Share(body, destination);
     }

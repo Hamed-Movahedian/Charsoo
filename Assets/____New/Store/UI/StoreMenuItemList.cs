@@ -12,7 +12,6 @@ public class StoreMenuItemList : UIMenuItemList
 
     public override void Refresh()
     {
-
         UpdateItems(StoreItems.Cast<object>());
     }
 
@@ -20,16 +19,7 @@ public class StoreMenuItemList : UIMenuItemList
     {
         _sItem = (StoreItem) data;
         if (_sItem != null)
-        {
-            if(CharsooStoreInitializer.IsBazaarSuported)
-            {
-                Close("Select IAB Method");
-                return;
-            }
-            ZarinpalStore.Purchase(_sItem.Price,_sItem.ItemDecs,_sItem.ItemId);
-        }
-
-        Close("Purchased");
+            Close("Purchased");
     }
 
     public void PurchaseWhitBazaar()
@@ -37,9 +27,10 @@ public class StoreMenuItemList : UIMenuItemList
         BazaarIAB.purchaseProduct(_sItem.ItemId);
         Close("Purchased");
     }
+
     public void PurchaseWhitZarin()
     {
-        ZarinpalStore.Purchase(_sItem.Price,_sItem.ItemDecs,_sItem.ItemId);
+        ZarinpalStore.Purchase(_sItem.Price, _sItem.ItemDecs, _sItem.ItemId);
         Close("Purchased");
     }
 }
@@ -55,4 +46,3 @@ public class StoreItem
     public int Price;
     public Sprite Icon;
 }
-
