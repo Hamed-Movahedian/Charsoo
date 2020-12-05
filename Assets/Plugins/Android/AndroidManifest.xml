@@ -15,11 +15,11 @@
   <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="27" />
   <uses-sdk tools:overrideLibrary="co.ronash.pushe" />
   <permission android:name="com.Matarsak.charsoo.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-  <uses-permission tools:node="remove" android:name="android.permission.ACCESS_FINE_LOCATION" />
   <uses-permission android:name="com.Matarsak.charsoo.permission.C2D_MESSAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
   <uses-permission android:name="com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR" />
   <application 
           android:theme="@style/UnityThemeSelector"
