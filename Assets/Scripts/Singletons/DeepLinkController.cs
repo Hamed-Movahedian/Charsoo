@@ -12,11 +12,11 @@ using UnityEngine.UI;
 public class DeepLinkController : MonoBehaviour
 {
     public MgsDialougWindow MessageWindow;
-    public string Data { get; set; } ="getinvitereward&حسین & 100 ";//"sup&31&1074";
+    public string Data { get; set; }//"sup&31&1074";
 
     [FollowMachine(
         "Check Lunch Method",
-        "Normal,Unkown Command,Show User Puzzle,Generate Puzzle,Get Invite Reward")]
+        "Normal,Unkown Command,Show User Puzzle,Generate Puzzle,Get Invite Reward,Register Phone")]
     public void GetDeepLinkInfo()
     {
         if (Application.platform == RuntimePlatform.Android)
@@ -43,8 +43,8 @@ public class DeepLinkController : MonoBehaviour
         }
         else
         {
-            //FollowMachine.SetOutput("Normal");
-            CheckData();
+            FollowMachine.SetOutput("Normal");
+            //CheckData();
         }
     }
 
@@ -76,6 +76,10 @@ public class DeepLinkController : MonoBehaviour
 
             case "generatepuzzle":
                 FollowMachine.SetOutput("Generate Puzzle");
+                break;
+
+            case "RegisterPhone":
+                FollowMachine.SetOutput("Register Phone");
                 break;
 
             case "getinvitereward":
