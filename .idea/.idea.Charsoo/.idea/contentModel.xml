@@ -768,11 +768,13 @@
           </e>
           <e p="TapsellWrapper" t="Include">
             <e p="AdManager.cs" t="Include" />
+            <e p="NativeAdButton.cs" t="Include" />
             <e p="NativeBannerCaller.cs" t="Include" />
             <e p="TapsellInitializer.cs" t="Include" />
           </e>
           <e p="Tools" t="Include">
             <e p="ApplicationController.cs" t="Include" />
+            <e p="BazaarIntents.cs" t="Include" />
             <e p="CompressString.cs" t="Include" />
             <e p="DisableByDelay.cs" t="Include" />
             <e p="SetActiveGameObject.cs" t="Include" />

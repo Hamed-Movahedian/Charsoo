@@ -1,13 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using FMachine;
 using FollowMachineDll.Attributes;
 using FollowMachineDll.Components;
+using MgsCommonLib;
 using MgsCommonLib.UI;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class PlayerController : BaseObject
 {
@@ -64,7 +69,7 @@ public class PlayerController : BaseObject
         List<LogIn> logIns =
             LocalDBController.Table<LogIn>().ToList();
 
-        yield return ServerController.Post<int>(
+        yield return Post<int>(
             @"/api/Login/AddRange",
             logIns,
             r =>
@@ -73,6 +78,48 @@ public class PlayerController : BaseObject
                     LocalDBController.DeleteAll<LogIn>();
             });
     }
+    
+    public static IEnumerator Post<TReturnType>(
+        string url,
+        object bodyData,
+        Action<TReturnType> onSuccess,
+        Action<UnityWebRequest> onError = null)
+    {
+
+        UnityWebRequest request = PostRequest(url, bodyData);
+        Debug.Log(request.url);
+
+        request.Send();
+        Debug.Log("request sent");
+
+        while (!request.isDone)
+            yield return (object) null;
+        if (!request.isHttpError && !request.isNetworkError)
+        {
+            Debug.Log("request No Error");
+
+            if (onSuccess != null)
+                onSuccess(JsonConvert.DeserializeObject<TReturnType>(request.downloadHandler.text));
+        }
+        else if (onError != null)
+        {
+            Debug.Log(request.error);
+
+            onError(request);
+        }
+    }
+    
+    public static UnityWebRequest PostRequest(string url, object bodyData)
+    {
+        UnityWebRequest unityWebRequest = new UnityWebRequest("http://37.191.79.205:5351" + "/api/" + url, "POST", (DownloadHandler) new DownloadHandlerBuffer(), bodyData == null ? (UploadHandler) null : (UploadHandler) new UploadHandlerRaw(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(bodyData))));
+        Debug.Log(unityWebRequest.url);
+
+        unityWebRequest.SetRequestHeader("Content-Type", "application/json");
+        return unityWebRequest;
+    }
+
+    
+    
 
     #endregion
 
@@ -132,17 +179,27 @@ public class PlayerController : BaseObject
     private IEnumerator RegisterPlayer()
     {
         _playerInfo.PlayerID = -1;
+        Debug.Log(_playerInfo.PlayerID);
+        Debug.Log(_playerInfo);
         // Register player to server and get PlayerID
-        yield return ServerController.Post<PlayerInfo>(
+        yield return Post<PlayerInfo>(
             @"PlayerInfo/Create",
             _playerInfo,
-            r => { _playerInfo = r; });
+            r => { _playerInfo = r; }, request =>
+            {
+                Debug.Log(request.error);
+            });
 
         if (_playerInfo.PlayerID == -1)
+        {
+            Debug.Log("player not registered");
+
             _playerInfo.PlayerID = null;
+        }
         else
         {
             OnNewPlayerID();
+            Debug.Log("player registered with id : "+_playerInfo.PlayerID);
 
             string pusheId = PlayerPrefs.GetString("PID", "");
 

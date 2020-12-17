@@ -9,6 +9,7 @@ public class LocationProvider
         public float Longitude;
         public float Latitude;
     }
+/*
 
     public static IEnumerator GetLocation(LocationWraper locationWraper)
     {
@@ -47,4 +48,6 @@ public class LocationProvider
         // Stop service if there is no need to query locationWraper updates continuously
         Input.location.Stop();
     }
+    */
+
 }

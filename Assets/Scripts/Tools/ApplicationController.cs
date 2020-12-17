@@ -13,7 +13,7 @@ public class ApplicationController : MonoBehaviour
 
     public void Vibrate()
     {
-        if (Application.isMobilePlatform)
+        if (false && Application.isMobilePlatform)
             Handheld.Vibrate();
     }
 

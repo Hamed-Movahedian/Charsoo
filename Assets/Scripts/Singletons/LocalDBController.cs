@@ -49,16 +49,16 @@ public class LocalDBController: MgsSingleton<LocalDBController>
     #region Logins
     public static IEnumerator AddLogin(int? playerID)
     {
-        LocationProvider.LocationWraper locationWraper = new LocationProvider.LocationWraper();
+        //LocationProvider.LocationWraper locationWraper = new LocationProvider.LocationWraper();
 
-        yield return LocationProvider.GetLocation(locationWraper);
-
+        //yield return LocationProvider.GetLocation(locationWraper);
+        yield return null;
         DataService.Connection.Insert(new LogIn
         {
             PlayerID = playerID,
             DeviceID = SystemInfo.deviceUniqueIdentifier,
-            Latitude = locationWraper.Latitude,
-            Longitude = locationWraper.Longitude,
+            Latitude = 0,
+            Longitude = 0,
             LoginTime = DateTime.Now
         });
     }
