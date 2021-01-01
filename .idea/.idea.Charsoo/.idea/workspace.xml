@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a549392-84d0-4a31-bec4-f7f3c0a147dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Charsoo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Charsoo/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Charsoo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Charsoo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Client3-FM-NewUI-2+Tut.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Client3-FM-NewUI-2+Tut.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singletons/LocalDBController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singletons/LocalDBController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singletons/PlayerInfo/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singletons/PlayerInfo/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TapsellWrapper/NativeBannerCaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TapsellWrapper/NativeBannerCaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tools/ApplicationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/ApplicationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Tools/LocationProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Tools/LocationProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tools/BazaarIntents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/BazaarIntents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/OldDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/OldDB.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
@@ -39,22 +33,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Tools/BazaarIntents.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="579">
+              <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
               <folding>
-                <marker date="1607782961397" expanded="false" signature="6:92" ph="..." />
-                <marker date="1607782961397" expanded="true" signature="136:1383" ph="{...}" />
-                <marker date="1607782961397" expanded="true" signature="162:1380" ph="{...}" />
-                <marker date="1607782961397" expanded="true" signature="337:1374" ph="{...}" />
+                <marker date="1608576965887" expanded="false" signature="6:163" ph="..." />
+                <marker date="1608576965887" expanded="true" signature="242:1650" ph="{...}" />
+                <marker date="1608576965887" expanded="true" signature="267:1223" ph="{...}" />
+                <marker date="1608576965887" expanded="true" signature="1298:1648" ph="{...}" />
+                <marker date="1608576965887" expanded="true" signature="1518:1602" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/TapsellWrapper/NativeBannerCaller.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="28" column="15" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="15" />
+            <state relative-caret-position="-290">
               <folding>
                 <marker date="1607872685146" expanded="false" signature="6:153" ph="..." />
                 <marker date="1607872685146" expanded="true" signature="202:1579" ph="{...}" />
@@ -71,18 +66,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/TapsellWrapper/NativeAdButton.cs">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/____New/UserPuzzle/UserPuzzleSynchronizer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state relative-caret-position="116">
+              <caret line="11" selection-start-line="11" selection-end-line="15" />
               <folding>
-                <marker date="1608110724761" expanded="false" signature="6:107" ph="..." />
-                <marker date="1608110724761" expanded="true" signature="152:1923" ph="{...}" />
-                <marker date="1608110724761" expanded="true" signature="495:1485" ph="{...}" />
-                <marker date="1608110724761" expanded="true" signature="1391:1477" ph="{...}" />
-                <marker date="1608110724761" expanded="true" signature="1514:1735" ph="{...}" />
-                <marker date="1608110724761" expanded="true" signature="1790:1921" ph="{...}" />
+                <marker date="1539942830125" expanded="false" signature="6:189" ph="..." />
+                <marker date="1539942830125" expanded="true" signature="267:2153" ph="{...}" />
+                <marker date="1539942830125" expanded="true" signature="373:1490" ph="{...}" />
+                <marker date="1539942830125" expanded="true" signature="729:829" ph="{...}" />
+                <marker date="1539942830125" expanded="true" signature="1556:1784" ph="{...}" />
+                <marker date="1539942830125" expanded="false" signature="1790:2150" ph="PuzzleCount" />
+                <marker date="1539942830125" expanded="true" signature="1837:2071" ph="{...}" />
+                <marker date="1539942830125" expanded="true" signature="1855:2065" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -92,7 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ChangeCoin</find>
       <find>storeinventory</find>
       <find>StoreInventory</find>
       <find>OnLetterSelected</find>
@@ -122,6 +118,7 @@
       <find>handhe</find>
       <find>locationser</find>
       <find>regis</find>
+      <find>follow</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -174,6 +171,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singletons/BaseObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F718FBF7-147E-4022-82FD-ACF37BDD8584/28/d217f366/AndroidJNI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/____New/Generator/WordSetGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singletons/PurchaseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/____New/Generator/WindowGetClue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tools/BazaarIntents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singletons/LocalDBController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -254,9 +252,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Singletons/LocalDBController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Tools/LocationProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Singletons/PlayerInfo/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tools/BazaarIntents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TapsellWrapper/NativeBannerCaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TapsellWrapper/NativeAdButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tools/BazaarIntents.cs" />
       </list>
     </option>
   </component>
@@ -348,11 +346,12 @@
       <workItem from="1607775754253" duration="5012000" />
       <workItem from="1607867371190" duration="5743000" />
       <workItem from="1608110479300" duration="842000" />
+      <workItem from="1608574775424" duration="1806000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102846000" />
+    <option name="totallyTimeSpent" value="104652000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,23 +414,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/032E4015-D5CA-4513-A221-B24C72150016/31/e8cd3173/ServerEditor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Server/Scripts/ServerController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <marker date="1540120610060" expanded="true" signature="273:349" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Server/Scripts/Components/CategoryComponent.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -926,7 +908,6 @@
           <caret line="81" column="34" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
           <folding>
             <marker date="1606548366074" expanded="false" signature="6:112" ph="..." />
-            <marker date="1606548366074" expanded="true" signature="155:4339" ph="{...}" />
             <marker date="1606548366074" expanded="false" signature="218:356" ph="New Version of sharing" />
             <marker date="1606548366074" expanded="true" signature="385:593" ph="{...}" />
             <marker date="1606548366074" expanded="true" signature="443:504" ph="{...}" />
@@ -1445,22 +1426,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TapsellWrapper/NativeAdButton.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-523">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <marker date="1608110724761" expanded="true" signature="495:1485" ph="{...}" />
+            <marker date="1608110724761" expanded="true" signature="1391:1477" ph="{...}" />
+            <marker date="1608110724761" expanded="true" signature="1514:1735" ph="{...}" />
+            <marker date="1608110724761" expanded="true" signature="1790:1921" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Singletons/PurchaseController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2000">
+          <caret line="82" column="35" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+          <folding>
+            <marker date="1542653878036" expanded="false" signature="6:253" ph="..." />
+            <marker date="1542653878036" expanded="true" signature="290:2858" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="363:2856" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="397:542" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="596:1088" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="853:1033" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="1155:1514" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="1558:2850" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="2001:2132" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="2160:2596" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="2226:2383" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="2433:2578" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="2637:2840" ph="{...}" />
+            <marker date="1542653878036" expanded="true" signature="2691:2824" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/____New/UserPuzzle/UserPuzzleSynchronizer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="11" selection-start-line="11" selection-end-line="15" />
+          <folding>
+            <marker date="1539942830125" expanded="false" signature="6:189" ph="..." />
+            <marker date="1539942830125" expanded="true" signature="267:2153" ph="{...}" />
+            <marker date="1539942830125" expanded="true" signature="373:1490" ph="{...}" />
+            <marker date="1539942830125" expanded="true" signature="729:829" ph="{...}" />
+            <marker date="1539942830125" expanded="true" signature="1556:1784" ph="{...}" />
+            <marker date="1539942830125" expanded="false" signature="1790:2150" ph="PuzzleCount" />
+            <marker date="1539942830125" expanded="true" signature="1837:2071" ph="{...}" />
+            <marker date="1539942830125" expanded="true" signature="1855:2065" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Tools/BazaarIntents.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="579">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
           <folding>
-            <marker date="1607782961397" expanded="false" signature="6:92" ph="..." />
-            <marker date="1607782961397" expanded="true" signature="136:1383" ph="{...}" />
-            <marker date="1607782961397" expanded="true" signature="162:1380" ph="{...}" />
-            <marker date="1607782961397" expanded="true" signature="337:1374" ph="{...}" />
+            <marker date="1608576965887" expanded="false" signature="6:163" ph="..." />
+            <marker date="1608576965887" expanded="true" signature="242:1650" ph="{...}" />
+            <marker date="1608576965887" expanded="true" signature="267:1223" ph="{...}" />
+            <marker date="1608576965887" expanded="true" signature="1298:1648" ph="{...}" />
+            <marker date="1608576965887" expanded="true" signature="1518:1602" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/TapsellWrapper/NativeBannerCaller.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="28" column="15" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="15" />
+        <state relative-caret-position="-290">
           <folding>
             <marker date="1607872685146" expanded="false" signature="6:153" ph="..." />
             <marker date="1607872685146" expanded="true" signature="202:1579" ph="{...}" />
@@ -1472,21 +1507,6 @@
             <marker date="1607872685146" expanded="true" signature="1370:1425" ph="{...}" />
             <marker date="1607872685146" expanded="true" signature="1457:1516" ph="{...}" />
             <marker date="1607872685146" expanded="true" signature="1565:1577" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TapsellWrapper/NativeAdButton.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-          <folding>
-            <marker date="1608110724761" expanded="false" signature="6:107" ph="..." />
-            <marker date="1608110724761" expanded="true" signature="152:1923" ph="{...}" />
-            <marker date="1608110724761" expanded="true" signature="495:1485" ph="{...}" />
-            <marker date="1608110724761" expanded="true" signature="1391:1477" ph="{...}" />
-            <marker date="1608110724761" expanded="true" signature="1514:1735" ph="{...}" />
-            <marker date="1608110724761" expanded="true" signature="1790:1921" ph="{...}" />
           </folding>
         </state>
       </provider>
